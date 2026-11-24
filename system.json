@@ -1,0 +1,283 @@
+{
+  "id": "spacer",
+  "title": "Spacer: Interstellar Roleplaying in the Far Future",
+  "description": "Unofficial system for Spacer by Bryan Larkin (Arcane Sword Press). Automated 2D task rolls, combat and damage, lifepath character creation, starships, vehicles, world generation, trade, patrons, and encounters, with the full written content of the book (CC BY-SA 4.0). Code under MIT.",
+  "version": "0.1.0",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "14"
+  },
+  "authors": [
+    {
+      "name": "Cristian"
+    }
+  ],
+  "license": "LICENSE",
+  "esmodules": [
+    "module/spacer.mjs"
+  ],
+  "styles": [
+    "styles/spacer.css",
+    "styles/craft.css",
+    "styles/chargen.css",
+    "styles/tools.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en/core.json"
+    },
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en/craft.json"
+    },
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en/chargen.json"
+    },
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en/tools.json"
+    }
+  ],
+  "documentTypes": {
+    "Actor": {
+      "character": {
+        "htmlFields": [
+          "biography",
+          "notes",
+          "history"
+        ]
+      },
+      "npc": {
+        "htmlFields": [
+          "biography",
+          "notes"
+        ]
+      },
+      "creature": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "vehicle": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "ship": {
+        "htmlFields": [
+          "description",
+          "notes"
+        ]
+      }
+    },
+    "Item": {
+      "skill": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "weapon": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "armor": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "gear": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "psionic": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "drug": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "shipWeapon": {
+        "htmlFields": [
+          "description"
+        ]
+      }
+    }
+  },
+  "packs": [
+    {
+      "name": "rules",
+      "label": "Spacer Rules",
+      "type": "JournalEntry",
+      "path": "packs/rules",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "tables",
+      "label": "Spacer Tables",
+      "type": "RollTable",
+      "path": "packs/tables",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "skills",
+      "label": "Skills",
+      "type": "Item",
+      "path": "packs/skills",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "weapons",
+      "label": "Weapons",
+      "type": "Item",
+      "path": "packs/weapons",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "armor",
+      "label": "Armour",
+      "type": "Item",
+      "path": "packs/armor",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "gear",
+      "label": "Equipment",
+      "type": "Item",
+      "path": "packs/gear",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "psionics",
+      "label": "Psionic Talents",
+      "type": "Item",
+      "path": "packs/psionics",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "drugs",
+      "label": "Drugs",
+      "type": "Item",
+      "path": "packs/drugs",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "ship-weapons",
+      "label": "Ship and Vehicle Weapons",
+      "type": "Item",
+      "path": "packs/ship-weapons",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "vehicles",
+      "label": "Vehicles",
+      "type": "Actor",
+      "path": "packs/vehicles",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "starships",
+      "label": "Sample Starships",
+      "type": "Actor",
+      "path": "packs/starships",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "macros",
+      "label": "Spacer Macros",
+      "type": "Macro",
+      "path": "packs/macros",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    }
+  ],
+  "packFolders": [
+    {
+      "name": "Spacer",
+      "sorting": "m",
+      "packs": [
+        "rules",
+        "tables",
+        "macros"
+      ],
+      "folders": [
+        {
+          "name": "Items",
+          "sorting": "a",
+          "packs": [
+            "skills",
+            "weapons",
+            "armor",
+            "gear",
+            "psionics",
+            "drugs",
+            "ship-weapons"
+          ]
+        },
+        {
+          "name": "Craft",
+          "sorting": "a",
+          "packs": [
+            "vehicles",
+            "starships"
+          ]
+        }
+      ]
+    }
+  ],
+  "grid": {
+    "distance": 1,
+    "units": "m"
+  },
+  "primaryTokenAttribute": "characteristics.end",
+  "secondaryTokenAttribute": "characteristics.dex",
+  "initiative": "2d6",
+  "url": "",
+  "manifest": "",
+  "download": ""
+}

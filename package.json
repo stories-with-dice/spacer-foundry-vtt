@@ -1,0 +1,17 @@
+{
+  "name": "spacer-rpg-foundry",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Foundry VTT system (v13 and v14) for Spacer: Interstellar Roleplaying in the Far Future by Arcane Sword Press.",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test",
+    "build": "node tools/build-packs.mjs",
+    "link": "node tools/link.mjs"
+  },
+  "devDependencies": {
+    "@foundryvtt/foundryvtt-cli": "3.0.5",
+    "playwright": "^1.56.1"
+  }
+}
