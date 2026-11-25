@@ -1,0 +1,7 @@
+<section class="tab {{tab.cssClass}}" data-group="primary" data-tab="notes">
+  <label>{{localize "SPACER.Craft.Ship.crewRoles"}} <input type="text" name="system.crewRoles" value="{{system.crewRoles}}"></label>
+  <h3>{{localize "SPACER.Craft.Ship.description"}}</h3>
+  <prose-mirror name="system.description" value="{{source.description}}" {{#unless editable}}disabled{{/unless}}>{{{enriched.description}}}</prose-mirror>
+  <h3>{{localize "SPACER.Craft.Ship.notes"}}</h3>
+  <prose-mirror name="system.notes" value="{{source.notes}}" {{#unless editable}}disabled{{/unless}}>{{{enriched.notes}}}</prose-mirror>
+</section>

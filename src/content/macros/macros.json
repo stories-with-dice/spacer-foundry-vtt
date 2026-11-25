@@ -1,0 +1,18 @@
+[
+  { "name": "Spacer Toolkit", "type": "script", "img": "icons/svg/chest.svg", "command": "game.spacer.tools.open();" },
+  { "name": "Generate World", "type": "script", "img": "icons/svg/sun.svg", "command": "game.spacer.tools.generateWorld().then(r => r.journal?.sheet?.render(true));" },
+  { "name": "Generate Subsector", "type": "script", "img": "icons/svg/direction.svg", "command": "game.spacer.tools.generateSubsector().then(r => r.overview?.sheet?.render(true));" },
+  { "name": "Generate Patron & Job", "type": "script", "img": "icons/svg/coins.svg", "command": "game.spacer.tools.generatePatron();" },
+  { "name": "Generate NPC", "type": "script", "img": "icons/svg/mystery-man.svg", "command": "game.spacer.tools.generateNpc();" },
+  { "name": "Random NPC Encounter", "type": "script", "img": "icons/svg/statue.svg", "command": "game.spacer.tools.randomNpc();" },
+  { "name": "Information & Rumours", "type": "script", "img": "icons/svg/book.svg", "command": "game.spacer.tools.rumours();" },
+  { "name": "Generate Alien Animal", "type": "script", "img": "icons/svg/pawprint.svg", "command": "game.spacer.tools.generateAnimal({ terrain: 'open' });" },
+  { "name": "Starport Encounter", "type": "script", "img": "icons/svg/tower.svg", "command": "game.spacer.tools.starportEncounter();" },
+  { "name": "Settlement Encounter", "type": "script", "img": "icons/svg/village.svg", "command": "game.spacer.tools.settlementEncounter();" },
+  { "name": "Space Encounter", "type": "script", "img": "icons/svg/lightning.svg", "command": "game.spacer.tools.spaceEncounter({ location: 'settled' });" },
+  { "name": "Planetside Encounter", "type": "script", "img": "icons/svg/oak.svg", "command": "game.spacer.tools.planetsideEncounter({ terrain: 'open' });" },
+  { "name": "Weather Check", "type": "script", "img": "icons/svg/windmill.svg", "command": "game.spacer.tools.weather({ zone: 'temperate' });" },
+  { "name": "Trade Calculator", "type": "script", "img": "icons/svg/coins.svg", "command": "game.spacer.tools.trade();" },
+  { "name": "Solo Oracle", "type": "script", "img": "icons/svg/eye.svg", "command": "game.spacer.tools.oracle({ likelihood: 'even' });" },
+  { "name": "Advance Clock 6 Hours", "type": "script", "img": "icons/svg/clockwork.svg", "command": "game.spacer.tools.clock.advance('6h', { chat: true });" }
+]

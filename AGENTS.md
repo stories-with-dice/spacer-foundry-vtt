@@ -54,7 +54,7 @@ The `module/data/*` models belong to core. The craft area may change `prepareDer
   rolled score, `value` the current score. Derived: `system.dm.<key>`, `system.upp`,
   `system.injury`, `system.armor.total`, `system.encumbrance`, `system.movement`.
 - Skills are items of type `skill` with `system.skill` (base name), `system.specialty` ("" for the
-  base), and `system.rank`. Rank lookup: `skillRank(actor, "Melee", "Blade")` in
+  base), and `system.rank`. Rank lookup: `skillRank(actor, "Melee Combat", "Blade")` in
   `module/play/api.mjs`. Untrained is -3. Skill names must match the skills compendium
   (`src/content/skills/`), spelled as in the book (p.28-29).
 - Task rolls: `rollTask({ actor, characteristic, skill, specialty, dm, target, label })` returns

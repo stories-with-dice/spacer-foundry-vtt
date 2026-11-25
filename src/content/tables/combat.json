@@ -1,0 +1,95 @@
+[
+  {
+    "name": "Range Band",
+    "folder": "Combat",
+    "formula": "2d6",
+    "description": "<p>p.40. Roll 2D to determine encounter range. DMs (environment): interior locations -3; forest/swamp -2; urban/canyons -1; rural settlement/farmland +0; hills +1; mountains +2; plains, desert, tundra, coastal +3.</p>",
+    "results": [
+      {
+        "range": [
+          -10,
+          1
+        ],
+        "text": "Close"
+      },
+      {
+        "range": [
+          2,
+          5
+        ],
+        "text": "Short"
+      },
+      {
+        "range": [
+          6,
+          9
+        ],
+        "text": "Medium"
+      },
+      {
+        "range": [
+          10,
+          11
+        ],
+        "text": "Long"
+      },
+      {
+        "range": [
+          12,
+          30
+        ],
+        "text": "Very long"
+      }
+    ]
+  },
+  {
+    "name": "Additional Hits (STR or DEX)",
+    "folder": "Combat",
+    "formula": "1d6",
+    "description": "<p>p.43. Additional damage is randomly applied to STR or DEX. Roll 1D: odd results are STR; even results are DEX.</p>",
+    "results": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "text": "STR"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "DEX"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "STR"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "DEX"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "STR"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "DEX"
+      }
+    ]
+  }
+]

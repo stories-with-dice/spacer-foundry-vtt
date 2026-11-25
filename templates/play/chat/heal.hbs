@@ -1,0 +1,5 @@
+<div class="spacer sp-card sp-heal">
+  <header class="sp-card-head"><h3><i class="fa-solid fa-heart"></i> {{name}}</h3></header>
+  <p class="sp-card-sub">{{title}}{{#if source}} · {{source}}{{/if}}</p>
+  {{#if lines.length}}<ul class="sp-changes">{{#each lines}}<li><span>{{label}}</span> <b>{{before}} → {{after}}</b></li>{{/each}}</ul>{{/if}}
+</div>

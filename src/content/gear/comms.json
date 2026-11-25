@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Handheld Transceiver",
+    "type": "gear",
+    "folder": "Communication Tools",
+    "system": {
+      "category": "comms",
+      "cost": 250,
+      "weight": 10,
+      "tl": 5,
+      "traits": [],
+      "description": "<p>This item can be carried in hand or clipped to work equipment when not in use. Long Range.</p><p>The book gives the weight as \"10\" with no unit; read as 10kg.</p><p>Comm Range: All communication tools have a basic range. However, the effective range can be increased by spending +20% of the item’s cost to expand its effective range by +1.</p><p>Tech Level: Communication tools cost decrease by -20% per every tech level above the listed TL for that item, but cannot exceed three tech levels above the listed amount. The weight of the item is also halved when purchased at a higher tech level.</p><p>Comm range bands: Medium 50m, Long 250m, Very Long 500m, Distant 5km, Far 50km, Regional 500km, Continental 5,000km.</p>",
+      "source": "p.38"
+    }
+  },
+  {
+    "name": "Headset Transceiver",
+    "type": "gear",
+    "folder": "Communication Tools",
+    "system": {
+      "category": "comms",
+      "cost": 500,
+      "weight": 2.5,
+      "tl": 8,
+      "traits": [],
+      "description": "<p>This item is worn on the user's head to free up their hands for multitasking. Very Long Range.</p><p>Comm Range: All communication tools have a basic range. However, the effective range can be increased by spending +20% of the item’s cost to expand its effective range by +1.</p><p>Tech Level: Communication tools cost decrease by -20% per every tech level above the listed TL for that item, but cannot exceed three tech levels above the listed amount. The weight of the item is also halved when purchased at a higher tech level.</p><p>Comm range bands: Medium 50m, Long 250m, Very Long 500m, Distant 5km, Far 50km, Regional 500km, Continental 5,000km.</p>",
+      "source": "p.38"
+    }
+  },
+  {
+    "name": "Commdot Transceiver",
+    "type": "gear",
+    "folder": "Communication Tools",
+    "system": {
+      "category": "comms",
+      "cost": 1000,
+      "weight": 0,
+      "tl": 11,
+      "traits": [],
+      "description": "<p>Small, adhesive comms that are attached externally near the voice box and near the eardrum to have nearly silent communication. Designed to be hidden from visual detection. Medium Range.</p><p>Comm Range: All communication tools have a basic range. However, the effective range can be increased by spending +20% of the item’s cost to expand its effective range by +1.</p><p>Tech Level: Communication tools cost decrease by -20% per every tech level above the listed TL for that item, but cannot exceed three tech levels above the listed amount. The weight of the item is also halved when purchased at a higher tech level.</p><p>Comm range bands: Medium 50m, Long 250m, Very Long 500m, Distant 5km, Far 50km, Regional 500km, Continental 5,000km.</p>",
+      "source": "p.38"
+    }
+  },
+  {
+    "name": "Satellite Uplink",
+    "type": "gear",
+    "folder": "Communication Tools",
+    "system": {
+      "category": "comms",
+      "cost": 0,
+      "weight": 0.5,
+      "tl": 9,
+      "traits": [],
+      "description": "<p>Used to send a comm relay to an orbiting ship with a receiver designed for the satellite uplink. This is an external item that is connected to the communication tool through an integration module. Installing a satellite uplink costs x2 the device.</p><p>Cost: x2 the cost of the device (the cost field is 0).</p><p>Comm Range: All communication tools have a basic range. However, the effective range can be increased by spending +20% of the item’s cost to expand its effective range by +1.</p><p>Tech Level: Communication tools cost decrease by -20% per every tech level above the listed TL for that item, but cannot exceed three tech levels above the listed amount. The weight of the item is also halved when purchased at a higher tech level.</p><p>Comm range bands: Medium 50m, Long 250m, Very Long 500m, Distant 5km, Far 50km, Regional 500km, Continental 5,000km.</p>",
+      "source": "p.38"
+    }
+  },
+  {
+    "name": "Encryptor",
+    "type": "gear",
+    "folder": "Communication Tools",
+    "system": {
+      "category": "comms",
+      "cost": 5000,
+      "weight": 0.25,
+      "tl": 11,
+      "traits": [],
+      "description": "<p>This item encrypts all sent messages via scrambling. Only connected transceivers with encryptors installed and linked together can send and receive encrypted communications.</p><p>Cost: 5,000cr per device.</p><p>Comm Range: All communication tools have a basic range. However, the effective range can be increased by spending +20% of the item’s cost to expand its effective range by +1.</p><p>Tech Level: Communication tools cost decrease by -20% per every tech level above the listed TL for that item, but cannot exceed three tech levels above the listed amount. The weight of the item is also halved when purchased at a higher tech level.</p><p>Comm range bands: Medium 50m, Long 250m, Very Long 500m, Distant 5km, Far 50km, Regional 500km, Continental 5,000km.</p>",
+      "source": "p.38"
+    }
+  }
+]

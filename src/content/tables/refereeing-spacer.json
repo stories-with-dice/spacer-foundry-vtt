@@ -1,0 +1,87 @@
+[
+  {
+    "name": "Personal Drive",
+    "folder": "Refereeing Spacer",
+    "formula": "2d6",
+    "description": "<p>p.124. Roll 2D to generate a personal goal for a spacer, or use the table for examples.</p>",
+    "results": [
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "Revenge: You are driven to find catharsis from your pain by doing whatever is necessary to achieve revenge."
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "Justice: You have been wronged and seek to even the score to make things right."
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "Escape: You seek to disappear among the stars, running away from pain and conflict."
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "Survive: Life constantly throws obstacles at you, and you just want to make it to see tomorrow and get by without hassle."
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "Freedom: You have always been repressed and stepped on, incapable of escaping your lot in life. Now opportunity has shown you a means to break free."
+      },
+      {
+        "range": [
+          7,
+          7
+        ],
+        "text": "Purpose: You have felt aimless, and maybe still do. While your past experiences never fulfilled you, maybe your destiny lies in the stars beyond."
+      },
+      {
+        "range": [
+          8,
+          8
+        ],
+        "text": "New Life: You want to reinvent yourself by taking on a life change. In space, you can become anyone you want."
+      },
+      {
+        "range": [
+          9,
+          9
+        ],
+        "text": "Wealth: You work tirelessly to seek financial independence, to make life comfortable in your future so you can finally settle down and live a life free of danger. Or perhaps you instead seek wealth for influence, power, or to give charity."
+      },
+      {
+        "range": [
+          10,
+          10
+        ],
+        "text": "Faith: You have had a spiritual awakening, discovering the possibility that there is something bigger than yourself out in space that will bring you peace."
+      },
+      {
+        "range": [
+          11,
+          11
+        ],
+        "text": "Honour: Your reputation has been blemished in some way, and you seek to fix that."
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "text": "Redemption: You haven’t always been a great individual. You have justified your past actions as a means to an end, but now you are driven to right the wrongs you have done"
+      }
+    ]
+  }
+]

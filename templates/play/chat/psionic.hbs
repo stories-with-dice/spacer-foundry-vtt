@@ -1,0 +1,10 @@
+<div class="spacer sp-card sp-psionic">
+  <header class="sp-card-head"><img src="{{img}}" alt=""><h3>{{talent}} <small>{{discipline}} {{level}}</small></h3><span class="sp-target">−{{cost}} PSI</span></header>
+  <p class="sp-card-sub">{{localize "SPACER.Psi.CostBreakdown" base=base range=rangeCost extra=extra}}{{#if band}} · {{band}}{{/if}}{{#if duration}} · {{duration}}{{/if}}</p>
+  <ul class="sp-changes"><li><span>PSI</span> <b>{{before}} → {{after}}</b></li></ul>
+  {{#if rollHTML}}
+  {{{rollHTML}}}
+  <div class="sp-result {{#if success}}good{{else}}bad{{/if}}"><b>{{#if success}}{{localize "SPACER.Roll.Success"}}{{else}}{{localize "SPACER.Roll.Failure"}}{{/if}}</b> <span>{{target}}+ · {{localize "SPACER.Roll.Effect"}} {{effect}}</span></div>
+  {{/if}}
+  {{#if description}}<details class="sp-desc"><summary>{{localize "SPACER.Sheet.Description"}}</summary>{{{description}}}</details>{{/if}}
+</div>

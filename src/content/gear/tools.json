@@ -1,0 +1,198 @@
+[
+  {
+    "name": "Chainsaw",
+    "type": "gear",
+    "folder": "Tools and Tool Kits",
+    "system": {
+      "category": "tool",
+      "cost": 200,
+      "weight": 5,
+      "tl": 6,
+      "traits": [],
+      "description": "<p>A motorized tool for cutting through trees and other similar material.</p><p>Tools and Tool Kits: All tool kits are capable of the listed description for all items of the tool kits’ tech level or less.</p>",
+      "source": "p.37"
+    }
+  },
+  {
+    "name": "Climbing Gear",
+    "type": "gear",
+    "folder": "Tools and Tool Kits",
+    "system": {
+      "category": "tool",
+      "cost": 200,
+      "weight": 10,
+      "tl": 4,
+      "traits": [],
+      "description": "<p>A set of tools used for climbing and navigating vertical terrain, including pickaxes, 50m of cord, carabiners, pitons, a personal pulley system, and foot spurs.</p><p>Tools and Tool Kits: All tool kits are capable of the listed description for all items of the tool kits’ tech level or less.</p>",
+      "source": "p.37"
+    }
+  },
+  {
+    "name": "Cutting Torch",
+    "type": "gear",
+    "folder": "Tools and Tool Kits",
+    "system": {
+      "category": "tool",
+      "cost": 500,
+      "weight": 5,
+      "tl": 5,
+      "traits": [],
+      "description": "<p>A pack worn by the user that provides a torch for cutting through metal.</p><p>Tools and Tool Kits: All tool kits are capable of the listed description for all items of the tool kits’ tech level or less.</p>",
+      "source": "p.37"
+    }
+  },
+  {
+    "name": "General Purpose Tools",
+    "type": "gear",
+    "folder": "Tools and Tool Kits",
+    "system": {
+      "category": "tool",
+      "cost": 300,
+      "weight": 20,
+      "tl": 4,
+      "traits": [],
+      "description": "<p>Tools necessary for construction or repairing anything of TL6 or less, including shelters and simple mechanical objects.</p><p>Tools and Tool Kits: All tool kits are capable of the listed description for all items of the tool kits’ tech level or less.</p>",
+      "source": "p.37"
+    }
+  },
+  {
+    "name": "Medical Kit",
+    "type": "gear",
+    "folder": "Tools and Tool Kits",
+    "system": {
+      "category": "tool",
+      "cost": 600,
+      "weight": 1,
+      "tl": 6,
+      "traits": [],
+      "description": "<p>Provides the necessary tools for performing first aid to treat injuries. Using the kit requires first aid Skill. Successful use of the first aid kit recovers D3 END if END was 0.</p><p>Tools and Tool Kits: All tool kits are capable of the listed description for all items of the tool kits’ tech level or less.</p>",
+      "source": "p.37"
+    }
+  },
+  {
+    "name": "Metalwork Tools",
+    "type": "gear",
+    "folder": "Tools and Tool Kits",
+    "system": {
+      "category": "tool",
+      "cost": 150,
+      "weight": 50,
+      "tl": 0,
+      "traits": [],
+      "description": "<p>Tools necessary for repairing and crafting metal equipment, including basic tools and weapons. Includes welder and basic smithing tools.</p><p>Cost: 150cr x TL.</p><p>*Tools and Tech Level: These tools are dependent on the desired tech level wanted by the spacer. The tech level of the tools can be used to repair, construct, or fabricate items, objects, vehicles, etc. of equal tech level or below. For Example, a TL 11 electronics tool set costs 550cr, can repair any electronics up to TL 11, and can only be purchased on worlds with TL 11 or higher. Book cost: \"x TL\" (cost per tech level); the cost field holds the per-TL cost, and the TL field is 0 (choose the tech level).</p><p>Tools and Tool Kits: All tool kits are capable of the listed description for all items of the tool kits’ tech level or less.</p>",
+      "source": "p.37"
+    }
+  },
+  {
+    "name": "Fabrication Tools",
+    "type": "gear",
+    "folder": "Tools and Tool Kits",
+    "system": {
+      "category": "tool",
+      "cost": 200,
+      "weight": 40,
+      "tl": 0,
+      "traits": [],
+      "description": "<p>Tools necessary for creating and repairing armour, vaccsuits, and other equipment worn on the body.</p><p>Cost: 200cr x TL.</p><p>*Tools and Tech Level: These tools are dependent on the desired tech level wanted by the spacer. The tech level of the tools can be used to repair, construct, or fabricate items, objects, vehicles, etc. of equal tech level or below. For Example, a TL 11 electronics tool set costs 550cr, can repair any electronics up to TL 11, and can only be purchased on worlds with TL 11 or higher. Book cost: \"x TL\" (cost per tech level); the cost field holds the per-TL cost, and the TL field is 0 (choose the tech level).</p><p>Tools and Tool Kits: All tool kits are capable of the listed description for all items of the tool kits’ tech level or less.</p>",
+      "source": "p.37"
+    }
+  },
+  {
+    "name": "Mechanical Tools",
+    "type": "gear",
+    "folder": "Tools and Tool Kits",
+    "system": {
+      "category": "tool",
+      "cost": 100,
+      "weight": 30,
+      "tl": 0,
+      "traits": [],
+      "description": "<p>Tools necessary for repairing vehicles, starships, and non-electronic personal weaponry.</p><p>Cost: 100cr x TL.</p><p>*Tools and Tech Level: These tools are dependent on the desired tech level wanted by the spacer. The tech level of the tools can be used to repair, construct, or fabricate items, objects, vehicles, etc. of equal tech level or below. For Example, a TL 11 electronics tool set costs 550cr, can repair any electronics up to TL 11, and can only be purchased on worlds with TL 11 or higher. Book cost: \"x TL\" (cost per tech level); the cost field holds the per-TL cost, and the TL field is 0 (choose the tech level).</p><p>Tools and Tool Kits: All tool kits are capable of the listed description for all items of the tool kits’ tech level or less.</p>",
+      "source": "p.37"
+    }
+  },
+  {
+    "name": "Electronics Tools",
+    "type": "gear",
+    "folder": "Tools and Tool Kits",
+    "system": {
+      "category": "tool",
+      "cost": 50,
+      "weight": 10,
+      "tl": 0,
+      "traits": [],
+      "description": "<p>Tools necessary for repairing computers and electronic equipment, such as comms and energy weapons.</p><p>Cost: 50cr x TL.</p><p>*Tools and Tech Level: These tools are dependent on the desired tech level wanted by the spacer. The tech level of the tools can be used to repair, construct, or fabricate items, objects, vehicles, etc. of equal tech level or below. For Example, a TL 11 electronics tool set costs 550cr, can repair any electronics up to TL 11, and can only be purchased on worlds with TL 11 or higher. Book cost: \"x TL\" (cost per tech level); the cost field holds the per-TL cost, and the TL field is 0 (choose the tech level).</p><p>Tools and Tool Kits: All tool kits are capable of the listed description for all items of the tool kits’ tech level or less.</p>",
+      "source": "p.37"
+    }
+  },
+  {
+    "name": "Lock-Bypass Kit",
+    "type": "gear",
+    "folder": "Tools and Tool Kits",
+    "system": {
+      "category": "tool",
+      "cost": 200,
+      "weight": 5,
+      "tl": 6,
+      "traits": [],
+      "description": "<p>Used for attempting to bypass mechanical locks.</p><p>Tools and Tool Kits: All tool kits are capable of the listed description for all items of the tool kits’ tech level or less.</p>",
+      "source": "p.37"
+    }
+  },
+  {
+    "name": "Disguise Kit",
+    "type": "gear",
+    "folder": "Tools and Tool Kits",
+    "system": {
+      "category": "tool",
+      "cost": 1000,
+      "weight": 5,
+      "tl": 7,
+      "traits": [],
+      "description": "<p>Provides the needed tools to make a temporary disguise in the likeness of another human and grants +2DM to attempts to mimic them.</p><p>Tools and Tool Kits: All tool kits are capable of the listed description for all items of the tool kits’ tech level or less.</p>",
+      "source": "p.37"
+    }
+  },
+  {
+    "name": "Hand Computer",
+    "type": "gear",
+    "folder": "Tools and Tool Kits",
+    "system": {
+      "category": "tool",
+      "cost": 1000,
+      "weight": 0.5,
+      "tl": 9,
+      "traits": [],
+      "description": "<p>A small personal computer that can be carried in a pocket, with the capabilities of Computer/1. Hand computers can be connected to a starship’s terminal for uploading or downloading information or for interfacing with other computer systems.</p><p>Tools and Tool Kits: All tool kits are capable of the listed description for all items of the tool kits’ tech level or less.</p>",
+      "source": "p.37"
+    }
+  },
+  {
+    "name": "Cyberdeck",
+    "type": "gear",
+    "folder": "Tools and Tool Kits",
+    "system": {
+      "category": "tool",
+      "cost": 10000,
+      "weight": 2,
+      "tl": 11,
+      "traits": [],
+      "description": "<p>Similar to hand computers but designed to program, hack, and repair computer programs along with running diagnostics. Cyberdecks are considered Computer/2.</p><p>Tools and Tool Kits: All tool kits are capable of the listed description for all items of the tool kits’ tech level or less.</p>",
+      "source": "p.37"
+    }
+  },
+  {
+    "name": "Iris Valve Opener",
+    "type": "gear",
+    "folder": "Tools and Tool Kits",
+    "system": {
+      "category": "tool",
+      "cost": 300,
+      "weight": 3,
+      "tl": 9,
+      "traits": [],
+      "description": "<p>A tool used for the manual opening of iris valves on starships.</p><p>Tools and Tool Kits: All tool kits are capable of the listed description for all items of the tool kits’ tech level or less.</p>",
+      "source": "p.37"
+    }
+  }
+]

@@ -1,0 +1,113 @@
+[
+  {
+    "name": "Body Pistol",
+    "type": "weapon",
+    "folder": "Short Weapons",
+    "system": {
+      "category": "short",
+      "skill": "Ranged Combat",
+      "specialty": "Short",
+      "damage": "2D",
+      "range": "medium",
+      "rounds": 10,
+      "ammo": 10,
+      "cost": 500,
+      "weight": 0.25,
+      "tl": 7,
+      "traits": [
+        "Conceal"
+      ],
+      "description": "<p>A small and easily concealable firearm. Gain +1DM to conceal this weapon if needed.</p><p>Short Arms Ammo: each round costs 5cr and weighs 10g.</p><p><strong>Traits</strong></p><ul><li>Conceal: This weapon can be concealed easily, granting +1DM when attempting to hide the weapon.</li></ul>",
+      "source": "p.30-31"
+    }
+  },
+  {
+    "name": "Auto Pistol",
+    "type": "weapon",
+    "folder": "Short Weapons",
+    "system": {
+      "category": "short",
+      "skill": "Ranged Combat",
+      "specialty": "Short",
+      "damage": "2D",
+      "range": "medium",
+      "rounds": 12,
+      "ammo": 12,
+      "cost": 250,
+      "weight": 0.75,
+      "tl": 5,
+      "traits": [
+        "Auto 2"
+      ],
+      "description": "<p>This weapon is a one-handed firearm capable of auto-fire.</p><p>Short Arms Ammo: each round costs 5cr and weighs 10g.</p><p><strong>Traits</strong></p><ul><li>Auto 2: Can be fired at a number of different targets during the same combat round, equal to the Auto number; always fires this amount of rounds. Multiple targets: -1DM per interval of Auto. Single target: the Auto number is added as damage on a hit. Suppression: +DM equal to the Auto number.</li></ul>",
+      "source": "p.30-31"
+    }
+  },
+  {
+    "name": "Revolver",
+    "type": "weapon",
+    "folder": "Short Weapons",
+    "system": {
+      "category": "short",
+      "skill": "Ranged Combat",
+      "specialty": "Short",
+      "damage": "3D",
+      "range": "medium",
+      "rounds": 6,
+      "ammo": 6,
+      "cost": 150,
+      "weight": 1,
+      "tl": 4,
+      "traits": [
+        "Reliable",
+        "Spread"
+      ],
+      "description": "<p>The revolver is an older but reliable firearm. Ignore weapon-jamming if a 2 is rolled on an attack.</p><p>Short Arms Ammo: each round costs 5cr and weighs 10g.</p><p><strong>Traits</strong></p><ul><li>Reliable: Ignore weapon-jamming if a 2 is rolled on an attack.</li><li>Spread: Can use Spread ammo: decrease effective range by one range band; -1DM per target in range, damage split evenly between the targets hit.</li></ul>",
+      "source": "p.30-31"
+    }
+  },
+  {
+    "name": "Snub Pistol",
+    "type": "weapon",
+    "folder": "Short Weapons",
+    "system": {
+      "category": "short",
+      "skill": "Ranged Combat",
+      "specialty": "Short",
+      "damage": "2D",
+      "range": "medium",
+      "rounds": 10,
+      "ammo": 10,
+      "cost": 1000,
+      "weight": 0.25,
+      "tl": 9,
+      "traits": [
+        "Zero-G"
+      ],
+      "description": "<p>Similar to a body pistol but is designed to be used in low gravity situations by preventing recoil.</p><p>Short Arms Ammo: each round costs 5cr and weighs 10g.</p><p><strong>Traits</strong></p><ul><li>Zero-G: Prevents recoil, allowing use in low-to-no gravity without incurring penalties to attacks due to drifting.</li></ul>",
+      "source": "p.30-31"
+    }
+  },
+  {
+    "name": "Gauss Pistol",
+    "type": "weapon",
+    "folder": "Short Weapons",
+    "system": {
+      "category": "short",
+      "skill": "Ranged Combat",
+      "specialty": "Short",
+      "damage": "3D+3",
+      "range": "long",
+      "rounds": 6,
+      "ammo": 6,
+      "cost": 2000,
+      "weight": 0.5,
+      "tl": 13,
+      "traits": [
+        "Piercing 1"
+      ],
+      "description": "<p>This weapon accelerates the round using electromagnetic power to provide more damage.</p><p>Short Arms Ammo: each round costs 5cr and weighs 10g.</p><p><strong>Traits</strong></p><ul><li>Piercing 1: Reduces the Armour of the target by the listed number, to a minimum of 8+ to hit.</li></ul>",
+      "source": "p.30-31"
+    }
+  }
+]

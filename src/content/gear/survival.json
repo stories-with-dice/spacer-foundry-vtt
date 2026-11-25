@@ -1,0 +1,256 @@
+[
+  {
+    "name": "Respirator",
+    "type": "gear",
+    "folder": "Survival Gear",
+    "system": {
+      "category": "survival",
+      "cost": 100,
+      "weight": 1,
+      "tl": 5,
+      "traits": [],
+      "description": "<p>Assists with breathing in a thin atmosphere (type 3 or less), using a supplemental compressed air tank to provide the air needed.</p>",
+      "source": "p.35"
+    }
+  },
+  {
+    "name": "Filter Mask",
+    "type": "gear",
+    "folder": "Survival Gear",
+    "system": {
+      "category": "survival",
+      "cost": 10,
+      "weight": 1,
+      "tl": 5,
+      "traits": [],
+      "description": "<p>Necessary for breathing in a tainted atmosphere (types 4, 7, and 9).</p>",
+      "source": "p.35"
+    }
+  },
+  {
+    "name": "Combo Mask",
+    "type": "gear",
+    "folder": "Survival Gear",
+    "system": {
+      "category": "survival",
+      "cost": 150,
+      "weight": 1,
+      "tl": 5,
+      "traits": [],
+      "description": "<p>This mask provides the benefit of both the respirator and filter mask.</p>",
+      "source": "p.35"
+    }
+  },
+  {
+    "name": "Air Tank",
+    "type": "gear",
+    "folder": "Survival Gear",
+    "system": {
+      "category": "survival",
+      "cost": 500,
+      "weight": 5,
+      "tl": 5,
+      "traits": [],
+      "description": "<p>A compressed oxygen tank used for respirators, vaccsuits, and scuba.</p><p>Refill: 20cr.</p>",
+      "source": "p.35"
+    }
+  },
+  {
+    "name": "Rebreather Mask",
+    "type": "gear",
+    "folder": "Survival Gear",
+    "system": {
+      "category": "survival",
+      "cost": 4000,
+      "weight": 1,
+      "tl": 8,
+      "traits": [],
+      "description": "<p>In aquatic environments, this allows the wearer to breathe normally underwater without needing an external compressed tank.</p>",
+      "source": "p.35"
+    }
+  },
+  {
+    "name": "Scuba Equipment",
+    "type": "gear",
+    "folder": "Survival Gear",
+    "system": {
+      "category": "survival",
+      "cost": 200,
+      "weight": 1,
+      "tl": 4,
+      "traits": [],
+      "description": "<p>Used for long-term underwater swimming. It includes a respirator, air tank, fins, insulated wet suit, and goggles.</p>",
+      "source": "p.35"
+    }
+  },
+  {
+    "name": "Heavy Protective Suit (HPS)",
+    "type": "gear",
+    "folder": "Survival Gear",
+    "system": {
+      "category": "survival",
+      "cost": 1500,
+      "weight": 8,
+      "tl": 5,
+      "traits": [],
+      "description": "<p>HPS are used to protect the wearer from corrosive (type B) and insidious atmospheres (type C) as well as radiation for up to 12 hours. Functions as cloth armour.</p>",
+      "source": "p.35"
+    }
+  },
+  {
+    "name": "Vaccsuit (TL8)",
+    "type": "gear",
+    "folder": "Survival Gear",
+    "system": {
+      "category": "survival",
+      "cost": 10000,
+      "weight": 10,
+      "tl": 8,
+      "traits": [
+        "Vaccsuit"
+      ],
+      "description": "<p>Vaccsuits provide protection from the vacuum of space in addition to what HPS provides, while providing communications and air to breathe. Each vaccsuit type by tech level provides longer duration of use.</p><ul><li>Air supply: 8 hours of air</li><li>Corrosive/hazardous atmospheres: 8 hours</li><li>Comms: 5km of communication range (Medium Range)</li><li>Radiation protection up to 80 rads</li><li>Armour: Equal to cloth armour</li></ul><p>All vaccsuits have attachment points for equipment and additional modifications such as extra air tanks, holsters, climbing harness, backpacks, etc.</p>",
+      "source": "p.35"
+    }
+  },
+  {
+    "name": "Vaccsuit (TL9)",
+    "type": "gear",
+    "folder": "Survival Gear",
+    "system": {
+      "category": "survival",
+      "cost": 10000,
+      "weight": 8,
+      "tl": 9,
+      "traits": [
+        "Vaccsuit"
+      ],
+      "description": "<p>Same as the vaccsuit of the prior tech level but has the following upgrades:</p><ul><li>9 hours of effective time</li><li>Long communication range (250m)</li><li>Protection against up to 90 rads</li></ul>",
+      "source": "p.35"
+    }
+  },
+  {
+    "name": "Vaccsuit (TL10)",
+    "type": "gear",
+    "folder": "Survival Gear",
+    "system": {
+      "category": "survival",
+      "cost": 10000,
+      "weight": 6,
+      "tl": 10,
+      "traits": [
+        "Vaccsuit"
+      ],
+      "description": "<p>Same as the vaccsuit of the prior tech level but has the following upgrades:</p><ul><li>10 hours of effective time</li><li>Very Long communication range (500m)</li><li>Protection against up to 100 rads</li></ul>",
+      "source": "p.35"
+    }
+  },
+  {
+    "name": "Vaccsuit (TL11)",
+    "type": "gear",
+    "folder": "Survival Gear",
+    "system": {
+      "category": "survival",
+      "cost": 10000,
+      "weight": 4,
+      "tl": 11,
+      "traits": [
+        "Vaccsuit"
+      ],
+      "description": "<p>Same as the vaccsuit of the prior tech level but has the following upgrades:</p><ul><li>11 hours of effective time</li><li>Distant communication range (5km)</li><li>Protection against up to 110 rads</li></ul>",
+      "source": "p.35"
+    }
+  },
+  {
+    "name": "Vaccsuit (TL12)",
+    "type": "gear",
+    "folder": "Survival Gear",
+    "system": {
+      "category": "survival",
+      "cost": 10000,
+      "weight": 2,
+      "tl": 12,
+      "traits": [
+        "Vaccsuit"
+      ],
+      "description": "<p>Same as the vaccsuit of the prior tech level but has the following upgrades:</p><ul><li>12 hours of effective time</li><li>Far communication range (50km)</li><li>Protection against up to 120 rads</li></ul>",
+      "source": "p.35"
+    }
+  },
+  {
+    "name": "Vaccsuit (TL13)",
+    "type": "gear",
+    "folder": "Survival Gear",
+    "system": {
+      "category": "survival",
+      "cost": 10000,
+      "weight": 1,
+      "tl": 13,
+      "traits": [
+        "Vaccsuit"
+      ],
+      "description": "<p>Same as the vaccsuit of the prior tech level but has the following upgrades:</p><ul><li>12+1D hours of effective time</li><li>Far communication range (50km)</li><li>Protection against up to 130 rads</li></ul>",
+      "source": "p.35"
+    }
+  },
+  {
+    "name": "Cold Weather Gear",
+    "type": "gear",
+    "folder": "Survival Gear",
+    "system": {
+      "category": "survival",
+      "cost": 200,
+      "weight": 2,
+      "tl": 1,
+      "traits": [],
+      "description": "<p>Protects the wearer from arctic temperatures up to -25 Celsius and doubles as jack armour.</p>",
+      "source": "p.35"
+    }
+  },
+  {
+    "name": "Cold Weather Gear (TL10)",
+    "type": "gear",
+    "folder": "Survival Gear",
+    "system": {
+      "category": "survival",
+      "cost": 800,
+      "weight": 1,
+      "tl": 10,
+      "traits": [],
+      "description": "<p>Protects the wearer from arctic temperatures up to -50 Celsius and doubles as jack armour.</p>",
+      "source": "p.35"
+    }
+  },
+  {
+    "name": "Survival Bubble",
+    "type": "gear",
+    "folder": "Survival Gear",
+    "system": {
+      "category": "survival",
+      "cost": 600,
+      "weight": 3,
+      "tl": 9,
+      "traits": [],
+      "description": "<p>An automatic and instantly inflating personal atmosphere that is 2m in diametre, which protects a single person for eight hours against external hazards and the vacuum of space. On a planet's surface, the individual in the bubble can walk inside like a hamster ball.</p>",
+      "source": "p.35"
+    }
+  },
+  {
+    "name": "Vacctape",
+    "type": "gear",
+    "folder": "Survival Gear",
+    "system": {
+      "category": "survival",
+      "cost": 50,
+      "weight": 0.25,
+      "tl": 9,
+      "traits": [],
+      "uses": {
+        "value": 10,
+        "max": 10
+      },
+      "description": "<p>An adhesive-backed fabric weave used to patch punctures in a vaccsuit in an emergency. Vacctape comes in a roll with up to ten applications. Any vaccsuit with punctures decreases in effective time of use by 1 hour after taping. A vaccsuit with 8 punctures is non-usable.</p>",
+      "source": "p.35"
+    }
+  }
+]

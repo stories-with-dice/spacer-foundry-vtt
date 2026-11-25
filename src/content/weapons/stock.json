@@ -1,0 +1,132 @@
+[
+  {
+    "name": "Carbine",
+    "type": "weapon",
+    "folder": "Stock Weapons",
+    "system": {
+      "category": "stock",
+      "skill": "Ranged Combat",
+      "specialty": "Stock",
+      "damage": "3D+3",
+      "range": "medium",
+      "rounds": 30,
+      "ammo": 30,
+      "cost": 200,
+      "weight": 3,
+      "tl": 5,
+      "traits": [],
+      "description": "<p>An easy-to-use ranged weapon for those less experienced. If used by someone untrained in Ranged Combat (stock), they can instead use their Ranged Combat (short) Skill in its place.</p><p>Buttstroke: a spacer can use their stocked firearm as a bludgeoning melee weapon at -1DM and deal 1D+3 damage.</p><p>Stock Arms Ammo: each round costs 10cr and weighs 20g, or 50g per slug. For example, a carbine ammo cartridge weighs 600g and costs 300cr.</p>",
+      "source": "p.31"
+    }
+  },
+  {
+    "name": "Shotgun",
+    "type": "weapon",
+    "folder": "Stock Weapons",
+    "system": {
+      "category": "stock",
+      "skill": "Ranged Combat",
+      "specialty": "Stock",
+      "damage": "4D",
+      "range": "long",
+      "rounds": 10,
+      "ammo": 10,
+      "cost": 150,
+      "weight": 4,
+      "tl": 4,
+      "traits": [
+        "Spread"
+      ],
+      "description": "<p>A powerful weapon popular for ship defense and boarding. Shotguns can be loaded with Spread ammo (Spread ammo decreases the weapon’s range from Long to Medium).</p><p>Buttstroke: a spacer can use their stocked firearm as a bludgeoning melee weapon at -1DM and deal 1D+3 damage.</p><p>Stock Arms Ammo: each round costs 10cr and weighs 20g, or 50g per slug. For example, a carbine ammo cartridge weighs 600g and costs 300cr.</p><p><strong>Traits</strong></p><ul><li>Spread: Can use Spread ammo: decrease effective range by one range band; -1DM per target in range, damage split evenly between the targets hit.</li></ul>",
+      "source": "p.31"
+    }
+  },
+  {
+    "name": "Rifle",
+    "type": "weapon",
+    "folder": "Stock Weapons",
+    "system": {
+      "category": "stock",
+      "skill": "Ranged Combat",
+      "specialty": "Stock",
+      "damage": "3D+6",
+      "range": "veryLong",
+      "rounds": 10,
+      "ammo": 10,
+      "cost": 200,
+      "weight": 4,
+      "tl": 5,
+      "traits": [
+        "Reliable"
+      ],
+      "description": "<p>A common firearm used for hunting, survival, and defense. Rifles are ideal for long-range use.</p><p>Buttstroke: a spacer can use their stocked firearm as a bludgeoning melee weapon at -1DM and deal 1D+3 damage.</p><p>Stock Arms Ammo: each round costs 10cr and weighs 20g, or 50g per slug. For example, a carbine ammo cartridge weighs 600g and costs 300cr.</p><p><strong>Traits</strong></p><ul><li>Reliable: Ignore weapon-jamming if a 2 is rolled on an attack.</li></ul>",
+      "source": "p.31"
+    }
+  },
+  {
+    "name": "Auto Rifle",
+    "type": "weapon",
+    "folder": "Stock Weapons",
+    "system": {
+      "category": "stock",
+      "skill": "Ranged Combat",
+      "specialty": "Stock",
+      "damage": "3D",
+      "range": "long",
+      "rounds": 50,
+      "ammo": 50,
+      "cost": 1000,
+      "weight": 5,
+      "tl": 6,
+      "traits": [
+        "Auto 3"
+      ],
+      "description": "<p>Semi-Auto Rifle: An entry-level military firearm. This weapon is capable of firing two rounds at a time within long range.</p><p>Buttstroke: a spacer can use their stocked firearm as a bludgeoning melee weapon at -1DM and deal 1D+3 damage.</p><p>Stock Arms Ammo: each round costs 10cr and weighs 20g, or 50g per slug. For example, a carbine ammo cartridge weighs 600g and costs 300cr.</p><p><strong>Traits</strong></p><ul><li>Auto 3: Can be fired at a number of different targets during the same combat round, equal to the Auto number; always fires this amount of rounds. Multiple targets: -1DM per interval of Auto. Single target: the Auto number is added as damage on a hit. Suppression: +DM equal to the Auto number.</li></ul>",
+      "source": "p.31"
+    }
+  },
+  {
+    "name": "SMG",
+    "type": "weapon",
+    "folder": "Stock Weapons",
+    "system": {
+      "category": "stock",
+      "skill": "Ranged Combat",
+      "specialty": "Stock",
+      "damage": "3D-3",
+      "range": "medium",
+      "rounds": 50,
+      "ammo": 50,
+      "cost": 500,
+      "weight": 2.5,
+      "tl": 5,
+      "traits": [
+        "Auto 5"
+      ],
+      "description": "<p>Sub-Machine Gun: A destructive military firearm capable of firing four rounds at a time.</p><p>Buttstroke: a spacer can use their stocked firearm as a bludgeoning melee weapon at -1DM and deal 1D+3 damage.</p><p>Stock Arms Ammo: each round costs 10cr and weighs 20g, or 50g per slug. For example, a carbine ammo cartridge weighs 600g and costs 300cr.</p><p><strong>Traits</strong></p><ul><li>Auto 5: Can be fired at a number of different targets during the same combat round, equal to the Auto number; always fires this amount of rounds. Multiple targets: -1DM per interval of Auto. Single target: the Auto number is added as damage on a hit. Suppression: +DM equal to the Auto number.</li></ul>",
+      "source": "p.31"
+    }
+  },
+  {
+    "name": "Gauss Rifle",
+    "type": "weapon",
+    "folder": "Stock Weapons",
+    "system": {
+      "category": "stock",
+      "skill": "Ranged Combat",
+      "specialty": "Stock",
+      "damage": "3D+6",
+      "range": "veryLong",
+      "rounds": 5,
+      "ammo": 5,
+      "cost": 2000,
+      "weight": 5,
+      "tl": 12,
+      "traits": [
+        "Piercing 2"
+      ],
+      "description": "<p>Similar to the gauss pistol, but applied to a rifle. (Gauss pistol: this weapon accelerates the round using electromagnetic power to provide more damage.)</p><p>Buttstroke: a spacer can use their stocked firearm as a bludgeoning melee weapon at -1DM and deal 1D+3 damage.</p><p>Stock Arms Ammo: each round costs 10cr and weighs 20g, or 50g per slug. For example, a carbine ammo cartridge weighs 600g and costs 300cr.</p><p><strong>Traits</strong></p><ul><li>Piercing 2: Reduces the Armour of the target by the listed number, to a minimum of 8+ to hit.</li></ul>",
+      "source": "p.31"
+    }
+  }
+]

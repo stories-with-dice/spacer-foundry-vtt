@@ -1,0 +1,216 @@
+[
+  {
+    "name": "Thrown Item",
+    "type": "weapon",
+    "folder": "Archaic Weapons",
+    "system": {
+      "category": "archaic",
+      "skill": "Ranged Combat",
+      "specialty": "Archaic",
+      "damage": "D3",
+      "range": "short",
+      "rounds": 1,
+      "ammo": 1,
+      "cost": 0,
+      "weight": 0,
+      "tl": 0,
+      "traits": [
+        "Thrown",
+        "Low-Tech"
+      ],
+      "description": "<p>Damage: D3 per 1kg of the thrown item. Cost and weight: na.</p><p>Archaic weapons are cruder ranged weapons used in low-tech societies.</p><p><strong>Traits</strong></p><ul><li>Thrown: Adds STR modifier to thrown attacks AND damage; cannot throw more than 1kg per +1DM STR modifier; each additional 1kg deals D3 damage.</li><li>Low-Tech: Anyone attempting to use this weapon without Ranged (Archaic) incurs an additional -1DM; wind, temperature, moisture, etc. are factors in its efficiency.</li></ul>",
+      "source": "p.32"
+    }
+  },
+  {
+    "name": "Sling",
+    "type": "weapon",
+    "folder": "Archaic Weapons",
+    "system": {
+      "category": "archaic",
+      "skill": "Ranged Combat",
+      "specialty": "Archaic",
+      "damage": "2D-3",
+      "range": "long",
+      "rounds": 1,
+      "ammo": 1,
+      "cost": 5,
+      "weight": 0.05,
+      "tl": 0,
+      "traits": [
+        "Arching",
+        "Low-Tech"
+      ],
+      "description": "<p>Archaic weapons are cruder ranged weapons used in low-tech societies.</p><p><strong>Traits</strong></p><ul><li>Arching: Can be fired in an arching trajectory, decreasing any cover bonus for the target by 1 step.</li><li>Low-Tech: Anyone attempting to use this weapon without Ranged (Archaic) incurs an additional -1DM; wind, temperature, moisture, etc. are factors in its efficiency.</li></ul>",
+      "source": "p.32"
+    }
+  },
+  {
+    "name": "Blowgun",
+    "type": "weapon",
+    "folder": "Archaic Weapons",
+    "system": {
+      "category": "archaic",
+      "skill": "Ranged Combat",
+      "specialty": "Archaic",
+      "damage": "1D",
+      "range": "medium",
+      "rounds": 1,
+      "ammo": 1,
+      "cost": 30,
+      "weight": 0.1,
+      "tl": 1,
+      "traits": [
+        "Shafted",
+        "Low-Tech"
+      ],
+      "description": "<p>Archaic weapons are cruder ranged weapons used in low-tech societies.</p><p><strong>Traits</strong></p><ul><li>Shafted: The ammunition is shafted missiles that can transport additional effects, such as poison, minor explosives, or other items as allowed by the referee.</li><li>Low-Tech: Anyone attempting to use this weapon without Ranged (Archaic) incurs an additional -1DM; wind, temperature, moisture, etc. are factors in its efficiency.</li></ul>",
+      "source": "p.32"
+    }
+  },
+  {
+    "name": "Bow",
+    "type": "weapon",
+    "folder": "Archaic Weapons",
+    "system": {
+      "category": "archaic",
+      "skill": "Ranged Combat",
+      "specialty": "Archaic",
+      "damage": "2D+3",
+      "range": "medium",
+      "rounds": 1,
+      "ammo": 1,
+      "cost": 50,
+      "weight": 1,
+      "tl": 2,
+      "traits": [
+        "Arching",
+        "Piercing 1",
+        "Shafted",
+        "Low-Tech"
+      ],
+      "description": "<p>Archaic weapons are cruder ranged weapons used in low-tech societies.</p><p><strong>Traits</strong></p><ul><li>Arching: Can be fired in an arching trajectory, decreasing any cover bonus for the target by 1 step.</li><li>Piercing 1: Reduces the Armour of the target by the listed number, to a minimum of 8+ to hit.</li><li>Shafted: The ammunition is shafted missiles that can transport additional effects, such as poison, minor explosives, or other items as allowed by the referee.</li><li>Low-Tech: Anyone attempting to use this weapon without Ranged (Archaic) incurs an additional -1DM; wind, temperature, moisture, etc. are factors in its efficiency.</li></ul>",
+      "source": "p.32"
+    }
+  },
+  {
+    "name": "Crossbow",
+    "type": "weapon",
+    "folder": "Archaic Weapons",
+    "system": {
+      "category": "archaic",
+      "skill": "Ranged Combat",
+      "specialty": "Archaic",
+      "damage": "3D-3",
+      "range": "long",
+      "rounds": 1,
+      "ammo": 1,
+      "cost": 150,
+      "weight": 1,
+      "tl": 2,
+      "traits": [
+        "Piercing 2",
+        "Shafted",
+        "Low-Tech"
+      ],
+      "description": "<p>Archaic weapons are cruder ranged weapons used in low-tech societies.</p><p><strong>Traits</strong></p><ul><li>Piercing 2: Reduces the Armour of the target by the listed number, to a minimum of 8+ to hit.</li><li>Shafted: The ammunition is shafted missiles that can transport additional effects, such as poison, minor explosives, or other items as allowed by the referee.</li><li>Low-Tech: Anyone attempting to use this weapon without Ranged (Archaic) incurs an additional -1DM; wind, temperature, moisture, etc. are factors in its efficiency.</li></ul>",
+      "source": "p.32"
+    }
+  },
+  {
+    "name": "Flintlock Rifle",
+    "type": "weapon",
+    "folder": "Archaic Weapons",
+    "system": {
+      "category": "archaic",
+      "skill": "Ranged Combat",
+      "specialty": "Archaic",
+      "damage": "3D+3",
+      "range": "long",
+      "rounds": 1,
+      "ammo": 1,
+      "cost": 300,
+      "weight": 5,
+      "tl": 2,
+      "traits": [
+        "Slow-Reload",
+        "Unreliable",
+        "Low-Tech"
+      ],
+      "description": "<p>Archaic weapons are cruder ranged weapons used in low-tech societies.</p><p><strong>Traits</strong></p><ul><li>Slow-Reload: It takes two full rounds to reload this firearm.</li><li>Unreliable: If this weapon misfires, it takes D3 rounds to reset it to be usable again.</li><li>Low-Tech: Anyone attempting to use this weapon without Ranged (Archaic) incurs an additional -1DM; wind, temperature, moisture, etc. are factors in its efficiency.</li></ul>",
+      "source": "p.32"
+    }
+  },
+  {
+    "name": "Flintlock Pistol",
+    "type": "weapon",
+    "folder": "Archaic Weapons",
+    "system": {
+      "category": "archaic",
+      "skill": "Ranged Combat",
+      "specialty": "Archaic",
+      "damage": "3D",
+      "range": "medium",
+      "rounds": 1,
+      "ammo": 1,
+      "cost": 200,
+      "weight": 3,
+      "tl": 2,
+      "traits": [
+        "Slow-Reload",
+        "Unreliable",
+        "Low-Tech"
+      ],
+      "description": "<p>Archaic weapons are cruder ranged weapons used in low-tech societies.</p><p><strong>Traits</strong></p><ul><li>Slow-Reload: It takes two full rounds to reload this firearm.</li><li>Unreliable: If this weapon misfires, it takes D3 rounds to reset it to be usable again.</li><li>Low-Tech: Anyone attempting to use this weapon without Ranged (Archaic) incurs an additional -1DM; wind, temperature, moisture, etc. are factors in its efficiency.</li></ul>",
+      "source": "p.32"
+    }
+  },
+  {
+    "name": "Wheellock Rifle",
+    "type": "weapon",
+    "folder": "Archaic Weapons",
+    "system": {
+      "category": "archaic",
+      "skill": "Ranged Combat",
+      "specialty": "Archaic",
+      "damage": "4D+3",
+      "range": "long",
+      "rounds": 1,
+      "ammo": 1,
+      "cost": 600,
+      "weight": 4,
+      "tl": 3,
+      "traits": [
+        "Slow-Reload",
+        "Unreliable",
+        "Low-Tech"
+      ],
+      "description": "<p>Archaic weapons are cruder ranged weapons used in low-tech societies.</p><p><strong>Traits</strong></p><ul><li>Slow-Reload: It takes two full rounds to reload this firearm.</li><li>Unreliable: If this weapon misfires, it takes D3 rounds to reset it to be usable again.</li><li>Low-Tech: Anyone attempting to use this weapon without Ranged (Archaic) incurs an additional -1DM; wind, temperature, moisture, etc. are factors in its efficiency.</li></ul>",
+      "source": "p.32"
+    }
+  },
+  {
+    "name": "Wheellock Pistol",
+    "type": "weapon",
+    "folder": "Archaic Weapons",
+    "system": {
+      "category": "archaic",
+      "skill": "Ranged Combat",
+      "specialty": "Archaic",
+      "damage": "4D",
+      "range": "medium",
+      "rounds": 1,
+      "ammo": 1,
+      "cost": 400,
+      "weight": 2,
+      "tl": 3,
+      "traits": [
+        "Slow-Reload",
+        "Unreliable",
+        "Low-Tech"
+      ],
+      "description": "<p>Archaic weapons are cruder ranged weapons used in low-tech societies.</p><p><strong>Traits</strong></p><ul><li>Slow-Reload: It takes two full rounds to reload this firearm.</li><li>Unreliable: If this weapon misfires, it takes D3 rounds to reset it to be usable again.</li><li>Low-Tech: Anyone attempting to use this weapon without Ranged (Archaic) incurs an additional -1DM; wind, temperature, moisture, etc. are factors in its efficiency.</li></ul>",
+      "source": "p.32"
+    }
+  }
+]

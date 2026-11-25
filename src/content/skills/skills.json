@@ -1,0 +1,460 @@
+[
+  {
+    "name": "Admin",
+    "type": "skill",
+    "folder": "Basic Skills",
+    "system": {
+      "skill": "Admin",
+      "specialty": "",
+      "specialties": [],
+      "rank": 0,
+      "characteristic": "",
+      "description": "<p>Used to navigate the bureaucracy of businesses, governments, and other cultural hierarchies.</p><p>Untrained in a Skill: performing a task that requires a Skill in which the character has no rank incurs a -3DM.</p>",
+      "source": "p.28"
+    }
+  },
+  {
+    "name": "Astrogation",
+    "type": "skill",
+    "folder": "Basic Skills",
+    "system": {
+      "skill": "Astrogation",
+      "specialty": "",
+      "specialties": [],
+      "rank": 0,
+      "characteristic": "",
+      "description": "<p>Used to plot faster-than-light jump routes and related knowledge.</p><p>Untrained in a Skill: performing a task that requires a Skill in which the character has no rank incurs a -3DM.</p>",
+      "source": "p.28"
+    }
+  },
+  {
+    "name": "Athlete",
+    "type": "skill",
+    "folder": "Basic Skills",
+    "system": {
+      "skill": "Athlete",
+      "specialty": "",
+      "specialties": [],
+      "rank": 0,
+      "characteristic": "",
+      "description": "<p>This represents a character’s training in physical performance and conditioning.</p><p>Untrained in a Skill: performing a task that requires a Skill in which the character has no rank incurs a -3DM.</p>",
+      "source": "p.28"
+    }
+  },
+  {
+    "name": "Broker",
+    "type": "skill",
+    "folder": "Basic Skills",
+    "system": {
+      "skill": "Broker",
+      "specialty": "",
+      "specialties": [],
+      "rank": 0,
+      "characteristic": "",
+      "description": "<p>Used to make business deals and negotiate work contracts.</p><p>Untrained in a Skill: performing a task that requires a Skill in which the character has no rank incurs a -3DM.</p>",
+      "source": "p.29"
+    }
+  },
+  {
+    "name": "Comms",
+    "type": "skill",
+    "folder": "Basic Skills",
+    "system": {
+      "skill": "Comms",
+      "specialty": "",
+      "specialties": [],
+      "rank": 0,
+      "characteristic": "",
+      "description": "<p>Used for operating communication systems, sensors, or remotely operating vehicles or drones.</p><p>Untrained in a Skill: performing a task that requires a Skill in which the character has no rank incurs a -3DM.</p>",
+      "source": "p.29"
+    }
+  },
+  {
+    "name": "Computers",
+    "type": "skill",
+    "folder": "Basic Skills",
+    "system": {
+      "skill": "Computers",
+      "specialty": "",
+      "specialties": [],
+      "rank": 0,
+      "characteristic": "",
+      "description": "<p>Used to navigate, program, repair, and hack computer systems, along with anything that is determined by computer systems, including robots.</p><p>Untrained in a Skill: performing a task that requires a Skill in which the character has no rank incurs a -3DM.</p>",
+      "source": "p.29"
+    }
+  },
+  {
+    "name": "Carouse",
+    "type": "skill",
+    "folder": "Basic Skills",
+    "system": {
+      "skill": "Carouse",
+      "specialty": "",
+      "specialties": [],
+      "rank": 0,
+      "characteristic": "",
+      "description": "<p>Used to meet people, connect with others, and gather information like gossip and rumors.</p><p>Untrained in a Skill: performing a task that requires a Skill in which the character has no rank incurs a -3DM.</p>",
+      "source": "p.29"
+    }
+  },
+  {
+    "name": "Crafting",
+    "type": "skill",
+    "folder": "Basic Skills",
+    "system": {
+      "skill": "Crafting",
+      "specialty": "",
+      "specialties": [],
+      "rank": 0,
+      "characteristic": "",
+      "description": "<p>Used to construct or fabricate objects from parts or scrap.</p><p>Untrained in a Skill: performing a task that requires a Skill in which the character has no rank incurs a -3DM.</p>",
+      "source": "p.29"
+    }
+  },
+  {
+    "name": "Deception",
+    "type": "skill",
+    "folder": "Basic Skills",
+    "system": {
+      "skill": "Deception",
+      "specialty": "",
+      "specialties": [],
+      "rank": 0,
+      "characteristic": "",
+      "description": "<p>Used to lie, mislead, or otherwise manipulate a person.</p><p>Untrained in a Skill: performing a task that requires a Skill in which the character has no rank incurs a -3DM.</p>",
+      "source": "p.29"
+    }
+  },
+  {
+    "name": "Diplomacy",
+    "type": "skill",
+    "folder": "Basic Skills",
+    "system": {
+      "skill": "Diplomacy",
+      "specialty": "",
+      "specialties": [],
+      "rank": 0,
+      "characteristic": "",
+      "description": "<p>Used to negotiate deals or persuade characters for political and personal purposes.</p><p>Untrained in a Skill: performing a task that requires a Skill in which the character has no rank incurs a -3DM.</p>",
+      "source": "p.29"
+    }
+  },
+  {
+    "name": "Drive",
+    "type": "skill",
+    "folder": "Specialized Skills",
+    "system": {
+      "skill": "Drive",
+      "specialty": "",
+      "specialties": [
+        "Civilian",
+        "Grav",
+        "Industrial",
+        "Marine",
+        "Military",
+        "Misc"
+      ],
+      "rank": 0,
+      "characteristic": "",
+      "description": "<p>Used to drive a terrestrial land vehicle. Once gaining a rank after Rank 0 in drive, choose to specialize in one of the following:</p><ul><li>Civilian: Used for typical and common vehicles available to the general population, such as cars, motorcycles, etc.</li><li>Grav: Used for high-tech vehicles that float above the ground and have different handling properties from traction-based land vehicles.</li><li>Industrial: Used for industrial vehicles that require specific training for license.</li><li>Marine: Used for any water-based craft.</li><li>Military: Used for military-grade vehicles that the general civilian wouldn't have access to.</li><li>Misc: Used for dirt-drillers, walking mecha, or any other non-traditional vehicle forms, as determined by the referee.</li></ul><p>Specialized Skill: when this Skill is acquired at Rank 0, the rank applies to any of the related specialty Skills. Once the Skill is acquired again, the character must choose a specialized version of that Skill to excel in.</p><p>Untrained in a Skill: performing a task that requires a Skill in which the character has no rank incurs a -3DM.</p>",
+      "source": "p.29"
+    }
+  },
+  {
+    "name": "Electronics",
+    "type": "skill",
+    "folder": "Basic Skills",
+    "system": {
+      "skill": "Electronics",
+      "specialty": "",
+      "specialties": [],
+      "rank": 0,
+      "characteristic": "",
+      "description": "<p>Used to understand, use, or repair electric devices or circuitry.</p><p>Untrained in a Skill: performing a task that requires a Skill in which the character has no rank incurs a -3DM.</p>",
+      "source": "p.29"
+    }
+  },
+  {
+    "name": "Engineering",
+    "type": "skill",
+    "folder": "Basic Skills",
+    "system": {
+      "skill": "Engineering",
+      "specialty": "",
+      "specialties": [],
+      "rank": 0,
+      "characteristic": "",
+      "description": "<p>Used for understanding, operating, and figuring out mechanical structural systems, or for maintaining and operating power systems.</p><p>Untrained in a Skill: performing a task that requires a Skill in which the character has no rank incurs a -3DM.</p>",
+      "source": "p.29"
+    }
+  },
+  {
+    "name": "Gambling",
+    "type": "skill",
+    "folder": "Basic Skills",
+    "system": {
+      "skill": "Gambling",
+      "specialty": "",
+      "specialties": [],
+      "rank": 0,
+      "characteristic": "",
+      "description": "<p>Used for interacting in games of chance with NPCs or any other situation where the character is playing the odds, as up to the referee.</p><p>Untrained in a Skill: performing a task that requires a Skill in which the character has no rank incurs a -3DM.</p>",
+      "source": "p.29"
+    }
+  },
+  {
+    "name": "Jack-of-All-Trades",
+    "type": "skill",
+    "folder": "Basic Skills",
+    "system": {
+      "skill": "Jack-of-All-Trades",
+      "specialty": "",
+      "specialties": [],
+      "rank": 0,
+      "characteristic": "",
+      "description": "<p>Used to allow the character to attempt a single Skill they are not familiar with as rank 0 once per in-game week. Additional ranks of JoAT allows for additional attempts. Jack-of-all-Trades starts at rank 1.</p><p>Untrained in a Skill: performing a task that requires a Skill in which the character has no rank incurs a -3DM.</p>",
+      "source": "p.29"
+    }
+  },
+  {
+    "name": "Leadership",
+    "type": "skill",
+    "folder": "Basic Skills",
+    "system": {
+      "skill": "Leadership",
+      "specialty": "",
+      "specialties": [],
+      "rank": 0,
+      "characteristic": "",
+      "description": "<p>Allows a spacer to give commands to groups of NPCs, equal to 6 individuals per rank. All rolls are applied to morale, orders, and anything else where the character might have to take a leadership position. Successful rolls indicate the NPCs’ willingness to comply with said orders.</p><p>Untrained in a Skill: performing a task that requires a Skill in which the character has no rank incurs a -3DM.</p>",
+      "source": "p.29"
+    }
+  },
+  {
+    "name": "Legal",
+    "type": "skill",
+    "folder": "Basic Skills",
+    "system": {
+      "skill": "Legal",
+      "specialty": "",
+      "specialties": [],
+      "rank": 0,
+      "characteristic": "",
+      "description": "<p>Used to interpret, understand, and navigate legal systems and related structures.</p><p>Untrained in a Skill: performing a task that requires a Skill in which the character has no rank incurs a -3DM.</p>",
+      "source": "p.29"
+    }
+  },
+  {
+    "name": "Mechanic",
+    "type": "skill",
+    "folder": "Basic Skills",
+    "system": {
+      "skill": "Mechanic",
+      "specialty": "",
+      "specialties": [],
+      "rank": 0,
+      "characteristic": "",
+      "description": "<p>Used to repair machines work and modify them.</p><p>Untrained in a Skill: performing a task that requires a Skill in which the character has no rank incurs a -3DM.</p>",
+      "source": "p.29"
+    }
+  },
+  {
+    "name": "Medic",
+    "type": "skill",
+    "folder": "Basic Skills",
+    "system": {
+      "skill": "Medic",
+      "specialty": "",
+      "specialties": [],
+      "rank": 0,
+      "characteristic": "",
+      "description": "<p>Used for performing first aid and administration of medical services.</p><p>Untrained in a Skill: performing a task that requires a Skill in which the character has no rank incurs a -3DM.</p>",
+      "source": "p.29"
+    }
+  },
+  {
+    "name": "Melee Combat",
+    "type": "skill",
+    "folder": "Specialized Skills",
+    "system": {
+      "skill": "Melee Combat",
+      "specialty": "",
+      "specialties": [
+        "Blade",
+        "Hand-to-Hand",
+        "Bludgeon"
+      ],
+      "rank": 0,
+      "characteristic": "",
+      "description": "<p>You have received training in using weapons and/or your fists offensively. Once you gain a rank past zero, you must select one of the following specializations:</p><ul><li>Blade: Used to wield swords, axes, and other bladed melee weapons.</li><li>Hand-to-Hand: Used for boxing, martial arts, grappling, and related actions.</li><li>Bludgeon: Used for bludgeoning weapons and polearms without blades.</li></ul><p>Specialized Skill: when this Skill is acquired at Rank 0, the rank applies to any of the related specialty Skills. Once the Skill is acquired again, the character must choose a specialized version of that Skill to excel in.</p><p>Untrained in a Skill: performing a task that requires a Skill in which the character has no rank incurs a -3DM.</p>",
+      "source": "p.29"
+    }
+  },
+  {
+    "name": "Navigation",
+    "type": "skill",
+    "folder": "Basic Skills",
+    "system": {
+      "skill": "Navigation",
+      "specialty": "",
+      "specialties": [],
+      "rank": 0,
+      "characteristic": "",
+      "description": "<p>Used for charting and interpreting maps and directions.</p><p>Untrained in a Skill: performing a task that requires a Skill in which the character has no rank incurs a -3DM.</p>",
+      "source": "p.29"
+    }
+  },
+  {
+    "name": "Persuade",
+    "type": "skill",
+    "folder": "Basic Skills",
+    "system": {
+      "skill": "Persuade",
+      "specialty": "",
+      "specialties": [],
+      "rank": 0,
+      "characteristic": "",
+      "description": "<p>Used to negotiate with someone or a group of people to attempt to get them to become agreeable or accepting of an offer, on a personal level.</p><p>Untrained in a Skill: performing a task that requires a Skill in which the character has no rank incurs a -3DM.</p>",
+      "source": "p.29"
+    }
+  },
+  {
+    "name": "Pilot",
+    "type": "skill",
+    "folder": "Specialized Skills",
+    "system": {
+      "skill": "Pilot",
+      "specialty": "",
+      "specialties": [
+        "Starship",
+        "Aircraft"
+      ],
+      "rank": 0,
+      "characteristic": "",
+      "description": "<p>Used for flying craft, both in an atmosphere and in a vacuum. Once gaining a rank after Rank 0 in Pilot, choose to specialize in one of the following:</p><ul><li>Starship: Used for controlling any spacecraft in the vacuum of space, along with entry and exit of planetary atmospheres.</li><li>Aircraft: Used for piloting any non-starcraft vehicles capable of flight within an atmosphere.</li></ul><p>Specialized Skill: when this Skill is acquired at Rank 0, the rank applies to any of the related specialty Skills. Once the Skill is acquired again, the character must choose a specialized version of that Skill to excel in.</p><p>Untrained in a Skill: performing a task that requires a Skill in which the character has no rank incurs a -3DM.</p>",
+      "source": "p.29"
+    }
+  },
+  {
+    "name": "Profession",
+    "type": "skill",
+    "folder": "Basic Skills",
+    "system": {
+      "skill": "Profession",
+      "specialty": "",
+      "specialties": [],
+      "rank": 0,
+      "characteristic": "",
+      "description": "<p>When acquired, choose the professional focus of the PC to represent their ability to understand, navigate, or execute the responsibilities or tasks associated with that profession. For example, Scientist, where the Profession Skill is used to access and use laboratories, or Musician, using Profession to compose and perform music for an audience. This Skill is intentionally open-ended to allow players to have creative applications of this Skill, but cannot substitute for established Skills if other players have ranks in those. The referee has final say if a Profession rank allows the character to perform the profession in any given situation.</p><p>Untrained in a Skill: performing a task that requires a Skill in which the character has no rank incurs a -3DM.</p>",
+      "source": "p.29"
+    }
+  },
+  {
+    "name": "Ranged Combat",
+    "type": "skill",
+    "folder": "Specialized Skills",
+    "system": {
+      "skill": "Ranged Combat",
+      "specialty": "",
+      "specialties": [
+        "Short",
+        "Stock",
+        "Energy",
+        "Archaic"
+      ],
+      "rank": 0,
+      "characteristic": "",
+      "description": "<p>Used for wielding projectile weapons such as handguns, rifles, energy guns, crossbows, etc. Once Rank 0 has been achieved in this Skill, any additional Skill ranks are applied to one of the following:</p><ul><li>Short: Used for handguns such as pistols and revolvers.</li><li>Stock: Used for guns that require two hands to use, such as rifles, carbines, or SMGs.</li><li>Energy: Used for high tech-level weapons that use energy instead of ballistics.</li><li>Archaic: Used for low tech-level weapons such as bows, crossbows, slings, throwing weapons, etc.</li></ul><p>Example: If a character gets Rank 0 in basic training, then learns Ranged Combat (short), they know Ranged Combat 0 and Ranged Combat (Short) 1. If the character attempts to use any ranged weapon that isn’t short, they only apply the Rank 0 to the Skill roll.</p><p>Specialized Skill: when this Skill is acquired at Rank 0, the rank applies to any of the related specialty Skills. Once the Skill is acquired again, the character must choose a specialized version of that Skill to excel in.</p><p>Untrained in a Skill: performing a task that requires a Skill in which the character has no rank incurs a -3DM.</p>",
+      "source": "p.29"
+    }
+  },
+  {
+    "name": "Recon",
+    "type": "skill",
+    "folder": "Basic Skills",
+    "system": {
+      "skill": "Recon",
+      "specialty": "",
+      "specialties": [],
+      "rank": 0,
+      "characteristic": "",
+      "description": "<p>Used to allow a character to be perceptive and scout ahead to find helpful information or to remain alert in potentially dangerous situations. Used to counteract surprise at the beginning of combat but can also be applied to searching an area for clues.</p><p>Untrained in a Skill: performing a task that requires a Skill in which the character has no rank incurs a -3DM.</p>",
+      "source": "p.29"
+    }
+  },
+  {
+    "name": "Stealth",
+    "type": "skill",
+    "folder": "Basic Skills",
+    "system": {
+      "skill": "Stealth",
+      "specialty": "",
+      "specialties": [],
+      "rank": 0,
+      "characteristic": "",
+      "description": "<p>Used to remain hidden while moving around. Used as a contest roll against any NPCs searching using Recon, but can also be used to set up take-downs or spying.</p><p>Untrained in a Skill: performing a task that requires a Skill in which the character has no rank incurs a -3DM.</p>",
+      "source": "p.29"
+    }
+  },
+  {
+    "name": "Steward",
+    "type": "skill",
+    "folder": "Basic Skills",
+    "system": {
+      "skill": "Steward",
+      "specialty": "",
+      "specialties": [],
+      "rank": 0,
+      "characteristic": "",
+      "description": "<p>Used for service and hospitality-related activities for passengers along with maintaining the staterooms of a starship.</p><p>Untrained in a Skill: performing a task that requires a Skill in which the character has no rank incurs a -3DM.</p>",
+      "source": "p.29"
+    }
+  },
+  {
+    "name": "Streetwise",
+    "type": "skill",
+    "folder": "Basic Skills",
+    "system": {
+      "skill": "Streetwise",
+      "specialty": "",
+      "specialties": [],
+      "rank": 0,
+      "characteristic": "",
+      "description": "<p>Used for the ability to make connections and gather information through illicit connections and to have the knowledge of where to look for less-than-legal opportunities.</p><p>Untrained in a Skill: performing a task that requires a Skill in which the character has no rank incurs a -3DM.</p>",
+      "source": "p.29"
+    }
+  },
+  {
+    "name": "Tactics",
+    "type": "skill",
+    "folder": "Specialized Skills",
+    "system": {
+      "skill": "Tactics",
+      "specialty": "",
+      "specialties": [
+        "Starship",
+        "Vehicle",
+        "Squad",
+        "Zero-G"
+      ],
+      "rank": 0,
+      "characteristic": "",
+      "description": "<p>Used in combat to gain a battlefield advantage. When using Tactics in combat, the spacer directing the tactics can apply the rank as a +1DM per rank to any other NPC or characters for the battle. General Tactics is acquired at Rank 0 but advancing Tactics requires the character to select a specialization:</p><ul><li>Starship: Used for knowledge and execution of strategies using naval starships in space combat.</li><li>Vehicle: Typically used by army-trained individuals for the proper application of tactical advantages and disadvantages of vehicular combat in battle.</li><li>Squad: Used for small-unit combat tactics applied to on-foot operations. Common training for army and marines.</li><li>Zero-G: Used while engaged in zero-G melee or ranged combat. Rank 0 means no penalty to attacks in zero-G, while any additional ranks are applied to any combat action while in zero-G in place of Vaccsuit. This is a common skill set for marine officers to learn.</li></ul><p>Specialized Skill: when this Skill is acquired at Rank 0, the rank applies to any of the related specialty Skills. Once the Skill is acquired again, the character must choose a specialized version of that Skill to excel in.</p><p>Untrained in a Skill: performing a task that requires a Skill in which the character has no rank incurs a -3DM.</p>",
+      "source": "p.29"
+    }
+  },
+  {
+    "name": "Vaccsuit",
+    "type": "skill",
+    "folder": "Basic Skills",
+    "system": {
+      "skill": "Vaccsuit",
+      "specialty": "",
+      "specialties": [],
+      "rank": 0,
+      "characteristic": "",
+      "description": "<p>Used when wearing a vaccsuit, which can be restrictive. This Skill is also applied when moving around in zero-G since everyone using a vaccsuit learns to navigate with it on while moving in zero-G.</p><p>Untrained in a Skill: performing a task that requires a Skill in which the character has no rank incurs a -3DM.</p>",
+      "source": "p.29"
+    }
+  }
+]

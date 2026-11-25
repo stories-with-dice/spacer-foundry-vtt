@@ -1,0 +1,57 @@
+/* Chargen area: lifepath wizard and chat card. Every rule is scoped under .spacer. */
+.spacer.spacer-chargen .window-content { display: flex; flex-direction: column; gap: 8px; padding: 8px; overflow: hidden; }
+.spacer.spacer-chargen .chargen-body { flex: 1; display: grid; grid-template-columns: 1fr 280px; gap: 10px; min-height: 0; }
+.spacer.spacer-chargen .chargen-main { display: flex; flex-direction: column; gap: 8px; min-height: 0; }
+.spacer.spacer-chargen .chargen-step { border: 1px solid var(--color-border, #7a7971); border-radius: 6px; padding: 10px; background: rgba(0, 0, 0, 0.06); }
+.spacer.spacer-chargen .chargen-prompt { margin: 0 0 8px; font-size: 1.15em; border: none; }
+.spacer.spacer-chargen .chargen-prompt.dead { color: #c0392b; }
+.spacer.spacer-chargen .chargen-prompt.done { color: #2e8b57; }
+.spacer.spacer-chargen .chargen-options { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 6px; }
+.spacer.spacer-chargen .chargen-option { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; height: auto; min-height: 36px; padding: 5px 8px; text-align: left; line-height: 1.2; }
+.spacer.spacer-chargen .chargen-option .hint { font-size: 0.8em; opacity: 0.75; white-space: normal; }
+.spacer.spacer-chargen .chargen-option.suggested { border-color: #d4a72c; box-shadow: 0 0 0 1px #d4a72c inset; }
+.spacer.spacer-chargen .chargen-rollspec { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; align-items: center; }
+.spacer.spacer-chargen .chargen-rollspec span,
+.spacer.spacer-chargen .chargen-lastroll .mod,
+.spacer.spacer-chargen .chargen-lastroll .vs { padding: 2px 6px; border-radius: 4px; background: rgba(127, 127, 127, 0.2); }
+.spacer.spacer-chargen .chargen-rollspec .target { font-weight: bold; }
+.spacer.spacer-chargen .chargen-roll { width: auto; min-width: 160px; font-size: 1.1em; }
+.spacer.spacer-chargen .chargen-lastroll { border-radius: 6px; padding: 6px 10px; border-left: 5px solid #888; background: rgba(127, 127, 127, 0.1); }
+.spacer.spacer-chargen .chargen-lastroll.success { border-left-color: #2e8b57; }
+.spacer.spacer-chargen .chargen-lastroll.failure { border-left-color: #c0392b; }
+.spacer.spacer-chargen .chargen-lastroll .lr-label { font-weight: bold; margin-bottom: 4px; }
+.spacer.spacer-chargen .chargen-lastroll .lr-dice { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.spacer.spacer-chargen .chargen-lastroll .die { display: inline-flex; width: 28px; height: 28px; align-items: center; justify-content: center; border: 2px solid currentColor; border-radius: 5px; font-weight: bold; font-size: 1.1em; }
+.spacer.spacer-chargen .chargen-lastroll .total { font-size: 1.4em; font-weight: bold; }
+.spacer.spacer-chargen .chargen-lastroll.success .result { color: #2e8b57; font-weight: bold; }
+.spacer.spacer-chargen .chargen-lastroll.failure .result { color: #c0392b; font-weight: bold; }
+.spacer.spacer-chargen .chargen-log { flex: 1; min-height: 0; overflow-y: auto; margin: 0; padding: 4px 8px 4px 24px; font-size: 0.9em; border: 1px solid var(--color-border, #7a7971); border-radius: 6px; }
+.spacer.spacer-chargen .chargen-log li { margin: 1px 0; }
+.spacer.spacer-chargen .chargen-log li.log-head { list-style: none; margin: 6px 0 2px -16px; }
+.spacer.spacer-chargen .chargen-log li.log-choice { opacity: 0.7; font-style: italic; }
+.spacer.spacer-chargen .chargen-log li.log-gain { color: #2e8b57; }
+.spacer.spacer-chargen .chargen-log li.log-loss { color: #c0392b; }
+.spacer.spacer-chargen .chargen-log li.log-event { font-weight: bold; color: #b7791f; }
+.spacer.spacer-chargen .chargen-log .roll-text { opacity: 0.75; font-family: monospace; font-size: 0.95em; }
+.spacer.spacer-chargen .chargen-log li.success .roll-text { color: #2e8b57; opacity: 1; }
+.spacer.spacer-chargen .chargen-log li.failure .roll-text { color: #c0392b; opacity: 1; }
+.spacer.spacer-chargen .chargen-summary { overflow-y: auto; border: 1px solid var(--color-border, #7a7971); border-radius: 6px; padding: 8px; font-size: 0.9em; }
+.spacer.spacer-chargen .chargen-summary h3 { margin: 8px 0 2px; font-size: 1em; border-bottom: 1px solid rgba(127, 127, 127, 0.4); }
+.spacer.spacer-chargen .chargen-summary ul { margin: 0; padding-left: 16px; }
+.spacer.spacer-chargen .chargen-summary .none { list-style: none; opacity: 0.5; }
+.spacer.spacer-chargen .chargen-summary .upp { font-size: 1.3em; text-align: center; }
+.spacer.spacer-chargen .chargen-summary .upp .v { font-family: monospace; font-weight: bold; letter-spacing: 2px; }
+.spacer.spacer-chargen .chargen-summary .chars { display: grid; grid-template-columns: repeat(6, 1fr); gap: 2px; text-align: center; margin: 4px 0; }
+.spacer.spacer-chargen .chargen-summary .char { display: flex; flex-direction: column; border: 1px solid rgba(127, 127, 127, 0.4); border-radius: 4px; }
+.spacer.spacer-chargen .chargen-summary .char .k { font-size: 0.75em; opacity: 0.8; }
+.spacer.spacer-chargen .chargen-summary .char .v { font-weight: bold; font-size: 1.15em; }
+.spacer.spacer-chargen .chargen-summary .char .dm { font-size: 0.75em; opacity: 0.7; }
+.spacer.spacer-chargen .chargen-summary .facts { display: grid; grid-template-columns: auto 1fr; gap: 1px 8px; margin: 6px 0; }
+.spacer.spacer-chargen .chargen-summary .facts dt { font-weight: bold; }
+.spacer.spacer-chargen .chargen-summary .facts dd { margin: 0; }
+.spacer.spacer-chargen .chargen-footer { display: flex; gap: 6px; }
+.spacer.spacer-chargen .chargen-footer button { flex: 1; }
+.spacer.spacer-chargen .chargen-footer .save:not(:disabled) { font-weight: bold; }
+.spacer.spacer-chargen-card h3 { margin: 0 0 4px; }
+.spacer.spacer-chargen-card p { margin: 2px 0; }
+.spacer.spacer-chargen .chargen-wizard { flex: 1; display: flex; flex-direction: column; gap: 8px; min-height: 0; }

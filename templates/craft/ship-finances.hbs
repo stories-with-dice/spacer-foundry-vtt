@@ -1,0 +1,20 @@
+<section class="tab {{tab.cssClass}}" data-group="primary" data-tab="finances">
+  <table class="finances">
+    <thead><tr><th></th><th>{{localize "SPACER.Craft.Finance.monthly"}}</th><th>{{localize "SPACER.Craft.Finance.book"}}</th></tr></thead>
+    <tbody>
+      <tr><th>{{localize "SPACER.Craft.Finance.mortgage"}}</th><td><input type="number" name="system.finances.mortgage" value="{{system.finances.mortgage}}"></td><td class="num">{{book.mortgage}}</td></tr>
+      <tr><th>{{localize "SPACER.Craft.Finance.crewSalaries"}}</th><td><input type="number" name="system.finances.crewSalaries" value="{{system.finances.crewSalaries}}"></td><td class="num">{{book.crewSalaries}}</td></tr>
+      <tr><th>{{localize "SPACER.Craft.Finance.lifeSupport"}}</th><td><input type="number" name="system.finances.lifeSupport" value="{{system.finances.lifeSupport}}"></td><td class="num">{{book.lifeSupport}}</td></tr>
+      <tr><th>{{localize "SPACER.Craft.Finance.fuelCost"}}</th><td><input type="number" name="system.finances.fuelCost" value="{{system.finances.fuelCost}}"></td><td></td></tr>
+      <tr class="total"><th>{{localize "SPACER.Craft.Finance.total"}}</th><td class="num">{{fmt.monthTotal}}</td><td></td></tr>
+      <tr><th>{{localize "SPACER.Craft.Finance.maintenanceAnnual"}}</th><td><input type="number" name="system.finances.maintenance" value="{{system.finances.maintenance}}"></td><td class="num">{{book.maintenance}}</td></tr>
+      <tr><th>{{localize "SPACER.Craft.Finance.bank"}}</th><td><input type="number" name="system.finances.bank" value="{{system.finances.bank}}"></td><td class="num">{{fmt.bank}}</td></tr>
+    </tbody>
+  </table>
+  <p class="hint">{{localize "SPACER.Craft.Finance.hint"}} {{localize "SPACER.Craft.Finance.monthsPaid"}}: {{fmt.mortgagePaid}}/480 · {{localize "SPACER.Craft.Ship.maintenanceDM"}}: {{system.maintenance.dm}} ({{system.maintenance.months}} {{localize "SPACER.Craft.Unit.months"}})</p>
+  <div class="actions-row">
+    <button type="button" data-action="calcFinances"><i class="fa-solid fa-calculator"></i> {{localize "SPACER.Craft.Finance.useBook"}}</button>
+    <label>{{localize "SPACER.Craft.Finance.berthingDays"}} <input type="number" data-field="berthingDays" value="0" min="0"></label>
+    <button type="button" data-action="payMonth"><i class="fa-solid fa-coins"></i> {{localize "SPACER.Craft.Finance.payMonth"}}</button>
+  </div>
+</section>

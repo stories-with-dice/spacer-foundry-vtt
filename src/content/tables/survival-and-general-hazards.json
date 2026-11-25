@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Poison Effect",
+    "folder": "Survival & General Hazards",
+    "formula": "1d6",
+    "description": "<p>p.107. Roll the die of the poison level to determine the poison effect: Minor (level 1) roll D3, Major (level 2) roll 1D, Severe (level 3) roll D3+3. Each effect lasts until a successful END check, made at the start of each interval.</p>",
+    "results": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "text": "Illness: -2 DM for feeling fatigued and nauseous"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "Tranquilizing: Knocked out until a successful END check"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "Confusion: Must make a successful INT of 8+ to attempt to perform any Skill. Failure means the spacer forgets what it is and cannot attempt to perform the Skill."
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "Paralysis: Cannot move until a successful END check."
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "Neurological: D3 + poison level of INT damage."
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "Necrotic: 1D damage to either DEX or STR."
+      }
+    ]
+  }
+]

@@ -1,0 +1,41 @@
+<div class="sp-dialog-body">
+  <p class="sp-attack-head"><b>{{ctx.weapon.name}}</b> → <b>{{targetName}}</b>
+    {{#if distance}}<small>({{distance}} m)</small>{{/if}}
+    {{#if skillText}}<br><small>{{localize "SPACER.Weapon.Skill"}}: {{skillText}}</small>{{/if}}</p>
+  <div class="sp-grid two">
+    {{#if isPerson}}<label class="sp-field">{{localize "SPACER.Roll.Characteristic"}}
+      <select name="characteristic">{{#each characteristics}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></label>{{/if}}
+    <label class="sp-field">{{localize "SPACER.Attack.RangeBand"}}
+      <select name="band">{{#each bands}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></label>
+    <label class="sp-field">{{localize "SPACER.Attack.TargetPosition"}}
+      <select name="position">{{#each positions}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></label>
+    <label class="sp-field">{{localize "SPACER.Attack.TargetCover"}}
+      <select name="cover">{{#each covers}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></label>
+    <label class="sp-field">{{localize "SPACER.Attack.LightLabel"}}
+      <select name="darkness" data-dtype="Number">{{#each darkness}}<option value="{{value}}">{{label}}</option>{{/each}}</select></label>
+    <label class="sp-field">{{localize "SPACER.Roll.DM"}}<input type="number" name="dm" value="{{v.dm}}"></label>
+  </div>
+  <div class="sp-checks">
+    {{#if ctx.ranged}}<label><input type="checkbox" name="aimed" {{checked v.aimed}}> {{localize "SPACER.Attack.Aimed"}}</label>{{/if}}
+    {{#if ctx.overwatch}}<label><input type="checkbox" name="useOverwatch" {{checked v.useOverwatch}}> {{localize "SPACER.Attack.UseOverwatch" n=ctx.overwatch}}</label>{{/if}}
+    <label><input type="checkbox" name="higherGround" {{checked v.higherGround}}> {{localize "SPACER.Attack.Mod.higherGround"}}</label>
+    {{#if ctx.traits.twoHanded}}<label><input type="checkbox" name="oneHanded" {{checked v.oneHanded}}> {{localize "SPACER.Attack.Mod.oneHanded"}}</label>{{/if}}
+    {{#if ctx.traits.large}}<label><input type="checkbox" name="cramped" {{checked v.cramped}}> {{localize "SPACER.Attack.Mod.cramped"}}</label>{{/if}}
+    {{#if ctx.canThrow}}<label><input type="checkbox" name="throw" {{checked v.throw}}> {{localize "SPACER.Attack.Throw"}}</label>{{/if}}
+    {{#if ctx.melee}}{{#if isPerson}}<label><input type="checkbox" name="controlled" {{checked v.controlled}}> {{localize "SPACER.Attack.Controlled"}}</label>{{/if}}{{/if}}
+    {{#if isPerson}}<label><input type="checkbox" name="fatigue" {{checked v.fatigue}}> {{localize "SPACER.Roll.FatigueDM"}}</label>{{/if}}
+    {{#if ctx.creature}}<label><input type="checkbox" name="flat" {{checked v.flat}}> {{localize "SPACER.Creature.UseFlat" n=ctx.flatDamage}}</label>{{/if}}
+  </div>
+  {{#if ctx.traits.auto}}
+  <div class="sp-grid two">
+    <label class="sp-field">{{localize "SPACER.Attack.AutoMode" n=ctx.traits.auto}}
+      <select name="autoMode"><option value="single">{{localize "SPACER.Attack.AutoSingle" n=ctx.traits.auto}}</option><option value="multi">{{localize "SPACER.Attack.AutoMulti" n=ctx.traits.auto}}</option></select></label>
+  </div>
+  {{/if}}
+  {{#if ctx.traits.overload}}
+  <label class="sp-field">{{localize "SPACER.Attack.Overload"}}<input type="number" name="overload" value="0" min="0" max="4"></label>
+  {{/if}}
+  <label class="sp-field">{{localize "SPACER.Attack.SpeedBand"}}<input type="number" name="speedBand" value="0" min="0"></label>
+  <p class="sp-mods" data-mods></p>
+  <p class="sp-preview" data-preview></p>
+</div>

@@ -1,0 +1,117 @@
+[
+  {
+    "name": "Laser Pistol",
+    "type": "weapon",
+    "folder": "Energy Weapons",
+    "system": {
+      "category": "energy",
+      "skill": "Ranged Combat",
+      "specialty": "Energy",
+      "damage": "3D",
+      "range": "medium",
+      "rounds": 25,
+      "ammo": 25,
+      "cost": 2000,
+      "weight": 1,
+      "tl": 11,
+      "traits": [
+        "Zero-G"
+      ],
+      "description": "<p>Energy Ammo: energy packs weigh 1kg and contain 25 shots. Each pack costs 200cr. Weapons contain enough slots for multiple energy packs, equal to the maximum number of rounds they can fire. Each additional energy pack installed increases the weight of the weapon. All energy weapons can only be fired once every 10-second round due to the extreme cooling needed to prevent burning out the weapon.</p><p><strong>Traits</strong></p><ul><li>Zero-G: Prevents recoil, allowing use in low-to-no gravity without incurring penalties to attacks due to drifting.</li></ul>",
+      "source": "p.32"
+    }
+  },
+  {
+    "name": "Laser Carbine",
+    "type": "weapon",
+    "folder": "Energy Weapons",
+    "system": {
+      "category": "energy",
+      "skill": "Ranged Combat",
+      "specialty": "Energy",
+      "damage": "4D",
+      "range": "long",
+      "rounds": 50,
+      "ammo": 50,
+      "cost": 2500,
+      "weight": 4,
+      "tl": 10,
+      "traits": [
+        "Overload",
+        "Zero-G"
+      ],
+      "description": "<p>Energy Ammo: energy packs weigh 1kg and contain 25 shots. Each pack costs 200cr. Weapons contain enough slots for multiple energy packs, equal to the maximum number of rounds they can fire. Each additional energy pack installed increases the weight of the weapon. All energy weapons can only be fired once every 10-second round due to the extreme cooling needed to prevent burning out the weapon.</p><p><strong>Traits</strong></p><ul><li>Overload: Can be charged to deal +1 wound per round charged at the cost of an additional round; can only overcharge equal to the additional energy packs installed.</li><li>Zero-G: Prevents recoil, allowing use in low-to-no gravity without incurring penalties to attacks due to drifting.</li></ul>",
+      "source": "p.32"
+    }
+  },
+  {
+    "name": "Laser Rifle",
+    "type": "weapon",
+    "folder": "Energy Weapons",
+    "system": {
+      "category": "energy",
+      "skill": "Ranged Combat",
+      "specialty": "Energy",
+      "damage": "5D",
+      "range": "veryLong",
+      "rounds": 100,
+      "ammo": 100,
+      "cost": 4000,
+      "weight": 5,
+      "tl": 9,
+      "traits": [
+        "Overload",
+        "Zero-G"
+      ],
+      "description": "<p>Energy Ammo: energy packs weigh 1kg and contain 25 shots. Each pack costs 200cr. Weapons contain enough slots for multiple energy packs, equal to the maximum number of rounds they can fire. Each additional energy pack installed increases the weight of the weapon. All energy weapons can only be fired once every 10-second round due to the extreme cooling needed to prevent burning out the weapon.</p><p><strong>Traits</strong></p><ul><li>Overload: Can be charged to deal +1 wound per round charged at the cost of an additional round; can only overcharge equal to the additional energy packs installed.</li><li>Zero-G: Prevents recoil, allowing use in low-to-no gravity without incurring penalties to attacks due to drifting.</li></ul>",
+      "source": "p.32"
+    }
+  },
+  {
+    "name": "EM Disruptor",
+    "type": "weapon",
+    "folder": "Energy Weapons",
+    "system": {
+      "category": "energy",
+      "skill": "Ranged Combat",
+      "specialty": "Energy",
+      "damage": "0",
+      "range": "short",
+      "rounds": 4,
+      "ammo": 4,
+      "cost": 1000,
+      "weight": 3,
+      "tl": 9,
+      "traits": [
+        "Stun",
+        "Overload",
+        "Zero-G"
+      ],
+      "description": "<p>Tasers and EM disruptors use smaller energy packs that weigh 500g and contain 4 rounds.</p><p>Damage: Special (the book lists no damage dice; see the Stun trait).</p><p>Energy Ammo: energy packs weigh 1kg and contain 25 shots. Each pack costs 200cr. Weapons contain enough slots for multiple energy packs, equal to the maximum number of rounds they can fire. Each additional energy pack installed increases the weight of the weapon. All energy weapons can only be fired once every 10-second round due to the extreme cooling needed to prevent burning out the weapon.</p><p><strong>Traits</strong></p><ul><li>Stun: The target must make an END check of 8+ or be rendered helpless, Stunned for a number of 10 minute intervals equal to 1+ the effect of the roll.</li><li>Overload: Can be charged to deal +1 wound per round charged at the cost of an additional round; can only overcharge equal to the additional energy packs installed.</li><li>Zero-G: Prevents recoil, allowing use in low-to-no gravity without incurring penalties to attacks due to drifting.</li></ul>",
+      "source": "p.32"
+    }
+  },
+  {
+    "name": "Taser",
+    "type": "weapon",
+    "folder": "Energy Weapons",
+    "system": {
+      "category": "energy",
+      "skill": "Ranged Combat",
+      "specialty": "Energy",
+      "damage": "0",
+      "range": "short",
+      "rounds": 4,
+      "ammo": 4,
+      "cost": 300,
+      "weight": 0.5,
+      "tl": 7,
+      "traits": [
+        "Stun",
+        "Zero-G"
+      ],
+      "description": "<p>Tasers and EM disruptors use smaller energy packs that weigh 500g and contain 4 rounds.</p><p>Damage: Special (the book lists no damage dice; see the Stun trait).</p><p>Energy Ammo: energy packs weigh 1kg and contain 25 shots. Each pack costs 200cr. Weapons contain enough slots for multiple energy packs, equal to the maximum number of rounds they can fire. Each additional energy pack installed increases the weight of the weapon. All energy weapons can only be fired once every 10-second round due to the extreme cooling needed to prevent burning out the weapon.</p><p><strong>Traits</strong></p><ul><li>Stun: The target must make an END check of 8+ or be rendered helpless, Stunned for a number of 10 minute intervals equal to 1+ the effect of the roll.</li><li>Zero-G: Prevents recoil, allowing use in low-to-no gravity without incurring penalties to attacks due to drifting.</li></ul>",
+      "source": "p.32"
+    }
+  }
+]

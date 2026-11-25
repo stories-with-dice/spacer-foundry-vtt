@@ -1,0 +1,116 @@
+/* Spacer tools area: Toolkit, Trade Calculator, chat cards, world journal pages. Scoped under .spacer.
+   Colours come from the --sp-* tokens of styles/spacer.css, with fallbacks. */
+
+/* ---------- Toolkit ---------- */
+.spacer.spacer-toolkit .window-content,
+.spacer.spacer-trade .window-content { padding: 0; }
+.spacer .stk-body,
+.spacer .st-body { padding: 0.5rem 0.6rem; overflow-y: auto; height: 100%; display: flex; flex-direction: column; gap: 0.4rem; }
+.spacer .stk-context { display: flex; flex-direction: column; gap: 0.25rem; padding: 0.35rem 0.45rem; border-radius: var(--sp-radius, 4px); background: var(--sp-panel-2, rgba(10,127,153,0.12)); }
+.spacer .stk-world { display: flex; align-items: center; gap: 0.35rem; }
+.spacer .stk-world select { flex: 1; }
+.spacer .stk-actor { font-size: var(--font-size-12, 12px); color: var(--sp-muted, #5b6676); }
+.spacer .stk-body details { border: 1px solid var(--sp-line, rgba(28,36,48,0.18)); border-radius: var(--sp-radius, 4px); padding: 0 0.45rem; background: var(--sp-panel, rgba(10,127,153,0.06)); }
+.spacer .stk-body details[open] { padding-bottom: 0.45rem; }
+.spacer .stk-body summary { cursor: pointer; font-weight: 600; padding: 0.35rem 0; list-style: none; display: flex; align-items: center; gap: 0.4rem; }
+.spacer .stk-body summary::-webkit-details-marker { display: none; }
+.spacer .stk-body summary::after { content: "\f107"; font-family: var(--font-awesome, "Font Awesome 6 Pro"); font-weight: 900; margin-left: auto; transition: transform 0.15s; }
+.spacer .stk-body details[open] > summary::after { transform: rotate(180deg); }
+.spacer .stk-body summary i { color: var(--sp-accent, #0a7f99); width: 1.1rem; text-align: center; }
+.spacer .stk-body summary small { font-weight: 400; color: var(--sp-muted, #5b6676); }
+.spacer .stk-body h4 { margin: 0.45rem 0 0.2rem; font-size: var(--font-size-13, 13px); border: none; }
+.spacer .stk-buttons { display: flex; flex-wrap: wrap; gap: 0.25rem; margin: 0.25rem 0; align-items: center; }
+.spacer .stk-buttons button,
+.spacer .st-row button { flex: 0 1 auto; width: auto; min-width: 0; padding: 0 0.5rem; line-height: 1.6rem; height: 1.7rem; font-size: var(--font-size-12, 12px); white-space: nowrap; }
+.spacer .stk-buttons select { width: auto; flex: 0 1 auto; height: 1.7rem; }
+.spacer .stk-line { display: flex; gap: 0.3rem; align-items: center; margin: 0.25rem 0; }
+.spacer .stk-line > select,
+.spacer .stk-line > input,
+.spacer .stk-line > label { flex: 1; min-width: 0; }
+.spacer .stk-line label { display: flex; flex-direction: column; font-size: var(--font-size-11, 11px); color: var(--sp-muted, #5b6676); gap: 0.1rem; }
+.spacer .stk-line button { flex: 0 0 auto; width: auto; height: 1.8rem; font-size: var(--font-size-12, 12px); white-space: nowrap; }
+.spacer .stk-main { background: var(--sp-accent, #0a7f99); color: #fff; border-color: transparent; }
+.spacer .stk-main:hover { filter: brightness(1.1); }
+.spacer .stk-check { display: inline-flex; align-items: center; gap: 0.2rem; font-size: var(--font-size-11, 11px); }
+.spacer .stk-check input { margin: 0; }
+.spacer .stk-icon { width: 1.8rem; height: 1.7rem; flex: 0 0 auto; padding: 0; }
+.spacer .stk-date { margin: 0.2rem 0; font-family: var(--sp-mono, monospace); font-size: var(--font-size-12, 12px); }
+.spacer .stk-part { color: var(--sp-accent-2, #d97706); font-weight: 600; }
+.spacer .stk-clock button { flex: 1 1 22%; }
+.spacer .stk-log { list-style: none; margin: 0.25rem 0; padding: 0; font-size: var(--font-size-11, 11px); max-height: 7.5rem; overflow-y: auto; }
+.spacer .stk-log li { display: flex; justify-content: space-between; gap: 0.5rem; border-bottom: 1px dotted var(--sp-line, rgba(28,36,48,0.18)); padding: 0.1rem 0; }
+.spacer .stk-log small { color: var(--sp-muted, #5b6676); }
+.spacer .stk-small { width: auto; font-size: var(--font-size-11, 11px); height: 1.5rem; line-height: 1.4rem; }
+.spacer .stk-note { margin: 0.2rem 0; font-size: var(--font-size-12, 12px); color: var(--sp-muted, #5b6676); }
+.spacer .stk-body > details > input[type="text"] { width: 100%; margin: 0.25rem 0; }
+
+/* ---------- Sidebar button ---------- */
+.spacer.spacer-tools-open { flex: 1 1 100%; }
+
+/* ---------- Trade calculator ---------- */
+.spacer .st-section { border: 1px solid var(--sp-line, rgba(28,36,48,0.18)); border-radius: var(--sp-radius, 4px); padding: 0.4rem 0.5rem; background: var(--sp-panel, rgba(10,127,153,0.06)); }
+.spacer .st-section h3 { margin: 0 0 0.3rem; font-size: var(--font-size-14, 14px); border-bottom: 1px solid var(--sp-line, rgba(28,36,48,0.18)); }
+.spacer .st-section h3 small { font-weight: 400; color: var(--sp-muted, #5b6676); }
+.spacer .st-grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+.spacer .st-grid2 fieldset { margin: 0; padding: 0.3rem 0.4rem; display: flex; flex-direction: column; gap: 0.2rem; }
+.spacer .st-grid2 label { display: flex; justify-content: space-between; align-items: center; gap: 0.3rem; font-size: var(--font-size-12, 12px); }
+.spacer .st-grid2 label input,
+.spacer .st-grid2 label select { width: 55%; }
+.spacer .st-codes { margin: 0.2rem 0 0; font-family: var(--sp-mono, monospace); font-size: var(--font-size-11, 11px); color: var(--sp-accent, #0a7f99); }
+.spacer .st-row { display: flex; flex-wrap: wrap; gap: 0.35rem; align-items: center; }
+.spacer .st-row label { display: flex; align-items: center; gap: 0.25rem; font-size: var(--font-size-12, 12px); }
+.spacer .st-row input[type="number"] { width: 3.2rem; }
+.spacer .st-row select { width: auto; }
+.spacer .st-tons { display: flex; align-items: center; gap: 0.3rem; margin: 0.3rem 0; font-size: var(--font-size-12, 12px); }
+.spacer .st-tons input { width: 4rem; }
+.spacer .st-hint { margin: 0.2rem 0; font-size: var(--font-size-11, 11px); color: var(--sp-muted, #5b6676); font-style: italic; }
+.spacer .st-goods { width: 100%; margin: 0.3rem 0; font-size: var(--font-size-12, 12px); border-collapse: collapse; }
+.spacer .st-goods th { text-align: left; font-size: var(--font-size-11, 11px); color: var(--sp-muted, #5b6676); }
+.spacer .st-goods td,
+.spacer .st-goods th { padding: 0.1rem 0.25rem; border-bottom: 1px solid var(--sp-line, rgba(28,36,48,0.18)); }
+.spacer .st-act { white-space: nowrap; text-align: right; }
+.spacer .st-act button { width: 1.6rem; height: 1.5rem; padding: 0; line-height: 1.4rem; display: inline-block; }
+.spacer .st-last { margin-top: 0.3rem; padding: 0.3rem 0.4rem; border-left: 3px solid var(--sp-accent-2, #d97706); background: var(--sp-panel-2, rgba(10,127,153,0.12)); }
+.spacer .st-last p { margin: 0 0 0.25rem; }
+
+/* ---------- Chat cards ---------- */
+.spacer.spacer-tools-card { font-size: var(--font-size-12, 12px); }
+.spacer.spacer-tools-card .stc-header { display: flex; gap: 0.45rem; align-items: center; border-bottom: 2px solid var(--sp-accent, #0a7f99); padding-bottom: 0.2rem; margin-bottom: 0.3rem; }
+.spacer.spacer-tools-card .stc-header > i { font-size: 1.25rem; color: var(--sp-accent, #0a7f99); width: 1.6rem; text-align: center; }
+.spacer.spacer-tools-card h3 { margin: 0; font-size: var(--font-size-14, 14px); border: none; }
+.spacer.spacer-tools-card .stc-sub { margin: 0; color: var(--sp-muted, #5b6676); font-size: var(--font-size-11, 11px); }
+.spacer.spacer-tools-card .stc-headline { margin: 0.2rem 0 0.35rem; font-weight: 600; font-size: var(--font-size-13, 13px); }
+.spacer.spacer-tools-card .stc-section { margin: 0.3rem 0; }
+.spacer.spacer-tools-card h4 { margin: 0.25rem 0 0.15rem; font-size: var(--font-size-12, 12px); color: var(--sp-accent, #0a7f99); border-bottom: 1px solid var(--sp-line, rgba(28,36,48,0.18)); }
+.spacer.spacer-tools-card .stc-rows { display: grid; grid-template-columns: max-content 1fr; gap: 0.1rem 0.5rem; margin: 0; }
+.spacer.spacer-tools-card .stc-rows dt { color: var(--sp-muted, #5b6676); font-weight: 600; }
+.spacer.spacer-tools-card .stc-rows dd { margin: 0; }
+.spacer.spacer-tools-card .stc-note { color: var(--sp-muted, #5b6676); font-size: var(--font-size-11, 11px); }
+.spacer.spacer-tools-card .stc-list { margin: 0.1rem 0; padding-left: 1.1rem; }
+.spacer.spacer-tools-card .stc-text { margin: 0.15rem 0; font-style: italic; color: var(--sp-muted, #5b6676); }
+.spacer.spacer-tools-card .stc-buttons { display: flex; flex-wrap: wrap; gap: 0.25rem; margin-top: 0.35rem; }
+.spacer.spacer-tools-card .stc-buttons button { flex: 1 1 auto; font-size: var(--font-size-12, 12px); line-height: 1.6rem; height: 1.8rem; }
+.spacer.spacer-tools-card .stc-footer { margin-top: 0.3rem; font-size: var(--font-size-11, 11px); color: var(--sp-muted, #5b6676); }
+
+/* ---------- World and subsector journal pages ---------- */
+.spacer.spacer-world .sw-uwp { font-family: var(--sp-mono, monospace); font-size: 1.15em; font-weight: 700; padding: 0.35rem 0.6rem; border-left: 4px solid var(--sp-accent, #0a7f99); background: var(--sp-panel-2, rgba(10,127,153,0.12)); }
+.spacer.spacer-world .sw-capital { font-weight: 700; color: var(--sp-accent-2, #d97706); }
+.spacer .sw-table { width: 100%; border-collapse: collapse; margin: 0.3rem 0 0.8rem; }
+.spacer .sw-table th { text-align: left; width: 28%; vertical-align: top; color: var(--sp-accent, #0a7f99); }
+.spacer .sw-table th,
+.spacer .sw-table td { padding: 0.25rem 0.4rem; border-bottom: 1px solid var(--sp-line, rgba(28,36,48,0.18)); }
+.spacer .sw-table small { color: var(--sp-muted, #5b6676); }
+.spacer .sw-objects li { margin: 0.2rem 0; }
+.spacer .ss-list th { width: auto; }
+.spacer .ss-grid { border-collapse: collapse; table-layout: fixed; width: 100%; font-size: 0.8em; margin: 0.4rem 0 1rem; }
+.spacer .ss-grid td { border: 1px solid var(--sp-line, rgba(28,36,48,0.18)); height: 3.6em; vertical-align: top; padding: 0.15rem; overflow: hidden; }
+.spacer .ss-grid td:nth-child(even) { transform: translateY(1.8em); }
+.spacer .ss-grid span { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.spacer .ss-hex { color: var(--sp-muted, #5b6676); font-size: 0.85em; }
+.spacer .ss-name { font-weight: 700; }
+.spacer .ss-uwp { font-family: var(--sp-mono, monospace); font-size: 0.85em; }
+.spacer .ss-world { background: var(--sp-panel-2, rgba(10,127,153,0.12)); }
+.spacer .ss-amber { box-shadow: inset 0 0 0 2px #d97706; }
+.spacer .ss-red { box-shadow: inset 0 0 0 2px #b91c1c; }
+.spacer .ss-capital .ss-name::before { content: "\2605 "; color: var(--sp-accent-2, #d97706); }
+.spacer .ss-star { color: #b91c1c; }

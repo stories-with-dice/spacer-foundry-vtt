@@ -1,0 +1,31 @@
+<header class="sp-header">
+  <img class="sp-portrait" src="{{actor.img}}" data-edit="img" data-action="editImage" alt="{{actor.name}}" data-tooltip="{{actor.name}}">
+  <div class="sp-header-main">
+    <div class="sp-name-row">
+      <input class="sp-name" type="text" name="name" value="{{actor.name}}" placeholder="{{localize "SPACER.Sheet.Name"}}" {{disabled (not editable)}}>
+      <span class="sp-badge {{injury.css}}" data-tooltip="{{localize "SPACER.Injury.Title"}}">{{injury.label}}</span>
+    </div>
+    {{#if isPerson}}
+    <div class="sp-stats">
+      <span class="sp-stat sp-upp" data-tooltip="{{localize "SPACER.Sheet.UppHint"}}"><label>UPP</label><b>{{system.uppCurrent}}</b>{{#if (ne system.uppCurrent system.upp)}}<small>/{{system.upp}}</small>{{/if}}</span>
+      <span class="sp-stat" data-tooltip="{{armorName}}"><label>{{localize "SPACER.Sheet.ToHit"}}</label><b>{{armorTotal}}+</b></span>
+      <span class="sp-stat"><label>{{localize "SPACER.Sheet.Move"}}</label><b>{{system.movement}}m</b></span>
+      <span class="sp-stat {{enc.css}}"><label>{{localize "SPACER.Sheet.Load"}}</label><b>{{enc.level}}</b></span>
+      {{#if psi.has}}<span class="sp-stat"><label>PSI</label><b>{{psi.value}}/{{psi.max}}</b></span>{{/if}}
+      {{#if fatigued}}<span class="sp-badge warn">{{localize "SPACER.Roll.Fatigue"}}</span>{{/if}}
+    </div>
+    {{/if}}
+    {{#if isCreature}}
+    <div class="sp-stats">
+      <span class="sp-stat"><label>{{localize "SPACER.Creature.Hits"}}</label><b>{{system.hits.value}}/{{system.hits.max}}</b></span>
+      <span class="sp-stat"><label>{{localize "SPACER.Sheet.ToHit"}}</label><b>{{system.difficulty}}+</b></span>
+      <span class="sp-stat"><label>{{localize "SPACER.Creature.Damage"}}</label><b>{{system.damage}}</b></span>
+    </div>
+    {{/if}}
+  </div>
+  <div class="sp-header-buttons">
+    {{#if isPerson}}<button type="button" class="sp-btn" data-action="rollTask" data-tooltip="{{localize "SPACER.Roll.TaskHint"}}"><i class="fa-solid fa-dice"></i> {{localize "SPACER.Roll.Task"}}</button>{{/if}}
+    {{#if isCreature}}<button type="button" class="sp-btn primary" data-action="creatureAttack"><i class="fa-solid fa-paw"></i> {{localize "SPACER.Creature.Attack"}}</button>{{/if}}
+    {{#if chargen}}<button type="button" class="sp-btn" data-action="chargen"><i class="fa-solid fa-user-astronaut"></i> {{localize "SPACER.Sheet.CreateCharacter"}}</button>{{/if}}
+  </div>
+</header>

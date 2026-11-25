@@ -1,0 +1,52 @@
+[
+ {
+  "name": "Misjump Direction",
+  "folder": "Starship Operations",
+  "formula": "1d6",
+  "description": "<p>p.72. When a ship misjumps, roll 1D to determine the direction of the jump on the subsector hex map. Then roll another 1D to determine how many parsec hexes it misjumps in that direction.</p>",
+  "results": [
+   {
+    "range": [
+     1,
+     1
+    ],
+    "text": "Spin &amp; Coreward"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "Coreward"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "Core &amp; Trailing"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "Trailing &amp; Rimward"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "Rimward"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "Rim &amp; Spinward"
+   }
+  ]
+ }
+]

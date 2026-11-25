@@ -1,0 +1,223 @@
+[
+  {
+    "name": "Slow",
+    "type": "drug",
+    "folder": "Drugs",
+    "system": {
+      "effect": "Double the amount of actions a character can perform per round for 10 minutes",
+      "duration": "10 minutes",
+      "availability": "9+",
+      "legality": "Roll OVER the local Law Level for the drug to be legal (p.120).",
+      "cost": 500,
+      "weight": 0,
+      "tl": 8,
+      "doses": 1,
+      "description": "<p>Users experience time at a slower rate by accelerating their metabolism, allowing them to act twice as much in a combat round. The drug takes 1 minute to take effect and lasts for 10 minutes. The spacer takes 1D damage after the drug wears off and is “pinned” for a number of 10 minute intervals equal to the damage taken.</p><p>Effect: Double the amount of actions a character can perform per round for 10 minutes. Price: 500cr. TL: 8. Available: 9+.</p><p>Availability: Roll under the Available chance, with a DM equal to the difference between the drug's Tech Level and the planet's Tech Level.</p><p>Dosage: Prices are given for 1 dosage. Synergy: Multiple drugs can be taken for multiple effects to take place simultaneously; any drawbacks are also incorporated, but multiply the drawback by D3.</p><p>Addiction: a character can prevent becoming dependent if they only consume it once every week for Slow, Combat, PSI, and Recreational drugs or once every three months for Fast drugs. Consuming within the abuse window requires an END roll equal to or more than the drug’s Available roll to avoid dependency. Effect of addiction: -D3 END every week the drug is not consumed; at END 0, damage to STR and DEX equally; consuming the drug in this period recovers 3 wounds. Treatment: one-month medical stay at a treatment center on a TL12 planet, 50,000Cr.</p>",
+      "source": "p.120-121"
+    }
+  },
+  {
+    "name": "Medical Slow",
+    "type": "drug",
+    "folder": "Drugs",
+    "system": {
+      "effect": "Heal 30 days worth of recovery over the course of 30 hours",
+      "duration": "30 hours",
+      "availability": "7+",
+      "legality": "Medical drug: not affected by Law Level, unless in an Amber Zone or Red Zone (p.120).",
+      "cost": 100,
+      "weight": 0,
+      "tl": 7,
+      "doses": 1,
+      "description": "<p>Slow (Medical): The user is medically placed in an unconscious state for 30 hours and recovers from injuries or illness as if 30 days have passed.</p><p>Effect: Heal 30 days worth of recovery over the course of 30 hours. Price: 100cr. TL: 7. Available: 7+.</p><p>Availability: Roll under the Available chance, with a DM equal to the difference between the drug's Tech Level and the planet's Tech Level.</p><p>Dosage: Prices are given for 1 dosage. Synergy: Multiple drugs can be taken for multiple effects to take place simultaneously; any drawbacks are also incorporated, but multiply the drawback by D3.</p><p>Addiction: a character can prevent becoming dependent if they only consume it once every week for Slow, Combat, PSI, and Recreational drugs or once every three months for Fast drugs. Consuming within the abuse window requires an END roll equal to or more than the drug’s Available roll to avoid dependency. Effect of addiction: -D3 END every week the drug is not consumed; at END 0, damage to STR and DEX equally; consuming the drug in this period recovers 3 wounds. Treatment: one-month medical stay at a treatment center on a TL12 planet, 50,000Cr.</p>",
+      "source": "p.120-121"
+    }
+  },
+  {
+    "name": "Slow Antidote",
+    "type": "drug",
+    "folder": "Drugs",
+    "system": {
+      "effect": "Cancels Slow drug",
+      "duration": "",
+      "availability": "10+",
+      "legality": "Roll OVER the local Law Level for the drug to be legal (p.120).",
+      "cost": 600,
+      "weight": 0,
+      "tl": 10,
+      "doses": 1,
+      "description": "<p>Slow (Antidote): Cancels the effect of a Slow drug, but the subject still suffers any ill effects from the Slow drug.</p><p>Effect: Cancels Slow drug. Price: 600cr. TL: 10. Available: 10+.</p><p>Availability: Roll under the Available chance, with a DM equal to the difference between the drug's Tech Level and the planet's Tech Level.</p><p>Dosage: Prices are given for 1 dosage. Synergy: Multiple drugs can be taken for multiple effects to take place simultaneously; any drawbacks are also incorporated, but multiply the drawback by D3.</p><p>Addiction: a character can prevent becoming dependent if they only consume it once every week for Slow, Combat, PSI, and Recreational drugs or once every three months for Fast drugs. Consuming within the abuse window requires an END roll equal to or more than the drug’s Available roll to avoid dependency. Effect of addiction: -D3 END every week the drug is not consumed; at END 0, damage to STR and DEX equally; consuming the drug in this period recovers 3 wounds. Treatment: one-month medical stay at a treatment center on a TL12 planet, 50,000Cr.</p>",
+      "source": "p.120-121"
+    }
+  },
+  {
+    "name": "Fast",
+    "type": "drug",
+    "folder": "Drugs",
+    "system": {
+      "effect": "Experience 1 minute of time per 1 hour of real time",
+      "duration": "",
+      "availability": "8+",
+      "legality": "Roll OVER the local Law Level for the drug to be legal (p.120).",
+      "cost": 200,
+      "weight": 0,
+      "tl": 9,
+      "doses": 1,
+      "description": "<p>Users experience time at a much faster rate, so that they perceive 1 minute as 1 hour of time. The user is extremely vulnerable to harm due to their 60-to-1 ratio of time, and they often need assistance. This is used by wealthy people to slow aging and prevent boredom during long stretches of time, such as in jump-space.</p><p>Effect: Experience 1 minute of time per 1 hour of real time. Price: 200cr. TL: 9. Available: 8+.</p><p>Availability: Roll under the Available chance, with a DM equal to the difference between the drug's Tech Level and the planet's Tech Level.</p><p>Dosage: Prices are given for 1 dosage. Synergy: Multiple drugs can be taken for multiple effects to take place simultaneously; any drawbacks are also incorporated, but multiply the drawback by D3.</p><p>Addiction: a character can prevent becoming dependent if they only consume it once every week for Slow, Combat, PSI, and Recreational drugs or once every three months for Fast drugs. Consuming within the abuse window requires an END roll equal to or more than the drug’s Available roll to avoid dependency. Effect of addiction: -D3 END every week the drug is not consumed; at END 0, damage to STR and DEX equally; consuming the drug in this period recovers 3 wounds. Treatment: one-month medical stay at a treatment center on a TL12 planet, 50,000Cr.</p>",
+      "source": "p.120-121"
+    }
+  },
+  {
+    "name": "Fast Antidote",
+    "type": "drug",
+    "folder": "Drugs",
+    "system": {
+      "effect": "Cancels Fast drug",
+      "duration": "",
+      "availability": "9+",
+      "legality": "Roll OVER the local Law Level for the drug to be legal (p.120).",
+      "cost": 900,
+      "weight": 0,
+      "tl": 12,
+      "doses": 1,
+      "description": "<p>Fast (Antidote): Cancels the effect of a Fast drug, but the subject still suffers any ill effects from the Fast drug.</p><p>Effect: Cancels Fast drug. Price: 900cr. TL: 12. Available: 9+.</p><p>Availability: Roll under the Available chance, with a DM equal to the difference between the drug's Tech Level and the planet's Tech Level.</p><p>Dosage: Prices are given for 1 dosage. Synergy: Multiple drugs can be taken for multiple effects to take place simultaneously; any drawbacks are also incorporated, but multiply the drawback by D3.</p><p>Addiction: a character can prevent becoming dependent if they only consume it once every week for Slow, Combat, PSI, and Recreational drugs or once every three months for Fast drugs. Consuming within the abuse window requires an END roll equal to or more than the drug’s Available roll to avoid dependency. Effect of addiction: -D3 END every week the drug is not consumed; at END 0, damage to STR and DEX equally; consuming the drug in this period recovers 3 wounds. Treatment: one-month medical stay at a treatment center on a TL12 planet, 50,000Cr.</p>",
+      "source": "p.120-121"
+    }
+  },
+  {
+    "name": "Anagathic",
+    "type": "drug",
+    "folder": "Drugs",
+    "system": {
+      "effect": "Halts aging for 1 month",
+      "duration": "30 days",
+      "availability": "10+",
+      "legality": "Roll OVER the local Law Level for the drug to be legal (p.120).",
+      "cost": 20000,
+      "weight": 0,
+      "tl": 15,
+      "doses": 1,
+      "description": "<p>Halts the aging process. Used to prevent aging both for vanity and to avoid any decline of physical capabilities. One dose lasts for 30 days.</p><p>Effect: Halts aging for 1 month. Price: 20Kcr. TL: 15. Available: 10+.</p><p>Availability: Roll under the Available chance, with a DM equal to the difference between the drug's Tech Level and the planet's Tech Level.</p><p>Dosage: Prices are given for 1 dosage. Synergy: Multiple drugs can be taken for multiple effects to take place simultaneously; any drawbacks are also incorporated, but multiply the drawback by D3.</p><p>Addiction: a character can prevent becoming dependent if they only consume it once every week for Slow, Combat, PSI, and Recreational drugs or once every three months for Fast drugs. Consuming within the abuse window requires an END roll equal to or more than the drug’s Available roll to avoid dependency. Effect of addiction: -D3 END every week the drug is not consumed; at END 0, damage to STR and DEX equally; consuming the drug in this period recovers 3 wounds. Treatment: one-month medical stay at a treatment center on a TL12 planet, 50,000Cr.</p>",
+      "source": "p.120-121"
+    }
+  },
+  {
+    "name": "Truth",
+    "type": "drug",
+    "folder": "Drugs",
+    "system": {
+      "effect": "Forced to speak truth for 1 minute",
+      "duration": "1 minute",
+      "availability": "7+",
+      "legality": "Roll OVER the local Law Level for the drug to be legal (p.120).",
+      "cost": 5000,
+      "weight": 0,
+      "tl": 8,
+      "doses": 1,
+      "description": "<p>Used to force someone to speak truthfully for one minute. They can resist the effects with a 8+ END check for every question asked, with a -1DM if a prior question was asked. Only six questions can be asked in the minute, or at a rate of one per combat round. After the one-minute time frame passes, the subject is rendered unconscious for one hour and incurs 2D damage from the drug.</p><p>Effect: Forced to speak truth for 1 minute. Price: 5Kcr. TL: 8. Available: 7+.</p><p>Availability: Roll under the Available chance, with a DM equal to the difference between the drug's Tech Level and the planet's Tech Level.</p><p>Dosage: Prices are given for 1 dosage. Synergy: Multiple drugs can be taken for multiple effects to take place simultaneously; any drawbacks are also incorporated, but multiply the drawback by D3.</p><p>Addiction: a character can prevent becoming dependent if they only consume it once every week for Slow, Combat, PSI, and Recreational drugs or once every three months for Fast drugs. Consuming within the abuse window requires an END roll equal to or more than the drug’s Available roll to avoid dependency. Effect of addiction: -D3 END every week the drug is not consumed; at END 0, damage to STR and DEX equally; consuming the drug in this period recovers 3 wounds. Treatment: one-month medical stay at a treatment center on a TL12 planet, 50,000Cr.</p>",
+      "source": "p.120-121"
+    }
+  },
+  {
+    "name": "Combat",
+    "type": "drug",
+    "folder": "Drugs",
+    "system": {
+      "effect": "+2 STR and END",
+      "duration": "",
+      "availability": "6+",
+      "legality": "Roll OVER the local Law Level for the drug to be legal (p.120).",
+      "cost": 750,
+      "weight": 0,
+      "tl": 9,
+      "doses": 1,
+      "description": "<p>The book gives no description or duration for Combat drugs beyond the Drug Table entry.</p><p>Effect: +2 STR and END. Price: 750cr. TL: 9. Available: 6+.</p><p>Availability: Roll under the Available chance, with a DM equal to the difference between the drug's Tech Level and the planet's Tech Level.</p><p>Dosage: Prices are given for 1 dosage. Synergy: Multiple drugs can be taken for multiple effects to take place simultaneously; any drawbacks are also incorporated, but multiply the drawback by D3.</p><p>Addiction: a character can prevent becoming dependent if they only consume it once every week for Slow, Combat, PSI, and Recreational drugs or once every three months for Fast drugs. Consuming within the abuse window requires an END roll equal to or more than the drug’s Available roll to avoid dependency. Effect of addiction: -D3 END every week the drug is not consumed; at END 0, damage to STR and DEX equally; consuming the drug in this period recovers 3 wounds. Treatment: one-month medical stay at a treatment center on a TL12 planet, 50,000Cr.</p>",
+      "source": "p.120-121"
+    }
+  },
+  {
+    "name": "Medical",
+    "type": "drug",
+    "folder": "Drugs",
+    "system": {
+      "effect": "X2 the rate of healing or recovery",
+      "duration": "",
+      "availability": "9+",
+      "legality": "Medical drug: not affected by Law Level, unless in an Amber Zone or Red Zone (p.120).",
+      "cost": 100,
+      "weight": 0,
+      "tl": 6,
+      "doses": 1,
+      "description": "<p>Used to describe any drug that can aid in healing or recovery. The referee can use this to provide drugs for curing an illness, healing wounds, as an antidote to poisoning, to remove radiation, etc. Must be administered by someone with a rank in a Medical Skill, with a roll of an 8+. A failed administration of the drug wastes it without effect.</p><p>Effect: X2 the rate of healing or recovery. Price: 100cr. TL: 6. Available: 9+.</p><p>Availability: Roll under the Available chance, with a DM equal to the difference between the drug's Tech Level and the planet's Tech Level.</p><p>Dosage: Prices are given for 1 dosage. Synergy: Multiple drugs can be taken for multiple effects to take place simultaneously; any drawbacks are also incorporated, but multiply the drawback by D3.</p><p>Addiction: a character can prevent becoming dependent if they only consume it once every week for Slow, Combat, PSI, and Recreational drugs or once every three months for Fast drugs. Consuming within the abuse window requires an END roll equal to or more than the drug’s Available roll to avoid dependency. Effect of addiction: -D3 END every week the drug is not consumed; at END 0, damage to STR and DEX equally; consuming the drug in this period recovers 3 wounds. Treatment: one-month medical stay at a treatment center on a TL12 planet, 50,000Cr.</p>",
+      "source": "p.120-121"
+    }
+  },
+  {
+    "name": "PSI-Boost",
+    "type": "drug",
+    "folder": "PSI Drugs",
+    "system": {
+      "effect": "+3 PSI for one hour",
+      "duration": "1 hour",
+      "availability": "8+",
+      "legality": "PSI drugs can only be found when interacting with an associate of a psionic institute, and they have a 8+ chance of having access to the drugs and the desire to sell them.",
+      "cost": 1000,
+      "weight": 0,
+      "tl": 0,
+      "doses": 1,
+      "description": "<p>PSI-Drug: Allows a psionic character a way to temporarily enhance their psionic abilities. The PSI score can never naturally exceed 15 (including drug enhancement).</p><p>Boost: Gain +3 PSI to use immediately for up to one hour of time.</p><p>The book gives no tech level (\"-\").</p><p>Effect: +3 PSI for one hour. Price: 1Kcr. TL: -. Available: 8+.</p><p>Availability: Roll under the Available chance, with a DM equal to the difference between the drug's Tech Level and the planet's Tech Level.</p><p>Dosage: Prices are given for 1 dosage. Synergy: Multiple drugs can be taken for multiple effects to take place simultaneously; any drawbacks are also incorporated, but multiply the drawback by D3.</p><p>Addiction: a character can prevent becoming dependent if they only consume it once every week for Slow, Combat, PSI, and Recreational drugs or once every three months for Fast drugs. Consuming within the abuse window requires an END roll equal to or more than the drug’s Available roll to avoid dependency. Effect of addiction: -D3 END every week the drug is not consumed; at END 0, damage to STR and DEX equally; consuming the drug in this period recovers 3 wounds. Treatment: one-month medical stay at a treatment center on a TL12 planet, 50,000Cr.</p>",
+      "source": "p.120-121"
+    }
+  },
+  {
+    "name": "PSI-Double",
+    "type": "drug",
+    "folder": "PSI Drugs",
+    "system": {
+      "effect": "+6 PSI for one hour",
+      "duration": "1 hour",
+      "availability": "10+",
+      "legality": "PSI drugs can only be found when interacting with an associate of a psionic institute, and they have a 8+ chance of having access to the drugs and the desire to sell them.",
+      "cost": 4000,
+      "weight": 0,
+      "tl": 0,
+      "doses": 1,
+      "description": "<p>PSI-Drug: Allows a psionic character a way to temporarily enhance their psionic abilities. The PSI score can never naturally exceed 15 (including drug enhancement).</p><p>Double: Gain +6 PSI to use immediately for up to one hour of time.</p><p>The book gives no tech level (\"-\").</p><p>Effect: +6 PSI for one hour. Price: 4Kcr. TL: -. Available: 10+.</p><p>Availability: Roll under the Available chance, with a DM equal to the difference between the drug's Tech Level and the planet's Tech Level.</p><p>Dosage: Prices are given for 1 dosage. Synergy: Multiple drugs can be taken for multiple effects to take place simultaneously; any drawbacks are also incorporated, but multiply the drawback by D3.</p><p>Addiction: a character can prevent becoming dependent if they only consume it once every week for Slow, Combat, PSI, and Recreational drugs or once every three months for Fast drugs. Consuming within the abuse window requires an END roll equal to or more than the drug’s Available roll to avoid dependency. Effect of addiction: -D3 END every week the drug is not consumed; at END 0, damage to STR and DEX equally; consuming the drug in this period recovers 3 wounds. Treatment: one-month medical stay at a treatment center on a TL12 planet, 50,000Cr.</p>",
+      "source": "p.120-121"
+    }
+  },
+  {
+    "name": "PSI-Special",
+    "type": "drug",
+    "folder": "PSI Drugs",
+    "system": {
+      "effect": "+1 PSI gained per hour, up to a max of PSI 15",
+      "duration": "15 hours",
+      "availability": "12+",
+      "legality": "PSI drugs can only be found when interacting with an associate of a psionic institute, and they have a 8+ chance of having access to the drugs and the desire to sell them.",
+      "cost": 10000,
+      "weight": 0,
+      "tl": 0,
+      "doses": 1,
+      "description": "<p>PSI-Drug: Allows a psionic character a way to temporarily enhance their psionic abilities. The PSI score can never naturally exceed 15 (including drug enhancement).</p><p>Special: Gain +1 PSI per hour, allowing the psionic character to accumulate up to 15 PSI maximum over the course of 15 hours.</p><p>The book gives no tech level (\"-\").</p><p>Effect: +1 PSI gained per hour, up to a max of PSI 15. Price: 10Kcr. TL: -. Available: 12+.</p><p>Availability: Roll under the Available chance, with a DM equal to the difference between the drug's Tech Level and the planet's Tech Level.</p><p>Dosage: Prices are given for 1 dosage. Synergy: Multiple drugs can be taken for multiple effects to take place simultaneously; any drawbacks are also incorporated, but multiply the drawback by D3.</p><p>Addiction: a character can prevent becoming dependent if they only consume it once every week for Slow, Combat, PSI, and Recreational drugs or once every three months for Fast drugs. Consuming within the abuse window requires an END roll equal to or more than the drug’s Available roll to avoid dependency. Effect of addiction: -D3 END every week the drug is not consumed; at END 0, damage to STR and DEX equally; consuming the drug in this period recovers 3 wounds. Treatment: one-month medical stay at a treatment center on a TL12 planet, 50,000Cr.</p>",
+      "source": "p.120-121"
+    }
+  },
+  {
+    "name": "Recreational",
+    "type": "drug",
+    "folder": "Drugs",
+    "system": {
+      "effect": "Typically illegal drugs used for non-medical purposes",
+      "duration": "",
+      "availability": "8+",
+      "legality": "Normally illegal in most parts on any world; roll 9+ to determine if legal (p.120).",
+      "cost": 0,
+      "weight": 0,
+      "tl": 4,
+      "doses": 1,
+      "description": "<p>This represents any drug that provides a non-utility alteration of the metabolism or mind to get high, relax, or hallucinate. Recreational drugs are normally illegal in most parts on any world, requiring a roll of 9+ to determine if they are legal. These drugs can be found using the Availability chance. The referee can choose what the drugs are and how they affect someone who takes them.</p><p>Price: 1D x 2Kcr per dose (the cost field is 0; roll the price).</p><p>Effect: Typically illegal drugs used for non-medical purposes. Price: 1D x 2Kcr. TL: 4. Available: 8+.</p><p>Availability: Roll under the Available chance, with a DM equal to the difference between the drug's Tech Level and the planet's Tech Level.</p><p>Dosage: Prices are given for 1 dosage. Synergy: Multiple drugs can be taken for multiple effects to take place simultaneously; any drawbacks are also incorporated, but multiply the drawback by D3.</p><p>Addiction: a character can prevent becoming dependent if they only consume it once every week for Slow, Combat, PSI, and Recreational drugs or once every three months for Fast drugs. Consuming within the abuse window requires an END roll equal to or more than the drug’s Available roll to avoid dependency. Effect of addiction: -D3 END every week the drug is not consumed; at END 0, damage to STR and DEX equally; consuming the drug in this period recovers 3 wounds. Treatment: one-month medical stay at a treatment center on a TL12 planet, 50,000Cr.</p>",
+      "source": "p.120-121"
+    }
+  }
+]

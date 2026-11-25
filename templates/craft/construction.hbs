@@ -1,0 +1,109 @@
+<div class="construction-body">
+  <div class="steps">
+    <fieldset>
+      <legend>1. {{localize "SPACER.Craft.Build.hull"}}</legend>
+      <label>{{localize "Name"}} <input type="text" name="name" value="{{d.name}}" placeholder="{{localize 'SPACER.Craft.Build.newShip'}}"></label>
+      <label>{{localize "SPACER.Craft.Ship.tonnage"}}
+        <input type="number" name="tons" value="{{d.tons}}" min="10" step="1" list="spacer-hulls">
+        <datalist id="spacer-hulls">{{#each hulls}}<option value="{{@key}}">{{this}}</option>{{/each}}</datalist>
+      </label>
+      <p class="hint">{{r.hull.main}}T {{localize "SPACER.Craft.Build.mainSpace"}} · {{r.hull.engines}}T {{localize "SPACER.Craft.Build.engines"}} · {{r.hull.months}} {{localize "SPACER.Craft.Unit.months"}}{{#if r.hull.custom}} · <span class="warn">{{localize "SPACER.Craft.Build.customHull"}}</span>{{/if}} · {{localize "SPACER.Craft.Ship.hull"}} {{r.hullPoints}}</p>
+    </fieldset>
+
+    <fieldset>
+      <legend>2. {{localize "SPACER.Craft.Build.engineering"}}</legend>
+      <table>
+        {{#each eng}}
+        <tr class="{{#if invalid}}critical{{/if}}">
+          <th>{{label}}</th>
+          <td><select name="{{key}}">{{selectOptions @root.letterChoices selected=letter}}</select></td>
+          <td>{{performance}} {{unit}}</td><td>{{mass}}T</td><td class="num">{{cost}}</td>
+        </tr>
+        {{/each}}
+      </table>
+      <p class="hint">{{localize "SPACER.Craft.Build.engineeringMass"}}: {{r.engineeringMass}}T / {{r.hull.engines}}T{{#if r.engineeringOverflow}} (+{{r.engineeringOverflow}}T {{localize "SPACER.Craft.Build.fromMain"}}){{/if}}</p>
+    </fieldset>
+
+    <fieldset>
+      <legend>3. {{localize "SPACER.Craft.Build.bridge"}}</legend>
+      <p class="hint">{{localize "SPACER.Craft.Build.bridgeHint"}}</p>
+      <label>{{localize "SPACER.Craft.Ship.cpu"}} <select name="cpu">{{selectOptions cpus selected=d.cpu}}</select></label>
+    </fieldset>
+
+    <fieldset>
+      <legend>4. {{localize "SPACER.Craft.Build.lifeSupport"}}</legend>
+      <label>{{localize "SPACER.Craft.Ship.staterooms"}} <input type="number" name="staterooms" value="{{d.staterooms}}" min="0"></label>
+      <label>{{localize "SPACER.Craft.Ship.lowBerths"}} <input type="number" name="lowBerths" value="{{d.lowBerths}}" min="0"></label>
+    </fieldset>
+
+    <fieldset>
+      <legend>5. {{localize "SPACER.Craft.Ship.fuel"}}</legend>
+      <label>{{localize "SPACER.Craft.Build.fuelTons"}} <input type="number" name="fuel" value="{{d.fuel}}" min="0" placeholder="{{r.fuelRecommended}}"></label>
+      <p class="hint">{{localize "SPACER.Craft.Build.fuelHint" min=r.fuelMin rec=r.fuelRecommended}} → {{r.fuel}}T</p>
+    </fieldset>
+
+    <fieldset>
+      <legend>6. {{localize "SPACER.Craft.Ship.weapons"}}</legend>
+      <label>{{localize "SPACER.Craft.Build.extraHardpoints"}} <input type="number" name="extraHardpoints" value="{{d.extraHardpoints}}" min="0" max="{{maxHardpoints}}"></label>
+      <p class="hint">{{localize "SPACER.Craft.Ship.hardpoints"}}: {{r.hardpoints}} · {{localize "SPACER.Craft.Build.weaponsUsed"}}: {{r.weapons.length}}</p>
+      <table>
+        {{#each weapons}}
+        <tr><th>{{label}}</th><td>{{damage}}</td><td class="num">{{cost}}</td><td><input type="number" name="weapon.{{key}}" value="{{count}}" min="0"></td></tr>
+        {{/each}}
+      </table>
+    </fieldset>
+
+    <fieldset>
+      <legend>7. {{localize "SPACER.Craft.Build.secondary"}}</legend>
+      <table>
+        {{#each secondary}}
+        <tr><th>{{label}}</th><td>{{tons}}T</td><td class="num">{{cost}}</td><td><input type="number" name="secondary.{{key}}" value="{{count}}" min="0"></td></tr>
+        {{/each}}
+      </table>
+      <label>{{localize "SPACER.Craft.Build.vehicleTons"}} <input type="number" name="vehicleTons" value="{{d.vehicleTons}}" min="0" step="any"></label>
+    </fieldset>
+
+    <fieldset>
+      <legend>{{localize "SPACER.Craft.Build.modifications"}}</legend>
+      <label class="check"><input type="checkbox" name="streamlined" {{checked d.streamlined}}> {{localize "SPACER.Craft.Ship.streamlined"}}</label>
+      <label class="check"><input type="checkbox" name="fuelScoops" {{checked d.fuelScoops}}> {{localize "SPACER.Craft.Build.fuelScoops"}}</label>
+      <label>{{localize "SPACER.Craft.Build.refinery"}} <input type="number" name="refineries" value="{{d.refineries}}" min="0" max="3"></label>
+      <div class="armor-grid">
+        {{#each armor}}<label>{{localize "SPACER.Craft.Vehicle.armor"}}: {{label}} <input type="number" name="armor.{{key}}" value="{{value}}" min="0"></label>{{/each}}
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>8. {{localize "SPACER.Craft.Ship.cargo"}}</legend>
+      <label>{{localize "SPACER.Craft.Build.repairParts"}} <input type="number" name="repairParts" value="{{d.repairParts}}" min="0" step="any"></label>
+      <p class="hint">{{localize "SPACER.Craft.Build.cargoLeft"}}: <strong class="{{#if (lt r.cargo 0)}}warn{{/if}}">{{r.cargo}}T</strong></p>
+    </fieldset>
+
+    <fieldset>
+      <legend>9. {{localize "SPACER.Craft.Build.costTime"}}</legend>
+      <label class="check"><input type="checkbox" name="stock" {{checked d.stock}}> {{localize "SPACER.Craft.Build.stock"}}</label>
+      <label class="check"><input type="checkbox" name="architect" {{checked d.architect}}> {{localize "SPACER.Craft.Build.architect"}}</label>
+    </fieldset>
+  </div>
+
+  <aside class="summary">
+    <h3>{{localize "SPACER.Craft.Build.summaryTitle"}}</h3>
+    <table>
+      {{#each parts}}<tr><th>{{label}}</th><td class="num">{{value}}</td></tr>{{/each}}
+      <tr><th>{{localize "SPACER.Craft.Build.subtotal"}}</th><td class="num">{{fmt.subtotal}}</td></tr>
+      {{#if r.stockDiscount}}<tr><th>{{localize "SPACER.Craft.Build.stock"}}</th><td class="num">-{{fmt.stock}}</td></tr>{{/if}}
+      {{#if r.architectFee}}<tr><th>{{localize "SPACER.Craft.Build.architect"}}</th><td class="num">{{fmt.architect}}</td></tr>{{/if}}
+      <tr class="total"><th>{{localize "SPACER.Craft.Finance.total"}}</th><td class="num">{{fmt.total}}</td></tr>
+      <tr><th>{{localize "SPACER.Craft.Build.time"}}</th><td class="num">{{r.months}} {{localize "SPACER.Craft.Unit.months"}}</td></tr>
+      <tr><th>{{localize "SPACER.Craft.Build.down"}}</th><td class="num">{{fmt.down}}</td></tr>
+      <tr><th>{{localize "SPACER.Craft.Finance.mortgage"}}</th><td class="num">{{fmt.mortgage}}</td></tr>
+      <tr><th>{{localize "SPACER.Craft.Finance.maintenanceAnnual"}}</th><td class="num">{{fmt.maintenance}}</td></tr>
+      <tr><th>{{localize "SPACER.Craft.Build.space"}}</th><td class="num">{{r.used}} / {{r.hull.main}}T</td></tr>
+    </table>
+    {{#if warnings.length}}<ul class="warnings">{{#each warnings}}<li>{{this}}</li>{{/each}}</ul>{{/if}}
+    <div class="actions-row">
+      <button type="button" data-action="reset"><i class="fa-solid fa-rotate-left"></i> {{localize "SPACER.Craft.Build.reset"}}</button>
+      <button type="button" data-action="build" {{#unless r.valid}}disabled{{/unless}}><i class="fa-solid fa-hammer"></i> {{localize "SPACER.Craft.Build.build"}}</button>
+    </div>
+  </aside>
+</div>

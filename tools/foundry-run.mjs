@@ -52,7 +52,14 @@ try {
   }
   await page.goto(`${base}/join`, { waitUntil: "domcontentloaded" });
   await page.waitForSelector('select[name="userid"]', { timeout: 60000 });
-  const gm = await page.$$eval('select[name="userid"] option', opts => opts.find(o => /gamemaster/i.test(o.textContent))?.value ?? opts.find(o => o.value)?.value);
+  // A user who still has an open session (the previous run's browser) is disabled until the
+  // server notices the disconnect; reload the join page until the Gamemaster is free.
+  let gm;
+  for (let i = 0; i < 30 && !gm; i++) {
+    gm = await page.$$eval('select[name="userid"] option', opts => opts.find(o => /gamemaster/i.test(o.textContent) && !o.disabled)?.value);
+    if (!gm) { await page.waitForTimeout(2000); await page.reload({ waitUntil: "domcontentloaded" }); await page.waitForSelector('select[name="userid"]'); }
+  }
+  if (!gm) throw new Error("Gamemaster user stays busy on the join screen");
   await page.selectOption('select[name="userid"]', gm);
   await page.click('button[name="join"]');
   await page.waitForFunction(() => window.game?.ready === true, null, { timeout: 120000 });

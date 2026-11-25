@@ -1,0 +1,38 @@
+<section class="sp-body">
+  <div class="sp-grid four">
+    <label class="sp-field">{{localize "SPACER.Npc.Role"}}<input type="text" name="system.role" value="{{system.role}}" {{disabled (not editable)}}></label>
+    <label class="sp-field">{{localize "SPACER.Npc.Demeanour"}}<input type="text" name="system.demeanour" value="{{system.demeanour}}" {{disabled (not editable)}}></label>
+    <label class="sp-field">{{localize "SPACER.Sheet.Qty"}}<input type="number" name="system.quantity" value="{{system.quantity}}" min="1" {{disabled (not editable)}}></label>
+    <label class="sp-field">{{localize "SPACER.Sheet.Age"}}<input type="number" name="system.age" value="{{system.age}}" {{disabled (not editable)}}></label>
+  </div>
+  {{> "spacer.play.actor.parts.characteristics"}}
+  <div class="sp-toolbar">
+    <h3 class="sp-section">{{localize "SPACER.Skill.Plural"}}</h3>
+    <button type="button" class="sp-btn small" data-action="openPack" data-pack="skills"><i class="fa-solid fa-book"></i></button>
+    <button type="button" class="sp-btn small" data-action="morale"><i class="fa-solid fa-flag"></i> {{localize "SPACER.Morale.Button"}}</button>
+  </div>
+  <div class="sp-skill-chips">
+    {{#each skillGroups as |g|}}
+      {{#if g.base}}<span class="sp-chip" data-item-id="{{g.base.id}}"><a data-action="rollSkill">{{g.name}} {{g.base.rank}}</a><a data-action="itemDelete" class="x"><i class="fa-solid fa-xmark"></i></a></span>{{/if}}
+      {{#each g.specialties as |sp|}}<span class="sp-chip" data-item-id="{{sp.id}}"><a data-action="rollSkill">{{g.name}} ({{sp.name}}) {{sp.rank}}</a><a data-action="itemDelete" class="x"><i class="fa-solid fa-xmark"></i></a></span>{{/each}}
+    {{else}}<span class="sp-empty">{{localize "SPACER.Skill.DropHint"}}</span>{{/each}}
+  </div>
+  <h3 class="sp-section">{{localize "SPACER.Weapon.Plural"}}</h3>
+  {{> "spacer.play.actor.parts.weapons"}}
+  <h3 class="sp-section">{{localize "SPACER.Armour.Plural"}}</h3>
+  <div class="sp-skill-chips">
+    {{#each armour as |a|}}<span class="sp-chip {{#if a.equipped}}on{{/if}}" data-item-id="{{a.id}}"><a data-action="itemToggle" data-field="system.equipped"><i class="fa-solid fa-shield-halved"></i> {{a.name}} {{a.difficulty}}+</a>{{#if a.damaged}} <span class="sp-badge bad">{{localize "SPACER.Armour.Damaged"}}</span>{{/if}}<a data-action="itemDelete" class="x"><i class="fa-solid fa-xmark"></i></a></span>
+    {{else}}<span class="sp-empty">{{localize "SPACER.Armour.None"}}</span>{{/each}}
+  </div>
+  <h3 class="sp-section">{{localize "SPACER.Combat.State"}} <small>{{localize "SPACER.Sheet.ToHit"}} {{armorTotal}}+</small></h3>
+  {{> "spacer.play.actor.parts.combat-state"}}
+  <div class="sp-row-buttons">
+    <input type="number" data-damage-input value="1" min="0">
+    <button type="button" class="sp-btn small danger" data-action="damage"><i class="fa-solid fa-burst"></i> {{localize "SPACER.Damage.Apply"}}</button>
+    <button type="button" class="sp-btn small" data-action="heal"><i class="fa-solid fa-heart"></i> {{localize "SPACER.Heal.Heal"}}</button>
+    <button type="button" class="sp-btn small" data-action="firstAid"><i class="fa-solid fa-kit-medical"></i> {{localize "SPACER.Heal.FirstAid"}}</button>
+    <button type="button" class="sp-btn small" data-action="resetCombat"><i class="fa-solid fa-arrow-rotate-left"></i> {{localize "SPACER.Combat.Reset"}}</button>
+  </div>
+  <h3 class="sp-section">{{localize "SPACER.Sheet.Notes"}}</h3>
+  <prose-mirror name="system.notes" class="sp-editor short" toggled value="{{system.notes}}" {{#unless editable}}disabled{{/unless}}>{{{enriched.notes}}}</prose-mirror>
+</section>

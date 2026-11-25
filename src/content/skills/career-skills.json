@@ -1,0 +1,86 @@
+[
+ {
+  "name": "Gunner",
+  "type": "skill",
+  "folder": "Career Skills",
+  "system": {
+   "skill": "Gunner",
+   "specialty": "",
+   "specialties": [],
+   "rank": 0,
+   "characteristic": "",
+   "description": "<p>Operating mounted vehicle and starship weapons (p.85: \"Gunner: Use the Gunner Skill\"; p.70: \"Gunner 0\").</p><p>This skill appears in the career skill tables (p.18-19) but has no entry in the Skills chapter (p.28-29). The description here is not from the book.</p>",
+   "source": "p.19"
+  }
+ },
+ {
+  "name": "Survival",
+  "type": "skill",
+  "folder": "Career Skills",
+  "system": {
+   "skill": "Survival",
+   "specialty": "",
+   "specialties": [],
+   "rank": 0,
+   "characteristic": "",
+   "description": "<p>Used for survival activities such as hunting, foraging, building shelter, and finding direction (p.106-107).</p><p>This skill appears in the career skill tables (p.18-19) but has no entry in the Skills chapter (p.28-29). The description here is not from the book.</p>",
+   "source": "p.19"
+  }
+ },
+ {
+  "name": "Knowledge",
+  "type": "skill",
+  "folder": "Career Skills",
+  "system": {
+   "skill": "Knowledge",
+   "specialty": "",
+   "specialties": [],
+   "rank": 0,
+   "characteristic": "",
+   "description": "<p>General or academic knowledge.</p><p>This skill appears in the career skill tables (p.18-19) but has no entry in the Skills chapter (p.28-29). The description here is not from the book.</p>",
+   "source": "p.19"
+  }
+ },
+ {
+  "name": "Explosives",
+  "type": "skill",
+  "folder": "Career Skills",
+  "system": {
+   "skill": "Explosives",
+   "specialty": "",
+   "specialties": [],
+   "rank": 0,
+   "characteristic": "",
+   "description": "<p>Handling, placing, and disarming explosives.</p><p>This skill appears in the career skill tables (p.18-19) but has no entry in the Skills chapter (p.28-29). The description here is not from the book.</p>",
+   "source": "p.19"
+  }
+ },
+ {
+  "name": "Negotiate",
+  "type": "skill",
+  "folder": "Career Skills",
+  "system": {
+   "skill": "Negotiate",
+   "specialty": "",
+   "specialties": [],
+   "rank": 0,
+   "characteristic": "",
+   "description": "<p>Bargaining and reaching agreements.</p><p>This skill appears in the career skill tables (p.18-19) but has no entry in the Skills chapter (p.28-29). The description here is not from the book.</p>",
+   "source": "p.19"
+  }
+ },
+ {
+  "name": "Heavy Weapons",
+  "type": "skill",
+  "folder": "Career Skills",
+  "system": {
+   "skill": "Heavy Weapons",
+   "specialty": "",
+   "specialties": [],
+   "rank": 0,
+   "characteristic": "",
+   "description": "<p>Operating heavy, crew-served, or support weapons.</p><p>This skill appears in the career skill tables (p.18-19) but has no entry in the Skills chapter (p.28-29). The description here is not from the book.</p>",
+   "source": "p.19"
+  }
+ }
+]

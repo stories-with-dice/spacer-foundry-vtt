@@ -1,0 +1,22 @@
+<section class="tab {{tab.cssClass}}" data-group="primary" data-tab="main">
+  <h3 class="sp-section">{{localize "SPACER.Sheet.Characteristics"}} <small>{{localize "SPACER.Roll.ClickHint"}}</small></h3>
+  {{> "spacer.play.actor.parts.characteristics"}}
+  <h3 class="sp-section">{{localize "SPACER.Sheet.Details"}}</h3>
+  <div class="sp-grid four">
+    <label class="sp-field">{{localize "SPACER.Sheet.Age"}}<input type="number" name="system.age" value="{{system.age}}" {{disabled (not editable)}}></label>
+    <label class="sp-field">{{localize "SPACER.Sheet.Credits"}}<input type="number" name="system.credits" value="{{system.credits}}" {{disabled (not editable)}}></label>
+    <label class="sp-field">{{localize "SPACER.Sheet.Homeworld"}}<input type="text" name="system.homeworld" value="{{system.homeworld}}" {{disabled (not editable)}}></label>
+    <label class="sp-field">{{localize "SPACER.Sheet.Terms"}}<input type="number" name="system.terms" value="{{system.terms}}" {{disabled (not editable)}}></label>
+    <label class="sp-field">{{localize "SPACER.Sheet.Radiation"}}<input type="number" name="system.radiation" value="{{system.radiation}}" min="0" {{disabled (not editable)}}></label>
+    <label class="sp-field" data-tooltip="{{localize "SPACER.Sheet.FatigueHint"}}">{{localize "SPACER.Roll.Fatigue"}}<input type="number" name="system.fatigue" value="{{system.fatigue}}" min="0" {{disabled (not editable)}}></label>
+    <label class="sp-field">{{localize "SPACER.Sheet.Pension"}}<input type="number" name="system.pension" value="{{system.pension}}" {{disabled (not editable)}}></label>
+    <label class="sp-field">{{localize "SPACER.Sheet.Debt"}}<input type="number" name="system.debt" value="{{system.debt}}" {{disabled (not editable)}}></label>
+  </div>
+  <h3 class="sp-section">{{localize "SPACER.Injury.Title"}}</h3>
+  <div class="sp-injury {{injury.css}}">
+    <b>{{injury.label}}</b>
+    <span>{{localize (concat "SPACER.Injury.Hint." injury.key)}}</span>
+  </div>
+  <h3 class="sp-section">{{localize "SPACER.Sheet.ReadyWeapons"}}</h3>
+  {{> "spacer.play.actor.parts.weapons"}}
+</section>

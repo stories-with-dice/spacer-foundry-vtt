@@ -1,0 +1,2139 @@
+[
+  {
+    "name": "Patron Generation",
+    "folder": "The Spacer Campaign",
+    "formula": "1d6*10+1d6",
+    "description": "<p>p.50. Roll D66 to determine the type of patron. The location limits the roll (Patron Location Table): Criminal 11-36 (D36), payment x2, requires Streetwise 0+; Streets 11-26 (D3-1, 1D), payment x0.5; Shipyards 41-46, payment x1; Carouse 11-66 (D66), payment x1; Recreation 11-46 (1D-2, 1D), payment x1; Elite 61-66 (1D in the 60 range), payment x3, requires SOC 10+.</p>",
+    "results": [
+      {
+        "range": [
+          11,
+          11
+        ],
+        "text": "Assassin"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "text": "Smuggler"
+      },
+      {
+        "range": [
+          13,
+          13
+        ],
+        "text": "Hacker"
+      },
+      {
+        "range": [
+          14,
+          14
+        ],
+        "text": "Drifter"
+      },
+      {
+        "range": [
+          15,
+          15
+        ],
+        "text": "Gambler"
+      },
+      {
+        "range": [
+          16,
+          16
+        ],
+        "text": "Rogue"
+      },
+      {
+        "range": [
+          21,
+          21
+        ],
+        "text": "Belter"
+      },
+      {
+        "range": [
+          22,
+          22
+        ],
+        "text": "Citizen, Worker"
+      },
+      {
+        "range": [
+          23,
+          23
+        ],
+        "text": "Courier Ship Captain"
+      },
+      {
+        "range": [
+          24,
+          24
+        ],
+        "text": "Ship Captain"
+      },
+      {
+        "range": [
+          25,
+          25
+        ],
+        "text": "Spy"
+      },
+      {
+        "range": [
+          26,
+          26
+        ],
+        "text": "Revolutionary"
+      },
+      {
+        "range": [
+          31,
+          31
+        ],
+        "text": "Entertainer"
+      },
+      {
+        "range": [
+          32,
+          32
+        ],
+        "text": "Citizen, Corporate"
+      },
+      {
+        "range": [
+          33,
+          33
+        ],
+        "text": "Citizen, Colonist"
+      },
+      {
+        "range": [
+          34,
+          34
+        ],
+        "text": "Administrator"
+      },
+      {
+        "range": [
+          35,
+          35
+        ],
+        "text": "Dilettante"
+      },
+      {
+        "range": [
+          36,
+          36
+        ],
+        "text": "Scholar"
+      },
+      {
+        "range": [
+          41,
+          41
+        ],
+        "text": "Merchant"
+      },
+      {
+        "range": [
+          42,
+          42
+        ],
+        "text": "Scout"
+      },
+      {
+        "range": [
+          43,
+          43
+        ],
+        "text": "Broker"
+      },
+      {
+        "range": [
+          44,
+          44
+        ],
+        "text": "Courier"
+      },
+      {
+        "range": [
+          45,
+          45
+        ],
+        "text": "Freighter Captain"
+      },
+      {
+        "range": [
+          46,
+          46
+        ],
+        "text": "Merchant Marine"
+      },
+      {
+        "range": [
+          51,
+          51
+        ],
+        "text": "Military (Army)"
+      },
+      {
+        "range": [
+          52,
+          52
+        ],
+        "text": "Military (Navy)"
+      },
+      {
+        "range": [
+          53,
+          53
+        ],
+        "text": "Military (Marine)"
+      },
+      {
+        "range": [
+          54,
+          54
+        ],
+        "text": "Agent"
+      },
+      {
+        "range": [
+          55,
+          55
+        ],
+        "text": "Legal/Court Official"
+      },
+      {
+        "range": [
+          56,
+          56
+        ],
+        "text": "Mob Boss"
+      },
+      {
+        "range": [
+          61,
+          61
+        ],
+        "text": "Governor"
+      },
+      {
+        "range": [
+          62,
+          62
+        ],
+        "text": "Diplomat"
+      },
+      {
+        "range": [
+          63,
+          63
+        ],
+        "text": "Ambassador"
+      },
+      {
+        "range": [
+          64,
+          64
+        ],
+        "text": "Faction Leader"
+      },
+      {
+        "range": [
+          65,
+          65
+        ],
+        "text": "Noble"
+      },
+      {
+        "range": [
+          66,
+          66
+        ],
+        "text": "Government Official"
+      }
+    ]
+  },
+  {
+    "name": "Patron Personality",
+    "folder": "The Spacer Campaign",
+    "formula": "1d6*10+1d6",
+    "description": "<p>p.51. Patron Characteristics. Roll D66 for a personality.</p>",
+    "results": [
+      {
+        "range": [
+          11,
+          11
+        ],
+        "text": "Demanding"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "text": "Off-Putting"
+      },
+      {
+        "range": [
+          13,
+          13
+        ],
+        "text": "Angry"
+      },
+      {
+        "range": [
+          14,
+          14
+        ],
+        "text": "Nervous"
+      },
+      {
+        "range": [
+          15,
+          15
+        ],
+        "text": "Overly Charismatic"
+      },
+      {
+        "range": [
+          16,
+          16
+        ],
+        "text": "Terse"
+      },
+      {
+        "range": [
+          21,
+          21
+        ],
+        "text": "Very Proper"
+      },
+      {
+        "range": [
+          22,
+          22
+        ],
+        "text": "Intense"
+      },
+      {
+        "range": [
+          23,
+          23
+        ],
+        "text": "Cautious"
+      },
+      {
+        "range": [
+          24,
+          24
+        ],
+        "text": "Secretive"
+      },
+      {
+        "range": [
+          25,
+          25
+        ],
+        "text": "Arrogant"
+      },
+      {
+        "range": [
+          26,
+          26
+        ],
+        "text": "Rude"
+      },
+      {
+        "range": [
+          31,
+          31
+        ],
+        "text": "Pleasant"
+      },
+      {
+        "range": [
+          32,
+          32
+        ],
+        "text": "Desperate"
+      },
+      {
+        "range": [
+          33,
+          33
+        ],
+        "text": "Upset"
+      },
+      {
+        "range": [
+          34,
+          34
+        ],
+        "text": "Confident"
+      },
+      {
+        "range": [
+          35,
+          35
+        ],
+        "text": "Stubborn"
+      },
+      {
+        "range": [
+          36,
+          36
+        ],
+        "text": "Cunning"
+      },
+      {
+        "range": [
+          41,
+          41
+        ],
+        "text": "Calm"
+      },
+      {
+        "range": [
+          42,
+          42
+        ],
+        "text": "Charming"
+      },
+      {
+        "range": [
+          43,
+          43
+        ],
+        "text": "Kind"
+      },
+      {
+        "range": [
+          44,
+          44
+        ],
+        "text": "Dour"
+      },
+      {
+        "range": [
+          45,
+          45
+        ],
+        "text": "Energetic"
+      },
+      {
+        "range": [
+          46,
+          46
+        ],
+        "text": "Aloof"
+      },
+      {
+        "range": [
+          51,
+          51
+        ],
+        "text": "Eccentric"
+      },
+      {
+        "range": [
+          52,
+          52
+        ],
+        "text": "Relaxed"
+      },
+      {
+        "range": [
+          53,
+          53
+        ],
+        "text": "Brash"
+      },
+      {
+        "range": [
+          54,
+          54
+        ],
+        "text": "Logical"
+      },
+      {
+        "range": [
+          55,
+          55
+        ],
+        "text": "Considerate"
+      },
+      {
+        "range": [
+          56,
+          56
+        ],
+        "text": "All-Business"
+      },
+      {
+        "range": [
+          61,
+          61
+        ],
+        "text": "Disturbed"
+      },
+      {
+        "range": [
+          62,
+          62
+        ],
+        "text": "Indifferent"
+      },
+      {
+        "range": [
+          63,
+          63
+        ],
+        "text": "Worry-Free"
+      },
+      {
+        "range": [
+          64,
+          64
+        ],
+        "text": "Open-Minded"
+      },
+      {
+        "range": [
+          65,
+          65
+        ],
+        "text": "Unfriendly"
+      },
+      {
+        "range": [
+          66,
+          66
+        ],
+        "text": "Stressed"
+      }
+    ]
+  },
+  {
+    "name": "Patron Features",
+    "folder": "The Spacer Campaign",
+    "formula": "1d6*10+1d6",
+    "description": "<p>p.51. Patron Characteristics. Roll D66 for a notable feature.</p>",
+    "results": [
+      {
+        "range": [
+          11,
+          11
+        ],
+        "text": "Bad Hair Style"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "text": "Missing Facial Feature"
+      },
+      {
+        "range": [
+          13,
+          13
+        ],
+        "text": "Scruffy"
+      },
+      {
+        "range": [
+          14,
+          14
+        ],
+        "text": "Ugly"
+      },
+      {
+        "range": [
+          15,
+          15
+        ],
+        "text": "Odd Smell"
+      },
+      {
+        "range": [
+          16,
+          16
+        ],
+        "text": "Tall"
+      },
+      {
+        "range": [
+          21,
+          21
+        ],
+        "text": "Overweight"
+      },
+      {
+        "range": [
+          22,
+          22
+        ],
+        "text": "Hunched"
+      },
+      {
+        "range": [
+          23,
+          23
+        ],
+        "text": "Tired"
+      },
+      {
+        "range": [
+          24,
+          24
+        ],
+        "text": "Bad Hygiene"
+      },
+      {
+        "range": [
+          25,
+          25
+        ],
+        "text": "Fidgety"
+      },
+      {
+        "range": [
+          26,
+          26
+        ],
+        "text": "Tattooed"
+      },
+      {
+        "range": [
+          31,
+          31
+        ],
+        "text": "Unsettling"
+      },
+      {
+        "range": [
+          32,
+          32
+        ],
+        "text": "Elegant"
+      },
+      {
+        "range": [
+          33,
+          33
+        ],
+        "text": "Weathered"
+      },
+      {
+        "range": [
+          34,
+          34
+        ],
+        "text": "Scarred"
+      },
+      {
+        "range": [
+          35,
+          35
+        ],
+        "text": "Sturdy"
+      },
+      {
+        "range": [
+          36,
+          36
+        ],
+        "text": "Physically Impaired"
+      },
+      {
+        "range": [
+          41,
+          41
+        ],
+        "text": "Nice Hair"
+      },
+      {
+        "range": [
+          42,
+          42
+        ],
+        "text": "Glasses"
+      },
+      {
+        "range": [
+          43,
+          43
+        ],
+        "text": "Well-Groomed"
+      },
+      {
+        "range": [
+          44,
+          44
+        ],
+        "text": "Good-Looking"
+      },
+      {
+        "range": [
+          45,
+          45
+        ],
+        "text": "Perfumed"
+      },
+      {
+        "range": [
+          46,
+          46
+        ],
+        "text": "Short"
+      },
+      {
+        "range": [
+          51,
+          51
+        ],
+        "text": "Skeletal"
+      },
+      {
+        "range": [
+          52,
+          52
+        ],
+        "text": "Unkempt"
+      },
+      {
+        "range": [
+          53,
+          53
+        ],
+        "text": "Gaudily-Dressed"
+      },
+      {
+        "range": [
+          54,
+          54
+        ],
+        "text": "Well-Built"
+      },
+      {
+        "range": [
+          55,
+          55
+        ],
+        "text": "Old"
+      },
+      {
+        "range": [
+          56,
+          56
+        ],
+        "text": "Young"
+      },
+      {
+        "range": [
+          61,
+          61
+        ],
+        "text": "Large Features"
+      },
+      {
+        "range": [
+          62,
+          62
+        ],
+        "text": "Sickly"
+      },
+      {
+        "range": [
+          63,
+          63
+        ],
+        "text": "Immaculately Dressed"
+      },
+      {
+        "range": [
+          64,
+          64
+        ],
+        "text": "Outdated Style"
+      },
+      {
+        "range": [
+          65,
+          65
+        ],
+        "text": "Slight"
+      },
+      {
+        "range": [
+          66,
+          66
+        ],
+        "text": "Physically Modified"
+      }
+    ]
+  },
+  {
+    "name": "Patron Job Type",
+    "folder": "The Spacer Campaign",
+    "formula": "1d6",
+    "description": "<p>p.52. Roll 1D to determine what type of job the spacers are being scouted for, then roll 2D on that job type's table. Optional: roll D3 for the number of objectives (up to 3) and roll that many times.</p>",
+    "results": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "text": "Chase / Pursuit"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "Assault / Rescue"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "Discovery / Exploration"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "Enrichment"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "Enigma / Mystery"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "Novelty / Unique"
+      }
+    ]
+  },
+  {
+    "name": "Patron Job: Chase / Pursuit",
+    "folder": "The Spacer Campaign",
+    "formula": "2d6",
+    "description": "<p>p.52-53. Roll 2D for the job description and details of a Chase / Pursuit job (Patron Job Generation, column 1). Payment: 1D x 500cr x max weeks to complete.</p>",
+    "results": [
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "Track down a major criminal / bail skipper / VIP. They are dangerous."
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "Track down a minor criminal / bail skipper / VIP. May be dangerous."
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "Repo vehicle / starship"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "Steal data from a starship"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "Intercept courier and collect or destroy data"
+      },
+      {
+        "range": [
+          7,
+          7
+        ],
+        "text": "Recover valuable data from a database located in a hard-to-reach location"
+      },
+      {
+        "range": [
+          8,
+          8
+        ],
+        "text": "Collect intel"
+      },
+      {
+        "range": [
+          9,
+          9
+        ],
+        "text": "Track NPC and report"
+      },
+      {
+        "range": [
+          10,
+          10
+        ],
+        "text": "Recruit NPC"
+      },
+      {
+        "range": [
+          11,
+          11
+        ],
+        "text": "Capture NPC"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "text": "Hĳack starship"
+      }
+    ]
+  },
+  {
+    "name": "Patron Job: Assault / Rescue",
+    "folder": "The Spacer Campaign",
+    "formula": "2d6",
+    "description": "<p>p.52-53. Roll 2D for the job description and details of a Assault / Rescue job (Patron Job Generation, column 2). Payment: 1D x 1000cr x max weeks to complete.</p>",
+    "results": [
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "Assault military starship"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "Break into secure location to: roll again on Chase / Pursuit column"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "Clandestine operation"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "Sabotage"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "Repress or support rebels"
+      },
+      {
+        "range": [
+          7,
+          7
+        ],
+        "text": "Escort and protect"
+      },
+      {
+        "range": [
+          8,
+          8
+        ],
+        "text": "Recover item, data, or ship"
+      },
+      {
+        "range": [
+          9,
+          9
+        ],
+        "text": "Rescue NPC"
+      },
+      {
+        "range": [
+          10,
+          10
+        ],
+        "text": "Security detail"
+      },
+      {
+        "range": [
+          11,
+          11
+        ],
+        "text": "Privateering job"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "text": "Assassinate VIP"
+      }
+    ]
+  },
+  {
+    "name": "Patron Job: Discovery / Exploration",
+    "folder": "The Spacer Campaign",
+    "formula": "2d6",
+    "description": "<p>p.52-53. Roll 2D for the job description and details of a Discovery / Exploration job (Patron Job Generation, column 3). Payment: 1D+6 x 1000cr x max weeks to complete.</p>",
+    "results": [
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "Find an ancient / alien artifact or explore ancient / alien structure"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "Find a lost base"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "Find survivors of a crash or outpost"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "Gather samples from a planet"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "Locate mineable asteroids"
+      },
+      {
+        "range": [
+          7,
+          7
+        ],
+        "text": "Search abandoned ship"
+      },
+      {
+        "range": [
+          8,
+          8
+        ],
+        "text": "Locate crash site"
+      },
+      {
+        "range": [
+          9,
+          9
+        ],
+        "text": "Re-chart a star system"
+      },
+      {
+        "range": [
+          10,
+          10
+        ],
+        "text": "Navigate a new route across a rift or unexplored area"
+      },
+      {
+        "range": [
+          11,
+          11
+        ],
+        "text": "Explore an uncharted star system"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "text": "Investigate anomaly"
+      }
+    ]
+  },
+  {
+    "name": "Patron Job: Enrichment",
+    "folder": "The Spacer Campaign",
+    "formula": "2d6",
+    "description": "<p>p.52-53. Roll 2D for the job description and details of a Enrichment job (Patron Job Generation, column 4). Payment: see the Enrichment Job Type Table (p.53).</p>",
+    "results": [
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "Facilitate illegal deal"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "Mining Operation"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "Ransom"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "Scavenge"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "Haul freight"
+      },
+      {
+        "range": [
+          7,
+          7
+        ],
+        "text": "Courier"
+      },
+      {
+        "range": [
+          8,
+          8
+        ],
+        "text": "Transport patron"
+      },
+      {
+        "range": [
+          9,
+          9
+        ],
+        "text": "Tow starship"
+      },
+      {
+        "range": [
+          10,
+          10
+        ],
+        "text": "Smuggle items in or out"
+      },
+      {
+        "range": [
+          11,
+          11
+        ],
+        "text": "Smuggle people in or out"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "text": "Blockade running"
+      }
+    ]
+  },
+  {
+    "name": "Patron Job: Enigma / Mystery",
+    "folder": "The Spacer Campaign",
+    "formula": "2d6",
+    "description": "<p>p.52-53. Roll 2D for the job description and details of a Enigma / Mystery job (Patron Job Generation, column 5). Payment: 2D x 2000cr x max weeks to complete.</p>",
+    "results": [
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "Locate a psionic institute"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "Investigate conspiracy"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "Shut off a location communication beacon"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "Transport VIP in low passage to unknown location"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "Explore an abandoned ship or location"
+      },
+      {
+        "range": [
+          7,
+          7
+        ],
+        "text": "Find missing person"
+      },
+      {
+        "range": [
+          8,
+          8
+        ],
+        "text": "Investigate mysterious beacon"
+      },
+      {
+        "range": [
+          9,
+          9
+        ],
+        "text": "Locate sleeper agent / cell"
+      },
+      {
+        "range": [
+          10,
+          10
+        ],
+        "text": "Colony went silent"
+      },
+      {
+        "range": [
+          11,
+          11
+        ],
+        "text": "Recover rumored artifact"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "text": "Investigate ancient structure"
+      }
+    ]
+  },
+  {
+    "name": "Patron Job: Novelty / Unique",
+    "folder": "The Spacer Campaign",
+    "formula": "2d6",
+    "description": "<p>p.52-53. Roll 2D for the job description and details of a Novelty / Unique job (Patron Job Generation, column 6). Payment: 2D+3 x 2000cr x max weeks to complete.</p>",
+    "results": [
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "Represent the patron and establish a good relationship with an outsider"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "Go undercover to infiltrate faction"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "Train new recruits for a special mission"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "Frame NPC"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "Participate in a noble’s tournament"
+      },
+      {
+        "range": [
+          7,
+          7
+        ],
+        "text": "Manage outpost, starship, or satellite"
+      },
+      {
+        "range": [
+          8,
+          8
+        ],
+        "text": "Sneak passengers into or out of a system or planet"
+      },
+      {
+        "range": [
+          9,
+          9
+        ],
+        "text": "Be a test subject for prototype technology"
+      },
+      {
+        "range": [
+          10,
+          10
+        ],
+        "text": "Help robot seeking its creator"
+      },
+      {
+        "range": [
+          11,
+          11
+        ],
+        "text": "Return an alien to its homeworld"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "text": "Impersonate VIP to gather intel or spread rumors"
+      }
+    ]
+  },
+  {
+    "name": "Negotiate Terms",
+    "folder": "The Spacer Campaign",
+    "formula": "2d6",
+    "description": "<p>p.54. Job Negotiations. Roll 2D + SOC DM of the negotiating spacer. The result is used for both columns. Apply the DM from the patron's demeanour (NPC Demeanour table, p.56). The final payment is multiplied by the total weeks assigned for job completion.</p>",
+    "results": [
+      {
+        "range": [
+          -10,
+          2
+        ],
+        "text": "<strong>Time to complete job:</strong> D3 weeks · <strong>Location of Job / Target / Objective:</strong> Local: Within star system"
+      },
+      {
+        "range": [
+          3,
+          5
+        ],
+        "text": "<strong>Time to complete job:</strong> 1D Weeks · <strong>Location of Job / Target / Objective:</strong> Close: Within D3 parsecs"
+      },
+      {
+        "range": [
+          6,
+          8
+        ],
+        "text": "<strong>Time to complete job:</strong> 1D+3 weeks · <strong>Location of Job / Target / Objective:</strong> Average: Within 1D parsecs"
+      },
+      {
+        "range": [
+          9,
+          11
+        ],
+        "text": "<strong>Time to complete job:</strong> 2D+3 weeks · <strong>Location of Job / Target / Objective:</strong> Far: 2D parsecs"
+      },
+      {
+        "range": [
+          12,
+          30
+        ],
+        "text": "<strong>Time to complete job:</strong> 1D3+3 months · <strong>Location of Job / Target / Objective:</strong> Distant: 2D+6 parsecs"
+      }
+    ]
+  },
+  {
+    "name": "Negotiate Payment",
+    "folder": "The Spacer Campaign",
+    "formula": "2d6",
+    "description": "<p>p.54. Job Negotiations. Roll 2D + Broker Skill to negotiate the terms for payment. If you use Reputation, also apply the Reputation DM.</p>",
+    "results": [
+      {
+        "range": [
+          -10,
+          2
+        ],
+        "text": "Full payment on arrival"
+      },
+      {
+        "range": [
+          3,
+          5
+        ],
+        "text": "25% now, 75% on completion"
+      },
+      {
+        "range": [
+          6,
+          8
+        ],
+        "text": "50% now, 50% on completion"
+      },
+      {
+        "range": [
+          9,
+          11
+        ],
+        "text": "75% up front, 25% on completion"
+      },
+      {
+        "range": [
+          12,
+          30
+        ],
+        "text": "100% up front"
+      }
+    ]
+  },
+  {
+    "name": "Negotiate Start of the Job",
+    "folder": "The Spacer Campaign",
+    "formula": "2d6",
+    "description": "<p>p.54. Job Negotiations. Roll 2D to determine when the job begins (the time you get to prepare for the job).</p>",
+    "results": [
+      {
+        "range": [
+          -10,
+          2
+        ],
+        "text": "Immediately"
+      },
+      {
+        "range": [
+          3,
+          5
+        ],
+        "text": "2D hours"
+      },
+      {
+        "range": [
+          6,
+          8
+        ],
+        "text": "D3 days"
+      },
+      {
+        "range": [
+          9,
+          11
+        ],
+        "text": "1D days"
+      },
+      {
+        "range": [
+          12,
+          30
+        ],
+        "text": "2D days"
+      }
+    ]
+  },
+  {
+    "name": "Job Destination",
+    "folder": "The Spacer Campaign",
+    "formula": "1d6*10+1d6",
+    "description": "<p>p.54. Job Destination and Assumptions. The referee can choose a destination or roll D66. For a Settlement, roll on the Job Destination Settlement Type and Settlement Distance from Starport tables.</p>",
+    "results": [
+      {
+        "range": [
+          11,
+          11
+        ],
+        "text": "Coordinates without known location"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "text": "Rockball with WayStation"
+      },
+      {
+        "range": [
+          13,
+          13
+        ],
+        "text": "Habitable World Starport (TL 1D+6)"
+      },
+      {
+        "range": [
+          14,
+          14
+        ],
+        "text": "Habitable World Starport (TL 2D +6)"
+      },
+      {
+        "range": [
+          15,
+          15
+        ],
+        "text": "Rockball Starport"
+      },
+      {
+        "range": [
+          16,
+          16
+        ],
+        "text": "Orbital Space Station"
+      },
+      {
+        "range": [
+          21,
+          21
+        ],
+        "text": "Moon Starport"
+      },
+      {
+        "range": [
+          22,
+          22
+        ],
+        "text": "Spaceship in Orbit"
+      },
+      {
+        "range": [
+          23,
+          23
+        ],
+        "text": "Rockball with Starport"
+      },
+      {
+        "range": [
+          24,
+          24
+        ],
+        "text": "Asteroid Starport"
+      },
+      {
+        "range": [
+          25,
+          25
+        ],
+        "text": "Belter Base"
+      },
+      {
+        "range": [
+          26,
+          26
+        ],
+        "text": "Scrapyard"
+      },
+      {
+        "range": [
+          31,
+          31
+        ],
+        "text": "Settlement (TL D3+6)"
+      },
+      {
+        "range": [
+          32,
+          32
+        ],
+        "text": "Settlement (TL 1D+6)"
+      },
+      {
+        "range": [
+          33,
+          33
+        ],
+        "text": "Settlement (TL 2D+3)"
+      },
+      {
+        "range": [
+          34,
+          34
+        ],
+        "text": "Established Mining Colony"
+      },
+      {
+        "range": [
+          35,
+          35
+        ],
+        "text": "Established Manufacturing Colony"
+      },
+      {
+        "range": [
+          36,
+          36
+        ],
+        "text": "Scavenger Base"
+      },
+      {
+        "range": [
+          41,
+          41
+        ],
+        "text": "Remote Scout Base"
+      },
+      {
+        "range": [
+          42,
+          42
+        ],
+        "text": "Remote Independent Frontier Settlement"
+      },
+      {
+        "range": [
+          43,
+          43
+        ],
+        "text": "Remote Colony, Agriculture"
+      },
+      {
+        "range": [
+          44,
+          44
+        ],
+        "text": "Remote Waystation"
+      },
+      {
+        "range": [
+          45,
+          45
+        ],
+        "text": "Remote Colony, Manufacturing"
+      },
+      {
+        "range": [
+          46,
+          46
+        ],
+        "text": "Remote Colony, Mining"
+      },
+      {
+        "range": [
+          51,
+          51
+        ],
+        "text": "Warzone"
+      },
+      {
+        "range": [
+          52,
+          52
+        ],
+        "text": "Planetside Military Base"
+      },
+      {
+        "range": [
+          53,
+          53
+        ],
+        "text": "Battle Wreckage*"
+      },
+      {
+        "range": [
+          54,
+          54
+        ],
+        "text": "Naval Fleet / Base"
+      },
+      {
+        "range": [
+          55,
+          55
+        ],
+        "text": "Pirate Base"
+      },
+      {
+        "range": [
+          56,
+          56
+        ],
+        "text": "Military Ship in Transit"
+      },
+      {
+        "range": [
+          61,
+          61
+        ],
+        "text": "Controversial Colony"
+      },
+      {
+        "range": [
+          62,
+          62
+        ],
+        "text": "Red Zone Planet"
+      },
+      {
+        "range": [
+          63,
+          63
+        ],
+        "text": "Prison Colony"
+      },
+      {
+        "range": [
+          64,
+          64
+        ],
+        "text": "Pirate Base"
+      },
+      {
+        "range": [
+          65,
+          65
+        ],
+        "text": "Remote Coordinates"
+      },
+      {
+        "range": [
+          66,
+          66
+        ],
+        "text": "Anomaly"
+      }
+    ]
+  },
+  {
+    "name": "Job Destination Settlement Type",
+    "folder": "The Spacer Campaign",
+    "formula": "1d6",
+    "description": "<p>p.54. Settlement: roll 1D to determine the type of settlement.</p>",
+    "results": [
+      {
+        "range": [
+          1,
+          3
+        ],
+        "text": "Planetside"
+      },
+      {
+        "range": [
+          4,
+          5
+        ],
+        "text": "Moon/Asteroid"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "Orbital Space Station"
+      }
+    ]
+  },
+  {
+    "name": "Settlement Distance from Starport",
+    "folder": "The Spacer Campaign",
+    "formula": "1d6",
+    "description": "<p>p.54. Distance from Starport: roll 1D to determine if the settlement is near the starport.</p>",
+    "results": [
+      {
+        "range": [
+          1,
+          3
+        ],
+        "text": "The settlement is close to a major starport or has one locally."
+      },
+      {
+        "range": [
+          4,
+          5
+        ],
+        "text": "The settlement is 1D x 100km away from the nearest starport. Either risk landing on the local terrain or dock at the starport and take a terrestrial vehicle to the settlement."
+      },
+      {
+        "range": [
+          6,
+          20
+        ],
+        "text": "The settlement is 2D x 100km away from the nearest starport."
+      }
+    ]
+  },
+  {
+    "name": "Colony: Who Runs It",
+    "folder": "The Spacer Campaign",
+    "formula": "2d6",
+    "description": "<p>p.55. Colonies. Roll 2D for who runs the colony.</p>",
+    "results": [
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "Criminal"
+      },
+      {
+        "range": [
+          3,
+          4
+        ],
+        "text": "Military"
+      },
+      {
+        "range": [
+          5,
+          7
+        ],
+        "text": "Corporation"
+      },
+      {
+        "range": [
+          8,
+          10
+        ],
+        "text": "Government"
+      },
+      {
+        "range": [
+          11,
+          11
+        ],
+        "text": "Political/Philosophical Ideology"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "text": "Religious"
+      }
+    ]
+  },
+  {
+    "name": "Colony: Age",
+    "folder": "The Spacer Campaign",
+    "formula": "2d6",
+    "description": "<p>p.55. Colonies. Roll 2D for the age of the colony.</p>",
+    "results": [
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "D3+3 years"
+      },
+      {
+        "range": [
+          3,
+          4
+        ],
+        "text": "2D6 years"
+      },
+      {
+        "range": [
+          5,
+          7
+        ],
+        "text": "2D6+6 years"
+      },
+      {
+        "range": [
+          8,
+          10
+        ],
+        "text": "D3 decades"
+      },
+      {
+        "range": [
+          11,
+          11
+        ],
+        "text": "1D+3 decades"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "text": "D3 centuries"
+      }
+    ]
+  },
+  {
+    "name": "Colony: Population",
+    "folder": "The Spacer Campaign",
+    "formula": "2d6",
+    "description": "<p>p.55. Colonies. Roll 2D for the population of the colony.</p>",
+    "results": [
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "1D x 50"
+      },
+      {
+        "range": [
+          3,
+          4
+        ],
+        "text": "1D x 100"
+      },
+      {
+        "range": [
+          5,
+          7
+        ],
+        "text": "1D x 500"
+      },
+      {
+        "range": [
+          8,
+          10
+        ],
+        "text": "1D x 1,000"
+      },
+      {
+        "range": [
+          11,
+          11
+        ],
+        "text": "1D x 5,000"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "text": "1D x 10,000"
+      }
+    ]
+  },
+  {
+    "name": "Job Complication: Who",
+    "folder": "The Spacer Campaign",
+    "formula": "1d6",
+    "description": "<p>p.55. Use if a complication occurs while completing a job. Roll 1D on each column (Who, What, Why, How) to construct a complication. This is the Who column.</p>",
+    "results": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "text": "Ally"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "Friend"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "Connection"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "Different Patron"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "Rival"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "Enemy"
+      }
+    ]
+  },
+  {
+    "name": "Job Complication: What",
+    "folder": "The Spacer Campaign",
+    "formula": "1d6",
+    "description": "<p>p.55. Use if a complication occurs while completing a job. Roll 1D on each column (Who, What, Why, How) to construct a complication. This is the What column.</p>",
+    "results": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "text": "Roll Reversal"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "Contract Change / Rival Offer"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "Betrayed"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "Pursuing / Pursued"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "Misinformed / Cover-up"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "Restriction / Obstacle"
+      }
+    ]
+  },
+  {
+    "name": "Job Complication: Why",
+    "folder": "The Spacer Campaign",
+    "formula": "1d6",
+    "description": "<p>p.55. Use if a complication occurs while completing a job. Roll 1D on each column (Who, What, Why, How) to construct a complication. This is the Why column.</p>",
+    "results": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "text": "No Reason / Chance"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "Political"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "Cultural"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "Professional"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "Economical"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "Ideological"
+      }
+    ]
+  },
+  {
+    "name": "Job Complication: How",
+    "folder": "The Spacer Campaign",
+    "formula": "1d6",
+    "description": "<p>p.55. Use if a complication occurs while completing a job. Roll 1D on each column (Who, What, Why, How) to construct a complication. This is the How column.</p>",
+    "results": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "text": "Money"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "Favor"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "Benefit"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "Threat"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "Sabotage"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "Violence"
+      }
+    ]
+  }
+]

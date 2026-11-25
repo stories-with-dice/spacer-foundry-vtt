@@ -14,7 +14,7 @@ Every document should carry its book page in `system.source` (items) or in its t
 
 ```json
 { "name": "Knife", "type": "weapon", "folder": "Melee Weapons",
-  "system": { "category": "melee", "skill": "Melee", "specialty": "Blade", "damage": "1D+3", "range": "close",
+  "system": { "category": "melee", "skill": "Melee Combat", "specialty": "Blade", "damage": "1D+3", "range": "close",
               "cost": 150, "weight": 0.1, "tl": 1, "traits": ["Bladed", "Conceal", "Throw"],
               "description": "<p>Can be thrown within short range.</p>", "source": "p.30" } }
 ```

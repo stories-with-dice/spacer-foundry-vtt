@@ -1,0 +1,125 @@
+<div class="vehicle-body">
+  <header class="craft-header {{#if system.destroyed}}status-destroyed{{/if}}">
+    <img class="portrait" src="{{actor.img}}" data-edit="img" data-action="editImage" alt="{{actor.name}}" width="72" height="72">
+    <div class="title">
+      <input class="name" type="text" name="name" value="{{actor.name}}">
+      <div class="line">
+        <select name="system.category">{{selectOptions categories selected=system.category}}</select>
+        <label>{{localize "SPACER.Craft.Vehicle.traits"}} <input type="text" data-field="traits" value="{{traitsText}}"></label>
+        <label class="check"><input type="checkbox" name="system.military" {{checked system.military}}> {{localize "SPACER.Craft.Vehicle.military"}}</label>
+      </div>
+      <div class="badges">
+        {{#if system.destroyed}}<span class="badge destroyed">{{localize "SPACER.Craft.Status.destroyed"}}</span>{{/if}}
+        {{#if system.status.compromised}}<span class="badge critical">{{localize "SPACER.Craft.Status.compromised"}}</span>{{/if}}
+        {{#if system.status.uncontrolled}}<span class="badge critical">{{localize "SPACER.Craft.Status.uncontrolled"}}</span>{{/if}}
+        {{#if system.status.immobile}}<span class="badge critical">{{localize "SPACER.Craft.Status.immobile"}}</span>{{/if}}
+        {{#if system.status.powerDestroyed}}<span class="badge critical">{{localize "SPACER.Craft.Status.powerDestroyed"}}</span>{{/if}}
+        <span class="badge">{{militaryLabel}}</span>
+        {{#if system.isOpen}}<span class="badge">{{localize "SPACER.Craft.Vehicle.open"}}</span>{{/if}}
+      </div>
+    </div>
+  </header>
+
+  <div class="scroll">
+    <section class="speed">
+      <h3>{{localize "SPACER.Craft.Vehicle.speed"}}</h3>
+      <div class="grid-3 stat-grid">
+        <label>{{localize "SPACER.Craft.Vehicle.speedBand"}} <input type="number" name="system.speedBand" value="{{system.speedBand}}" min="0" max="10"></label>
+        <label>{{localize "SPACER.Craft.Vehicle.effectiveBand"}} <span>{{system.effectiveSpeedBand}} ({{system.topKmh}} km/h)</span></label>
+        <label>{{localize "SPACER.Craft.Vehicle.cruise"}} <span>{{#if (ne system.cruiseBand null)}}{{system.cruiseBand}}{{else}}-{{/if}}</span></label>
+        <label>{{localize "SPACER.Craft.Vehicle.currentSpeed"}} <select name="system.currentSpeed" data-dtype="Number">{{selectOptions speedOptions selected=system.currentSpeed}}</select></label>
+        <label>{{localize "SPACER.Craft.Vehicle.operator"}} <span>{{operator.name}} · {{operator.skill}} {{operator.rank}}</span></label>
+        <label>{{localize "SPACER.Craft.Vehicle.topSpeedDM"}} <span class="{{#if speedDM}}warn{{/if}}">{{speedDM}}</span></label>
+        <label>{{localize "SPACER.Craft.Vehicle.skill"}} <input type="text" name="system.skill" value="{{system.skill}}"></label>
+        <label>{{localize "SPACER.Craft.Vehicle.weight"}} <input type="number" name="system.weightTons" value="{{system.weightTons}}" step="any"></label>
+        <label>{{localize "SPACER.Craft.Vehicle.range"}} <span><input type="number" name="system.rangeKm" value="{{system.rangeKm}}"> → {{system.effectiveRangeKm}} km</span></label>
+        <label>TL <input type="number" name="system.tl" value="{{system.tl}}"></label>
+        <label>{{localize "SPACER.Craft.Ship.cost"}} <input type="number" name="system.cost" value="{{system.cost}}"></label>
+        <label>{{localize "SPACER.Craft.Vehicle.armor"}} <input type="number" name="system.armor" value="{{system.armor}}" min="0"></label>
+      </div>
+    </section>
+
+    <section class="locations">
+      <h3>{{localize "SPACER.Craft.Vehicle.locations"}}</h3>
+      <table class="stat-block">
+        <thead><tr><th></th><th>{{localize "SPACER.Craft.Vehicle.max"}}</th><th></th><th>{{localize "SPACER.Craft.Vehicle.armored"}}</th><th></th></tr></thead>
+        <tbody>
+          {{#each locations}}
+          <tr class="{{#if out}}critical{{/if}}">
+            <th>{{label}}</th>
+            <td><input type="number" name="system.locations.{{key}}.max" value="{{max}}" min="0"></td>
+            <td class="pips">{{#each pips}}<span class="pip {{#if filled}}filled{{/if}}"></span>{{/each}} {{value}}/{{max}}</td>
+            <td><input type="checkbox" name="system.locations.{{key}}.armored" {{checked armored}}></td>
+            <td class="track">
+              <button type="button" class="icon" data-action="stepLocation" data-location="{{key}}" data-delta="1"><i class="fa-solid fa-minus"></i></button>
+              <button type="button" class="icon" data-action="stepLocation" data-location="{{key}}" data-delta="-1"><i class="fa-solid fa-plus"></i></button>
+            </td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+      <div class="actions-row">
+        <input type="number" data-field="hitAmount" value="1" min="1" data-tooltip="{{localize 'SPACER.Craft.Hit.amount'}}">
+        <select data-field="hitSource">{{selectOptions sources selected="vehicle"}}</select>
+        <select data-field="hitLocation"><option value="">{{localize "SPACER.Craft.Hit.roll"}}</option>{{selectOptions hitLocations}}</select>
+        <button type="button" data-action="hit"><i class="fa-solid fa-burst"></i> {{localize "SPACER.Craft.Action.hit"}}</button>
+        <button type="button" data-action="repairAll"><i class="fa-solid fa-wrench"></i> {{localize "SPACER.Craft.Vehicle.repairAll"}}</button>
+      </div>
+    </section>
+
+    <section class="weapons">
+      <h3>{{localize "SPACER.Craft.Ship.weapons"}}</h3>
+      <ul class="item-list">
+        {{#each weapons}}
+        <li class="item {{#if destroyed}}destroyed{{/if}}" data-item-id="{{id}}">
+          <img src="{{img}}" width="24" height="24" alt="">
+          <a class="name" data-action="editItem">{{name}}</a>
+          <span class="dmg">{{damage}}</span>
+          {{#if destroyed}}<span class="badge destroyed">{{localize "SPACER.Craft.Status.disabled"}}</span>{{/if}}
+          <span class="controls">
+            <button type="button" data-action="fire" {{#if destroyed}}disabled{{/if}}><i class="fa-solid fa-meteor"></i> {{localize "SPACER.Craft.Action.fire"}}</button>
+            <button type="button" class="icon" data-action="toggleWeapon"><i class="fa-solid fa-power-off"></i></button>
+            <button type="button" class="icon" data-action="deleteItem"><i class="fa-solid fa-trash"></i></button>
+          </span>
+        </li>
+        {{else}}<li class="empty">{{localize "SPACER.Craft.Ship.noWeapons"}}</li>{{/each}}
+      </ul>
+    </section>
+
+    <section class="occupants">
+      <h3>{{localize "SPACER.Craft.Vehicle.occupants"}}</h3>
+      <div class="grid-3 stat-grid">
+        <label>{{localize "SPACER.Craft.Vehicle.seats"}} <input type="number" name="system.occupants" value="{{system.occupants}}" min="0"></label>
+        <label>{{localize "SPACER.Craft.Vehicle.cargoKg"}} <input type="number" name="system.cargoKg" value="{{system.cargoKg}}"></label>
+        <label>{{localize "SPACER.Craft.Vehicle.cargoAsSeats"}} <span>{{cargoAsOccupants}} kg</span></label>
+      </div>
+      <p class="hint">{{localize "SPACER.Craft.Vehicle.dropHint"}}</p>
+      <ul class="crew-list">
+        {{#each occupants}}
+        <li class="crew" data-index="{{index}}" data-uuid="{{uuid}}">
+          <img src="{{img}}" width="32" height="32" alt="">
+          <a class="name" data-action="openOccupant">{{name}}</a>
+          {{#if operator}}<span class="badge">{{localize "SPACER.Craft.Vehicle.operator"}}</span>{{/if}}
+          <button type="button" class="icon" data-action="removeOccupant"><i class="fa-solid fa-xmark"></i></button>
+        </li>
+        {{else}}<li class="empty drop-zone">{{localize "SPACER.Craft.Crew.empty"}}</li>{{/each}}
+      </ul>
+    </section>
+
+    <section class="vehicle-actions">
+      <h3>{{localize "SPACER.Craft.Vehicle.actions"}}</h3>
+      <p class="hint">{{localize "SPACER.Craft.Vehicle.targets"}}: {{targetNames}}</p>
+      <div class="actions-row">
+        <button type="button" data-action="driveCheck"><i class="fa-solid fa-car"></i> {{localize "SPACER.Craft.Vehicle.driveCheck"}}</button>
+        <button type="button" data-action="ram"><i class="fa-solid fa-car-burst"></i> {{localize "SPACER.Craft.Vehicle.ram"}}</button>
+        <button type="button" data-action="hitAndRun"><i class="fa-solid fa-person-falling-burst"></i> {{localize "SPACER.Craft.Vehicle.hitAndRun"}}</button>
+        <button type="button" data-action="offensiveDriving"><i class="fa-solid fa-car-side"></i> {{localize "SPACER.Craft.Vehicle.offensiveDriving"}}</button>
+      </div>
+    </section>
+
+    <section class="description">
+      <h3>{{localize "SPACER.Craft.Ship.description"}}</h3>
+      <prose-mirror name="system.description" value="{{source.description}}" {{#unless editable}}disabled{{/unless}}>{{{enriched.description}}}</prose-mirror>
+    </section>
+  </div>
+</div>

@@ -1,0 +1,157 @@
+[
+  {
+    "name": "Bi-wing",
+    "type": "vehicle",
+    "folder": "Aircraft",
+    "system": {
+      "category": "aircraft",
+      "traits": [
+        "Air",
+        "Archaic"
+      ],
+      "military": false,
+      "skill": "Pilot (Aircraft)",
+      "speedBand": 4,
+      "currentSpeed": 0,
+      "occupants": 2,
+      "cargoKg": 0,
+      "rangeKm": 600,
+      "weightTons": 1,
+      "tl": 5,
+      "cost": 20000,
+      "armor": 0,
+      "locations": {
+        "interior": {
+          "value": 1,
+          "max": 1,
+          "armored": false
+        },
+        "drive": {
+          "value": 4,
+          "max": 4,
+          "armored": false
+        },
+        "handling": {
+          "value": 1,
+          "max": 1,
+          "armored": false
+        },
+        "hull": {
+          "value": 1,
+          "max": 1,
+          "armored": false
+        },
+        "weapon": {
+          "value": 0,
+          "max": 0,
+          "armored": false
+        }
+      },
+      "description": "<p>An early type of aircraft that uses chemical fuel and a propeller. 2 passengers.</p><p>Distance of operation: 600km. Weight 1T, TL 5, speed band 4, cost 20,000cr.</p><p>Damage locations (book): Interior 1, Speed 4, Hull 1. The book gives no Handling value; Handling is set to the Hull value.</p><ul><li>Air: This vehicle is designed to be flown in the atmosphere of a planet. Those operating vehicles with this trait benefit from using the Pilot (Aircraft) Skill.</li><li>Archaic: This vehicle is considered a rarity on higher tech worlds, so acquiring them or parts for them is difficult. Apply a -DM equal to the difference between the vehicle's lower tech level and the planet's higher tech level.</li></ul><p>Cargo: For every one occupant slot, 50kg of cargo can be carried instead. Weapons can be added to a vehicle after purchase, but civilian vehicles are unarmed by default. Cruising speed: vehicles with speed band 3+ have a cruising speed equal to one speed band less than top speed (p.46).</p><p>Source: p.47.</p>"
+    },
+    "items": []
+  },
+  {
+    "name": "Fixed Wing",
+    "type": "vehicle",
+    "folder": "Aircraft",
+    "system": {
+      "category": "aircraft",
+      "traits": [
+        "Air"
+      ],
+      "military": false,
+      "skill": "Pilot (Aircraft)",
+      "speedBand": 9,
+      "currentSpeed": 0,
+      "occupants": 2,
+      "cargoKg": 0,
+      "rangeKm": 3000,
+      "weightTons": 5,
+      "tl": 7,
+      "cost": 1000000,
+      "armor": 0,
+      "locations": {
+        "interior": {
+          "value": 2,
+          "max": 2,
+          "armored": false
+        },
+        "drive": {
+          "value": 9,
+          "max": 9,
+          "armored": false
+        },
+        "handling": {
+          "value": 2,
+          "max": 2,
+          "armored": false
+        },
+        "hull": {
+          "value": 2,
+          "max": 2,
+          "armored": false
+        },
+        "weapon": {
+          "value": 0,
+          "max": 0,
+          "armored": false
+        }
+      },
+      "description": "<p>These are jet-engine aircraft. Two passengers.</p><p>Distance of operation: 3,000km. Weight 5T, TL 7, speed band 9, cost 1Mcr.</p><p>Damage locations (book): Interior 2, Speed 9, Hull 2. The book gives no Handling value; Handling is set to the Hull value.</p><ul><li>Air: This vehicle is designed to be flown in the atmosphere of a planet. Those operating vehicles with this trait benefit from using the Pilot (Aircraft) Skill.</li></ul><p>Cargo: For every one occupant slot, 50kg of cargo can be carried instead. Weapons can be added to a vehicle after purchase, but civilian vehicles are unarmed by default. Cruising speed: vehicles with speed band 3+ have a cruising speed equal to one speed band less than top speed (p.46).</p><p>Source: p.47.</p>"
+    },
+    "items": []
+  },
+  {
+    "name": "Rotary Wing",
+    "type": "vehicle",
+    "folder": "Aircraft",
+    "system": {
+      "category": "aircraft",
+      "traits": [
+        "Air",
+        "VTOL"
+      ],
+      "military": false,
+      "skill": "Pilot (Aircraft)",
+      "speedBand": 4,
+      "currentSpeed": 0,
+      "occupants": 8,
+      "cargoKg": 0,
+      "rangeKm": 600,
+      "weightTons": 1,
+      "tl": 6,
+      "cost": 100000,
+      "armor": 0,
+      "locations": {
+        "interior": {
+          "value": 2,
+          "max": 2,
+          "armored": false
+        },
+        "drive": {
+          "value": 4,
+          "max": 4,
+          "armored": false
+        },
+        "handling": {
+          "value": 2,
+          "max": 2,
+          "armored": false
+        },
+        "hull": {
+          "value": 2,
+          "max": 2,
+          "armored": false
+        },
+        "weapon": {
+          "value": 0,
+          "max": 0,
+          "armored": false
+        }
+      },
+      "description": "<p>Rotary-wing craft covers most common helicopters and similar vertical take-off craft. Eight occupants.</p><p>Distance of operation: 600km. Weight 1T, TL 6, speed band 4, cost 100,000cr.</p><p>Damage locations (book): Interior 2, Speed 4, Hull 2. The book gives no Handling value; Handling is set to the Hull value.</p><ul><li>Air: This vehicle is designed to be flown in the atmosphere of a planet. Those operating vehicles with this trait benefit from using the Pilot (Aircraft) Skill.</li><li>VTOL: This craft can lift and land vertically without needing to use a runway or length of distance for ascending.</li></ul><p>Cargo: For every one occupant slot, 50kg of cargo can be carried instead. Weapons can be added to a vehicle after purchase, but civilian vehicles are unarmed by default. Cruising speed: vehicles with speed band 3+ have a cruising speed equal to one speed band less than top speed (p.46).</p><p>Source: p.47.</p>"
+    },
+    "items": []
+  }
+]

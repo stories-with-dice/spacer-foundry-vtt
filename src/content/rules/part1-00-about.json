@@ -1,0 +1,14 @@
+{
+ "name": "00 About this System",
+ "folder": "Rules",
+ "pages": [
+  {
+   "name": "Credits and License",
+   "html": "<h2>Spacer: Interstellar Roleplaying in the Far Future</h2><p>Version 1.03</p><ul><li><strong>Writing, Layout, and Cover Design:</strong> Bryan Larkin</li><li><strong>Edited by:</strong> Yossi Krausz</li><li><strong>Publisher:</strong> Arcane Sword Press</li></ul><h2>License</h2><p>All written portions of Spacer: Interstellar Roleplaying in the Far Future are released under the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0) and are published by Arcane Sword Press. License text: <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">https://creativecommons.org/licenses/by-sa/4.0/</a>.</p><p>The written text of the book was adapted into these Foundry VTT documents (journal entries, items, actors, and roll tables). The adapted text is shared under the same license, CC BY-SA 4.0.</p><p>No artwork from the book is included. Original artwork is copyright the creators and may not be reproduced without permission.</p><p>Arcane Sword Press takes no responsibility or liability for legal claims or damages against any products derived from or compatible with Spacer.</p><p>Spacer is inspired by Traveller by Marc Miller.</p><p>This game system is unofficial. Arcane Sword Press and Bryan Larkin did not make or endorse it.</p><p class=\"spacer-source\">Book p.4-5</p>"
+  },
+  {
+   "name": "How to Use",
+   "html": "<p>This page will explain how to use the Spacer system in Foundry VTT: the character sheet, the rolls, the compendiums, and the solo play tools. It is a placeholder for now.</p>"
+  }
+ ]
+}

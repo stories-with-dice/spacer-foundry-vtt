@@ -1,0 +1,109 @@
+<section class="tab {{tab.cssClass}}" data-group="primary" data-tab="ship">
+  <table class="stat-block">
+    <tbody>
+      {{#each systems}}
+      <tr class="system {{#if critical}}critical{{/if}} {{#if destroyed}}destroyed{{/if}}">
+        <th>{{label}}</th>
+        <td>
+          <select name="system.{{key}}.rating" data-tooltip="{{localize 'SPACER.Craft.Ship.builtLetter'}}">
+            {{selectOptions @root.letters selected=built}}
+          </select>
+        </td>
+        <td class="perf">
+          {{#if destroyed}}<span class="badge destroyed">{{localize "SPACER.Craft.Status.destroyed"}}</span>
+          {{else}}<strong>{{effectiveLetter}}</strong> ({{performance}} {{unit}}){{#if limited}} <span class="badge limited" data-tooltip="{{localize 'SPACER.Craft.Ship.limitedHint'}}">{{localize "SPACER.Craft.Ship.limited"}}</span>{{/if}}
+          {{#if critical}}<span class="badge critical">{{localize "SPACER.Craft.Status.critical"}}</span>{{/if}}{{/if}}
+        </td>
+        <td class="track">
+          <button type="button" class="icon" data-action="stepDamage" data-system="{{key}}" data-delta="1" data-tooltip="{{localize 'SPACER.Craft.Hit.addDamage'}}"><i class="fa-solid fa-minus"></i></button>
+          <span class="steps">-{{damage}}</span>
+          <button type="button" class="icon" data-action="stepDamage" data-system="{{key}}" data-delta="-1" data-tooltip="{{localize 'SPACER.Craft.Hit.removeDamage'}}"><i class="fa-solid fa-plus"></i></button>
+          <button type="button" class="icon" data-action="repair" data-system="{{key}}" data-tooltip="{{localize 'SPACER.Craft.Action.repair'}}"><i class="fa-solid fa-wrench"></i></button>
+        </td>
+      </tr>
+      {{/each}}
+      <tr class="{{#if system.critical}}critical{{/if}}">
+        <th>{{localize "SPACER.Craft.Loc.hull"}}</th>
+        <td><input type="number" name="system.hull.max" value="{{system.hull.max}}" min="0" data-tooltip="{{localize 'SPACER.Craft.Ship.hullRule'}} {{system.hullPointsRule}}"></td>
+        <td class="pips">{{#each hullPips}}<span class="pip {{#if filled}}filled{{/if}}"></span>{{/each}} {{system.hull.value}}/{{system.hull.max}}</td>
+        <td class="track">
+          <button type="button" class="icon" data-action="stepDamage" data-system="hull" data-delta="1"><i class="fa-solid fa-minus"></i></button>
+          <button type="button" class="icon" data-action="stepDamage" data-system="hull" data-delta="-1"><i class="fa-solid fa-plus"></i></button>
+          <button type="button" class="icon" data-action="repair" data-system="hull" data-tooltip="{{localize 'SPACER.Craft.Action.repair'}}"><i class="fa-solid fa-wrench"></i></button>
+        </td>
+      </tr>
+      <tr class="{{#if system.criticalSystems.fuel}}critical{{/if}}">
+        <th>{{localize "SPACER.Craft.Loc.fuel"}}</th>
+        <td><input type="number" name="system.fuel.value" value="{{system.fuel.value}}" min="0" step="any"> / <input type="number" name="system.fuel.max" value="{{system.fuel.max}}" min="0" step="any"></td>
+        <td class="pips">{{#each fuelPips}}<span class="pip {{#if filled}}filled{{/if}}"></span>{{/each}} {{localize "SPACER.Craft.Ship.usable"}} {{system.fuelState.capacity}}T · {{localize "SPACER.Craft.Ship.jumpNeeds"}} {{system.fuelState.jumpNeed}}T{{#if system.fuelState.unrefined}} · <span class="badge critical">{{localize "SPACER.Craft.Fuel.unrefined"}}</span>{{/if}}</td>
+        <td class="track">
+          <button type="button" class="icon" data-action="stepDamage" data-system="fuel" data-delta="1"><i class="fa-solid fa-minus"></i></button>
+          <button type="button" class="icon" data-action="stepDamage" data-system="fuel" data-delta="-1"><i class="fa-solid fa-plus"></i></button>
+        </td>
+      </tr>
+      {{#unless system.smallCraft}}
+      <tr class="{{#if system.criticalSystems.internal}}critical{{/if}}">
+        <th>{{localize "SPACER.Craft.Loc.internal"}}</th>
+        <td></td>
+        <td class="pips">{{#each internalPips}}<span class="pip {{#if filled}}filled{{/if}}"></span>{{/each}} {{system.internal.value}}/{{system.internal.max}}</td>
+        <td class="track">
+          <button type="button" class="icon" data-action="stepDamage" data-system="internal" data-delta="1"><i class="fa-solid fa-minus"></i></button>
+          <button type="button" class="icon" data-action="stepDamage" data-system="internal" data-delta="-1"><i class="fa-solid fa-plus"></i></button>
+        </td>
+      </tr>
+      {{else}}
+      <tr>
+        <th>{{localize "SPACER.Craft.Loc.cockpit"}}</th><td></td><td>{{system.cockpitHits}}/2</td>
+        <td class="track">
+          <button type="button" class="icon" data-action="stepDamage" data-system="cockpit" data-delta="1"><i class="fa-solid fa-minus"></i></button>
+          <button type="button" class="icon" data-action="stepDamage" data-system="cockpit" data-delta="-1"><i class="fa-solid fa-plus"></i></button>
+        </td>
+      </tr>
+      {{/unless}}
+    </tbody>
+  </table>
+
+  <div class="grid-2 stat-grid">
+    <label>{{localize "SPACER.Craft.Ship.cargo"}} <span><input type="number" name="system.cargo.value" value="{{system.cargo.value}}" step="any"> / <input type="number" name="system.cargo.max" value="{{system.cargo.max}}" step="any"> T</span></label>
+    <label>{{localize "SPACER.Craft.Ship.staterooms"}} <input type="number" name="system.staterooms" value="{{system.staterooms}}"></label>
+    <label>{{localize "SPACER.Craft.Ship.lowBerths"}} <input type="number" name="system.lowBerths" value="{{system.lowBerths}}"></label>
+    <label>{{localize "SPACER.Craft.Ship.hardpoints"}} <input type="number" name="system.hardpoints" value="{{system.hardpoints}}"></label>
+    <label>{{localize "SPACER.Craft.Ship.cpu"}} <input type="text" name="system.cpu" value="{{system.cpu}}"></label>
+    <label>{{localize "SPACER.Craft.Ship.hullType"}}
+      <select name="system.streamlined" data-dtype="Boolean">
+        <option value="true" {{#if system.streamlined}}selected{{/if}}>{{localize "SPACER.Craft.Ship.streamlined"}}</option>
+        <option value="false" {{#unless system.streamlined}}selected{{/unless}}>{{localize "SPACER.Craft.Ship.nonStreamlined"}}</option>
+      </select></label>
+    <label>{{localize "SPACER.Craft.Ship.crew"}} <input type="number" name="system.crewRequired" value="{{system.crewRequired}}"></label>
+    <label>{{localize "SPACER.Craft.Ship.misc"}} <input type="text" name="system.misc" value="{{system.misc}}"></label>
+    <label>{{localize "SPACER.Craft.Ship.cost"}} <input type="number" name="system.cost" value="{{system.cost}}"></label>
+    <label>{{localize "SPACER.Craft.Ship.maintenanceDM"}} <span>{{system.maintenance.dm}} ({{system.maintenance.months}} {{localize "SPACER.Craft.Unit.months"}})</span></label>
+  </div>
+
+  <h3>{{localize "SPACER.Craft.Ship.weapons"}}</h3>
+  <div class="fire-opts">
+    <label>{{localize "SPACER.Craft.Combat.range"}} <select data-opt="fire.range">{{#each rangeOptions}}<option value="{{key}}" {{#if (eq key @root.fire.range)}}selected{{/if}}>{{label}}</option>{{/each}}</select></label>
+    <label>{{localize "SPACER.Craft.Hit.called"}} <select data-opt="fire.location"><option value="">-</option>{{#each locationOptions}}<option value="{{key}}" {{#if (eq key @root.fire.location)}}selected{{/if}}>{{label}}</option>{{/each}}</select></label>
+    <label>DM <input type="number" data-opt="fire.dm" value="{{fire.dm}}"></label>
+  </div>
+  <ul class="item-list weapons">
+    {{#each weapons}}
+    <li class="item {{#if disabled}}disabled{{/if}} {{#if destroyed}}destroyed{{/if}}" data-item-id="{{id}}">
+      <img src="{{img}}" width="24" height="24" alt="">
+      <a class="name" data-action="editItem">{{name}}</a>
+      <span class="dmg">{{damage}}</span>
+      <span class="ammo">{{ammo}}</span>
+      <span class="gunner">{{gunner}}</span>
+      {{#if destroyed}}<span class="badge destroyed">{{localize "SPACER.Craft.Status.destroyed"}}</span>{{else if disabled}}<span class="badge critical">{{localize "SPACER.Craft.Status.disabled"}}</span>{{/if}}
+      <span class="controls">
+        <button type="button" data-action="fire" {{#if disabled}}disabled{{/if}} {{#if destroyed}}disabled{{/if}}><i class="fa-solid fa-meteor"></i> {{localize "SPACER.Craft.Action.fire"}}</button>
+        {{#if ammo}}<button type="button" class="icon" data-action="reloadWeapon" data-tooltip="{{localize 'SPACER.Craft.Action.reload'}}"><i class="fa-solid fa-rotate"></i></button>{{/if}}
+        <button type="button" class="icon" data-action="toggleWeapon" data-tooltip="{{localize 'SPACER.Craft.Hit.toggleWeapon'}}"><i class="fa-solid fa-power-off"></i></button>
+        <button type="button" class="icon" data-action="deleteItem" data-tooltip="{{localize 'Delete'}}"><i class="fa-solid fa-trash"></i></button>
+      </span>
+    </li>
+    {{else}}
+    <li class="empty">{{localize "SPACER.Craft.Ship.noWeapons"}}</li>
+    {{/each}}
+  </ul>
+</section>

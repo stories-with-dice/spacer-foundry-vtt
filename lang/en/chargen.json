@@ -1,1 +1,33 @@
-{}
+{
+  "SPACER": {
+    "Chargen": {
+      "Title": "Spacer Character Creation",
+      "CreateSpacer": "Create Spacer",
+      "NewName": "New Spacer",
+      "Roll": "Roll",
+      "Target": "Target",
+      "Success": "Success",
+      "Failure": "Failure",
+      "Dead": "Your character died",
+      "Restart": "Start a new character",
+      "Done": "Character creation is complete",
+      "Saved": "{name}: lifepath saved to the character.",
+      "SavedShort": "Saved to the character.",
+      "Overwrite": "This character already finished character creation. Replace its characteristics, skills, and lifepath items?",
+      "OnlyCharacters": "The character creation wizard works only for character actors.",
+      "UPP": "UPP",
+      "Age": "Age",
+      "Terms": "Terms",
+      "Credits": "Credits",
+      "Debt": "Debt",
+      "Pension": "Pension",
+      "Careers": "Careers",
+      "Skills": "Skills",
+      "Items": "Items",
+      "Connections": "Connections",
+      "Undo": "Undo",
+      "Fast": "Fast",
+      "Save": "Save to character"
+    }
+  }
+}

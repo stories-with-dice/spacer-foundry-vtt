@@ -1,0 +1,916 @@
+[
+ {
+  "name": "Space Encounter Type",
+  "folder": "Space Encounters",
+  "formula": "2d6",
+  "description": "<p>p.80. After an encounter check (roll 1D + Encounter Chance DM; 6+ is an encounter), roll 2D. DMs: Encounter Type DM by location (Space Encounter Frequency table): Highport Space +3, High-Traffic Space +2, Settled Space +1, Border System +0, Wild Space -1, Empty Space -2. Number encountered by location: Highport 2D, High-Traffic 1D+3, Settled 1D, Border D3, Wild D3, Empty 1 (minimum 1). Wild and Empty Space roll D36 instead of D66 on the Space Encounter table. Hostile: NPCs have -2DM to interactions; Helpful: +2DM.</p>",
+  "results": [
+   {
+    "range": [
+     -20,
+     2
+    ],
+    "text": "<strong>Encounter Type:</strong> Space ship, hostile (-2DM) · <strong>Encounter Distance Range Band:</strong> Close (1km or less)"
+   },
+   {
+    "range": [
+     3,
+     5
+    ],
+    "text": "<strong>Encounter Type:</strong> Space environment · <strong>Encounter Distance Range Band:</strong> Short (1km-1250km)"
+   },
+   {
+    "range": [
+     6,
+     9
+    ],
+    "text": "<strong>Encounter Type:</strong> Space ship · <strong>Encounter Distance Range Band:</strong> Medium (1251km-10,000km)"
+   },
+   {
+    "range": [
+     10,
+     11
+    ],
+    "text": "<strong>Encounter Type:</strong> Space environment · <strong>Encounter Distance Range Band:</strong> Long (10,001km -25,000km)"
+   },
+   {
+    "range": [
+     12,
+     30
+    ],
+    "text": "<strong>Encounter Type:</strong> Space ship, Helpful(+2DM) · <strong>Encounter Distance Range Band:</strong> Very long (25,001km -50,000km)"
+   }
+  ]
+ },
+ {
+  "name": "Space Encounter Table",
+  "folder": "Space Encounters",
+  "formula": "1d6*10+1d6",
+  "description": "<p>p.81. Roll D66 (D36 in Wild Space and Empty Space) when the Space Encounter Type is a space ship. *Possible outlaws: roll 1D; on a 4+ the encounter is spacers (see Outlaw Spacer Type).</p>",
+  "results": [
+   {
+    "range": [
+     11,
+     11
+    ],
+    "text": "Possible outlaws*, 1D ships, see pg. 58"
+   },
+   {
+    "range": [
+     12,
+     12
+    ],
+    "text": "Possible outlaws*, D3 ships"
+   },
+   {
+    "range": [
+     13,
+     13
+    ],
+    "text": "Possible outlaws*, single ship"
+   },
+   {
+    "range": [
+     14,
+     14
+    ],
+    "text": "Possible outlaws*, occupied space station"
+   },
+   {
+    "range": [
+     15,
+     15
+    ],
+    "text": "Religious pilgrims"
+   },
+   {
+    "range": [
+     16,
+     16
+    ],
+    "text": "Scout ship"
+   },
+   {
+    "range": [
+     21,
+     21
+    ],
+    "text": "Mayday! Automated pinging beacon, no response"
+   },
+   {
+    "range": [
+     22,
+     22
+    ],
+    "text": "Mayday! Recording of issue, no response"
+   },
+   {
+    "range": [
+     23,
+     23
+    ],
+    "text": "Mayday! Currently broadcasting, will respond"
+   },
+   {
+    "range": [
+     24,
+     24
+    ],
+    "text": "Communication satellite"
+   },
+   {
+    "range": [
+     25,
+     25
+    ],
+    "text": "Courier post/depot station"
+   },
+   {
+    "range": [
+     26,
+     26
+    ],
+    "text": "Scavenger ship"
+   },
+   {
+    "range": [
+     31,
+     31
+    ],
+    "text": "Traveller on an odd-job"
+   },
+   {
+    "range": [
+     32,
+     32
+    ],
+    "text": "Mercenary company"
+   },
+   {
+    "range": [
+     33,
+     33
+    ],
+    "text": "Refugees"
+   },
+   {
+    "range": [
+     34,
+     34
+    ],
+    "text": "Belter company ship"
+   },
+   {
+    "range": [
+     35,
+     35
+    ],
+    "text": "Towing shuttle"
+   },
+   {
+    "range": [
+     36,
+     36
+    ],
+    "text": "Bounty Hunter"
+   },
+   {
+    "range": [
+     41,
+     41
+    ],
+    "text": "Space trucker, 1D x 100T ship"
+   },
+   {
+    "range": [
+     42,
+     42
+    ],
+    "text": "Space trucker 1D x 500T ship"
+   },
+   {
+    "range": [
+     43,
+     43
+    ],
+    "text": "Space trucker 1D x 1000T ship"
+   },
+   {
+    "range": [
+     44,
+     44
+    ],
+    "text": "Armed trader"
+   },
+   {
+    "range": [
+     45,
+     45
+    ],
+    "text": "Passenger liner"
+   },
+   {
+    "range": [
+     46,
+     46
+    ],
+    "text": "Space station, roll 1D: 1) Courier depot, 2) Refinery platform, 3) Military checkpoint , 4) Research station, 5) Communication relay, 6) Isolated starport"
+   },
+   {
+    "range": [
+     51,
+     51
+    ],
+    "text": "Highport space station"
+   },
+   {
+    "range": [
+     52,
+     52
+    ],
+    "text": "Intrasystem transport vessel"
+   },
+   {
+    "range": [
+     53,
+     53
+    ],
+    "text": "Intrasystem supply ship (fuel, water, food)"
+   },
+   {
+    "range": [
+     54,
+     54
+    ],
+    "text": "Intrasystem construction vessel"
+   },
+   {
+    "range": [
+     55,
+     55
+    ],
+    "text": "Construction craft hauler"
+   },
+   {
+    "range": [
+     56,
+     56
+    ],
+    "text": "Research station"
+   },
+   {
+    "range": [
+     61,
+     61
+    ],
+    "text": "Emergency services ship"
+   },
+   {
+    "range": [
+     62,
+     62
+    ],
+    "text": "Local security/ law enforcement patrol craft"
+   },
+   {
+    "range": [
+     63,
+     63
+    ],
+    "text": "Noble escort"
+   },
+   {
+    "range": [
+     64,
+     64
+    ],
+    "text": "Starship dry dock/construction dock"
+   },
+   {
+    "range": [
+     65,
+     65
+    ],
+    "text": "Naval ship"
+   },
+   {
+    "range": [
+     66,
+     66
+    ],
+    "text": "Naval fleet"
+   }
+  ]
+ },
+ {
+  "name": "Outlaw Spacer Type",
+  "folder": "Space Encounters",
+  "formula": "1d6",
+  "description": "<p>p.80. Possible outlaws (Space Encounter table): roll 1D; on a 4+ the encounter is spacers. Then roll 1D to determine the type of spacers they are.</p>",
+  "results": [
+   {
+    "range": [
+     1,
+     3
+    ],
+    "text": "Pirates"
+   },
+   {
+    "range": [
+     4,
+     5
+    ],
+    "text": "Smugglers"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "Organized crime affiliates"
+   }
+  ]
+ },
+ {
+  "name": "Space Station Type (Space Encounter)",
+  "folder": "Space Encounters",
+  "formula": "1d6",
+  "description": "<p>p.81. Space Encounter table result 46: Space station, roll 1D.</p>",
+  "results": [
+   {
+    "range": [
+     1,
+     1
+    ],
+    "text": "Courier depot"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "Refinery platform"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "Military checkpoint"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "Research station"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "Communication relay"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "Isolated starport"
+   }
+  ]
+ },
+ {
+  "name": "Space Environment Table",
+  "folder": "Space Encounters",
+  "formula": "1d6*10+1d6",
+  "description": "<p>p.81. Roll D66 (D36 in Wild Space and Empty Space) when the Space Encounter Type is a space environment. Collision chance: Pilot roll of 8+ to avoid hitting debris unless stated otherwise. Failure results in D3 of damage to the starship. *Other: roll on Space Environment Other.</p>",
+  "results": [
+   {
+    "range": [
+     11,
+     11
+    ],
+    "text": "Asteroid field, collision chance but Pilot check 6+ to avoid damage"
+   },
+   {
+    "range": [
+     12,
+     12
+    ],
+    "text": "Meteorite storm, collision chance"
+   },
+   {
+    "range": [
+     13,
+     13
+    ],
+    "text": "Adrift and stranded colony/generation ship, D3 x100 years old"
+   },
+   {
+    "range": [
+     14,
+     14
+    ],
+    "text": "Research satellite, non-operational"
+   },
+   {
+    "range": [
+     15,
+     15
+    ],
+    "text": "Adrift escape pod"
+   },
+   {
+    "range": [
+     16,
+     16
+    ],
+    "text": "Abandoned belter astroid"
+   },
+   {
+    "range": [
+     21,
+     21
+    ],
+    "text": "Deep space beacon relay"
+   },
+   {
+    "range": [
+     22,
+     22
+    ],
+    "text": "Space coffin jettisoned 2D decades ago"
+   },
+   {
+    "range": [
+     23,
+     23
+    ],
+    "text": "Solar flare, critical damage to a ship system"
+   },
+   {
+    "range": [
+     24,
+     24
+    ],
+    "text": "Small asteroid cluster"
+   },
+   {
+    "range": [
+     25,
+     25
+    ],
+    "text": "Small asteroid cluster with a belter base"
+   },
+   {
+    "range": [
+     26,
+     26
+    ],
+    "text": "Unfinished space station"
+   },
+   {
+    "range": [
+     31,
+     31
+    ],
+    "text": "Derelict, 1D x 100T"
+   },
+   {
+    "range": [
+     32,
+     32
+    ],
+    "text": "Derelict, 2D x 100T"
+   },
+   {
+    "range": [
+     33,
+     33
+    ],
+    "text": "Derelict, 3D x 100T"
+   },
+   {
+    "range": [
+     34,
+     34
+    ],
+    "text": "Derelict, 1D x 1000T"
+   },
+   {
+    "range": [
+     35,
+     35
+    ],
+    "text": "Derelict, 1D x 5000T"
+   },
+   {
+    "range": [
+     36,
+     36
+    ],
+    "text": "Derelict, 1D x 10000T"
+   },
+   {
+    "range": [
+     41,
+     41
+    ],
+    "text": "Abandoned space station"
+   },
+   {
+    "range": [
+     42,
+     42
+    ],
+    "text": "Destroyed space station"
+   },
+   {
+    "range": [
+     43,
+     43
+    ],
+    "text": "Scrap and debris, collision chance"
+   },
+   {
+    "range": [
+     44,
+     44
+    ],
+    "text": "Destroyed 1D x1000T ship"
+   },
+   {
+    "range": [
+     45,
+     45
+    ],
+    "text": "Ship wreckage from a collision, collision chance"
+   },
+   {
+    "range": [
+     46,
+     46
+    ],
+    "text": "Remains of an attack, ship wreckage + scrap and debris everywhere, Collision chance"
+   },
+   {
+    "range": [
+     51,
+     51
+    ],
+    "text": "Jettisoned cargo, 1D x 20 tonnes"
+   },
+   {
+    "range": [
+     52,
+     52
+    ],
+    "text": "Navigation buoy"
+   },
+   {
+    "range": [
+     53,
+     53
+    ],
+    "text": "Space junkyard, collision chance"
+   },
+   {
+    "range": [
+     54,
+     54
+    ],
+    "text": "Comms satellite, adrift"
+   },
+   {
+    "range": [
+     55,
+     55
+    ],
+    "text": "Hollowed-out asteroids"
+   },
+   {
+    "range": [
+     56,
+     56
+    ],
+    "text": "Scrap-built station"
+   },
+   {
+    "range": [
+     61,
+     61
+    ],
+    "text": "Courier or freight hub"
+   },
+   {
+    "range": [
+     62,
+     62
+    ],
+    "text": "Independent shipyard"
+   },
+   {
+    "range": [
+     63,
+     63
+    ],
+    "text": "Small space station, general purpose"
+   },
+   {
+    "range": [
+     64,
+     64
+    ],
+    "text": "Comms satellite"
+   },
+   {
+    "range": [
+     65,
+     65
+    ],
+    "text": "Research satellite"
+   },
+   {
+    "range": [
+     66,
+     66
+    ],
+    "text": "Other*, see pg. 58"
+   }
+  ]
+ },
+ {
+  "name": "Space Environment Other",
+  "folder": "Space Encounters",
+  "formula": "1d6",
+  "description": "<p>p.80. Space Environment table result 66 (Other*): roll 1D.</p>",
+  "results": [
+   {
+    "range": [
+     1,
+     1
+    ],
+    "text": "Wormhole"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "Spacetime anomaly"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "Psychic wave"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "Massive craft/station/structure"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "Cryptic radio chatter"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "Ancient structure"
+   }
+  ]
+ },
+ {
+  "name": "Ship Encounter Reaction (Reaction when Hailing)",
+  "folder": "Space Encounters",
+  "formula": "2d6",
+  "description": "<p>p.82. Ship Encounter Reaction Table, Reaction when Hailing column. Roll 2D when attempting to contact a ship over the comms. DMs: -3DM if actively scanning the ship. Actively scanning a ship alerts its pilot and sensor operator and gives -3DM to the reaction and behaviour columns.</p>",
+  "results": [
+   {
+    "range": [
+     -20,
+     2
+    ],
+    "text": "Rude"
+   },
+   {
+    "range": [
+     3,
+     5
+    ],
+    "text": "Dismissive"
+   },
+   {
+    "range": [
+     6,
+     8
+    ],
+    "text": "No Response"
+   },
+   {
+    "range": [
+     9,
+     11
+    ],
+    "text": "Interested"
+   },
+   {
+    "range": [
+     12,
+     30
+    ],
+    "text": "Helpful"
+   }
+  ]
+ },
+ {
+  "name": "Ship Encounter Reaction (Behaviour if Interacted With)",
+  "folder": "Space Encounters",
+  "formula": "2d6",
+  "description": "<p>p.82. Ship Encounter Reaction Table, Behaviour if Interacted With column. Roll 2D. DMs: -3DM if actively scanning the ship. Actively scanning a ship alerts its pilot and sensor operator and gives -3DM to the reaction and behaviour columns.</p>",
+  "results": [
+   {
+    "range": [
+     -20,
+     2
+    ],
+    "text": "Aggressive"
+   },
+   {
+    "range": [
+     3,
+     5
+    ],
+    "text": "Defensive"
+   },
+   {
+    "range": [
+     6,
+     8
+    ],
+    "text": "Passive"
+   },
+   {
+    "range": [
+     9,
+     11
+    ],
+    "text": "Assertive"
+   },
+   {
+    "range": [
+     12,
+     30
+    ],
+    "text": "Evasive"
+   }
+  ]
+ },
+ {
+  "name": "Ship Encounter Reaction (Ship Scan Result)",
+  "folder": "Space Encounters",
+  "formula": "2d6",
+  "description": "<p>p.82. Ship Encounter Reaction Table, Ship Scan Result column. Roll 2D when scanning a ship. If the ship is flagged, roll on Flagged Ship Complication. Actively scanning a ship alerts its pilot and sensor operator and gives -3DM to the reaction and behaviour columns.</p>",
+  "results": [
+   {
+    "range": [
+     -20,
+     2
+    ],
+    "text": "Ship is flagged, 2 complications"
+   },
+   {
+    "range": [
+     3,
+     5
+    ],
+    "text": "Ship is flagged, 1 complication"
+   },
+   {
+    "range": [
+     6,
+     8
+    ],
+    "text": "Behind on small payments"
+   },
+   {
+    "range": [
+     9,
+     11
+    ],
+    "text": "No issues"
+   },
+   {
+    "range": [
+     12,
+     30
+    ],
+    "text": "No issue, and no record of any delinquency"
+   }
+  ]
+ },
+ {
+  "name": "Ship Encounter Reaction (Ship Condition)",
+  "folder": "Space Encounters",
+  "formula": "2d6",
+  "description": "<p>p.82. Ship Encounter Reaction Table, Ship Condition column. Roll 2D when scanning a ship. Actively scanning a ship alerts its pilot and sensor operator and gives -3DM to the reaction and behaviour columns.</p>",
+  "results": [
+   {
+    "range": [
+     -20,
+     2
+    ],
+    "text": "Has critical damage and needs repairs"
+   },
+   {
+    "range": [
+     3,
+     5
+    ],
+    "text": "Has some hull damage"
+   },
+   {
+    "range": [
+     6,
+     8
+    ],
+    "text": "Needs maintenance"
+   },
+   {
+    "range": [
+     9,
+     11
+    ],
+    "text": "In good condition, no damage"
+   },
+   {
+    "range": [
+     12,
+     30
+    ],
+    "text": "Appears new or recently upgraded"
+   }
+  ]
+ },
+ {
+  "name": "Flagged Ship Complication",
+  "folder": "Space Encounters",
+  "formula": "1d6",
+  "description": "<p>p.82. If the ship is flagged (Ship Scan Result), roll 1D to determine the complication.</p>",
+  "results": [
+   {
+    "range": [
+     1,
+     1
+    ],
+    "text": "Unregistered or false registration; escort to closest starport for a reward"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "Ship is registered to someone else"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "Skipped on ship loan payments; reward available if detained"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "Sensors picked up mysterious cargo"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "Owner is affiliated with an enemy government, faction, or criminal enterprise; reward available"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "Ship is legendary or notorious; proceed with caution"
+   }
+  ]
+ }
+]

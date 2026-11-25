@@ -1,0 +1,81 @@
+[
+  {
+    "name": "Vehicle Damage Location (Civilian)",
+    "folder": "Vehicular Combat",
+    "formula": "1d6",
+    "description": "<p>p.49. Any time a civilian vehicle takes damage, roll 1D to determine the location of the damage.</p>",
+    "results": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "text": "Interior"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "Drive"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "Handling"
+      },
+      {
+        "range": [
+          4,
+          20
+        ],
+        "text": "Hull"
+      }
+    ]
+  },
+  {
+    "name": "Vehicle Damage Location (Military)",
+    "folder": "Vehicular Combat",
+    "formula": "1d6",
+    "description": "<p>p.49. Any time a military vehicle takes damage, roll 1D to determine the location of the damage.</p>",
+    "results": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "text": "Interior"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "Drive"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "Handling"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "Weapon"
+      },
+      {
+        "range": [
+          5,
+          20
+        ],
+        "text": "Hull"
+      }
+    ]
+  }
+]

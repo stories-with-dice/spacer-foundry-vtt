@@ -1,0 +1,31 @@
+<section class="tab {{tab.cssClass}}" data-group="primary" data-tab="crew">
+  <p class="hint">{{localize "SPACER.Craft.Crew.dropHint"}} {{localize "SPACER.Craft.Crew.minimum"}}: {{system.minimumCrew}}</p>
+  <ul class="crew-list">
+    {{#each crew}}
+    <li class="crew {{#unless ok}}unqualified{{/unless}}" data-index="{{index}}" data-uuid="{{uuid}}" data-role="{{role}}">
+      <img src="{{img}}" width="32" height="32" alt="">
+      <select class="crew-role" data-index="{{index}}">
+        {{#each @root.roleOptions}}<option value="{{key}}" {{#if (eq key ../role)}}selected{{/if}}>{{label}}</option>{{/each}}
+      </select>
+      <a class="name" data-action="openCrew">{{name}}</a>
+      <span class="skill">{{skill}} {{#if (ne rank null)}}{{rank}}{{/if}}</span>
+      <button type="button" class="icon" data-action="removeCrew"><i class="fa-solid fa-xmark"></i></button>
+    </li>
+    {{else}}
+    <li class="empty drop-zone">{{localize "SPACER.Craft.Crew.empty"}}</li>
+    {{/each}}
+  </ul>
+  <div class="add-crew">
+    <select data-field="newRole">{{#each roleOptions}}<option value="{{key}}">{{label}}</option>{{/each}}</select>
+    <button type="button" data-action="addCrew"><i class="fa-solid fa-user-plus"></i> {{localize "SPACER.Craft.Crew.add"}}</button>
+  </div>
+  <h3>{{localize "SPACER.Craft.Crew.positions"}}</h3>
+  <table class="positions">
+    <thead><tr><th>{{localize "SPACER.Craft.Crew.position"}}</th><th>{{localize "SPACER.Craft.Finance.salary"}}</th><th>{{localize "SPACER.Craft.Crew.requirement"}}</th></tr></thead>
+    <tbody>
+      {{#each roleOptions}}
+      <tr class="drop-zone {{#if filled}}filled{{/if}}" data-role="{{key}}"><td>{{label}}</td><td class="num">{{salary}}</td><td>{{skill}} {{rank}}</td></tr>
+      {{/each}}
+    </tbody>
+  </table>
+</section>

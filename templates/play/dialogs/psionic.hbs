@@ -1,0 +1,16 @@
+<div class="sp-dialog-body">
+  <p><b>{{talent.name}}</b> · {{localize "SPACER.Psi.Cost"}} {{talent.system.psiCost}} · PSI {{psi.value}}/{{psi.max}}</p>
+  {{#if hasRange}}
+  <label class="sp-field">{{localize "SPACER.Attack.RangeBand"}}
+    <select name="band">{{#each bands}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></label>
+  {{/if}}
+  <label class="sp-field">{{localize "SPACER.Psi.Extra"}}<input type="number" name="extra" value="{{v.extra}}" min="0"></label>
+  <label class="sp-field check"><input type="checkbox" name="roll" {{checked v.roll}}> {{localize "SPACER.Psi.RollToo"}}</label>
+  <div class="sp-grid three">
+    <label class="sp-field">{{localize "SPACER.Roll.Characteristic"}}
+      <select name="characteristic">{{#each (object str="STR" dex="DEX" end="END" int="INT" edu="EDU" soc="SOC" psi="PSI")}}<option value="{{@key}}" {{#if (eq @key @root.v.characteristic)}}selected{{/if}}>{{this}}</option>{{/each}}</select></label>
+    <label class="sp-field">{{localize "SPACER.Roll.DM"}}<input type="number" name="dm" value="{{v.dm}}"></label>
+    <label class="sp-field">{{localize "SPACER.Roll.Target"}}<input type="number" name="target" value="{{v.target}}"></label>
+  </div>
+  <p class="sp-preview" data-preview></p>
+</div>

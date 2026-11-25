@@ -1,0 +1,113 @@
+[
+  {
+    "name": "Jack",
+    "type": "armor",
+    "folder": "Armour",
+    "system": {
+      "difficulty": 9,
+      "cost": 50,
+      "weight": 2,
+      "wornWeight": 1,
+      "tl": 1,
+      "traits": [],
+      "description": "<p>Puncture-resistant cloth or thick material such as leather worn as a vest or jacket.</p><p>Difficulty to hit: 9+. Carry weight 2kg, worn weight 1kg.</p><ul></ul>",
+      "source": "p.34"
+    }
+  },
+  {
+    "name": "Mesh",
+    "type": "armor",
+    "folder": "Armour",
+    "system": {
+      "difficulty": 10,
+      "cost": 150,
+      "weight": 3,
+      "wornWeight": 1.5,
+      "tl": 6,
+      "traits": [],
+      "description": "<p>Jack armour material lined with a metal mesh weave.</p><p>Difficulty to hit: 10+. Carry weight 3kg, worn weight 1.5kg.</p><ul></ul>",
+      "source": "p.34"
+    }
+  },
+  {
+    "name": "Cloth",
+    "type": "armor",
+    "folder": "Armour",
+    "system": {
+      "difficulty": 11,
+      "cost": 250,
+      "weight": 6,
+      "wornWeight": 3,
+      "tl": 7,
+      "traits": [],
+      "description": "<p>Padded ballistic-resistant jacket.</p><p>Difficulty to hit: 11+. Carry weight 6kg, worn weight 3kg.</p><ul></ul>",
+      "source": "p.34"
+    }
+  },
+  {
+    "name": "Combat Armour",
+    "type": "armor",
+    "folder": "Armour",
+    "system": {
+      "difficulty": 12,
+      "cost": 10000,
+      "weight": 30,
+      "wornWeight": 15,
+      "tl": 10,
+      "traits": [],
+      "description": "<p>Synthetic, metal, and advanced ceramic plates worn over clothing.</p><p>Difficulty to hit: 12+. Carry weight 30kg, worn weight 15kg.</p><ul></ul>",
+      "source": "p.34"
+    }
+  },
+  {
+    "name": "Ablat",
+    "type": "armor",
+    "folder": "Armour",
+    "system": {
+      "difficulty": 9,
+      "cost": 75,
+      "weight": 2,
+      "wornWeight": 1,
+      "tl": 9,
+      "traits": [
+        "Absorbing"
+      ],
+      "description": "<p>Disposable jack armour designed to absorb damage but be destroyed in the process.</p><p>Difficulty to hit: 9+. Carry weight 2kg, worn weight 1kg.</p><ul><li>Absorbing: This armour negates the first attack that hits that deals between 2D-6D of damage, but is destroyed in the process. Once the armor is destroyed, the wearer is considered unarmoured (8+ to hit). This armour is considered disposable and cannot be repaired.</li></ul>",
+      "source": "p.34"
+    }
+  },
+  {
+    "name": "Reflec",
+    "type": "armor",
+    "folder": "Armour",
+    "system": {
+      "difficulty": 9,
+      "cost": 1500,
+      "weight": 1,
+      "wornWeight": 0.5,
+      "tl": 10,
+      "traits": [
+        "Reflective"
+      ],
+      "description": "<p>Designed for combatting energy weapons by deflecting energy beams off of the wearer.</p><p>Difficulty to hit: 9+. Carry weight 1kg, worn weight 500g.</p><ul><li>Reflective: Reflects energy weapons away from the wearer but is downgraded to Jack armour after deflecting 2D-6D damage. This armour can be repaired to be reflective again for 250cr.</li></ul>",
+      "source": "p.34"
+    }
+  },
+  {
+    "name": "Battle Dress",
+    "type": "armor",
+    "folder": "Armour",
+    "system": {
+      "difficulty": 14,
+      "cost": 200000,
+      "weight": 50,
+      "wornWeight": 5,
+      "tl": 13,
+      "traits": [
+        "Vaccsuit"
+      ],
+      "description": "<p>An external armour frame that functions as a vaccsuit as well as doubling the strength of the wearer and negating END limit to melee attacks.</p><p>Difficulty to hit: 14+. Carry weight 50kg, worn weight 5kg.</p><ul><li>Vaccsuit: This armour functions as a vaccsuit as well as protection in combat. Battledress functions as a vaccsuit of TL 14.</li></ul>",
+      "source": "p.34"
+    }
+  }
+]

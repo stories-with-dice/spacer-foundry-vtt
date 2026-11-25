@@ -1,0 +1,314 @@
+[
+  {
+    "name": "Binoculars",
+    "type": "gear",
+    "folder": "Personal Devices",
+    "system": {
+      "category": "device",
+      "cost": 75,
+      "weight": 1,
+      "tl": 3,
+      "traits": [],
+      "description": "<p>Increases the user’s visual range band to Long distance. If used with recon Skill or for observing ahead, the binocular’s grant +1DM.</p>",
+      "source": "p.36"
+    }
+  },
+  {
+    "name": "Cable",
+    "type": "gear",
+    "folder": "Personal Devices",
+    "system": {
+      "category": "device",
+      "cost": 100,
+      "weight": 3,
+      "tl": 7,
+      "traits": [],
+      "description": "<p>High tensile cord that can support up to 250kg. Each coil contains 50m, and the cable is 2mm thick.</p>",
+      "source": "p.36"
+    }
+  },
+  {
+    "name": "Cord",
+    "type": "gear",
+    "folder": "Personal Devices",
+    "system": {
+      "category": "device",
+      "cost": 20,
+      "weight": 3,
+      "tl": 3,
+      "traits": [],
+      "description": "<p>Woven rope used for climbing and tying and can hold up to 150kg. Each bundle is 50m in length, and the cord is 2cm thick.</p>",
+      "source": "p.36"
+    }
+  },
+  {
+    "name": "Infrared Goggles",
+    "type": "gear",
+    "folder": "Personal Devices",
+    "system": {
+      "category": "device",
+      "cost": 500,
+      "weight": 1,
+      "tl": 6,
+      "traits": [],
+      "description": "<p>Allows the wearer to see in darkness by emphasising heat sources. IR goggles do not allow the wearer to see details, just heat sources and the shape of those sources.</p>",
+      "source": "p.36"
+    }
+  },
+  {
+    "name": "Light Enhancement Goggles",
+    "type": "gear",
+    "folder": "Personal Devices",
+    "system": {
+      "category": "device",
+      "cost": 500,
+      "weight": 1,
+      "tl": 7,
+      "traits": [],
+      "description": "<p>This item enhances ambient light in darker areas, decreasing any darkness penalties by 1/2.</p>",
+      "source": "p.36"
+    }
+  },
+  {
+    "name": "Electric Torch",
+    "type": "gear",
+    "folder": "Personal Devices",
+    "system": {
+      "category": "device",
+      "cost": 10,
+      "weight": 0.25,
+      "tl": 5,
+      "traits": [],
+      "description": "<p>Electric torches provide a focused beam of artificial light that reaches up to Medium range and lasts for 6 hours before needing to be recharged.</p>",
+      "source": "p.36"
+    }
+  },
+  {
+    "name": "Geiger Counter",
+    "type": "gear",
+    "folder": "Personal Devices",
+    "system": {
+      "category": "device",
+      "cost": 200,
+      "weight": 2,
+      "tl": 5,
+      "traits": [],
+      "description": "<p>Detects radiation and displays local rad levels.</p>",
+      "source": "p.36"
+    }
+  },
+  {
+    "name": "EM Detector",
+    "type": "gear",
+    "folder": "Personal Devices",
+    "system": {
+      "category": "device",
+      "cost": 1000,
+      "weight": 1,
+      "tl": 10,
+      "traits": [],
+      "description": "<p>Used for finding electromagnetic emissions from electronic devices, including hidden devices.</p><p>The book gives the weight as \"1\" with no unit; read as 1kg.</p>",
+      "source": "p.36"
+    }
+  },
+  {
+    "name": "A/V Recorder",
+    "type": "gear",
+    "folder": "Personal Devices",
+    "system": {
+      "category": "device",
+      "cost": 1000,
+      "weight": 0.5,
+      "tl": 6,
+      "traits": [],
+      "description": "<p>This handheld device allows for recording of audio and visual information onto a cartridge for up to 12 hours of material.</p>",
+      "source": "p.36"
+    }
+  },
+  {
+    "name": "Pocket A/V Recorder",
+    "type": "gear",
+    "folder": "Personal Devices",
+    "system": {
+      "category": "device",
+      "cost": 2000,
+      "weight": 0.25,
+      "tl": 7,
+      "traits": [],
+      "description": "<p>Similar to the handheld a/v recorder but can fit into a jacket pocket or be clipped to a vaccsuit. This device can also use a vaccsuit’s comm range to transfer live recordings to a starship.</p>",
+      "source": "p.36"
+    }
+  },
+  {
+    "name": "Neural Scanner",
+    "type": "gear",
+    "folder": "Personal Devices",
+    "system": {
+      "category": "device",
+      "cost": 35000,
+      "weight": 10,
+      "tl": 15,
+      "traits": [],
+      "description": "<p>Designed to detect neural activity within 100 metres. This item can also be used to differentiate between advanced intelligence and animal intelligence.</p>",
+      "source": "p.36"
+    }
+  },
+  {
+    "name": "Radio Jammer",
+    "type": "gear",
+    "folder": "Personal Devices",
+    "system": {
+      "category": "device",
+      "cost": 500,
+      "weight": 0.5,
+      "tl": 6,
+      "traits": [],
+      "description": "<p>Jams all radio frequencies up to a 25m radius.</p>",
+      "source": "p.36"
+    }
+  },
+  {
+    "name": "Magnetic Compass",
+    "type": "gear",
+    "folder": "Personal Devices",
+    "system": {
+      "category": "device",
+      "cost": 20,
+      "weight": 0,
+      "tl": 3,
+      "traits": [],
+      "description": "<p>Used to detect magnetic north on planets.</p>",
+      "source": "p.36"
+    }
+  },
+  {
+    "name": "Inertial Locator",
+    "type": "gear",
+    "folder": "Personal Devices",
+    "system": {
+      "category": "device",
+      "cost": 1200,
+      "weight": 1.5,
+      "tl": 9,
+      "traits": [],
+      "description": "<p>Used to determine the distance travelled by the user.</p>",
+      "source": "p.36"
+    }
+  },
+  {
+    "name": "Metal Detector",
+    "type": "gear",
+    "folder": "Personal Devices",
+    "system": {
+      "category": "device",
+      "cost": 200,
+      "weight": 5,
+      "tl": 7,
+      "traits": [],
+      "description": "<p>Designed for detecting unseen metal objects up to 3m underground.</p>",
+      "source": "p.36"
+    }
+  },
+  {
+    "name": "Bullhorn",
+    "type": "gear",
+    "folder": "Personal Devices",
+    "system": {
+      "category": "device",
+      "cost": 150,
+      "weight": 0.5,
+      "tl": 5,
+      "traits": [],
+      "description": "<p>Amplifies the user's voice up to 500m.</p>",
+      "source": "p.36"
+    }
+  },
+  {
+    "name": "Artificial Psi Shield",
+    "type": "gear",
+    "folder": "Personal Devices",
+    "system": {
+      "category": "device",
+      "cost": 5000,
+      "weight": 1,
+      "tl": 9,
+      "traits": [],
+      "description": "<p>Provides the wearer with an artificial Psi Shield ability. These devices are bulky helmets that cover the whole head.</p>",
+      "source": "p.36"
+    }
+  },
+  {
+    "name": "Handcuffs",
+    "type": "gear",
+    "folder": "Personal Devices",
+    "system": {
+      "category": "device",
+      "cost": 25,
+      "weight": 0.3,
+      "tl": 2,
+      "traits": [],
+      "description": "<p>Restraints for preventing hostile actions. Primarily used by law enforcement and in prisons.</p><p>The book gives the weight as \"300cr\" (a misprint); read as 300g.</p>",
+      "source": "p.36"
+    }
+  },
+  {
+    "name": "Wristwatch",
+    "type": "gear",
+    "folder": "Personal Devices",
+    "system": {
+      "category": "device",
+      "cost": 100,
+      "weight": 0.05,
+      "tl": 7,
+      "traits": [],
+      "description": "<p>A time-keeping device that also has a built-in compass and functions in extreme heat, deep sea pressure, and zero-g.</p>",
+      "source": "p.36"
+    }
+  },
+  {
+    "name": "Grav-belt",
+    "type": "gear",
+    "folder": "Personal Devices",
+    "system": {
+      "category": "device",
+      "cost": 100000,
+      "weight": 10,
+      "tl": 12,
+      "traits": [],
+      "description": "<p>A harness that can be used by a user who weighs up to 120kg to essentially fly as fast as the user can walk, allowing them to increase or decrease elevation up to 500m per 1G the planet has.</p>",
+      "source": "p.36"
+    }
+  },
+  {
+    "name": "Atmosphere Tester",
+    "type": "gear",
+    "folder": "Personal Devices",
+    "system": {
+      "category": "device",
+      "cost": 200,
+      "weight": 1,
+      "tl": 8,
+      "traits": [],
+      "description": "<p>A handheld device capable of determining elemental factors of an atmosphere. Primarily used to determine changes in breathability of air along with levels of corrosive elements that may fluctuate while planetside.</p>",
+      "source": "p.36"
+    }
+  },
+  {
+    "name": "Hull Patch",
+    "type": "gear",
+    "folder": "Personal Devices",
+    "system": {
+      "category": "device",
+      "cost": 50,
+      "weight": 2,
+      "tl": 9,
+      "traits": [],
+      "uses": {
+        "value": 10,
+        "max": 10
+      },
+      "description": "<p>Used to seal up tears or openings in the hull of a starship, habitat, or other pressurized structure. Each patch is 15cm x 15cm in size and can be cut down to size. A pack comes with 10 sheets.</p>",
+      "source": "p.36"
+    }
+  }
+]

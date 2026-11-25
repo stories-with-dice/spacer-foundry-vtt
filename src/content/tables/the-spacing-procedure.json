@@ -1,0 +1,45 @@
+[
+ {
+  "name": "Customs Equivalent Starport",
+  "folder": "The Spacing Procedure",
+  "formula": "1d6",
+  "description": "<p>p.66. If the spacers are not docking at a starport, roll 1D to determine the equivalent costs for customs. The amount owed is per person/crew member or per ton of cargo, per discrepancy found in the manifest. No customs are collected at Starport X. Custom fees can be brokered on arrival with a roll of 8+ to minimize or cancel out the fees per the referee’s ruling.</p>",
+  "results": [
+   {
+    "range": [
+     1,
+     1
+    ],
+    "text": "Starport A · <strong>Cargo:</strong> 5000cr · <strong>Passengers:</strong> 1000cr · <strong>Lack of Crew:</strong> 2000cr"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "Starport B · <strong>Cargo:</strong> 4000cr · <strong>Passengers:</strong> 800cr · <strong>Lack of Crew:</strong> 1800cr"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "Starport C · <strong>Cargo:</strong> 3000cr · <strong>Passengers:</strong> 600cr · <strong>Lack of Crew:</strong> 1500cr"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "Starport D · <strong>Cargo:</strong> 2000cr · <strong>Passengers:</strong> 400cr · <strong>Lack of Crew:</strong> 1000cr"
+   },
+   {
+    "range": [
+     5,
+     6
+    ],
+    "text": "Starport E · <strong>Cargo:</strong> 1000cr · <strong>Passengers:</strong> 200cr · <strong>Lack of Crew:</strong> 500cr"
+   }
+  ]
+ }
+]

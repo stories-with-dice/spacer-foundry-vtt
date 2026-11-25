@@ -1,0 +1,113 @@
+/* Craft area: starship and vehicle sheets, construction wizard, space combat helper, chat cards. */
+.spacer.craft {
+  --craft-critical: #b5651d;
+  --craft-destroyed: #a01818;
+  --craft-ok: #2e6b3a;
+  --craft-line: rgba(127, 127, 127, 0.35);
+}
+.spacer.craft .window-content { padding: 0.5rem; display: flex; flex-direction: column; gap: 0.4rem; overflow: hidden; }
+.spacer.craft .tab, .spacer.craft .scroll { overflow-y: auto; flex: 1; min-height: 0; }
+.spacer.craft .tab:not(.active) { display: none; }
+.spacer.craft section.tab.active { display: block; }
+.spacer.craft h3 { margin: 0.6rem 0 0.3rem; border-bottom: 1px solid var(--craft-line); font-size: 1rem; }
+.spacer.craft .hint { font-size: 0.85em; opacity: 0.8; margin: 0.25rem 0; }
+.spacer.craft .warn { color: var(--craft-critical); font-weight: bold; }
+.spacer.craft .num { text-align: right; font-variant-numeric: tabular-nums; }
+.spacer.craft input[type="number"] { width: 4.5rem; }
+.spacer.craft button.icon { width: 1.8rem; min-width: 1.8rem; padding: 0; flex: 0 0 auto; }
+
+.spacer.craft .craft-header { display: flex; gap: 0.6rem; align-items: flex-start; flex: 0 0 auto; }
+.spacer.craft .craft-header .portrait { flex: 0 0 72px; object-fit: cover; border: 1px solid var(--craft-line); border-radius: 4px; cursor: pointer; }
+.spacer.craft .craft-header .title { flex: 1; display: flex; flex-direction: column; gap: 0.3rem; }
+.spacer.craft .craft-header .name { font-size: 1.4rem; height: 2rem; font-weight: bold; }
+.spacer.craft .craft-header .line { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+.spacer.craft .craft-header .line label { display: flex; gap: 0.3rem; align-items: center; white-space: nowrap; }
+.spacer.craft .craft-header .line input[type="text"] { width: 10rem; }
+.spacer.craft .header-buttons { display: flex; flex-direction: column; gap: 0.3rem; flex: 0 0 13rem; }
+.spacer.craft .hit-opts { display: flex; gap: 0.3rem; }
+.spacer.craft .hit-opts input { width: 3.5rem; }
+.spacer.craft .status-destroyed .name { text-decoration: line-through; }
+
+.spacer.craft .badges { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+.spacer.craft .badge { display: inline-block; padding: 0 0.4rem; border-radius: 3px; border: 1px solid var(--craft-line); font-size: 0.85em; line-height: 1.5; white-space: nowrap; }
+.spacer.craft .badge.critical { background: var(--craft-critical); color: #fff; border-color: transparent; }
+.spacer.craft .badge.destroyed { background: var(--craft-destroyed); color: #fff; border-color: transparent; }
+.spacer.craft .badge.limited { background: #556; color: #fff; }
+
+.spacer.craft table { width: 100%; border-collapse: collapse; margin: 0.25rem 0; }
+.spacer.craft table th, .spacer.craft table td { padding: 0.2rem 0.3rem; border-bottom: 1px solid var(--craft-line); text-align: left; vertical-align: middle; }
+.spacer.craft table tr.critical th { color: var(--craft-critical); }
+.spacer.craft table tr.destroyed th, .spacer.craft table tr.destroyed .perf { color: var(--craft-destroyed); }
+.spacer.craft table tr.total { font-weight: bold; }
+.spacer.craft .stat-block th { width: 7rem; }
+.spacer.craft .stat-block td.track { width: 8.5rem; white-space: nowrap; text-align: right; }
+.spacer.craft .stat-block td.track .steps { display: inline-block; width: 1.6rem; text-align: center; }
+.spacer.craft .stat-block select { width: 4rem; }
+.spacer.craft .pip { display: inline-block; width: 0.8rem; height: 0.8rem; border: 1px solid currentColor; border-radius: 50%; margin-right: 2px; vertical-align: middle; }
+.spacer.craft .pip.filled { background: var(--craft-destroyed); border-color: var(--craft-destroyed); }
+
+.spacer.craft .grid-2, .spacer.craft .grid-3 { display: grid; gap: 0.3rem 0.8rem; }
+.spacer.craft .grid-2 { grid-template-columns: 1fr 1fr; }
+.spacer.craft .grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+.spacer.craft .stat-grid label { display: flex; justify-content: space-between; align-items: center; gap: 0.3rem; }
+.spacer.craft .stat-grid label > span { display: flex; gap: 0.2rem; align-items: center; }
+.spacer.craft .stat-grid input[type="text"] { width: 9rem; }
+
+.spacer.craft .actions-row, .spacer.craft .fire-opts, .spacer.craft .add-crew { display: flex; flex-wrap: wrap; gap: 0.3rem; align-items: center; margin: 0.3rem 0; }
+.spacer.craft .actions-row button, .spacer.craft .fire-opts button { flex: 0 0 auto; width: auto; }
+.spacer.craft .fire-opts label, .spacer.craft .actions-row label { display: flex; gap: 0.3rem; align-items: center; }
+
+.spacer.craft .item-list, .spacer.craft .crew-list { list-style: none; margin: 0; padding: 0; }
+.spacer.craft .item-list .item, .spacer.craft .crew-list .crew { display: flex; align-items: center; gap: 0.4rem; padding: 0.2rem 0; border-bottom: 1px solid var(--craft-line); }
+.spacer.craft .item-list .name, .spacer.craft .crew-list .name { flex: 1; cursor: pointer; }
+.spacer.craft .item-list .controls { display: flex; gap: 0.2rem; }
+.spacer.craft .item-list .controls button { width: auto; }
+.spacer.craft .item-list .disabled .name, .spacer.craft .item-list .destroyed .name { opacity: 0.6; text-decoration: line-through; }
+.spacer.craft .crew-list .unqualified .skill { color: var(--craft-critical); }
+.spacer.craft .crew-list select { width: 9rem; }
+.spacer.craft .empty, .spacer.craft .drop-zone { opacity: 0.8; font-style: italic; }
+.spacer.craft .positions tr.filled td:first-child { font-weight: bold; }
+
+/* Construction wizard */
+.spacer.craft.construction .construction-body { display: flex; gap: 0.6rem; flex: 1; min-height: 0; }
+.spacer.craft.construction .steps { flex: 1; overflow-y: auto; padding-right: 0.3rem; }
+.spacer.craft.construction fieldset { margin: 0 0 0.4rem; padding: 0.3rem 0.5rem; border: 1px solid var(--craft-line); border-radius: 4px; }
+.spacer.craft.construction fieldset > label { display: flex; justify-content: space-between; align-items: center; gap: 0.4rem; margin: 0.15rem 0; }
+.spacer.craft.construction .armor-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.2rem 0.6rem; }
+.spacer.craft.construction .armor-grid label { display: flex; justify-content: space-between; }
+.spacer.craft.construction .summary { flex: 0 0 18rem; overflow-y: auto; }
+.spacer.craft.construction .warnings { color: var(--craft-critical); padding-left: 1rem; }
+.spacer.craft.construction tr.critical select { outline: 2px solid var(--craft-destroyed); }
+
+/* Space combat helper */
+.spacer.craft.space-combat .combat-ship { border: 1px solid var(--craft-line); border-radius: 4px; padding: 0.3rem 0.5rem; margin-bottom: 0.5rem; }
+.spacer.craft.space-combat .combat-ship.destroyed { opacity: 0.6; }
+.spacer.craft.space-combat .combat-ship header { display: flex; align-items: center; gap: 0.4rem; }
+.spacer.craft.space-combat .combat-ship header .name { flex: 1; font-weight: bold; cursor: pointer; }
+.spacer.craft.space-combat tr.dogfight th { color: var(--craft-critical); }
+.spacer.craft.space-combat .ranges button { width: auto; }
+.spacer.craft.space-combat .crew-actions .position { display: flex; flex-wrap: wrap; gap: 0.2rem; align-items: center; margin: 0.15rem 0; }
+.spacer.craft.space-combat .crew-actions .pos { flex: 0 0 11rem; font-weight: bold; }
+.spacer.craft.space-combat .crew-actions .pos em { font-weight: normal; opacity: 0.8; }
+.spacer.craft.space-combat .crew-actions button { width: auto; flex: 0 0 auto; padding: 0 0.4rem; font-size: 0.85em; line-height: 1.6rem; }
+.spacer.craft.space-combat .toolbar select { width: 12rem; }
+
+/* Chat cards */
+.spacer.craft-card h3 { margin: 0 0 0.3rem; font-size: 1rem; }
+.spacer.craft-card ul { margin: 0.2rem 0; padding-left: 1rem; }
+.spacer.craft-card table { width: 100%; }
+.spacer.craft-card .num { text-align: right; }
+.spacer.craft-card .total { font-weight: bold; }
+.spacer.craft-card .warn { color: #b5651d; font-weight: bold; }
+.spacer.craft-card button { margin-top: 0.3rem; }
+
+/* Compact damage tracks: keep the step buttons on one line. */
+.spacer.craft td.track { white-space: nowrap; }
+.spacer.craft td.track > * { display: inline-flex; vertical-align: middle; }
+.spacer.craft td.track button.icon { width: 1.6rem; min-width: 1.6rem; height: 1.6rem; justify-content: center; align-items: center; margin: 0 1px; }
+.spacer.craft .stat-block td.perf { width: auto; }
+.spacer.craft .stat-block td input[type="number"] { width: 3.5rem; }
+.spacer.craft .craft-header .line input[type="number"] { width: 4rem; }
+.spacer.craft .actions-row select, .spacer.craft .actions-row input, .spacer.craft .fire-opts select, .spacer.craft .add-crew select { width: auto; flex: 0 1 auto; }
+.spacer.craft .stat-block td input, .spacer.craft .stat-grid input { display: inline-block; }
+.spacer.craft .stat-block td:has(> input + input) { white-space: nowrap; }

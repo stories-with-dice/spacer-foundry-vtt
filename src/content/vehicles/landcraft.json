@@ -1,0 +1,286 @@
+[
+  {
+    "name": "Ground Car",
+    "type": "vehicle",
+    "folder": "Landcraft",
+    "system": {
+      "category": "landcraft",
+      "traits": [
+        "Land",
+        "Civilian",
+        "Wheeled"
+      ],
+      "military": false,
+      "skill": "Drive (Civilian)",
+      "speedBand": 4,
+      "currentSpeed": 0,
+      "occupants": 6,
+      "cargoKg": 500,
+      "rangeKm": 1000,
+      "weightTons": 2,
+      "tl": 5,
+      "cost": 20000,
+      "armor": 0,
+      "locations": {
+        "interior": {
+          "value": 4,
+          "max": 4,
+          "armored": false
+        },
+        "drive": {
+          "value": 4,
+          "max": 4,
+          "armored": false
+        },
+        "handling": {
+          "value": 4,
+          "max": 4,
+          "armored": false
+        },
+        "hull": {
+          "value": 4,
+          "max": 4,
+          "armored": false
+        },
+        "weapon": {
+          "value": 0,
+          "max": 0,
+          "armored": false
+        }
+      },
+      "description": "<p>A typical wheeled car can carry 6 passengers and up to 0.5T of cargo.</p><p>Distance of operation: 1,000km. Weight 2T, TL 5, speed band 4, cost 20,000cr.</p><p>Damage locations (book): Interior 4, Speed 4, Hull 4. The book gives no Handling value; Handling is set to the Hull value.</p><ul><li>Land: This vehicle requires solid ground to be used.</li><li>Civilian: Civilian vehicles are easily available on any world of equal tech level or higher. If searching for civilian vehicles on lower tech worlds or for parts to repair the vehicle, apply the difference between the local tech level and the vehicle's tech level as a -DM.</li><li>Wheeled: wheeled vehicle (the book does not define this trait).</li></ul><p>Cargo: For every one occupant slot, 50kg of cargo can be carried instead. Weapons can be added to a vehicle after purchase, but civilian vehicles are unarmed by default. Cruising speed: vehicles with speed band 3+ have a cruising speed equal to one speed band less than top speed (p.46).</p><p>Source: p.47.</p>"
+    },
+    "items": []
+  },
+  {
+    "name": "ATV, Wheeled",
+    "type": "vehicle",
+    "folder": "Landcraft",
+    "system": {
+      "category": "landcraft",
+      "traits": [
+        "Land",
+        "Military",
+        "Wheeled"
+      ],
+      "military": true,
+      "skill": "Drive (Military)",
+      "speedBand": 4,
+      "currentSpeed": 0,
+      "occupants": 16,
+      "cargoKg": 2000,
+      "rangeKm": 5000,
+      "weightTons": 10,
+      "tl": 6,
+      "cost": 80000,
+      "armor": 3,
+      "locations": {
+        "interior": {
+          "value": 6,
+          "max": 6,
+          "armored": false
+        },
+        "drive": {
+          "value": 4,
+          "max": 4,
+          "armored": false
+        },
+        "handling": {
+          "value": 8,
+          "max": 8,
+          "armored": false
+        },
+        "hull": {
+          "value": 8,
+          "max": 8,
+          "armored": false
+        },
+        "weapon": {
+          "value": 0,
+          "max": 0,
+          "armored": false
+        }
+      },
+      "description": "<p>A wheeled vehicle used for transporting characters in hazardous locations such as warzones. ATVs can carry up to 16 passengers and 2T of cargo.</p><p>Distance of operation: 5,000km. Weight 10T, TL 6, speed band 4, cost 80,000cr.</p><p>Damage locations (book): Interior 6, Speed 4, Hull 8, Armour 3. The book gives no Handling value; Handling is set to the Hull value.</p><ul><li>Land: This vehicle requires solid ground to be used.</li><li>Military: This vehicle is only available at military-owned locations and is available for military personnel to use.</li><li>Wheeled: wheeled vehicle (the book does not define this trait).</li></ul><p>Cargo: For every one occupant slot, 50kg of cargo can be carried instead. Weapons can be added to a vehicle after purchase, but civilian vehicles are unarmed by default. Cruising speed: vehicles with speed band 3+ have a cruising speed equal to one speed band less than top speed (p.46).</p><p>Source: p.47.</p>"
+    },
+    "items": []
+  },
+  {
+    "name": "ATV, Tracked",
+    "type": "vehicle",
+    "folder": "Landcraft",
+    "system": {
+      "category": "landcraft",
+      "traits": [
+        "Land",
+        "Military",
+        "Tracked"
+      ],
+      "military": true,
+      "skill": "Drive (Military)",
+      "speedBand": 3,
+      "currentSpeed": 0,
+      "occupants": 16,
+      "cargoKg": 2000,
+      "rangeKm": 5000,
+      "weightTons": 10,
+      "tl": 6,
+      "cost": 40000,
+      "armor": 3,
+      "locations": {
+        "interior": {
+          "value": 6,
+          "max": 6,
+          "armored": false
+        },
+        "drive": {
+          "value": 3,
+          "max": 3,
+          "armored": false
+        },
+        "handling": {
+          "value": 8,
+          "max": 8,
+          "armored": false
+        },
+        "hull": {
+          "value": 8,
+          "max": 8,
+          "armored": false
+        },
+        "weapon": {
+          "value": 0,
+          "max": 0,
+          "armored": false
+        }
+      },
+      "description": "<p>Same as the Wheeled ATV but has the Tracked trait.</p><p>Distance of operation: 5,000km. Weight 10T, TL 6, speed band 3, cost 40,000cr.</p><p>Damage locations (book): Interior 6, Speed 3, Hull 8, Armour 3. The book gives no Handling value; Handling is set to the Hull value.</p><p>Occupants and cargo copied from the Wheeled ATV (\"Same as the Wheeled ATV\").</p><ul><li>Land: This vehicle requires solid ground to be used.</li><li>Military: This vehicle is only available at military-owned locations and is available for military personnel to use.</li><li>Tracked: tracked vehicle (the book does not define this trait).</li></ul><p>Cargo: For every one occupant slot, 50kg of cargo can be carried instead. Weapons can be added to a vehicle after purchase, but civilian vehicles are unarmed by default. Cruising speed: vehicles with speed band 3+ have a cruising speed equal to one speed band less than top speed (p.46).</p><p>Source: p.47.</p>"
+    },
+    "items": []
+  },
+  {
+    "name": "AFV",
+    "type": "vehicle",
+    "folder": "Landcraft",
+    "system": {
+      "category": "landcraft",
+      "traits": [
+        "Land",
+        "Military",
+        "Tracked"
+      ],
+      "military": true,
+      "skill": "Drive (Military)",
+      "speedBand": 3,
+      "currentSpeed": 0,
+      "occupants": 16,
+      "cargoKg": 2000,
+      "rangeKm": 5000,
+      "weightTons": 10,
+      "tl": 6,
+      "cost": 100000,
+      "armor": 3,
+      "locations": {
+        "interior": {
+          "value": 6,
+          "max": 6,
+          "armored": false
+        },
+        "drive": {
+          "value": 3,
+          "max": 3,
+          "armored": false
+        },
+        "handling": {
+          "value": 8,
+          "max": 8,
+          "armored": false
+        },
+        "hull": {
+          "value": 8,
+          "max": 8,
+          "armored": false
+        },
+        "weapon": {
+          "value": 1,
+          "max": 1,
+          "armored": false
+        }
+      },
+      "description": "<p>Similar to the ATV but has a mounted turret that deals D3 damage.</p><p>Distance of operation: 5,000km. Weight 10T, TL 6, speed band 3, cost 100,000cr.</p><p>Damage locations (book): Interior 6, Speed 3, Hull 8, Weapon 1, Armour 3. The book gives no Handling value; Handling is set to the Hull value.</p><p>Occupants and cargo copied from the ATV (\"Similar to the ATV\"). The D3 turret is the Medium Turret of p.49.</p><ul><li>Land: This vehicle requires solid ground to be used.</li><li>Military: This vehicle is only available at military-owned locations and is available for military personnel to use.</li><li>Tracked: tracked vehicle (the book does not define this trait).</li></ul><p>Cargo: For every one occupant slot, 50kg of cargo can be carried instead. Weapons can be added to a vehicle after purchase, but civilian vehicles are unarmed by default. Cruising speed: vehicles with speed band 3+ have a cruising speed equal to one speed band less than top speed (p.46).</p><p>Source: p.47.</p>"
+    },
+    "items": [
+      {
+        "name": "Medium Turret",
+        "type": "shipWeapon",
+        "system": {
+          "mount": "vehicle",
+          "forVehicle": true,
+          "damage": "D3",
+          "range": "long",
+          "tonnage": 1,
+          "hardpoints": 0,
+          "cost": 10000,
+          "weight": 1000,
+          "tl": 7,
+          "traits": [],
+          "description": "<p>Damage: D3. Weight: 1T. Cost: 10,000cr.</p><p>Vehicle Mounted Weapons: All mounted weapons require a gunner to use them properly. The following weapons are only some examples for use with the same vehicles described in this book. Referees are encouraged to create their own to suit their needs if they desire more military-focused vehicles.</p><p>Range band: All vehicle weapons have Long Distance. Tech level: All of the listed weapons are at Tech Level 7.</p><p>Vehicle Weapon Damage: Roll the weapon die and apply it to the determined hit location. Vehicle weapon damage deals 6 damage to an NPC for every 1 vehicle damage.</p>",
+          "source": "p.49"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Dirt Mover",
+    "type": "vehicle",
+    "folder": "Landcraft",
+    "system": {
+      "category": "landcraft",
+      "traits": [
+        "Land",
+        "Industrial",
+        "Tracked"
+      ],
+      "military": false,
+      "skill": "Drive (Industrial)",
+      "speedBand": 2,
+      "currentSpeed": 0,
+      "occupants": 1,
+      "cargoKg": 0,
+      "rangeKm": 5000,
+      "weightTons": 10,
+      "tl": 8,
+      "cost": 50000,
+      "armor": 0,
+      "locations": {
+        "interior": {
+          "value": 2,
+          "max": 2,
+          "armored": false
+        },
+        "drive": {
+          "value": 2,
+          "max": 2,
+          "armored": false
+        },
+        "handling": {
+          "value": 4,
+          "max": 4,
+          "armored": false
+        },
+        "hull": {
+          "value": 4,
+          "max": 4,
+          "armored": false
+        },
+        "weapon": {
+          "value": 0,
+          "max": 0,
+          "armored": false
+        }
+      },
+      "description": "<p>Constructed similar to a tracked ATV but only carries an operator and is intended for construction. Can move up to 100 cubic metres of earth per hour.</p><p>Distance of operation: 5,000km. Weight 10T, TL 8, speed band 2, cost 50,000cr.</p><p>Damage locations (book): Interior 2, Speed 2, Hull 4. The book gives no Handling value; Handling is set to the Hull value.</p><ul><li>Land: This vehicle requires solid ground to be used.</li><li>Industrial: Similar to the Military trait but instead applied for industrial locations and companies or licensed contractors.</li><li>Tracked: tracked vehicle (the book does not define this trait).</li></ul><p>Cargo: For every one occupant slot, 50kg of cargo can be carried instead. Weapons can be added to a vehicle after purchase, but civilian vehicles are unarmed by default. Cruising speed: vehicles with speed band 3+ have a cruising speed equal to one speed band less than top speed (p.46).</p><p>Source: p.47.</p>"
+    },
+    "items": []
+  }
+]

@@ -1,0 +1,24 @@
+<section class="tab {{tab.cssClass}}" data-group="primary" data-tab="career">
+  <div class="sp-toolbar">
+    <h3 class="sp-section">{{localize "SPACER.Career.Title"}}</h3>
+    {{#if editable}}<button type="button" class="sp-btn small" data-action="careerAdd"><i class="fa-solid fa-plus"></i> {{localize "SPACER.Sheet.Add"}}</button>{{/if}}
+  </div>
+  <table class="sp-table sp-careers">
+    <thead><tr><th class="name">{{localize "SPACER.Career.Career"}}</th><th>{{localize "SPACER.Sheet.Terms"}}</th><th>{{localize "SPACER.Career.Rank"}}</th><th>{{localize "SPACER.Career.RankTitle"}}</th><th>{{localize "SPACER.Career.Commissioned"}}</th><th>{{localize "SPACER.Career.Drafted"}}</th><th></th></tr></thead>
+    <tbody>
+    {{#each careers as |c|}}
+    <tr>
+      <td class="name"><input type="text" name="system.careers.{{c.index}}.career" value="{{c.career}}" {{disabled (not @root.editable)}}></td>
+      <td><input type="number" name="system.careers.{{c.index}}.terms" value="{{c.terms}}" min="0" {{disabled (not @root.editable)}}></td>
+      <td><input type="number" name="system.careers.{{c.index}}.rank" value="{{c.rank}}" min="0" {{disabled (not @root.editable)}}></td>
+      <td><input type="text" name="system.careers.{{c.index}}.rankTitle" value="{{c.rankTitle}}" {{disabled (not @root.editable)}}></td>
+      <td><input type="checkbox" name="system.careers.{{c.index}}.commissioned" {{checked c.commissioned}} {{disabled (not @root.editable)}}></td>
+      <td><input type="checkbox" name="system.careers.{{c.index}}.drafted" {{checked c.drafted}} {{disabled (not @root.editable)}}></td>
+      <td class="controls">{{#if @root.editable}}<a data-action="careerDelete" data-index="{{c.index}}"><i class="fa-solid fa-trash"></i></a>{{/if}}</td>
+    </tr>
+    {{else}}<tr><td colspan="7" class="sp-empty">{{localize "SPACER.Career.None"}}</td></tr>{{/each}}
+    </tbody>
+  </table>
+  <h3 class="sp-section">{{localize "SPACER.Career.History"}}</h3>
+  <prose-mirror name="system.history" class="sp-editor" toggled value="{{system.history}}" {{#unless editable}}disabled{{/unless}}>{{{enriched.history}}}</prose-mirror>
+</section>

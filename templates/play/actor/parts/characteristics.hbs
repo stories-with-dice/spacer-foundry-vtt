@@ -1,0 +1,24 @@
+<div class="sp-chars">
+  {{#each characteristics as |c|}}
+  <div class="sp-char {{#if c.zero}}zero{{else if c.hurt}}hurt{{/if}}{{#if c.boosted}} boosted{{/if}}">
+    <a class="sp-char-label" data-action="rollChar" data-char="{{c.key}}" data-tooltip="{{c.long}} — {{localize "SPACER.Roll.ClickHint"}}"><i class="fa-solid fa-dice-d6"></i> {{c.label}}</a>
+    <div class="sp-char-values">
+      <input type="number" name="system.characteristics.{{c.key}}.value" value="{{c.value}}" data-tooltip="{{localize "SPACER.Sheet.Current"}}" {{disabled (not @root.editable)}}>
+      <span>/</span>
+      <input type="number" name="system.characteristics.{{c.key}}.max" value="{{c.max}}" min="0" data-tooltip="{{localize "SPACER.Sheet.Max"}}" {{disabled (not @root.editable)}}>
+    </div>
+    <span class="sp-dm">{{c.dm}}</span>
+  </div>
+  {{/each}}
+  {{#if psi.has}}
+  <div class="sp-char psi">
+    <a class="sp-char-label" data-action="rollChar" data-char="psi" data-tooltip="{{localize "SPACER.CharLong.psi"}}"><i class="fa-solid fa-brain"></i> PSI</a>
+    <div class="sp-char-values">
+      <input type="number" name="system.psi.value" value="{{psi.value}}" {{disabled (not @root.editable)}}>
+      <span>/</span>
+      <input type="number" name="system.psi.max" value="{{psi.max}}" min="0" {{disabled (not @root.editable)}}>
+    </div>
+    <span class="sp-dm">{{psi.dm}}</span>
+  </div>
+  {{/if}}
+</div>

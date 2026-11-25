@@ -1,0 +1,2442 @@
+[
+ {
+  "name": "Draft",
+  "folder": "Character Creation",
+  "formula": "1d6",
+  "description": "<p>p.17. Roll 1D when a character fails to enlist (Step 2A1). The result is the service the character is drafted into. A drafted character gains Gun Combat 0.</p>",
+  "results": [
+   {
+    "range": [
+     1,
+     1
+    ],
+    "text": "Navy"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "Marines"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "Army"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "Scouts"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "Merchants"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "Civilian"
+   }
+  ]
+ },
+ {
+  "name": "Injury Table",
+  "folder": "Character Creation",
+  "formula": "1d6",
+  "description": "<p>p.18. Roll 1D when a character fails the Survival roll (Step 2C). Some life events tell you to roll D3, D3+3 or 1D+1 on this table; a result above 6 uses row 6. If a Characteristic reaches 0, the character is removed from service and collects a disability pension equal to serving 5 terms.</p>",
+  "results": [
+   {
+    "range": [
+     -10,
+     1
+    ],
+    "text": "<strong>Death:</strong> Your character dies in service of their career. · <strong>Consequence:</strong> Start a new character. Military: is given post-mortem honorable rank promotion if in the military. Non-military: The career covers funeral expenses if they served for more than two terms."
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "<strong>Detrimental Injury:</strong> -D3 to all physical Characteristics. · <strong>Consequence:</strong> Discharged from service. Gain two D3 cash mustering roll"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "<strong>Severe Injury:</strong> -D3 to two physical Characteristics · <strong>Consequence:</strong> Discharged from service. Gain a D3 cash mustering roll"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "<strong>Notable Injury:</strong> -D3 to a random physical Characteristic · <strong>Consequence:</strong> Discharged from service"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "<strong>Major Injury:</strong> -1 to all physical Characteristics · <strong>Consequence:</strong> Reenlistment -2DM. Future Survival checks in current career -1DM"
+   },
+   {
+    "range": [
+     6,
+     12
+    ],
+    "text": "<strong>Minor Injury:</strong> -1 to a physical Characteristic of players choice · <strong>Consequence:</strong> Future Survival checks in current career -1DM"
+   }
+  ]
+ },
+ {
+  "name": "Random Physical Characteristic",
+  "folder": "Character Creation",
+  "formula": "1d3",
+  "description": "<p>p.18. Roll D3 to determine a random physical Characteristic (for example, for a Notable Injury on the Injury Table).</p>",
+  "results": [
+   {
+    "range": [
+     1,
+     1
+    ],
+    "text": "STR"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "DEX"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "END"
+   }
+  ]
+ },
+ {
+  "name": "Personal Development Table (Navy)",
+  "folder": "Character Creation",
+  "formula": "1d6",
+  "description": "<p>p.19. Roll 1D to acquire a career Skill (Step 2B). Skills are gained at rank 1, or rank 0 for basic training.</p>",
+  "results": [
+   {
+    "range": [
+     1,
+     1
+    ],
+    "text": "+1 END"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "+1 DEX"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "+1 STR"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "+1 EDU"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "+1 INT"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "+1 SOC"
+   }
+  ]
+ },
+ {
+  "name": "Personal Development Table (Marines)",
+  "folder": "Character Creation",
+  "formula": "1d6",
+  "description": "<p>p.19. Roll 1D to acquire a career Skill (Step 2B). Skills are gained at rank 1, or rank 0 for basic training.</p>",
+  "results": [
+   {
+    "range": [
+     1,
+     1
+    ],
+    "text": "+1 END"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "+1 DEX"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "+1 STR"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "Melee (Blade)"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "Carouse"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "Melee Combat (H2H)"
+   }
+  ]
+ },
+ {
+  "name": "Personal Development Table (Army)",
+  "folder": "Character Creation",
+  "formula": "1d6",
+  "description": "<p>p.19. Roll 1D to acquire a career Skill (Step 2B). Skills are gained at rank 1, or rank 0 for basic training.</p>",
+  "results": [
+   {
+    "range": [
+     1,
+     1
+    ],
+    "text": "+1 END"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "+1 DEX"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "+1 STR"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "+1 EDU"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "Carouse"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "Melee Combat (H2H)"
+   }
+  ]
+ },
+ {
+  "name": "Personal Development Table (Scouts)",
+  "folder": "Character Creation",
+  "formula": "1d6",
+  "description": "<p>p.19. Roll 1D to acquire a career Skill (Step 2B). Skills are gained at rank 1, or rank 0 for basic training.</p>",
+  "results": [
+   {
+    "range": [
+     1,
+     1
+    ],
+    "text": "+1 END"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "+1 DEX"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "+1 STR"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "+1 EDU"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "+1 INT"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "Ranged Combat (Any)"
+   }
+  ]
+ },
+ {
+  "name": "Personal Development Table (Merchants)",
+  "folder": "Character Creation",
+  "formula": "1d6",
+  "description": "<p>p.19. Roll 1D to acquire a career Skill (Step 2B). Skills are gained at rank 1, or rank 0 for basic training.</p>",
+  "results": [
+   {
+    "range": [
+     1,
+     1
+    ],
+    "text": "+1 END"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "+1 DEX"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "+1 STR"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "Melee (Blade)"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "Deception"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "Gambling"
+   }
+  ]
+ },
+ {
+  "name": "Personal Development Table (Civilian)",
+  "folder": "Character Creation",
+  "formula": "1d6",
+  "description": "<p>p.19. Roll 1D to acquire a career Skill (Step 2B). Skills are gained at rank 1, or rank 0 for basic training.</p>",
+  "results": [
+   {
+    "range": [
+     1,
+     1
+    ],
+    "text": "+1 END"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "+1 DEX"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "+1 STR"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "+1 SOC"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "Ranged (Short or Archaic)"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "Drive (And non-military)"
+   }
+  ]
+ },
+ {
+  "name": "Service Skills Table (Navy)",
+  "folder": "Character Creation",
+  "formula": "1d6",
+  "description": "<p>p.19. Roll 1D to acquire a career Skill (Step 2B). Skills are gained at rank 1, or rank 0 for basic training.</p>",
+  "results": [
+   {
+    "range": [
+     1,
+     1
+    ],
+    "text": "Pilot"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "Vacc Suit"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "Comms"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "Mechanic"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "Ranged Combat (Short or Energy)"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "Athlete"
+   }
+  ]
+ },
+ {
+  "name": "Service Skills Table (Marines)",
+  "folder": "Character Creation",
+  "formula": "1d6",
+  "description": "<p>p.19. Roll 1D to acquire a career Skill (Step 2B). Skills are gained at rank 1, or rank 0 for basic training.</p>",
+  "results": [
+   {
+    "range": [
+     1,
+     1
+    ],
+    "text": "Drive"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "Vacc Suit"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "Recon"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "Ranged Combat (Any)"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "Survival"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "Athlete"
+   }
+  ]
+ },
+ {
+  "name": "Service Skills Table (Army)",
+  "folder": "Character Creation",
+  "formula": "1d6",
+  "description": "<p>p.19. Roll 1D to acquire a career Skill (Step 2B). Skills are gained at rank 1, or rank 0 for basic training.</p>",
+  "results": [
+   {
+    "range": [
+     1,
+     1
+    ],
+    "text": "Vacc Suit"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "Mechanic"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "Recon"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "Ranged Combat (Stock)"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "Melee Combat (Any)"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "Athlete"
+   }
+  ]
+ },
+ {
+  "name": "Service Skills Table (Scouts)",
+  "folder": "Character Creation",
+  "formula": "1d6",
+  "description": "<p>p.19. Roll 1D to acquire a career Skill (Step 2B). Skills are gained at rank 1, or rank 0 for basic training.</p>",
+  "results": [
+   {
+    "range": [
+     1,
+     1
+    ],
+    "text": "Pilot"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "Astrogation"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "Survival"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "Vacc Suit"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "Mechanic"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "Ranged Combat (Short)"
+   }
+  ]
+ },
+ {
+  "name": "Service Skills Table (Merchants)",
+  "folder": "Character Creation",
+  "formula": "1d6",
+  "description": "<p>p.19. Roll 1D to acquire a career Skill (Step 2B). Skills are gained at rank 1, or rank 0 for basic training.</p>",
+  "results": [
+   {
+    "range": [
+     1,
+     1
+    ],
+    "text": "Drive (Any Non-Military)"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "Vacc Suit"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "Broker"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "Negotiate"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "Electronics"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "Steward"
+   }
+  ]
+ },
+ {
+  "name": "Service Skills Table (Civilian)",
+  "folder": "Character Creation",
+  "formula": "1d6",
+  "description": "<p>p.19. Roll 1D to acquire a career Skill (Step 2B). Skills are gained at rank 1, or rank 0 for basic training.</p>",
+  "results": [
+   {
+    "range": [
+     1,
+     1
+    ],
+    "text": "Drive (Any Non-Military)"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "Streetwise"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "Legal"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "Admin"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "Knowledge"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "Melee Combat (Any)"
+   }
+  ]
+ },
+ {
+  "name": "Professional Education Table (Navy)",
+  "folder": "Character Creation",
+  "formula": "1d6",
+  "description": "<p>p.19. Roll 1D to acquire a career Skill (Step 2B). Skills are gained at rank 1, or rank 0 for basic training.</p>",
+  "results": [
+   {
+    "range": [
+     1,
+     1
+    ],
+    "text": "Astrogation"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "Gunner"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "Medic"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "Comms"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "Engineering"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "Computers"
+   }
+  ]
+ },
+ {
+  "name": "Professional Education Table (Marines)",
+  "folder": "Character Creation",
+  "formula": "1d6",
+  "description": "<p>p.19. Roll 1D to acquire a career Skill (Step 2B). Skills are gained at rank 1, or rank 0 for basic training.</p>",
+  "results": [
+   {
+    "range": [
+     1,
+     1
+    ],
+    "text": "Heavy Weapons"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "Melee Combat (Blade)"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "Survival"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "Pilot"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "Navigation"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "Tactics (Squad)"
+   }
+  ]
+ },
+ {
+  "name": "Professional Education Table (Army)",
+  "folder": "Character Creation",
+  "formula": "1d6",
+  "description": "<p>p.19. Roll 1D to acquire a career Skill (Step 2B). Skills are gained at rank 1, or rank 0 for basic training.</p>",
+  "results": [
+   {
+    "range": [
+     1,
+     1
+    ],
+    "text": "Heavy Weapons"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "Drive (Military)"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "Mechanic"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "Electronics"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "Computers"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "Gunner"
+   }
+  ]
+ },
+ {
+  "name": "Professional Education Table (Scouts)",
+  "folder": "Character Creation",
+  "formula": "1d6",
+  "description": "<p>p.19. Roll 1D to acquire a career Skill (Step 2B). Skills are gained at rank 1, or rank 0 for basic training.</p>",
+  "results": [
+   {
+    "range": [
+     1,
+     1
+    ],
+    "text": "Computers"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "Comms"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "Electronics"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "Medic"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "Engineering"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "Navigation"
+   }
+  ]
+ },
+ {
+  "name": "Professional Education Table (Merchants)",
+  "folder": "Character Creation",
+  "formula": "1d6",
+  "description": "<p>p.19. Roll 1D to acquire a career Skill (Step 2B). Skills are gained at rank 1, or rank 0 for basic training.</p>",
+  "results": [
+   {
+    "range": [
+     1,
+     1
+    ],
+    "text": "Navigation"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "Streetwise"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "Persuade"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "Legal"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "Ranged Combat"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "Astrogation"
+   }
+  ]
+ },
+ {
+  "name": "Professional Education Table (Civilian)",
+  "folder": "Character Creation",
+  "formula": "1d6",
+  "description": "<p>p.19. Roll 1D to acquire a career Skill (Step 2B). Skills are gained at rank 1, or rank 0 for basic training.</p>",
+  "results": [
+   {
+    "range": [
+     1,
+     1
+    ],
+    "text": "Deception"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "Legal"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "Profession"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "Carouse"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "Athlete"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "Vacc Suit"
+   }
+  ]
+ },
+ {
+  "name": "Advanced Education Table (Navy)",
+  "folder": "Character Creation",
+  "formula": "1d6",
+  "description": "<p>p.19. Allowed for characters with EDU 8+. Roll 1D to acquire a career Skill (Step 2B).</p>",
+  "results": [
+   {
+    "range": [
+     1,
+     1
+    ],
+    "text": "Admin"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "Recon"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "Navigation"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "Knowledge"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "Survival"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "Tactics (Starship or Vehicles)"
+   }
+  ]
+ },
+ {
+  "name": "Advanced Education Table (Marines)",
+  "folder": "Character Creation",
+  "formula": "1d6",
+  "description": "<p>p.19. Allowed for characters with EDU 8+. Roll 1D to acquire a career Skill (Step 2B).</p>",
+  "results": [
+   {
+    "range": [
+     1,
+     1
+    ],
+    "text": "Medic"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "Ranged Combat (Energy)"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "Explosives"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "Stealth"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "Comms"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "Tactics (Starship)"
+   }
+  ]
+ },
+ {
+  "name": "Advanced Education Table (Army)",
+  "folder": "Character Creation",
+  "formula": "1d6",
+  "description": "<p>p.19. Allowed for characters with EDU 8+. Roll 1D to acquire a career Skill (Step 2B).</p>",
+  "results": [
+   {
+    "range": [
+     1,
+     1
+    ],
+    "text": "Diplomacy"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "Knowledge"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "Explosives"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "Survival"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "Engineer"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "Tactics (Vehicle or Squad)"
+   }
+  ]
+ },
+ {
+  "name": "Advanced Education Table (Scouts)",
+  "folder": "Character Creation",
+  "formula": "1d6",
+  "description": "<p>p.19. Allowed for characters with EDU 8+. Roll 1D to acquire a career Skill (Step 2B).</p>",
+  "results": [
+   {
+    "range": [
+     1,
+     1
+    ],
+    "text": "Knowledge"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "Explosives"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "Crafting"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "Survival"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "Admin"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "Jack-of-All-Trades"
+   }
+  ]
+ },
+ {
+  "name": "Advanced Education Table (Merchants)",
+  "folder": "Character Creation",
+  "formula": "1d6",
+  "description": "<p>p.19. Allowed for characters with EDU 8+. Roll 1D to acquire a career Skill (Step 2B).</p>",
+  "results": [
+   {
+    "range": [
+     1,
+     1
+    ],
+    "text": "Engineering"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "Pilot"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "Computer"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "Electronics"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "Admin"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "Medic"
+   }
+  ]
+ },
+ {
+  "name": "Advanced Education Table (Civilian)",
+  "folder": "Character Creation",
+  "formula": "1d6",
+  "description": "<p>p.19. Allowed for characters with EDU 8+. Roll 1D to acquire a career Skill (Step 2B).</p>",
+  "results": [
+   {
+    "range": [
+     1,
+     1
+    ],
+    "text": "Medic"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "Mechanic"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "Admin"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "Computers"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "Diplomacy"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "Jack-of-All-Trades"
+   }
+  ]
+ },
+ {
+  "name": "Commissioned Officer Skills",
+  "folder": "Character Creation",
+  "formula": "1d6",
+  "description": "<p>p.19. Commissioned officers may roll 1D on this table once per term in place of one of the other Skill tables.</p>",
+  "results": [
+   {
+    "range": [
+     1,
+     1
+    ],
+    "text": "Admin"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "Leadership"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "Diplomacy"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "Profession"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "Melee (any)"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "Tactics (any)"
+   }
+  ]
+ },
+ {
+  "name": "Material Benefits Table (Navy)",
+  "folder": "Character Creation",
+  "formula": "1d6",
+  "description": "<p>p.21. Roll on this table for Terms 1, 3, 5, 7+. When mustering out, roll 1D per term served in a career. Commissioned officers apply +1DM to one or more rolls by rank (Rank Benefit table, p.20); a DM gained during the career applies to a single roll. Results of 7+ use row 7.</p>",
+  "results": [
+   {
+    "range": [
+     -10,
+     1
+    ],
+    "text": "Low Passage"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "+1 INT"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "+2 EDU"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "Blade"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "SSS"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "High Passage"
+   },
+   {
+    "range": [
+     7,
+     20
+    ],
+    "text": "+2 SOC"
+   }
+  ]
+ },
+ {
+  "name": "Material Benefits Table (Marines)",
+  "folder": "Character Creation",
+  "formula": "1d6",
+  "description": "<p>p.21. Roll on this table for Terms 1, 3, 5, 7+. When mustering out, roll 1D per term served in a career. Commissioned officers apply +1DM to one or more rolls by rank (Rank Benefit table, p.20); a DM gained during the career applies to a single roll. Results of 7+ use row 7.</p>",
+  "results": [
+   {
+    "range": [
+     -10,
+     1
+    ],
+    "text": "Low Passage"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "+2 INT"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "+1 EDU"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "Blade"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "SSS"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "High Passage"
+   },
+   {
+    "range": [
+     7,
+     20
+    ],
+    "text": "+2 SOC"
+   }
+  ]
+ },
+ {
+  "name": "Material Benefits Table (Army)",
+  "folder": "Character Creation",
+  "formula": "1d6",
+  "description": "<p>p.21. Roll on this table for Terms 1, 3, 5, 7+. When mustering out, roll 1D per term served in a career. Commissioned officers apply +1DM to one or more rolls by rank (Rank Benefit table, p.20); a DM gained during the career applies to a single roll. Results of 7+ use row 7.</p>",
+  "results": [
+   {
+    "range": [
+     -10,
+     1
+    ],
+    "text": "Low Passage"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "+1 INT"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "+2 EDU"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "Gun"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "High Passage"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "Medium Passage"
+   },
+   {
+    "range": [
+     7,
+     20
+    ],
+    "text": "+1 SOC"
+   }
+  ]
+ },
+ {
+  "name": "Material Benefits Table (Scouts)",
+  "folder": "Character Creation",
+  "formula": "1d6",
+  "description": "<p>p.21. Roll on this table for Terms 1, 3, 5, 7+. When mustering out, roll 1D per term served in a career. Commissioned officers apply +1DM to one or more rolls by rank (Rank Benefit table, p.20); a DM gained during the career applies to a single roll. Results of 7+ use row 7.</p>",
+  "results": [
+   {
+    "range": [
+     -10,
+     1
+    ],
+    "text": "Low Passage"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "+2 INT"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "+2 EDU"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "Blade"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "Gun"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "Scout Ship"
+   },
+   {
+    "range": [
+     7,
+     20
+    ],
+    "text": "X"
+   }
+  ]
+ },
+ {
+  "name": "Material Benefits Table (Merchants)",
+  "folder": "Character Creation",
+  "formula": "1d6",
+  "description": "<p>p.21. Roll on this table for Terms 1, 3, 5, 7+. When mustering out, roll 1D per term served in a career. Commissioned officers apply +1DM to one or more rolls by rank (Rank Benefit table, p.20); a DM gained during the career applies to a single roll. Results of 7+ use row 7.</p>",
+  "results": [
+   {
+    "range": [
+     -10,
+     1
+    ],
+    "text": "Low Passage"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "+1 INT"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "+1 EDU"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "Gun"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "Blade"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "High Passage"
+   },
+   {
+    "range": [
+     7,
+     20
+    ],
+    "text": "Merchant Ship"
+   }
+  ]
+ },
+ {
+  "name": "Material Benefits Table (Civilian)",
+  "folder": "Character Creation",
+  "formula": "1d6",
+  "description": "<p>p.21. Roll on this table for Terms 1, 3, 5, 7+. When mustering out, roll 1D per term served in a career. Commissioned officers apply +1DM to one or more rolls by rank (Rank Benefit table, p.20); a DM gained during the career applies to a single roll. Results of 7+ use row 7.</p>",
+  "results": [
+   {
+    "range": [
+     -10,
+     1
+    ],
+    "text": "Low Passage"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "+1 INT"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "+1 EDU"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "+1 SOC"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "Ship Shares"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "High Passage"
+   },
+   {
+    "range": [
+     7,
+     20
+    ],
+    "text": "x"
+   }
+  ]
+ },
+ {
+  "name": "Monetary Benefit Table (Navy)",
+  "folder": "Character Creation",
+  "formula": "1d6",
+  "description": "<p>p.21. Roll on this table for terms 2, 4, 6 only (a maximum of three rolls per career). Results are in credits. Commissioned officers apply +1DM to one or more rolls by rank (Rank Benefit table, p.20); a DM gained during the career applies to a single roll. Results of 7+ use row 7.</p>",
+  "results": [
+   {
+    "range": [
+     -10,
+     1
+    ],
+    "text": "1000"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "5000"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "5000"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "10000"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "20000"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "50000"
+   },
+   {
+    "range": [
+     7,
+     20
+    ],
+    "text": "50000"
+   }
+  ]
+ },
+ {
+  "name": "Monetary Benefit Table (Marines)",
+  "folder": "Character Creation",
+  "formula": "1d6",
+  "description": "<p>p.21. Roll on this table for terms 2, 4, 6 only (a maximum of three rolls per career). Results are in credits. Commissioned officers apply +1DM to one or more rolls by rank (Rank Benefit table, p.20); a DM gained during the career applies to a single roll. Results of 7+ use row 7.</p>",
+  "results": [
+   {
+    "range": [
+     -10,
+     1
+    ],
+    "text": "2000"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "5000"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "5000"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "10000"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "20000"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "30000"
+   },
+   {
+    "range": [
+     7,
+     20
+    ],
+    "text": "40000"
+   }
+  ]
+ },
+ {
+  "name": "Monetary Benefit Table (Army)",
+  "folder": "Character Creation",
+  "formula": "1d6",
+  "description": "<p>p.21. Roll on this table for terms 2, 4, 6 only (a maximum of three rolls per career). Results are in credits. Commissioned officers apply +1DM to one or more rolls by rank (Rank Benefit table, p.20); a DM gained during the career applies to a single roll. Results of 7+ use row 7.</p>",
+  "results": [
+   {
+    "range": [
+     -10,
+     1
+    ],
+    "text": "2000"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "5000"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "10000"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "10000"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "10000"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "20000"
+   },
+   {
+    "range": [
+     7,
+     20
+    ],
+    "text": "30000"
+   }
+  ]
+ },
+ {
+  "name": "Monetary Benefit Table (Scouts)",
+  "folder": "Character Creation",
+  "formula": "1d6",
+  "description": "<p>p.21. Roll on this table for terms 2, 4, 6 only (a maximum of three rolls per career). Results are in credits. Commissioned officers apply +1DM to one or more rolls by rank (Rank Benefit table, p.20); a DM gained during the career applies to a single roll. Results of 7+ use row 7.</p>",
+  "results": [
+   {
+    "range": [
+     -10,
+     1
+    ],
+    "text": "20000"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "20000"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "30000"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "30000"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "50000"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "50000"
+   },
+   {
+    "range": [
+     7,
+     20
+    ],
+    "text": "50000"
+   }
+  ]
+ },
+ {
+  "name": "Monetary Benefit Table (Merchants)",
+  "folder": "Character Creation",
+  "formula": "1d6",
+  "description": "<p>p.21. Roll on this table for terms 2, 4, 6 only (a maximum of three rolls per career). Results are in credits. Commissioned officers apply +1DM to one or more rolls by rank (Rank Benefit table, p.20); a DM gained during the career applies to a single roll. Results of 7+ use row 7.</p>",
+  "results": [
+   {
+    "range": [
+     -10,
+     1
+    ],
+    "text": "1000"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "5000"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "10000"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "20000"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "20000"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "40000"
+   },
+   {
+    "range": [
+     7,
+     20
+    ],
+    "text": "40000"
+   }
+  ]
+ },
+ {
+  "name": "Monetary Benefit Table (Civilian)",
+  "folder": "Character Creation",
+  "formula": "1d6",
+  "description": "<p>p.21. Roll on this table for terms 2, 4, 6 only (a maximum of three rolls per career). Results are in credits. Commissioned officers apply +1DM to one or more rolls by rank (Rank Benefit table, p.20); a DM gained during the career applies to a single roll. Results of 7+ use row 7.</p>",
+  "results": [
+   {
+    "range": [
+     -10,
+     1
+    ],
+    "text": "1000"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "5000"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "10000"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "10000"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "10000"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "50000"
+   },
+   {
+    "range": [
+     7,
+     20
+    ],
+    "text": "100000"
+   }
+  ]
+ },
+ {
+  "name": "PTSD Characteristic",
+  "folder": "Character Creation",
+  "formula": "1d3",
+  "description": "<p>p.24. If a character gains PTSD during a life event, roll D3 to determine which attribute is affected. The rolled attribute decreases in score by D3.</p>",
+  "results": [
+   {
+    "range": [
+     1,
+     1
+    ],
+    "text": "INT"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "EDU"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "SOC"
+   }
+  ]
+ },
+ {
+  "name": "Military Life Events",
+  "folder": "Character Creation",
+  "formula": "1d6",
+  "description": "<p>p.24-25. Optional. Use this table for characters who are in Army, Navy, or Marine careers when they survive a term. Roll 1D, adding +1 per additional term in a career after the first (for example, roll 1D+1 on your second term). 13+ is a Unique event.</p>",
+  "results": [
+   {
+    "range": [
+     -10,
+     1
+    ],
+    "text": "<p><strong>Chewed Up and Spat Out:</strong> You barely make it out of basic training and struggle to find a role in the military. You are unceremoniously discharged from service and can only enter military service again if drafted.</p>"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "<p><strong>Voluntold:</strong> Your superiors are looking for “volunteers” for a hard labor engineering mission on a remote outpost, but you are too low of rank to safely say no. If you say no, incur -2DM to reenlistment. If you say yes, roll 8+ on a STR check.</p><ul><li><strong>Success:</strong> You were able to demonstrate that not only that you are a team player but also capable of being dependable for physical demands. Increase STR by +1.</li><li><strong>Failure:</strong> You show that you are a team player, but you have an accident! Roll D3+3 on the Injury table to determine how you are injured.</li></ul>"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "<p><strong>Up for Promotion:</strong> You are automatically promoted to rank. If you are currently rank 1 or higher and are not commissioned, then you are automatically commissioned as well.</p>"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "<p><strong>Espionage:</strong> You are offered a chance to leak secrets for financial benefit. Roll 8+ on an INT check.</p><ul><li><strong>Success:</strong> You slyly slip secrets out to the client and are paid 2D x 2000cr and gain a Contact.</li><li><strong>Failure:</strong> You are incarcerated for D3 terms and do not benefit from any muster rolls from this career. See prison for more information.</li></ul>"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "<p><strong>Warzone:</strong> It finally happened; you were sent to the front lines. Roll 8+ on a DEX check to determine what happens.</p><ul><li><strong>Success of 12:</strong> You demonstrate heroism on the battlefield and are automatically promoted a rank and can increase a known Skill by 1 rank.</li><li><strong>Success 8-11:</strong> Your boots-on-the-ground experiences allow you to perform a Skill you know. Increase a known Skill by 1 rank.</li><li><strong>Failure 3-7:</strong> You are injured. Roll 1D+1 on the Injury table but gain 1 rank in a Skill you know. Unfortunately, you are discharged from the service after sustaining the injury, preventing you from reenlistment into this service.</li><li><strong>Failure of 2:</strong> You are killed in battle. You are granted a post-mortem promotion and are buried with honors.</li></ul>"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "<p><strong>Honor Duel:</strong> You are challenged to a duel by a rival officer. If you are not an officer, your superior officer forces you to fight on their behalf. Roll 8+ on a DEX check.</p><ul><li><strong>Result of 12+:</strong> You severely injure the officer, forcing them to retire early. You are immediately promoted while gaining an Enemy in the opposing officer.</li><li><strong>Success range 8-11:</strong> You defeat the officer and are promoted for your demonstration of arms. Gain a Rival in the opposing officer.</li><li><strong>Failure range 3-7:</strong> You are defeated. Roll D3+3 on the Survival Table and gain a Rival.</li><li><strong>Failure 2 or less:</strong> Roll D3 on the survival table and gain an Enemy.</li></ul>"
+   },
+   {
+    "range": [
+     7,
+     7
+    ],
+    "text": "<p><strong>Extracurricular Training:</strong> You have driven yourself to improve a Skill you have to become better than what basic training provided you. Roll 8+ on an EDU Check.</p><ul><li><strong>Success:</strong> Increase one of your lowest ranked Skills by +1.</li><li><strong>Failure:</strong> You are seen as isolated due to your determination. You still gain a +1 in a Skill, but if you had an Ally or Connection, you lose them. Otherwise, you gain a Rival.</li></ul>"
+   },
+   {
+    "range": [
+     8,
+     8
+    ],
+    "text": "<p><strong>Peacekeeper:</strong> You are assigned to a peacekeeping mission to maintain relations between two factions. Roll 8+ on an EDU check.</p><ul><li><strong>Success:</strong> You ended up pencil pushing for a term. Earn one Civilian Skill at rank 0 or increase a current civilian Skill by +1 rank.</li><li><strong>Failure:</strong> Conflict breaks out, and you are caught in the middle. Roll 1D on the survival table.</li></ul>"
+   },
+   {
+    "range": [
+     9,
+     9
+    ],
+    "text": "<p><strong>Court Marshal:</strong> You find yourself accused of betrayal to the service and will be subjected to a tribunal. You are brought to trial to defend yourself. You can choose to hire a lawyer for 1D x 1000Cr who provides a +D3 DM to the trial check. You must have the money and cannot take on debt for hiring a lawyer.</p><p><strong>The trial:</strong> Roll 8+ on a SOC check; add any lawyer bonus you may have.</p><ul><li><strong>Success:</strong> The accusations are thrown out, and you are able to continue your career, with an automatic reenlistment for another term for your current service.</li><li><strong>Failure:</strong> You lose your job and are imprisoned for D3 terms. You do not gain any mustering benefits from your job due to your criminal record.</li></ul><p><strong>Result of 2:</strong> You are executed without honors.</p>"
+   },
+   {
+    "range": [
+     10,
+     10
+    ],
+    "text": "<p><strong>Shell-Shocked:</strong> Your experience has led you to see the horrors of war. Friends have perished before your eyes and the perpetual exposure to violence has strained your nerves. You unfortunately lose an Ally or Contact due to the tragic event if you have one. Roll 8+ on an END check.</p><ul><li><strong>Success:</strong> You are able to prevent the grim reality from fraying your mind. Gain +1 END.</li><li><strong>Failure:</strong> You gain PTSD and are given medical discharge. You cannot enlist in any military career.</li></ul>"
+   },
+   {
+    "range": [
+     11,
+     11
+    ],
+    "text": "<p><strong>War Hero:</strong> On a tour of duty, you found yourself up against unimaginable odds. You made an important call to get yourself out of there and your comrades. Roll 8+ on one of the following checks:</p><ul><li>STR for Army</li><li>DEX for Marines</li><li>INT for Navy</li><li>EDU if an officer of any military branch</li></ul><p><strong>On a success:</strong> Immediately be promoted one rank and get a +1 DM to one mustering out roll.</p><p><strong>On a failure:</strong> Immediately promoted but incur an injury. Roll D3 on the Injury table.</p>"
+   },
+   {
+    "range": [
+     12,
+     12
+    ],
+    "text": "<p><strong>Career Soldier:</strong> The military has become your life, and you are well integrated into its bureaucratic structure. Your faith in following protocol is questioned when a superior orders you and your comrades into a dangerous situation. You can choose to follow orders or defy orders.</p><p><strong>Follow Orders:</strong> Roll 8+ on a INT check.</p><ul><li><strong>Success:</strong> You are sent into the fray to complete the mission at the grave cost of your buddies. You are automatically promoted one rank, but gain an Enemy in a former surviving comrade while also gaining one Contact in the higher ranks of the military.</li><li><strong>Failure:</strong> You are promoted but sustain a significant injury. Roll D3 on the Injury table.</li></ul><p><strong>Defy Orders:</strong> Roll 8+ on a SOC check.</p><ul><li><strong>Success:</strong> You defy orders and develop a new strategy to keep your comrades alive while finishing the operation. Top brass frowns upon defying orders but begrudgingly promote you one rank, but you incur a -2DM to reenlistment. You gain one Rival in the demoted former superior officer who gave the order.</li><li><strong>Failure:</strong> You defy orders but aren't able to complete the mission, leading to the inevitable death of a majority of your comrades and the loss of rank for your superior. You are court marshalled; roll 8+ on a SOC check. A success means you are discharged from service. Failure means you are dishonorably discharged and lose all mustering out benefits, while also being jailed for D3 terms. Regardless of the outcome, you gain one Ally in a former comrade for defying military orders while also gaining one Enemy in the demoted military officer.</li></ul>"
+   },
+   {
+    "range": [
+     13,
+     30
+    ],
+    "text": "<p><strong>Unique:</strong> Roll 1D and determine the unique event that occurs during your current career term. Add +1 to the 1D roll for every term served past term 8. For example, if rolling on term 9, roll 1D+1 on the following:</p><p>Roll on the Unique Life Events (Military) table.</p>"
+   }
+  ]
+ },
+ {
+  "name": "Unique Life Events (Military)",
+  "folder": "Character Creation",
+  "formula": "1d6",
+  "description": "<p>p.25. Roll 1D when the Military Life Events table gives 13+ (Unique). Add +1 to the 1D roll for every term served past term 8. Results of 6+ use row 6.</p>",
+  "results": [
+   {
+    "range": [
+     1,
+     1
+    ],
+    "text": "<p><strong>Life Among Sophonts:</strong> Your job has allowed you the privilege to work with a different intelligent species, forming meaningful connections and a deeper knowledge of your place in the universe. Gain one Non-Human Ally and Linguistics 1 OR Science 1. if you already have either of those Skills, increase its rank by +1.</p>"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "<p><strong>Psionic Encounter:</strong> You have an encounter with a hidden psion, unlocking your potential to become psychic. Use the Unlocking Psionic Potential procedure to determine if you are now psionic.</p>"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "<p><strong>Influential Contact:</strong> You gain an influential contact within the largest government in the subsector.</p>"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "<p><strong>Artefact:</strong> You stumbled upon an ancient artefact that may be of significant value. You must find a specialist to determine its worth when you begin spacing.</p>"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "<p><strong>Social Isolation:</strong> As you age, you start to lose more and more friends due to career changes, lifestyle choices, or death. You lose one Ally or Contact. If you have none, then decrease SOC by -D3.</p>"
+   },
+   {
+    "range": [
+     6,
+     20
+    ],
+    "text": "<p><strong>Forced Retirement:</strong> You are forced out of service due to age. You may not reenlist with any career due to your age, regardless of your experience.</p>"
+   }
+  ]
+ },
+ {
+  "name": "Non-Military Life Events",
+  "folder": "Character Creation",
+  "formula": "1d6",
+  "description": "<p>p.26-27. Optional. Use this table to determine events for characters who are in Scouts, Merchants, or Civilian careers when they survive a term. Roll 1D, adding +1DM per additional term in a career after the first (for example, roll 1D+1 on your second term). 13+ is a Unique event.</p>",
+  "results": [
+   {
+    "range": [
+     -10,
+     1
+    ],
+    "text": "<p><strong>Severe Illness:</strong> During your first term in this career, you succumbed to a debilitating illness. Roll 8+ on an END check.</p><ul><li><strong>Success:</strong> You overcome the illness without it impacting your work.</li><li><strong>Failure:</strong> You are unceremoniously fired from the job and cannot attempt to reenlist next term.</li></ul>"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "<p><strong>Inheritance:</strong> Someone you know passes on, and you are surprised that you gained an inheritance from them. Roll 1D. Odd results are material benefits (Merchant Column) and even results are monetary benefits (Civilian Column). Immediately roll 1D+1 on the associated muster column to determine what you gain from the inheritance.</p>"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "<p><strong>Management:</strong> Your superiors assign an important task that must be completed by a certain deadline. Roll 8+ on a INT check.</p><ul><li><strong>Success:</strong> You are deemed an important lackey by management and reward you with a +1DM when you muster out.</li><li><strong>Failure:</strong> You fail terribly, and management isn't amused. You are fired from your job; muster out.</li></ul>"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "<p><strong>Romantic Interest:</strong> You meet someone special but must balance your grueling work with being a good partner. Roll 8+ on an EDU check.</p><ul><li><strong>Success:</strong> You are able to figure out a healthy balance. Gain +1 SOC and an Ally.</li><li><strong>Failure:</strong> You are selfish and unreliable. Gain -1 SOC and an Enemy.</li></ul>"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "<p><strong>On Strike:</strong> There is a labor strike at your career, and you are asked to join the other employees in striking.</p><ul><li><strong>Refuse to strike:</strong> You decide to become a scab for work. Roll 8+ on a DEX check to not get caught. On a success, you gain 1D x 2000cr and +1DM on any muster roll for this career. You are automatically reenlisted and promoted (if applicable) but are considered a class traitor and gain a Rival from the striking leadership.</li><li><strong>Join the struggle:</strong> You gain an Ally in the form of a fellow worker. You now are part of the contract negotiation. Roll 8+ on a SOC check. Success: You succeed at negotiations and now roll +1 to all cash benefit rolls from this career when mustering out. Failure: You hit a negotiation stalemate and nothing significant changes. Reenlistment roll now incurs -2DM.</li></ul>"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "<p><strong>Secret:</strong> You learn a rumour that there will be a shake-up in management between two rival superiors, with one of them getting fired. What do you do?</p><ul><li><strong>Nothing:</strong> You try to keep your head down and let it blow over. Roll 8+ on an SOC check. You are not affected by the shake-up. On a failure, you are associated with the terminated management and are fired.</li><li><strong>Tell the Manager:</strong> Roll 8+ on an INT check. On a success, you tell the correct superior and are automatically reinlisted and gain an Ally. On a failure, you blab to the wrong superior. You gain -2DM to your reenlistment roll due to being considered having poor discernment, and gain a Rival.</li></ul>"
+   },
+   {
+    "range": [
+     7,
+     7
+    ],
+    "text": "<p><strong>Made Redundant:</strong> During your career, downsizing at your place of work became inevitable. Roll 8+ on a SOC check.</p><ul><li><strong>Success:</strong> Automatically reenlist in the career for another term.</li><li><strong>Failure:</strong> You are terminated. Gain only the cash benefit from this career when mustering out.</li></ul>"
+   },
+   {
+    "range": [
+     8,
+     8
+    ],
+    "text": "<p><strong>Heated Rivalry:</strong> You have a friendly rivalry with someone you work with. One day, management assigns a task that is in direct competition with a coworker to keep your job. You can choose to either compete to let the coworker take the task. What do you do?</p><ul><li><strong>Selflessly pass it along:</strong> You are terminated from your job but gain an Ally in your former rival.</li><li><strong>Try to Defeat Them:</strong> Roll 8+ on an EDU check:</li><li><strong>Success:</strong> You defeat your coworker and get them fired. You are automatically reenlisted and gain +1DM to any one muster roll when mustering out but gain an Enemy.</li><li><strong>Failure:</strong> You are crushed by your rival and are terminated from your job but gain a Rival and a +1DM to a single mustering out benefit of your choice.</li></ul>"
+   },
+   {
+    "range": [
+     9,
+     9
+    ],
+    "text": "<p><strong>Legal Trouble:</strong> You find yourself accused of some form of criminal behaviour that you swear you are innocent of. You are brought to trial to defend yourself. You can choose to hire a lawyer for 1D x 1000Cr, who provides a +D3 DM to the trial check. You must have the money and cannot take on debt for hiring a lawyer.</p><p><strong>The trial:</strong> Roll 8+ on a SOC check. Add any lawyer bonus you may have.</p><ul><li><strong>Success:</strong> You get off without issue.</li><li><strong>Failure:</strong> You are fined 2D x 5000Cr.</li><li><strong>Result of 2:</strong> You lose your job and are imprisoned for D3 terms. You do not gain any mustering benefits from your job due to your criminal record.</li></ul>"
+   },
+   {
+    "range": [
+     10,
+     10
+    ],
+    "text": "<p><strong>Tragedy:</strong> A sudden event turns your life upside down. You must endure these turbulent times, which will strain your mental health. You unfortunately lose an Ally or Contact due to the tragic event, if you have one. Roll 8+ on an END check.</p><ul><li><strong>Success:</strong> You are able to weather these trying times consuming your mind. Gain +1 END.</li><li><strong>Failure:</strong> You gain PTSD and are given medical discharge from your career.</li></ul>"
+   },
+   {
+    "range": [
+     11,
+     11
+    ],
+    "text": "<p><strong>Local Hero:</strong> A crisis occurs where you live, whether it be environmental (Scout), economical (Merchant), or political (Civilian). You decide that you can provide help to others in need. Roll 8+ on the following checks:</p><p>END for Scouts</p><p>EDU for Civilians</p><p>SOC for Merchants</p><ul><li><strong>Success:</strong> You demonstrate your adaptability and gain Jack-of-All-Trades 1 (or increase it by +1).</li><li><strong>Failure:</strong> Your noble attempt causes you an injury. Roll 1D on the Injury table.</li></ul>"
+   },
+   {
+    "range": [
+     12,
+     12
+    ],
+    "text": "<p><strong>Married to the Job:</strong> All you know is this career, at the cost of a social life. You attempt to break out of the cage you built for yourself and try to make connections with others. Roll 8+ on a SOC check:</p><ul><li><strong>Success:</strong> You gain an Ally in the form of a friend or romantic partner.</li><li><strong>Failure:</strong> You struggle to meet people and decide it's better to focus on work instead. You lose -1 SOC but gain an extra muster roll for this career.</li></ul>"
+   },
+   {
+    "range": [
+     13,
+     30
+    ],
+    "text": "<p><strong>Unique:</strong> Roll 1D and determine the unique event that occurs during your current career term. Add +1 to the 1D roll for every term served past term 8. For example, if rolling on term 9, roll 1D+1 on the following:</p><p>Roll on the Unique Life Events (Non-Military) table.</p>"
+   }
+  ]
+ },
+ {
+  "name": "Unique Life Events (Non-Military)",
+  "folder": "Character Creation",
+  "formula": "1d6",
+  "description": "<p>p.27. Roll 1D when the Non-Military Life Events table gives 13+ (Unique). Add +1 to the 1D roll for every term served past term 8. Results of 6+ use row 6.</p>",
+  "results": [
+   {
+    "range": [
+     1,
+     1
+    ],
+    "text": "<p><strong>Life Among Sophonts:</strong> Your job has allowed you the privilege to work with a different intelligent species, forming meaningful connections and a deeper knowledge of your place in the universe. Gain one Non-Human Ally and Linguistics 1 OR Science 1. if you already have either of those Skills, increase its rank by +1.</p>"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "<p><strong>Psionic Encounter:</strong> You have an encounter with a hidden psion, unlocking your potential to become psychic. Use the Unlocking Psionic Potential procedure to determine if you are now psionic.</p>"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "<p><strong>Influential Contact:</strong> You gain an influential contact within the largest government in the subsector.</p>"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "<p><strong>Artefact:</strong> You stumbled upon an ancient artefact that may be of significant value. You must find a specialist to determine its worth when you begin spacing.</p>"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "<p><strong>Social Isolation:</strong> As you age, you start to lose more and more friends due to career changes, lifestyle choices, or death. You lose one Ally or Contact. If you have none, then decrease SOC by -D3.</p>"
+   },
+   {
+    "range": [
+     6,
+     20
+    ],
+    "text": "<p><strong>Forced Retirement:</strong> You are forced out of service due to age. You may not reenlist with any career due to your age, regardless of your experience.</p>"
+   }
+  ]
+ },
+ {
+  "name": "Prison Events",
+  "folder": "Character Creation",
+  "formula": "1d6",
+  "description": "<p>p.27. When sent to prison, roll 1D to determine what events occur while imprisoned each term. Every prison term earns a Skill (or +1 rank if the character already has it). Make the listed attribute check; failure indicates an injury. Characters in prison also make aging checks from term 4.</p>",
+  "results": [
+   {
+    "range": [
+     1,
+     1
+    ],
+    "text": "<p><strong>Hit the weights:</strong> Gain a Melee Skill of choice or Athlete.</p><p><strong>Roll 8+ on a STR Check:</strong></p><ul><li><strong>Success:</strong> Join a prison gang and gain a Contact.</li><li><strong>Failure:</strong> Faulty equipment. Roll 1D on the Injury table.</li></ul>"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "<p><strong>Block Runner:</strong> You become adept at moving goods and messages around the prison block. Gain gambling, stealth, or Melee combat (Blade).</p><p><strong>Roll 8+ on a DEX check:</strong></p><ul><li><strong>Success:</strong> You gain a good reputation. Gain one Ally</li><li><strong>Failure:</strong> A mixup of goods led to a failure of a job. Roll 1D on the Injury table.</li></ul>"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "<p><strong>Poor Conditions:</strong> You're forced to adapt to the harsh conditions of your prison. Gain Streetwise, Carouse, or Recon.</p><p><strong>Roll 8+ on a END check:</strong></p><ul><li><strong>Success:</strong> Gain Jack-of-All-Trades 1.</li><li><strong>Failure:</strong> You unfortunately succumb to the harsh conditions. Roll 1D on the Injury table.</li></ul>"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "<p><strong>Smart Guy:</strong> You adapt your prior knowledge to help you adapt to prison life. Gain Admin, Legal, or Profession.</p><p><strong>Roll 8+ on a INT check:</strong></p><ul><li><strong>Success:</strong> You are able to help other prisoners with knowing their legal rights and gain a Contact.</li><li><strong>Failure:</strong> Prison admin frowns upon your cleverness. Roll 1D on the Injury table.</li></ul>"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "<p><strong>Hit the Books:</strong> You've fully utilized the access to the prison's library and different classes offered to inmates. Gain Mechanic, Engineering, or Electronics.</p><p><strong>Roll 8+ on a EDU check:</strong></p><ul><li><strong>Success:</strong> You successfully prove that you are capable of reentering society. You are released early and regain one of the muster rolls from your last career.</li><li><strong>Failure:</strong> You get caught up in a prison riot you weren't participating in. Roll 1D on the Injury table.</li></ul>"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "<p><strong>Build Bridges:</strong> You learn to navigate the social hierarchy of the prison and attempt to integrate yourself into its structure. Gain Diplomacy, Deception, or Persuade.</p><p><strong>Roll 8+ on a SOC check:</strong></p><ul><li><strong>Success:</strong> Your attempts have yielded you an Ally.</li><li><strong>Failure:</strong> You offend someone. Roll D3 on the Injury table.</li></ul>"
+   }
+  ]
+ }
+]

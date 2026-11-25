@@ -1,0 +1,88 @@
+<div class="chargen-wizard">
+<div class="chargen-body">
+  <section class="chargen-main">
+    <div class="chargen-step">
+      {{#if pending.isChoice}}
+        <h2 class="chargen-prompt">{{pending.prompt}}</h2>
+        <div class="chargen-options">
+          {{#each pending.options}}
+          <button type="button" class="chargen-option {{#if isAuto}}suggested{{/if}}" data-action="choose" data-value="{{value}}">
+            <span class="label">{{label}}</span>
+            {{#if hint}}<span class="hint">{{hint}}</span>{{/if}}
+          </button>
+          {{/each}}
+        </div>
+      {{/if}}
+      {{#if pending.isRoll}}
+        <h2 class="chargen-prompt">{{pending.label}}</h2>
+        <div class="chargen-rollspec">
+          <span class="dice-label">{{pending.dice}}</span>
+          {{#each pending.mods}}<span class="mod">{{value}} {{label}}</span>{{/each}}
+          {{#if pending.hasTarget}}<span class="target">{{localize "SPACER.Chargen.Target"}} {{pending.target}}+</span>{{/if}}
+        </div>
+        <button type="button" class="chargen-roll" data-action="roll"><i class="fa-solid fa-dice"></i> {{localize "SPACER.Chargen.Roll"}}</button>
+      {{/if}}
+      {{#if pending.isDead}}
+        <h2 class="chargen-prompt dead"><i class="fa-solid fa-skull"></i> {{localize "SPACER.Chargen.Dead"}}</h2>
+        <p>{{pending.prompt}}</p>
+        <button type="button" class="chargen-roll" data-action="restart">{{localize "SPACER.Chargen.Restart"}}</button>
+      {{/if}}
+      {{#if pending.isDone}}
+        <h2 class="chargen-prompt done"><i class="fa-solid fa-flag-checkered"></i> {{localize "SPACER.Chargen.Done"}}</h2>
+        {{#if saved}}<p class="saved">{{localize "SPACER.Chargen.SavedShort"}}</p>{{/if}}
+      {{/if}}
+    </div>
+
+    {{#if lastRoll}}
+    <div class="chargen-lastroll {{lastRoll.resultClass}}">
+      <div class="lr-label">{{lastRoll.label}}</div>
+      <div class="lr-dice">
+        {{#each lastRoll.faces}}<span class="die">{{value}}</span>{{/each}}
+        {{#each lastRoll.mods}}<span class="mod">{{value}} {{label}}</span>{{/each}}
+        <span class="eq">=</span><span class="total">{{lastRoll.total}}</span>
+        {{#if lastRoll.hasTarget}}
+          <span class="vs">{{localize "SPACER.Chargen.Target"}} {{lastRoll.target}}+</span>
+          <span class="result">{{#if lastRoll.success}}{{localize "SPACER.Chargen.Success"}}{{else}}{{localize "SPACER.Chargen.Failure"}}{{/if}}</span>
+        {{/if}}
+      </div>
+    </div>
+    {{/if}}
+
+    <ol class="chargen-log">
+      {{#each log}}
+      <li class="{{cls}} {{#if success}}success{{/if}} {{#if failure}}failure{{/if}}">{{#if head}}<strong>{{text}}</strong>{{else}}{{text}}{{/if}}{{#if roll}} <span class="roll-text">{{roll}}</span>{{/if}}</li>
+      {{/each}}
+    </ol>
+  </section>
+
+  <aside class="chargen-summary">
+    <div class="upp"><span class="k">{{localize "SPACER.Chargen.UPP"}}</span> <span class="v">{{s.upp}}</span></div>
+    <div class="chars">
+      {{#each s.chars}}<div class="char"><span class="k">{{label}}</span><span class="v">{{value}}</span><span class="dm">{{dm}}</span></div>{{/each}}
+    </div>
+    <dl class="facts">
+      <dt>{{localize "SPACER.Chargen.Age"}}</dt><dd>{{s.age}}</dd>
+      <dt>{{localize "SPACER.Chargen.Terms"}}</dt><dd>{{s.terms}}</dd>
+      <dt>{{localize "SPACER.Chargen.Credits"}}</dt><dd>{{s.credits}}cr</dd>
+      {{#if s.debt}}<dt>{{localize "SPACER.Chargen.Debt"}}</dt><dd>{{s.debt}}cr</dd>{{/if}}
+      {{#if s.pensionText}}<dt>{{localize "SPACER.Chargen.Pension"}}</dt><dd>{{s.pensionText}}</dd>{{/if}}
+      {{#if s.hasPsi}}<dt>PSI</dt><dd>{{s.psi}}</dd>{{/if}}
+    </dl>
+    <h3>{{localize "SPACER.Chargen.Careers"}}</h3>
+    <ul>{{#each s.careers}}<li>{{label}}</li>{{else}}<li class="none">-</li>{{/each}}</ul>
+    <h3>{{localize "SPACER.Chargen.Skills"}}</h3>
+    <ul class="skills">{{#each s.skills}}<li>{{name}} <b>{{rank}}</b></li>{{else}}<li class="none">-</li>{{/each}}</ul>
+    <h3>{{localize "SPACER.Chargen.Items"}}</h3>
+    <ul>{{#each s.items}}<li>{{name}}{{qty}}</li>{{else}}<li class="none">-</li>{{/each}}</ul>
+    {{#if s.relations.length}}
+    <h3>{{localize "SPACER.Chargen.Connections"}}</h3>
+    <ul>{{#each s.relations}}<li>{{text}}</li>{{/each}}</ul>
+    {{/if}}
+  </aside>
+</div>
+<footer class="chargen-footer">
+  <button type="button" data-action="undo" {{#unless canUndo}}disabled{{/unless}}><i class="fa-solid fa-rotate-left"></i> {{localize "SPACER.Chargen.Undo"}}</button>
+  <button type="button" data-action="fast" {{#unless canFast}}disabled{{/unless}}><i class="fa-solid fa-forward-fast"></i> {{localize "SPACER.Chargen.Fast"}}</button>
+  <button type="button" data-action="save" class="save" {{#unless canSave}}disabled{{/unless}}><i class="fa-solid fa-floppy-disk"></i> {{localize "SPACER.Chargen.Save"}}</button>
+</footer>
+</div>

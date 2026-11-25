@@ -1,0 +1,208 @@
+[
+  {
+    "name": "Unarmed",
+    "type": "weapon",
+    "folder": "Melee Weapons",
+    "system": {
+      "category": "melee",
+      "skill": "Melee Combat",
+      "specialty": "Hand-to-Hand",
+      "damage": "1D",
+      "attachedDamage": "",
+      "range": "close",
+      "rounds": 0,
+      "cost": 0,
+      "weight": 0,
+      "tl": 0,
+      "traits": [],
+      "description": "<p>Represents physical strikes with fists, kicks, joint locks, and constriction of a target.</p><p>Melee weapons cannot be used past their Range limit. The book gives no tech level for melee weapons.</p>",
+      "source": "p.30"
+    }
+  },
+  {
+    "name": "Knife",
+    "type": "weapon",
+    "folder": "Melee Weapons",
+    "system": {
+      "category": "melee",
+      "skill": "Melee Combat",
+      "specialty": "Blade",
+      "damage": "1D+3",
+      "attachedDamage": "",
+      "range": "close",
+      "rounds": 0,
+      "cost": 150,
+      "weight": 0.1,
+      "tl": 0,
+      "traits": [
+        "Bladed",
+        "Conceal",
+        "Throw"
+      ],
+      "description": "<p>Can be thrown within short range.</p><p>Melee weapons cannot be used past their Range limit. The book gives no tech level for melee weapons.</p><p><strong>Traits</strong></p><ul><li>Bladed: This weapon usage is modified by the Melee (Blade) Skill.</li><li>Conceal: This weapon can be concealed easily, granting +1DM when attempting to hide the weapon.</li><li>Throw: This weapon can be thrown up to x2 DEX metres.</li></ul>",
+      "source": "p.30"
+    }
+  },
+  {
+    "name": "Baton",
+    "type": "weapon",
+    "folder": "Melee Weapons",
+    "system": {
+      "category": "melee",
+      "skill": "Melee Combat",
+      "specialty": "Bludgeon",
+      "damage": "2D3",
+      "attachedDamage": "",
+      "range": "short",
+      "rounds": 0,
+      "cost": 100,
+      "weight": 0.5,
+      "tl": 0,
+      "traits": [
+        "Bludgeon",
+        "One-Handed"
+      ],
+      "description": "<p>A bludgeoning, one-handed weapon used by law enforcement or for self-defence.</p><p>Melee weapons cannot be used past their Range limit. The book gives no tech level for melee weapons.</p><p><strong>Traits</strong></p><ul><li>Bludgeon: This weapon usage is modified by the Melee (Bludgeon) Skill.</li><li>One-Handed: This melee weapon can only be used in one-hand.</li></ul>",
+      "source": "p.30"
+    }
+  },
+  {
+    "name": "Sword",
+    "type": "weapon",
+    "folder": "Melee Weapons",
+    "system": {
+      "category": "melee",
+      "skill": "Melee Combat",
+      "specialty": "Blade",
+      "damage": "2D",
+      "attachedDamage": "",
+      "range": "short",
+      "rounds": 0,
+      "cost": 300,
+      "weight": 1,
+      "tl": 0,
+      "traits": [
+        "Bladed",
+        "One-Handed"
+      ],
+      "description": "<p>A one-handed sword; examples are sabers, rapiers, sideswords, etc.</p><p>Melee weapons cannot be used past their Range limit. The book gives no tech level for melee weapons.</p><p><strong>Traits</strong></p><ul><li>Bladed: This weapon usage is modified by the Melee (Blade) Skill.</li><li>One-Handed: This melee weapon can only be used in one-hand.</li></ul>",
+      "source": "p.30"
+    }
+  },
+  {
+    "name": "Boarding Ax",
+    "type": "weapon",
+    "folder": "Melee Weapons",
+    "system": {
+      "category": "melee",
+      "skill": "Melee Combat",
+      "specialty": "Blade",
+      "damage": "2D+3",
+      "attachedDamage": "",
+      "range": "short",
+      "rounds": 0,
+      "cost": 200,
+      "weight": 2,
+      "tl": 0,
+      "traits": [
+        "Bladed",
+        "Two-Handed"
+      ],
+      "description": "<p>A powerful weapon designed to be effective against eliminating targets effectively.</p><p>Melee weapons cannot be used past their Range limit. The book gives no tech level for melee weapons.</p><p><strong>Traits</strong></p><ul><li>Bladed: This weapon usage is modified by the Melee (Blade) Skill.</li><li>Two-Handed: This melee weapon required two hands to use properly; otherwise incur -2DM.</li></ul>",
+      "source": "p.30"
+    }
+  },
+  {
+    "name": "Staff",
+    "type": "weapon",
+    "folder": "Melee Weapons",
+    "system": {
+      "category": "melee",
+      "skill": "Melee Combat",
+      "specialty": "Bludgeon",
+      "damage": "3D-3",
+      "attachedDamage": "",
+      "range": "short",
+      "rounds": 0,
+      "cost": 250,
+      "weight": 2,
+      "tl": 0,
+      "traits": [
+        "Bludgeon",
+        "Two-Handed"
+      ],
+      "description": "<p>A larger, two-handed version of a baton.</p><p>Melee weapons cannot be used past their Range limit. The book gives no tech level for melee weapons.</p><p><strong>Traits</strong></p><ul><li>Bludgeon: This weapon usage is modified by the Melee (Bludgeon) Skill.</li><li>Two-Handed: This melee weapon required two hands to use properly; otherwise incur -2DM.</li></ul>",
+      "source": "p.30"
+    }
+  },
+  {
+    "name": "Longsword",
+    "type": "weapon",
+    "folder": "Melee Weapons",
+    "system": {
+      "category": "melee",
+      "skill": "Melee Combat",
+      "specialty": "Blade",
+      "damage": "3D",
+      "attachedDamage": "",
+      "range": "short",
+      "rounds": 0,
+      "cost": 500,
+      "weight": 1.5,
+      "tl": 0,
+      "traits": [
+        "Bladed",
+        "Two-Handed"
+      ],
+      "description": "<p>An effective self-defence and dueling weapon used amongst nobility.</p><p>Melee weapons cannot be used past their Range limit. The book gives no tech level for melee weapons.</p><p><strong>Traits</strong></p><ul><li>Bladed: This weapon usage is modified by the Melee (Blade) Skill.</li><li>Two-Handed: This melee weapon required two hands to use properly; otherwise incur -2DM.</li></ul>",
+      "source": "p.30"
+    }
+  },
+  {
+    "name": "Polearm",
+    "type": "weapon",
+    "folder": "Melee Weapons",
+    "system": {
+      "category": "melee",
+      "skill": "Melee Combat",
+      "specialty": "Blade",
+      "damage": "4D",
+      "attachedDamage": "",
+      "range": "short",
+      "rounds": 0,
+      "cost": 400,
+      "weight": 2,
+      "tl": 0,
+      "traits": [
+        "Bladed",
+        "Two-Handed",
+        "Large"
+      ],
+      "description": "<p>A long infantry weapon designed to keep targets at a distance while being deadly.</p><p>Melee weapons cannot be used past their Range limit. The book gives no tech level for melee weapons.</p><p><strong>Traits</strong></p><ul><li>Bladed: This weapon usage is modified by the Melee (Blade) Skill.</li><li>Two-Handed: This melee weapon required two hands to use properly; otherwise incur -2DM.</li><li>Large: The weapon cannot be used in an area smaller than short distance without incurring -2DM.</li></ul>",
+      "source": "p.30"
+    }
+  },
+  {
+    "name": "Bayonet",
+    "type": "weapon",
+    "folder": "Melee Weapons",
+    "system": {
+      "category": "melee",
+      "skill": "Melee Combat",
+      "specialty": "Blade",
+      "damage": "D3+3",
+      "attachedDamage": "2D",
+      "range": "short",
+      "rounds": 0,
+      "cost": 200,
+      "weight": 0.3,
+      "tl": 0,
+      "traits": [
+        "Bladed",
+        "Attachable"
+      ],
+      "description": "<p>Can be attached to a stocked gun to convert the gun into a melee weapon that deals 2D. (Two-Handed when equipped to a stocked gun.)</p><p>Melee weapons cannot be used past their Range limit. The book gives no tech level for melee weapons.</p><p><strong>Traits</strong></p><ul><li>Bladed: This weapon usage is modified by the Melee (Blade) Skill.</li><li>Attachable: Can be mounted to a larger weapon to inflict the damage listed in parentheses.</li></ul>",
+      "source": "p.30"
+    }
+  }
+]

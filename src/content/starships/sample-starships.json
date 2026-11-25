@@ -1,0 +1,521 @@
+[
+  {
+    "name": "100T Scout",
+    "type": "ship",
+    "folder": "Sample Starships",
+    "system": {
+      "shipClass": "100T Scout",
+      "tonnage": 100,
+      "streamlined": true,
+      "hull": {
+        "value": 2,
+        "max": 2
+      },
+      "jDrive": {
+        "rating": "A",
+        "value": 2,
+        "damage": 0,
+        "destroyed": false
+      },
+      "mDrive": {
+        "rating": "A",
+        "value": 2,
+        "damage": 0,
+        "destroyed": false
+      },
+      "power": {
+        "rating": "A",
+        "value": 2,
+        "damage": 0,
+        "destroyed": false
+      },
+      "cpu": "Model/1",
+      "fuel": {
+        "value": 40,
+        "max": 40
+      },
+      "cargo": {
+        "value": 0,
+        "max": 3
+      },
+      "staterooms": 4,
+      "lowBerths": 0,
+      "hardpoints": 1,
+      "crewRequired": 1,
+      "crewRoles": "Pilot",
+      "misc": "Air-Raft",
+      "cost": 30000000,
+      "description": "<p>This ship is used for surveying, exploration, and as a courier. Can be operated by one crewperson as a pilot and have up to 4 passengers.</p><p>Cost: 30Mcr.</p><p>J-Drive A (Jump 2); M-Drive A (2G acceleration); Power A; Fuel 40T; Hull 2; CPU Model/1; Staterooms 4; Cargo 3T; Weapon: Double Turret; Crew 1; Hull Type Streamlined; Misc: Air-Raft.</p><p>Hull Type: Streamlined allows for atmospheric flight without issue while non-streamlined incurs flight penalties while within an atmosphere. Weapons: see p.76. CPU: see p.78. Drive and power values come from the Engineer Rating By Hull Size table (p.75).</p><p>Source: p.69.</p>"
+    },
+    "items": [
+      {
+        "name": "Double Turret",
+        "type": "shipWeapon",
+        "system": {
+          "mount": "turret",
+          "forVehicle": false,
+          "damage": "2",
+          "range": "long",
+          "tonnage": 0,
+          "hardpoints": 1,
+          "cost": 400000,
+          "weight": 0,
+          "tl": 0,
+          "traits": [],
+          "description": "<p>Weapon variant: A turret with two barrels is 400Kcr and deals 2 damage.</p><p>Turrets are able to fire in a 180 degree area, with a gunner. Otherwise, with no gunner, they are considered fixed mounted.</p><p>Weapons require hardpoints in order to be installed. Each ship's hull comes with 1 hardpoint per 100T of hull. Additional hardpoints can be installed, up to x2 the hull’s original hardpoint, at 50,000cr each.</p><p>The book gives no range limit or tech level for starship weapons; range is set to long.</p>",
+          "source": "p.77"
+        }
+      }
+    ]
+  },
+  {
+    "name": "200T Trader",
+    "type": "ship",
+    "folder": "Sample Starships",
+    "system": {
+      "shipClass": "200T Trader",
+      "tonnage": 200,
+      "streamlined": true,
+      "hull": {
+        "value": 3,
+        "max": 3
+      },
+      "jDrive": {
+        "rating": "A",
+        "value": 1,
+        "damage": 0,
+        "destroyed": false
+      },
+      "mDrive": {
+        "rating": "A",
+        "value": 1,
+        "damage": 0,
+        "destroyed": false
+      },
+      "power": {
+        "rating": "A",
+        "value": 1,
+        "damage": 0,
+        "destroyed": false
+      },
+      "cpu": "Model/1",
+      "fuel": {
+        "value": 30,
+        "max": 30
+      },
+      "cargo": {
+        "value": 0,
+        "max": 82
+      },
+      "staterooms": 10,
+      "lowBerths": 40,
+      "hardpoints": 2,
+      "crewRequired": 4,
+      "crewRoles": "Pilot, engineer, astrogator, technician",
+      "misc": "",
+      "cost": 40000000,
+      "description": "<p>A common trader ship for enterprising spacers. It is operated with a crew of 4, including a pilot, engineer, astrogator, and technician. Has up to six passengers and forty low-berth passengers. Two hardpoints allow for two weapons to be installed.</p><p>Cost: 40Mcr.</p><p>J-Drive A (Jump 1); M-Drive A (1G acceleration); Power A; Fuel 30T; Hull 3; CPU Model/1; Staterooms 10; Cargo 82T; Weapon: n/a (2 hardpoints); Crew 4; Hull Type Streamlined; Misc: none.</p><p>Hull Type: Streamlined allows for atmospheric flight without issue while non-streamlined incurs flight penalties while within an atmosphere. Weapons: see p.76. CPU: see p.78. Drive and power values come from the Engineer Rating By Hull Size table (p.75).</p><p>Source: p.69.</p>"
+    },
+    "items": []
+  },
+  {
+    "name": "200T Safari",
+    "type": "ship",
+    "folder": "Sample Starships",
+    "system": {
+      "shipClass": "200T Safari",
+      "tonnage": 200,
+      "streamlined": true,
+      "hull": {
+        "value": 3,
+        "max": 3
+      },
+      "jDrive": {
+        "rating": "B",
+        "value": 2,
+        "damage": 0,
+        "destroyed": false
+      },
+      "mDrive": {
+        "rating": "A",
+        "value": 1,
+        "damage": 0,
+        "destroyed": false
+      },
+      "power": {
+        "rating": "B",
+        "value": 2,
+        "damage": 0,
+        "destroyed": false
+      },
+      "cpu": "Model/1",
+      "fuel": {
+        "value": 60,
+        "max": 60
+      },
+      "cargo": {
+        "value": 0,
+        "max": 20
+      },
+      "staterooms": 11,
+      "lowBerths": 0,
+      "hardpoints": 1,
+      "crewRequired": 5,
+      "crewRoles": "Pilot, engineer, astrogator, technician, gunner",
+      "misc": "20T Launch, ATV",
+      "cost": 85000000,
+      "description": "<p>A unique ship designed for hunting and wilderness expeditions. Crew roles are pilot, engineer, astrogator, technician, and gunner.</p><p>Cost: 85Mcr.</p><p>J-Drive B (Jump 2); M-Drive A (1G acceleration); Power B; Fuel 60T; Hull 3; CPU Model/1; Staterooms 11; Cargo 20T; Weapon: Double Turret (1 hardpoint); Crew 5; Hull Type Streamlined; Misc: 20T Launch, ATV.</p><p>Hardpoints: the book gives \"(1 hardpoint)\"; the construction rule (p.76) gives 1 per 100T, which would be 2.</p><p>Hull Type: Streamlined allows for atmospheric flight without issue while non-streamlined incurs flight penalties while within an atmosphere. Weapons: see p.76. CPU: see p.78. Drive and power values come from the Engineer Rating By Hull Size table (p.75).</p><p>Source: p.69.</p>"
+    },
+    "items": [
+      {
+        "name": "Double Turret",
+        "type": "shipWeapon",
+        "system": {
+          "mount": "turret",
+          "forVehicle": false,
+          "damage": "2",
+          "range": "long",
+          "tonnage": 0,
+          "hardpoints": 1,
+          "cost": 400000,
+          "weight": 0,
+          "tl": 0,
+          "traits": [],
+          "description": "<p>Weapon variant: A turret with two barrels is 400Kcr and deals 2 damage.</p><p>Turrets are able to fire in a 180 degree area, with a gunner. Otherwise, with no gunner, they are considered fixed mounted.</p><p>Weapons require hardpoints in order to be installed. Each ship's hull comes with 1 hardpoint per 100T of hull. Additional hardpoints can be installed, up to x2 the hull’s original hardpoint, at 50,000cr each.</p><p>The book gives no range limit or tech level for starship weapons; range is set to long.</p>",
+          "source": "p.77"
+        }
+      }
+    ]
+  },
+  {
+    "name": "200T Yacht",
+    "type": "ship",
+    "folder": "Sample Starships",
+    "system": {
+      "shipClass": "200T Yacht",
+      "tonnage": 200,
+      "streamlined": true,
+      "hull": {
+        "value": 3,
+        "max": 3
+      },
+      "jDrive": {
+        "rating": "A",
+        "value": 1,
+        "damage": 0,
+        "destroyed": false
+      },
+      "mDrive": {
+        "rating": "A",
+        "value": 1,
+        "damage": 0,
+        "destroyed": false
+      },
+      "power": {
+        "rating": "A",
+        "value": 1,
+        "damage": 0,
+        "destroyed": false
+      },
+      "cpu": "Model/1",
+      "fuel": {
+        "value": 50,
+        "max": 50
+      },
+      "cargo": {
+        "value": 0,
+        "max": 11
+      },
+      "staterooms": 14,
+      "lowBerths": 0,
+      "hardpoints": 1,
+      "crewRequired": 4,
+      "crewRoles": "Pilot, engineer, astrogator, technician",
+      "misc": "ATV, 30T Ship’s Boat",
+      "cost": 56000000,
+      "description": "<p>This ship is designed for personal entertainment instead of labor. Crew roles are pilot, engineer, astrogator, and technician. Up to nine passengers can be accommodated.</p><p>Cost: 56Mcr.</p><p>J-Drive A (Jump 1); M-Drive A (1G acceleration); Power A; Fuel 50T; Hull 3; CPU Model/1; Staterooms 14; Cargo 11T; Weapon: n/a (1 hardpoint); Crew 4; Hull Type Streamlined; Misc: ATV, 30T Ship’s Boat.</p><p>Hardpoints: the book gives \"(1 hardpoint)\"; the construction rule (p.76) gives 1 per 100T, which would be 2.</p><p>Hull Type: Streamlined allows for atmospheric flight without issue while non-streamlined incurs flight penalties while within an atmosphere. Weapons: see p.76. CPU: see p.78. Drive and power values come from the Engineer Rating By Hull Size table (p.75).</p><p>Source: p.69.</p>"
+    },
+    "items": []
+  },
+  {
+    "name": "400T Patrol Cruiser",
+    "type": "ship",
+    "folder": "Sample Starships",
+    "system": {
+      "shipClass": "400T Patrol Cruiser",
+      "tonnage": 400,
+      "streamlined": true,
+      "hull": {
+        "value": 5,
+        "max": 5
+      },
+      "jDrive": {
+        "rating": "F",
+        "value": 3,
+        "damage": 0,
+        "destroyed": false
+      },
+      "mDrive": {
+        "rating": "H",
+        "value": 4,
+        "damage": 0,
+        "destroyed": false
+      },
+      "power": {
+        "rating": "H",
+        "value": 4,
+        "damage": 0,
+        "destroyed": false
+      },
+      "cpu": "Model/3",
+      "fuel": {
+        "value": 160,
+        "max": 160
+      },
+      "cargo": {
+        "value": 0,
+        "max": 50
+      },
+      "staterooms": 12,
+      "lowBerths": 0,
+      "hardpoints": 4,
+      "crewRequired": 10,
+      "crewRoles": "Captain, pilot, engineer, astrogator, technician",
+      "misc": "G-Carrier, 30T Ship Boat",
+      "cost": 245000000,
+      "description": "<p>This ship is used for law enforcement and military patrols in star systems. Crew roles are captain, pilot, engineer, astrogator, and technician.</p><p>Cost: 245Mcr.</p><p>J-Drive F (Jump 3); M-Drive H (4G acceleration); Power H; Fuel 160T; Hull 5; CPU Model/3; Staterooms 12; Cargo 50T; Weapon: X2 Triple Turrets, X2 Missile racks; Crew 10; Hull Type Streamlined; Misc: G-Carrier, 30T Ship Boat.</p><p>Hull Type: Streamlined allows for atmospheric flight without issue while non-streamlined incurs flight penalties while within an atmosphere. Weapons: see p.76. CPU: see p.78. Drive and power values come from the Engineer Rating By Hull Size table (p.75).</p><p>Source: p.69.</p>"
+    },
+    "items": [
+      {
+        "name": "Triple Turret",
+        "type": "shipWeapon",
+        "system": {
+          "mount": "turret",
+          "forVehicle": false,
+          "damage": "3",
+          "range": "long",
+          "tonnage": 0,
+          "hardpoints": 1,
+          "cost": 800000,
+          "weight": 0,
+          "tl": 0,
+          "traits": [],
+          "description": "<p>Weapon variant: A turret with three barrels is 800kcr and deals 3 damage.</p><p>Turrets are able to fire in a 180 degree area, with a gunner. Otherwise, with no gunner, they are considered fixed mounted.</p><p>Weapons require hardpoints in order to be installed. Each ship's hull comes with 1 hardpoint per 100T of hull. Additional hardpoints can be installed, up to x2 the hull’s original hardpoint, at 50,000cr each.</p><p>The book gives no range limit or tech level for starship weapons; range is set to long.</p>",
+          "source": "p.77"
+        }
+      },
+      {
+        "name": "Triple Turret",
+        "type": "shipWeapon",
+        "system": {
+          "mount": "turret",
+          "forVehicle": false,
+          "damage": "3",
+          "range": "long",
+          "tonnage": 0,
+          "hardpoints": 1,
+          "cost": 800000,
+          "weight": 0,
+          "tl": 0,
+          "traits": [],
+          "description": "<p>Weapon variant: A turret with three barrels is 800kcr and deals 3 damage.</p><p>Turrets are able to fire in a 180 degree area, with a gunner. Otherwise, with no gunner, they are considered fixed mounted.</p><p>Weapons require hardpoints in order to be installed. Each ship's hull comes with 1 hardpoint per 100T of hull. Additional hardpoints can be installed, up to x2 the hull’s original hardpoint, at 50,000cr each.</p><p>The book gives no range limit or tech level for starship weapons; range is set to long.</p>",
+          "source": "p.77"
+        }
+      },
+      {
+        "name": "Missile Rack",
+        "type": "shipWeapon",
+        "system": {
+          "mount": "missileRack",
+          "forVehicle": false,
+          "damage": "1",
+          "range": "long",
+          "tonnage": 0,
+          "hardpoints": 1,
+          "cost": 750000,
+          "weight": 0,
+          "tl": 0,
+          "traits": [],
+          "ammo": {
+            "value": 4,
+            "max": 4
+          },
+          "description": "<p>The missile rack costs 750kcr and can hold up to 4 missiles. A missile rack can fire between 1-4 missiles in a single attack. Each missile deals 1 damage. Missiles impact a number of rounds later equal to the amount of range bands between attacker and defender.</p><p>Missiles: p.76 gives 1,000cr per missile; p.77 gives 5000Cr per missile (homing).</p><p>Weapons require hardpoints in order to be installed. Each ship's hull comes with 1 hardpoint per 100T of hull. Additional hardpoints can be installed, up to x2 the hull’s original hardpoint, at 50,000cr each.</p><p>The book gives no range limit or tech level for starship weapons; range is set to long.</p>",
+          "source": "p.76"
+        }
+      },
+      {
+        "name": "Missile Rack",
+        "type": "shipWeapon",
+        "system": {
+          "mount": "missileRack",
+          "forVehicle": false,
+          "damage": "1",
+          "range": "long",
+          "tonnage": 0,
+          "hardpoints": 1,
+          "cost": 750000,
+          "weight": 0,
+          "tl": 0,
+          "traits": [],
+          "ammo": {
+            "value": 4,
+            "max": 4
+          },
+          "description": "<p>The missile rack costs 750kcr and can hold up to 4 missiles. A missile rack can fire between 1-4 missiles in a single attack. Each missile deals 1 damage. Missiles impact a number of rounds later equal to the amount of range bands between attacker and defender.</p><p>Missiles: p.76 gives 1,000cr per missile; p.77 gives 5000Cr per missile (homing).</p><p>Weapons require hardpoints in order to be installed. Each ship's hull comes with 1 hardpoint per 100T of hull. Additional hardpoints can be installed, up to x2 the hull’s original hardpoint, at 50,000cr each.</p><p>The book gives no range limit or tech level for starship weapons; range is set to long.</p>",
+          "source": "p.76"
+        }
+      }
+    ]
+  },
+  {
+    "name": "400T Lab Ship",
+    "type": "ship",
+    "folder": "Sample Starships",
+    "system": {
+      "shipClass": "400T Lab Ship",
+      "tonnage": 400,
+      "streamlined": false,
+      "hull": {
+        "value": 5,
+        "max": 5
+      },
+      "jDrive": {
+        "rating": "D",
+        "value": 2,
+        "damage": 0,
+        "destroyed": false
+      },
+      "mDrive": {
+        "rating": "C",
+        "value": 1,
+        "damage": 0,
+        "destroyed": false
+      },
+      "power": {
+        "rating": "F",
+        "value": 3,
+        "damage": 0,
+        "destroyed": false
+      },
+      "cpu": "Model/2",
+      "fuel": {
+        "value": 90,
+        "max": 90
+      },
+      "cargo": {
+        "value": 0,
+        "max": 23
+      },
+      "staterooms": 20,
+      "lowBerths": 0,
+      "hardpoints": 2,
+      "crewRequired": 5,
+      "crewRoles": "Pilot, astrogator, 2x engineers, technician",
+      "misc": "X2 Air-Raft, 40T Pinnace",
+      "cost": 170000000,
+      "description": "<p>Used for scientific research, these ships are designed for remote space operations. The ship provides 85T of laboratory space. Crewmembers include pilot, astrogator, 2x engineers, and a technician.</p><p>Cost: 170Mcr.</p><p>J-Drive D (Jump 2); M-Drive C (1G acceleration); Power F; Fuel 90T; Hull 5; CPU Model/2; Staterooms 20; Cargo 23T; Weapon: n/a (2 hardpoints); Crew 5; Hull Type Non-Streamlined; Misc: X2 Air-Raft, 40T Pinnace.</p><p>Hardpoints: the book gives \"(2 hardpoints)\"; the construction rule (p.76) gives 1 per 100T, which would be 4.</p><p>Hull Type: Streamlined allows for atmospheric flight without issue while non-streamlined incurs flight penalties while within an atmosphere. Weapons: see p.76. CPU: see p.78. Drive and power values come from the Engineer Rating By Hull Size table (p.75).</p><p>Source: p.69.</p>"
+    },
+    "items": []
+  },
+  {
+    "name": "400T Merchant",
+    "type": "ship",
+    "folder": "Sample Starships",
+    "system": {
+      "shipClass": "400T Merchant",
+      "tonnage": 400,
+      "streamlined": true,
+      "hull": {
+        "value": 6,
+        "max": 6
+      },
+      "jDrive": {
+        "rating": "C",
+        "value": 1,
+        "damage": 0,
+        "destroyed": false
+      },
+      "mDrive": {
+        "rating": "C",
+        "value": 1,
+        "damage": 0,
+        "destroyed": false
+      },
+      "power": {
+        "rating": "C",
+        "value": 1,
+        "damage": 0,
+        "destroyed": false
+      },
+      "cpu": "Model/1",
+      "fuel": {
+        "value": 50,
+        "max": 50
+      },
+      "cargo": {
+        "value": 0,
+        "max": 200
+      },
+      "staterooms": 13,
+      "lowBerths": 14,
+      "hardpoints": 2,
+      "crewRequired": 5,
+      "crewRoles": "Pilot, astrogator, engineer, technician, steward",
+      "misc": "20T-launch",
+      "cost": 120000000,
+      "description": "<p>This ship is used by commercial merchants to transport large amounts of trade goods across space. Crew needed include pilot, astrogator, engineer, technician, and steward. Up to eight passengers can be accommodated, along with fourteen low-passage units.</p><p>Cost: 120Mcr.</p><p>J-Drive C (Jump 1); M-Drive C (1G acceleration); Power C; Fuel 50T; Hull 6; CPU Model/1; Staterooms 13; Cargo 200T; Weapon: n/a (2 hardpoints); Crew 5; Hull Type Streamlined; Misc: 20T-launch.</p><p>Hardpoints: the book gives \"(2 hardpoints)\"; the construction rule (p.76) gives 1 per 100T, which would be 4.</p><p>Hull Type: Streamlined allows for atmospheric flight without issue while non-streamlined incurs flight penalties while within an atmosphere. Weapons: see p.76. CPU: see p.78. Drive and power values come from the Engineer Rating By Hull Size table (p.75).</p><p>Source: p.69.</p>"
+    },
+    "items": []
+  },
+  {
+    "name": "600T Liner",
+    "type": "ship",
+    "folder": "Sample Starships",
+    "system": {
+      "shipClass": "600T Liner",
+      "tonnage": 600,
+      "streamlined": false,
+      "hull": {
+        "value": 7,
+        "max": 7
+      },
+      "jDrive": {
+        "rating": "J",
+        "value": 3,
+        "damage": 0,
+        "destroyed": false
+      },
+      "mDrive": {
+        "rating": "D",
+        "value": 1,
+        "damage": 0,
+        "destroyed": false
+      },
+      "power": {
+        "rating": "J",
+        "value": 3,
+        "damage": 0,
+        "destroyed": false
+      },
+      "cpu": "Model/3",
+      "fuel": {
+        "value": 210,
+        "max": 210
+      },
+      "cargo": {
+        "value": 0,
+        "max": 129
+      },
+      "staterooms": 30,
+      "lowBerths": 20,
+      "hardpoints": 3,
+      "crewRequired": 8,
+      "crewRoles": "Pilot, astrogator, x3 engineers, technician, medic, up to three stewards",
+      "misc": "",
+      "cost": 250000000,
+      "description": "<p>This ship is designed for passenger or freight transportation for long-range travel. A crew of nine is required: pilot, astrogator, x3 engineers, technician, medic, and up to three stewards as determined by the passenger amount. Up to 21 passengers may be accommodated and 20 low passage units are installed.</p><p>Cost: 250Mcr.</p><p>J-Drive J (Jump 3); M-Drive D (1G acceleration); Power J; Fuel 210T; Hull 7; CPU Model/3; Staterooms 30; Cargo 129T; Weapon: n/a (3 hardpoints); Crew 8-10; Hull Type Non-Streamlined; Misc: none.</p><p>Crew: the stat block gives 8-10 and the text says a crew of nine; crewRequired uses the minimum, 8.</p><p>Hull Type: Streamlined allows for atmospheric flight without issue while non-streamlined incurs flight penalties while within an atmosphere. Weapons: see p.76. CPU: see p.78. Drive and power values come from the Engineer Rating By Hull Size table (p.75).</p><p>Source: p.69.</p>"
+    },
+    "items": []
+  }
+]

@@ -1,0 +1,33 @@
+<section class="tab {{tab.cssClass}}" data-group="primary" data-tab="skills">
+  <div class="sp-toolbar">
+    <span class="sp-hint"><i class="fa-solid fa-circle-info"></i> {{localize "SPACER.Skill.DropHint"}}</span>
+    <button type="button" class="sp-btn small" data-action="openPack" data-pack="skills"><i class="fa-solid fa-book"></i> {{localize "SPACER.Skill.Browse"}}</button>
+    {{#if editable}}<button type="button" class="sp-btn small" data-action="itemCreate" data-type="skill"><i class="fa-solid fa-plus"></i> {{localize "SPACER.Sheet.Add"}}</button>{{/if}}
+  </div>
+  <ul class="sp-skills">
+    {{#each skillGroups as |g|}}
+    <li class="sp-skill-group">
+      <div class="sp-skill base" {{#if g.base}}data-item-id="{{g.base.id}}"{{/if}}>
+        {{#if g.base}}<a class="sp-roll" data-action="rollSkill" data-tooltip="{{localize "SPACER.Roll.ClickHint"}}"><i class="fa-solid fa-dice"></i></a>{{else}}<span class="sp-roll"></span>{{/if}}
+        <span class="sp-skill-name">{{#if g.base}}<a data-action="itemEdit">{{g.name}}</a>{{else}}{{g.name}}{{/if}}</span>
+        {{#if g.base}}<input class="sp-rank" type="number" min="0" max="5" value="{{g.base.rank}}" data-item-field="system.rank" {{disabled (not @root.editable)}}>{{else}}<span class="sp-rank">—</span>{{/if}}
+        <span class="sp-skill-controls">{{#if g.base}}
+          <a data-action="trainSkill" data-tooltip="{{localize "SPACER.Train.Hint"}}"><i class="fa-solid fa-graduation-cap"></i></a>
+          {{#if @root.editable}}<a data-action="itemDelete" data-tooltip="{{localize "SPACER.Sheet.Delete"}}"><i class="fa-solid fa-trash"></i></a>{{/if}}{{/if}}</span>
+      </div>
+      {{#each g.specialties as |sp|}}
+      <div class="sp-skill spec" data-item-id="{{sp.id}}">
+        <a class="sp-roll" data-action="rollSkill"><i class="fa-solid fa-dice"></i></a>
+        <span class="sp-skill-name"><a data-action="itemEdit">{{sp.name}}</a></span>
+        <input class="sp-rank" type="number" min="0" max="5" value="{{sp.rank}}" data-item-field="system.rank" {{disabled (not @root.editable)}}>
+        <span class="sp-skill-controls">
+          <a data-action="trainSkill" data-tooltip="{{localize "SPACER.Train.Hint"}}"><i class="fa-solid fa-graduation-cap"></i></a>
+          {{#if @root.editable}}<a data-action="itemDelete"><i class="fa-solid fa-trash"></i></a>{{/if}}</span>
+      </div>
+      {{/each}}
+    </li>
+    {{else}}
+    <li class="sp-empty">{{localize "SPACER.Skill.None"}}</li>
+    {{/each}}
+  </ul>
+</section>

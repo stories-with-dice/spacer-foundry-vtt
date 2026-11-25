@@ -1,0 +1,25 @@
+<section class="tab {{tab.cssClass}}" data-group="primary" data-tab="combat">
+  <div class="sp-combat-summary">
+    <div class="sp-big"><label>{{localize "SPACER.Sheet.ToHit"}}</label><b>{{armorTotal}}+</b><small>{{armorName}}{{#if system.combat.evading}} · {{localize "SPACER.Combat.Evade"}}{{/if}}</small></div>
+    <div class="sp-big"><label>{{localize "SPACER.Sheet.Move"}}</label><b>{{system.movement}}m</b><small>{{enc.level}}</small></div>
+    <div class="sp-big {{injury.css}}"><label>{{localize "SPACER.Injury.Title"}}</label><b>{{injury.label}}</b><small>{{system.uppCurrent}}</small></div>
+  </div>
+  <h3 class="sp-section">{{localize "SPACER.Combat.State"}}</h3>
+  {{> "spacer.play.actor.parts.combat-state"}}
+  <div class="sp-toolbar end"><button type="button" class="sp-btn small" data-action="resetCombat"><i class="fa-solid fa-arrow-rotate-left"></i> {{localize "SPACER.Combat.Reset"}}</button></div>
+  <h3 class="sp-section">{{localize "SPACER.Weapon.Plural"}}</h3>
+  {{> "spacer.play.actor.parts.weapons"}}
+  <h3 class="sp-section">{{localize "SPACER.Heal.Title"}}</h3>
+  <div class="sp-row-buttons">
+    <input type="number" data-damage-input value="1" min="0" data-tooltip="{{localize "SPACER.Damage.Points"}}">
+    <button type="button" class="sp-btn small danger" data-action="damage"><i class="fa-solid fa-burst"></i> {{localize "SPACER.Damage.Apply"}}</button>
+    <button type="button" class="sp-btn small" data-action="heal"><i class="fa-solid fa-heart"></i> {{localize "SPACER.Heal.Heal"}}</button>
+    <button type="button" class="sp-btn small" data-action="firstAid" data-tooltip="{{localize "SPACER.Heal.FirstAidHint"}}"><i class="fa-solid fa-kit-medical"></i> {{localize "SPACER.Heal.FirstAid"}}</button>
+  </div>
+  <div class="sp-row-buttons">
+    <input type="number" data-rest-days value="1" min="1" data-tooltip="{{localize "SPACER.Heal.Days"}}">
+    <button type="button" class="sp-btn small" data-action="rest" data-medical="false"><i class="fa-solid fa-bed"></i> {{localize "SPACER.Heal.RestButton"}}</button>
+    <button type="button" class="sp-btn small" data-action="rest" data-medical="true"><i class="fa-solid fa-hospital"></i> {{localize "SPACER.Heal.MedicalButton"}}</button>
+    {{#if system.combat.firstAid}}<span class="sp-badge ok">{{localize "SPACER.Heal.FirstAidGiven"}}</span>{{/if}}
+  </div>
+</section>

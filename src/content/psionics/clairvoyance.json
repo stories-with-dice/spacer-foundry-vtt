@@ -1,0 +1,98 @@
+[
+  {
+    "name": "Sense",
+    "type": "psionic",
+    "folder": "Clairvoyance",
+    "system": {
+      "discipline": "clairvoyance",
+      "level": 2,
+      "psiCost": "1+",
+      "duration": "10 seconds",
+      "difficulty": "",
+      "range": "Range cost (p.115)",
+      "known": false,
+      "description": "<p>This ability provides rudimentary features of the desired location, including basic shapes, locations and distances between them, but no clear visual details. For example, the spacer will be able to see the presence of people and what they are doing but not the identity of the person.</p><p>Level 2 Clairvoyance talent. Duration: 10 seconds. PSI used: 1+.</p><p>Psionic range cost (p.115), extra PSI by range band: Close 0, Short 1, Medium 1, Long 2, Very Long 2, Distant 3, Far 3, Regional 4, Continental 4, Planetary 5, Orbit 6, Interspace 7, Interplanetary 8; not possible beyond Interplanetary.</p><p>This discipline allows the spacer to see and hear events happening that they themselves cannot see through normal means. To perform any clairvoyance ability, the spacer must state the location they are trying to see. Range cost: See the Psionic Range chart to determine the additional cost of this ability depending on the distance of the focus. Duration: A spacer can continuously perform clairvoyance but must spend the necessary PSI points per 10 second duration to maintain focus. Learning roll: 6+.</p><p>Performing a psionic talent requires the correct level for that discipline, the required PSI points, and enough PSI points to project the talent the required distance. Many abilities require the spacer to remain undisturbed for the duration unless stated otherwise.</p>",
+      "source": "p.116"
+    }
+  },
+  {
+    "name": "Direction",
+    "type": "psionic",
+    "folder": "Clairvoyance",
+    "system": {
+      "discipline": "clairvoyance",
+      "level": 3,
+      "psiCost": "Range cost",
+      "duration": "Constant",
+      "difficulty": "",
+      "range": "Range cost (p.115)",
+      "known": false,
+      "description": "<p>The spacer determines an intended location, object, or person and will be able to know in which direction they are located as long as they are familiar with the intended target, such as by using a photo or if the spacer has been to the location prior. The PSI used must be unused PSI points in the PSI reserve equal to the range of the person/place/thing.</p><p>Level 3 Clairvoyance talent. Duration: Constant. PSI used: Range cost.</p><p>Psionic range cost (p.115), extra PSI by range band: Close 0, Short 1, Medium 1, Long 2, Very Long 2, Distant 3, Far 3, Regional 4, Continental 4, Planetary 5, Orbit 6, Interspace 7, Interplanetary 8; not possible beyond Interplanetary.</p><p>This discipline allows the spacer to see and hear events happening that they themselves cannot see through normal means. To perform any clairvoyance ability, the spacer must state the location they are trying to see. Range cost: See the Psionic Range chart to determine the additional cost of this ability depending on the distance of the focus. Duration: A spacer can continuously perform clairvoyance but must spend the necessary PSI points per 10 second duration to maintain focus. Learning roll: 6+.</p><p>Performing a psionic talent requires the correct level for that discipline, the required PSI points, and enough PSI points to project the talent the required distance. Many abilities require the spacer to remain undisturbed for the duration unless stated otherwise.</p>",
+      "source": "p.116"
+    }
+  },
+  {
+    "name": "Clairvoyance",
+    "type": "psionic",
+    "folder": "Clairvoyance",
+    "system": {
+      "discipline": "clairvoyance",
+      "level": 5,
+      "psiCost": "2+",
+      "duration": "10 seconds",
+      "difficulty": "",
+      "range": "Range cost (p.115)",
+      "known": false,
+      "description": "<p>Allows the spacer to remotely see activity currently happening.</p><p>Level 5 Clairvoyance talent. Duration: 10 seconds. PSI used: 2+.</p><p>Psionic range cost (p.115), extra PSI by range band: Close 0, Short 1, Medium 1, Long 2, Very Long 2, Distant 3, Far 3, Regional 4, Continental 4, Planetary 5, Orbit 6, Interspace 7, Interplanetary 8; not possible beyond Interplanetary.</p><p>This discipline allows the spacer to see and hear events happening that they themselves cannot see through normal means. To perform any clairvoyance ability, the spacer must state the location they are trying to see. Range cost: See the Psionic Range chart to determine the additional cost of this ability depending on the distance of the focus. Duration: A spacer can continuously perform clairvoyance but must spend the necessary PSI points per 10 second duration to maintain focus. Learning roll: 6+.</p><p>Performing a psionic talent requires the correct level for that discipline, the required PSI points, and enough PSI points to project the talent the required distance. Many abilities require the spacer to remain undisturbed for the duration unless stated otherwise.</p>",
+      "source": "p.116"
+    }
+  },
+  {
+    "name": "Clairaudience",
+    "type": "psionic",
+    "folder": "Clairvoyance",
+    "system": {
+      "discipline": "clairvoyance",
+      "level": 5,
+      "psiCost": "2+",
+      "duration": "10 seconds",
+      "difficulty": "",
+      "range": "Range cost (p.115)",
+      "known": false,
+      "description": "<p>Allows the spacer to remotely hear activity currently happening.</p><p>Level 5 Clairvoyance talent. Duration: 10 seconds. PSI used: 2+.</p><p>Psionic range cost (p.115), extra PSI by range band: Close 0, Short 1, Medium 1, Long 2, Very Long 2, Distant 3, Far 3, Regional 4, Continental 4, Planetary 5, Orbit 6, Interspace 7, Interplanetary 8; not possible beyond Interplanetary.</p><p>This discipline allows the spacer to see and hear events happening that they themselves cannot see through normal means. To perform any clairvoyance ability, the spacer must state the location they are trying to see. Range cost: See the Psionic Range chart to determine the additional cost of this ability depending on the distance of the focus. Duration: A spacer can continuously perform clairvoyance but must spend the necessary PSI points per 10 second duration to maintain focus. Learning roll: 6+.</p><p>Performing a psionic talent requires the correct level for that discipline, the required PSI points, and enough PSI points to project the talent the required distance. Many abilities require the spacer to remain undisturbed for the duration unless stated otherwise.</p>",
+      "source": "p.116"
+    }
+  },
+  {
+    "name": "Sensory Proxy",
+    "type": "psionic",
+    "folder": "Clairvoyance",
+    "system": {
+      "discipline": "clairvoyance",
+      "level": 7,
+      "psiCost": "2+",
+      "duration": "10 seconds",
+      "difficulty": "",
+      "range": "Range cost (p.115)",
+      "known": false,
+      "description": "<p>This ability allows the spacer to temporarily see and hear what someone is doing as if the spacer were themselves the target.</p><p>Level 7 Clairvoyance talent. Duration: 10 seconds. PSI used: 2+.</p><p>Psionic range cost (p.115), extra PSI by range band: Close 0, Short 1, Medium 1, Long 2, Very Long 2, Distant 3, Far 3, Regional 4, Continental 4, Planetary 5, Orbit 6, Interspace 7, Interplanetary 8; not possible beyond Interplanetary.</p><p>This discipline allows the spacer to see and hear events happening that they themselves cannot see through normal means. To perform any clairvoyance ability, the spacer must state the location they are trying to see. Range cost: See the Psionic Range chart to determine the additional cost of this ability depending on the distance of the focus. Duration: A spacer can continuously perform clairvoyance but must spend the necessary PSI points per 10 second duration to maintain focus. Learning roll: 6+.</p><p>Performing a psionic talent requires the correct level for that discipline, the required PSI points, and enough PSI points to project the talent the required distance. Many abilities require the spacer to remain undisturbed for the duration unless stated otherwise.</p>",
+      "source": "p.116"
+    }
+  },
+  {
+    "name": "Clairsentience",
+    "type": "psionic",
+    "folder": "Clairvoyance",
+    "system": {
+      "discipline": "clairvoyance",
+      "level": 9,
+      "psiCost": "2+",
+      "duration": "10 seconds",
+      "difficulty": "",
+      "range": "Range cost (p.115)",
+      "known": false,
+      "description": "<p>Allows the spacer to both see and hear activity currently happening.</p><p>Level 9 Clairvoyance talent. Duration: 10 seconds. PSI used: 2+.</p><p>Psionic range cost (p.115), extra PSI by range band: Close 0, Short 1, Medium 1, Long 2, Very Long 2, Distant 3, Far 3, Regional 4, Continental 4, Planetary 5, Orbit 6, Interspace 7, Interplanetary 8; not possible beyond Interplanetary.</p><p>This discipline allows the spacer to see and hear events happening that they themselves cannot see through normal means. To perform any clairvoyance ability, the spacer must state the location they are trying to see. Range cost: See the Psionic Range chart to determine the additional cost of this ability depending on the distance of the focus. Duration: A spacer can continuously perform clairvoyance but must spend the necessary PSI points per 10 second duration to maintain focus. Learning roll: 6+.</p><p>Performing a psionic talent requires the correct level for that discipline, the required PSI points, and enough PSI points to project the talent the required distance. Many abilities require the spacer to remain undisturbed for the duration unless stated otherwise.</p>",
+      "source": "p.116"
+    }
+  }
+]

@@ -1,0 +1,31 @@
+<table class="sp-table sp-weapons">
+  <thead><tr>
+    <th class="name">{{localize "SPACER.Weapon.Title"}}</th><th>{{localize "SPACER.Weapon.Damage"}}</th><th>{{localize "SPACER.Weapon.Range"}}</th>
+    <th>{{localize "SPACER.Weapon.Skill"}}</th><th>{{localize "SPACER.Weapon.Ammo"}}</th><th class="controls"></th>
+  </tr></thead>
+  <tbody>
+  {{#each weapons as |w|}}
+  <tr data-item-id="{{w.id}}" class="draggable {{#if w.jammed}}jammed{{/if}}{{#if w.broken}} broken{{/if}}">
+    <td class="name"><div class="sp-cell">
+      <a data-action="itemToggle" data-field="system.equipped" class="sp-toggle {{#if w.equipped}}on{{/if}}" data-tooltip="{{localize "SPACER.Weapon.Equipped"}}"><i class="fa-solid fa-hand-fist"></i></a>
+      <img src="{{w.img}}" alt=""><a data-action="itemEdit">{{w.name}}</a>
+      {{#if w.traits}}<small class="sp-traits">{{w.traits}}</small>{{/if}}
+      {{#if w.jammed}}<span class="sp-badge bad">{{localize "SPACER.Weapon.JammedTag"}}</span>{{/if}}
+      {{#if w.broken}}<span class="sp-badge bad">{{localize "SPACER.Weapon.BrokenTag"}}</span>{{/if}}
+    </div></td>
+    <td>{{w.damage}}</td>
+    <td>{{w.range}}</td>
+    <td class="{{#if w.untrained}}untrained{{/if}}" data-tooltip="{{w.skill}}">{{w.rank}}</td>
+    <td>{{#if w.usesAmmo}}<span class="{{#if w.empty}}sp-bad{{/if}}">{{w.ammo}}/{{w.rounds}}</span>
+      <a data-action="reload" data-tooltip="{{localize "SPACER.Weapon.Reload"}}"><i class="fa-solid fa-rotate"></i></a>{{else}}—{{/if}}</td>
+    <td class="controls">
+      {{#if w.jammed}}<button type="button" class="sp-btn small" data-action="unjam"><i class="fa-solid fa-wrench"></i> {{localize "SPACER.Weapon.UnjamShort"}}</button>
+      {{else}}<button type="button" class="sp-btn small primary" data-action="attack" data-tooltip="{{localize "SPACER.Attack.Hint"}}"><i class="fa-solid fa-crosshairs"></i> {{localize "SPACER.Attack.Short"}}</button>{{/if}}
+      {{#if @root.editable}}<a data-action="itemDelete" data-tooltip="{{localize "SPACER.Sheet.Delete"}}"><i class="fa-solid fa-trash"></i></a>{{/if}}
+    </td>
+  </tr>
+  {{else}}
+  <tr><td colspan="6" class="sp-empty">{{localize "SPACER.Sheet.NoWeapons"}}</td></tr>
+  {{/each}}
+  </tbody>
+</table>

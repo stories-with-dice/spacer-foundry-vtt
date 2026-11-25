@@ -1,0 +1,29 @@
+<header class="craft-header status-{{status}}">
+  <img class="portrait" src="{{actor.img}}" data-edit="img" data-action="editImage" alt="{{actor.name}}" width="72" height="72">
+  <div class="title">
+    <input class="name" type="text" name="name" value="{{actor.name}}" placeholder="{{localize 'Name'}}">
+    <div class="line">
+      <label>{{localize "SPACER.Craft.Ship.class"}} <input type="text" name="system.shipClass" value="{{system.shipClass}}"></label>
+      <label>{{localize "SPACER.Craft.Ship.tonnage"}} <input type="number" name="system.tonnage" value="{{system.tonnage}}" min="0" step="1"></label>
+      <label class="check"><input type="checkbox" name="system.smallCraft" {{checked system.smallCraft}}> {{localize "SPACER.Craft.Ship.smallCraft"}}</label>
+    </div>
+    <div class="badges">
+      {{#if system.isDestroyed}}<span class="badge destroyed">{{localize "SPACER.Craft.Status.destroyed"}}</span>
+      {{else if system.critical}}<span class="badge critical">{{localize "SPACER.Craft.Status.critical"}}</span>{{/if}}
+      <span class="badge">{{localize "SPACER.Craft.Ship.jump"}} {{system.effective.jump}}</span>
+      <span class="badge">{{localize "SPACER.Craft.Ship.thrust"}} {{system.effective.thrust}}G</span>
+      <span class="badge">{{localize "SPACER.Craft.Ship.hull"}} {{system.hull.value}}/{{system.hull.max}}</span>
+    </div>
+  </div>
+  <div class="header-buttons">
+    <button type="button" data-action="hit"><i class="fa-solid fa-burst"></i> {{localize "SPACER.Craft.Action.hit"}}</button>
+    <div class="hit-opts">
+      <input type="number" data-field="hitAmount" value="1" min="1" data-tooltip="{{localize 'SPACER.Craft.Hit.amount'}}">
+      <select data-field="hitLocation">
+        <option value="">{{localize "SPACER.Craft.Hit.roll"}}</option>
+        {{#each locationOptions}}<option value="{{key}}">{{label}}</option>{{/each}}
+      </select>
+    </div>
+    <button type="button" data-action="combat"><i class="fa-solid fa-crosshairs"></i> {{localize "SPACER.Craft.Combat.title"}}</button>
+  </div>
+</header>

@@ -1,0 +1,59 @@
+[
+  {
+    "name": "Light Turret",
+    "type": "shipWeapon",
+    "folder": "Vehicle Mounted Weapons",
+    "system": {
+      "mount": "vehicle",
+      "forVehicle": true,
+      "damage": "1",
+      "range": "long",
+      "tonnage": 0.5,
+      "hardpoints": 0,
+      "cost": 5000,
+      "weight": 500,
+      "tl": 7,
+      "traits": [],
+      "description": "<p>Damage: 1. Weight: 0.5T. Cost: 5,000cr.</p><p>Vehicle Mounted Weapons: All mounted weapons require a gunner to use them properly. The following weapons are only some examples for use with the same vehicles described in this book. Referees are encouraged to create their own to suit their needs if they desire more military-focused vehicles.</p><p>Range band: All vehicle weapons have Long Distance. Tech level: All of the listed weapons are at Tech Level 7.</p><p>Vehicle Weapon Damage: Roll the weapon die and apply it to the determined hit location. Vehicle weapon damage deals 6 damage to an NPC for every 1 vehicle damage.</p>",
+      "source": "p.49"
+    }
+  },
+  {
+    "name": "Medium Turret",
+    "type": "shipWeapon",
+    "folder": "Vehicle Mounted Weapons",
+    "system": {
+      "mount": "vehicle",
+      "forVehicle": true,
+      "damage": "D3",
+      "range": "long",
+      "tonnage": 1,
+      "hardpoints": 0,
+      "cost": 10000,
+      "weight": 1000,
+      "tl": 7,
+      "traits": [],
+      "description": "<p>Damage: D3. Weight: 1T. Cost: 10,000cr.</p><p>Vehicle Mounted Weapons: All mounted weapons require a gunner to use them properly. The following weapons are only some examples for use with the same vehicles described in this book. Referees are encouraged to create their own to suit their needs if they desire more military-focused vehicles.</p><p>Range band: All vehicle weapons have Long Distance. Tech level: All of the listed weapons are at Tech Level 7.</p><p>Vehicle Weapon Damage: Roll the weapon die and apply it to the determined hit location. Vehicle weapon damage deals 6 damage to an NPC for every 1 vehicle damage.</p>",
+      "source": "p.49"
+    }
+  },
+  {
+    "name": "Heavy Gun",
+    "type": "shipWeapon",
+    "folder": "Vehicle Mounted Weapons",
+    "system": {
+      "mount": "vehicle",
+      "forVehicle": true,
+      "damage": "3",
+      "range": "long",
+      "tonnage": 2,
+      "hardpoints": 0,
+      "cost": 20000,
+      "weight": 2000,
+      "tl": 7,
+      "traits": [],
+      "description": "<p>Damage: 3. Weight: 2T. Cost: 20,000cr.</p><p>Vehicle Mounted Weapons: All mounted weapons require a gunner to use them properly. The following weapons are only some examples for use with the same vehicles described in this book. Referees are encouraged to create their own to suit their needs if they desire more military-focused vehicles.</p><p>Range band: All vehicle weapons have Long Distance. Tech level: All of the listed weapons are at Tech Level 7.</p><p>Vehicle Weapon Damage: Roll the weapon die and apply it to the determined hit location. Vehicle weapon damage deals 6 damage to an NPC for every 1 vehicle damage.</p>",
+      "source": "p.49"
+    }
+  }
+]

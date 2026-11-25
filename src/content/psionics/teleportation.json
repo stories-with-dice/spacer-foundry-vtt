@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Materialize",
+    "type": "psionic",
+    "folder": "Teleportation",
+    "system": {
+      "discipline": "teleportation",
+      "level": 3,
+      "psiCost": "1 per 100g + Range",
+      "duration": "Instant",
+      "difficulty": "8+",
+      "range": "Range cost (p.115)",
+      "known": false,
+      "description": "<p>Teleport an inanimate object the spacer has handled to them. Can only transport 100g per Teleportation level.</p><p>Level 3 Teleportation talent. Duration: Instant. PSI used: 1 per 100g + Range.</p><p>Know destination: The spacer must visualize the full 3D environment they are teleporting to. This could include if they have been there before or if it is implanted into their mind by another psionic character. If the spacer lacks this knowledge, then they are making a Risky Teleportation.</p><p>Energy and momentum: On a successful teleportation, roll 8+ along with INT mod. The spacer will incur a DM equal to the current speed band they are travelling at if in a vehicle and -1DM per 200m change in elevation from exit to arrival. A success indicates landing on your feet, while a failure indicates a displacement of 1D metres per failed step under 8 on a horizontal plane and D3 metres per step below 8 vertically.</p><p>Risky Teleportation check: Roll 8+ to succeed with any DMs from energy and momentum applied and any other environmental factors as determined by the referee. They can spend additional PSI to grant themselves +1DM per two points spent. On failure, the spacer arrives a number of range bands away from their intended target equal to the failure effect. On a result of 2 or less, the spacer teleports into an area that would immediately kill them, as determined by the referee.</p><p>Psionic range cost (p.115), extra PSI by range band: Close 1, Short 2, Medium 3, Long 3, Very Long 4, Distant 4, Far 5, Regional 5, Continental 6, Planetary 7; not possible beyond Planetary.</p><p>The discipline of teleportation is extremely difficult to understand and is demanding to learn. Learning roll: 9+.</p><p>Performing a psionic talent requires the correct level for that discipline, the required PSI points, and enough PSI points to project the talent the required distance. Many abilities require the spacer to remain undisturbed for the duration unless stated otherwise.</p>",
+      "source": "p.118"
+    }
+  },
+  {
+    "name": "Personal, Flesh Only",
+    "type": "psionic",
+    "folder": "Teleportation",
+    "system": {
+      "discipline": "teleportation",
+      "level": 5,
+      "psiCost": "Range cost",
+      "duration": "Instant",
+      "difficulty": "8+",
+      "range": "Range cost (p.115)",
+      "known": false,
+      "description": "<p>The spacer can teleport themself but without any external items, including clothing.</p><p>Level 5 Teleportation talent. Duration: Instant. PSI used: Range cost.</p><p>Know destination: The spacer must visualize the full 3D environment they are teleporting to. This could include if they have been there before or if it is implanted into their mind by another psionic character. If the spacer lacks this knowledge, then they are making a Risky Teleportation.</p><p>Energy and momentum: On a successful teleportation, roll 8+ along with INT mod. The spacer will incur a DM equal to the current speed band they are travelling at if in a vehicle and -1DM per 200m change in elevation from exit to arrival. A success indicates landing on your feet, while a failure indicates a displacement of 1D metres per failed step under 8 on a horizontal plane and D3 metres per step below 8 vertically.</p><p>Risky Teleportation check: Roll 8+ to succeed with any DMs from energy and momentum applied and any other environmental factors as determined by the referee. They can spend additional PSI to grant themselves +1DM per two points spent. On failure, the spacer arrives a number of range bands away from their intended target equal to the failure effect. On a result of 2 or less, the spacer teleports into an area that would immediately kill them, as determined by the referee.</p><p>Psionic range cost (p.115), extra PSI by range band: Close 1, Short 2, Medium 3, Long 3, Very Long 4, Distant 4, Far 5, Regional 5, Continental 6, Planetary 7; not possible beyond Planetary.</p><p>The discipline of teleportation is extremely difficult to understand and is demanding to learn. Learning roll: 9+.</p><p>Performing a psionic talent requires the correct level for that discipline, the required PSI points, and enough PSI points to project the talent the required distance. Many abilities require the spacer to remain undisturbed for the duration unless stated otherwise.</p>",
+      "source": "p.118"
+    }
+  },
+  {
+    "name": "Personal, Clothed",
+    "type": "psionic",
+    "folder": "Teleportation",
+    "system": {
+      "discipline": "teleportation",
+      "level": 7,
+      "psiCost": "Range cost",
+      "duration": "Instant",
+      "difficulty": "8+",
+      "range": "Range cost (p.115)",
+      "known": false,
+      "description": "<p>The spacer can teleport themself along with any worn clothing that is no more than 3 cm raised off of the spacer’s skin, but without any other external items, including equipment.</p><p>Level 7 Teleportation talent. Duration: Instant. PSI used: Range cost.</p><p>Know destination: The spacer must visualize the full 3D environment they are teleporting to. This could include if they have been there before or if it is implanted into their mind by another psionic character. If the spacer lacks this knowledge, then they are making a Risky Teleportation.</p><p>Energy and momentum: On a successful teleportation, roll 8+ along with INT mod. The spacer will incur a DM equal to the current speed band they are travelling at if in a vehicle and -1DM per 200m change in elevation from exit to arrival. A success indicates landing on your feet, while a failure indicates a displacement of 1D metres per failed step under 8 on a horizontal plane and D3 metres per step below 8 vertically.</p><p>Risky Teleportation check: Roll 8+ to succeed with any DMs from energy and momentum applied and any other environmental factors as determined by the referee. They can spend additional PSI to grant themselves +1DM per two points spent. On failure, the spacer arrives a number of range bands away from their intended target equal to the failure effect. On a result of 2 or less, the spacer teleports into an area that would immediately kill them, as determined by the referee.</p><p>Psionic range cost (p.115), extra PSI by range band: Close 1, Short 2, Medium 3, Long 3, Very Long 4, Distant 4, Far 5, Regional 5, Continental 6, Planetary 7; not possible beyond Planetary.</p><p>The discipline of teleportation is extremely difficult to understand and is demanding to learn. Learning roll: 9+.</p><p>Performing a psionic talent requires the correct level for that discipline, the required PSI points, and enough PSI points to project the talent the required distance. Many abilities require the spacer to remain undisturbed for the duration unless stated otherwise.</p>",
+      "source": "p.118"
+    }
+  },
+  {
+    "name": "Personal, Equipped",
+    "type": "psionic",
+    "folder": "Teleportation",
+    "system": {
+      "discipline": "teleportation",
+      "level": 9,
+      "psiCost": "Range cost",
+      "duration": "Instant",
+      "difficulty": "8+",
+      "range": "Range cost (p.115)",
+      "known": false,
+      "description": "<p>The spacer can teleport themself along with any worn and carried items, equal to their unencumbered weight limit.</p><p>Level 9 Teleportation talent. Duration: Instant. PSI used: Range cost.</p><p>Know destination: The spacer must visualize the full 3D environment they are teleporting to. This could include if they have been there before or if it is implanted into their mind by another psionic character. If the spacer lacks this knowledge, then they are making a Risky Teleportation.</p><p>Energy and momentum: On a successful teleportation, roll 8+ along with INT mod. The spacer will incur a DM equal to the current speed band they are travelling at if in a vehicle and -1DM per 200m change in elevation from exit to arrival. A success indicates landing on your feet, while a failure indicates a displacement of 1D metres per failed step under 8 on a horizontal plane and D3 metres per step below 8 vertically.</p><p>Risky Teleportation check: Roll 8+ to succeed with any DMs from energy and momentum applied and any other environmental factors as determined by the referee. They can spend additional PSI to grant themselves +1DM per two points spent. On failure, the spacer arrives a number of range bands away from their intended target equal to the failure effect. On a result of 2 or less, the spacer teleports into an area that would immediately kill them, as determined by the referee.</p><p>Psionic range cost (p.115), extra PSI by range band: Close 1, Short 2, Medium 3, Long 3, Very Long 4, Distant 4, Far 5, Regional 5, Continental 6, Planetary 7; not possible beyond Planetary.</p><p>The discipline of teleportation is extremely difficult to understand and is demanding to learn. Learning roll: 9+.</p><p>Performing a psionic talent requires the correct level for that discipline, the required PSI points, and enough PSI points to project the talent the required distance. Many abilities require the spacer to remain undisturbed for the duration unless stated otherwise.</p>",
+      "source": "p.118"
+    }
+  }
+]

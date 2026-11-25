@@ -1,0 +1,9 @@
+<div class="spacer spacer-chargen-card">
+  <h3>{{name}}</h3>
+  <p><strong>UPP</strong> {{upp}} · <strong>{{localize "SPACER.Chargen.Age"}}</strong> {{age}} · <strong>{{localize "SPACER.Chargen.Terms"}}</strong> {{terms}}</p>
+  <p><strong>{{localize "SPACER.Chargen.Careers"}}:</strong> {{#each careers}}{{label}}{{#unless @last}}; {{/unless}}{{/each}}</p>
+  <p><strong>{{localize "SPACER.Chargen.Skills"}}:</strong> {{skillText}}</p>
+  <p><strong>{{localize "SPACER.Chargen.Credits"}}:</strong> {{credits}}cr{{#if debt}} ({{localize "SPACER.Chargen.Debt"}} {{debt}}cr){{/if}}{{#if pensionText}} · <strong>{{localize "SPACER.Chargen.Pension"}}:</strong> {{pensionText}}{{/if}}</p>
+  {{#if items.length}}<p><strong>{{localize "SPACER.Chargen.Items"}}:</strong> {{#each items}}{{name}}{{#unless @last}}, {{/unless}}{{/each}}</p>{{/if}}
+  {{#if psi}}<p><strong>PSI</strong> {{psi}}</p>{{/if}}
+</div>

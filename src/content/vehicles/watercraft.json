@@ -1,0 +1,316 @@
+[
+  {
+    "name": "Small Steamship",
+    "type": "vehicle",
+    "folder": "Watercraft",
+    "system": {
+      "category": "watercraft",
+      "traits": [
+        "Marine",
+        "Archaic"
+      ],
+      "military": false,
+      "skill": "Drive (Marine)",
+      "speedBand": 2,
+      "currentSpeed": 0,
+      "occupants": 15,
+      "cargoKg": 50000,
+      "rangeKm": 1000,
+      "weightTons": 100,
+      "tl": 4,
+      "cost": 60000,
+      "armor": 0,
+      "locations": {
+        "interior": {
+          "value": 2,
+          "max": 2,
+          "armored": false
+        },
+        "drive": {
+          "value": 2,
+          "max": 2,
+          "armored": false
+        },
+        "handling": {
+          "value": 2,
+          "max": 2,
+          "armored": false
+        },
+        "hull": {
+          "value": 2,
+          "max": 2,
+          "armored": false
+        },
+        "weapon": {
+          "value": 0,
+          "max": 0,
+          "armored": false
+        }
+      },
+      "description": "<p>An older type of watercraft that can carry up to 15 occupants and 50T of cargo. Common on low tech worlds for transporting goods on waterways.</p><p>Distance of operation: 1,000km. Weight 100T, TL 4, speed band 2, cost 60,000cr.</p><p>Damage locations (book): Interior 2, Speed 2, Hull 2. The book gives no Handling value; Handling is set to the Hull value.</p><ul><li>Marine: This vehicle is designed for water use only. Those operating vehicles with this trait benefit from using the Marine Skill.</li><li>Archaic: This vehicle is considered a rarity on higher tech worlds, so acquiring them or parts for them is difficult. Apply a -DM equal to the difference between the vehicle's lower tech level and the planet's higher tech level.</li></ul><p>Cargo: For every one occupant slot, 50kg of cargo can be carried instead. Weapons can be added to a vehicle after purchase, but civilian vehicles are unarmed by default. Cruising speed: vehicles with speed band 3+ have a cruising speed equal to one speed band less than top speed (p.46).</p><p>Source: p.48.</p>"
+    },
+    "items": []
+  },
+  {
+    "name": "Motorboat",
+    "type": "vehicle",
+    "folder": "Watercraft",
+    "system": {
+      "category": "watercraft",
+      "traits": [
+        "Marine"
+      ],
+      "military": false,
+      "skill": "Drive (Marine)",
+      "speedBand": 3,
+      "currentSpeed": 0,
+      "occupants": 12,
+      "cargoKg": 10000,
+      "rangeKm": 500,
+      "weightTons": 60,
+      "tl": 5,
+      "cost": 60000,
+      "armor": 0,
+      "locations": {
+        "interior": {
+          "value": 2,
+          "max": 2,
+          "armored": false
+        },
+        "drive": {
+          "value": 2,
+          "max": 2,
+          "armored": false
+        },
+        "handling": {
+          "value": 1,
+          "max": 1,
+          "armored": false
+        },
+        "hull": {
+          "value": 1,
+          "max": 1,
+          "armored": false
+        },
+        "weapon": {
+          "value": 0,
+          "max": 0,
+          "armored": false
+        }
+      },
+      "description": "<p>A faster watercraft with a single propeller engine. Can carry up to 12 occupants and 10T of cargo.</p><p>Distance of operation: 500km. Weight 60T, TL 5, speed band 3, cost 60,000cr.</p><p>Damage locations (book): Interior 2, Speed 2, Hull 1. The book gives no Handling value; Handling is set to the Hull value.</p><p>The book lists speed band 3 but the stat line gives Speed 2; the drive location uses the stat line (2).</p><ul><li>Marine: This vehicle is designed for water use only. Those operating vehicles with this trait benefit from using the Marine Skill.</li></ul><p>Cargo: For every one occupant slot, 50kg of cargo can be carried instead. Weapons can be added to a vehicle after purchase, but civilian vehicles are unarmed by default. Cruising speed: vehicles with speed band 3+ have a cruising speed equal to one speed band less than top speed (p.46).</p><p>Source: p.48.</p>"
+    },
+    "items": []
+  },
+  {
+    "name": "Submersible",
+    "type": "vehicle",
+    "folder": "Watercraft",
+    "system": {
+      "category": "watercraft",
+      "traits": [
+        "Marine",
+        "Sub"
+      ],
+      "military": false,
+      "skill": "Drive (Marine)",
+      "speedBand": 4,
+      "currentSpeed": 0,
+      "occupants": 15,
+      "cargoKg": 10000,
+      "rangeKm": 1000,
+      "weightTons": 500,
+      "tl": 6,
+      "cost": 2000000,
+      "armor": 0,
+      "locations": {
+        "interior": {
+          "value": 3,
+          "max": 3,
+          "armored": false
+        },
+        "drive": {
+          "value": 4,
+          "max": 4,
+          "armored": false
+        },
+        "handling": {
+          "value": 2,
+          "max": 2,
+          "armored": false
+        },
+        "hull": {
+          "value": 2,
+          "max": 2,
+          "armored": false
+        },
+        "weapon": {
+          "value": 0,
+          "max": 0,
+          "armored": false
+        }
+      },
+      "description": "<p>A subnautical vehicle often used for transportation between enclosed habitats underwater such as domed settlements or industrial operations. This vehicle can travel at half-speed on the surface of the water if desired. Can house up to 15 passengers and 10T of cargo.</p><p>Distance of operation: 1,000km. Weight 500T, TL 6, speed band 4, cost 2Mcr.</p><p>Damage locations (book): Interior 3, Speed 4, Hull 2. The book gives no Handling value; Handling is set to the Hull value.</p><ul><li>Marine: This vehicle is designed for water use only. Those operating vehicles with this trait benefit from using the Marine Skill.</li><li>Sub: This vehicle is capable or designed for underwater functionality.</li></ul><p>Cargo: For every one occupant slot, 50kg of cargo can be carried instead. Weapons can be added to a vehicle after purchase, but civilian vehicles are unarmed by default. Cruising speed: vehicles with speed band 3+ have a cruising speed equal to one speed band less than top speed (p.46).</p><p>Source: p.48.</p>"
+    },
+    "items": []
+  },
+  {
+    "name": "Destroyer",
+    "type": "vehicle",
+    "folder": "Watercraft",
+    "system": {
+      "category": "watercraft",
+      "traits": [
+        "Marine",
+        "Military"
+      ],
+      "military": true,
+      "skill": "Drive (Marine)",
+      "speedBand": 3,
+      "currentSpeed": 0,
+      "occupants": 10,
+      "cargoKg": 0,
+      "rangeKm": 2500,
+      "weightTons": 800,
+      "tl": 8,
+      "cost": 5000000,
+      "armor": 3,
+      "locations": {
+        "interior": {
+          "value": 4,
+          "max": 4,
+          "armored": false
+        },
+        "drive": {
+          "value": 3,
+          "max": 3,
+          "armored": false
+        },
+        "handling": {
+          "value": 4,
+          "max": 4,
+          "armored": false
+        },
+        "hull": {
+          "value": 4,
+          "max": 4,
+          "armored": false
+        },
+        "weapon": {
+          "value": 3,
+          "max": 3,
+          "armored": false
+        }
+      },
+      "description": "<p>A large watercraft designed for military operations, such as patrols, recon, and escort missions. Has three deck-mounted heavy weapons. Operated by a crew of 10.</p><p>Distance of operation: 2,500km. Weight 800T, TL 8, speed band 3, cost 5Mcr.</p><p>Damage locations (book): Interior 4, Speed 3, Hull 4, Weapon 3, Armour 3. The book gives no Handling value; Handling is set to the Hull value.</p><p>The three deck-mounted heavy weapons are the Heavy Gun of p.49.</p><ul><li>Marine: This vehicle is designed for water use only. Those operating vehicles with this trait benefit from using the Marine Skill.</li><li>Military: This vehicle is only available at military-owned locations and is available for military personnel to use.</li></ul><p>Cargo: For every one occupant slot, 50kg of cargo can be carried instead. Weapons can be added to a vehicle after purchase, but civilian vehicles are unarmed by default. Cruising speed: vehicles with speed band 3+ have a cruising speed equal to one speed band less than top speed (p.46).</p><p>Source: p.48.</p>"
+    },
+    "items": [
+      {
+        "name": "Heavy Gun",
+        "type": "shipWeapon",
+        "system": {
+          "mount": "vehicle",
+          "forVehicle": true,
+          "damage": "3",
+          "range": "long",
+          "tonnage": 2,
+          "hardpoints": 0,
+          "cost": 20000,
+          "weight": 2000,
+          "tl": 7,
+          "traits": [],
+          "description": "<p>Damage: 3. Weight: 2T. Cost: 20,000cr.</p><p>Vehicle Mounted Weapons: All mounted weapons require a gunner to use them properly. The following weapons are only some examples for use with the same vehicles described in this book. Referees are encouraged to create their own to suit their needs if they desire more military-focused vehicles.</p><p>Range band: All vehicle weapons have Long Distance. Tech level: All of the listed weapons are at Tech Level 7.</p><p>Vehicle Weapon Damage: Roll the weapon die and apply it to the determined hit location. Vehicle weapon damage deals 6 damage to an NPC for every 1 vehicle damage.</p>",
+          "source": "p.49"
+        }
+      },
+      {
+        "name": "Heavy Gun",
+        "type": "shipWeapon",
+        "system": {
+          "mount": "vehicle",
+          "forVehicle": true,
+          "damage": "3",
+          "range": "long",
+          "tonnage": 2,
+          "hardpoints": 0,
+          "cost": 20000,
+          "weight": 2000,
+          "tl": 7,
+          "traits": [],
+          "description": "<p>Damage: 3. Weight: 2T. Cost: 20,000cr.</p><p>Vehicle Mounted Weapons: All mounted weapons require a gunner to use them properly. The following weapons are only some examples for use with the same vehicles described in this book. Referees are encouraged to create their own to suit their needs if they desire more military-focused vehicles.</p><p>Range band: All vehicle weapons have Long Distance. Tech level: All of the listed weapons are at Tech Level 7.</p><p>Vehicle Weapon Damage: Roll the weapon die and apply it to the determined hit location. Vehicle weapon damage deals 6 damage to an NPC for every 1 vehicle damage.</p>",
+          "source": "p.49"
+        }
+      },
+      {
+        "name": "Heavy Gun",
+        "type": "shipWeapon",
+        "system": {
+          "mount": "vehicle",
+          "forVehicle": true,
+          "damage": "3",
+          "range": "long",
+          "tonnage": 2,
+          "hardpoints": 0,
+          "cost": 20000,
+          "weight": 2000,
+          "tl": 7,
+          "traits": [],
+          "description": "<p>Damage: 3. Weight: 2T. Cost: 20,000cr.</p><p>Vehicle Mounted Weapons: All mounted weapons require a gunner to use them properly. The following weapons are only some examples for use with the same vehicles described in this book. Referees are encouraged to create their own to suit their needs if they desire more military-focused vehicles.</p><p>Range band: All vehicle weapons have Long Distance. Tech level: All of the listed weapons are at Tech Level 7.</p><p>Vehicle Weapon Damage: Roll the weapon die and apply it to the determined hit location. Vehicle weapon damage deals 6 damage to an NPC for every 1 vehicle damage.</p>",
+          "source": "p.49"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Hovercraft",
+    "type": "vehicle",
+    "folder": "Watercraft",
+    "system": {
+      "category": "watercraft",
+      "traits": [
+        "Marine",
+        "Hover"
+      ],
+      "military": false,
+      "skill": "Drive (Marine)",
+      "speedBand": 4,
+      "currentSpeed": 0,
+      "occupants": 16,
+      "cargoKg": 3000,
+      "rangeKm": 2000,
+      "weightTons": 8,
+      "tl": 7,
+      "cost": 200000,
+      "armor": 0,
+      "locations": {
+        "interior": {
+          "value": 2,
+          "max": 2,
+          "armored": false
+        },
+        "drive": {
+          "value": 4,
+          "max": 4,
+          "armored": false
+        },
+        "handling": {
+          "value": 2,
+          "max": 2,
+          "armored": false
+        },
+        "hull": {
+          "value": 2,
+          "max": 2,
+          "armored": false
+        },
+        "weapon": {
+          "value": 0,
+          "max": 0,
+          "armored": false
+        }
+      },
+      "description": "<p>Essentially a low-tech grav vehicle that creates a cushion of air on worlds with Atmosphere 4+, allowing it to move equally on any flat surface whether it be water, sand, grass, or other earthen terrain. 16 passengers and 3t of cargo.</p><p>Distance of operation: 2,000km. Weight 8T, TL 7, speed band 4, cost 200,000cr.</p><p>Damage locations (book): Interior 2, speed 4, Hull 2. The book gives no Handling value; Handling is set to the Hull value.</p><ul><li>Marine: This vehicle is designed for water use only. Those operating vehicles with this trait benefit from using the Marine Skill.</li><li>Hover: This vehicle glides across a surface on a cushion of air. This allows the vehicle to travel over land and water at the same speed.</li></ul><p>Cargo: For every one occupant slot, 50kg of cargo can be carried instead. Weapons can be added to a vehicle after purchase, but civilian vehicles are unarmed by default. Cruising speed: vehicles with speed band 3+ have a cruising speed equal to one speed band less than top speed (p.46).</p><p>Source: p.48.</p>"
+    },
+    "items": []
+  }
+]

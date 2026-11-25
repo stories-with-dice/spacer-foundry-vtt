@@ -1,0 +1,98 @@
+[
+  {
+    "name": "Suggestion",
+    "type": "psionic",
+    "folder": "Special",
+    "system": {
+      "discipline": "special",
+      "level": 1,
+      "psiCost": "4",
+      "duration": "1 minute",
+      "difficulty": "",
+      "range": "Range cost (p.115)",
+      "known": false,
+      "description": "<p>Influence an NPC by suggesting they say or do something you desire. Use the NPC reaction table, but gain +4DM for the suggestion. On a success, they follow your suggestion for a minute (or six combat rounds).</p><p>Level 1 Special talent. Duration: 1 minute. PSI used: 4.</p><p>Psionic range cost (p.115), extra PSI by range band: Close 0, Short 1, Medium 1, Long 2, Very Long 3, Distant 4, Far 5, Regional 6, Continental 7, Planetary 8, Orbit 9; not possible beyond Orbit.</p><p>The Special Talent category encompasses any other psionic ability that doesn’t easily fit into the other disciplines or could be considered more complex. This category is open-ended, and the referee should feel free to develop other psionic abilities if desired. Learning roll: 9+.</p><p>Performing a psionic talent requires the correct level for that discipline, the required PSI points, and enough PSI points to project the talent the required distance. Many abilities require the spacer to remain undisturbed for the duration unless stated otherwise.</p>",
+      "source": "p.119"
+    }
+  },
+  {
+    "name": "Post-Cognition",
+    "type": "psionic",
+    "folder": "Special",
+    "system": {
+      "discipline": "special",
+      "level": 3,
+      "psiCost": "Special",
+      "duration": "10 minutes",
+      "difficulty": "",
+      "range": "The spacer's location",
+      "known": false,
+      "description": "<p>See an event that has transpired in the location the spacer is standing in. They will be able to see and hear what has occurred. The amount of PSI used is determined by how far back in time the spacer desires to look:</p><ul><li>1 hour, 2 PSI</li><li>1 day, 4 PSI</li><li>1 week, 8 PSI</li><li>1 month, 10 PSI</li><li>1 year, 12 PSI</li><li>1 decade, 14 PSI</li></ul><p>Based on the desired range, the only events that pop up will be anything of interest to the spacer, based on what they are looking for. However, they will only be able to experience up to a 10 minute interval of time of relevant or notable events that took place in the desired span of past time they are searching.</p><p>Level 3 Special talent. Duration: 10 minutes. PSI used: Special.</p><p>The Special Talent category encompasses any other psionic ability that doesn’t easily fit into the other disciplines or could be considered more complex. This category is open-ended, and the referee should feel free to develop other psionic abilities if desired. Learning roll: 9+.</p><p>Performing a psionic talent requires the correct level for that discipline, the required PSI points, and enough PSI points to project the talent the required distance. Many abilities require the spacer to remain undisturbed for the duration unless stated otherwise.</p>",
+      "source": "p.119"
+    }
+  },
+  {
+    "name": "Astral Projection",
+    "type": "psionic",
+    "folder": "Special",
+    "system": {
+      "discipline": "special",
+      "level": 4,
+      "psiCost": "4+",
+      "duration": "10 minutes",
+      "difficulty": "",
+      "range": "Range cost (p.115)",
+      "known": false,
+      "description": "<p>The spacer leaves their body and is able to travel to their desired location and move around the target location and normal walking speed but without being restricted by obstruction. During this period, the spacer’s body is in a comatose state and is helpless. While astral projecting, the spacer is unaware of anything happening to their physical form and will only return when willing.</p><p>Level 4 Special talent. Duration: 10 minutes. PSI used: 4+.</p><p>Psionic range cost (p.115), extra PSI by range band: Close 0, Short 1, Medium 1, Long 2, Very Long 3, Distant 4, Far 5, Regional 6, Continental 7, Planetary 8, Orbit 9; not possible beyond Orbit.</p><p>The Special Talent category encompasses any other psionic ability that doesn’t easily fit into the other disciplines or could be considered more complex. This category is open-ended, and the referee should feel free to develop other psionic abilities if desired. Learning roll: 9+.</p><p>Performing a psionic talent requires the correct level for that discipline, the required PSI points, and enough PSI points to project the talent the required distance. Many abilities require the spacer to remain undisturbed for the duration unless stated otherwise.</p>",
+      "source": "p.119"
+    }
+  },
+  {
+    "name": "Bilocation",
+    "type": "psionic",
+    "folder": "Special",
+    "system": {
+      "discipline": "special",
+      "level": 6,
+      "psiCost": "6+",
+      "duration": "1 minute",
+      "difficulty": "",
+      "range": "Range cost (p.115)",
+      "known": false,
+      "description": "<p>This is an advanced version of astral projection. Bilocation allows the spacer to physically exist at the same time in two locations. However, only one physical form is real, while the other is a manifestation. The manifestation can still interact with physical space as long as the spacer is focused. The second form vanishes once the duration ends or the spacer’s real self is distracted or harmed.</p><p>Level 6 Special talent. Duration: 1 minute. PSI used: 6+.</p><p>Psionic range cost (p.115), extra PSI by range band: Close 0, Short 1, Medium 1, Long 2, Very Long 3, Distant 4, Far 5, Regional 6, Continental 7, Planetary 8, Orbit 9; not possible beyond Orbit.</p><p>The Special Talent category encompasses any other psionic ability that doesn’t easily fit into the other disciplines or could be considered more complex. This category is open-ended, and the referee should feel free to develop other psionic abilities if desired. Learning roll: 9+.</p><p>Performing a psionic talent requires the correct level for that discipline, the required PSI points, and enough PSI points to project the talent the required distance. Many abilities require the spacer to remain undisturbed for the duration unless stated otherwise.</p>",
+      "source": "p.119"
+    }
+  },
+  {
+    "name": "Precognition",
+    "type": "psionic",
+    "folder": "Special",
+    "system": {
+      "discipline": "special",
+      "level": 8,
+      "psiCost": "Special",
+      "duration": "10 seconds",
+      "difficulty": "",
+      "range": "Self",
+      "known": false,
+      "description": "<p>This ability allows the spacer to detect events in the future. The following are the time intervals into the future the spacer can see from the current moment, along with the PSI cost:</p><ul><li>10 seconds, 2 PSI</li><li>10 minutes, 4 PSI</li><li>1 hour, 6 PSI</li><li>10 hours, 8 PSI</li><li>1 day, 10 PSI</li></ul><p>Level 8 Special talent. Duration: 10 seconds. PSI used: Special.</p><p>The Special Talent category encompasses any other psionic ability that doesn’t easily fit into the other disciplines or could be considered more complex. This category is open-ended, and the referee should feel free to develop other psionic abilities if desired. Learning roll: 9+.</p><p>Performing a psionic talent requires the correct level for that discipline, the required PSI points, and enough PSI points to project the talent the required distance. Many abilities require the spacer to remain undisturbed for the duration unless stated otherwise.</p>",
+      "source": "p.119"
+    }
+  },
+  {
+    "name": "Mind-Body Occupation",
+    "type": "psionic",
+    "folder": "Special",
+    "system": {
+      "discipline": "special",
+      "level": 10,
+      "psiCost": "4+",
+      "duration": "10 seconds",
+      "difficulty": "",
+      "range": "Range cost (p.115)",
+      "known": false,
+      "description": "<p>Enter the mind of a target and take control of their body. The target can attempt to repel the invading psion, succeeding on an 8+ with END mod applied, plus any +1DM per two PSI spent if they are psionic. They may make this attempt every 10-second round their mind is occupied. The attacking spacer must maintain focus to perform mind-body occupation.</p><p>Level 10 Special talent. Duration: 10 seconds. PSI used: 4+.</p><p>Psionic range cost (p.115), extra PSI by range band: Close 0, Short 1, Medium 1, Long 2, Very Long 3, Distant 4, Far 5, Regional 6, Continental 7, Planetary 8, Orbit 9; not possible beyond Orbit.</p><p>The Special Talent category encompasses any other psionic ability that doesn’t easily fit into the other disciplines or could be considered more complex. This category is open-ended, and the referee should feel free to develop other psionic abilities if desired. Learning roll: 9+.</p><p>Performing a psionic talent requires the correct level for that discipline, the required PSI points, and enough PSI points to project the talent the required distance. Many abilities require the spacer to remain undisturbed for the duration unless stated otherwise.</p>",
+      "source": "p.119"
+    }
+  }
+]

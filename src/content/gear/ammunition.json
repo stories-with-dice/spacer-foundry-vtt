@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Short Arms Ammo (1 round)",
+    "type": "gear",
+    "folder": "Ammunition",
+    "system": {
+      "category": "general",
+      "cost": 5,
+      "weight": 0.01,
+      "tl": 0,
+      "traits": [],
+      "description": "<p>Ammunition for Short weapons. Each round costs 5cr. Each round weighs 10g.</p><p>Ranged Weapon Ammunition Types (p.31):</p><ul><li>Solid: A typical round of solid ammunition. Solid ammo has a chance to penetrate through a target if the damage exceeds 12 wounds.</li><li>Spread-Shot: Shotguns can use either Spread ammo or Solid ammo. Spread ammo provides the Spread trait but decreases the weapon’s range from Long to Medium. Spread ammo is typically used for boarding actions on starships to prevent hull damage to the ship. Spread shot can only be used for weapons with the Spread trait. x2 cost and x2 weight.</li><li>Hollow-Point: Hollow-point rounds prevent penetrating a target regardless of the damage output but deal an additional +1 damage for every 1D rolled for damage. x3 Cost per round.</li><li>Armour-Piercing: Armour-piercing rounds decrease the target's Armour by -1, to a minimum of 8+ to hit. x2 cost per round.</li></ul>",
+      "source": "p.30-32"
+    }
+  },
+  {
+    "name": "Stock Arms Ammo (1 round)",
+    "type": "gear",
+    "folder": "Ammunition",
+    "system": {
+      "category": "general",
+      "cost": 10,
+      "weight": 0.02,
+      "tl": 0,
+      "traits": [],
+      "description": "<p>Ammunition for Stock weapons. Each round costs 10cr. Each round weighs 20g, or 50g per slug. For example, a carbine ammo cartridge weighs 600g and costs 300cr.</p><p>Ranged Weapon Ammunition Types (p.31):</p><ul><li>Solid: A typical round of solid ammunition. Solid ammo has a chance to penetrate through a target if the damage exceeds 12 wounds.</li><li>Spread-Shot: Shotguns can use either Spread ammo or Solid ammo. Spread ammo provides the Spread trait but decreases the weapon’s range from Long to Medium. Spread ammo is typically used for boarding actions on starships to prevent hull damage to the ship. Spread shot can only be used for weapons with the Spread trait. x2 cost and x2 weight.</li><li>Hollow-Point: Hollow-point rounds prevent penetrating a target regardless of the damage output but deal an additional +1 damage for every 1D rolled for damage. x3 Cost per round.</li><li>Armour-Piercing: Armour-piercing rounds decrease the target's Armour by -1, to a minimum of 8+ to hit. x2 cost per round.</li></ul>",
+      "source": "p.30-32"
+    }
+  },
+  {
+    "name": "Energy Pack",
+    "type": "gear",
+    "folder": "Ammunition",
+    "system": {
+      "category": "general",
+      "cost": 200,
+      "weight": 1,
+      "tl": 0,
+      "traits": [],
+      "uses": {
+        "value": 25,
+        "max": 25
+      },
+      "description": "<p>Energy packs weigh 1kg and contain 25 shots. Each pack costs 200cr. Weapons contain enough slots for multiple energy packs, equal to the maximum number of rounds they can fire. For example, a laser pistol can only hold one pack while a laser rifle can hold up to four energy packs. Keep in mind that it will increase the weight of the weapon for every additional energy pack installed on the weapon.</p>",
+      "source": "p.30-32"
+    }
+  },
+  {
+    "name": "Small Energy Pack",
+    "type": "gear",
+    "folder": "Ammunition",
+    "system": {
+      "category": "general",
+      "cost": 0,
+      "weight": 0.5,
+      "tl": 0,
+      "traits": [],
+      "uses": {
+        "value": 4,
+        "max": 4
+      },
+      "description": "<p>Tasers and EM disruptors use smaller energy packs that weigh 500g and contain 4 rounds.</p><p>The book gives no cost or tech level for the small energy pack.</p>",
+      "source": "p.30-32"
+    }
+  }
+]

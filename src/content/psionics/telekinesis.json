@@ -1,0 +1,98 @@
+[
+  {
+    "name": "Telekinesis: Move 1g",
+    "type": "psionic",
+    "folder": "Telekinesis",
+    "system": {
+      "discipline": "telekinesis",
+      "level": 1,
+      "psiCost": "1+",
+      "duration": "1 minute",
+      "difficulty": "",
+      "range": "Range cost (p.115)",
+      "known": false,
+      "description": "<p>Move an object of up to 1g.</p><p>Level 1 Telekinesis talent. Duration: 1 minute. PSI used: 1+.</p><p>Psionic range cost (p.115), extra PSI by range band: Close 0, Short 1, Medium 2, Long 4, Very Long 9; not possible beyond Very Long.</p><p>This discipline allows the spacer to move physical objects by applying mental force. Telekinesis lasts for as long as the spacer is able to concentrate on the object, up to one minute of time. Sight requirement: The spacer must be able to see what is being moved or be able to visualize the object and its intended target location. This can be direct sight or indirect, such as on a monitor, while engaging in clairvoyance, or through any other method, at the referee’s discretion. Learning roll: 6+.</p><p>Performing a psionic talent requires the correct level for that discipline, the required PSI points, and enough PSI points to project the talent the required distance. Many abilities require the spacer to remain undisturbed for the duration unless stated otherwise.</p>",
+      "source": "p.117"
+    }
+  },
+  {
+    "name": "Telekinesis: Move 10g",
+    "type": "psionic",
+    "folder": "Telekinesis",
+    "system": {
+      "discipline": "telekinesis",
+      "level": 2,
+      "psiCost": "2+",
+      "duration": "1 minute",
+      "difficulty": "",
+      "range": "Range cost (p.115)",
+      "known": false,
+      "description": "<p>Move an object of up to 10g.</p><p>Level 2 Telekinesis talent. Duration: 1 minute. PSI used: 2+.</p><p>Psionic range cost (p.115), extra PSI by range band: Close 0, Short 1, Medium 2, Long 4, Very Long 9; not possible beyond Very Long.</p><p>This discipline allows the spacer to move physical objects by applying mental force. Telekinesis lasts for as long as the spacer is able to concentrate on the object, up to one minute of time. Sight requirement: The spacer must be able to see what is being moved or be able to visualize the object and its intended target location. This can be direct sight or indirect, such as on a monitor, while engaging in clairvoyance, or through any other method, at the referee’s discretion. Learning roll: 6+.</p><p>Performing a psionic talent requires the correct level for that discipline, the required PSI points, and enough PSI points to project the talent the required distance. Many abilities require the spacer to remain undisturbed for the duration unless stated otherwise.</p>",
+      "source": "p.117"
+    }
+  },
+  {
+    "name": "Telekinesis: Move 100g; Push/Pull",
+    "type": "psionic",
+    "folder": "Telekinesis",
+    "system": {
+      "discipline": "telekinesis",
+      "level": 3,
+      "psiCost": "3+",
+      "duration": "1 minute",
+      "difficulty": "",
+      "range": "Range cost (p.115)",
+      "known": false,
+      "description": "<p>Move an object of up to 100g.</p><p>Push/Pull: Starting at level 3, the spacer can choose to decrease the amount of time from 60 seconds to act immediately to forcefully move something or someone quickly by doubling the PSI used. This allows for the spacer to push or pull things quickly without needing to focus. Items thrown through telekinesis at a living target inflicts damage equal to the spacer’s telekinesis level +1 for every 1kg the item weighs.</p><p>Level 3 Telekinesis talent. Duration: 1 minute. PSI used: 3+.</p><p>Psionic range cost (p.115), extra PSI by range band: Close 0, Short 1, Medium 2, Long 4, Very Long 9; not possible beyond Very Long.</p><p>This discipline allows the spacer to move physical objects by applying mental force. Telekinesis lasts for as long as the spacer is able to concentrate on the object, up to one minute of time. Sight requirement: The spacer must be able to see what is being moved or be able to visualize the object and its intended target location. This can be direct sight or indirect, such as on a monitor, while engaging in clairvoyance, or through any other method, at the referee’s discretion. Learning roll: 6+.</p><p>Performing a psionic talent requires the correct level for that discipline, the required PSI points, and enough PSI points to project the talent the required distance. Many abilities require the spacer to remain undisturbed for the duration unless stated otherwise.</p>",
+      "source": "p.117"
+    }
+  },
+  {
+    "name": "Telekinesis: Move 1kg; Telekinetic Force",
+    "type": "psionic",
+    "folder": "Telekinesis",
+    "system": {
+      "discipline": "telekinesis",
+      "level": 5,
+      "psiCost": "5+",
+      "duration": "1 minute",
+      "difficulty": "8+",
+      "range": "Range cost (p.115)",
+      "known": false,
+      "description": "<p>Move an object of up to 1kg.</p><p>Telekinetic force: Starting at level 5, the spacer can also apply telekinesis to form a wave of force that emanates from their mind and focuses on a target, applying 1D (+1 per psi point spent) damage to the target on a successful 8+ INT roll. Apply environmental factors to the roll such as cover, etc. Damage gains a +1 equal to the amount of PSI used, and the spacer must spend at least 5 PSI points to perform this.</p><p>Level 5 Telekinesis talent. Duration: 1 minute. PSI used: 5+.</p><p>Psionic range cost (p.115), extra PSI by range band: Close 0, Short 1, Medium 2, Long 4, Very Long 9; not possible beyond Very Long.</p><p>This discipline allows the spacer to move physical objects by applying mental force. Telekinesis lasts for as long as the spacer is able to concentrate on the object, up to one minute of time. Sight requirement: The spacer must be able to see what is being moved or be able to visualize the object and its intended target location. This can be direct sight or indirect, such as on a monitor, while engaging in clairvoyance, or through any other method, at the referee’s discretion. Learning roll: 6+.</p><p>Performing a psionic talent requires the correct level for that discipline, the required PSI points, and enough PSI points to project the talent the required distance. Many abilities require the spacer to remain undisturbed for the duration unless stated otherwise.</p>",
+      "source": "p.117"
+    }
+  },
+  {
+    "name": "Telekinesis: Move 10kg",
+    "type": "psionic",
+    "folder": "Telekinesis",
+    "system": {
+      "discipline": "telekinesis",
+      "level": 8,
+      "psiCost": "8+",
+      "duration": "1 minute",
+      "difficulty": "",
+      "range": "Range cost (p.115)",
+      "known": false,
+      "description": "<p>Move an object of up to 10kg.</p><p>Level 8 Telekinesis talent. Duration: 1 minute. PSI used: 8+.</p><p>Psionic range cost (p.115), extra PSI by range band: Close 0, Short 1, Medium 2, Long 4, Very Long 9; not possible beyond Very Long.</p><p>This discipline allows the spacer to move physical objects by applying mental force. Telekinesis lasts for as long as the spacer is able to concentrate on the object, up to one minute of time. Sight requirement: The spacer must be able to see what is being moved or be able to visualize the object and its intended target location. This can be direct sight or indirect, such as on a monitor, while engaging in clairvoyance, or through any other method, at the referee’s discretion. Learning roll: 6+.</p><p>Performing a psionic talent requires the correct level for that discipline, the required PSI points, and enough PSI points to project the talent the required distance. Many abilities require the spacer to remain undisturbed for the duration unless stated otherwise.</p>",
+      "source": "p.117"
+    }
+  },
+  {
+    "name": "Telekinesis: Move 100kg; Levitate Self",
+    "type": "psionic",
+    "folder": "Telekinesis",
+    "system": {
+      "discipline": "telekinesis",
+      "level": 10,
+      "psiCost": "10+",
+      "duration": "1 minute",
+      "difficulty": "",
+      "range": "Range cost (p.115)",
+      "known": false,
+      "description": "<p>Move an object of up to 100kg.</p><p>Levitate self: The spacer can levitate themselves and any equipment worn or held equal to 50kg or less, but may only move at normal walking speed. The spacer must end their duration of levitation on the ground, or they will immediately be subject to gravity once they stop focusing. However, the spacer can mimic short-term flight by spending double the amount of PSI needed to quickly move five times faster than walking speed for 10 seconds. The referee may require the spacer to make a roll of 8+ modified by their DEX and apply DMs if environmental factors may inhibit flight, such as weather, wind, hanging objects, etc.</p><p>Level 10 Telekinesis talent. Duration: 1 minute. PSI used: 10+.</p><p>Psionic range cost (p.115), extra PSI by range band: Close 0, Short 1, Medium 2, Long 4, Very Long 9; not possible beyond Very Long.</p><p>This discipline allows the spacer to move physical objects by applying mental force. Telekinesis lasts for as long as the spacer is able to concentrate on the object, up to one minute of time. Sight requirement: The spacer must be able to see what is being moved or be able to visualize the object and its intended target location. This can be direct sight or indirect, such as on a monitor, while engaging in clairvoyance, or through any other method, at the referee’s discretion. Learning roll: 6+.</p><p>Performing a psionic talent requires the correct level for that discipline, the required PSI points, and enough PSI points to project the talent the required distance. Many abilities require the spacer to remain undisturbed for the duration unless stated otherwise.</p>",
+      "source": "p.117"
+    }
+  }
+]

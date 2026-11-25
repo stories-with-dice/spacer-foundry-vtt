@@ -1,0 +1,2179 @@
+[
+  {
+    "name": "Weather Table",
+    "folder": "Planetside Exploration",
+    "formula": "2d6",
+    "description": "<p>p.96-97. Make a weather check every 6-hour interval: roll 2D and apply the Temperature Dice Modification and the Effect on Next Weather Check DM of the previous result. Temperature Dice Modification (Above Average (Tropical) / Average (Temperate) / Below Average (Polar) / Ice World / Hot World): Frozen -1 / -2 / -4 / -6 / X; Cold -0 / -1 / -2 / -4 / X; Temperate +1 / +0 / -1 / -2 / +2; Hot +2 / +1 / -0 / X / +4; Boiling +4 / +2 / +1 / X / +6. Each atmosphere has a specific range for weather; reroll results outside it: Frozen 1-5; Cold 2-8; Temperate 1-13; Hot 9-13; Boiling 13+. Roll 1D for the weather type. Survival DM applies to survival tasks in the next six hours, in addition to terrain DM. Harm from exposure applies without adequate shelter, split evenly between all three physical characteristics.</p>",
+    "results": [
+      {
+        "range": [
+          -20,
+          0
+        ],
+        "text": "<strong>Weather Type:</strong> Ice World, weather impossible · <strong>Effect on Next Weather Check:</strong> -4 DM · <strong>Survival &amp; Vehicle Skill DM:</strong> -6 DM / -3 DM · <strong>Harm from Exposure:</strong> 4D · <strong>Overland Movement Penalty:</strong> -3kmh · <strong>Land Vehicle Speed Band Penalty:</strong> -3"
+      },
+      {
+        "range": [
+          1,
+          1
+        ],
+        "text": "<strong>Weather Type:</strong> Extreme Cold Weather:<br>1-3) Extreme wind<br>4-5) extreme storm<br>6) deep freeze · <strong>Effect on Next Weather Check:</strong> -3DM · <strong>Survival &amp; Vehicle Skill DM:</strong> -3 DM / -3 DM · <strong>Harm from Exposure:</strong> 3D · <strong>Overland Movement Penalty:</strong> -3kmh · <strong>Land Vehicle Speed Band Penalty:</strong> -3"
+      },
+      {
+        "range": [
+          2,
+          3
+        ],
+        "text": "<strong>Weather Type:</strong> Significant Cold Weather:<br>1-3) Cold wave<br>4-5) high wind<br>6) blizzard · <strong>Effect on Next Weather Check:</strong> -2 DM · <strong>Survival &amp; Vehicle Skill DM:</strong> -2 DM / - 2 DM · <strong>Harm from Exposure:</strong> 2D · <strong>Overland Movement Penalty:</strong> -2kmh · <strong>Land Vehicle Speed Band Penalty:</strong> -2"
+      },
+      {
+        "range": [
+          4,
+          5
+        ],
+        "text": "<strong>Weather Type:</strong> Cool Weather:<br>1-3) Cold snap<br>4-5) ice<br>6) snow · <strong>Effect on Next Weather Check:</strong> -1 DM · <strong>Survival &amp; Vehicle Skill DM:</strong> -1 DM / - 1 DM · <strong>Harm from Exposure:</strong> 1D · <strong>Overland Movement Penalty:</strong> -1kmh · <strong>Land Vehicle Speed Band Penalty:</strong> -1"
+      },
+      {
+        "range": [
+          6,
+          8
+        ],
+        "text": "<strong>Weather Type:</strong> Average:<br>1) Clear<br>2) overcast<br>3) wind<br>4) fog<br>5) flurries<br>6) mist · <strong>Effect on Next Weather Check:</strong> +0 DM · <strong>Survival &amp; Vehicle Skill DM:</strong> +0 DM / + 0 DM · <strong>Harm from Exposure:</strong> D3 · <strong>Overland Movement Penalty:</strong> -0kmh · <strong>Land Vehicle Speed Band Penalty:</strong> -0"
+      },
+      {
+        "range": [
+          9,
+          10
+        ],
+        "text": "<strong>Weather Type:</strong> Warm Weather:<br>1-3) Hot<br>4-5) humid<br>6) precipitation · <strong>Effect on Next Weather Check:</strong> +1 DM · <strong>Survival &amp; Vehicle Skill DM:</strong> +1 DM / -1 DM · <strong>Harm from Exposure:</strong> 1D · <strong>Overland Movement Penalty:</strong> -1kmh · <strong>Land Vehicle Speed Band Penalty:</strong> -1"
+      },
+      {
+        "range": [
+          11,
+          12
+        ],
+        "text": "<strong>Weather Type:</strong> Hot Weather:<br>1-3) Heat wave<br>4-5) high wind<br>6) heavy precipitation · <strong>Effect on Next Weather Check:</strong> +2 DM · <strong>Survival &amp; Vehicle Skill DM:</strong> +2 DM / -2 DM · <strong>Harm from Exposure:</strong> 2D · <strong>Overland Movement Penalty:</strong> -2kmh · <strong>Land Vehicle Speed Band Penalty:</strong> -2"
+      },
+      {
+        "range": [
+          13,
+          13
+        ],
+        "text": "<strong>Weather Type:</strong> Extreme Heat Weather:<br>1-3) Extreme wind<br>4-5) Extreme storm<br>6) Oppressive humidity · <strong>Effect on Next Weather Check:</strong> +3 DM · <strong>Survival &amp; Vehicle Skill DM:</strong> +3 DM / -3 DM · <strong>Harm from Exposure:</strong> 3D · <strong>Overland Movement Penalty:</strong> -3kmh · <strong>Land Vehicle Speed Band Penalty:</strong> -3"
+      },
+      {
+        "range": [
+          14,
+          40
+        ],
+        "text": "<strong>Weather Type:</strong> Inferno World: Weather Extreme and deadly · <strong>Effect on Next Weather Check:</strong> +4 DM · <strong>Survival &amp; Vehicle Skill DM:</strong> -6 DM / -3 DM · <strong>Harm from Exposure:</strong> 4D · <strong>Overland Movement Penalty:</strong> -4kmh · <strong>Land Vehicle Speed Band Penalty:</strong> -3"
+      }
+    ]
+  },
+  {
+    "name": "Extreme Cold Weather Type",
+    "folder": "Planetside Exploration",
+    "formula": "1d6",
+    "description": "<p>p.97. Roll 1D to determine the type of weather when the Weather Table gives Extreme Cold Weather.</p>",
+    "results": [
+      {
+        "range": [
+          1,
+          3
+        ],
+        "text": "Extreme wind"
+      },
+      {
+        "range": [
+          4,
+          5
+        ],
+        "text": "extreme storm"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "deep freeze"
+      }
+    ]
+  },
+  {
+    "name": "Significant Cold Weather Type",
+    "folder": "Planetside Exploration",
+    "formula": "1d6",
+    "description": "<p>p.97. Roll 1D to determine the type of weather when the Weather Table gives Significant Cold Weather.</p>",
+    "results": [
+      {
+        "range": [
+          1,
+          3
+        ],
+        "text": "Cold wave"
+      },
+      {
+        "range": [
+          4,
+          5
+        ],
+        "text": "high wind"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "blizzard"
+      }
+    ]
+  },
+  {
+    "name": "Cool Weather Type",
+    "folder": "Planetside Exploration",
+    "formula": "1d6",
+    "description": "<p>p.97. Roll 1D to determine the type of weather when the Weather Table gives Cool Weather.</p>",
+    "results": [
+      {
+        "range": [
+          1,
+          3
+        ],
+        "text": "Cold snap"
+      },
+      {
+        "range": [
+          4,
+          5
+        ],
+        "text": "ice"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "snow"
+      }
+    ]
+  },
+  {
+    "name": "Average Weather Type",
+    "folder": "Planetside Exploration",
+    "formula": "1d6",
+    "description": "<p>p.97. Roll 1D to determine the type of weather when the Weather Table gives Average.</p>",
+    "results": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "text": "Clear"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "overcast"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "wind"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "fog"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "flurries"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "mist"
+      }
+    ]
+  },
+  {
+    "name": "Warm Weather Type",
+    "folder": "Planetside Exploration",
+    "formula": "1d6",
+    "description": "<p>p.97. Roll 1D to determine the type of weather when the Weather Table gives Warm Weather.</p>",
+    "results": [
+      {
+        "range": [
+          1,
+          3
+        ],
+        "text": "Hot"
+      },
+      {
+        "range": [
+          4,
+          5
+        ],
+        "text": "humid"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "precipitation"
+      }
+    ]
+  },
+  {
+    "name": "Hot Weather Type",
+    "folder": "Planetside Exploration",
+    "formula": "1d6",
+    "description": "<p>p.97. Roll 1D to determine the type of weather when the Weather Table gives Hot Weather.</p>",
+    "results": [
+      {
+        "range": [
+          1,
+          3
+        ],
+        "text": "Heat wave"
+      },
+      {
+        "range": [
+          4,
+          5
+        ],
+        "text": "high wind"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "heavy precipitation"
+      }
+    ]
+  },
+  {
+    "name": "Extreme Heat Weather Type",
+    "folder": "Planetside Exploration",
+    "formula": "1d6",
+    "description": "<p>p.97. Roll 1D to determine the type of weather when the Weather Table gives Extreme Heat Weather.</p>",
+    "results": [
+      {
+        "range": [
+          1,
+          3
+        ],
+        "text": "Extreme wind"
+      },
+      {
+        "range": [
+          4,
+          5
+        ],
+        "text": "Extreme storm"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "Oppressive humidity"
+      }
+    ]
+  },
+  {
+    "name": "Planetside Encounter Type Table",
+    "folder": "Planetside Exploration",
+    "formula": "2d6",
+    "description": "<p>p.100. If an encounter occurs (roll 1D plus the Encounter Chance &amp; Type DM; 6+ is an encounter), roll 2D and apply the same DM. Encounter Chance &amp; Type DM by location: Forest/Jungle +3 DM; Wetland +2 DM; Shrubland/Mountain +1 DM; Open Country +0 DM; Aquatic -1 DM; Polar/Desert -2 DM; Vacuum -3 DM. Also apply any weather DM.</p>",
+    "results": [
+      {
+        "range": [
+          -10,
+          2
+        ],
+        "text": "<strong>Encountered:</strong> NPC Encounter · <strong>Encounter Distance Range Band:</strong> Close (5m or less)"
+      },
+      {
+        "range": [
+          3,
+          5
+        ],
+        "text": "<strong>Encountered:</strong> Environment · <strong>Encounter Distance Range Band:</strong> Short (5m-10m)"
+      },
+      {
+        "range": [
+          6,
+          9
+        ],
+        "text": "<strong>Encountered:</strong> Location Encounter · <strong>Encounter Distance Range Band:</strong> Medium (11m-50m)"
+      },
+      {
+        "range": [
+          10,
+          11
+        ],
+        "text": "<strong>Encountered:</strong> Environment · <strong>Encounter Distance Range Band:</strong> Long (51m-250m)"
+      },
+      {
+        "range": [
+          12,
+          30
+        ],
+        "text": "<strong>Encountered:</strong> NPC Encounter · <strong>Encounter Distance Range Band:</strong> Very Long (251m-500m)"
+      }
+    ]
+  },
+  {
+    "name": "Planetside NPC Encounter (Animal)",
+    "folder": "Planetside Exploration",
+    "formula": "2d6",
+    "description": "<p>p.100. Roll 2D when a planetside encounter is an NPC Encounter. Animals: use the Animal generator based on terrain (p.110); results 3-5 are a single animal of any type, and x2, x3, or x4 multiplies the result of the Appearing column on the Animal Table. NPC: use the NPC generator. Mixed: generate two or more types of animals, NPCs, or both.</p>",
+    "results": [
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "1D animal remains"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "Scavenging Animal"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "Hunting animal"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "Patrolling animal"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "Carnivores"
+      },
+      {
+        "range": [
+          7,
+          7
+        ],
+        "text": "Herbivores"
+      },
+      {
+        "range": [
+          8,
+          8
+        ],
+        "text": "Omnivores"
+      },
+      {
+        "range": [
+          9,
+          9
+        ],
+        "text": "Scavengers"
+      },
+      {
+        "range": [
+          10,
+          10
+        ],
+        "text": "X2 animals"
+      },
+      {
+        "range": [
+          11,
+          11
+        ],
+        "text": "X3 animals"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "text": "X4 animals"
+      }
+    ]
+  },
+  {
+    "name": "Planetside NPC Encounter (Human/Humanoid)",
+    "folder": "Planetside Exploration",
+    "formula": "2d6",
+    "description": "<p>p.100. Roll 2D when a planetside encounter is an NPC Encounter. Animals: use the Animal generator based on terrain (p.110); results 3-5 are a single animal of any type, and x2, x3, or x4 multiplies the result of the Appearing column on the Animal Table. NPC: use the NPC generator. Mixed: generate two or more types of animals, NPCs, or both.</p>",
+    "results": [
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "1D NPC remains"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "Lost NPC"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "Hermit NPC"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "D3 hunting/scavenging NPCs"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "D3 exploring/travelling NPC"
+      },
+      {
+        "range": [
+          7,
+          7
+        ],
+        "text": "1D NPCs homesteading"
+      },
+      {
+        "range": [
+          8,
+          8
+        ],
+        "text": "1D NPC sightseeing"
+      },
+      {
+        "range": [
+          9,
+          9
+        ],
+        "text": "1D NPC transporting"
+      },
+      {
+        "range": [
+          10,
+          10
+        ],
+        "text": "2D NPCs working"
+      },
+      {
+        "range": [
+          11,
+          11
+        ],
+        "text": "3D NPCs (Any)"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "text": "4D NPCs building/installing"
+      }
+    ]
+  },
+  {
+    "name": "Planetside NPC Encounter (Mixed)",
+    "folder": "Planetside Exploration",
+    "formula": "2d6",
+    "description": "<p>p.100. Roll 2D when a planetside encounter is an NPC Encounter. Animals: use the Animal generator based on terrain (p.110); results 3-5 are a single animal of any type, and x2, x3, or x4 multiplies the result of the Appearing column on the Animal Table. NPC: use the NPC generator. Mixed: generate two or more types of animals, NPCs, or both.</p>",
+    "results": [
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "Animal/animal remains"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "Animal/animal, hunting"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "Animal/animal, docile"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "Animal/animal, coexisting"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "Human/animal, hunting"
+      },
+      {
+        "range": [
+          7,
+          7
+        ],
+        "text": "Human/animal, domesticated"
+      },
+      {
+        "range": [
+          8,
+          8
+        ],
+        "text": "Human/human, friendly interaction"
+      },
+      {
+        "range": [
+          9,
+          9
+        ],
+        "text": "Human/human, neutral interaction"
+      },
+      {
+        "range": [
+          10,
+          10
+        ],
+        "text": "Human/human, aggressive interaction"
+      },
+      {
+        "range": [
+          11,
+          11
+        ],
+        "text": "Human/human, fighting"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "text": "Human/human remains"
+      }
+    ]
+  },
+  {
+    "name": "Planetside Location Encounters Table",
+    "folder": "Planetside Exploration",
+    "formula": "1d6*10+1d6",
+    "description": "<p>p.100-101. Roll D66 (D36 in Aquatic and Polar/Desert terrain; D16 in Vacuum). The UWC Population Code is the DM to the tens place. Occupied locations: results 11-26 have an Average (8+) chance of being in use, modified by terrain DM. Labor sites: results 41-46 have an average (8+) chance of being in use; 2 or less means abandoned and 3-7 means a skeleton crew or a single worker remains; they do not roll on the Habitat Condition table. For results 41-62, roll on the Habitat Condition tables. Outposts: roll 1D (see Outpost Type). Settlements: results 61-66 have the same Law Level as the planet. Found vehicles and ships: roll 1D for non-crashed ships or vehicles (see Found Vehicle or Ship Condition).</p>",
+    "results": [
+      {
+        "range": [
+          11,
+          11
+        ],
+        "text": "Scenic landscape feature"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "text": "Dangerous landscape feature"
+      },
+      {
+        "range": [
+          13,
+          13
+        ],
+        "text": "Vehicle/robot remains"
+      },
+      {
+        "range": [
+          14,
+          14
+        ],
+        "text": "Abandoned ship"
+      },
+      {
+        "range": [
+          15,
+          15
+        ],
+        "text": "Escape pod"
+      },
+      {
+        "range": [
+          16,
+          16
+        ],
+        "text": "Crashed ship"
+      },
+      {
+        "range": [
+          21,
+          21
+        ],
+        "text": "Survival shelter"
+      },
+      {
+        "range": [
+          22,
+          22
+        ],
+        "text": "Cave"
+      },
+      {
+        "range": [
+          23,
+          23
+        ],
+        "text": "Shelter made of recycled and scavenged material"
+      },
+      {
+        "range": [
+          24,
+          24
+        ],
+        "text": "Destroyed habitat/encampment"
+      },
+      {
+        "range": [
+          25,
+          25
+        ],
+        "text": "Animal pack: 1-3) Herbivore, 4-5) omnivore, 6) carnivore"
+      },
+      {
+        "range": [
+          26,
+          26
+        ],
+        "text": "Animal den: 1) Herbivore 2) omnivore 3) carnivore"
+      },
+      {
+        "range": [
+          31,
+          31
+        ],
+        "text": "Graveyard"
+      },
+      {
+        "range": [
+          32,
+          32
+        ],
+        "text": "Scrapyard"
+      },
+      {
+        "range": [
+          33,
+          33
+        ],
+        "text": "Campsite"
+      },
+      {
+        "range": [
+          34,
+          34
+        ],
+        "text": "Grounded spaceship"
+      },
+      {
+        "range": [
+          35,
+          35
+        ],
+        "text": "D3 grounded spaceships"
+      },
+      {
+        "range": [
+          36,
+          36
+        ],
+        "text": "E-type starport"
+      },
+      {
+        "range": [
+          41,
+          41
+        ],
+        "text": "Manufacturing base"
+      },
+      {
+        "range": [
+          42,
+          42
+        ],
+        "text": "Construction site"
+      },
+      {
+        "range": [
+          43,
+          43
+        ],
+        "text": "Refinery"
+      },
+      {
+        "range": [
+          44,
+          44
+        ],
+        "text": "Mine"
+      },
+      {
+        "range": [
+          45,
+          45
+        ],
+        "text": "Industrial station"
+      },
+      {
+        "range": [
+          46,
+          46
+        ],
+        "text": "Communication station"
+      },
+      {
+        "range": [
+          51,
+          51
+        ],
+        "text": "Greenhouse"
+      },
+      {
+        "range": [
+          52,
+          52
+        ],
+        "text": "Warehouse or cargo containers"
+      },
+      {
+        "range": [
+          53,
+          53
+        ],
+        "text": "Research base"
+      },
+      {
+        "range": [
+          54,
+          54
+        ],
+        "text": "Waystation"
+      },
+      {
+        "range": [
+          55,
+          55
+        ],
+        "text": "Outpost"
+      },
+      {
+        "range": [
+          56,
+          56
+        ],
+        "text": "Unique settlement"
+      },
+      {
+        "range": [
+          61,
+          61
+        ],
+        "text": "Personal habitat, 1D people"
+      },
+      {
+        "range": [
+          62,
+          62
+        ],
+        "text": "Farms, 1D x 10 people"
+      },
+      {
+        "range": [
+          63,
+          63
+        ],
+        "text": "Settlement, 1D x 100 population"
+      },
+      {
+        "range": [
+          64,
+          64
+        ],
+        "text": "Settlement. 1D x 1000 population"
+      },
+      {
+        "range": [
+          65,
+          65
+        ],
+        "text": "Settlement 1D x 10,000 population"
+      },
+      {
+        "range": [
+          66,
+          66
+        ],
+        "text": "Settlement 1D X 100,000 with a starport"
+      }
+    ]
+  },
+  {
+    "name": "Outpost Type (Planetside Location)",
+    "folder": "Planetside Exploration",
+    "formula": "1d6",
+    "description": "<p>p.101. Roll 1D when the Planetside Location Encounters Table gives an Outpost.</p>",
+    "results": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "text": "Military"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "scout/ranger"
+      },
+      {
+        "range": [
+          3,
+          4
+        ],
+        "text": "communications"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "courier"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "science"
+      }
+    ]
+  },
+  {
+    "name": "Found Vehicle or Ship Condition",
+    "folder": "Planetside Exploration",
+    "formula": "1d6",
+    "description": "<p>p.101. Roll 1D for non-crashed ships or vehicles found on the Planetside Location Encounters Table to determine their condition.</p>",
+    "results": [
+      {
+        "range": [
+          1,
+          3
+        ],
+        "text": "Ruined"
+      },
+      {
+        "range": [
+          4,
+          5
+        ],
+        "text": "damaged/rusted but repairable"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "operable"
+      }
+    ]
+  },
+  {
+    "name": "Habitat Condition (Occupied)",
+    "folder": "Planetside Exploration",
+    "formula": "2d6",
+    "description": "<p>p.101. If a result of 41-62 on the Planetside Location Encounters Table is rolled, roll 2D in each column of the Habitat Condition table and apply the Encounter Chance &amp; Type DM (Forest/Jungle +3, Wetland +2, Shrubland/Mountain +1, Open Country +0, Aquatic -1, Polar/Desert -2, Vacuum -3). Abandoned: this location appears to be not in use or operational. In use: this location is operational and clearly indicates who owns and operates the location. Occupied: this location is operational, but it is unclear who owns and operates the location and what the habitat's function is.</p>",
+    "results": [
+      {
+        "range": [
+          -10,
+          1
+        ],
+        "text": "Abandoned and"
+      },
+      {
+        "range": [
+          2,
+          3
+        ],
+        "text": "Abandoned"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "Abandoned but"
+      },
+      {
+        "range": [
+          5,
+          9
+        ],
+        "text": "In use"
+      },
+      {
+        "range": [
+          10,
+          10
+        ],
+        "text": "Occupied but"
+      },
+      {
+        "range": [
+          11,
+          12
+        ],
+        "text": "Occupied"
+      },
+      {
+        "range": [
+          13,
+          30
+        ],
+        "text": "Occupied and"
+      }
+    ]
+  },
+  {
+    "name": "Habitat Condition (Condition)",
+    "folder": "Planetside Exploration",
+    "formula": "2d6",
+    "description": "<p>p.101. If a result of 41-62 on the Planetside Location Encounters Table is rolled, roll 2D in each column of the Habitat Condition table and apply the Encounter Chance &amp; Type DM (Forest/Jungle +3, Wetland +2, Shrubland/Mountain +1, Open Country +0, Aquatic -1, Polar/Desert -2, Vacuum -3). Abandoned: this location appears to be not in use or operational. In use: this location is operational and clearly indicates who owns and operates the location. Occupied: this location is operational, but it is unclear who owns and operates the location and what the habitat's function is.</p>",
+    "results": [
+      {
+        "range": [
+          -10,
+          1
+        ],
+        "text": "Destroyed/collapsed"
+      },
+      {
+        "range": [
+          2,
+          3
+        ],
+        "text": "Falling apart/ overgrown"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "Makeshift"
+      },
+      {
+        "range": [
+          5,
+          9
+        ],
+        "text": "Showing age/ weathered"
+      },
+      {
+        "range": [
+          10,
+          10
+        ],
+        "text": "Under construction/being repaired"
+      },
+      {
+        "range": [
+          11,
+          12
+        ],
+        "text": "Well-maintained"
+      },
+      {
+        "range": [
+          13,
+          30
+        ],
+        "text": "Fortified"
+      }
+    ]
+  },
+  {
+    "name": "Settlement Encounter Table",
+    "folder": "Planetside Exploration",
+    "formula": "1d6*10+1d6",
+    "description": "<p>p.102-103. Every six hours (or every 1D hours) spent exploring a settlement, roll D66 and apply the total DM to the tens place. Population DM: 3 or less -3; 4-5 -2; 6-7 -1; 8-9 +0; 10(A)+ +1. Law Level DM: 0 0; 1-3 +1; 4-5 +2; 6-8 +3; 9+ +4. Settlement condition by result: 01 - 06 Abandoned or neglected; 11 - 16 Seedy; 21 - 26 Rundown; 31 - 36 Out of date; 41 - 46 Maintained; 51 - 56 Burgeoning; 61 - 66 Esteemed; 71 - 76 Decline; 81 - 86 Dystopian; 91 - 96 Oppressive. Random NPCs: use the Random NPC Table (p.58) with the range stated in the result, and the NPC demeanour table (p.56) with SOC DM applied. Legal Encounters: once per day, including on entry, roll 2D; if the roll is under the local law level the encounter is a legal encounter.</p>",
+    "results": [
+      {
+        "range": [
+          -100,
+          1
+        ],
+        "text": "Shanty town or tent city"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "Abandoned storefronts"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "Malfunctioning display signs"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "Trash piles"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "Buildings destroyed by collapse or attack"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "The burnt-out remains of a vehicle"
+      },
+      {
+        "range": [
+          11,
+          11
+        ],
+        "text": "A gang of armed civilians notice you"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "text": "A robbery is seen nearby"
+      },
+      {
+        "range": [
+          13,
+          13
+        ],
+        "text": "An apparent illegal deal occurs in the shadows"
+      },
+      {
+        "range": [
+          14,
+          14
+        ],
+        "text": "Beggar asks for food or credits"
+      },
+      {
+        "range": [
+          15,
+          15
+        ],
+        "text": "Armed private security outside of one of the few open stores; Random NPC"
+      },
+      {
+        "range": [
+          16,
+          16
+        ],
+        "text": "A brawl happens in front of a bar; Random NPC (any)"
+      },
+      {
+        "range": [
+          21,
+          21
+        ],
+        "text": "Someone bumps into you and attempts to pickpocket you, but starts running off when they mess up"
+      },
+      {
+        "range": [
+          22,
+          22
+        ],
+        "text": "A street vendor is willing to buy anything and claims they can find you anything to buy if you pay them a finder’s fee"
+      },
+      {
+        "range": [
+          23,
+          23
+        ],
+        "text": "A group of people are tagging a building or vehicle with graffiti"
+      },
+      {
+        "range": [
+          24,
+          24
+        ],
+        "text": "Local NPC walks by talking to themself; 4+ chance they mumble something informative"
+      },
+      {
+        "range": [
+          25,
+          25
+        ],
+        "text": "Municipal worker is cleaning up trash around a rubbish bun"
+      },
+      {
+        "range": [
+          26,
+          26
+        ],
+        "text": "Random NPC 11-16"
+      },
+      {
+        "range": [
+          31,
+          31
+        ],
+        "text": "A local festival is being celebrated"
+      },
+      {
+        "range": [
+          32,
+          32
+        ],
+        "text": "A food stall is offering delicious-smelling but odd-looking food"
+      },
+      {
+        "range": [
+          33,
+          33
+        ],
+        "text": "A crime scene is being investigated while reporters broadcast"
+      },
+      {
+        "range": [
+          34,
+          34
+        ],
+        "text": "Two professionals are arguing politics outside of a cafe"
+      },
+      {
+        "range": [
+          35,
+          35
+        ],
+        "text": "A group of citizens are smoking and socializing outside of a bar"
+      },
+      {
+        "range": [
+          36,
+          36
+        ],
+        "text": "Random NPC 21-26"
+      },
+      {
+        "range": [
+          41,
+          41
+        ],
+        "text": "Wires and digital ads and neon signs hang from all buildings, causing an artificial glow on the colourful crowds congesting the narrow streets"
+      },
+      {
+        "range": [
+          42,
+          42
+        ],
+        "text": "A robot and a traveller walk by. The traveller doesn’t notice you, but the robot maintains eye contact for too long."
+      },
+      {
+        "range": [
+          43,
+          43
+        ],
+        "text": "Stained Brutalist facades cast shadows on the streets below, shading the crowd in a drab overcast that is reflective of their demeanour"
+      },
+      {
+        "range": [
+          44,
+          44
+        ],
+        "text": "Public transit stations are full of loiterers; 4+ chance for a group to harass the travellers"
+      },
+      {
+        "range": [
+          45,
+          45
+        ],
+        "text": "A group of tourists approach and ask for directions, and look very out of place."
+      },
+      {
+        "range": [
+          46,
+          46
+        ],
+        "text": "Random NPCs 31-36"
+      },
+      {
+        "range": [
+          51,
+          51
+        ],
+        "text": "A citizen is feeding animals at a park"
+      },
+      {
+        "range": [
+          52,
+          52
+        ],
+        "text": "A citizen is out walking a unique pet"
+      },
+      {
+        "range": [
+          53,
+          53
+        ],
+        "text": "A family of citizens are enjoying a day together"
+      },
+      {
+        "range": [
+          54,
+          54
+        ],
+        "text": "A road is closed off for a parade"
+      },
+      {
+        "range": [
+          55,
+          55
+        ],
+        "text": "A servant of a noble is desperately looking for help"
+      },
+      {
+        "range": [
+          56,
+          56
+        ],
+        "text": "Random NPCs 41-46"
+      },
+      {
+        "range": [
+          61,
+          61
+        ],
+        "text": "A businessman is arguing with someone on a headset"
+      },
+      {
+        "range": [
+          62,
+          62
+        ],
+        "text": "Locals are gossiping locals outside of a bar or cafe"
+      },
+      {
+        "range": [
+          63,
+          63
+        ],
+        "text": "A local celebration or holiday is currently happening, which draws an enthusiastic crowd, blocking streets"
+      },
+      {
+        "range": [
+          64,
+          64
+        ],
+        "text": "Street performers are entertaining a crowd"
+      },
+      {
+        "range": [
+          65,
+          65
+        ],
+        "text": "A noble entourage passes by and ignores you unless your SOC is 10+"
+      },
+      {
+        "range": [
+          66,
+          66
+        ],
+        "text": "Random NPCs 51-56"
+      },
+      {
+        "range": [
+          71,
+          71
+        ],
+        "text": "A protest outside of a municipal building"
+      },
+      {
+        "range": [
+          72,
+          72
+        ],
+        "text": "Sidewalk vendors selling bootlegs, stolen goods, junk, and possibly uncommon goods"
+      },
+      {
+        "range": [
+          73,
+          73
+        ],
+        "text": "Locals who pass by on vehicles maintain eye contact while passing"
+      },
+      {
+        "range": [
+          74,
+          74
+        ],
+        "text": "A desperate person approaches you and begs for a ride off-world"
+      },
+      {
+        "range": [
+          75,
+          75
+        ],
+        "text": "A crowd is gathering for a public duel between two nobles"
+      },
+      {
+        "range": [
+          76,
+          76
+        ],
+        "text": "Random NPCs 51-56"
+      },
+      {
+        "range": [
+          81,
+          81
+        ],
+        "text": "A beggar is being violently arrested"
+      },
+      {
+        "range": [
+          82,
+          82
+        ],
+        "text": "A protest is being cleared by a riot squad"
+      },
+      {
+        "range": [
+          83,
+          83
+        ],
+        "text": "Someone is preaching on the corner with a sign stating “The end is nigh”"
+      },
+      {
+        "range": [
+          84,
+          84
+        ],
+        "text": "Overtly wealthy NPCs with private police partaking in excess and immunity from consequences"
+      },
+      {
+        "range": [
+          85,
+          85
+        ],
+        "text": "Propaganda posters depicting an authoritative political leader; 4+ chance of it being vandalized"
+      },
+      {
+        "range": [
+          86,
+          86
+        ],
+        "text": "Random NPCs 61-66"
+      },
+      {
+        "range": [
+          91,
+          91
+        ],
+        "text": "Buildings have bars over their windows, with the occasional person looking out at you"
+      },
+      {
+        "range": [
+          92,
+          92
+        ],
+        "text": "A security vehicle covered in graffiti or trash drives past then stops. 1D armored police step out. Random NPC"
+      },
+      {
+        "range": [
+          93,
+          93
+        ],
+        "text": "Someone is vandalizing a display screen showing propaganda"
+      },
+      {
+        "range": [
+          94,
+          94
+        ],
+        "text": "Military are present on the street, armed with auto guns and wearing armor"
+      },
+      {
+        "range": [
+          95,
+          95
+        ],
+        "text": "Speakers declare the curfew hours"
+      },
+      {
+        "range": [
+          96,
+          200
+        ],
+        "text": "Random NPCs 61-66"
+      }
+    ]
+  },
+  {
+    "name": "Planetside Colony (Who Runs It)",
+    "folder": "Planetside Exploration",
+    "formula": "2d6",
+    "description": "<p>p.102. Planetside Colony Table: roll 2D on each column to generate a colony. If exploring a planet that isn't the primary world of the star system, then settlements encountered are colonies of that main world. The book lists overlapping ranges 8-10 and 10-11; this table uses 8-9 for the fourth row.</p>",
+    "results": [
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "Criminal"
+      },
+      {
+        "range": [
+          3,
+          4
+        ],
+        "text": "Military"
+      },
+      {
+        "range": [
+          5,
+          7
+        ],
+        "text": "Corporation"
+      },
+      {
+        "range": [
+          8,
+          9
+        ],
+        "text": "Government"
+      },
+      {
+        "range": [
+          10,
+          11
+        ],
+        "text": "Political idealists"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "text": "Religious"
+      }
+    ]
+  },
+  {
+    "name": "Planetside Colony (Age)",
+    "folder": "Planetside Exploration",
+    "formula": "2d6",
+    "description": "<p>p.102. Planetside Colony Table: roll 2D on each column to generate a colony. If exploring a planet that isn't the primary world of the star system, then settlements encountered are colonies of that main world. The book lists overlapping ranges 8-10 and 10-11; this table uses 8-9 for the fourth row.</p>",
+    "results": [
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "D3+3 years"
+      },
+      {
+        "range": [
+          3,
+          4
+        ],
+        "text": "2D6 years"
+      },
+      {
+        "range": [
+          5,
+          7
+        ],
+        "text": "2D6+6 years"
+      },
+      {
+        "range": [
+          8,
+          9
+        ],
+        "text": "D3 decades"
+      },
+      {
+        "range": [
+          10,
+          11
+        ],
+        "text": "1D+3 decades"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "text": "D3 centuries"
+      }
+    ]
+  },
+  {
+    "name": "Planetside Colony (Population)",
+    "folder": "Planetside Exploration",
+    "formula": "2d6",
+    "description": "<p>p.102. Planetside Colony Table: roll 2D on each column to generate a colony. If exploring a planet that isn't the primary world of the star system, then settlements encountered are colonies of that main world. The book lists overlapping ranges 8-10 and 10-11; this table uses 8-9 for the fourth row.</p>",
+    "results": [
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "1D x 50"
+      },
+      {
+        "range": [
+          3,
+          4
+        ],
+        "text": "1D x 100"
+      },
+      {
+        "range": [
+          5,
+          7
+        ],
+        "text": "1D x 500"
+      },
+      {
+        "range": [
+          8,
+          9
+        ],
+        "text": "1D x 1,000"
+      },
+      {
+        "range": [
+          10,
+          11
+        ],
+        "text": "1D x 5,000"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "text": "1D x 10,000"
+      }
+    ]
+  },
+  {
+    "name": "Planetside Environment Encounters",
+    "folder": "Planetside Exploration",
+    "formula": "1d6*10+1d6",
+    "description": "<p>p.104. Roll D66. Range 11-16 can be used for Atmosphere 0. Range 21-26 can be used for Atmospheres 1-3. Range 11-66 can be used for Atmospheres 4-9. Atmospheres A-F use the Unique Atmosphere Planetside Environment tables for 11-16. Avoiding: it takes 6 hours to travel around an encounter on foot, while dangerous weather changes take 1D days to pass by. *All roadways will continue if followed until they lead to a Planetside Location Encounter.</p>",
+    "results": [
+      {
+        "range": [
+          11,
+          11
+        ],
+        "text": "Radiation storm"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "text": "Temperature spike/drop"
+      },
+      {
+        "range": [
+          13,
+          13
+        ],
+        "text": "Extreme weather imminent"
+      },
+      {
+        "range": [
+          14,
+          14
+        ],
+        "text": "Fallen space junk"
+      },
+      {
+        "range": [
+          15,
+          15
+        ],
+        "text": "Meteor impact site"
+      },
+      {
+        "range": [
+          16,
+          16
+        ],
+        "text": "Small meteorite impacts 2Dx10 km away"
+      },
+      {
+        "range": [
+          21,
+          21
+        ],
+        "text": "Dust/debris storm on the horizon"
+      },
+      {
+        "range": [
+          22,
+          22
+        ],
+        "text": "Massive crater"
+      },
+      {
+        "range": [
+          23,
+          23
+        ],
+        "text": "Rusted and ruined vehicle"
+      },
+      {
+        "range": [
+          24,
+          24
+        ],
+        "text": "Rusted and ruined starship"
+      },
+      {
+        "range": [
+          25,
+          25
+        ],
+        "text": "Temporary shelter remains"
+      },
+      {
+        "range": [
+          26,
+          26
+        ],
+        "text": "Overgrown location"
+      },
+      {
+        "range": [
+          31,
+          31
+        ],
+        "text": "Roadway, dirt*"
+      },
+      {
+        "range": [
+          32,
+          32
+        ],
+        "text": "Roadway, paved*"
+      },
+      {
+        "range": [
+          33,
+          33
+        ],
+        "text": "Roadway, elevated*"
+      },
+      {
+        "range": [
+          34,
+          34
+        ],
+        "text": "Litter and trash"
+      },
+      {
+        "range": [
+          35,
+          35
+        ],
+        "text": "Wasteland"
+      },
+      {
+        "range": [
+          36,
+          36
+        ],
+        "text": "Starship flying in the distance"
+      },
+      {
+        "range": [
+          41,
+          41
+        ],
+        "text": "Cave opening"
+      },
+      {
+        "range": [
+          42,
+          42
+        ],
+        "text": "Abandoned mining/drilling machines"
+      },
+      {
+        "range": [
+          43,
+          43
+        ],
+        "text": "Animal herd/flock/school in the distance"
+      },
+      {
+        "range": [
+          44,
+          44
+        ],
+        "text": "Light/smoke in the distance"
+      },
+      {
+        "range": [
+          45,
+          45
+        ],
+        "text": "Strange mechanical sound in the distance"
+      },
+      {
+        "range": [
+          46,
+          46
+        ],
+        "text": "Strange animal sound in the distance"
+      },
+      {
+        "range": [
+          51,
+          51
+        ],
+        "text": "Unique landscape formation"
+      },
+      {
+        "range": [
+          52,
+          52
+        ],
+        "text": "Scenic landscape"
+      },
+      {
+        "range": [
+          53,
+          53
+        ],
+        "text": "Significant overgrowth/bloom"
+      },
+      {
+        "range": [
+          54,
+          54
+        ],
+        "text": "Body of liquid (lake)"
+      },
+      {
+        "range": [
+          55,
+          55
+        ],
+        "text": "Flowing liquid (river)"
+      },
+      {
+        "range": [
+          56,
+          56
+        ],
+        "text": "Oasis"
+      },
+      {
+        "range": [
+          61,
+          61
+        ],
+        "text": "Cairns"
+      },
+      {
+        "range": [
+          62,
+          62
+        ],
+        "text": "Stone spires"
+      },
+      {
+        "range": [
+          63,
+          63
+        ],
+        "text": "Fissures/chasm"
+      },
+      {
+        "range": [
+          64,
+          64
+        ],
+        "text": "Cave"
+      },
+      {
+        "range": [
+          65,
+          65
+        ],
+        "text": "Monolith"
+      },
+      {
+        "range": [
+          66,
+          66
+        ],
+        "text": "Mysterious ruins"
+      }
+    ]
+  },
+  {
+    "name": "Unique Atmosphere Planetside Environment (A Exotic)",
+    "folder": "Planetside Exploration",
+    "formula": "1d6+10",
+    "description": "<p>p.104. Roll D11 (1D, read as 11-16) for environmental encounters on planets with Atmosphere A Exotic; use this instead of results 11-16 of the Planetside Environment Encounters table.</p>",
+    "results": [
+      {
+        "range": [
+          11,
+          11
+        ],
+        "text": "Massive spores create a type of fog"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "text": "Remains of animal/NPC with plants/fungi growing out of it"
+      },
+      {
+        "range": [
+          13,
+          13
+        ],
+        "text": "Massive crystalline columns"
+      },
+      {
+        "range": [
+          14,
+          14
+        ],
+        "text": "Floating islands of tangled spores or moss"
+      },
+      {
+        "range": [
+          15,
+          15
+        ],
+        "text": "Hazardous plant/fungi encounter"
+      },
+      {
+        "range": [
+          16,
+          16
+        ],
+        "text": "Camouflaged animal encounter"
+      }
+    ]
+  },
+  {
+    "name": "Unique Atmosphere Planetside Environment (B Corrosive)",
+    "folder": "Planetside Exploration",
+    "formula": "1d6+10",
+    "description": "<p>p.104. Roll D11 (1D, read as 11-16) for environmental encounters on planets with Atmosphere B Corrosive; use this instead of results 11-16 of the Planetside Environment Encounters table.</p>",
+    "results": [
+      {
+        "range": [
+          11,
+          11
+        ],
+        "text": "Hot acid geysers"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "text": "Acidic lakes"
+      },
+      {
+        "range": [
+          13,
+          13
+        ],
+        "text": "Rocky columns"
+      },
+      {
+        "range": [
+          14,
+          14
+        ],
+        "text": "Corrosive rain storm"
+      },
+      {
+        "range": [
+          15,
+          15
+        ],
+        "text": "Silicon deposits"
+      },
+      {
+        "range": [
+          16,
+          16
+        ],
+        "text": "Silicon-based plant or fungi"
+      }
+    ]
+  },
+  {
+    "name": "Unique Atmosphere Planetside Environment (C Insidious)",
+    "folder": "Planetside Exploration",
+    "formula": "1d6+10",
+    "description": "<p>p.104. Roll D11 (1D, read as 11-16) for environmental encounters on planets with Atmosphere C Insidious; use this instead of results 11-16 of the Planetside Environment Encounters table.</p>",
+    "results": [
+      {
+        "range": [
+          11,
+          11
+        ],
+        "text": "Lava flows"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "text": "Jagged and sharp landscape feature; will destroy vaccsuit"
+      },
+      {
+        "range": [
+          13,
+          13
+        ],
+        "text": "Volcano: 1) Dormant 2-5) active 6) erupting"
+      },
+      {
+        "range": [
+          14,
+          14
+        ],
+        "text": "Ash storm"
+      },
+      {
+        "range": [
+          15,
+          15
+        ],
+        "text": "Basalt field"
+      },
+      {
+        "range": [
+          16,
+          16
+        ],
+        "text": "Sulfur fog"
+      }
+    ]
+  },
+  {
+    "name": "Unique Atmosphere Planetside Environment (D Very Dense)",
+    "folder": "Planetside Exploration",
+    "formula": "1d6+10",
+    "description": "<p>p.104. Roll D11 (1D, read as 11-16) for environmental encounters on planets with Atmosphere D Very Dense; use this instead of results 11-16 of the Planetside Environment Encounters table.</p>",
+    "results": [
+      {
+        "range": [
+          11,
+          11
+        ],
+        "text": "Severe rain"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "text": "Vortex storm"
+      },
+      {
+        "range": [
+          13,
+          13
+        ],
+        "text": "Poisonous gas"
+      },
+      {
+        "range": [
+          14,
+          14
+        ],
+        "text": "Extreme winds"
+      },
+      {
+        "range": [
+          15,
+          15
+        ],
+        "text": "Fist-sized hail storm"
+      },
+      {
+        "range": [
+          16,
+          16
+        ],
+        "text": "Radioactive rift"
+      }
+    ]
+  },
+  {
+    "name": "Unique Atmosphere Planetside Environment (E Low)",
+    "folder": "Planetside Exploration",
+    "formula": "1d6+10",
+    "description": "<p>p.104. Roll D11 (1D, read as 11-16) for environmental encounters on planets with Atmosphere E Low; use this instead of results 11-16 of the Planetside Environment Encounters table.</p>",
+    "results": [
+      {
+        "range": [
+          11,
+          11
+        ],
+        "text": "Atmosphere pockets in low areas like valleys or craters"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "text": "Subterranean opening"
+      },
+      {
+        "range": [
+          13,
+          13
+        ],
+        "text": "Drifting moss clusters that pile up in low areas or hill sides"
+      },
+      {
+        "range": [
+          14,
+          14
+        ],
+        "text": "Moving ice boulders"
+      },
+      {
+        "range": [
+          15,
+          15
+        ],
+        "text": "Animals with air sacs wandering"
+      },
+      {
+        "range": [
+          16,
+          16
+        ],
+        "text": "Animals with hard carapaces for vacuum protection in highland areas."
+      }
+    ]
+  },
+  {
+    "name": "Unique Atmosphere Planetside Environment (F Unusual)",
+    "folder": "Planetside Exploration",
+    "formula": "1d6+10",
+    "description": "<p>p.104. Roll D11 (1D, read as 11-16) for environmental encounters on planets with Atmosphere F Unusual; use this instead of results 11-16 of the Planetside Environment Encounters table.</p>",
+    "results": [
+      {
+        "range": [
+          11,
+          11
+        ],
+        "text": "Floating plants"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "text": "Mobile slime/goo creatures"
+      },
+      {
+        "range": [
+          13,
+          13
+        ],
+        "text": "Rainbow fog"
+      },
+      {
+        "range": [
+          14,
+          14
+        ],
+        "text": "Floating landmasses"
+      },
+      {
+        "range": [
+          15,
+          15
+        ],
+        "text": "Glowing plants and animals"
+      },
+      {
+        "range": [
+          16,
+          16
+        ],
+        "text": "Non-newtonian fluid river or pond"
+      }
+    ]
+  }
+]

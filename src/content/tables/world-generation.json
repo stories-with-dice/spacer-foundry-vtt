@@ -1,0 +1,865 @@
+[
+  {
+    "name": "Main World Planet Size (Step 1)",
+    "folder": "World Generation",
+    "formula": "2d6-2",
+    "description": "<p>p.91. Step 1: roll 2D-2. Optional: to increase chances of Earth-sized planets, roll 2D+1 instead. Planets larger than 16,000km: roll 2D+3. Moons: roll D3-1 per moon. Results of 1 or less are typically manufactured locations such as orbital space colonies, mining asteroids, or other orbital modules like bases, starports made of manufactured materials, hollowed asteroids, or a combination of both. These locations require a full artificial environment for habitation. Gravity is grouped in the book: 0 Minimal to none; 1-3 0.25G; 4-6 0.5G; 7-9 1G; 10-11 1.5G; 12 2G.</p>",
+    "results": [
+      {
+        "range": [
+          -10,
+          0
+        ],
+        "text": "<strong>Size:</strong> 0 · <strong>Diameter:</strong> 1,000km or less · <strong>Example:</strong> Asteroid · <strong>Surface Gravity:</strong> Minimal to none"
+      },
+      {
+        "range": [
+          1,
+          1
+        ],
+        "text": "<strong>Size:</strong> 1 · <strong>Diameter:</strong> 1,600km · <strong>Example:</strong> Triton · <strong>Surface Gravity:</strong> 0.25G"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "<strong>Size:</strong> 2 · <strong>Diameter:</strong> 3,200km · <strong>Example:</strong> Luna, Europa · <strong>Surface Gravity:</strong> 0.25G"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "<strong>Size:</strong> 3 · <strong>Diameter:</strong> 4,800km · <strong>Example:</strong> Mercury · <strong>Surface Gravity:</strong> 0.25G"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "<strong>Size:</strong> 4 · <strong>Diameter:</strong> 6,400km · <strong>Example:</strong> Mars · <strong>Surface Gravity:</strong> 0.5G"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "<strong>Size:</strong> 5 · <strong>Diameter:</strong> 8,000km · <strong>Example:</strong> - · <strong>Surface Gravity:</strong> 0.5G"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "<strong>Size:</strong> 6 · <strong>Diameter:</strong> 9,600km · <strong>Example:</strong> - · <strong>Surface Gravity:</strong> 0.5G"
+      },
+      {
+        "range": [
+          7,
+          7
+        ],
+        "text": "<strong>Size:</strong> 7 · <strong>Diameter:</strong> 11,200km · <strong>Example:</strong> - · <strong>Surface Gravity:</strong> 1G"
+      },
+      {
+        "range": [
+          8,
+          8
+        ],
+        "text": "<strong>Size:</strong> 8 · <strong>Diameter:</strong> 12,800km · <strong>Example:</strong> Earth · <strong>Surface Gravity:</strong> 1G"
+      },
+      {
+        "range": [
+          9,
+          9
+        ],
+        "text": "<strong>Size:</strong> 9 · <strong>Diameter:</strong> 14,400km · <strong>Example:</strong> - · <strong>Surface Gravity:</strong> 1G"
+      },
+      {
+        "range": [
+          10,
+          10
+        ],
+        "text": "<strong>Size:</strong> 10 (A) · <strong>Diameter:</strong> 16,000km · <strong>Surface Gravity:</strong> 1.5G"
+      },
+      {
+        "range": [
+          11,
+          11
+        ],
+        "text": "<strong>Size:</strong> 11 (B) · <strong>Diameter:</strong> 17,700km · <strong>Surface Gravity:</strong> 1.5G"
+      },
+      {
+        "range": [
+          12,
+          30
+        ],
+        "text": "<strong>Size:</strong> 12 (C) · <strong>Diameter:</strong> 19,3000km · <strong>Surface Gravity:</strong> 2G"
+      }
+    ]
+  },
+  {
+    "name": "Main World Atmosphere (Step 2)",
+    "folder": "World Generation",
+    "formula": "2d6-7",
+    "description": "<p>p.91. Step 2: roll 2D-7 and add the planet's size code to the result.</p>",
+    "results": [
+      {
+        "range": [
+          -20,
+          0
+        ],
+        "text": "<strong>Atmosphere:</strong> 0 · <strong>Composition:</strong> None · <strong>Example:</strong> Moon · <strong>Required Survival Equipment:</strong> Vaccsuit"
+      },
+      {
+        "range": [
+          1,
+          1
+        ],
+        "text": "<strong>Atmosphere:</strong> 1 · <strong>Composition:</strong> Trace · <strong>Example:</strong> Mars · <strong>Required Survival Equipment:</strong> Vaccsuit"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "<strong>Atmosphere:</strong> 2 · <strong>Composition:</strong> Very Thin, Tainted · <strong>Example:</strong> - · <strong>Required Survival Equipment:</strong> Respirator w/ filter"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "<strong>Atmosphere:</strong> 3 · <strong>Composition:</strong> Very Thin · <strong>Example:</strong> - · <strong>Required Survival Equipment:</strong> Respirator"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "<strong>Atmosphere:</strong> 4 · <strong>Composition:</strong> Thin, Tainted · <strong>Example:</strong> - · <strong>Required Survival Equipment:</strong> Filter mask"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "<strong>Atmosphere:</strong> 5 · <strong>Composition:</strong> Thin · <strong>Example:</strong> - · <strong>Required Survival Equipment:</strong> -"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "<strong>Atmosphere:</strong> 6 · <strong>Composition:</strong> Standard · <strong>Example:</strong> Earth · <strong>Required Survival Equipment:</strong> -"
+      },
+      {
+        "range": [
+          7,
+          7
+        ],
+        "text": "<strong>Atmosphere:</strong> 7 · <strong>Composition:</strong> Standard, Tainted · <strong>Example:</strong> - · <strong>Required Survival Equipment:</strong> Filter mask"
+      },
+      {
+        "range": [
+          8,
+          8
+        ],
+        "text": "<strong>Atmosphere:</strong> 8 · <strong>Composition:</strong> Dense · <strong>Example:</strong> - · <strong>Required Survival Equipment:</strong> -"
+      },
+      {
+        "range": [
+          9,
+          9
+        ],
+        "text": "<strong>Atmosphere:</strong> 9 · <strong>Composition:</strong> Dense, Tainted · <strong>Example:</strong> - · <strong>Required Survival Equipment:</strong> Filter mask"
+      },
+      {
+        "range": [
+          10,
+          10
+        ],
+        "text": "<strong>Atmosphere:</strong> 10 (A) · <strong>Composition:</strong> Exotic · <strong>Example:</strong> - · <strong>Required Survival Equipment:</strong> Air supply"
+      },
+      {
+        "range": [
+          11,
+          11
+        ],
+        "text": "<strong>Atmosphere:</strong> 11 (B) · <strong>Composition:</strong> Corrosive · <strong>Example:</strong> Venus · <strong>Required Survival Equipment:</strong> Vaccsuit"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "text": "<strong>Atmosphere:</strong> 12 (C) · <strong>Composition:</strong> Insidious · <strong>Example:</strong> - · <strong>Required Survival Equipment:</strong> Vaccsuit"
+      },
+      {
+        "range": [
+          13,
+          13
+        ],
+        "text": "<strong>Atmosphere:</strong> 13 (D) · <strong>Composition:</strong> Very Dense · <strong>Required Survival Equipment:</strong> -"
+      },
+      {
+        "range": [
+          14,
+          14
+        ],
+        "text": "<strong>Atmosphere:</strong> 14 (E) · <strong>Composition:</strong> Low · <strong>Required Survival Equipment:</strong> -"
+      },
+      {
+        "range": [
+          15,
+          40
+        ],
+        "text": "<strong>Atmosphere:</strong> 15 (F) · <strong>Composition:</strong> Unusual · <strong>Required Survival Equipment:</strong> Varies"
+      }
+    ]
+  },
+  {
+    "name": "Main World Hydrographics (Step 3)",
+    "folder": "World Generation",
+    "formula": "2d6-7",
+    "description": "<p>p.91. Step 3: roll 2D-7 and add the Planet Size code. Size 0 - 1 World: Hydrographic of 0. Atmosphere 0, 1, A-F: DM -4.</p>",
+    "results": [
+      {
+        "range": [
+          -20,
+          0
+        ],
+        "text": "<strong>Hydrographics:</strong> 0 · <strong>Percentage of Water:</strong> 0 - 5% · <strong>Example:</strong> Desert world"
+      },
+      {
+        "range": [
+          1,
+          1
+        ],
+        "text": "<strong>Hydrographics:</strong> 1 · <strong>Percentage of Water:</strong> 6 - 15% · <strong>Example:</strong> Dry world"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "<strong>Hydrographics:</strong> 2 · <strong>Percentage of Water:</strong> 16 - 25% · <strong>Example:</strong> A few small seas"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "<strong>Hydrographics:</strong> 3 · <strong>Percentage of Water:</strong> 26 - 35% · <strong>Example:</strong> Small seas and oceans"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "<strong>Hydrographics:</strong> 4 · <strong>Percentage of Water:</strong> 36 - 45% · <strong>Example:</strong> Wet world"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "<strong>Hydrographics:</strong> 5 · <strong>Percentage of Water:</strong> 46 - 55% · <strong>Example:</strong> A large ocean"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "<strong>Hydrographics:</strong> 6 · <strong>Percentage of Water:</strong> 56 - 65% · <strong>Example:</strong> A few large oceans"
+      },
+      {
+        "range": [
+          7,
+          7
+        ],
+        "text": "<strong>Hydrographics:</strong> 7 · <strong>Percentage of Water:</strong> 66 - 75% · <strong>Example:</strong> Many large oceans (Earth-like)"
+      },
+      {
+        "range": [
+          8,
+          8
+        ],
+        "text": "<strong>Hydrographics:</strong> 8 · <strong>Percentage of Water:</strong> 76 - 85% · <strong>Example:</strong> Islands and archipelagos"
+      },
+      {
+        "range": [
+          9,
+          9
+        ],
+        "text": "<strong>Hydrographics:</strong> 9 · <strong>Percentage of Water:</strong> 86 - 95% · <strong>Example:</strong> Nearly all water, with a few islands"
+      },
+      {
+        "range": [
+          10,
+          40
+        ],
+        "text": "<strong>Hydrographics:</strong> 10 (A) · <strong>Percentage of Water:</strong> 96 - 100% · <strong>Example:</strong> Waterworld"
+      }
+    ]
+  },
+  {
+    "name": "Main World Population (Step 4)",
+    "folder": "World Generation",
+    "formula": "2d6-2",
+    "description": "<p>p.92. Step 4: roll 2D-2. Add +1 DM for each of the following: within 1 parsec the subsector's capital planet system, in a dense subsector, within one parsec of a main travel route. Add +2 DM if the capital is in the subsector.</p>",
+    "results": [
+      {
+        "range": [
+          -10,
+          0
+        ],
+        "text": "<strong>Pop:</strong> 0 · <strong>Inhabitants:</strong> None"
+      },
+      {
+        "range": [
+          1,
+          1
+        ],
+        "text": "<strong>Pop:</strong> 1 · <strong>Inhabitants:</strong> Few · <strong>Description:</strong> Single person or family"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "<strong>Pop:</strong> 2 · <strong>Inhabitants:</strong> Hundreds · <strong>Description:</strong> Tiny settlement or research colony"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "<strong>Pop:</strong> 3 · <strong>Inhabitants:</strong> Thousands"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "<strong>Pop:</strong> 4 · <strong>Inhabitants:</strong> Tens of Thousands · <strong>Description:</strong> Small settlement or new colony"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "<strong>Pop:</strong> 5 · <strong>Inhabitants:</strong> Hundreds of Thousands · <strong>Description:</strong> Medium settlement or developing colony"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "<strong>Pop:</strong> 6 · <strong>Inhabitants:</strong> Millions"
+      },
+      {
+        "range": [
+          7,
+          7
+        ],
+        "text": "<strong>Pop:</strong> 7 · <strong>Inhabitants:</strong> Tens of Millions · <strong>Description:</strong> Large settlement or established colony"
+      },
+      {
+        "range": [
+          8,
+          8
+        ],
+        "text": "<strong>Pop:</strong> 8 · <strong>Inhabitants:</strong> Hundreds of Millions · <strong>Description:</strong> Many large settlements/colonies and small nations"
+      },
+      {
+        "range": [
+          9,
+          9
+        ],
+        "text": "<strong>Pop:</strong> 9 · <strong>Inhabitants:</strong> Billions · <strong>Description:</strong> Many large nations, present-day Earth"
+      },
+      {
+        "range": [
+          10,
+          10
+        ],
+        "text": "<strong>Pop:</strong> 10 (A) · <strong>Inhabitants:</strong> Tens of Billions"
+      },
+      {
+        "range": [
+          11,
+          11
+        ],
+        "text": "<strong>Pop:</strong> 11 (B) · <strong>Inhabitants:</strong> Hundreds of Billions · <strong>Description:</strong> Overpopulated settlements"
+      },
+      {
+        "range": [
+          12,
+          30
+        ],
+        "text": "<strong>Pop:</strong> 12 (C) · <strong>Inhabitants:</strong> Trillions · <strong>Description:</strong> World-city"
+      }
+    ]
+  },
+  {
+    "name": "Main World Government (Step 5)",
+    "folder": "World Generation",
+    "formula": "2d6-7",
+    "description": "<p>p.92. Step 5: roll 2D-7 and add the population code to determine the average governing system found on the world.</p>",
+    "results": [
+      {
+        "range": [
+          -20,
+          0
+        ],
+        "text": "<strong>Gov:</strong> 0 · <strong>Type:</strong> None · <strong>Description:</strong> No formal governing structure except for family and interpersonal relationships."
+      },
+      {
+        "range": [
+          1,
+          1
+        ],
+        "text": "<strong>Gov:</strong> 1 · <strong>Type:</strong> Company/Corporation · <strong>Description:</strong> For-profit organizations run by managerial elites who govern the citizenry with corporate organizational structures. Corpo-feudal, private-sponsored colonies, etc."
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "<strong>Gov:</strong> 2 · <strong>Type:</strong> Participating Democracy · <strong>Description:</strong> The citizens have a direct voice in the ruling functions of government via direct democratic methods and assemblies."
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "<strong>Gov:</strong> 3 · <strong>Type:</strong> Self-Perpetuating Oligarchy · <strong>Description:</strong> The government is led by an elite class who maintains power with minimal to no input from the general population."
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "<strong>Gov:</strong> 4 · <strong>Type:</strong> Representative Democracy · <strong>Description:</strong> Laws and government are dictated by elected individuals from the general population."
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "<strong>Gov:</strong> 5 · <strong>Type:</strong> Feudal Technocracy · <strong>Description:</strong> Government functions within a caste-based structure driven by technological implementation."
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "<strong>Gov:</strong> 6 · <strong>Type:</strong> Captive Government · <strong>Description:</strong> Imposed leader or puppet government controlled by an outside government, to govern the local population."
+      },
+      {
+        "range": [
+          7,
+          7
+        ],
+        "text": "<strong>Gov:</strong> 7 · <strong>Type:</strong> Balkanisation · <strong>Description:</strong> No central government. Decentralized, small political governments in perpetual conflict and rivalries driven by philosophical, ecological, economical, and social factors. Laws are determined by the local government."
+      },
+      {
+        "range": [
+          8,
+          8
+        ],
+        "text": "<strong>Gov:</strong> 8 · <strong>Type:</strong> Civil Service Bureaucracy · <strong>Description:</strong> The governing duties are driven by government agencies led by groups and individuals with specific expertise from the general population to maintain civil function and services for everyone."
+      },
+      {
+        "range": [
+          9,
+          9
+        ],
+        "text": "<strong>Gov:</strong> 9 · <strong>Type:</strong> Impersonal Bureaucracy · <strong>Description:</strong> Governing responsibilities are driven by agencies without input or from the population. Leaders are insulated from the effects of government stagnation."
+      },
+      {
+        "range": [
+          10,
+          10
+        ],
+        "text": "<strong>Gov:</strong> 10 (A) · <strong>Type:</strong> Charismatic Dictator · <strong>Description:</strong> A single leader determines the rule of law and the direction of society, functioning as a representation of the people they govern, prioritising their culture and influence over others."
+      },
+      {
+        "range": [
+          11,
+          11
+        ],
+        "text": "<strong>Gov:</strong> 11 (B) · <strong>Type:</strong> Non-Charismatic Leader · <strong>Description:</strong> An impersonal leader who determines the government without popular enthusiasm."
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "text": "<strong>Gov:</strong> 12 (C) · <strong>Type:</strong> Charismatic Oligarchy · <strong>Description:</strong> The population elevates an elite few to drive society in an ideal direction. The chosen few have the full confidence of the many."
+      },
+      {
+        "range": [
+          13,
+          13
+        ],
+        "text": "<strong>Gov:</strong> 13 (D) · <strong>Type:</strong> Religious Sovereignty · <strong>Description:</strong> A religious organisation determines the roles of government, driven by spiritual determinants in law and society."
+      },
+      {
+        "range": [
+          14,
+          14
+        ],
+        "text": "<strong>Gov:</strong> 14 (E) · <strong>Type:</strong> Religious Autocracy · <strong>Description:</strong> A single individual or small group has absolute power over the many via “divine right” and religious authority."
+      },
+      {
+        "range": [
+          15,
+          40
+        ],
+        "text": "<strong>Gov:</strong> 15 (F) · <strong>Type:</strong> Totalitarian Oligarchy · <strong>Description:</strong> Government is used to force the will of the few onto the many, often with oppressive and coercive methods to maintain and exercise power, to limit the rights of most of the population."
+      }
+    ]
+  },
+  {
+    "name": "Main World Law Level (Step 6)",
+    "folder": "World Generation",
+    "formula": "2d6-7",
+    "description": "<p>p.93. Step 6: roll 2D-7 and add the government code. Anything banned is also applied to everything listed above it. For example, Law Level 7 bans everything described in Law Level 7 and less. These laws are applied to both citizens and spacers. However, they might not apply to high SOC members of the local society, such as oligarchs, nobles, or other members of high-status minorities on less-equitable planets. * Law Level 10-15 and the Other category are optional and are provided for the referee to give examples for more oppressive legal restrictions.</p>",
+    "results": [
+      {
+        "range": [
+          -20,
+          0
+        ],
+        "text": "<strong>Law Level:</strong> 0 · <strong>Weapons Bans:</strong> None · <strong>Worn Armour Banned:</strong> None · <strong>Other Bans*:</strong> -"
+      },
+      {
+        "range": [
+          1,
+          1
+        ],
+        "text": "<strong>Law Level:</strong> 1 · <strong>Weapons Bans:</strong> - · <strong>Worn Armour Banned:</strong> - · <strong>Other Bans*:</strong> -"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "<strong>Law Level:</strong> 2 · <strong>Weapons Bans:</strong> Poison gas, explosives, WMD, unregistered or undetectable weaponry · <strong>Worn Armour Banned:</strong> Battle dress · <strong>Other Bans*:</strong> -"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "<strong>Law Level:</strong> 3 · <strong>Weapons Bans:</strong> Portable energy and laser weapons · <strong>Worn Armour Banned:</strong> Combat armour · <strong>Other Bans*:</strong> -"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "<strong>Law Level:</strong> 4 · <strong>Weapons Bans:</strong> Military-grade weaponry · <strong>Worn Armour Banned:</strong> Flak · <strong>Other Bans*:</strong> -"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "<strong>Law Level:</strong> 5 · <strong>Weapons Bans:</strong> Light assault weapons and SMG · <strong>Worn Armour Banned:</strong> Mesh · <strong>Other Bans*:</strong> -"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "<strong>Law Level:</strong> 6 · <strong>Weapons Bans:</strong> All firearms except shotguns and stunners; carrying weapons discouraged · <strong>Worn Armour Banned:</strong> - · <strong>Other Bans*:</strong> Off-world pets"
+      },
+      {
+        "range": [
+          7,
+          7
+        ],
+        "text": "<strong>Law Level:</strong> 7 · <strong>Weapons Bans:</strong> Shotguns · <strong>Worn Armour Banned:</strong> - · <strong>Other Bans*:</strong> Recreational drugs"
+      },
+      {
+        "range": [
+          8,
+          8
+        ],
+        "text": "<strong>Law Level:</strong> 8 · <strong>Weapons Bans:</strong> Bladed weapons and stunners · <strong>Worn Armour Banned:</strong> All visible armour · <strong>Other Bans*:</strong> -"
+      },
+      {
+        "range": [
+          9,
+          9
+        ],
+        "text": "<strong>Law Level:</strong> 9 · <strong>Weapons Bans:</strong> All carried weapons · <strong>Worn Armour Banned:</strong> All worn armour · <strong>Other Bans*:</strong> Subdermal weapons and armour"
+      },
+      {
+        "range": [
+          10,
+          10
+        ],
+        "text": "<strong>Law Level:</strong> 10 (A)* · <strong>Weapons Bans:</strong> - · <strong>Worn Armour Banned:</strong> - · <strong>Other Bans*:</strong> Exposed cybernetics; must cover up"
+      },
+      {
+        "range": [
+          11,
+          11
+        ],
+        "text": "<strong>Law Level:</strong> 11 (B)* · <strong>Weapons Bans:</strong> “Natural weaponry” · <strong>Worn Armour Banned:</strong> - · <strong>Other Bans*:</strong> Cybernetics"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "text": "<strong>Law Level:</strong> 12 (C)* · <strong>Weapons Bans:</strong> - · <strong>Worn Armour Banned:</strong> - · <strong>Other Bans*:</strong> Androids"
+      },
+      {
+        "range": [
+          13,
+          13
+        ],
+        "text": "<strong>Law Level:</strong> 13 (D)* · <strong>Weapons Bans:</strong> - · <strong>Worn Armour Banned:</strong> - · <strong>Other Bans*:</strong> Sophonts and other cultures"
+      },
+      {
+        "range": [
+          14,
+          14
+        ],
+        "text": "<strong>Law Level:</strong> 14 (E)* · <strong>Weapons Bans:</strong> - · <strong>Worn Armour Banned:</strong> - · <strong>Other Bans*:</strong> All robots"
+      },
+      {
+        "range": [
+          15,
+          40
+        ],
+        "text": "<strong>Law Level:</strong> 15 (F)* · <strong>Weapons Bans:</strong> - · <strong>Worn Armour Banned:</strong> - · <strong>Other Bans*:</strong> “Unnatural” life"
+      }
+    ]
+  },
+  {
+    "name": "Main World Starport (Step 7)",
+    "folder": "World Generation",
+    "formula": "2d6",
+    "description": "<p>p.93. Step 7: roll 2D with DMs based on the world's population: Population 8-9: DM +1; Population 10+: DM +2; Population 3-4: DM -1; Population 2 or less: DM -2. Bases and facilities: roll 2D for each type of facility or base listed; a successful roll means the base or facility is on this planet or in this system. Highport is an orbital spaceport that is geo-positioned over the main planetary starport for higher traffic and service.</p>",
+    "results": [
+      {
+        "range": [
+          -10,
+          2
+        ],
+        "text": "<strong>Starport Class:</strong> X · <strong>Quality:</strong> No Starport · <strong>Berthing Cost:</strong> 0 · <strong>Fuel:</strong> None · <strong>Facilities:</strong> None · <strong>Bases:</strong> Pirate 10+, Scout 12+"
+      },
+      {
+        "range": [
+          3,
+          4
+        ],
+        "text": "<strong>Starport Class:</strong> E · <strong>Quality:</strong> Frontier · <strong>Berthing Cost:</strong> 0 · <strong>Fuel:</strong> None · <strong>Facilities:</strong> None · <strong>Bases:</strong> Pirate 10+, Scout 10+"
+      },
+      {
+        "range": [
+          5,
+          6
+        ],
+        "text": "<strong>Starport Class:</strong> D · <strong>Quality:</strong> Poor · <strong>Berthing Cost:</strong> 1D x 10Cr · <strong>Fuel:</strong> Unrefined · <strong>Facilities:</strong> Limited repair, Highport 12+ · <strong>Bases:</strong> Scout 8+, Pirate 12+"
+      },
+      {
+        "range": [
+          7,
+          8
+        ],
+        "text": "<strong>Starport Class:</strong> C · <strong>Quality:</strong> Serviceable · <strong>Berthing Cost:</strong> 1D x 100Cr · <strong>Fuel:</strong> Unrefined · <strong>Facilities:</strong> Shipyard (Small craft), Repair, Highport 10+ · <strong>Bases:</strong> Military 10+, Scout 9+"
+      },
+      {
+        "range": [
+          9,
+          10
+        ],
+        "text": "<strong>Starport Class:</strong> B · <strong>Quality:</strong> Good · <strong>Berthing Cost:</strong> 1D x 500Cr · <strong>Fuel:</strong> Refined · <strong>Facilities:</strong> Shipyard (Spacecraft), Repair, Highport 8+ · <strong>Bases:</strong> Military 8+, Naval 8+, Scout 9+"
+      },
+      {
+        "range": [
+          11,
+          30
+        ],
+        "text": "<strong>Starport Class:</strong> A · <strong>Quality:</strong> Excellent · <strong>Berthing Cost:</strong> 1D x 1000Cr · <strong>Fuel:</strong> Refined · <strong>Facilities:</strong> Shipyard (All), Repair, Highport 6+ · <strong>Bases:</strong> Military 8+, Naval 8+, Scout 10+"
+      }
+    ]
+  },
+  {
+    "name": "Main World Tech Level (Step 8)",
+    "folder": "World Generation",
+    "formula": "1d6",
+    "description": "<p>p.94. Step 8: roll 1D and add the applicable DMs from the prior generated planetary code scores to determine the world's Tech Level. Tech Level indicates local manufacturing level so while it's possible for lower Tech Level worlds to have some higher TL items, that is due to them being imported. Environmental limits (minimum Tech Level for the planet to be inhabited, by Atmosphere): 0-1: 8; 2-3: 5; 4, 7, and 9: 3; 10 (A): 8; 11 (B): 9; 12 (C): 10; 13 (D) - 14 (E): 5; 15 (F): 8.</p><table><thead><tr><th>Score</th><th>Starport</th><th>Size</th><th>Atmos</th><th>Hydro</th><th>Pop</th><th>Gov</th></tr></thead><tbody><tr><td>0</td><td>-</td><td>+2</td><td>+1</td><td>+1</td><td>-</td><td>+1</td></tr><tr><td>1</td><td>-</td><td>+2</td><td>+1</td><td>-</td><td>+1</td><td>-</td></tr><tr><td>2</td><td>-</td><td>+1</td><td>+1</td><td>-</td><td>+1</td><td>-</td></tr><tr><td>3</td><td>-</td><td>+1</td><td>+1</td><td>-</td><td>+1</td><td>-</td></tr><tr><td>4</td><td>-</td><td>+1</td><td>-</td><td>-</td><td>+1</td><td>-</td></tr><tr><td>5</td><td>-</td><td>-</td><td>-</td><td>-</td><td>+1</td><td>+1</td></tr><tr><td>6</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>7</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>+2</td></tr><tr><td>8</td><td>-</td><td>-</td><td>-</td><td>-</td><td>+1</td><td>-</td></tr><tr><td>9</td><td>-</td><td>-</td><td>-</td><td>+1</td><td>+2</td><td>-</td></tr><tr><td>10 (A)</td><td>+6</td><td>-</td><td>+1</td><td>+2</td><td>+4</td><td>-</td></tr><tr><td>11 (B)</td><td>+4</td><td>-</td><td>+1</td><td>-</td><td>-</td><td>-</td></tr><tr><td>12 (C)</td><td>+2</td><td>-</td><td>+1</td><td>-</td><td>-</td><td>-</td></tr><tr><td>13 (D)</td><td>-</td><td>-</td><td>+1</td><td>-</td><td>-</td><td>-2</td></tr><tr><td>14 (E)</td><td>-</td><td>-</td><td>+1</td><td>-</td><td>-</td><td>-2</td></tr><tr><td>15 (F)</td><td>-</td><td>-</td><td>+1</td><td>-</td><td>-</td><td>-</td></tr><tr><td>X</td><td>-4</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr></tbody></table><p></p>",
+    "results": [
+      {
+        "range": [
+          -10,
+          0
+        ],
+        "text": "<strong>Tech Level:</strong> 0 · <strong>Relative Time Period:</strong> Stone Age · <strong>Notable Technology:</strong> Tools, agriculture, urban development, writing · <strong>Energy Generation:</strong> Muscle"
+      },
+      {
+        "range": [
+          1,
+          1
+        ],
+        "text": "<strong>Tech Level:</strong> 1 · <strong>Relative Time Period:</strong> Metal Age / Ancient · <strong>Notable Technology:</strong> Metallurgy, engineering, philosophy, mathematics · <strong>Energy Generation:</strong> Wind"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "<strong>Tech Level:</strong> 2 · <strong>Relative Time Period:</strong> Post-Classical (500CE-1500CE) · <strong>Notable Technology:</strong> Abstract mathematics, navigation, medicine, gunpowder, refined metallurgy, clocktowers · <strong>Energy Generation:</strong> Water"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "<strong>Tech Level:</strong> 3 · <strong>Relative Time Period:</strong> Early Modern (1500-1800CE) · <strong>Notable Technology:</strong> Printing, telescopes, gear-based machines, pocket watches"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "<strong>Tech Level:</strong> 4 · <strong>Relative Time Period:</strong> Industrial Age (1800-1900CE) · <strong>Notable Technology:</strong> Steam ships, industrial farming, mass production, germ theory · <strong>Energy Generation:</strong> Coal"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "<strong>Tech Level:</strong> 5 · <strong>Relative Time Period:</strong> Machine Age (1900-1940CE) · <strong>Notable Technology:</strong> Motorized vehicles, airplanes, quantum mechanics, radio, electricity grid · <strong>Energy Generation:</strong> Oil"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "<strong>Tech Level:</strong> 6 · <strong>Relative Time Period:</strong> Nuclear Age (1940CE-1955CE) · <strong>Notable Technology:</strong> Atomic energy, WMD, television, computers, rockets · <strong>Energy Generation:</strong> Fission"
+      },
+      {
+        "range": [
+          7,
+          7
+        ],
+        "text": "<strong>Tech Level:</strong> 7 · <strong>Relative Time Period:</strong> Space Age (1955-2000CE) · <strong>Notable Technology:</strong> Spaceships, satellites, rocket-driven craft, microcomputers · <strong>Energy Generation:</strong> Solar, hydro/wind turbines"
+      },
+      {
+        "range": [
+          8,
+          8
+        ],
+        "text": "<strong>Tech Level:</strong> 8 · <strong>Relative Time Period:</strong> Information Age (2000-2050CE) · <strong>Notable Technology:</strong> Pocket computer, digital information, humanoid robots, consumer-grade AI"
+      },
+      {
+        "range": [
+          9,
+          9
+        ],
+        "text": "<strong>Tech Level:</strong> 9 · <strong>Relative Time Period:</strong> Intrastellar Age (2050-2150CE) · <strong>Notable Technology:</strong> Fusion power, off-world colonies, orbital habitats, off-world manufacturing, low passage · <strong>Energy Generation:</strong> Fusion"
+      },
+      {
+        "range": [
+          10,
+          10
+        ],
+        "text": "<strong>Tech Level:</strong> 10 (A) · <strong>Relative Time Period:</strong> Interstellar Age · <strong>Notable Technology:</strong> FTL travel with the development of the J-1 Drive, interstellar colonies, energy weapons, advanced AI"
+      },
+      {
+        "range": [
+          11,
+          11
+        ],
+        "text": "<strong>Tech Level:</strong> 11 (B) · <strong>Notable Technology:</strong> J-2 Drive, synthetic androids/xenoids"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "text": "<strong>Tech Level:</strong> 12 (C) · <strong>Notable Technology:</strong> J-3 Drive, fully autonomous AI"
+      },
+      {
+        "range": [
+          13,
+          13
+        ],
+        "text": "<strong>Tech Level:</strong> 13 (D) · <strong>Notable Technology:</strong> J-4 Drive"
+      },
+      {
+        "range": [
+          14,
+          14
+        ],
+        "text": "<strong>Tech Level:</strong> 14 (E) · <strong>Notable Technology:</strong> J-5 Drive"
+      },
+      {
+        "range": [
+          15,
+          15
+        ],
+        "text": "<strong>Tech Level:</strong> 15 (F) · <strong>Notable Technology:</strong> J-6 Drive"
+      },
+      {
+        "range": [
+          16,
+          40
+        ],
+        "text": "<strong>Tech Level:</strong> 16(G)+ · <strong>Relative Time Period:</strong> Intergalactic Age · <strong>Notable Technology:</strong> Intergalactic travel within one human lifetime · <strong>Energy Generation:</strong> Matter-antimatter annihilation"
+      }
+    ]
+  },
+  {
+    "name": "Temperature Table",
+    "folder": "World Generation",
+    "formula": "2d6",
+    "description": "<p>p.95. Roll 2D for any inhabited worlds within the system. Atmosphere 0, 1, 6, 7: DM +0; Atmosphere 2 - 3: DM -2; Atmosphere 4, 5, or E: DM -1; Atmosphere 8 - 9: DM +1; Atmosphere A, D, or F: DM +2; Atmosphere B or C: DM +6. Secondary worlds also apply the DM from the Secondary Worlds table.</p>",
+    "results": [
+      {
+        "range": [
+          -10,
+          2
+        ],
+        "text": "<strong>Type:</strong> Frozen · <strong>Average Temp:</strong> -31C or less · <strong>Example:</strong> Frozen World: frozen water, dry atmosphere"
+      },
+      {
+        "range": [
+          3,
+          4
+        ],
+        "text": "<strong>Type:</strong> Cold · <strong>Average Temp:</strong> 0C to -30C · <strong>Example:</strong> Cold World: some liquid water, large ice caps, some clouds"
+      },
+      {
+        "range": [
+          5,
+          9
+        ],
+        "text": "<strong>Type:</strong> Temperate · <strong>Average Temp:</strong> 0C to 30C · <strong>Example:</strong> Temperate World: A temperate world, similar to Earth. Ice caps, liquid water and clouds are common."
+      },
+      {
+        "range": [
+          10,
+          11
+        ],
+        "text": "<strong>Type:</strong> Hot · <strong>Average Temp:</strong> 31C to 80C · <strong>Example:</strong> Hot World: Minimal to no ice caps; dense clouds with uncommon liquid water"
+      },
+      {
+        "range": [
+          12,
+          30
+        ],
+        "text": "<strong>Type:</strong> Boiling · <strong>Average Temp:</strong> 81C+ · <strong>Example:</strong> Boiling World: Extremely dense clouds, minimal to no liquid water"
+      }
+    ]
+  }
+]

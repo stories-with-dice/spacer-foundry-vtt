@@ -1,0 +1,1091 @@
+[
+  {
+    "name": "NPC Demeanour",
+    "folder": "Non-player Characters",
+    "formula": "2d6",
+    "description": "<p>p.56. Roll 2D to determine an NPC’s demeanour when interacting with them. Once determined, apply the DM to all interactions with the spacer. When interacted with on a random NPC encounter, apply the SOC DM (p.58).</p>",
+    "results": [
+      {
+        "range": [
+          -10,
+          2
+        ],
+        "text": "Hostile (-2DM)"
+      },
+      {
+        "range": [
+          3,
+          5
+        ],
+        "text": "Rude (-1DM)"
+      },
+      {
+        "range": [
+          6,
+          8
+        ],
+        "text": "Indifferent (+0DM)"
+      },
+      {
+        "range": [
+          9,
+          11
+        ],
+        "text": "Intrigued (+1DM)"
+      },
+      {
+        "range": [
+          12,
+          30
+        ],
+        "text": "Agreeable (+2DM)"
+      }
+    ]
+  },
+  {
+    "name": "NPC Table",
+    "folder": "Non-player Characters",
+    "formula": "1d6*10+1d6",
+    "description": "<p>p.56. Roll D66 and apply any applicable DM to the tens place (for example, +1DM gives a range of 21-76). Population DM: Pop 1-2 -3; Pop 3-4 -2; Pop 5-6 -1; Pop 7-8 +0; Pop 9+ +1. Government DM: Gov 0 -2; Gov 1, 3, 5 -1; Gov 2, 4, 8 +0; Gov 6, 7, 9 +1; Gov A, B, C +2; Gov D, E, F +3. Sections (quality of life): 01-06 Unsettled; 11-16 Frontier; 21-26 Scraping by; 31-36 Developing; 41-46 Established; 51-56 Prosperous; 61-66 Peak; 71-76 Decline; 81-86 Dystopian; 91-96 Oppressive. In Foundry, add DM x10 to the roll formula (e.g. 1d6*10+1d6+10 for +1DM).</p>",
+    "results": [
+      {
+        "range": [
+          -100,
+          1
+        ],
+        "text": "Castaway <em>(Unsettled)</em>"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "Survivalist <em>(Unsettled)</em>"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "Prospector <em>(Unsettled)</em>"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "Scavenger <em>(Unsettled)</em>"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "Surveyor <em>(Unsettled)</em>"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "Hermit <em>(Unsettled)</em>"
+      },
+      {
+        "range": [
+          11,
+          11
+        ],
+        "text": "Homesteader <em>(Frontier)</em>"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "text": "Hunter <em>(Frontier)</em>"
+      },
+      {
+        "range": [
+          13,
+          13
+        ],
+        "text": "Researcher <em>(Frontier)</em>"
+      },
+      {
+        "range": [
+          14,
+          14
+        ],
+        "text": "Wastelander <em>(Frontier)</em>"
+      },
+      {
+        "range": [
+          15,
+          15
+        ],
+        "text": "Rancher <em>(Frontier)</em>"
+      },
+      {
+        "range": [
+          16,
+          16
+        ],
+        "text": "Scout <em>(Frontier)</em>"
+      },
+      {
+        "range": [
+          21,
+          21
+        ],
+        "text": "Space Pirate <em>(Scraping by)</em>"
+      },
+      {
+        "range": [
+          22,
+          22
+        ],
+        "text": "Drifter <em>(Scraping by)</em>"
+      },
+      {
+        "range": [
+          23,
+          23
+        ],
+        "text": "Pilgrim <em>(Scraping by)</em>"
+      },
+      {
+        "range": [
+          24,
+          24
+        ],
+        "text": "Travelling Doctor <em>(Scraping by)</em>"
+      },
+      {
+        "range": [
+          25,
+          25
+        ],
+        "text": "Outlaw <em>(Scraping by)</em>"
+      },
+      {
+        "range": [
+          26,
+          26
+        ],
+        "text": "Fugitive <em>(Scraping by)</em>"
+      },
+      {
+        "range": [
+          31,
+          31
+        ],
+        "text": "Smuggler <em>(Developing)</em>"
+      },
+      {
+        "range": [
+          32,
+          32
+        ],
+        "text": "Retired Spacer <em>(Developing)</em>"
+      },
+      {
+        "range": [
+          33,
+          33
+        ],
+        "text": "Rogue <em>(Developing)</em>"
+      },
+      {
+        "range": [
+          34,
+          34
+        ],
+        "text": "Courier <em>(Developing)</em>"
+      },
+      {
+        "range": [
+          35,
+          35
+        ],
+        "text": "Farmer <em>(Developing)</em>"
+      },
+      {
+        "range": [
+          36,
+          36
+        ],
+        "text": "Labourer <em>(Developing)</em>"
+      },
+      {
+        "range": [
+          41,
+          41
+        ],
+        "text": "Reporter <em>(Established)</em>"
+      },
+      {
+        "range": [
+          42,
+          42
+        ],
+        "text": "Cleric <em>(Established)</em>"
+      },
+      {
+        "range": [
+          43,
+          43
+        ],
+        "text": "Financier <em>(Established)</em>"
+      },
+      {
+        "range": [
+          44,
+          44
+        ],
+        "text": "Creative Professional <em>(Established)</em>"
+      },
+      {
+        "range": [
+          45,
+          45
+        ],
+        "text": "Blue-Collar Professional <em>(Established)</em>"
+      },
+      {
+        "range": [
+          46,
+          46
+        ],
+        "text": "Broker <em>(Established)</em>"
+      },
+      {
+        "range": [
+          51,
+          51
+        ],
+        "text": "Academic <em>(Prosperous)</em>"
+      },
+      {
+        "range": [
+          52,
+          52
+        ],
+        "text": "Shopkeeper <em>(Prosperous)</em>"
+      },
+      {
+        "range": [
+          53,
+          53
+        ],
+        "text": "Engineer <em>(Prosperous)</em>"
+      },
+      {
+        "range": [
+          54,
+          54
+        ],
+        "text": "White-Collar Professional <em>(Prosperous)</em>"
+      },
+      {
+        "range": [
+          55,
+          55
+        ],
+        "text": "Speculating Merchant <em>(Prosperous)</em>"
+      },
+      {
+        "range": [
+          56,
+          56
+        ],
+        "text": "Off-Duty Military Officer <em>(Prosperous)</em>"
+      },
+      {
+        "range": [
+          61,
+          61
+        ],
+        "text": "Bureaucrat <em>(Peak)</em>"
+      },
+      {
+        "range": [
+          62,
+          62
+        ],
+        "text": "Dilettante <em>(Peak)</em>"
+      },
+      {
+        "range": [
+          63,
+          63
+        ],
+        "text": "Emigre <em>(Peak)</em>"
+      },
+      {
+        "range": [
+          64,
+          64
+        ],
+        "text": "Traveller <em>(Peak)</em>"
+      },
+      {
+        "range": [
+          65,
+          65
+        ],
+        "text": "White-Collar Criminal <em>(Peak)</em>"
+      },
+      {
+        "range": [
+          66,
+          66
+        ],
+        "text": "Medical Professional <em>(Peak)</em>"
+      },
+      {
+        "range": [
+          71,
+          71
+        ],
+        "text": "Noble <em>(Decline)</em>"
+      },
+      {
+        "range": [
+          72,
+          72
+        ],
+        "text": "Administrator <em>(Decline)</em>"
+      },
+      {
+        "range": [
+          73,
+          73
+        ],
+        "text": "Police <em>(Decline)</em>"
+      },
+      {
+        "range": [
+          74,
+          74
+        ],
+        "text": "Business Person <em>(Decline)</em>"
+      },
+      {
+        "range": [
+          75,
+          75
+        ],
+        "text": "Celebrity <em>(Decline)</em>"
+      },
+      {
+        "range": [
+          76,
+          76
+        ],
+        "text": "Merchant Prince <em>(Decline)</em>"
+      },
+      {
+        "range": [
+          81,
+          81
+        ],
+        "text": "Oligarch <em>(Dystopian)</em>"
+      },
+      {
+        "range": [
+          82,
+          82
+        ],
+        "text": "Corporate Agent <em>(Dystopian)</em>"
+      },
+      {
+        "range": [
+          83,
+          83
+        ],
+        "text": "Protester <em>(Dystopian)</em>"
+      },
+      {
+        "range": [
+          84,
+          84
+        ],
+        "text": "Resistance Member <em>(Dystopian)</em>"
+      },
+      {
+        "range": [
+          85,
+          85
+        ],
+        "text": "Politician <em>(Dystopian)</em>"
+      },
+      {
+        "range": [
+          86,
+          86
+        ],
+        "text": "Mercenary <em>(Dystopian)</em>"
+      },
+      {
+        "range": [
+          91,
+          91
+        ],
+        "text": "Military Officer <em>(Oppressive)</em>"
+      },
+      {
+        "range": [
+          92,
+          92
+        ],
+        "text": "Security Officer <em>(Oppressive)</em>"
+      },
+      {
+        "range": [
+          93,
+          93
+        ],
+        "text": "State Agent <em>(Oppressive)</em>"
+      },
+      {
+        "range": [
+          94,
+          94
+        ],
+        "text": "“Enemy of the State” <em>(Oppressive)</em>"
+      },
+      {
+        "range": [
+          95,
+          95
+        ],
+        "text": "Defector <em>(Oppressive)</em>"
+      },
+      {
+        "range": [
+          96,
+          200
+        ],
+        "text": "Refugee <em>(Oppressive)</em>"
+      }
+    ]
+  },
+  {
+    "name": "NPC Weapon",
+    "folder": "Non-player Characters",
+    "formula": "1d6",
+    "description": "<p>p.56. If desired, the referee can roll 1D for the single weapon an NPC carries (as allowed by the Law Level). Assume all NPCs have END 7.</p>",
+    "results": [
+      {
+        "range": [
+          1,
+          3
+        ],
+        "text": "Unarmed"
+      },
+      {
+        "range": [
+          4,
+          5
+        ],
+        "text": "Blade"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "Gun"
+      }
+    ]
+  },
+  {
+    "name": "Information and Rumour Table",
+    "folder": "Non-player Characters",
+    "formula": "1d6",
+    "description": "<p>p.57. First determine the NPC’s reaction, then roll D3 for the number of pieces of information they share. Roll 1D for the type of each piece, then roll the listed die (or use the matching Information sub-table).</p>",
+    "results": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "text": "<strong>Adventure Lead:</strong> Roll 1D; 1) Person; 2) Place; 3) Thing; 4) Object; 5) Background info; 6) Secret. <em>This information leads to potential side jobs or personal interest pursuits.</em>"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "<strong>Narrative Information:</strong> Roll 1D; 1) Major fact; 2) Minor fact; 3) Notable fact; 4) Unnecessary fact; 5) Valuable information; 6) Unexpected connection. <em>This information assists or advances the spacer’s current narrative.</em>"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "<strong>Job Information:</strong> Roll D3; 1) Fact about patron; 2) Fact about a place; 3) Fact about a job detail. <em>Any information that assists the spacer with their current job they may have questions about.</em>"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "<strong>Job Lead:</strong> Roll 1D; 1) Patron suggestion; 2) Job rumour; 3) Criminal patron suggestion; 4) Criminal job rumour; 5) Secret patron suggestion; 6) Secretive job rumour. <em>This information can lead a spacer to a potential client or a rumoured job a patron is offering.</em>"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "<strong>Rumour:</strong> Roll 1D; 1) NPC connection; 2) Faction Connection; 3) Location connection; 4) Narrative clue; 5) Adventure clue; 6) Job clue. <em>Rumours require additional roleplaying to discern the source of the rumour or if the information offered is actionable. Use the Discernment table to determine the truth of the rumours.</em>"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "<strong>Local Gossip:</strong> Roll 1D; 1) Illicit information on an NPC; 2) Illicit info on a faction; 3) Illicit info on a location; 4) Dangerous information; 5) Conspiracy theory; 6) Unbelievable connection. <em>Gossip is information that NPCs will share that is open-ended and may not be related to a current objective. It is essentially local flavour that may be actionable if the spacer decided to pursue it.</em>"
+      }
+    ]
+  },
+  {
+    "name": "Information: Adventure Lead",
+    "folder": "Non-player Characters",
+    "formula": "1d6",
+    "description": "<p>p.57. Information and Rumour table, result “Adventure Lead”: roll 1D. This information leads to potential side jobs or personal interest pursuits.</p>",
+    "results": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "text": "Person"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "Place"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "Thing"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "Object"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "Background info"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "Secret"
+      }
+    ]
+  },
+  {
+    "name": "Information: Narrative Information",
+    "folder": "Non-player Characters",
+    "formula": "1d6",
+    "description": "<p>p.57. Information and Rumour table, result “Narrative Information”: roll 1D. This information assists or advances the spacer’s current narrative.</p>",
+    "results": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "text": "Major fact"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "Minor fact"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "Notable fact"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "Unnecessary fact"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "Valuable information"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "Unexpected connection"
+      }
+    ]
+  },
+  {
+    "name": "Information: Job Information",
+    "folder": "Non-player Characters",
+    "formula": "1d3",
+    "description": "<p>p.57. Information and Rumour table, result “Job Information”: roll D3. Any information that assists the spacer with their current job they may have questions about.</p>",
+    "results": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "text": "Fact about patron"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "Fact about a place"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "Fact about a job detail"
+      }
+    ]
+  },
+  {
+    "name": "Information: Job Lead",
+    "folder": "Non-player Characters",
+    "formula": "1d6",
+    "description": "<p>p.57. Information and Rumour table, result “Job Lead”: roll 1D. This information can lead a spacer to a potential client or a rumoured job a patron is offering.</p>",
+    "results": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "text": "Patron suggestion"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "Job rumour"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "Criminal patron suggestion"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "Criminal job rumour"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "Secret patron suggestion"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "Secretive job rumour"
+      }
+    ]
+  },
+  {
+    "name": "Information: Rumour",
+    "folder": "Non-player Characters",
+    "formula": "1d6",
+    "description": "<p>p.57. Information and Rumour table, result “Rumour”: roll 1D. Rumours require additional roleplaying to discern the source of the rumour or if the information offered is actionable. Use the Discernment table to determine the truth of the rumours.</p>",
+    "results": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "text": "NPC connection"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "Faction Connection"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "Location connection"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "Narrative clue"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "Adventure clue"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "Job clue"
+      }
+    ]
+  },
+  {
+    "name": "Information: Local Gossip",
+    "folder": "Non-player Characters",
+    "formula": "1d6",
+    "description": "<p>p.57. Information and Rumour table, result “Local Gossip”: roll 1D. Gossip is information that NPCs will share that is open-ended and may not be related to a current objective. It is essentially local flavour that may be actionable if the spacer decided to pursue it.</p>",
+    "results": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "text": "Illicit information on an NPC"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "Illicit info on a faction"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "Illicit info on a location"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "Dangerous information"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "Conspiracy theory"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "Unbelievable connection"
+      }
+    ]
+  },
+  {
+    "name": "Random NPC Table",
+    "folder": "Non-player Characters",
+    "formula": "1d6*10+1d6",
+    "description": "<p>p.58-59. Roll D66 when “random NPC” is produced on an encounter table. Number: roll the listed dice for how many appear. Avoid: difficulty to avoid the group (referee decides the Characteristic and/or Skill); anyone keeping a lookout (Recon) has +2 to the Avoid roll. Weapon and Armour apply if the Law Level allows (criminals and police are not limited). Attack: DM to attack throws. Hits: applied to STR, DEX, and END. * = the group has a nearby vehicle (average kind for the local Tech Level). When interacted with, use the NPC Demeanour table with SOC DM.</p>",
+    "results": [
+      {
+        "range": [
+          11,
+          11
+        ],
+        "text": "<strong>Who:</strong> Drifter · <strong>Number:</strong> 1D · <strong>Avoid:</strong> 6+ · <strong>Weapon:</strong> Improvised · <strong>Attack:</strong> -1 · <strong>Hits:</strong> 6 · <strong>Armour:</strong> x"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "text": "<strong>Who:</strong> Worker · <strong>Number:</strong> 1D · <strong>Avoid:</strong> 6+ · <strong>Weapon:</strong> Club · <strong>Attack:</strong> -1 · <strong>Hits:</strong> 6 · <strong>Armour:</strong> x"
+      },
+      {
+        "range": [
+          13,
+          13
+        ],
+        "text": "<strong>Who:</strong> Worker · <strong>Number:</strong> 2D · <strong>Avoid:</strong> 8+ · <strong>Weapon:</strong> Improvised · <strong>Attack:</strong> -1 · <strong>Hits:</strong> 6 · <strong>Armour:</strong> x"
+      },
+      {
+        "range": [
+          14,
+          14
+        ],
+        "text": "<strong>Who:</strong> Rowdy Crowd · <strong>Number:</strong> 3D · <strong>Avoid:</strong> 8+ · <strong>Weapon:</strong> Improvised · <strong>Attack:</strong> +0 · <strong>Hits:</strong> 5 · <strong>Armour:</strong> Jack"
+      },
+      {
+        "range": [
+          15,
+          15
+        ],
+        "text": "<strong>Who:</strong> Criminal · <strong>Number:</strong> 2D · <strong>Avoid:</strong> 8+ · <strong>Weapon:</strong> Club · <strong>Attack:</strong> +1 · <strong>Hits:</strong> 7 · <strong>Armour:</strong> Jack"
+      },
+      {
+        "range": [
+          16,
+          16
+        ],
+        "text": "<strong>Who:</strong> Criminal · <strong>Number:</strong> 3D · <strong>Avoid:</strong> 10+ · <strong>Weapon:</strong> Daggers · <strong>Attack:</strong> +1 · <strong>Hits:</strong> 7 · <strong>Armour:</strong> Jack"
+      },
+      {
+        "range": [
+          21,
+          21
+        ],
+        "text": "<strong>Who:</strong> Soldier · <strong>Number:</strong> 2D · <strong>Avoid:</strong> 6+ · <strong>Weapon:</strong> Slug Thrower · <strong>Attack:</strong> +2 · <strong>Hits:</strong> 7 · <strong>Armour:</strong> Cloth"
+      },
+      {
+        "range": [
+          22,
+          22
+        ],
+        "text": "<strong>Who:</strong> Soldier* · <strong>Number:</strong> 3D · <strong>Avoid:</strong> 8+ · <strong>Weapon:</strong> Rifle · <strong>Attack:</strong> 2 · <strong>Hits:</strong> 7 · <strong>Armour:</strong> Mesh"
+      },
+      {
+        "range": [
+          23,
+          23
+        ],
+        "text": "<strong>Who:</strong> Soldier* · <strong>Number:</strong> 4D · <strong>Avoid:</strong> 10+ · <strong>Weapon:</strong> Carbine · <strong>Attack:</strong> 2 · <strong>Hits:</strong> 7 · <strong>Armour:</strong> Mesh"
+      },
+      {
+        "range": [
+          24,
+          24
+        ],
+        "text": "<strong>Who:</strong> Naval Soldier* on Shore Leave · <strong>Number:</strong> 2D · <strong>Avoid:</strong> 6+ · <strong>Weapon:</strong> Carbine · <strong>Attack:</strong> 2 · <strong>Hits:</strong> 7 · <strong>Armour:</strong> Cloth"
+      },
+      {
+        "range": [
+          25,
+          25
+        ],
+        "text": "<strong>Who:</strong> Marines* · <strong>Number:</strong> 2D · <strong>Avoid:</strong> 8+ · <strong>Weapon:</strong> Blade and Body Pistol · <strong>Attack:</strong> 2 · <strong>Hits:</strong> 7 · <strong>Armour:</strong> Mesh"
+      },
+      {
+        "range": [
+          26,
+          26
+        ],
+        "text": "<strong>Who:</strong> Mercenary* Group · <strong>Number:</strong> 2D · <strong>Avoid:</strong> 8+ · <strong>Weapon:</strong> Autorifle · <strong>Attack:</strong> 1 · <strong>Hits:</strong> 8 · <strong>Armour:</strong> Jack"
+      },
+      {
+        "range": [
+          31,
+          31
+        ],
+        "text": "<strong>Who:</strong> Spacers · <strong>Number:</strong> 2D · <strong>Avoid:</strong> 6+ · <strong>Weapon:</strong> Blade and Shotgun · <strong>Attack:</strong> 1 · <strong>Hits:</strong> 6 · <strong>Armour:</strong> Mesh"
+      },
+      {
+        "range": [
+          32,
+          32
+        ],
+        "text": "<strong>Who:</strong> Noble with Retinue · <strong>Number:</strong> 2D · <strong>Avoid:</strong> 6+ · <strong>Weapon:</strong> Blade · <strong>Attack:</strong> 0 · <strong>Hits:</strong> 7 · <strong>Armour:</strong> x"
+      },
+      {
+        "range": [
+          33,
+          33
+        ],
+        "text": "<strong>Who:</strong> Group of Drunks · <strong>Number:</strong> 2D · <strong>Avoid:</strong> 10+ · <strong>Weapon:</strong> Improvised · <strong>Attack:</strong> -2 · <strong>Hits:</strong> 5 · <strong>Armour:</strong> x"
+      },
+      {
+        "range": [
+          34,
+          34
+        ],
+        "text": "<strong>Who:</strong> Rude Tourists · <strong>Number:</strong> 1D · <strong>Avoid:</strong> 8+ · <strong>Weapon:</strong> x · <strong>Attack:</strong> -2 · <strong>Hits:</strong> 5 · <strong>Armour:</strong> x"
+      },
+      {
+        "range": [
+          35,
+          35
+        ],
+        "text": "<strong>Who:</strong> Annoying Tourists* · <strong>Number:</strong> 2D · <strong>Avoid:</strong> 10+ · <strong>Weapon:</strong> x · <strong>Attack:</strong> -2 · <strong>Hits:</strong> 5 · <strong>Armour:</strong> x"
+      },
+      {
+        "range": [
+          36,
+          36
+        ],
+        "text": "<strong>Who:</strong> Grumpy Locals* · <strong>Number:</strong> 2D · <strong>Avoid:</strong> 8+ · <strong>Weapon:</strong> Improvised · <strong>Attack:</strong> -1 · <strong>Hits:</strong> 5 · <strong>Armour:</strong> x"
+      },
+      {
+        "range": [
+          41,
+          41
+        ],
+        "text": "<strong>Who:</strong> Wanted Criminals · <strong>Number:</strong> 1D · <strong>Avoid:</strong> 6+ · <strong>Weapon:</strong> Body Pistol · <strong>Attack:</strong> 1 · <strong>Hits:</strong> 6 · <strong>Armour:</strong> x"
+      },
+      {
+        "range": [
+          42,
+          42
+        ],
+        "text": "<strong>Who:</strong> Pickpocket crew · <strong>Number:</strong> 1D · <strong>Avoid:</strong> 12+ · <strong>Weapon:</strong> Dagger · <strong>Attack:</strong> 0 · <strong>Hits:</strong> 5 · <strong>Armour:</strong> x"
+      },
+      {
+        "range": [
+          43,
+          43
+        ],
+        "text": "<strong>Who:</strong> Docked Pirates · <strong>Number:</strong> 2D · <strong>Avoid:</strong> 6+ · <strong>Weapon:</strong> Blade and Shotgun · <strong>Attack:</strong> 1 · <strong>Hits:</strong> 6 · <strong>Armour:</strong> Mesh"
+      },
+      {
+        "range": [
+          44,
+          44
+        ],
+        "text": "<strong>Who:</strong> Street Gang · <strong>Number:</strong> 3D · <strong>Avoid:</strong> 8+ · <strong>Weapon:</strong> Blade and Club · <strong>Attack:</strong> 1 · <strong>Hits:</strong> 6 · <strong>Armour:</strong> x"
+      },
+      {
+        "range": [
+          45,
+          45
+        ],
+        "text": "<strong>Who:</strong> Criminal with Entourage* · <strong>Number:</strong> 3D · <strong>Avoid:</strong> 6+ · <strong>Weapon:</strong> Carbine and Blade · <strong>Attack:</strong> 1 · <strong>Hits:</strong> 6 · <strong>Armour:</strong> Cloth"
+      },
+      {
+        "range": [
+          46,
+          46
+        ],
+        "text": "<strong>Who:</strong> Streetside Hustlers · <strong>Number:</strong> 2D · <strong>Avoid:</strong> 8+ · <strong>Weapon:</strong> Blade · <strong>Attack:</strong> 0 · <strong>Hits:</strong> 5 · <strong>Armour:</strong> x"
+      },
+      {
+        "range": [
+          51,
+          51
+        ],
+        "text": "<strong>Who:</strong> Streetside Merchants* · <strong>Number:</strong> 2D · <strong>Avoid:</strong> 10+ · <strong>Weapon:</strong> Shotgun and Dagger · <strong>Attack:</strong> 0 · <strong>Hits:</strong> 5 · <strong>Armour:</strong> x"
+      },
+      {
+        "range": [
+          52,
+          52
+        ],
+        "text": "<strong>Who:</strong> Alleyway Traders · <strong>Number:</strong> 2D · <strong>Avoid:</strong> 8+ · <strong>Weapon:</strong> Dagger · <strong>Attack:</strong> 0 · <strong>Hits:</strong> 5 · <strong>Armour:</strong> x"
+      },
+      {
+        "range": [
+          53,
+          53
+        ],
+        "text": "<strong>Who:</strong> Truckers on Shore Leave · <strong>Number:</strong> 2D · <strong>Avoid:</strong> 6+ · <strong>Weapon:</strong> Improvised and Body Pistol · <strong>Attack:</strong> 0 · <strong>Hits:</strong> 6 · <strong>Armour:</strong> x"
+      },
+      {
+        "range": [
+          54,
+          54
+        ],
+        "text": "<strong>Who:</strong> Street Preacher w/ Group · <strong>Number:</strong> 4D · <strong>Avoid:</strong> 6+ · <strong>Weapon:</strong> x · <strong>Attack:</strong> -2 · <strong>Hits:</strong> 5 · <strong>Armour:</strong> x"
+      },
+      {
+        "range": [
+          55,
+          55
+        ],
+        "text": "<strong>Who:</strong> Street Gamblers · <strong>Number:</strong> 2D · <strong>Avoid:</strong> 6+ · <strong>Weapon:</strong> Dagger · <strong>Attack:</strong> 0 · <strong>Hits:</strong> 5 · <strong>Armour:</strong> x"
+      },
+      {
+        "range": [
+          56,
+          56
+        ],
+        "text": "<strong>Who:</strong> Noble with Retinue* · <strong>Number:</strong> 4D · <strong>Avoid:</strong> 6+ · <strong>Weapon:</strong> Blade and Autorifle · <strong>Attack:</strong> 0 · <strong>Hits:</strong> 7 · <strong>Armour:</strong> Mesh"
+      },
+      {
+        "range": [
+          61,
+          61
+        ],
+        "text": "<strong>Who:</strong> Protestors · <strong>Number:</strong> 4D · <strong>Avoid:</strong> 8+ · <strong>Weapon:</strong> Improvised · <strong>Attack:</strong> 0 · <strong>Hits:</strong> 6 · <strong>Armour:</strong> x"
+      },
+      {
+        "range": [
+          62,
+          62
+        ],
+        "text": "<strong>Who:</strong> Police · <strong>Number:</strong> 2D · <strong>Avoid:</strong> 8+ · <strong>Weapon:</strong> Club and Body Pistol · <strong>Attack:</strong> 1 · <strong>Hits:</strong> 7 · <strong>Armour:</strong> Mesh"
+      },
+      {
+        "range": [
+          63,
+          63
+        ],
+        "text": "<strong>Who:</strong> Police* · <strong>Number:</strong> 3D · <strong>Avoid:</strong> 10+ · <strong>Weapon:</strong> Club and Shotgun · <strong>Attack:</strong> 1 · <strong>Hits:</strong> 7 · <strong>Armour:</strong> Mesh"
+      },
+      {
+        "range": [
+          64,
+          64
+        ],
+        "text": "<strong>Who:</strong> Military* Supporting Police · <strong>Number:</strong> 3D · <strong>Avoid:</strong> 12+ · <strong>Weapon:</strong> Club and Carbine · <strong>Attack:</strong> 1 · <strong>Hits:</strong> 8 · <strong>Armour:</strong> Jack"
+      },
+      {
+        "range": [
+          65,
+          65
+        ],
+        "text": "<strong>Who:</strong> Mercenaries* as Police · <strong>Number:</strong> 3D · <strong>Avoid:</strong> 12+ · <strong>Weapon:</strong> Club and Autorifle · <strong>Attack:</strong> 1 · <strong>Hits:</strong> 8 · <strong>Armour:</strong> Jack"
+      },
+      {
+        "range": [
+          66,
+          66
+        ],
+        "text": "<strong>Who:</strong> Bounty Hunter · <strong>Number:</strong> 1D · <strong>Avoid:</strong> 8+ · <strong>Weapon:</strong> Blade and Carbine · <strong>Attack:</strong> 3 · <strong>Hits:</strong> 8 · <strong>Armour:</strong> Jack"
+      }
+    ]
+  }
+]

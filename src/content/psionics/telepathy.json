@@ -1,0 +1,130 @@
+[
+  {
+    "name": "Shield",
+    "type": "psionic",
+    "folder": "Telepathy",
+    "system": {
+      "discipline": "telepathy",
+      "level": 1,
+      "psiCost": "0+",
+      "duration": "Constant",
+      "difficulty": "",
+      "range": "Self",
+      "known": false,
+      "description": "<p>Prevents a psionic individual from detecting the spacer’s mind or subjecting their minds to unwanted psionic abilities. Shield is passively active and does not require concentration. While this ability doesn’t require using PSI points to perform, it requires having at least one PSI point for it to remain active.</p><p>Shield breaking: The shield can be shattered if an attacking psion is powerful enough. The attacking psion must roll 8+ with a DM equal to the difference in remaining PSI points between the attack and defender. If the defender has more points, the DM is negative, while if the Attacker has more PSI, then the DM is positive.</p><p>Level 1 Telepathy talent. Duration: Constant. PSI used: 0+.</p><p>Telepathy is the discipline of intermind mental communication. It allows a person the ability to link their mind with willing or unsuspecting individuals. Duration: A spacer can continuously perform telepathy but must spend the necessary PSI points per 10 second duration to maintain focus. Learning roll: 5+.</p><p>Performing a psionic talent requires the correct level for that discipline, the required PSI points, and enough PSI points to project the talent the required distance. Many abilities require the spacer to remain undisturbed for the duration unless stated otherwise.</p>",
+      "source": "p.116"
+    }
+  },
+  {
+    "name": "Life Detection",
+    "type": "psionic",
+    "folder": "Telepathy",
+    "system": {
+      "discipline": "telepathy",
+      "level": 1,
+      "psiCost": "1+",
+      "duration": "1 minute",
+      "difficulty": "",
+      "range": "Range cost (p.115)",
+      "known": false,
+      "description": "<p>Allows the spacer to detect life and mental activity.</p><p>Level 1 Telepathy talent. Duration: 1 minute. PSI used: 1+.</p><p>Psionic range cost (p.115), extra PSI by range band: Close 0, Short 1, Medium 2, Long 3, Very Long 3, Distant 4, Far 4, Regional 5, Continental 5, Planetary 6, Orbit 7, Interspace 8, Interplanetary 9; not possible beyond Interplanetary.</p><p>Telepathy is the discipline of intermind mental communication. It allows a person the ability to link their mind with willing or unsuspecting individuals. Duration: A spacer can continuously perform telepathy but must spend the necessary PSI points per 10 second duration to maintain focus. Learning roll: 5+.</p><p>Performing a psionic talent requires the correct level for that discipline, the required PSI points, and enough PSI points to project the talent the required distance. Many abilities require the spacer to remain undisturbed for the duration unless stated otherwise.</p>",
+      "source": "p.116"
+    }
+  },
+  {
+    "name": "Telempathy",
+    "type": "psionic",
+    "folder": "Telepathy",
+    "system": {
+      "discipline": "telepathy",
+      "level": 2,
+      "psiCost": "1+",
+      "duration": "1 minute",
+      "difficulty": "",
+      "range": "Range cost (p.115)",
+      "known": false,
+      "description": "<p>Allows for the communication of emotions and feelings to someone else. It is often used to understand what non-intelligent life is experiencing or expressing.</p><p>Level 2 Telepathy talent. Duration: 1 minute. PSI used: 1+.</p><p>Psionic range cost (p.115), extra PSI by range band: Close 0, Short 1, Medium 2, Long 3, Very Long 3, Distant 4, Far 4, Regional 5, Continental 5, Planetary 6, Orbit 7, Interspace 8, Interplanetary 9; not possible beyond Interplanetary.</p><p>Telepathy is the discipline of intermind mental communication. It allows a person the ability to link their mind with willing or unsuspecting individuals. Duration: A spacer can continuously perform telepathy but must spend the necessary PSI points per 10 second duration to maintain focus. Learning roll: 5+.</p><p>Performing a psionic talent requires the correct level for that discipline, the required PSI points, and enough PSI points to project the talent the required distance. Many abilities require the spacer to remain undisturbed for the duration unless stated otherwise.</p>",
+      "source": "p.116"
+    }
+  },
+  {
+    "name": "Psychometry",
+    "type": "psionic",
+    "folder": "Telepathy",
+    "system": {
+      "discipline": "telepathy",
+      "level": 3,
+      "psiCost": "1",
+      "duration": "1 minute",
+      "difficulty": "",
+      "range": "Touch",
+      "known": false,
+      "description": "<p>Allows the spacer to read the surface thoughts of someone they are touching the skin of.</p><p>Level 3 Telepathy talent. Duration: 1 minute. PSI used: 1.</p><p>Telepathy is the discipline of intermind mental communication. It allows a person the ability to link their mind with willing or unsuspecting individuals. Duration: A spacer can continuously perform telepathy but must spend the necessary PSI points per 10 second duration to maintain focus. Learning roll: 5+.</p><p>Performing a psionic talent requires the correct level for that discipline, the required PSI points, and enough PSI points to project the talent the required distance. Many abilities require the spacer to remain undisturbed for the duration unless stated otherwise.</p>",
+      "source": "p.116"
+    }
+  },
+  {
+    "name": "Read Surface Thoughts",
+    "type": "psionic",
+    "folder": "Telepathy",
+    "system": {
+      "discipline": "telepathy",
+      "level": 4,
+      "psiCost": "2+",
+      "duration": "1 minute",
+      "difficulty": "",
+      "range": "Range cost (p.115)",
+      "known": false,
+      "description": "<p>Allows the spacer to determine what an NPC is actively thinking without them knowing they are having their mind read.</p><p>Level 4 Telepathy talent. Duration: 1 minute. PSI used: 2+.</p><p>Psionic range cost (p.115), extra PSI by range band: Close 0, Short 1, Medium 2, Long 3, Very Long 3, Distant 4, Far 4, Regional 5, Continental 5, Planetary 6, Orbit 7, Interspace 8, Interplanetary 9; not possible beyond Interplanetary.</p><p>Telepathy is the discipline of intermind mental communication. It allows a person the ability to link their mind with willing or unsuspecting individuals. Duration: A spacer can continuously perform telepathy but must spend the necessary PSI points per 10 second duration to maintain focus. Learning roll: 5+.</p><p>Performing a psionic talent requires the correct level for that discipline, the required PSI points, and enough PSI points to project the talent the required distance. Many abilities require the spacer to remain undisturbed for the duration unless stated otherwise.</p>",
+      "source": "p.116"
+    }
+  },
+  {
+    "name": "Send Thoughts",
+    "type": "psionic",
+    "folder": "Telepathy",
+    "system": {
+      "discipline": "telepathy",
+      "level": 5,
+      "psiCost": "1+",
+      "duration": "1 minute",
+      "difficulty": "",
+      "range": "Range cost (p.115)",
+      "known": false,
+      "description": "<p>This ability allows the spacer to send their thoughts into the mind of someone else as a form of communication.</p><p>Level 5 Telepathy talent. Duration: 1 minute. PSI used: 1+.</p><p>Psionic range cost (p.115), extra PSI by range band: Close 0, Short 1, Medium 2, Long 3, Very Long 3, Distant 4, Far 4, Regional 5, Continental 5, Planetary 6, Orbit 7, Interspace 8, Interplanetary 9; not possible beyond Interplanetary.</p><p>Telepathy is the discipline of intermind mental communication. It allows a person the ability to link their mind with willing or unsuspecting individuals. Duration: A spacer can continuously perform telepathy but must spend the necessary PSI points per 10 second duration to maintain focus. Learning roll: 5+.</p><p>Performing a psionic talent requires the correct level for that discipline, the required PSI points, and enough PSI points to project the talent the required distance. Many abilities require the spacer to remain undisturbed for the duration unless stated otherwise.</p>",
+      "source": "p.116"
+    }
+  },
+  {
+    "name": "Probe",
+    "type": "psionic",
+    "folder": "Telepathy",
+    "system": {
+      "discipline": "telepathy",
+      "level": 9,
+      "psiCost": "8+",
+      "duration": "10 minutes",
+      "difficulty": "",
+      "range": "Range cost (p.115)",
+      "known": false,
+      "description": "<p>This allows the spacer to delve deep into the mind of a target to learn information, discern truths, or extract knowledge without the consent of the target.</p><p>Level 9 Telepathy talent. Duration: 10 minutes. PSI used: 8+.</p><p>Psionic range cost (p.115), extra PSI by range band: Close 0, Short 1, Medium 2, Long 3, Very Long 3, Distant 4, Far 4, Regional 5, Continental 5, Planetary 6, Orbit 7, Interspace 8, Interplanetary 9; not possible beyond Interplanetary.</p><p>Telepathy is the discipline of intermind mental communication. It allows a person the ability to link their mind with willing or unsuspecting individuals. Duration: A spacer can continuously perform telepathy but must spend the necessary PSI points per 10 second duration to maintain focus. Learning roll: 5+.</p><p>Performing a psionic talent requires the correct level for that discipline, the required PSI points, and enough PSI points to project the talent the required distance. Many abilities require the spacer to remain undisturbed for the duration unless stated otherwise.</p>",
+      "source": "p.116"
+    }
+  },
+  {
+    "name": "Assault",
+    "type": "psionic",
+    "folder": "Telepathy",
+    "system": {
+      "discipline": "telepathy",
+      "level": 10,
+      "psiCost": "10+",
+      "duration": "1 second",
+      "difficulty": "",
+      "range": "Range cost (p.115)",
+      "known": false,
+      "description": "<p>This allows for the violent attack on a target via a mental overload. The unshielded mind immediately takes 2D+6 damage and is knocked unconscious until their END starts to recover. Shielded minds are automatically engaged in a mental duel, where the attacker must succeed in breaking the mental shield. See Shield and Shield breaking for more information.</p><p>Level 10 Telepathy talent. Duration: 1 second. PSI used: 10+.</p><p>Psionic range cost (p.115), extra PSI by range band: Close 0, Short 1, Medium 2, Long 3, Very Long 3, Distant 4, Far 4, Regional 5, Continental 5, Planetary 6, Orbit 7, Interspace 8, Interplanetary 9; not possible beyond Interplanetary.</p><p>Telepathy is the discipline of intermind mental communication. It allows a person the ability to link their mind with willing or unsuspecting individuals. Duration: A spacer can continuously perform telepathy but must spend the necessary PSI points per 10 second duration to maintain focus. Learning roll: 5+.</p><p>Performing a psionic talent requires the correct level for that discipline, the required PSI points, and enough PSI points to project the talent the required distance. Many abilities require the spacer to remain undisturbed for the duration unless stated otherwise.</p>",
+      "source": "p.116"
+    }
+  }
+]

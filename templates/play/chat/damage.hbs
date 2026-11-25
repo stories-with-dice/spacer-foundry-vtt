@@ -1,0 +1,11 @@
+<div class="spacer sp-card sp-damage">
+  <header class="sp-card-head"><h3>{{localize "SPACER.Damage.Takes" name=name amount=amount}}</h3></header>
+  {{#if source}}<p class="sp-card-sub">{{source}}</p>{{/if}}
+  {{#if negated}}
+  <p class="sp-result good"><i class="fa-solid fa-shield-halved"></i> {{negatedText}}</p>
+  {{else}}
+  <ul class="sp-changes">{{#each lines}}<li><span>{{label}}</span> <b>{{before}} → {{after}}</b></li>{{/each}}</ul>
+  {{#if randomTo}}<p class="sp-note">{{localize "SPACER.Damage.RandomTo" char=randomTo}}</p>{{/if}}
+  {{/if}}
+  <div class="sp-state {{state}}">{{stateLabel}}</div>
+</div>

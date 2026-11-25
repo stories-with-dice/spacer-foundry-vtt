@@ -1,0 +1,544 @@
+[
+ {
+  "name": "Purchase Price (Speculative Trade)",
+  "folder": "Trade & Transport",
+  "formula": "2d6",
+  "description": "<p>p.63. Step 3) Determining the Purchase Price: Roll 2D. DMs: + the spacer’s Broker Skill rank (or the Broker Skill of any employed NPC broker); + the Purchase DM of the trade goods, based on the location on the Trade Goods table; - the selling NPC’s Broker Skill (professional sellers have Broker 2, meaning -2DM). Result is the percentage of the base price.</p>",
+  "results": [
+   {
+    "range": [
+     -30,
+     0
+    ],
+    "text": "300%"
+   },
+   {
+    "range": [
+     1,
+     1
+    ],
+    "text": "250%"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "200%"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "180%"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "160%"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "140%"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "120%"
+   },
+   {
+    "range": [
+     7,
+     7
+    ],
+    "text": "100%"
+   },
+   {
+    "range": [
+     8,
+     8
+    ],
+    "text": "90%"
+   },
+   {
+    "range": [
+     9,
+     9
+    ],
+    "text": "80%"
+   },
+   {
+    "range": [
+     10,
+     10
+    ],
+    "text": "70%"
+   },
+   {
+    "range": [
+     11,
+     11
+    ],
+    "text": "60%"
+   },
+   {
+    "range": [
+     12,
+     12
+    ],
+    "text": "50%"
+   },
+   {
+    "range": [
+     13,
+     13
+    ],
+    "text": "40%"
+   },
+   {
+    "range": [
+     14,
+     14
+    ],
+    "text": "30%"
+   },
+   {
+    "range": [
+     15,
+     40
+    ],
+    "text": "20%"
+   }
+  ]
+ },
+ {
+  "name": "Sale Price (Speculative Trade)",
+  "folder": "Trade & Transport",
+  "formula": "2d6",
+  "description": "<p>p.63. Step 5) Determine Sale Price: Roll 2D + Broker rank, as in Step 3, using the Sale Price column. DMs: + Broker Skill rank (or employed NPC broker); + the Resale DM of the trade goods for the location. Negotiating: every step increase is +1DM and every step decrease is -1DM to the negotiation roll. Result is the percentage of the base price.</p>",
+  "results": [
+   {
+    "range": [
+     -30,
+     0
+    ],
+    "text": "20%"
+   },
+   {
+    "range": [
+     1,
+     1
+    ],
+    "text": "40%"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "text": "50%"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "text": "60%"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "text": "70%"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "text": "80%"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "text": "90%"
+   },
+   {
+    "range": [
+     7,
+     7
+    ],
+    "text": "100%"
+   },
+   {
+    "range": [
+     8,
+     8
+    ],
+    "text": "110%"
+   },
+   {
+    "range": [
+     9,
+     9
+    ],
+    "text": "120%"
+   },
+   {
+    "range": [
+     10,
+     10
+    ],
+    "text": "130%"
+   },
+   {
+    "range": [
+     11,
+     11
+    ],
+    "text": "150%"
+   },
+   {
+    "range": [
+     12,
+     12
+    ],
+    "text": "180%"
+   },
+   {
+    "range": [
+     13,
+     13
+    ],
+    "text": "200%"
+   },
+   {
+    "range": [
+     14,
+     14
+    ],
+    "text": "250%"
+   },
+   {
+    "range": [
+     15,
+     40
+    ],
+    "text": "300%"
+   }
+  ]
+ },
+ {
+  "name": "Trade Goods (Speculative Trade)",
+  "folder": "Trade & Transport",
+  "formula": "1d6*10+1d6",
+  "description": "<p>p.64. Roll D66. Illicit suppliers add +1DM to the D66 trade table (applied to the tens die, giving results 21-76). All locations offer results 11-16 plus goods matching their trade codes, up to the population code; each seller also has one more good rolled on D66. Trade codes: Ag Agricultural, As Asteroid, De Desert World, Ge Garden World, Ic Ice-Capped, In Industrial, Na Non-Agricultural, Ni Non-Industrial, Po Poor, Ri Rich, Ht High Tech, Va Vacuum, Wa Water World (p.65).</p>",
+  "results": [
+   {
+    "range": [
+     11,
+     11
+    ],
+    "text": "<strong>Electronics</strong> · <strong>Availability:</strong> All · <strong>Base Price:</strong> 2000cr · <strong>Amount in Tonnes:</strong> 2D x10 · <strong>Purchase DMs:</strong> In +2. Ht +3, Ri +1 · <strong>Resale DMs:</strong> Ni +2, Po +1 · <strong>Examples:</strong> Commercial or industrial use circuitry, transistors, cabling, power supplies, computers TL 10 or less"
+   },
+   {
+    "range": [
+     12,
+     12
+    ],
+    "text": "<strong>Industrial supplies</strong> · <strong>Availability:</strong> All · <strong>Base Price:</strong> 1000cr · <strong>Amount in Tonnes:</strong> 2D x10 · <strong>Purchase DMs:</strong> Na +2, In +5 · <strong>Resale DMs:</strong> Ni +3, Ag +2 · <strong>Examples:</strong> Parts and equipment for industrial use"
+   },
+   {
+    "range": [
+     13,
+     13
+    ],
+    "text": "<strong>Manufactured goods</strong> · <strong>Availability:</strong> All · <strong>Base Price:</strong> 2000cr · <strong>Amount in Tonnes:</strong> 2D x10 · <strong>Purchase DMs:</strong> Na +2, In +3 · <strong>Resale DMs:</strong> Ni +3 · <strong>Examples:</strong> Common refined material used as components for fabrication and construction"
+   },
+   {
+    "range": [
+     14,
+     14
+    ],
+    "text": "<strong>Basic organic materials</strong> · <strong>Availability:</strong> All · <strong>Base Price:</strong> 5000cr · <strong>Amount in Tonnes:</strong> 2D x10 · <strong>Purchase DMs:</strong> Ag +3, Ga +2 · <strong>Resale DMs:</strong> In +2, Po +2 · <strong>Examples:</strong> Common material harvested or processed from plants and other grown matter"
+   },
+   {
+    "range": [
+     15,
+     15
+    ],
+    "text": "<strong>Foodstuffs</strong> · <strong>Availability:</strong> All · <strong>Base Price:</strong> 500cr · <strong>Amount in Tonnes:</strong> 2D x10 · <strong>Purchase DMs:</strong> Ag +3, Wa +2, As -4 · <strong>Resale DMs:</strong> As +1, De +1, Ic +1, Va +2 · <strong>Examples:</strong> Food and drink, along with common consumables"
+   },
+   {
+    "range": [
+     16,
+     16
+    ],
+    "text": "<strong>Basic metal ore</strong> · <strong>Availability:</strong> All · <strong>Base Price:</strong> 1000cr · <strong>Amount in Tonnes:</strong> 2D x10 · <strong>Purchase DMs:</strong> As +4 · <strong>Resale DMs:</strong> In +3, Ni +1 · <strong>Examples:</strong> Tin, iron, copper"
+   },
+   {
+    "range": [
+     21,
+     21
+    ],
+    "text": "<strong>High-end electronics</strong> · <strong>Availability:</strong> In · <strong>Base Price:</strong> 10,000 · <strong>Amount in Tonnes:</strong> 1D x 5 · <strong>Purchase DMs:</strong> In +2, Ht +3 · <strong>Resale DMs:</strong> Ni +1, Ri +2, As +3 · <strong>Examples:</strong> Sensors, advanced circuitry, power supplies, advanced computers TL11-15"
+   },
+   {
+    "range": [
+     22,
+     22
+    ],
+    "text": "<strong>Machinery</strong> · <strong>Availability:</strong> All · <strong>Base Price:</strong> 7500cr · <strong>Amount in Tonnes:</strong> 1D x 5 · <strong>Purchase DMs:</strong> In +2 · <strong>Resale DMs:</strong> As +2, Ni +1 · <strong>Examples:</strong> Machines for fabrication, construction, and other labour uses"
+   },
+   {
+    "range": [
+     23,
+     23
+    ],
+    "text": "<strong>Recreational consumables</strong> · <strong>Availability:</strong> All · <strong>Base Price:</strong> 20,000cr · <strong>Amount in Tonnes:</strong> 1D x 5 · <strong>Purchase DMs:</strong> In +1 · <strong>Resale DMs:</strong> Ri +2 · <strong>Examples:</strong> Delicacies, non-essential foodstuffs, alcohol"
+   },
+   {
+    "range": [
+     24,
+     24
+    ],
+    "text": "<strong>Firearms and ammunition</strong> · <strong>Availability:</strong> In · <strong>Base Price:</strong> 150,000cr · <strong>Amount in Tonnes:</strong> 1D x 5 · <strong>Purchase DMs:</strong> In+2 · <strong>Resale DMs:</strong> Po +1 · <strong>Examples:</strong> Projectile weapons for military and personal use"
+   },
+   {
+    "range": [
+     25,
+     25
+    ],
+    "text": "<strong>Vehicles</strong> · <strong>Availability:</strong> In · <strong>Base Price:</strong> 15,000cr · <strong>Amount in Tonnes:</strong> 1D x 10 · <strong>Purchase DMs:</strong> In +2 · <strong>Resale DMs:</strong> Ni +2 · <strong>Examples:</strong> TL 10 or lower terrestrial vehicles and/or replacement parts"
+   },
+   {
+    "range": [
+     26,
+     26
+    ],
+    "text": "<strong>Fuel and biochemicals</strong> · <strong>Availability:</strong> Ag, Wa · <strong>Base Price:</strong> 50,000cr · <strong>Amount in Tonnes:</strong> 1D x 10 · <strong>Purchase DMs:</strong> Ag +1, Ww +2 · <strong>Resale DMs:</strong> In +2 · <strong>Examples:</strong> Extracts, biofuels, organic compounds"
+   },
+   {
+    "range": [
+     31,
+     31
+    ],
+    "text": "<strong>Rare minerals and crystals</strong> · <strong>Availability:</strong> As, De, Ic · <strong>Base Price:</strong> 20,000cr · <strong>Amount in Tonnes:</strong> 1D x 5 · <strong>Purchase DMs:</strong> As +2, De +1, Ic +1 · <strong>Resale DMs:</strong> In +3, Ri +2 · <strong>Examples:</strong> Gemstones, rare stones, and related material of either material value or spiritual value"
+   },
+   {
+    "range": [
+     32,
+     32
+    ],
+    "text": "<strong>Cybernetics</strong> · <strong>Availability:</strong> — · <strong>Base Price:</strong> 250,000cr · <strong>Amount in Tonnes:</strong> 1D x 5 · <strong>Purchase DMs:</strong> In +1 · <strong>Resale DMs:</strong> As +1, Ic +1, Ri +2 · <strong>Examples:</strong> Artificial human parts and repair components for them"
+   },
+   {
+    "range": [
+     33,
+     33
+    ],
+    "text": "<strong>Livestock</strong> · <strong>Availability:</strong> Ag · <strong>Base Price:</strong> 10,000cr · <strong>Amount in Tonnes:</strong> 1D x 10 · <strong>Purchase DMs:</strong> Ag +2 · <strong>Resale DMs:</strong> — · <strong>Examples:</strong> Herd animals, farm animals, pets"
+   },
+   {
+    "range": [
+     34,
+     34
+    ],
+    "text": "<strong>Expensive consumer goods</strong> · <strong>Availability:</strong> Ag, Wa · <strong>Base Price:</strong> 20,000cr · <strong>Amount in Tonnes:</strong> 1D X 10 · <strong>Purchase DMs:</strong> Ag +2, Wa +1 · <strong>Resale DMs:</strong> Ri +2 · <strong>Examples:</strong> High quality and fine foods, drinks, cosmetics, high fashion, niche interest items"
+   },
+   {
+    "range": [
+     35,
+     35
+    ],
+    "text": "<strong>High-end consumer goods</strong> · <strong>Availability:</strong> In · <strong>Base Price:</strong> 10,000cr · <strong>Amount in Tonnes:</strong> 1D x 10 · <strong>Purchase DMs:</strong> In+1 · <strong>Resale DMs:</strong> Ri +4 · <strong>Examples:</strong> Designer fashion, expensive furniture"
+   },
+   {
+    "range": [
+     36,
+     36
+    ],
+    "text": "<strong>Medical supplies</strong> · <strong>Availability:</strong> In, Va · <strong>Base Price:</strong> 50,000cr · <strong>Amount in Tonnes:</strong> 1D x 5 · <strong>Purchase DMs:</strong> In+2 · <strong>Resale DMs:</strong> In +2, Po +1, Ri +1 · <strong>Examples:</strong> Consumable medical supplies, medical equipment, etc."
+   },
+   {
+    "range": [
+     41,
+     41
+    ],
+    "text": "<strong>Pharmaceuticals</strong> · <strong>Availability:</strong> As, De, Wa · <strong>Base Price:</strong> 100,000cr · <strong>Amount in Tonnes:</strong> 1D x 5 · <strong>Purchase DMs:</strong> As +2 · <strong>Resale DMs:</strong> Ri +2 · <strong>Examples:</strong> Medical-grade drugs"
+   },
+   {
+    "range": [
+     42,
+     42
+    ],
+    "text": "<strong>Polymers</strong> · <strong>Availability:</strong> In · <strong>Base Price:</strong> 7,000cr · <strong>Amount in Tonnes:</strong> 1D x 10 · <strong>Purchase DMs:</strong> In +1 · <strong>Resale DMs:</strong> Ri +2, Ni +1 · <strong>Examples:</strong> Synthetic and other artificial material used for industrial and personal fabrication"
+   },
+   {
+    "range": [
+     43,
+     43
+    ],
+    "text": "<strong>Rare metals</strong> · <strong>Availability:</strong> As, Ic · <strong>Base Price:</strong> 50,000cr · <strong>Amount in Tonnes:</strong> 1D x 5 · <strong>Purchase DMs:</strong> As +3, De +1, Ic +2 · <strong>Resale DMs:</strong> Ri +3, In +2 · <strong>Examples:</strong> Silver, gold, platinum"
+   },
+   {
+    "range": [
+     44,
+     44
+    ],
+    "text": "<strong>Radioactives</strong> · <strong>Availability:</strong> As, De · <strong>Base Price:</strong> 1Mcr · <strong>Amount in Tonnes:</strong> 1D x 5 · <strong>Purchase DMs:</strong> As +2, · <strong>Resale DMs:</strong> In +3, Ni -2, Ag -3 · <strong>Examples:</strong> Extremely rare and volatile heavy metals, treated elements, and material used for fusion/nuclear power"
+   },
+   {
+    "range": [
+     45,
+     45
+    ],
+    "text": "<strong>Robots</strong> · <strong>Availability:</strong> In, Ri · <strong>Base Price:</strong> 400,000cr · <strong>Amount in Tonnes:</strong> 1D x 5 · <strong>Purchase DMs:</strong> In +1, Ri +1 · <strong>Resale DMs:</strong> Ag +2 · <strong>Examples:</strong> Robots for industrial, professional, and personal use"
+   },
+   {
+    "range": [
+     46,
+     46
+    ],
+    "text": "<strong>Spices</strong> · <strong>Availability:</strong> De, Wa · <strong>Base Price:</strong> 6,000cr · <strong>Amount in Tonnes:</strong> 1D x 10 · <strong>Purchase DMs:</strong> De +2 · <strong>Resale DMs:</strong> Ri +3, Po +3 · <strong>Examples:</strong> Natural drugs, additives, and process consumable minerals"
+   },
+   {
+    "range": [
+     51,
+     51
+    ],
+    "text": "<strong>Textiles</strong> · <strong>Availability:</strong> Ag, Ni · <strong>Base Price:</strong> 3,000cr · <strong>Amount in Tonnes:</strong> 1D x 20 · <strong>Purchase DMs:</strong> Ag +7 · <strong>Resale DMs:</strong> Na +2 · <strong>Examples:</strong> Fabric material such as clothing, fabric, processed and/or treated woven products"
+   },
+   {
+    "range": [
+     52,
+     52
+    ],
+    "text": "<strong>Manufactured metals</strong> · <strong>Availability:</strong> In · <strong>Base Price:</strong> 100,000cr · <strong>Amount in Tonnes:</strong> 1D x 10 · <strong>Purchase DMs:</strong> In +3 · <strong>Resale DMs:</strong> As +1, Ni +2, Va+3 · <strong>Examples:</strong> Steel, aluminum, other alloys"
+   },
+   {
+    "range": [
+     53,
+     53
+    ],
+    "text": "<strong>Uncommon organic material</strong> · <strong>Availability:</strong> Ag, Ic · <strong>Base Price:</strong> 20,000cr · <strong>Amount in Tonnes:</strong> 1D x 5 · <strong>Purchase DMs:</strong> Ag +2, Wa +1 · <strong>Resale DMs:</strong> In +2 · <strong>Examples:</strong> Hard-to-acquire fibres, fabrics, plant matter, and compounds"
+   },
+   {
+    "range": [
+     54,
+     54
+    ],
+    "text": "<strong>Media and culture goods</strong> · <strong>Availability:</strong> Ri, In · <strong>Base Price:</strong> 10,000cr · <strong>Amount in Tonnes:</strong> 1D x 5 · <strong>Purchase DMs:</strong> Ri -2, In +1 · <strong>Resale DMs:</strong> Ag +1, As +1, Po +2, Ni+3 · <strong>Examples:</strong> Musical instruments, art supplies, decor, analog and digital entertainment, literature, music, games"
+   },
+   {
+    "range": [
+     55,
+     55
+    ],
+    "text": "<strong>Vehicles</strong> · <strong>Availability:</strong> Ag, In, De, Wa · <strong>Base Price:</strong> 15,000cr · <strong>Amount in Tonnes:</strong> 1D x 10 · <strong>Purchase DMs:</strong> In +2 · <strong>Resale DMs:</strong> Ni +2 · <strong>Examples:</strong> Manufactured vehicles for planetside use."
+   },
+   {
+    "range": [
+     56,
+     56
+    ],
+    "text": "<strong>Petrochemicals</strong> · <strong>Availability:</strong> De, Ic, Wa · <strong>Base Price:</strong> 10,000cr · <strong>Amount in Tonnes:</strong> 1D x 10 · <strong>Purchase DMs:</strong> De +2 · <strong>Resale DMs:</strong> In +2, Ag +1 · <strong>Examples:</strong> Refined oil, crude oil, fossil fuels"
+   },
+   {
+    "range": [
+     61,
+     61
+    ],
+    "text": "<strong>Electronic spare parts</strong> · <strong>Availability:</strong> In, Ri, Ic, Va · <strong>Base Price:</strong> 100,000cr · <strong>Amount in Tonnes:</strong> 1D x 5 · <strong>Purchase DMs:</strong> In-4, Ri-3 · <strong>Resale DMs:</strong> NI+2, Po+1 · <strong>Examples:</strong> Consumer-grade electronic components for crafting or repairs"
+   },
+   {
+    "range": [
+     62,
+     62
+    ],
+    "text": "<strong>Mechanical spare parts</strong> · <strong>Availability:</strong> In, Ri, As · <strong>Base Price:</strong> 70,000cr · <strong>Amount in Tonnes:</strong> 1D x 5 · <strong>Purchase DMs:</strong> In -5, Ri -2 · <strong>Resale DMs:</strong> Ni +3, Ag +2 · <strong>Examples:</strong> Consumer-grade mechanical components for crafting or repairs"
+   },
+   {
+    "range": [
+     63,
+     63
+    ],
+    "text": "<strong>Cybernetic spare parts</strong> · <strong>Availability:</strong> In, Ri, Ic · <strong>Base Price:</strong> 250,000 · <strong>Amount in Tonnes:</strong> 1D x 5 · <strong>Purchase DMs:</strong> In -4, Ri -1 · <strong>Resale DMs:</strong> Ni +4, Ag +1, NA +2 · <strong>Examples:</strong> Consumer-grade robotic and cybernetic components for crafting or repairs"
+   },
+   {
+    "range": [
+     64,
+     64
+    ],
+    "text": "<strong>Computer spare parts</strong> · <strong>Availability:</strong> In, Ri, Ic, Va · <strong>Base Price:</strong> 150,000cr · <strong>Amount in Tonnes:</strong> 1d x 5 · <strong>Purchase DMs:</strong> In -5, Ri -3 · <strong>Resale DMs:</strong> Ni +3, Ag +1, Na +2 · <strong>Examples:</strong> Consumer-grade computer components for crafting or repairs"
+   },
+   {
+    "range": [
+     65,
+     65
+    ],
+    "text": "<strong>Vehicle spare parts</strong> · <strong>Availability:</strong> In, Ri, De, Wa · <strong>Base Price:</strong> 25,000cr · <strong>Amount in Tonnes:</strong> 1D x 5 · <strong>Purchase DMs:</strong> In -5, Ri -4 · <strong>Resale DMs:</strong> Ni +3, Ag +1, Na +2 · <strong>Examples:</strong> Consumer-grade vehicle components for crafting or repairs"
+   },
+   {
+    "range": [
+     66,
+     66
+    ],
+    "text": "<strong>Starship spare parts</strong> · <strong>Availability:</strong> As, Na, In, Ri, Va · <strong>Base Price:</strong> 100,000cr · <strong>Amount in Tonnes:</strong> 1D x 5 · <strong>Purchase DMs:</strong> Na -5, In -3, Ri -1, Va -2 · <strong>Resale DMs:</strong> Na -1, Ni +2, Po +1 · <strong>Examples:</strong> Consumer grade starship parts for construction or repairs"
+   },
+   {
+    "range": [
+     71,
+     71
+    ],
+    "text": "<strong>Illegal drugs and consumables</strong> · <strong>Availability:</strong> As, De · <strong>Base Price:</strong> 100,000cr · <strong>Amount in Tonnes:</strong> 1D · <strong>Purchase DMs:</strong> As+1, De +1, Wa +1 · <strong>Resale DMs:</strong> Ri +6 · <strong>Examples:</strong> Controlled substances, experimental chemical enhancements"
+   },
+   {
+    "range": [
+     72,
+     72
+    ],
+    "text": "<strong>Illegal organic material</strong> · <strong>Availability:</strong> Ag, Ni, Wa · <strong>Base Price:</strong> 100,000cr · <strong>Amount in Tonnes:</strong> 1D · <strong>Purchase DMs:</strong> Ga +2, Wa +2 · <strong>Resale DMs:</strong> In +6 · <strong>Examples:</strong> Stolen organs, poached aliens, pests from red zones, banned foods and drinks"
+   },
+   {
+    "range": [
+     73,
+     73
+    ],
+    "text": "<strong>Illegal weapons</strong> · <strong>Availability:</strong> In, Ri · <strong>Base Price:</strong> 150,000cr · <strong>Amount in Tonnes:</strong> 1D x 5 · <strong>Purchase DMs:</strong> Ri +2 · <strong>Resale DMs:</strong> Po +6 · <strong>Examples:</strong> Stolen military hardware, WMD, chemical and bio-weapons"
+   },
+   {
+    "range": [
+     74,
+     74
+    ],
+    "text": "<strong>Illegal chemicals and manufactured Items</strong> · <strong>Availability:</strong> In, Ri · <strong>Base Price:</strong> 50,000cr · <strong>Amount in Tonnes:</strong> 1D x 5 · <strong>Purchase DMs:</strong> Ri +1 · <strong>Resale DMs:</strong> As +4, Ic +4, Ri +8, · <strong>Examples:</strong> Illegally modified vehicle parts, espionage tools, banned cybernetics, lab-grown viruses"
+   },
+   {
+    "range": [
+     75,
+     75
+    ],
+    "text": "<strong>Illegal art and literature</strong> · <strong>Availability:</strong> Ag, Ni · <strong>Base Price:</strong> 150,000cr · <strong>Amount in Tonnes:</strong> 1D x 5 · <strong>Purchase DMs:</strong> Ag +2, Ww +1 · <strong>Resale DMs:</strong> Ri +6 · <strong>Examples:</strong> Controversial art, propaganda, banned media"
+   },
+   {
+    "range": [
+     76,
+     76
+    ],
+    "text": "<strong>Exotic items</strong> · <strong>Availability:</strong> Ag, Ni · <strong>Base Price:</strong> 200,000cr · <strong>Amount in Tonnes:</strong> 1D · <strong>Purchase DMs:</strong> As +3, De +2, Ic +2, Ag +5 · <strong>Resale DMs:</strong> Ri +6 · <strong>Examples:</strong> Alien relics, ancient artifacts, protected animal or alien life"
+   }
+  ]
+ }
+]

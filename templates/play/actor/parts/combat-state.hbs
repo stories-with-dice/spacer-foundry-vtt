@@ -1,0 +1,22 @@
+<div class="sp-grid sp-combat-state">
+  <label class="sp-field">{{localize "SPACER.Combat.Position"}}
+    <select name="system.combat.position" {{disabled (not editable)}}>{{#each positions}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select>
+  </label>
+  <label class="sp-field">{{localize "SPACER.Combat.Cover"}}
+    <select name="system.combat.cover" {{disabled (not editable)}}>{{#each covers}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select>
+  </label>
+  <label class="sp-field check" data-tooltip="{{localize "SPACER.Combat.EvadeHint"}}"><input type="checkbox" name="system.combat.evading" {{checked system.combat.evading}} {{disabled (not editable)}}> {{localize "SPACER.Combat.Evade"}}</label>
+  <div class="sp-field">{{localize "SPACER.Combat.Overwatch"}}
+    <div class="sp-counter">
+      <a data-action="overwatch" data-delta="-1"><i class="fa-solid fa-minus"></i></a><b>+{{system.combat.overwatch}}</b><a data-action="overwatch" data-delta="1" data-tooltip="{{localize "SPACER.Combat.OverwatchHint"}}"><i class="fa-solid fa-plus"></i></a>
+    </div>
+  </div>
+  <div class="sp-field">{{localize "SPACER.Combat.Sprint"}}
+    <div class="sp-counter"><b>{{sprint.used}}</b><small>{{localize "SPACER.Combat.Used"}}</small><b>{{sprint.remaining}}</b><small>{{localize "SPACER.Combat.Left"}}</small>
+      <input type="number" data-sprint-input value="1" min="1"><a data-action="sprint" data-tooltip="{{localize "SPACER.Combat.SprintHint"}}"><i class="fa-solid fa-person-running"></i></a></div>
+  </div>
+  <div class="sp-field">{{localize "SPACER.Combat.Melee"}}
+    <div class="sp-counter"><b>{{melee.used}}</b><small>{{localize "SPACER.Combat.Used"}}</small><b>{{melee.remaining}}</b><small>{{localize "SPACER.Combat.Left"}}</small>
+      <a data-action="meleeUse" data-delta="-1"><i class="fa-solid fa-minus"></i></a><a data-action="meleeUse" data-delta="1"><i class="fa-solid fa-plus"></i></a></div>
+  </div>
+</div>

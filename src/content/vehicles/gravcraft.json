@@ -1,0 +1,209 @@
+[
+  {
+    "name": "Air-Raft",
+    "type": "vehicle",
+    "folder": "Gravcraft",
+    "system": {
+      "category": "gravcraft",
+      "traits": [
+        "Grav",
+        "Open",
+        "Ascend"
+      ],
+      "military": false,
+      "skill": "Drive (Grav)",
+      "speedBand": 4,
+      "currentSpeed": 0,
+      "occupants": 4,
+      "cargoKg": 4000,
+      "rangeKm": 3000,
+      "weightTons": 4,
+      "tl": 9,
+      "cost": 600000,
+      "armor": 0,
+      "locations": {
+        "interior": {
+          "value": 2,
+          "max": 2,
+          "armored": false
+        },
+        "drive": {
+          "value": 4,
+          "max": 4,
+          "armored": false
+        },
+        "handling": {
+          "value": 2,
+          "max": 2,
+          "armored": false
+        },
+        "hull": {
+          "value": 2,
+          "max": 2,
+          "armored": false
+        },
+        "weapon": {
+          "value": 0,
+          "max": 0,
+          "armored": false
+        }
+      },
+      "description": "<p>An open-top grav vehicle that essentially functions similar to a floating car. Four passengers and four tons of cargo.</p><p>Distance of operation: 3,000km. Weight 4T, TL 9, speed band 4, cost 600,000cr.</p><p>Damage locations (book): Interior 2, Speed 4, Hull 2. The book gives no Handling value; Handling is set to the Hull value.</p><p>Gravcraft are anti-gravity vehicles that hover up to 6 metres above a surface.</p><ul><li>Grav: This vehicle is operated using the Drive (Grav) Skill.</li><li>Open: In the case of any interior hit, roll 1D; a result of 2+ results in the occupants or cargo being hit instead of the system.</li><li>Ascend: This grav vehicle isn't limited by the 6m ceiling of height above a surface, but takes 1 hour per 1km to move vertically. Ascend grav vehicles effectively have VTOL.</li></ul><p>Cargo: For every one occupant slot, 50kg of cargo can be carried instead. Weapons can be added to a vehicle after purchase, but civilian vehicles are unarmed by default. Cruising speed: vehicles with speed band 3+ have a cruising speed equal to one speed band less than top speed (p.46).</p><p>Source: p.47.</p>"
+    },
+    "items": []
+  },
+  {
+    "name": "G-Bike",
+    "type": "vehicle",
+    "folder": "Gravcraft",
+    "system": {
+      "category": "gravcraft",
+      "traits": [
+        "Grav"
+      ],
+      "military": false,
+      "skill": "Drive (Grav)",
+      "speedBand": 8,
+      "currentSpeed": 0,
+      "occupants": 2,
+      "cargoKg": 0,
+      "rangeKm": 1000,
+      "weightTons": 1,
+      "tl": 11,
+      "cost": 100000,
+      "armor": 0,
+      "locations": {
+        "interior": {
+          "value": 1,
+          "max": 1,
+          "armored": false
+        },
+        "drive": {
+          "value": 8,
+          "max": 8,
+          "armored": false
+        },
+        "handling": {
+          "value": 1,
+          "max": 1,
+          "armored": false
+        },
+        "hull": {
+          "value": 1,
+          "max": 1,
+          "armored": false
+        },
+        "weapon": {
+          "value": 0,
+          "max": 0,
+          "armored": false
+        }
+      },
+      "description": "<p>A high speed grav vehicle designed for one driver and enough space for one passenger or up to 100kg cargo.</p><p>Distance of operation: 1,000km. Weight 1T, TL 11, speed band 8, cost 100,000cr.</p><p>Damage locations (book): Interior 1, Speed 8, Hull 1. The book gives no Handling value; Handling is set to the Hull value.</p><p>Occupants 2 (driver and passenger); the passenger slot can carry up to 100kg cargo instead, so the cargo field is 0.</p><p>Gravcraft are anti-gravity vehicles that hover up to 6 metres above a surface.</p><ul><li>Grav: This vehicle is operated using the Drive (Grav) Skill.</li></ul><p>Cargo: For every one occupant slot, 50kg of cargo can be carried instead. Weapons can be added to a vehicle after purchase, but civilian vehicles are unarmed by default. Cruising speed: vehicles with speed band 3+ have a cruising speed equal to one speed band less than top speed (p.46).</p><p>Source: p.47.</p>"
+    },
+    "items": []
+  },
+  {
+    "name": "G-Carrier",
+    "type": "vehicle",
+    "folder": "Gravcraft",
+    "system": {
+      "category": "gravcraft",
+      "traits": [
+        "Grav",
+        "Military"
+      ],
+      "military": true,
+      "skill": "Drive (Grav)",
+      "speedBand": 3,
+      "currentSpeed": 0,
+      "occupants": 16,
+      "cargoKg": 0,
+      "rangeKm": 3000,
+      "weightTons": 8,
+      "tl": 9,
+      "cost": 1000000,
+      "armor": 3,
+      "locations": {
+        "interior": {
+          "value": 3,
+          "max": 3,
+          "armored": false
+        },
+        "drive": {
+          "value": 3,
+          "max": 3,
+          "armored": false
+        },
+        "handling": {
+          "value": 3,
+          "max": 3,
+          "armored": false
+        },
+        "hull": {
+          "value": 3,
+          "max": 3,
+          "armored": false
+        },
+        "weapon": {
+          "value": 1,
+          "max": 1,
+          "armored": false
+        }
+      },
+      "description": "<p>A larger but enclosed and armoured air-raft similar to an ATV. 16 passengers.</p><p>Distance of operation: 3,000km. Weight 8T, TL 9, speed band 3, cost 1Mcr.</p><p>Damage locations (book): Interior 3, Speed 3, Hull 3, Weapon 1, Armour 3. The book gives no Handling value; Handling is set to the Hull value.</p><p>The stat line has Weapon 1, but the book does not say which weapon is mounted, so no weapon item is embedded.</p><p>Gravcraft are anti-gravity vehicles that hover up to 6 metres above a surface.</p><ul><li>Grav: This vehicle is operated using the Drive (Grav) Skill.</li><li>Military: This vehicle is only available at military-owned locations and is available for military personnel to use.</li></ul><p>Cargo: For every one occupant slot, 50kg of cargo can be carried instead. Weapons can be added to a vehicle after purchase, but civilian vehicles are unarmed by default. Cruising speed: vehicles with speed band 3+ have a cruising speed equal to one speed band less than top speed (p.46).</p><p>Source: p.47.</p>"
+    },
+    "items": []
+  },
+  {
+    "name": "G-Speeder",
+    "type": "vehicle",
+    "folder": "Gravcraft",
+    "system": {
+      "category": "gravcraft",
+      "traits": [
+        "Grav"
+      ],
+      "military": false,
+      "skill": "Drive (Grav)",
+      "speedBand": 8,
+      "currentSpeed": 0,
+      "occupants": 4,
+      "cargoKg": 1000,
+      "rangeKm": 3000,
+      "weightTons": 6,
+      "tl": 10,
+      "cost": 1000000,
+      "armor": 0,
+      "locations": {
+        "interior": {
+          "value": 2,
+          "max": 2,
+          "armored": false
+        },
+        "drive": {
+          "value": 8,
+          "max": 8,
+          "armored": false
+        },
+        "handling": {
+          "value": 2,
+          "max": 2,
+          "armored": false
+        },
+        "hull": {
+          "value": 2,
+          "max": 2,
+          "armored": false
+        },
+        "weapon": {
+          "value": 0,
+          "max": 0,
+          "armored": false
+        }
+      },
+      "description": "<p>A fast grav vehicle similar to a high-end ground car. Can carry up to 4 occupants and 1T of cargo.</p><p>Distance of operation: 3,000km. Weight 6T, TL 10, speed band 8, cost 1Mcr.</p><p>Damage locations (book): Interior 2, Speed 8, Hull 2. The book gives no Handling value; Handling is set to the Hull value.</p><p>Gravcraft are anti-gravity vehicles that hover up to 6 metres above a surface.</p><ul><li>Grav: This vehicle is operated using the Drive (Grav) Skill.</li></ul><p>Cargo: For every one occupant slot, 50kg of cargo can be carried instead. Weapons can be added to a vehicle after purchase, but civilian vehicles are unarmed by default. Cruising speed: vehicles with speed band 3+ have a cruising speed equal to one speed band less than top speed (p.46).</p><p>Source: p.47.</p>"
+    },
+    "items": []
+  }
+]

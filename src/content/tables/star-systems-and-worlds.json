@@ -1,0 +1,296 @@
+[
+  {
+    "name": "Space Exploration Encounter",
+    "folder": "Star Systems & Worlds",
+    "formula": "1d6",
+    "description": "<p>p.88. Roll 1D when jumping to an unmapped parsec hex on a subsector map. Sector Density DMs: Rift or assumed empty sectors -2DM; Sparse sectors -1DM; Typical density sectors +0DM; Densely populated sectors +1DM.</p>",
+    "results": [
+      {
+        "range": [
+          -10,
+          0
+        ],
+        "text": "<strong>Uninhabitated star system</strong> (0 or less)"
+      },
+      {
+        "range": [
+          1,
+          3
+        ],
+        "text": "<strong>Empty</strong> (1-3)"
+      },
+      {
+        "range": [
+          4,
+          20
+        ],
+        "text": "<strong>Inhabitated system encounter</strong> (4+). Generate the star system and the main world."
+      }
+    ]
+  },
+  {
+    "name": "Primary Star Table",
+    "folder": "Star Systems & Worlds",
+    "formula": "2d6",
+    "description": "<p>p.88. Roll 2D and add the Sector Density DM (Rift or assumed empty -2DM; Sparse -1DM; Typical +0DM; Densely populated +1DM). Mass (M): 1M equals the mass of Earth's Sun. Radius (R): 1 radius equals the radius of Earth's Sun. 1 AU equals 1.5 million kilometres. The book lists no result for 9; this table gives 9 to the G row (6-9).</p>",
+    "results": [
+      {
+        "range": [
+          -10,
+          3
+        ],
+        "text": "<strong>Star Class:</strong> M · <strong>Color:</strong> Red · <strong>Mass (M):</strong> 0.01 - 0.4M · <strong>Radius (R):</strong> Less than 0.5R · <strong>Number of Other Stellar Objects:</strong> D3 · <strong>Habitable Zone:</strong> 0.25 AU"
+      },
+      {
+        "range": [
+          4,
+          5
+        ],
+        "text": "<strong>Star Class:</strong> K · <strong>Color:</strong> Orange · <strong>Mass (M):</strong> 0.5 - 0.7M · <strong>Radius (R):</strong> 0.6 - 0.8R · <strong>Number of Other Stellar Objects:</strong> 1D · <strong>Habitable Zone:</strong> 0.5 AU"
+      },
+      {
+        "range": [
+          6,
+          9
+        ],
+        "text": "<strong>Star Class:</strong> G · <strong>Color:</strong> Yellow · <strong>Mass (M):</strong> 0.8 - 1M · <strong>Radius (R):</strong> 0.9 - 1.1R · <strong>Number of Other Stellar Objects:</strong> 2D · <strong>Habitable Zone:</strong> 1 AU"
+      },
+      {
+        "range": [
+          10,
+          11
+        ],
+        "text": "<strong>Star Class:</strong> F · <strong>Color:</strong> White · <strong>Mass (M):</strong> 1.1 - 1.5M · <strong>Radius (R):</strong> 1.2 - 1.5R · <strong>Number of Other Stellar Objects:</strong> 1D · <strong>Habitable Zone:</strong> 1.5 AU"
+      },
+      {
+        "range": [
+          12,
+          30
+        ],
+        "text": "<strong>Star Class:</strong> A · <strong>Color:</strong> Blue · <strong>Mass (M):</strong> 1.6 - 2.5M · <strong>Radius (R):</strong> 1.6 - 2R · <strong>Number of Other Stellar Objects:</strong> D3 · <strong>Habitable Zone:</strong> 2.5 AU"
+      }
+    ]
+  },
+  {
+    "name": "Other Stellar Objects",
+    "folder": "Star Systems & Worlds",
+    "formula": "2d6",
+    "description": "<p>p.89. For every generated planet, roll 2D. Moons: to determine the size of each moon, roll a D3-1 per moon on Step 1 of the World generator.</p>",
+    "results": [
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "<strong>Unique Celestial Observation:</strong> Use the Unique Celestial Observation table to determine what type is found within this star system."
+      },
+      {
+        "range": [
+          3,
+          5
+        ],
+        "text": "<strong>Barren:</strong> Rock ball, devoid of atmosphere. May have industrial facilities or small colonies. Barren planets will have D3 moons."
+      },
+      {
+        "range": [
+          6,
+          8
+        ],
+        "text": "<strong>Gas Giant:</strong> Gas giants will have 1D moons around them. These moons may function as bases for pirates, corporations, or other groups who use the gas giant as a source of revenue or ambushes."
+      },
+      {
+        "range": [
+          9,
+          11
+        ],
+        "text": "<strong>Structure:</strong> This represents notable or important man- or sophont-made structures. Roll 1D<br>1) Belter base<br>2) Communication or remote research station<br>3) Remote starbase port station<br>4) Scrap or salvage base<br>5) Colony cluster: 1D colonies<br>6) Abandoned structure with a 50% chance of being occupied by squatters, pirates, or other spacers. Roll D3 on this list to determine the type of abandoned structure."
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "text": "<strong>Secondary World:</strong> An inhabited world, a minor planet to the main world in the star system."
+      }
+    ]
+  },
+  {
+    "name": "Structure Type (Other Stellar Objects)",
+    "folder": "Star Systems & Worlds",
+    "formula": "1d6",
+    "description": "<p>p.89. Roll 1D when the Other Stellar Objects table gives a Structure (9-11). For an abandoned structure, roll D3 on this list to determine the type of abandoned structure.</p>",
+    "results": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "text": "Belter base"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "Communication or remote research station"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "Remote starbase port station"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "Scrap or salvage base"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "Colony cluster: 1D colonies"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "Abandoned structure with a 50% chance of being occupied by squatters, pirates, or other spacers. Roll D3 on this list to determine the type of abandoned structure."
+      }
+    ]
+  },
+  {
+    "name": "Secondary Worlds",
+    "folder": "Star Systems & Worlds",
+    "formula": "2d6",
+    "description": "<p>p.89. Roll 2D to determine a secondary world's relationship to the system's star. Any planets outside of the Goldilocks zone must have shielded and insulated settlements and starports.</p>",
+    "results": [
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "<strong>Distance from Star:</strong> 10% closer than Goldilocks Zone · <strong>DM to Temperature Table:</strong> +4"
+      },
+      {
+        "range": [
+          3,
+          4
+        ],
+        "text": "<strong>Distance from Star:</strong> -5% closer than Goldilocks Zone · <strong>DM to Temperature Table:</strong> +2"
+      },
+      {
+        "range": [
+          5,
+          9
+        ],
+        "text": "<strong>Distance from Star:</strong> Within the Goldilock zone · <strong>DM to Temperature Table:</strong> +0"
+      },
+      {
+        "range": [
+          10,
+          11
+        ],
+        "text": "<strong>Distance from Star:</strong> +5% further than the Goldilocks zone · <strong>DM to Temperature Table:</strong> -2"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "text": "<strong>Distance from Star:</strong> +10% further than the Goldilocks zone · <strong>DM to Temperature Table:</strong> -4"
+      }
+    ]
+  },
+  {
+    "name": "Anomalies Table",
+    "folder": "Star Systems & Worlds",
+    "formula": "2d6",
+    "description": "<p>p.89. Roll 2D to determine the anomaly type.</p>",
+    "results": [
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "<strong>Ancient Planet-Sized Megastructure Instead of a Planet:</strong> Roll D3<br>1) Dyson sphere<br>2) ringworld<br>3) planetoid-sized geometric/polyhedral object"
+      },
+      {
+        "range": [
+          3,
+          4
+        ],
+        "text": "<strong>Orbital Structure Around Planet:</strong> Roll D3<br>1) Abandoned orbital space colony<br>2) ring of derelict ships<br>3) high density of space junk"
+      },
+      {
+        "range": [
+          5,
+          9
+        ],
+        "text": "<strong>Planetside Ancient Structure:</strong> Roll D3<br>1) On surface<br>2) subterranean<br>3) floating/hovering"
+      },
+      {
+        "range": [
+          10,
+          11
+        ],
+        "text": "Strange Artifacts litter this planet"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "text": "Reality-Bending Band of Spacetime Energy permeates a pocket of this system"
+      }
+    ]
+  },
+  {
+    "name": "Unique Celestial Observation Table",
+    "folder": "Star Systems & Worlds",
+    "formula": "2d6",
+    "description": "<p>p.89. Roll 2D to determine the unique observation in the star system.</p>",
+    "results": [
+      {
+        "range": [
+          -10,
+          2
+        ],
+        "text": "<strong>Anomaly:</strong> A strange artificial celestial body exists within the system either as a stellar object/event or as a planetside anomaly. See the Anomalies Table to determine what type is observed."
+      },
+      {
+        "range": [
+          3,
+          4
+        ],
+        "text": "<strong>Shattered World:</strong> A planet or planetoid that has been hit by another celestial body, shattering it in many large pieces. This world still has its normal orbit but is a hazard because of the debris that is slingshot from its fractured form. Pilot checks incur -1DM while moving through this system."
+      },
+      {
+        "range": [
+          5,
+          9
+        ],
+        "text": "<strong>Cluster:</strong> A massive cloud of asteroids or planetoids made of minerals and ice clutter a large portion of the system, making travel difficult, providing -2DM to pilot checks and -1DM to Astrogation. Roll D3 to determine the cluster's shape: 1) Torus 2) spherical 3) asymmetrical"
+      },
+      {
+        "range": [
+          10,
+          11
+        ],
+        "text": "<strong>Secondary Star:</strong> There is a secondary star that is twice as weak as the primary star. Jumping is -2DM."
+      },
+      {
+        "range": [
+          12,
+          30
+        ],
+        "text": "<strong>Black Hole:</strong> There is a black hole that is the primary gravitational body, but the sun and planets exist outside of the Schwartzchild radius of the black hole, allowing for the planets and star to not be pulled in. Jumping in and out of this system is -3DM."
+      }
+    ]
+  }
+]

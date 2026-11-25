@@ -1,0 +1,32 @@
+<section class="sp-body">
+  <div class="sp-hits">
+    <div class="sp-hits-head">
+      <b>{{localize "SPACER.Creature.Hits"}}</b>
+      <input type="number" name="system.hits.value" value="{{system.hits.value}}" {{disabled (not editable)}}> /
+      <input type="number" name="system.hits.max" value="{{system.hits.max}}" min="0" {{disabled (not editable)}}>
+      <small>{{localize "SPACER.Creature.Thresholds" pinned=thresholds.pinned unconscious=thresholds.unconscious}}</small>
+    </div>
+    <div class="sp-bar"><div class="sp-bar-fill {{injury.css}}" style="width: {{hitsPct}}%"></div></div>
+  </div>
+  <div class="sp-grid four">
+    <label class="sp-field">{{localize "SPACER.Creature.SizeLabel"}}<select name="system.size" {{disabled (not editable)}}>{{#each sizes}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></label>
+    <label class="sp-field">{{localize "SPACER.Sheet.ToHit"}}<input type="number" name="system.difficulty" value="{{system.difficulty}}" {{disabled (not editable)}}></label>
+    <label class="sp-field">{{localize "SPACER.Creature.Damage"}}<input type="text" name="system.damage" value="{{system.damage}}" {{disabled (not editable)}}></label>
+    <label class="sp-field">{{localize "SPACER.Creature.Flat"}}<input type="number" name="system.flatDamage" value="{{system.flatDamage}}" {{disabled (not editable)}}></label>
+    <label class="sp-field">{{localize "SPACER.Creature.BehaviourLabel"}}<select name="system.behaviour" {{disabled (not editable)}}>{{#each behaviours}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></label>
+    <label class="sp-field">{{localize "SPACER.Creature.Detail"}}<input type="text" name="system.behaviourDetail" value="{{system.behaviourDetail}}" {{disabled (not editable)}}></label>
+    <label class="sp-field">{{localize "SPACER.Creature.Appearing"}}<input type="text" name="system.numberAppearing" value="{{system.numberAppearing}}" {{disabled (not editable)}}></label>
+    <label class="sp-field">{{localize "SPACER.Sheet.Qty"}}<input type="number" name="system.quantity" value="{{system.quantity}}" min="1" {{disabled (not editable)}}></label>
+  </div>
+  <label class="sp-field wide">{{localize "SPACER.Creature.Traits"}}<input type="text" name="system.traits" value="{{traitsText}}" placeholder="Flyer, Camouflaged, Poison" {{disabled (not editable)}}></label>
+  <label class="sp-field wide">{{localize "SPACER.Creature.Terrain"}}<input type="text" name="system.terrain" value="{{system.terrain}}" {{disabled (not editable)}}></label>
+  <div class="sp-row-buttons">
+    <button type="button" class="sp-btn primary" data-action="creatureAttack"><i class="fa-solid fa-paw"></i> {{localize "SPACER.Creature.Attack"}}</button>
+    <input type="number" data-damage-input value="1" min="0">
+    <button type="button" class="sp-btn small danger" data-action="damage"><i class="fa-solid fa-burst"></i> {{localize "SPACER.Damage.Apply"}}</button>
+    <button type="button" class="sp-btn small" data-action="heal"><i class="fa-solid fa-heart"></i> {{localize "SPACER.Heal.Heal"}}</button>
+    <button type="button" class="sp-btn small" data-action="morale"><i class="fa-solid fa-flag"></i> {{localize "SPACER.Morale.Button"}}</button>
+  </div>
+  <h3 class="sp-section">{{localize "SPACER.Sheet.Description"}}</h3>
+  <prose-mirror name="system.description" class="sp-editor" toggled value="{{system.description}}" {{#unless editable}}disabled{{/unless}}>{{{enriched.description}}}</prose-mirror>
+</section>

@@ -1,0 +1,87 @@
+<div class="st-body">
+  <section class="st-section">
+    <h3>{{localize "SPACER.Tools.Trade.Worlds"}}</h3>
+    <div class="st-grid2">
+      <fieldset>
+        <legend>{{localize "SPACER.Tools.Trade.Origin"}}</legend>
+        <select data-field="origin">{{selectOptions worlds selected=s.origin}}</select>
+        {{#unless s.origin}}
+        <label>{{localize "SPACER.Tools.Trade.Codes"}} <input type="text" data-field="originCodes" value="{{s.originCodes}}" placeholder="Ag Ni Ri"></label>
+        <label>{{localize "SPACER.Tools.Pop"}} <input type="number" data-field="originPop" value="{{s.originPop}}" min="0" max="15"></label>
+        <label>{{localize "SPACER.Tools.Starport"}} <select data-field="originStarport">{{selectOptions starports selected=s.originStarport}}</select></label>
+        <label>TL <input type="number" data-field="originTl" value="{{s.originTl}}" min="0" max="16"></label>
+        {{/unless}}
+        <p class="st-codes">{{originCodesText}} · Pop {{origin.pop}} · {{localize "SPACER.Tools.Starport"}} {{origin.starport}}</p>
+      </fieldset>
+      <fieldset>
+        <legend>{{localize "SPACER.Tools.Trade.Destination"}}</legend>
+        <select data-field="destination">{{selectOptions worlds selected=s.destination}}</select>
+        {{#unless s.destination}}
+        <label>{{localize "SPACER.Tools.Trade.Codes"}} <input type="text" data-field="destinationCodes" value="{{s.destinationCodes}}" placeholder="In Ht"></label>
+        <label>{{localize "SPACER.Tools.Pop"}} <input type="number" data-field="destinationPop" value="{{s.destinationPop}}" min="0" max="15"></label>
+        <label>{{localize "SPACER.Tools.Zone"}} <select data-field="destinationZone">{{selectOptions zones selected=s.destinationZone}}</select></label>
+        {{/unless}}
+        <p class="st-codes">{{destinationCodesText}} · Pop {{destination.pop}}{{#if destination.zone}} · {{localize "SPACER.Tools.Zone"}} {{destination.zone}}{{/if}}</p>
+      </fieldset>
+    </div>
+  </section>
+
+  <section class="st-section">
+    <h3>{{localize "SPACER.Tools.Trade.Negotiators"}} <small>({{actorName}})</small></h3>
+    <div class="st-row">
+      <label>Broker <input type="number" data-field="broker" value="{{s.broker}}" min="0" max="6"></label>
+      <label>SOC DM <input type="number" data-field="socDM" value="{{s.socDM}}" min="-3" max="3"></label>
+      <label>{{localize "SPACER.Tools.Trade.SellerBroker"}} <input type="number" data-field="sellerBroker" value="{{s.sellerBroker}}" min="0" max="6"></label>
+      <label>{{localize "SPACER.Tools.Trade.Hired"}} <select data-field="hired">{{selectOptions hiredChoices selected=s.hired}}</select></label>
+    </div>
+  </section>
+
+  <section class="st-section">
+    <h3>{{localize "SPACER.Tools.Trade.Speculative"}}</h3>
+    <div class="st-row">
+      <select data-field="supplier">{{selectOptions suppliers selected=s.supplier}}</select>
+      <label>{{localize "SPACER.Tools.Trade.ExtraLeads"}} <input type="number" data-field="extraLeads" value="{{s.extraLeads}}" min="0" max="5"></label>
+      <button type="button" data-action="findSupplier"><i class="fa-solid fa-magnifying-glass" inert></i> {{localize "SPACER.Tools.Trade.FindSupplier"}}</button>
+      <button type="button" data-action="rollGoods"><i class="fa-solid fa-dice" inert></i> {{localize "SPACER.Tools.Trade.RollGoods"}}</button>
+    </div>
+    {{#unless terminalOk}}<p class="st-hint">{{localize "SPACER.Tools.Trade.TerminalNo"}}</p>{{/unless}}
+    <label class="st-tons">{{localize "SPACER.Tools.Trade.Tons"}} <input type="number" data-field="tons" value="{{s.tons}}" min="1"></label>
+    {{#if goods.length}}
+    <table class="st-goods">
+      <thead><tr><th>D66</th><th>{{localize "SPACER.Tools.Trade.Good"}}</th><th>{{localize "SPACER.Tools.Trade.Base"}}</th><th>{{localize "SPACER.Tools.Trade.Tons"}}</th><th>{{localize "SPACER.Tools.Trade.BuyDM"}}</th><th>{{localize "SPACER.Tools.Trade.SellDM"}}</th><th></th></tr></thead>
+      <tbody>
+        {{#each goods}}
+        <tr>
+          <td>{{code}}</td><td title="{{example}}">{{name}}</td><td>{{priceText}}</td><td>{{tons}}</td><td>{{purchaseDM}}</td><td>{{resaleDM}}</td>
+          <td class="st-act">
+            <button type="button" data-action="buy" data-code="{{code}}" data-tooltip="SPACER.Tools.Trade.Buy"><i class="fa-solid fa-cart-arrow-down" inert></i></button>
+            <button type="button" data-action="sell" data-code="{{code}}" data-tooltip="SPACER.Tools.Trade.Sell"><i class="fa-solid fa-hand-holding-dollar" inert></i></button>
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    {{else}}
+    <p class="st-hint">{{localize "SPACER.Tools.Trade.NoGoods"}}</p>
+    {{/if}}
+    {{#if last}}
+    <div class="st-last">
+      <p><strong>{{last.name}}</strong> · {{last.world}} · {{last.percent}}% · {{last.perTonText}}/ton · {{last.tons}} tons = <strong>{{last.costText}}</strong>{{#if last.fee}} (+ broker fee {{last.feeText}}){{/if}}</p>
+      <div class="st-row">
+        <label>{{localize "SPACER.Tools.Trade.Target"}} <select data-field="target">{{selectOptions targets selected=s.target}}</select></label>
+        <button type="button" data-action="negotiate"><i class="fa-solid fa-handshake-angle" inert></i> {{localize "SPACER.Tools.Trade.Negotiate"}}</button>
+      </div>
+    </div>
+    {{/if}}
+  </section>
+
+  <section class="st-section">
+    <h3>{{localize "SPACER.Tools.Trade.Transport"}}</h3>
+    <div class="st-row">
+      <button type="button" data-action="freight"><i class="fa-solid fa-boxes-stacked" inert></i> {{localize "SPACER.Tools.Trade.Freight"}}</button>
+      <button type="button" data-action="passengers"><i class="fa-solid fa-person-walking-luggage" inert></i> {{localize "SPACER.Tools.Trade.Passengers"}}</button>
+      <label><input type="checkbox" data-field="subsidised" {{checked s.subsidised}}> {{localize "SPACER.Tools.Trade.Subsidised"}}</label>
+      <button type="button" data-action="mail"><i class="fa-solid fa-envelope" inert></i> {{localize "SPACER.Tools.Trade.Mail"}}</button>
+    </div>
+  </section>
+</div>

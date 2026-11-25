@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Suspend Animation",
+    "type": "psionic",
+    "folder": "Awareness",
+    "system": {
+      "discipline": "awareness",
+      "level": 2,
+      "psiCost": "3",
+      "duration": "7 days",
+      "difficulty": "",
+      "range": "Self",
+      "known": false,
+      "description": "<p>The spacer is able to slow their metabolism and other life systems to a crawl, effectively placing them in a similar state to being frozen for low passage but without the risks. This ability lasts for a maximum of seven days. They don't gain the benefit of natural healing or PSI recovery. The spacer can be awoken from this state, similar to waking someone from deep sleep.</p><p>Level 2 Awareness talent. Duration: 7 days. PSI used: 3.</p><p>The spacer is able to gain mastery of their physical self by using PSI. Learning roll: 7+.</p><p>Performing a psionic talent requires the correct level for that discipline, the required PSI points, and enough PSI points to project the talent the required distance. Many abilities require the spacer to remain undisturbed for the duration unless stated otherwise.</p>",
+      "source": "p.117"
+    }
+  },
+  {
+    "name": "Psycho-Strength",
+    "type": "psionic",
+    "folder": "Awareness",
+    "system": {
+      "discipline": "awareness",
+      "level": 4,
+      "psiCost": "1 per point",
+      "duration": "1 hour",
+      "difficulty": "",
+      "range": "Self",
+      "known": false,
+      "description": "<p>The spacer is able to spend PSI points to increase their STR by an equal amount of points. The spacer cannot exceed the number of points equal to their current Awareness level or beyond STR 15.</p><p>Level 4 Awareness talent. Duration: 1 hour. PSI used: 1 per point.</p><p>The spacer is able to gain mastery of their physical self by using PSI. Learning roll: 7+.</p><p>Performing a psionic talent requires the correct level for that discipline, the required PSI points, and enough PSI points to project the talent the required distance. Many abilities require the spacer to remain undisturbed for the duration unless stated otherwise.</p>",
+      "source": "p.117"
+    }
+  },
+  {
+    "name": "Psycho-Endurance",
+    "type": "psionic",
+    "folder": "Awareness",
+    "system": {
+      "discipline": "awareness",
+      "level": 5,
+      "psiCost": "1 per point",
+      "duration": "1 hour",
+      "difficulty": "",
+      "range": "Self",
+      "known": false,
+      "description": "<p>The spacer is able to spend PSI points to increase their END by an equal amount of points. The spacer cannot exceed the number of points equal to their current Awareness level or beyond END 15.</p><p>Level 5 Awareness talent. Duration: 1 hour. PSI used: 1 per point.</p><p>The spacer is able to gain mastery of their physical self by using PSI. Learning roll: 7+.</p><p>Performing a psionic talent requires the correct level for that discipline, the required PSI points, and enough PSI points to project the talent the required distance. Many abilities require the spacer to remain undisturbed for the duration unless stated otherwise.</p>",
+      "source": "p.117"
+    }
+  },
+  {
+    "name": "Regeneration",
+    "type": "psionic",
+    "folder": "Awareness",
+    "system": {
+      "discipline": "awareness",
+      "level": 9,
+      "psiCost": "1 per point",
+      "duration": "1 minute",
+      "difficulty": "",
+      "range": "Self",
+      "known": false,
+      "description": "<p>The spacer is able to spend PSI to recover wounds caused to STR, DEX, or END. They recover 1 wound a minute at the cost of 1 PSI. Regeneration can only be applied to the spacer themself. It cannot reverse the effects of aging.</p><p>Level 9 Awareness talent. Duration: 1 minute. PSI used: 1 per point.</p><p>The spacer is able to gain mastery of their physical self by using PSI. Learning roll: 7+.</p><p>Performing a psionic talent requires the correct level for that discipline, the required PSI points, and enough PSI points to project the talent the required distance. Many abilities require the spacer to remain undisturbed for the duration unless stated otherwise.</p>",
+      "source": "p.117"
+    }
+  }
+]

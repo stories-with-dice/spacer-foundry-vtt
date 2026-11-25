@@ -1,0 +1,62 @@
+<div class="space-combat-body">
+  <div class="toolbar actions-row">
+    <strong>{{localize "SPACER.Craft.Combat.round"}} {{round}}</strong>
+    <select class="add-ship"><option value="">{{localize "SPACER.Craft.Combat.addShip"}}</option>{{#each available}}<option value="{{uuid}}">{{name}}</option>{{/each}}</select>
+    <button type="button" data-action="addTargets"><i class="fa-solid fa-bullseye"></i> {{localize "SPACER.Craft.Combat.addTargets"}}</button>
+    <button type="button" data-action="addSelected"><i class="fa-solid fa-object-group"></i> {{localize "SPACER.Craft.Combat.addSelected"}}</button>
+    <button type="button" data-action="initiative"><i class="fa-solid fa-dice"></i> {{localize "SPACER.Craft.Combat.initiative"}}</button>
+    <button type="button" data-action="nextRound"><i class="fa-solid fa-forward"></i> {{localize "SPACER.Craft.Combat.nextRound"}}</button>
+    <button type="button" data-action="reset"><i class="fa-solid fa-trash"></i></button>
+  </div>
+  <p class="hint">{{localize "SPACER.Craft.Combat.hint"}}</p>
+  <div class="scroll">
+    {{#each ships}}
+    <section class="combat-ship {{#if destroyed}}destroyed{{/if}}" data-uuid="{{uuid}}">
+      <header>
+        <img src="{{img}}" width="32" height="32" alt="">
+        <a class="name" data-action="openShip">{{name}}</a>
+        <span class="badge">{{localize "SPACER.Craft.Combat.init"}} {{initiative}}</span>
+        <span class="badge">{{localize "SPACER.Craft.Ship.thrust"}} {{thrustLeft}}/{{thrust}}</span>
+        <span class="badge {{#if critical}}critical{{/if}}">{{localize "SPACER.Craft.Ship.hull"}} {{hull}}</span>
+        {{#if morale}}<span class="badge critical">{{localize "SPACER.Craft.Combat.morale"}}</span>{{/if}}
+        {{#if destroyed}}<span class="badge destroyed">{{localize "SPACER.Craft.Status.destroyed"}}</span>{{/if}}
+        <button type="button" class="icon" data-action="removeShip"><i class="fa-solid fa-xmark"></i></button>
+      </header>
+      {{#if others.length}}
+      <table class="ranges">
+        {{#each others}}
+        <tr class="{{#if dogfight}}dogfight{{/if}}">
+          <th>{{name}}</th>
+          <td>{{label}} ({{dm}}){{#if dogfight}} <span class="badge critical">{{localize "SPACER.Craft.Combat.dogfight"}}</span>{{/if}}</td>
+          <td>
+            <button type="button" data-action="move" data-other="{{uuid}}" data-delta="-1" data-tooltip="{{localize 'SPACER.Craft.Combat.closeIn'}}"><i class="fa-solid fa-angles-left"></i></button>
+            <button type="button" data-action="move" data-other="{{uuid}}" data-delta="1" data-tooltip="{{localize 'SPACER.Craft.Combat.openUp'}}"><i class="fa-solid fa-angles-right"></i></button>
+          </td>
+          <td>
+            <select>{{#each @root.ranges}}<option value="{{index}}" {{#if (eq index ../index)}}selected{{/if}}>{{label}}</option>{{/each}}</select>
+            <button type="button" data-action="setRange" data-other="{{uuid}}">{{localize "SPACER.Craft.Combat.set"}}</button>
+          </td>
+        </tr>
+        {{/each}}
+      </table>
+      {{/if}}
+      {{#if weapons.length}}
+      <div class="actions-row weapons">
+        <select class="fire-target">{{#each others}}<option value="{{uuid}}">{{name}}</option>{{/each}}</select>
+        {{#each weapons}}<button type="button" data-action="fire" data-item="{{id}}" {{#if out}}disabled{{/if}}><i class="fa-solid fa-meteor"></i> {{name}}</button>{{/each}}
+      </div>
+      {{/if}}
+      <div class="crew-actions">
+        {{#each crew}}
+        <div class="position">
+          <span class="pos">{{label}} <em>{{who}}</em></span>
+          {{#each actions}}<button type="button" data-action="crewAction" data-pos="{{../pos}}" data-act="{{key}}" data-tooltip="{{hint}}">{{label}}</button>{{/each}}
+        </div>
+        {{/each}}
+      </div>
+    </section>
+    {{else}}
+    <p class="empty">{{localize "SPACER.Craft.Combat.empty"}}</p>
+    {{/each}}
+  </div>
+</div>

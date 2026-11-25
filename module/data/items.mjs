@@ -48,7 +48,7 @@ export class WeaponData extends foundry.abstract.TypeDataModel {
     return {
       ...physical(),
       category: str("melee"),           // melee | short | stock | energy | archaic | heavy | thrown
-      skill: str("Melee"),              // base skill name
+      skill: str("Melee Combat"),       // base skill name
       specialty: str(""),               // e.g. "Blade", "Short"
       damage: str("1D"),                // book dice
       attachedDamage: str(""),          // damage when attached (bayonet)

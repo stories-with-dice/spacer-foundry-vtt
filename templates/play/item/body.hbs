@@ -1,0 +1,80 @@
+<section class="sp-body">
+  <div class="sp-grid three">
+  {{#if is_skill}}
+    <label class="sp-field">{{localize "SPACER.Skill.Base"}}<input type="text" name="system.skill" value="{{system.skill}}" {{disabled (not editable)}}></label>
+    <label class="sp-field">{{localize "SPACER.Skill.Specialty"}}<input type="text" name="system.specialty" value="{{system.specialty}}" {{disabled (not editable)}}></label>
+    <label class="sp-field">{{localize "SPACER.Skill.Rank"}}<input type="number" name="system.rank" value="{{system.rank}}" min="0" max="5" {{disabled (not editable)}}></label>
+    <label class="sp-field">{{localize "SPACER.Skill.Characteristic"}}<select name="system.characteristic" {{disabled (not editable)}}>{{#each characteristics}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></label>
+  </div>
+  <label class="sp-field wide">{{localize "SPACER.Skill.Specialties"}}<input type="text" name="system.specialties" value="{{specialtiesText}}" {{disabled (not editable)}}></label>
+  <div class="sp-grid three">
+  {{/if}}
+  {{#if is_weapon}}
+    <label class="sp-field">{{localize "SPACER.Weapon.CategoryLabel"}}<select name="system.category" {{disabled (not editable)}}>{{#each weaponCategories}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></label>
+    <label class="sp-field">{{localize "SPACER.Weapon.Skill"}}<input type="text" name="system.skill" value="{{system.skill}}" {{disabled (not editable)}}></label>
+    <label class="sp-field">{{localize "SPACER.Skill.Specialty"}}<input type="text" name="system.specialty" value="{{system.specialty}}" {{disabled (not editable)}}></label>
+    <label class="sp-field">{{localize "SPACER.Weapon.Damage"}}<input type="text" name="system.damage" value="{{system.damage}}" {{disabled (not editable)}}></label>
+    <label class="sp-field">{{localize "SPACER.Weapon.Attached"}}<input type="text" name="system.attachedDamage" value="{{system.attachedDamage}}" {{disabled (not editable)}}></label>
+    <label class="sp-field">{{localize "SPACER.Weapon.Range"}}<select name="system.range" {{disabled (not editable)}}>{{#each ranges}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></label>
+    <label class="sp-field">{{localize "SPACER.Weapon.Rounds"}}<input type="number" name="system.rounds" value="{{system.rounds}}" min="0" {{disabled (not editable)}}></label>
+    <label class="sp-field">{{localize "SPACER.Weapon.Ammo"}}<input type="number" name="system.ammo" value="{{system.ammo}}" min="0" {{disabled (not editable)}}></label>
+    <label class="sp-field check"><input type="checkbox" name="system.equipped" {{checked system.equipped}} {{disabled (not editable)}}> {{localize "SPACER.Weapon.Equipped"}}</label>
+    <label class="sp-field check"><input type="checkbox" name="system.jammed" {{checked system.jammed}} {{disabled (not editable)}}> {{localize "SPACER.Weapon.JammedTag"}}</label>
+    <label class="sp-field check"><input type="checkbox" name="system.broken" {{checked system.broken}} {{disabled (not editable)}}> {{localize "SPACER.Weapon.BrokenTag"}}</label>
+  {{/if}}
+  {{#if is_armor}}
+    <label class="sp-field">{{localize "SPACER.Sheet.ToHit"}}<input type="number" name="system.difficulty" value="{{system.difficulty}}" {{disabled (not editable)}}></label>
+    <label class="sp-field">{{localize "SPACER.Armour.WornWeight"}}<input type="number" step="any" name="system.wornWeight" value="{{system.wornWeight}}" {{disabled (not editable)}}></label>
+    <label class="sp-field check"><input type="checkbox" name="system.equipped" {{checked system.equipped}} {{disabled (not editable)}}> {{localize "SPACER.Armour.Worn"}}</label>
+    <label class="sp-field check" data-tooltip="{{localize "SPACER.Armour.DamagedHint"}}"><input type="checkbox" name="system.damaged" {{checked system.damaged}} {{disabled (not editable)}}> {{localize "SPACER.Armour.Damaged"}}</label>
+  {{/if}}
+  {{#if is_gear}}
+    <label class="sp-field">{{localize "SPACER.Gear.CategoryLabel"}}<select name="system.category" {{disabled (not editable)}}>{{#each gearCategories}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></label>
+    <label class="sp-field">{{localize "SPACER.Gear.Uses"}}<input type="number" name="system.uses.value" value="{{system.uses.value}}" min="0" {{disabled (not editable)}}></label>
+    <label class="sp-field">{{localize "SPACER.Gear.UsesMax"}}<input type="number" name="system.uses.max" value="{{system.uses.max}}" min="0" {{disabled (not editable)}}></label>
+    <label class="sp-field check"><input type="checkbox" name="system.equipped" {{checked system.equipped}} {{disabled (not editable)}}> {{localize "SPACER.Weapon.Equipped"}}</label>
+  {{/if}}
+  {{#if is_psionic}}
+    <label class="sp-field">{{localize "SPACER.Psi.DisciplineLabel"}}<select name="system.discipline" {{disabled (not editable)}}>{{#each disciplines}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></label>
+    <label class="sp-field">{{localize "SPACER.Psi.Level"}}<input type="number" name="system.level" value="{{system.level}}" min="0" {{disabled (not editable)}}></label>
+    <label class="sp-field">{{localize "SPACER.Psi.Cost"}}<input type="text" name="system.psiCost" value="{{system.psiCost}}" {{disabled (not editable)}}></label>
+    <label class="sp-field">{{localize "SPACER.Psi.Duration"}}<input type="text" name="system.duration" value="{{system.duration}}" {{disabled (not editable)}}></label>
+    <label class="sp-field" data-tooltip="{{localize "SPACER.Psi.DifficultyHint"}}">{{localize "SPACER.Psi.Difficulty"}}<input type="text" name="system.difficulty" value="{{system.difficulty}}" {{disabled (not editable)}}></label>
+    <label class="sp-field">{{localize "SPACER.Weapon.Range"}}<input type="text" name="system.range" value="{{system.range}}" {{disabled (not editable)}}></label>
+    <label class="sp-field check"><input type="checkbox" name="system.known" {{checked system.known}} {{disabled (not editable)}}> {{localize "SPACER.Psi.Known"}}</label>
+  {{/if}}
+  {{#if is_drug}}
+    <label class="sp-field">{{localize "SPACER.Drug.DosesLabel"}}<input type="number" name="system.doses" value="{{system.doses}}" min="0" {{disabled (not editable)}}></label>
+    <label class="sp-field">{{localize "SPACER.Psi.Duration"}}<input type="text" name="system.duration" value="{{system.duration}}" {{disabled (not editable)}}></label>
+    <label class="sp-field">{{localize "SPACER.Drug.Availability"}}<input type="text" name="system.availability" value="{{system.availability}}" {{disabled (not editable)}}></label>
+    <label class="sp-field">{{localize "SPACER.Drug.Legality"}}<input type="text" name="system.legality" value="{{system.legality}}" {{disabled (not editable)}}></label>
+  </div>
+  <label class="sp-field wide">{{localize "SPACER.Drug.Effect"}}<input type="text" name="system.effect" value="{{system.effect}}" {{disabled (not editable)}}></label>
+  <div class="sp-grid three">
+  {{/if}}
+  {{#if is_shipWeapon}}
+    <label class="sp-field">{{localize "SPACER.ShipWeapon.Mount"}}<input type="text" name="system.mount" value="{{system.mount}}" {{disabled (not editable)}}></label>
+    <label class="sp-field">{{localize "SPACER.Weapon.Damage"}}<input type="text" name="system.damage" value="{{system.damage}}" {{disabled (not editable)}}></label>
+    <label class="sp-field">{{localize "SPACER.Weapon.Range"}}<input type="text" name="system.range" value="{{system.range}}" {{disabled (not editable)}}></label>
+    <label class="sp-field">{{localize "SPACER.ShipWeapon.Tonnage"}}<input type="number" step="any" name="system.tonnage" value="{{system.tonnage}}" {{disabled (not editable)}}></label>
+    <label class="sp-field">{{localize "SPACER.ShipWeapon.Hardpoints"}}<input type="number" name="system.hardpoints" value="{{system.hardpoints}}" min="0" {{disabled (not editable)}}></label>
+    <label class="sp-field">{{localize "SPACER.Weapon.Ammo"}}<input type="number" name="system.ammo.value" value="{{system.ammo.value}}" min="0" {{disabled (not editable)}}></label>
+    <label class="sp-field">{{localize "SPACER.ShipWeapon.AmmoMax"}}<input type="number" name="system.ammo.max" value="{{system.ammo.max}}" min="0" {{disabled (not editable)}}></label>
+    <label class="sp-field check"><input type="checkbox" name="system.forVehicle" {{checked system.forVehicle}} {{disabled (not editable)}}> {{localize "SPACER.ShipWeapon.ForVehicle"}}</label>
+    <label class="sp-field check"><input type="checkbox" name="system.destroyed" {{checked system.destroyed}} {{disabled (not editable)}}> {{localize "SPACER.ShipWeapon.Destroyed"}}</label>
+  {{/if}}
+  {{#if physical}}
+    <label class="sp-field">{{localize "SPACER.Item.Cost"}}<input type="number" name="system.cost" value="{{system.cost}}" min="0" {{disabled (not editable)}}></label>
+    <label class="sp-field">{{localize "SPACER.Sheet.Weight"}}<input type="number" step="any" name="system.weight" value="{{system.weight}}" min="0" {{disabled (not editable)}}></label>
+    <label class="sp-field">TL<input type="number" name="system.tl" value="{{system.tl}}" min="0" {{disabled (not editable)}}></label>
+    <label class="sp-field">{{localize "SPACER.Sheet.Qty"}}<input type="number" name="system.quantity" value="{{system.quantity}}" min="0" {{disabled (not editable)}}></label>
+    <label class="sp-field check"><input type="checkbox" name="system.carried" {{checked system.carried}} {{disabled (not editable)}}> {{localize "SPACER.Gear.Carried"}}</label>
+  {{/if}}
+    <label class="sp-field">{{localize "SPACER.Item.Source"}}<input type="text" name="system.source" value="{{system.source}}" {{disabled (not editable)}}></label>
+  </div>
+  {{#if (or is_weapon is_armor is_gear is_shipWeapon)}}
+  <label class="sp-field wide">{{localize "SPACER.Item.Traits"}}<input type="text" name="system.traits" value="{{traitsText}}" placeholder="Auto 2, Piercing 1" {{disabled (not editable)}}></label>
+  {{/if}}
+  <h3 class="sp-section">{{localize "SPACER.Sheet.Description"}}</h3>
+  <prose-mirror name="system.description" class="sp-editor" toggled value="{{system.description}}" {{#unless editable}}disabled{{/unless}}>{{{description}}}</prose-mirror>
+</section>

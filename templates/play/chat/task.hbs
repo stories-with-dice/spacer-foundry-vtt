@@ -1,0 +1,12 @@
+<div class="spacer sp-card sp-task">
+  <header class="sp-card-head"><h3>{{title}}</h3><span class="sp-target">{{target}}+</span></header>
+  {{#if mods.length}}<ul class="sp-mod-list">{{#each mods}}<li>{{label}} <b>{{signed}}</b></li>{{/each}}</ul>{{/if}}
+  {{{rollHTML}}}
+  <div class="sp-result {{#if success}}good{{else}}bad{{/if}}">
+    <b>{{#if success}}{{localize "SPACER.Roll.Success"}}{{else}}{{localize "SPACER.Roll.Failure"}}{{/if}}</b>
+    <span>{{localize "SPACER.Roll.Effect"}} {{effect}}</span>
+  </div>
+  {{#if (eq absolute "success")}}<div class="sp-absolute good"><i class="fa-solid fa-star"></i> {{localize "SPACER.Roll.AbsoluteSuccess"}}</div>{{/if}}
+  {{#if (eq absolute "failure")}}<div class="sp-absolute bad"><i class="fa-solid fa-skull"></i> {{localize "SPACER.Roll.AbsoluteFailure"}}</div>{{/if}}
+  {{#if notes}}<p class="sp-note">{{{notes}}}</p>{{/if}}
+</div>

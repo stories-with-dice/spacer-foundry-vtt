@@ -1,4 +1,5 @@
 import { CHARACTERISTICS, PHYSICAL, UNARMORED_DIFFICULTY, characteristicDM, toHex } from "../config.mjs";
+import { deriveShip, deriveVehicle } from "../craft/derived.mjs";
 
 const fields = foundry.data.fields;
 
@@ -189,8 +190,8 @@ export class VehicleData extends foundry.abstract.TypeDataModel {
   }
 
   prepareDerivedData() {
-    this.cruiseBand = this.speedBand >= 3 ? this.speedBand - 1 : this.speedBand;
-    this.effectiveSpeedBand = Math.max(0, this.speedBand - (this.locations.drive.max - this.locations.drive.value));
+    // Speed, range, and location status (book p.46-49). Owned by the craft area.
+    deriveVehicle(this);
   }
 }
 
@@ -237,14 +238,8 @@ export class ShipData extends foundry.abstract.TypeDataModel {
   }
 
   prepareDerivedData() {
-    const eff = s => (s.destroyed ? 0 : Math.max(0, s.value - s.damage));
-    const powerOut = eff(this.power);
-    // A power plant below the drives limits them (book p.86).
-    this.effective = {
-      jump: Math.min(eff(this.jDrive), powerOut || eff(this.jDrive)),
-      thrust: Math.min(eff(this.mDrive), powerOut || eff(this.mDrive)),
-      power: powerOut
-    };
-    this.critical = this.hull.value <= 1 && this.hull.value > 0;
+    // Effective drive letters and performance after damage, power-plant limits, critical flags,
+    // fuel and cargo (book p.74-87). Owned by the craft area.
+    deriveShip(this);
   }
 }

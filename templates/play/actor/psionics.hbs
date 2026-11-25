@@ -1,0 +1,35 @@
+<section class="tab {{tab.cssClass}}" data-group="primary" data-tab="psionics">
+  <div class="sp-combat-summary">
+    <div class="sp-big"><label>PSI</label><b>{{psi.value}} / {{psi.max}}</b><small>DM {{psi.dm}}</small></div>
+    <div class="sp-big"><label>{{localize "SPACER.Psi.Cap"}}</label><b>{{psi.cap}}</b><small>{{localize "SPACER.Psi.CapHint"}}</small></div>
+    <div class="sp-big"><label>{{localize "SPACER.Psi.Recover"}}</label>
+      <div class="sp-row-buttons"><input type="number" data-psi-hours value="1" min="1" data-tooltip="{{localize "SPACER.Psi.Hours"}}">
+      <button type="button" class="sp-btn small" data-action="recoverPsi"><i class="fa-solid fa-moon"></i> {{localize "SPACER.Psi.Rest"}}</button></div></div>
+  </div>
+  <div class="sp-grid four">
+    <label class="sp-field">{{localize "SPACER.Psi.Current"}}<input type="number" name="system.psi.value" value="{{system.psi.value}}" {{disabled (not editable)}}></label>
+    <label class="sp-field">{{localize "SPACER.Psi.Max"}}<input type="number" name="system.psi.max" value="{{system.psi.max}}" min="0" {{disabled (not editable)}}></label>
+  </div>
+  <div class="sp-toolbar">
+    <h3 class="sp-section">{{localize "SPACER.Psi.Talents"}}</h3>
+    <button type="button" class="sp-btn small" data-action="openPack" data-pack="psionics"><i class="fa-solid fa-book"></i></button>
+    {{#if editable}}<button type="button" class="sp-btn small" data-action="itemCreate" data-type="psionic"><i class="fa-solid fa-plus"></i></button>{{/if}}
+  </div>
+  {{#each disciplines as |d|}}
+  <h4 class="sp-subsection">{{d.label}}</h4>
+  <table class="sp-table sp-talents">
+    <tbody>
+    {{#each d.talents as |t|}}
+    <tr data-item-id="{{t.id}}" class="draggable">
+      <td class="name"><div class="sp-cell"><img src="{{t.img}}" alt=""><a data-action="itemEdit">{{t.name}}</a><small class="sp-traits">{{localize "SPACER.Psi.Level"}} {{t.level}}{{#if t.duration}} · {{t.duration}}{{/if}}</small></div></td>
+      <td data-tooltip="{{localize "SPACER.Psi.Cost"}}">{{t.cost}}</td>
+      <td class="controls"><button type="button" class="sp-btn small primary" data-action="itemUse"><i class="fa-solid fa-brain"></i> {{localize "SPACER.Psi.Use"}}</button>
+        {{#if @root.editable}}<a data-action="itemDelete"><i class="fa-solid fa-trash"></i></a>{{/if}}</td>
+    </tr>
+    {{/each}}
+    </tbody>
+  </table>
+  {{else}}
+  <p class="sp-empty">{{localize "SPACER.Psi.None"}}</p>
+  {{/each}}
+</section>

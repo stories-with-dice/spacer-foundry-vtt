@@ -1,0 +1,34 @@
+<section class="tab {{tab.cssClass}}" data-group="primary" data-tab="travel">
+  <div class="grid-2 stat-grid">
+    <label>{{localize "SPACER.Craft.Travel.system"}} <input type="text" name="system.position.system" value="{{system.position.system}}"></label>
+    <label>{{localize "SPACER.Craft.Travel.world"}} <input type="text" name="system.position.world" value="{{system.position.world}}"></label>
+    <label>{{localize "SPACER.Craft.Travel.where"}} <input type="text" name="system.position.range" value="{{system.position.range}}"></label>
+    <label>{{localize "SPACER.Craft.Ship.fuel"}} <span>{{system.fuel.value}} / {{system.fuelState.capacity}} T</span></label>
+  </div>
+  <h3>{{localize "SPACER.Craft.Procedure.title"}}</h3>
+  <div class="actions-row">
+    <button type="button" data-action="procedure" data-step="prepare">{{localize "SPACER.Craft.Procedure.prepare"}}</button>
+    <select data-opt="travel.refuelType"><option value="refined" {{#if (eq travel.refuelType "refined")}}selected{{/if}}>{{localize "SPACER.Craft.Fuel.refined"}}</option><option value="unrefined" {{#if (eq travel.refuelType "unrefined")}}selected{{/if}}>{{localize "SPACER.Craft.Fuel.unrefined"}}</option></select>
+    <button type="button" data-action="refuel"><i class="fa-solid fa-gas-pump"></i> {{localize "SPACER.Craft.Travel.refuel"}}</button>
+    <button type="button" data-action="procedure" data-step="departure">{{localize "SPACER.Craft.Procedure.departure"}}</button>
+    <button type="button" data-action="encounter">{{localize "SPACER.Craft.Procedure.encounter"}}</button>
+    <button type="button" data-action="procedure" data-step="arrival">{{localize "SPACER.Craft.Procedure.arrival"}}</button>
+  </div>
+  <h3>{{localize "SPACER.Craft.Travel.interplanetary"}}</h3>
+  <div class="actions-row">
+    <select data-opt="travel.row">{{#each rowOptions}}<option value="{{key}}" {{#if (eq key @root.travel.row)}}selected{{/if}}>{{label}}</option>{{/each}}</select>
+    <button type="button" data-action="interplanetary"><i class="fa-solid fa-rocket"></i> {{localize "SPACER.Craft.Travel.go"}}</button>
+  </div>
+  <h3>{{localize "SPACER.Craft.Travel.toJumpPoint"}}</h3>
+  <div class="actions-row">
+    <select data-opt="travel.size">{{#each sizeOptions}}<option value="{{key}}" {{#if (eq key @root.travel.size)}}selected{{/if}}>{{label}}</option>{{/each}}</select>
+    <button type="button" data-action="toJumpPoint"><i class="fa-solid fa-location-arrow"></i> {{localize "SPACER.Craft.Travel.go"}}</button>
+  </div>
+  <h3>{{localize "SPACER.Craft.Travel.jump"}}</h3>
+  <div class="actions-row">
+    <label>{{localize "SPACER.Craft.Travel.parsecs"}} <input type="number" data-opt="travel.parsecs" value="{{travel.parsecs}}" min="1" max="6"></label>
+    <label>{{localize "SPACER.Craft.Travel.destination"}} <input type="text" data-opt="travel.destination" value="{{travel.destination}}"></label>
+    <button type="button" data-action="jump"><i class="fa-solid fa-star"></i> {{localize "SPACER.Craft.Travel.jump"}}</button>
+  </div>
+  <p class="hint">{{localize "SPACER.Craft.Travel.jumpHint"}}</p>
+</section>

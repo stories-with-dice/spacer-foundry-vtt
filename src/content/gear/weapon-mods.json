@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Suppressor",
+    "type": "gear",
+    "folder": "Weapon Modifications",
+    "system": {
+      "category": "weaponMod",
+      "cost": 200,
+      "weight": 0.5,
+      "tl": 6,
+      "traits": [],
+      "description": "<p>Muffles the sound of a firearm to only be heard in Short range, and prevents the sound from being heard if a wall or other cover is between the firing weapon and the potential hearing character.</p><p>Weight: +500g.</p><p>Weapon Modifications: The following modifications can be applied to any Short, Stock, or Energy ranged weapons. Applying the modification requires 1 hour of time.</p>",
+      "source": "p.32"
+    }
+  },
+  {
+    "name": "Telescopic Sight",
+    "type": "gear",
+    "folder": "Weapon Modifications",
+    "system": {
+      "category": "weaponMod",
+      "cost": 200,
+      "weight": 0.8,
+      "tl": 6,
+      "traits": [],
+      "description": "<p>Used to increase their range band by +1. Can be equipped to any Non-Archaic ranged weapon.</p><p>Weight: +800g.</p><p>Weapon Modifications: The following modifications can be applied to any Short, Stock, or Energy ranged weapons. Applying the modification requires 1 hour of time.</p>",
+      "source": "p.32"
+    }
+  },
+  {
+    "name": "Electronic Sight",
+    "type": "gear",
+    "folder": "Weapon Modifications",
+    "system": {
+      "category": "weaponMod",
+      "cost": 2000,
+      "weight": 1.5,
+      "tl": 9,
+      "traits": [],
+      "description": "<p>Allows for the character to aim the weapon in darkness without penalty, in addition to gaining +1 Range band.</p><p>Weight: +1500g.</p><p>Weapon Modifications: The following modifications can be applied to any Short, Stock, or Energy ranged weapons. Applying the modification requires 1 hour of time.</p>",
+      "source": "p.32"
+    }
+  },
+  {
+    "name": "Shoulder Stock",
+    "type": "gear",
+    "folder": "Weapon Modifications",
+    "system": {
+      "category": "weaponMod",
+      "cost": 100,
+      "weight": 1,
+      "tl": 5,
+      "traits": [],
+      "description": "<p>Used for Short weapons to increase their range by one range band and allows the weapon to be used for buttstock attacks.</p><p>Weight: +1000g.</p><p>Weapon Modifications: The following modifications can be applied to any Short, Stock, or Energy ranged weapons. Applying the modification requires 1 hour of time.</p>",
+      "source": "p.32"
+    }
+  },
+  {
+    "name": "Folding Stock",
+    "type": "gear",
+    "folder": "Weapon Modifications",
+    "system": {
+      "category": "weaponMod",
+      "cost": 100,
+      "weight": 0.5,
+      "tl": 6,
+      "traits": [],
+      "description": "<p>Same as Shoulder Stock, but allows the weapon to become a Short weapon as needed. Cannot be used for buttstock attacks.</p><p>Weight: +500g.</p><p>Weapon Modifications: The following modifications can be applied to any Short, Stock, or Energy ranged weapons. Applying the modification requires 1 hour of time.</p>",
+      "source": "p.32"
+    }
+  }
+]

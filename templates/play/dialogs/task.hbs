@@ -1,0 +1,15 @@
+<div class="sp-dialog-body">
+  <label class="sp-field">{{localize "SPACER.Roll.Characteristic"}}
+    <select name="characteristic">{{#each characteristics}}<option value="{{value}}" {{#if (eq value @root.characteristic)}}selected{{/if}}>{{label}}</option>{{/each}}</select></label>
+  <label class="sp-field">{{localize "SPACER.Roll.Skill"}}
+    <select name="skill"><option value="">—</option>
+      {{#each skills}}<option value="{{value}}" {{#if (eq value @root.skill)}}selected{{/if}}>{{label}}</option>{{/each}}
+      <option value="Untrained|">{{localize "SPACER.Roll.UntrainedOption"}}</option></select></label>
+  <div class="sp-grid two">
+    <label class="sp-field">{{localize "SPACER.Roll.DM"}}<input type="number" name="dm" value="{{dm}}"></label>
+    <label class="sp-field">{{localize "SPACER.Roll.Target"}}<input type="number" name="target" value="{{target}}" min="2"></label>
+  </div>
+  <label class="sp-field check"><input type="checkbox" name="fatigue" {{checked fatigued}}> {{localize "SPACER.Roll.FatigueDM"}}</label>
+  <input type="hidden" name="label" value="{{label}}">
+  <p class="sp-preview" data-preview></p>
+</div>

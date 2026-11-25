@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Tarpaulin",
+    "type": "gear",
+    "folder": "Shelters",
+    "system": {
+      "category": "shelter",
+      "cost": 10,
+      "weight": 2,
+      "tl": 1,
+      "traits": [],
+      "description": "<p>A 2x4m piece of waterproof cloth usable for making shelter.</p>",
+      "source": "p.38"
+    }
+  },
+  {
+    "name": "Tent",
+    "type": "gear",
+    "folder": "Shelters",
+    "system": {
+      "category": "shelter",
+      "cost": 200,
+      "weight": 3,
+      "tl": 2,
+      "traits": [],
+      "description": "<p>A collapsible shelter for two people. Larger-size tents are available that accommodate one person per additional +100cr spent.</p>",
+      "source": "p.38"
+    }
+  },
+  {
+    "name": "Pressure Tent",
+    "type": "gear",
+    "folder": "Shelters",
+    "system": {
+      "category": "shelter",
+      "cost": 2000,
+      "weight": 25,
+      "tl": 7,
+      "traits": [],
+      "description": "<p>This tent fits up to 2 people in an air-and-climate-controlled environment. This tent doesn’t have an airlock, so opening it depressurizes the tent and it needs to be repressurized again.</p>",
+      "source": "p.38"
+    }
+  },
+  {
+    "name": "Pre-Fab Cabin",
+    "type": "gear",
+    "folder": "Shelters",
+    "system": {
+      "category": "shelter",
+      "cost": 10000,
+      "weight": 4000,
+      "tl": 6,
+      "traits": [],
+      "description": "<p>A modular, easy-to-construct planetside habitat that is 6x6m in size. Setting up a pre-fab cabin takes 6 hours.</p>",
+      "source": "p.38"
+    }
+  },
+  {
+    "name": "Advance Base",
+    "type": "gear",
+    "folder": "Shelters",
+    "system": {
+      "category": "shelter",
+      "cost": 50000,
+      "weight": 8000,
+      "tl": 8,
+      "traits": [],
+      "description": "<p>Similar to a pre-fab cabin but can be pressurized and can recycle air. Ideal for vacuum worlds or planets with minimal or hazardous atmospheres.</p>",
+      "source": "p.38"
+    }
+  }
+]

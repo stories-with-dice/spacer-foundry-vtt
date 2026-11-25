@@ -1,0 +1,14 @@
+{
+ "name": "03 Time As A Resource",
+ "folder": "Rules",
+ "pages": [
+  {
+   "name": "Time-Tracking",
+   "html": "<p><strong>Time-Tracking:</strong> Time is the most vital resource in the world of Spacer, since all activities take time to complete. When employed to complete a job within a time frame, there is a further financial incentive to manage time. Accomplishing different tasks will use up time. The Activity Time table can be used to aid referees to help determine time frames.</p><p><strong>Example of Weekly Time Usage, including for Travelling:</strong></p><ul><li>Week 1) Pay the loan and crew, then find work in a starport; load the ship and travel into space to reach the jump point</li><li>Week 2) Enter jump-space and spend one week travelling, then exit jump-space.</li><li>Week 3) Travel to the next starport; u goods and find a new job, then return to space.</li><li>Week 4) Enter jump-space to head towards the next objective, then exit jumpspace after a week.</li><li>Start back at Week 1 and repeat.</li></ul><p class=\"spacer-source\">Book p.15</p>"
+  },
+  {
+   "name": "Activity Time",
+   "html": "<p><strong>Activity Time:</strong> All activities done by spacers take time to resolve. Use the following table to help inform how much time is needed to do a task. Attempting to complete an activity faster represents decreasing the amount of required time by one step but may incur a negative DM or gain a positive DM per the referee’s discretion.</p><table><thead><tr><th>Interval of Time</th><th>Examples</th></tr></thead><tbody><tr><td>10 Seconds</td><td><ul><li>Combat round, pg. 40</li></ul></td></tr><tr><td>10 Minutes</td><td><ul><li>Performing a non-combat Skill, pg. 28</li><li>Space combat round beyond dogfighting range, pg. 84</li><li>Exploring and searching a room or ship corridor</li><li>Putting on a vaccsuit</li></ul></td></tr><tr><td>1 Hour</td><td><ul><li>Fully searching a cargo container</li><li>Repair 1 hull point of damage of a starship</li></ul></td></tr><tr><td>6 Hours</td><td><ul><li>Gathering information and rumours, pg. 56</li><li>Travelling over land, pg.98</li><li>Taking inventory of a ship’s cargo</li><li>Building shelter</li><li>Repairing a hit to a vehicle</li></ul></td></tr><tr><td>1 Day</td><td><ul><li>Repair damage to a ship system in a starport</li></ul></td></tr><tr><td>1D Days</td><td><ul><li>Tracking down a job, pg. 50</li></ul></td></tr></tbody></table><p class=\"spacer-source\">Book p.15</p>"
+  }
+ ]
+}

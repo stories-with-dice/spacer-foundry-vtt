@@ -1,0 +1,166 @@
+[
+  {
+    "name": "Starship Damage Location",
+    "folder": "Space Combat",
+    "formula": "2d6",
+    "description": "<p>p.86. Roll 2D when a ship is hit to determine the hit location. Called shots: a gunner can choose to attack a specific location but incurs -2DM (the Gunner action \"Select Target Location\" on p.85 gives -4DM). Each hit decreases the system by one step.</p>",
+    "results": [
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "Internal"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "Power"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "Fuel"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "M-Drive"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "Weapon"
+      },
+      {
+        "range": [
+          7,
+          7
+        ],
+        "text": "Hull"
+      },
+      {
+        "range": [
+          8,
+          8
+        ],
+        "text": "Weapon"
+      },
+      {
+        "range": [
+          9,
+          9
+        ],
+        "text": "M-Drive"
+      },
+      {
+        "range": [
+          10,
+          10
+        ],
+        "text": "J-Drive"
+      },
+      {
+        "range": [
+          11,
+          11
+        ],
+        "text": "Power"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "text": "Internal"
+      }
+    ]
+  },
+  {
+    "name": "Small Craft Hit Location",
+    "folder": "Space Combat",
+    "formula": "1d6",
+    "description": "<p>p.86. Roll 1D to determine the hit location on a small craft.</p>",
+    "results": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "text": "Cockpit"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "Weapon"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "Drive"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "Drive"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "Hull"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "Hull"
+      }
+    ]
+  },
+  {
+    "name": "Starship Internal Damage",
+    "folder": "Space Combat",
+    "formula": "1d3",
+    "description": "<p>p.87. Roll D3 each time the Internal area of a ship is hit to determine what is impacted. When Internal reaches 0 hits remaining, the interior depressurizes; any additional hit counts against the hull.</p>",
+    "results": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "text": "<strong>Computer:</strong> Every hit decreases the amount of programs capable of functioning by 1."
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "<strong>Crew injury:</strong> All crew members on board attempt to roll 8+ to avoid damage, but add their END mod and any -1DM from the Internal damage. Anyone in a low berth needs a 8+ to avoid the berth shorting out, but even if it does, it can be repaired. Referees can choose to roll a D3 and apply it to all NPCs on board as automatic damage taken, to streamline resolution."
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "<strong>Cargo hold:</strong> To determine if the cargo hold is damaged, roll 8+ to determine if damage was avoided. On a failed roll, the difference is multiplied by 10% to determine how much cargo was damaged. For example if a 6 was rolled then 20% of the cargo was damaged."
+      }
+    ]
+  }
+]

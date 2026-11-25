@@ -1,0 +1,8 @@
+<div class="spacer sp-card sp-drug">
+  <header class="sp-card-head"><img src="{{img}}" alt=""><h3>{{localize "SPACER.Drug.Takes" name=name drug=drug}}</h3></header>
+  {{#if effect}}<p class="sp-card-sub">{{effect}}{{#if duration}} · {{duration}}{{/if}}</p>{{/if}}
+  {{#if applied.length}}<ul class="sp-changes">{{#each applied}}<li>{{this}}</li>{{/each}}</ul>{{/if}}
+  {{#if note}}<p class="sp-note"><i class="fa-solid fa-circle-info"></i> {{note}}</p>{{/if}}
+  <p class="sp-card-sub">{{localize "SPACER.Drug.Left" n=left}}</p>
+  {{#if description}}<details class="sp-desc"><summary>{{localize "SPACER.Sheet.Description"}}</summary>{{{description}}}</details>{{/if}}
+</div>

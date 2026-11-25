@@ -1,0 +1,73 @@
+<section class="tab {{tab.cssClass}}" data-group="primary" data-tab="gear">
+  <div class="sp-enc">
+    <div class="sp-enc-head"><b>{{localize "SPACER.Sheet.Load"}}: {{enc.carried}} kg</b> <span class="sp-badge {{enc.css}}">{{enc.level}}</span>
+      <small>{{localize "SPACER.Enc.Limits" minimal=enc.minimal encumbered=enc.encumbered over=enc.overEncumbered}}</small></div>
+    <div class="sp-bar"><div class="sp-bar-fill {{enc.css}}" style="width: {{enc.pct}}%"></div>
+      <span class="sp-bar-mark" style="left: {{enc.m1}}%"></span><span class="sp-bar-mark" style="left: {{enc.m2}}%"></span></div>
+  </div>
+  <div class="sp-toolbar">
+    <h3 class="sp-section">{{localize "SPACER.Weapon.Plural"}}</h3>
+    <button type="button" class="sp-btn small" data-action="openPack" data-pack="weapons"><i class="fa-solid fa-book"></i></button>
+    {{#if editable}}<button type="button" class="sp-btn small" data-action="itemCreate" data-type="weapon"><i class="fa-solid fa-plus"></i></button>{{/if}}
+  </div>
+  {{> "spacer.play.actor.parts.weapons"}}
+
+  <div class="sp-toolbar">
+    <h3 class="sp-section">{{localize "SPACER.Armour.Plural"}}</h3>
+    <button type="button" class="sp-btn small" data-action="openPack" data-pack="armor"><i class="fa-solid fa-book"></i></button>
+    {{#if editable}}<button type="button" class="sp-btn small" data-action="itemCreate" data-type="armor"><i class="fa-solid fa-plus"></i></button>{{/if}}
+  </div>
+  <table class="sp-table">
+    <thead><tr><th class="name">{{localize "SPACER.Armour.Title"}}</th><th>{{localize "SPACER.Sheet.ToHit"}}</th><th>{{localize "SPACER.Sheet.Weight"}}</th><th class="controls"></th></tr></thead>
+    <tbody>
+    {{#each armour as |a|}}
+    <tr data-item-id="{{a.id}}" class="draggable">
+      <td class="name"><div class="sp-cell"><a data-action="itemToggle" data-field="system.equipped" class="sp-toggle {{#if a.equipped}}on{{/if}}" data-tooltip="{{localize "SPACER.Armour.Worn"}}"><i class="fa-solid fa-shield-halved"></i></a>
+        <img src="{{a.img}}" alt=""><a data-action="itemEdit">{{a.name}}</a>{{#if a.traits}}<small class="sp-traits">{{a.traits}}</small>{{/if}}
+        {{#if a.damaged}}<span class="sp-badge bad">{{localize "SPACER.Armour.Damaged"}}</span>{{/if}}</div></td>
+      <td>{{a.difficulty}}+</td><td>{{a.weight}} kg</td>
+      <td class="controls"><a data-action="itemToggle" data-field="system.damaged" data-tooltip="{{localize "SPACER.Armour.ToggleDamaged"}}"><i class="fa-solid fa-heart-crack"></i></a>
+        {{#if @root.editable}}<a data-action="itemDelete"><i class="fa-solid fa-trash"></i></a>{{/if}}</td>
+    </tr>
+    {{else}}<tr><td colspan="4" class="sp-empty">{{localize "SPACER.Armour.None"}}</td></tr>{{/each}}
+    </tbody>
+  </table>
+
+  <div class="sp-toolbar">
+    <h3 class="sp-section">{{localize "SPACER.Gear.Plural"}}</h3>
+    <button type="button" class="sp-btn small" data-action="openPack" data-pack="gear"><i class="fa-solid fa-book"></i></button>
+    {{#if editable}}<button type="button" class="sp-btn small" data-action="itemCreate" data-type="gear"><i class="fa-solid fa-plus"></i></button>{{/if}}
+  </div>
+  <table class="sp-table">
+    <thead><tr><th class="name">{{localize "SPACER.Gear.Title"}}</th><th>{{localize "SPACER.Sheet.Qty"}}</th><th>{{localize "SPACER.Sheet.Weight"}}</th><th class="controls"></th></tr></thead>
+    <tbody>
+    {{#each gear as |g|}}
+    <tr data-item-id="{{g.id}}" class="draggable {{#unless g.carried}}stowed{{/unless}}">
+      <td class="name"><div class="sp-cell"><a data-action="itemToggle" data-field="system.carried" class="sp-toggle {{#if g.carried}}on{{/if}}" data-tooltip="{{localize "SPACER.Gear.Carried"}}"><i class="fa-solid fa-suitcase"></i></a>
+        <img src="{{g.img}}" alt=""><a data-action="itemEdit">{{g.name}}</a>{{#if g.uses}}<small class="sp-traits">{{g.uses}}</small>{{/if}}</div></td>
+      <td><input class="sp-qty" type="number" min="0" value="{{g.quantity}}" data-item-field="system.quantity" {{disabled (not @root.editable)}}></td>
+      <td>{{g.weight}} kg</td>
+      <td class="controls">{{#if @root.editable}}<a data-action="itemDelete"><i class="fa-solid fa-trash"></i></a>{{/if}}</td>
+    </tr>
+    {{else}}<tr><td colspan="4" class="sp-empty">{{localize "SPACER.Gear.None"}}</td></tr>{{/each}}
+    </tbody>
+  </table>
+
+  <div class="sp-toolbar">
+    <h3 class="sp-section">{{localize "SPACER.Drug.Plural"}}</h3>
+    <button type="button" class="sp-btn small" data-action="openPack" data-pack="drugs"><i class="fa-solid fa-book"></i></button>
+    {{#if editable}}<button type="button" class="sp-btn small" data-action="itemCreate" data-type="drug"><i class="fa-solid fa-plus"></i></button>{{/if}}
+  </div>
+  <table class="sp-table">
+    <tbody>
+    {{#each drugs as |d|}}
+    <tr data-item-id="{{d.id}}" class="draggable">
+      <td class="name"><div class="sp-cell"><img src="{{d.img}}" alt=""><a data-action="itemEdit">{{d.name}}</a><small class="sp-traits">{{d.effect}}</small></div></td>
+      <td>{{localize "SPACER.Drug.Doses" n=d.doses}}</td>
+      <td class="controls"><button type="button" class="sp-btn small" data-action="itemUse"><i class="fa-solid fa-syringe"></i> {{localize "SPACER.Drug.Take"}}</button>
+        {{#if @root.editable}}<a data-action="itemDelete"><i class="fa-solid fa-trash"></i></a>{{/if}}</td>
+    </tr>
+    {{else}}<tr><td class="sp-empty">{{localize "SPACER.Drug.None"}}</td></tr>{{/each}}
+    </tbody>
+  </table>
+</section>

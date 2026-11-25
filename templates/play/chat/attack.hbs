@@ -1,0 +1,33 @@
+<div class="spacer sp-card sp-attack">
+  <header class="sp-card-head">
+    <img src="{{img}}" alt="">
+    <h3>{{weaponName}}{{#if targetName}} <small>→ {{targetName}}</small>{{/if}}</h3>
+    <span class="sp-target" data-tooltip="{{localize "SPACER.Attack.Difficulty"}}">{{difficulty}}+</span>
+  </header>
+  <p class="sp-card-sub">{{band}}{{#if distance}} · {{distance}} m{{/if}}{{#if ammo}} · {{localize "SPACER.Weapon.Ammo"}} {{ammo}}{{/if}}</p>
+  {{#if mods.length}}<ul class="sp-mod-list">{{#each mods}}<li>{{label}} <b>{{signed}}</b></li>{{/each}}</ul>{{/if}}
+  {{{rollHTML}}}
+  <div class="sp-result {{#if hit}}good{{else}}bad{{/if}}">
+    <b>{{#if hit}}{{localize "SPACER.Attack.Hit"}}{{else}}{{localize "SPACER.Attack.Miss"}}{{/if}}</b>
+    <span>{{localize "SPACER.Roll.Effect"}} {{effect}}</span>
+  </div>
+  {{#if (eq absolute "success")}}<div class="sp-absolute good"><i class="fa-solid fa-star"></i> {{localize "SPACER.Roll.AbsoluteSuccess"}}</div>{{/if}}
+  {{#if (eq absolute "failure")}}<div class="sp-absolute bad"><i class="fa-solid fa-skull"></i> {{localize "SPACER.Roll.AbsoluteFailure"}}</div>{{/if}}
+  {{#if hit}}
+    {{#if damageHTML}}
+    <h4 class="sp-card-section">{{localize "SPACER.Damage.Title"}}{{#if dmgTerms.length}} <small>{{#each dmgTerms}}{{label}} {{signed}} {{/each}}</small>{{/if}}</h4>
+    {{{damageHTML}}}
+    {{/if}}
+    {{#if flat}}<h4 class="sp-card-section">{{localize "SPACER.Damage.Title"}} <small>{{localize "SPACER.Creature.Flat"}}</small></h4>{{/if}}
+    {{#unless stun}}
+    <div class="sp-damage-total"><span>{{localize "SPACER.Damage.Total"}}</span><b>{{damage}}</b>
+      {{#if energy}}<small data-tooltip="{{localize "SPACER.Damage.EnergyHint"}}"><i class="fa-solid fa-bolt"></i></small>{{/if}}</div>
+    <button type="button" class="sp-btn danger" data-action="play-damage" data-amount="{{damage}}" data-source="{{weaponName}}"><i class="fa-solid fa-burst"></i> {{localize "SPACER.Damage.ApplyCard"}}</button>
+    {{/unless}}
+    {{#if stun}}
+    <p class="sp-note">{{localize "SPACER.Attack.StunNote"}}</p>
+    <button type="button" class="sp-btn" data-action="play-stun"><i class="fa-solid fa-bolt"></i> {{localize "SPACER.Attack.StunButton"}}</button>
+    {{/if}}
+  {{/if}}
+  {{#each notes}}<p class="sp-note"><i class="fa-solid fa-circle-info"></i> {{this}}</p>{{/each}}
+</div>

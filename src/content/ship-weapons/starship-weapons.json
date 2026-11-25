@@ -1,0 +1,181 @@
+[
+  {
+    "name": "Turret",
+    "type": "shipWeapon",
+    "folder": "Starship Weapons",
+    "system": {
+      "mount": "turret",
+      "forVehicle": false,
+      "damage": "1",
+      "range": "long",
+      "tonnage": 0,
+      "hardpoints": 1,
+      "cost": 100000,
+      "weight": 0,
+      "tl": 0,
+      "traits": [],
+      "description": "<p>A turret costs 100Kcr and deals 1 damage.</p><p>Turrets are able to fire in a 180 degree area, with a gunner. Otherwise, with no gunner, they are considered fixed mounted.</p><p>Weapons require hardpoints in order to be installed. Each ship's hull comes with 1 hardpoint per 100T of hull. Additional hardpoints can be installed, up to x2 the hull’s original hardpoint, at 50,000cr each.</p><p>The book gives no range limit or tech level for starship weapons; range is set to long.</p>",
+      "source": "p.76"
+    }
+  },
+  {
+    "name": "Double Turret",
+    "type": "shipWeapon",
+    "folder": "Starship Weapons",
+    "system": {
+      "mount": "turret",
+      "forVehicle": false,
+      "damage": "2",
+      "range": "long",
+      "tonnage": 0,
+      "hardpoints": 1,
+      "cost": 400000,
+      "weight": 0,
+      "tl": 0,
+      "traits": [],
+      "description": "<p>Weapon variant: A turret with two barrels is 400Kcr and deals 2 damage.</p><p>Turrets are able to fire in a 180 degree area, with a gunner. Otherwise, with no gunner, they are considered fixed mounted.</p><p>Weapons require hardpoints in order to be installed. Each ship's hull comes with 1 hardpoint per 100T of hull. Additional hardpoints can be installed, up to x2 the hull’s original hardpoint, at 50,000cr each.</p><p>The book gives no range limit or tech level for starship weapons; range is set to long.</p>",
+      "source": "p.77"
+    }
+  },
+  {
+    "name": "Triple Turret",
+    "type": "shipWeapon",
+    "folder": "Starship Weapons",
+    "system": {
+      "mount": "turret",
+      "forVehicle": false,
+      "damage": "3",
+      "range": "long",
+      "tonnage": 0,
+      "hardpoints": 1,
+      "cost": 800000,
+      "weight": 0,
+      "tl": 0,
+      "traits": [],
+      "description": "<p>Weapon variant: A turret with three barrels is 800kcr and deals 3 damage.</p><p>Turrets are able to fire in a 180 degree area, with a gunner. Otherwise, with no gunner, they are considered fixed mounted.</p><p>Weapons require hardpoints in order to be installed. Each ship's hull comes with 1 hardpoint per 100T of hull. Additional hardpoints can be installed, up to x2 the hull’s original hardpoint, at 50,000cr each.</p><p>The book gives no range limit or tech level for starship weapons; range is set to long.</p>",
+      "source": "p.77"
+    }
+  },
+  {
+    "name": "Pulse",
+    "type": "shipWeapon",
+    "folder": "Starship Weapons",
+    "system": {
+      "mount": "turret",
+      "forVehicle": false,
+      "damage": "D3",
+      "range": "long",
+      "tonnage": 0,
+      "hardpoints": 1,
+      "cost": 500000,
+      "weight": 0,
+      "tl": 0,
+      "traits": [],
+      "description": "<p>Costs 500kcr and inflicts D3 damage.</p><p>Weapons require hardpoints in order to be installed. Each ship's hull comes with 1 hardpoint per 100T of hull. Additional hardpoints can be installed, up to x2 the hull’s original hardpoint, at 50,000cr each.</p><p>The book gives no range limit or tech level for starship weapons; range is set to long.</p>",
+      "source": "p.76"
+    }
+  },
+  {
+    "name": "Beam",
+    "type": "shipWeapon",
+    "folder": "Starship Weapons",
+    "system": {
+      "mount": "turret",
+      "forVehicle": false,
+      "damage": "1",
+      "range": "long",
+      "tonnage": 0,
+      "hardpoints": 1,
+      "cost": 1000000,
+      "weight": 0,
+      "tl": 0,
+      "traits": [],
+      "description": "<p>Costs 1Mcr and deals 1 damage, but deals +1 for every additional round the beam maintains contact on the target ship. For example, if the beam maintains contact on the third round, it deals 3 damage that round.</p><p>Beams have a chance to overheat. Each round, roll 1D. A roll of 1 on the first round causes it to overheat, while on the second round of use, a 2 or less causes it to overheat, and so on. The Gunner Skill is added to this overheat roll to offset the chances. When a beam overheats, it requires a number of rounds of cooling equal to the number of rounds it was in use.</p><p>Weapons require hardpoints in order to be installed. Each ship's hull comes with 1 hardpoint per 100T of hull. Additional hardpoints can be installed, up to x2 the hull’s original hardpoint, at 50,000cr each.</p><p>The book gives no range limit or tech level for starship weapons; range is set to long.</p>",
+      "source": "p.76"
+    }
+  },
+  {
+    "name": "Missile Rack",
+    "type": "shipWeapon",
+    "folder": "Starship Weapons",
+    "system": {
+      "mount": "missileRack",
+      "forVehicle": false,
+      "damage": "1",
+      "range": "long",
+      "tonnage": 0,
+      "hardpoints": 1,
+      "cost": 750000,
+      "weight": 0,
+      "tl": 0,
+      "traits": [],
+      "ammo": {
+        "value": 4,
+        "max": 4
+      },
+      "description": "<p>The missile rack costs 750kcr and can hold up to 4 missiles. A missile rack can fire between 1-4 missiles in a single attack. Each missile deals 1 damage. Missiles impact a number of rounds later equal to the amount of range bands between attacker and defender.</p><p>Missiles: p.76 gives 1,000cr per missile; p.77 gives 5000Cr per missile (homing).</p><p>Weapons require hardpoints in order to be installed. Each ship's hull comes with 1 hardpoint per 100T of hull. Additional hardpoints can be installed, up to x2 the hull’s original hardpoint, at 50,000cr each.</p><p>The book gives no range limit or tech level for starship weapons; range is set to long.</p>",
+      "source": "p.76"
+    }
+  },
+  {
+    "name": "Missile",
+    "type": "shipWeapon",
+    "folder": "Starship Weapons",
+    "system": {
+      "mount": "missile",
+      "forVehicle": false,
+      "damage": "1",
+      "range": "long",
+      "tonnage": 0,
+      "hardpoints": 0,
+      "cost": 1000,
+      "weight": 0,
+      "tl": 0,
+      "traits": [],
+      "description": "<p>Each missile costs 1,000cr and deals 1 damage. Missiles impact a number of rounds later equal to the amount of range bands between attacker and defender.</p><p>Cargo (p.77): Individual missiles cost 5000Cr and are homing. The book gives two different prices; the cost field uses the p.76 price.</p><p>The book gives no range limit or tech level for starship weapons; range is set to long.</p>",
+      "source": "p.76-77"
+    }
+  },
+  {
+    "name": "EMP Missile",
+    "type": "shipWeapon",
+    "folder": "Starship Weapons",
+    "system": {
+      "mount": "missile",
+      "forVehicle": false,
+      "damage": "0",
+      "range": "long",
+      "tonnage": 0,
+      "hardpoints": 0,
+      "cost": 5000,
+      "weight": 0,
+      "tl": 0,
+      "traits": [],
+      "description": "<p>Weapon variant: This type of missile is used to temporarily disable the power system of a ship. Each missile puts the target’s power plant offline for 1D 10-minute rounds and costs 5,000cr.</p><p>The book gives no range limit or tech level for starship weapons; range is set to long.</p>",
+      "source": "p.77"
+    }
+  },
+  {
+    "name": "Sandcaster",
+    "type": "shipWeapon",
+    "folder": "Starship Weapons",
+    "system": {
+      "mount": "turret",
+      "forVehicle": false,
+      "damage": "0",
+      "range": "long",
+      "tonnage": 0,
+      "hardpoints": 1,
+      "cost": 250000,
+      "weight": 0,
+      "tl": 0,
+      "traits": [],
+      "ammo": {
+        "value": 4,
+        "max": 4
+      },
+      "description": "<p>This countermeasure provides a -4DM to beam weapon attacks and -2DM to missiles. Each canister dispenser costs 250Kcr and can fit 4 canisters.</p><p>Sandcaster Canisters: Each sand canister refill costs 500Cr (p.77).</p><p>Weapons require hardpoints in order to be installed. Each ship's hull comes with 1 hardpoint per 100T of hull. Additional hardpoints can be installed, up to x2 the hull’s original hardpoint, at 50,000cr each.</p><p>The book gives no range limit or tech level for starship weapons; range is set to long.</p>",
+      "source": "p.76-77"
+    }
+  }
+]

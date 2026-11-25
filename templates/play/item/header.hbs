@@ -1,0 +1,9 @@
+<header class="sp-header item">
+  <img class="sp-portrait small" src="{{item.img}}" data-edit="img" data-action="editImage" alt="{{item.name}}">
+  <div class="sp-header-main">
+    <input class="sp-name" type="text" name="name" value="{{item.name}}" {{disabled (not editable)}}>
+    <div class="sp-stats"><span class="sp-badge">{{typeLabel}}</span>
+      {{#if system.source}}<span class="sp-stat"><label>{{localize "SPACER.Item.Source"}}</label><b>{{system.source}}</b></span>{{/if}}</div>
+  </div>
+  {{#if usable}}<div class="sp-header-buttons"><button type="button" class="sp-btn primary" data-action="use"><i class="fa-solid fa-play"></i> {{localize "SPACER.Item.Use"}}</button></div>{{/if}}
+</header>
