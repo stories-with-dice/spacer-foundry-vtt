@@ -2,7 +2,7 @@
  * Non-player characters (book p.56-59): demeanour, the NPC table, information and rumours,
  * and the random NPC encounter table. Pure.
  */
-import { band, clamp } from "./dice.mjs";
+import { band, clamp } from "../../shared/dice.mjs";
 import { CHARACTERISTICS } from "../../config.mjs";
 
 /** NPC Demeanour (p.56), 2D. */

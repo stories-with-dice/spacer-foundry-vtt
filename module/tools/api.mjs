@@ -4,7 +4,7 @@
  */
 import { CHARACTERISTICS, characteristicDM } from "../config.mjs";
 import { rollTask, skillRank } from "../play/api.mjs";
-import { makeDice, randomDie } from "./rules/dice.mjs";
+import { makeDice, randomDie } from "../shared/dice.mjs";
 import * as npcRules from "./rules/npc.mjs";
 import * as patronRules from "./rules/patron.mjs";
 import * as starportRules from "./rules/starport.mjs";

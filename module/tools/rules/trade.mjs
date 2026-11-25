@@ -1,7 +1,7 @@
 /**
  * Trade and transport (book p.62-65): freight, mail, passengers, and speculative trade. Pure.
  */
-import { band } from "./dice.mjs";
+import { band } from "../../shared/dice.mjs";
 import { rollDemeanour } from "./npc.mjs";
 
 /** Trade codes used by the trade table (p.65) and the world generator (p.95). */

@@ -2,7 +2,7 @@
  * Chat card data for every tools result. Pure: each function turns a rules result into the data
  * of templates/tools/card.hbs ({ title, subtitle, icon, headline, sections, buttons, footer }).
  */
-import { signed } from "./rules/dice.mjs";
+import { signed } from "../shared/dice.mjs";
 import { lawBans } from "./rules/world.mjs";
 import { TRADE_CODES } from "./rules/trade.mjs";
 import { DESCRIPTIONS } from "./rules/animals.mjs";

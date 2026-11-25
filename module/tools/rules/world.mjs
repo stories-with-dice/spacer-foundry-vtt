@@ -3,7 +3,7 @@
  * secondary worlds, anomalies, unique observations, and main world generation (UWC). Also the
  * subsector generator (p.88). Pure.
  */
-import { band, clamp } from "./dice.mjs";
+import { band, clamp } from "../../shared/dice.mjs";
 import { toHex } from "../../config.mjs";
 
 /* ---------------------------------------------------------------- star system (p.88-89) */

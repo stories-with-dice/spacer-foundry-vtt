@@ -1,13 +1,39 @@
 /**
- * Dice helpers for the tools rules. Pure: no Foundry globals.
+ * Dice helpers shared by every area. Pure: no Foundry globals, so `node --test` can load it.
  *
- * Every rules function takes a `dice` object made by `makeDice(die)`, where `die(sides)` returns an
- * integer from 1 to `sides`. Production code passes a random die; tests pass a scripted one.
+ * A "die" is a function `die(sides)` that returns an integer from 1 to `sides`.
+ * Rules code takes a die (or a `dice` object from `makeDice(die)`) as a parameter:
+ * production passes `randomDie()`, tests pass `scriptedDie([...])` or `seededDie(seed)`.
  */
 
+/**
+ * The random source in [0, 1): Foundry's `CONFIG.Dice.randomUniform` when it exists (so a module
+ * that replaces Foundry's RNG also drives our dice), else `Math.random`.
+ */
+export function uniform() {
+  const f = globalThis.CONFIG?.Dice?.randomUniform;
+  return typeof f === "function" ? f() : Math.random();
+}
+
 /** A die function backed by a random source in [0, 1). */
-export function randomDie(rng = Math.random) {
-  return sides => 1 + Math.floor(rng() * sides);
+export function randomDie(rng = uniform) {
+  return sides => 1 + Math.min(sides - 1, Math.floor(rng() * sides));
+}
+
+/** One random 1D (1-6) from the default source. */
+export const d6 = () => randomDie()(6);
+
+/** A seeded die (mulberry32), for reproducible runs. */
+export function seededDie(seed = 1) {
+  let a = seed >>> 0;
+  return sides => {
+    a = (a + 0x6D2B79F5) >>> 0;
+    let t = a;
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    const r = ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    return 1 + Math.floor(r * sides);
+  };
 }
 
 /** A die function that returns the given faces in order (for tests). Throws when it runs out. */

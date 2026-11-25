@@ -2,7 +2,7 @@
  * Space encounters (book p.80-82): frequency, the encounter procedure, encounter types, the
  * space encounter and space environment tables, communication, scanning, and reaction. Pure.
  */
-import { band } from "./dice.mjs";
+import { band } from "../../shared/dice.mjs";
 
 /** Space Encounter Frequency table (p.80). */
 export const SPACE_LOCATIONS = {

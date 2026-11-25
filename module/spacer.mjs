@@ -5,6 +5,7 @@ import { registerPlay } from "./play/register.mjs";
 import { registerCraft } from "./craft/register.mjs";
 import { registerChargen } from "./chargen/register.mjs";
 import { registerTools } from "./tools/register.mjs";
+import { installChatActions } from "./shared/chat-actions.mjs";
 
 Hooks.once("init", () => {
   CONFIG.SPACER = SPACER;
@@ -24,6 +25,9 @@ Hooks.once("init", () => {
     vehicle: { bar: ["locations.hull", "locations.interior"], value: ["currentSpeed"] },
     ship: { bar: ["hull", "fuel"], value: [] }
   };
+
+  // One renderChatMessageHTML hook routes every chat card button to its area's handler.
+  installChatActions();
 
   // Each area registers its own documents, sheets, settings, hooks, and templates.
   registerPlay();

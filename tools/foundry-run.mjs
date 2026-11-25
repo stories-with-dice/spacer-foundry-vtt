@@ -4,16 +4,19 @@
  * optionally run a test script in the page, take a screenshot, and report console errors.
  *
  * Usage:
- *   node tools/foundry-run.mjs --v 13 [--world spacer-test] [--script test/foundry/smoke.js] [--shot out.png] [--relaunch]
+ *   node tools/foundry-run.mjs --v 13 [--world spacer-test] [--script test/foundry/smoke.js] [--shot out.png] [--relaunch] [--switch-world]
  *
  * Both servers link to this repo's packs/ folder, and LevelDB lets only one process open a pack:
  * run one server at a time, and pass --relaunch after `npm run build`.
+ * When another world is open, the tool stops (exit 2) unless --switch-world is given: that option
+ * shuts the open world down, so use it only when the user allowed closing it.
  *
  * The server must be running: `node tools/foundry-server.mjs start --v 13`.
  * A --script file holds the body of an async function evaluated in the page (it can use `game`,
  * `ui`, `CONFIG`, ...). Its return value is printed as JSON. A thrown error fails the run.
  * Exit code 1 when the script throws or the page logs errors.
  */
+/* global game, window */ // used inside page.evaluate callbacks, which run in the Foundry page
 import { chromium } from "playwright";
 import { readFileSync } from "node:fs";
 
@@ -42,6 +45,12 @@ try {
   const active = await page.evaluate(async () => (await (await fetch("/api/status")).json()).world ?? null).catch(() => null);
   // --relaunch restarts the world, for example to reopen packs after a rebuild.
   if (active !== world || args.includes("--relaunch")) {
+    if (active && active !== world && !args.includes("--switch-world")) {
+      // Never close someone's open game by default.
+      console.log(`RUN FAILED: world "${active}" is open on port ${port}. Close it yourself, or pass --switch-world if the user allowed it.`);
+      await browser.close();
+      process.exit(2);
+    }
     if (active) {
       // Without an administrator password, the server accepts "worldShutdown" from a Gamemaster session.
       await joinAsGM(page);

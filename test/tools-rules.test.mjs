@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { makeDice, scriptedDie, randomDie, parseBookDice, band } from "../module/tools/rules/dice.mjs";
+import { makeDice, scriptedDie, randomDie, parseBookDice, band } from "../module/shared/dice.mjs";
 import * as time from "../module/tools/rules/time.mjs";
 import * as world from "../module/tools/rules/world.mjs";
 import * as npc from "../module/tools/rules/npc.mjs";

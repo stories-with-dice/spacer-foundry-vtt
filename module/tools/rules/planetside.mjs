@@ -2,7 +2,7 @@
  * Planetside exploration (book p.96-104): weather, overland travel, planetside encounters,
  * location encounters, habitat conditions, and environment encounters. Pure.
  */
-import { band, clamp } from "./dice.mjs";
+import { band, clamp } from "../../shared/dice.mjs";
 import { rollDemeanour, rollNpcType } from "./npc.mjs";
 import { settlementPopDM } from "./starport.mjs";
 

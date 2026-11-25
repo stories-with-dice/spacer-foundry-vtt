@@ -225,10 +225,22 @@ export class ShipData extends foundry.abstract.TypeDataModel {
       cost: num(0),                     // credits
       internalHits: int(0, { min: 0 }),
       cockpitHits: int(0, { min: 0 }),
+      fuelHits: int(0, { min: 0 }),             // each fuel hit leaks 10T (p.86)
+      computerHits: int(0, { min: 0 }),
+      unrefined: new fields.BooleanField({ initial: false }),   // carrying unrefined fuel (p.71)
+      // Armour rating per hit location (p.77): reduces damage to that location.
+      armor: new fields.SchemaField(Object.fromEntries(
+        ["hull", "mDrive", "jDrive", "power", "fuel", "internal"].map(k => [k, int(0, { min: 0 })])
+      )),
       smallCraft: new fields.BooleanField({ initial: false }),
       destroyed: new fields.BooleanField({ initial: false }),
       finances: new fields.SchemaField({
-        mortgage: num(0), maintenance: num(0), crewSalaries: num(0), lifeSupport: num(0), fuelCost: num(0), bank: num(0)
+        mortgage: num(0),                       // monthly payment
+        maintenance: num(0),                    // ANNUAL maintenance cost (p.70)
+        crewSalaries: num(0), lifeSupport: num(0), fuelCost: num(0), bank: num(0),
+        mortgagePaid: int(0, { min: 0 }),       // months paid so far
+        monthsSinceMaintenance: int(0, { min: 0 }),
+        maintenanceSurcharge: num(0)
       }),
       position: new fields.SchemaField({ system: str(), world: str(), range: str("") }),
       crew: new fields.ArrayField(new fields.SchemaField({ role: str(), actor: str() })),   // actor UUIDs by crew role

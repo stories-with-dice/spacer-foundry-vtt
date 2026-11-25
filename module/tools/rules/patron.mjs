@@ -2,7 +2,7 @@
  * The Spacer campaign (book p.50-55): finding a patron, patron generation, patron job generation,
  * job negotiations, destinations, colonies, and job complications. Pure.
  */
-import { band, clamp } from "./dice.mjs";
+import { band, clamp } from "../../shared/dice.mjs";
 import { rollDemeanour } from "./npc.mjs";
 
 /** Patron table (p.50), D66. */

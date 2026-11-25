@@ -69,9 +69,44 @@ The `module/data/*` models belong to core. The craft area may change `prepareDer
 - Generated world content (worlds, patrons, NPCs) goes into world documents in folders named
   "Spacer: <Kind>" and carries `flags.spacer.<kind>` with the structured data.
 
+## Code conventions
+
+Every area follows the same layout, so a person or an agent can find things the same way:
+
+```
+module/<area>/
+  register.mjs     entry point: settings, sheets, hooks, templates, chat actions, game.spacer.<area>
+  api.mjs          the public API (game.spacer.<area>); re-exports from the files below
+  rules/*.mjs      pure rules: book tables and calculations, no Foundry globals, tested with node:test
+  <feature>.mjs    Foundry glue per feature: reads documents, calls rules, writes updates, posts cards
+  sheets/*.mjs     ActorSheetV2 / ItemSheetV2 classes
+  apps/*.mjs       other ApplicationV2 windows
+```
+
+- **Shared helpers live in `module/shared/`. Do not copy them into an area.**
+  - `dice.mjs` (pure): `randomDie`, `seededDie`, `scriptedDie`, `makeDice`, `d6`, `band`, `clamp`,
+    `parseBookDice`. Rules functions take a die or a `dice` object as a parameter; never call
+    `Math.random` directly.
+  - `foundry.mjs`: `localizer(prefix)`, `templatePath`, `renderAreaTemplate`, `preloadTemplates`,
+    `setting`, `postCard`, `applyMessageMode`, `resolveActor`, `tokenOf`, `tokenDistance`,
+    `pickActors`, `formValues`, `addDirectoryButton`, `signed`.
+  - `chat-actions.mjs`: `registerChatActions({ "<area>-<name>": (event, button, message) => {} })`.
+    Do not add your own `renderChatMessageHTML` hook for buttons.
+- **Book data** (tables, targets, DMs) lives in `rules/*.mjs` as plain data with a comment that
+  gives the book page (`// p.43`). One table = one exported constant. When the book is wrong or
+  unclear, add a comment `// BOOK: <what the book says>; we use <what and why>`.
+- **Files stay small**: aim under 300 lines; split by feature, not by type.
+- **JSDoc** on every exported function: what it reads, what it returns or writes, and who calls it.
+- **Tests**: every rules fix gets a node test with scripted dice. Every feature that writes
+  documents gets a check in its `test/foundry/<area>.js` script.
+- **Lint**: `npm run lint` must report no errors and no warnings.
+- **Data model fields over flags**: state that the rules need belongs in `system`, not in flags.
+  Ask the core owner for new fields.
+
 ## Testing
 
-1. `npm test` runs `node --test` (pure rules logic).
+1. `npm run check` runs lint, the node tests (`npm test`), and the pack build.
+   `npm run test:foundry` runs every browser test (see below).
 2. `npm run build` compiles content into `packs/`. Run it after content changes.
 3. Browser tests on a local server. v13: `~/bin/FoundryVTT-Node-13.351`, port 30000. v14:
    `~/bin/FoundryVTT-Node-14.370`, port 30001. Both data folders link `systems/spacer` to this repo
@@ -79,7 +114,9 @@ The `module/data/*` models belong to core. The craft area may change `prepareDer
    - Start: `node tools/foundry-server.mjs start --v 13` (or `--v 14`).
    - Run: `node tools/foundry-run.mjs --v 13 --script test/foundry/<area>.js --shot test-results/<name>.png`.
      The script is the body of an async function run in the page. The run fails on any page error
-     or deprecation warning. The tool switches the server to `spacer-test` if another world is open.
+     or deprecation warning.
+   - **Never close the user's game.** When another world is open, the tools stop. `--switch-world`
+     closes that world: pass it only when the user allowed it in the current conversation.
    - **One server at a time.** Both servers share `packs/`, and LevelDB lets one process open a pack.
      The world that opened the packs first keeps them; the other world sees empty compendiums
      (`test/foundry/smoke.js` fails on that).

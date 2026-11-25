@@ -6,7 +6,7 @@
 import { CHARACTERISTICS, characteristicDM } from "../config.mjs";
 import { rollTask, skillRank } from "../play/api.mjs";
 import * as trade from "./rules/trade.mjs";
-import { signed } from "./rules/dice.mjs";
+import { signed } from "../shared/dice.mjs";
 import { cr } from "./cards.mjs";
 import { postCard } from "./chat.mjs";
 import { dice, selectedActor, worldJournals, worldOf, currentWorld, freight, passengers, mail } from "./api.mjs";

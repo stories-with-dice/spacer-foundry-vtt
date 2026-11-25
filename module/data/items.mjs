@@ -143,6 +143,7 @@ export class ShipWeaponData extends foundry.abstract.TypeDataModel {
       hardpoints: int(1, { min: 0 }),
       ammo: new fields.SchemaField({ value: int(0, { min: 0 }), max: int(0, { min: 0 }) }),
       traits: strings(),
+      disabled: bool(false),            // first hit disables, second destroys (p.86)
       destroyed: bool(false),
       gunner: str("")                   // actor UUID
     };

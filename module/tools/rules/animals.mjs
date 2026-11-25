@@ -2,7 +2,7 @@
  * Alien animals (book p.110-113): creation table with terrain DM, behaviour characteristics,
  * reactions, and traits. Pure.
  */
-import { band, clamp } from "./dice.mjs";
+import { band, clamp } from "../../shared/dice.mjs";
 
 /**
  * Terrain DM to the Animal Creation table (p.110). Exotic and Subterranean alternate +/- on each
