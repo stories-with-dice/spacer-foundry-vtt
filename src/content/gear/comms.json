@@ -2,6 +2,7 @@
   {
     "name": "Handheld Transceiver",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/walkie-talkie.svg",
     "folder": "Communication Tools",
     "system": {
       "category": "comms",
@@ -16,6 +17,7 @@
   {
     "name": "Headset Transceiver",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/headphones.svg",
     "folder": "Communication Tools",
     "system": {
       "category": "comms",
@@ -30,6 +32,7 @@
   {
     "name": "Commdot Transceiver",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/microchip.svg",
     "folder": "Communication Tools",
     "system": {
       "category": "comms",
@@ -44,6 +47,7 @@
   {
     "name": "Satellite Uplink",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/satellite-communication.svg",
     "folder": "Communication Tools",
     "system": {
       "category": "comms",
@@ -58,6 +62,7 @@
   {
     "name": "Encryptor",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/encrypted-channel.svg",
     "folder": "Communication Tools",
     "system": {
       "category": "comms",

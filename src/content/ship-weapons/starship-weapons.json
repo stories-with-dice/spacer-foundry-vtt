@@ -2,6 +2,7 @@
   {
     "name": "Turret",
     "type": "shipWeapon",
+    "img": "modules/game-icons-net/blackbackground/turret.svg",
     "folder": "Starship Weapons",
     "system": {
       "mount": "turret",
@@ -21,6 +22,7 @@
   {
     "name": "Double Turret",
     "type": "shipWeapon",
+    "img": "modules/game-icons-net/blackbackground/laser-turret.svg",
     "folder": "Starship Weapons",
     "system": {
       "mount": "turret",
@@ -40,6 +42,7 @@
   {
     "name": "Triple Turret",
     "type": "shipWeapon",
+    "img": "modules/game-icons-net/blackbackground/tesla-turret.svg",
     "folder": "Starship Weapons",
     "system": {
       "mount": "turret",
@@ -59,6 +62,7 @@
   {
     "name": "Pulse",
     "type": "shipWeapon",
+    "img": "modules/game-icons-net/blackbackground/laser-burst.svg",
     "folder": "Starship Weapons",
     "system": {
       "mount": "turret",
@@ -78,6 +82,7 @@
   {
     "name": "Beam",
     "type": "shipWeapon",
+    "img": "modules/game-icons-net/blackbackground/sinusoidal-beam.svg",
     "folder": "Starship Weapons",
     "system": {
       "mount": "turret",
@@ -97,6 +102,7 @@
   {
     "name": "Missile Rack",
     "type": "shipWeapon",
+    "img": "modules/game-icons-net/blackbackground/missile-pod.svg",
     "folder": "Starship Weapons",
     "system": {
       "mount": "missileRack",
@@ -120,6 +126,7 @@
   {
     "name": "Missile",
     "type": "shipWeapon",
+    "img": "modules/game-icons-net/blackbackground/rocket.svg",
     "folder": "Starship Weapons",
     "system": {
       "mount": "missile",
@@ -139,6 +146,7 @@
   {
     "name": "EMP Missile",
     "type": "shipWeapon",
+    "img": "modules/game-icons-net/blackbackground/bolt-bomb.svg",
     "folder": "Starship Weapons",
     "system": {
       "mount": "missile",
@@ -158,6 +166,7 @@
   {
     "name": "Sandcaster",
     "type": "shipWeapon",
+    "img": "modules/game-icons-net/blackbackground/sandstorm.svg",
     "folder": "Starship Weapons",
     "system": {
       "mount": "turret",

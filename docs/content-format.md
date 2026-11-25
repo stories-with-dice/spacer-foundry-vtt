@@ -5,15 +5,18 @@ Game content lives in `src/content/<pack>/*.json`. `<pack>` is a pack `name` fro
 Each file holds one document or an array of documents. Use one file per book section.
 
 Never set `_id` or `_key`; the build creates them from pack + type + name. Names must be unique
-within a pack (the build fails on a duplicate). Never include book art. Leave `img` out to get the
-default core icon, or use a core icon path such as `icons/svg/sword.svg`.
+within a pack (the build fails on a duplicate). Never include book art. Give every item an icon from
+the required game-icons.net module, `"img": "modules/game-icons-net/blackbackground/<name>.svg"`; an
+item without `img` gets its type's default from `ITEM_ICONS` in `module/config.mjs`. Other documents
+may use Foundry core icons such as `icons/svg/sword.svg`. `npm test` checks that every icon file
+exists when the module is installed locally.
 
 Every document should carry its book page in `system.source` (items) or in its text, e.g. `"p.30"`.
 
 ## Item (packs: skills, weapons, armor, gear, psionics, drugs, ship-weapons)
 
 ```json
-{ "name": "Knife", "type": "weapon", "folder": "Melee Weapons",
+{ "name": "Knife", "type": "weapon", "img": "modules/game-icons-net/blackbackground/bowie-knife.svg", "folder": "Melee Weapons",
   "system": { "category": "melee", "skill": "Melee Combat", "specialty": "Blade", "damage": "1D+3", "range": "close",
               "cost": 150, "weight": 0.1, "tl": 1, "traits": ["Bladed", "Conceal", "Throw"],
               "description": "<p>Can be thrown within short range.</p>", "source": "p.30" } }

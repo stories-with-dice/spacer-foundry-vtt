@@ -69,6 +69,20 @@ export function parseCredits(text) {
   return mult === "k" ? n * 1000 : mult === "m" ? n * 1_000_000 : n;
 }
 
+/** Folder of the game-icons.net icons (the required "game-icons-net" module). */
+export const GAME_ICONS = "modules/game-icons-net/blackbackground";
+
+/** Default icon per item type, for items created without a specific icon. */
+export const ITEM_ICONS = {
+  skill: `${GAME_ICONS}/skills.svg`,
+  weapon: `${GAME_ICONS}/pistol-gun.svg`,
+  armor: `${GAME_ICONS}/kevlar-vest.svg`,
+  gear: `${GAME_ICONS}/knapsack.svg`,
+  psionic: `${GAME_ICONS}/psychic-waves.svg`,
+  drug: `${GAME_ICONS}/pill.svg`,
+  shipWeapon: `${GAME_ICONS}/turret.svg`
+};
+
 export const SPACER = {
   characteristics: CHARACTERISTICS,
   physical: PHYSICAL,
@@ -88,5 +102,6 @@ export const SPACER = {
   psionicDisciplines: ["telepathy", "clairvoyance", "telekinesis", "awareness", "teleportation", "special"],
   vehicleCategories: ["landcraft", "aircraft", "gravcraft", "watercraft"],
   vehicleLocations: ["interior", "drive", "handling", "hull", "weapon"],
-  shipSystems: ["jDrive", "mDrive", "power"]
+  shipSystems: ["jDrive", "mDrive", "power"],
+  itemIcons: ITEM_ICONS
 };

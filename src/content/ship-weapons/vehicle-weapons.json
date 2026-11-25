@@ -2,6 +2,7 @@
   {
     "name": "Light Turret",
     "type": "shipWeapon",
+    "img": "modules/game-icons-net/blackbackground/sentry-gun.svg",
     "folder": "Vehicle Mounted Weapons",
     "system": {
       "mount": "vehicle",
@@ -21,6 +22,7 @@
   {
     "name": "Medium Turret",
     "type": "shipWeapon",
+    "img": "modules/game-icons-net/blackbackground/anti-aircraft-gun.svg",
     "folder": "Vehicle Mounted Weapons",
     "system": {
       "mount": "vehicle",
@@ -40,6 +42,7 @@
   {
     "name": "Heavy Gun",
     "type": "shipWeapon",
+    "img": "modules/game-icons-net/blackbackground/field-gun.svg",
     "folder": "Vehicle Mounted Weapons",
     "system": {
       "mount": "vehicle",

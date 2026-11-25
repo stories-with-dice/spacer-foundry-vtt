@@ -1,4 +1,4 @@
-import { SPACER, SYSTEM_ID } from "./config.mjs";
+import { SPACER, SYSTEM_ID, ITEM_ICONS } from "./config.mjs";
 import { CharacterData, NpcData, CreatureData, VehicleData, ShipData } from "./data/actors.mjs";
 import { SkillData, WeaponData, ArmorData, GearData, PsionicData, DrugData, ShipWeaponData } from "./data/items.mjs";
 import { registerPlay } from "./play/register.mjs";
@@ -34,5 +34,10 @@ Hooks.once("init", () => {
   registerCraft();
   registerChargen();
   registerTools();
+  // New items without a chosen image get the game-icons.net icon of their type.
+  Hooks.on("preCreateItem", item => {
+    const icon = ITEM_ICONS[item.type];
+    if (icon && (!item.img || item.img === Item.implementation.DEFAULT_ICON)) item.updateSource({ img: icon });
+  });
   console.log(`${SYSTEM_ID} | Initialized`);
 });

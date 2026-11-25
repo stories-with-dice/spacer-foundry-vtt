@@ -2,6 +2,7 @@
   {
     "name": "Body Pistol",
     "type": "weapon",
+    "img": "modules/game-icons-net/blackbackground/walther-ppk.svg",
     "folder": "Short Weapons",
     "system": {
       "category": "short",
@@ -24,6 +25,7 @@
   {
     "name": "Auto Pistol",
     "type": "weapon",
+    "img": "modules/game-icons-net/blackbackground/glock.svg",
     "folder": "Short Weapons",
     "system": {
       "category": "short",
@@ -46,6 +48,7 @@
   {
     "name": "Revolver",
     "type": "weapon",
+    "img": "modules/game-icons-net/blackbackground/revolver.svg",
     "folder": "Short Weapons",
     "system": {
       "category": "short",
@@ -69,6 +72,7 @@
   {
     "name": "Snub Pistol",
     "type": "weapon",
+    "img": "modules/game-icons-net/blackbackground/luger.svg",
     "folder": "Short Weapons",
     "system": {
       "category": "short",
@@ -91,6 +95,7 @@
   {
     "name": "Gauss Pistol",
     "type": "weapon",
+    "img": "modules/game-icons-net/blackbackground/pistol-gun.svg",
     "folder": "Short Weapons",
     "system": {
       "category": "short",

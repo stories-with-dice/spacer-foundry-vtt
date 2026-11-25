@@ -3,12 +3,15 @@
  * - Roll tables: every total the formula can roll hits exactly one result.
  * - Items and actors: every `system` key exists in the data model schema, with the right type.
  * - Weapons and vehicles: the skill they use exists in the skills pack.
- * - Images: only Foundry core icons (no book art).
+ * - Images: Foundry core icons or game-icons.net icons that exist (no book art).
  */
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { buildAll } from "../tools/build-packs.mjs";
 import "./helpers/foundry-shim.mjs";
+import { existsSync } from "node:fs";
+import { homedir } from "node:os";
+import { join } from "node:path";
 
 const { CharacterData, NpcData, CreatureData, VehicleData, ShipData } = await import("../module/data/actors.mjs");
 const items = await import("../module/data/items.mjs");
@@ -121,16 +124,38 @@ test("weapons and vehicles use skills that exist in the skills pack", () => {
   assert.deepEqual(problems, []);
 });
 
-test("content uses only Foundry core icons (no book art)", () => {
+/** Folders of the installed game-icons-net module (local Foundry data), to check icon files exist. */
+const ICON_ROOTS = ["FoundryVTT", "FoundryVTT-14"]
+  .map(d => join(homedir(), "Library/Application Support", d, "Data"))
+  .filter(d => existsSync(join(d, "modules/game-icons-net")));
+
+test("content uses only Foundry core icons and game-icons.net icons that exist (no book art)", () => {
   const problems = [];
+  const checkImg = (img, where) => {
+    if (!img) return;
+    if (/^icons\//.test(img)) return;
+    if (!/^modules\/game-icons-net\//.test(img)) { problems.push(`${where}: img ${img}`); return; }
+    if (ICON_ROOTS.length && !ICON_ROOTS.some(root => existsSync(join(root, img)))) problems.push(`${where}: missing icon ${img}`);
+  };
   const walk = (doc, where) => {
-    if (doc.img && !/^icons\//.test(doc.img)) problems.push(`${where}: img ${doc.img}`);
+    checkImg(doc.img, where);
     for (const it of doc.items ?? []) walk(it, `${where}/${it.name}`);
-    for (const r of doc.results ?? []) if (r.img && !/^icons\//.test(r.img)) problems.push(`${where}: result img ${r.img}`);
+    for (const r of doc.results ?? []) checkImg(r.img, `${where} result`);
     const html = JSON.stringify(doc.pages ?? doc.description ?? "");
     if (/<img/i.test(html)) problems.push(`${where}: <img> in text`);
   };
   for (const [pack, docs] of Object.entries(packs)) for (const d of docs) walk(d, `${pack}/${d.name}`);
+  assert.deepEqual(problems, []);
+});
+
+test("every item has a game-icons.net icon", () => {
+  const problems = [];
+  for (const [pack, docs] of Object.entries(packs)) {
+    for (const d of docs) {
+      const items = d._key.startsWith("!items!") ? [d] : (d.items ?? []);
+      for (const it of items) if (!/^modules\/game-icons-net\//.test(it.img)) problems.push(`${pack}/${it.name}: ${it.img}`);
+    }
+  }
   assert.deepEqual(problems, []);
 });
 

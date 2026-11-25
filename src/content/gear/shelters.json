@@ -2,6 +2,7 @@
   {
     "name": "Tarpaulin",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/rolled-cloth.svg",
     "folder": "Shelters",
     "system": {
       "category": "shelter",
@@ -16,6 +17,7 @@
   {
     "name": "Tent",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/camping-tent.svg",
     "folder": "Shelters",
     "system": {
       "category": "shelter",
@@ -30,6 +32,7 @@
   {
     "name": "Pressure Tent",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/habitat-dome.svg",
     "folder": "Shelters",
     "system": {
       "category": "shelter",
@@ -44,6 +47,7 @@
   {
     "name": "Pre-Fab Cabin",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/wood-cabin.svg",
     "folder": "Shelters",
     "system": {
       "category": "shelter",
@@ -58,6 +62,7 @@
   {
     "name": "Advance Base",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/base-dome.svg",
     "folder": "Shelters",
     "system": {
       "category": "shelter",

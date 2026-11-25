@@ -20,8 +20,11 @@ of the rules as possible and make solo play easy.
   `~/bin/FoundryVTT-Node-14.370/` (`client/`, `common/`).
 - **Plain ES modules, no build step for code.** Foundry loads `module/spacer.mjs`.
 - **Licenses.** Code is MIT (`LICENSE`). Game content in `src/content/` is CC BY-SA 4.0
-  (`LICENSE-CONTENT.md`). Never add book artwork or any image from the PDF. Use Foundry core
-  icons (`icons/svg/*.svg`, `icons/...`). Never use the word "Traveller" in names or UI labels.
+  (`LICENSE-CONTENT.md`). Never add book artwork or any image from the PDF. Item images come from
+  game-icons.net (CC BY 3.0) through the required `game-icons-net` module:
+  `modules/game-icons-net/blackbackground/<name>.svg` (check the picture, not only the file name:
+  some names are misleading). Other images: Foundry core icons (`icons/svg/*.svg`). Never use the
+  word "Traveller" in names or UI labels.
 - **Book source text:** `sources/pages/pNNN.txt` (reading order) and `sources/pages/pNNN.layout.txt`
   (columns kept; best for tables), one file per PDF page (`p016` = book page 16). Git ignores
   `sources/`.
@@ -121,7 +124,10 @@ module/<area>/
    - **One server at a time.** Both servers share `packs/`, and LevelDB lets one process open a pack.
      The world that opened the packs first keeps them; the other world sees empty compendiums
      (`test/foundry/smoke.js` fails on that).
-   - After `npm run build`, pass `--relaunch` once so the world reopens the new packs.
+   - **Rebuilding packs:** a running world keeps `packs/` open, and replacing the files under it
+     leaves the server with dead handles until it restarts. So: `node tools/foundry-run.mjs --v 13 --close`,
+     then `npm run build` (it refuses while a Foundry process holds the packs), then run the tests
+     (the tool launches the world again).
    - Name test documents with your area prefix and delete them at the end.
    - Headless Chromium from Playwright is too old for v14, so the tool uses the installed Google
      Chrome (`channel: "chrome"`).

@@ -2,6 +2,7 @@
   {
     "name": "Suppressor",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/speaker-off.svg",
     "folder": "Weapon Modifications",
     "system": {
       "category": "weaponMod",
@@ -16,6 +17,7 @@
   {
     "name": "Telescopic Sight",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/spyglass.svg",
     "folder": "Weapon Modifications",
     "system": {
       "category": "weaponMod",
@@ -30,6 +32,7 @@
   {
     "name": "Electronic Sight",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/target-laser.svg",
     "folder": "Weapon Modifications",
     "system": {
       "category": "weaponMod",
@@ -44,6 +47,7 @@
   {
     "name": "Shoulder Stock",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/gun-stock.svg",
     "folder": "Weapon Modifications",
     "system": {
       "category": "weaponMod",
@@ -58,6 +62,7 @@
   {
     "name": "Folding Stock",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/gun-stock.svg",
     "folder": "Weapon Modifications",
     "system": {
       "category": "weaponMod",

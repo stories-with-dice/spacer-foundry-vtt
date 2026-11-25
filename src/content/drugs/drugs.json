@@ -2,6 +2,7 @@
   {
     "name": "Slow",
     "type": "drug",
+    "img": "modules/game-icons-net/blackbackground/hourglass.svg",
     "folder": "Drugs",
     "system": {
       "effect": "Double the amount of actions a character can perform per round for 10 minutes",
@@ -19,6 +20,7 @@
   {
     "name": "Medical Slow",
     "type": "drug",
+    "img": "modules/game-icons-net/blackbackground/night-sleep.svg",
     "folder": "Drugs",
     "system": {
       "effect": "Heal 30 days worth of recovery over the course of 30 hours",
@@ -36,6 +38,7 @@
   {
     "name": "Slow Antidote",
     "type": "drug",
+    "img": "modules/game-icons-net/blackbackground/syringe.svg",
     "folder": "Drugs",
     "system": {
       "effect": "Cancels Slow drug",
@@ -53,6 +56,7 @@
   {
     "name": "Fast",
     "type": "drug",
+    "img": "modules/game-icons-net/blackbackground/fast-forward-button.svg",
     "folder": "Drugs",
     "system": {
       "effect": "Experience 1 minute of time per 1 hour of real time",
@@ -70,6 +74,7 @@
   {
     "name": "Fast Antidote",
     "type": "drug",
+    "img": "modules/game-icons-net/blackbackground/syringe_1.svg",
     "folder": "Drugs",
     "system": {
       "effect": "Cancels Fast drug",
@@ -87,6 +92,7 @@
   {
     "name": "Anagathic",
     "type": "drug",
+    "img": "modules/game-icons-net/blackbackground/dna1.svg",
     "folder": "Drugs",
     "system": {
       "effect": "Halts aging for 1 month",
@@ -104,6 +110,7 @@
   {
     "name": "Truth",
     "type": "drug",
+    "img": "modules/game-icons-net/blackbackground/tongue.svg",
     "folder": "Drugs",
     "system": {
       "effect": "Forced to speak truth for 1 minute",
@@ -121,6 +128,7 @@
   {
     "name": "Combat",
     "type": "drug",
+    "img": "modules/game-icons-net/blackbackground/skull-with-syringe.svg",
     "folder": "Drugs",
     "system": {
       "effect": "+2 STR and END",
@@ -138,6 +146,7 @@
   {
     "name": "Medical",
     "type": "drug",
+    "img": "modules/game-icons-net/blackbackground/medicine-pills.svg",
     "folder": "Drugs",
     "system": {
       "effect": "X2 the rate of healing or recovery",
@@ -155,6 +164,7 @@
   {
     "name": "PSI-Boost",
     "type": "drug",
+    "img": "modules/game-icons-net/blackbackground/round-potion.svg",
     "folder": "PSI Drugs",
     "system": {
       "effect": "+3 PSI for one hour",
@@ -172,6 +182,7 @@
   {
     "name": "PSI-Double",
     "type": "drug",
+    "img": "modules/game-icons-net/blackbackground/potion-ball.svg",
     "folder": "PSI Drugs",
     "system": {
       "effect": "+6 PSI for one hour",
@@ -189,6 +200,7 @@
   {
     "name": "PSI-Special",
     "type": "drug",
+    "img": "modules/game-icons-net/blackbackground/magic-potion.svg",
     "folder": "PSI Drugs",
     "system": {
       "effect": "+1 PSI gained per hour, up to a max of PSI 15",
@@ -206,6 +218,7 @@
   {
     "name": "Recreational",
     "type": "drug",
+    "img": "modules/game-icons-net/blackbackground/drink-me.svg",
     "folder": "Drugs",
     "system": {
       "effect": "Typically illegal drugs used for non-medical purposes",

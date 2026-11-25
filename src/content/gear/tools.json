@@ -2,6 +2,7 @@
   {
     "name": "Chainsaw",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/chainsaw.svg",
     "folder": "Tools and Tool Kits",
     "system": {
       "category": "tool",
@@ -16,6 +17,7 @@
   {
     "name": "Climbing Gear",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/mountain-climbing.svg",
     "folder": "Tools and Tool Kits",
     "system": {
       "category": "tool",
@@ -30,6 +32,7 @@
   {
     "name": "Cutting Torch",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/flamethrower.svg",
     "folder": "Tools and Tool Kits",
     "system": {
       "category": "tool",
@@ -44,6 +47,7 @@
   {
     "name": "General Purpose Tools",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/toolbox.svg",
     "folder": "Tools and Tool Kits",
     "system": {
       "category": "tool",
@@ -58,6 +62,7 @@
   {
     "name": "Medical Kit",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/first-aid-kit.svg",
     "folder": "Tools and Tool Kits",
     "system": {
       "category": "tool",
@@ -72,6 +77,7 @@
   {
     "name": "Metalwork Tools",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/anvil.svg",
     "folder": "Tools and Tool Kits",
     "system": {
       "category": "tool",
@@ -86,6 +92,7 @@
   {
     "name": "Fabrication Tools",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/sewing-machine.svg",
     "folder": "Tools and Tool Kits",
     "system": {
       "category": "tool",
@@ -100,6 +107,7 @@
   {
     "name": "Mechanical Tools",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/monkey-wrench.svg",
     "folder": "Tools and Tool Kits",
     "system": {
       "category": "tool",
@@ -114,6 +122,7 @@
   {
     "name": "Electronics Tools",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/soldering-iron.svg",
     "folder": "Tools and Tool Kits",
     "system": {
       "category": "tool",
@@ -128,6 +137,7 @@
   {
     "name": "Lock-Bypass Kit",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/lockpicks.svg",
     "folder": "Tools and Tool Kits",
     "system": {
       "category": "tool",
@@ -142,6 +152,7 @@
   {
     "name": "Disguise Kit",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/domino-mask.svg",
     "folder": "Tools and Tool Kits",
     "system": {
       "category": "tool",
@@ -156,6 +167,7 @@
   {
     "name": "Hand Computer",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/smartphone.svg",
     "folder": "Tools and Tool Kits",
     "system": {
       "category": "tool",
@@ -170,6 +182,7 @@
   {
     "name": "Cyberdeck",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/laptop.svg",
     "folder": "Tools and Tool Kits",
     "system": {
       "category": "tool",
@@ -184,6 +197,7 @@
   {
     "name": "Iris Valve Opener",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/airtight-hatch.svg",
     "folder": "Tools and Tool Kits",
     "system": {
       "category": "tool",

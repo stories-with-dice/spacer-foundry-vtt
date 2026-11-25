@@ -2,6 +2,7 @@
   {
     "name": "Suggestion",
     "type": "psionic",
+    "img": "modules/game-icons-net/blackbackground/puppet.svg",
     "folder": "Special",
     "system": {
       "discipline": "special",
@@ -18,6 +19,7 @@
   {
     "name": "Post-Cognition",
     "type": "psionic",
+    "img": "modules/game-icons-net/blackbackground/backward-time.svg",
     "folder": "Special",
     "system": {
       "discipline": "special",
@@ -34,6 +36,7 @@
   {
     "name": "Astral Projection",
     "type": "psionic",
+    "img": "modules/game-icons-net/blackbackground/ghost.svg",
     "folder": "Special",
     "system": {
       "discipline": "special",
@@ -50,6 +53,7 @@
   {
     "name": "Bilocation",
     "type": "psionic",
+    "img": "modules/game-icons-net/blackbackground/two-shadows.svg",
     "folder": "Special",
     "system": {
       "discipline": "special",
@@ -66,6 +70,7 @@
   {
     "name": "Precognition",
     "type": "psionic",
+    "img": "modules/game-icons-net/blackbackground/crystal-ball.svg",
     "folder": "Special",
     "system": {
       "discipline": "special",
@@ -82,6 +87,7 @@
   {
     "name": "Mind-Body Occupation",
     "type": "psionic",
+    "img": "modules/game-icons-net/blackbackground/body-swapping.svg",
     "folder": "Special",
     "system": {
       "discipline": "special",

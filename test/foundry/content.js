@@ -26,6 +26,15 @@ for (const name of ["skills", "weapons", "armor", "gear", "psionics", "drugs", "
     await doc.sheet.close();
   }
 }
+// Icons load from the game-icons-net module: check every distinct item image answers 200.
+const imgs = new Set();
+for (const name of ["skills", "weapons", "armor", "gear", "psionics", "drugs", "ship-weapons"]) {
+  for (const doc of await game.packs.get(`spacer.${name}`).getDocuments()) imgs.add(doc.img);
+}
+out.icons = imgs.size;
+const missing = [];
+for (const img of imgs) { const r = await fetch(img, { method: "HEAD" }); if (!r.ok) missing.push(img); }
+if (missing.length) throw new Error(`icons that do not load: ${missing.slice(0, 10).join(", ")}`);
 if (out.invalid.length) throw new Error(`invalid documents: ${out.invalid.join(", ")}`);
 // A draw can come up empty only when a DM-only table has no row for the bare formula.
 if (out.emptyDraws.length) throw new Error(`tables that drew nothing: ${out.emptyDraws.join(", ")}`);

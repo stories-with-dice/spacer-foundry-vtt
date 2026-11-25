@@ -2,6 +2,7 @@
   {
     "name": "Materialize",
     "type": "psionic",
+    "img": "modules/game-icons-net/blackbackground/magic-portal.svg",
     "folder": "Teleportation",
     "system": {
       "discipline": "teleportation",
@@ -18,6 +19,7 @@
   {
     "name": "Personal, Flesh Only",
     "type": "psionic",
+    "img": "modules/game-icons-net/blackbackground/teleport.svg",
     "folder": "Teleportation",
     "system": {
       "discipline": "teleportation",
@@ -34,6 +36,7 @@
   {
     "name": "Personal, Clothed",
     "type": "psionic",
+    "img": "modules/game-icons-net/blackbackground/transportation-rings.svg",
     "folder": "Teleportation",
     "system": {
       "discipline": "teleportation",
@@ -50,6 +53,7 @@
   {
     "name": "Personal, Equipped",
     "type": "psionic",
+    "img": "modules/game-icons-net/blackbackground/portal.svg",
     "folder": "Teleportation",
     "system": {
       "discipline": "teleportation",

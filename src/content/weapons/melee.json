@@ -2,6 +2,7 @@
   {
     "name": "Unarmed",
     "type": "weapon",
+    "img": "modules/game-icons-net/blackbackground/fist.svg",
     "folder": "Melee Weapons",
     "system": {
       "category": "melee",
@@ -22,6 +23,7 @@
   {
     "name": "Knife",
     "type": "weapon",
+    "img": "modules/game-icons-net/blackbackground/bowie-knife.svg",
     "folder": "Melee Weapons",
     "system": {
       "category": "melee",
@@ -46,6 +48,7 @@
   {
     "name": "Baton",
     "type": "weapon",
+    "img": "modules/game-icons-net/blackbackground/baton.svg",
     "folder": "Melee Weapons",
     "system": {
       "category": "melee",
@@ -69,6 +72,7 @@
   {
     "name": "Sword",
     "type": "weapon",
+    "img": "modules/game-icons-net/blackbackground/broadsword.svg",
     "folder": "Melee Weapons",
     "system": {
       "category": "melee",
@@ -92,6 +96,7 @@
   {
     "name": "Boarding Ax",
     "type": "weapon",
+    "img": "modules/game-icons-net/blackbackground/fire-axe.svg",
     "folder": "Melee Weapons",
     "system": {
       "category": "melee",
@@ -115,6 +120,7 @@
   {
     "name": "Staff",
     "type": "weapon",
+    "img": "modules/game-icons-net/blackbackground/telescopic-baton.svg",
     "folder": "Melee Weapons",
     "system": {
       "category": "melee",
@@ -138,6 +144,7 @@
   {
     "name": "Longsword",
     "type": "weapon",
+    "img": "modules/game-icons-net/blackbackground/two-handed-sword.svg",
     "folder": "Melee Weapons",
     "system": {
       "category": "melee",
@@ -161,6 +168,7 @@
   {
     "name": "Polearm",
     "type": "weapon",
+    "img": "modules/game-icons-net/blackbackground/halberd.svg",
     "folder": "Melee Weapons",
     "system": {
       "category": "melee",
@@ -185,6 +193,7 @@
   {
     "name": "Bayonet",
     "type": "weapon",
+    "img": "modules/game-icons-net/blackbackground/bayonet.svg",
     "folder": "Melee Weapons",
     "system": {
       "category": "melee",

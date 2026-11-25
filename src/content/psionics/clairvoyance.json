@@ -2,6 +2,7 @@
   {
     "name": "Sense",
     "type": "psionic",
+    "img": "modules/game-icons-net/blackbackground/extra-vision.svg",
     "folder": "Clairvoyance",
     "system": {
       "discipline": "clairvoyance",
@@ -18,6 +19,7 @@
   {
     "name": "Direction",
     "type": "psionic",
+    "img": "modules/game-icons-net/blackbackground/direction-sign.svg",
     "folder": "Clairvoyance",
     "system": {
       "discipline": "clairvoyance",
@@ -34,6 +36,7 @@
   {
     "name": "Clairvoyance",
     "type": "psionic",
+    "img": "modules/game-icons-net/blackbackground/all-seeing-eye.svg",
     "folder": "Clairvoyance",
     "system": {
       "discipline": "clairvoyance",
@@ -50,6 +53,7 @@
   {
     "name": "Clairaudience",
     "type": "psionic",
+    "img": "modules/game-icons-net/blackbackground/human-ear.svg",
     "folder": "Clairvoyance",
     "system": {
       "discipline": "clairvoyance",
@@ -66,6 +70,7 @@
   {
     "name": "Sensory Proxy",
     "type": "psionic",
+    "img": "modules/game-icons-net/blackbackground/eyestalk.svg",
     "folder": "Clairvoyance",
     "system": {
       "discipline": "clairvoyance",
@@ -82,6 +87,7 @@
   {
     "name": "Clairsentience",
     "type": "psionic",
+    "img": "modules/game-icons-net/blackbackground/third-eye.svg",
     "folder": "Clairvoyance",
     "system": {
       "discipline": "clairvoyance",

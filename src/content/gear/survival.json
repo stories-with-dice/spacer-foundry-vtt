@@ -2,6 +2,7 @@
   {
     "name": "Respirator",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/lungs.svg",
     "folder": "Survival Gear",
     "system": {
       "category": "survival",
@@ -16,6 +17,7 @@
   {
     "name": "Filter Mask",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/gas-mask.svg",
     "folder": "Survival Gear",
     "system": {
       "category": "survival",
@@ -30,6 +32,7 @@
   {
     "name": "Combo Mask",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/gas-mask_1.svg",
     "folder": "Survival Gear",
     "system": {
       "category": "survival",
@@ -44,6 +47,7 @@
   {
     "name": "Air Tank",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/scuba-tanks.svg",
     "folder": "Survival Gear",
     "system": {
       "category": "survival",
@@ -58,6 +62,7 @@
   {
     "name": "Rebreather Mask",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/scuba-mask.svg",
     "folder": "Survival Gear",
     "system": {
       "category": "survival",
@@ -72,6 +77,7 @@
   {
     "name": "Scuba Equipment",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/diving-helmet.svg",
     "folder": "Survival Gear",
     "system": {
       "category": "survival",
@@ -86,6 +92,7 @@
   {
     "name": "Heavy Protective Suit (HPS)",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/hazmat-suit.svg",
     "folder": "Survival Gear",
     "system": {
       "category": "survival",
@@ -100,6 +107,7 @@
   {
     "name": "Vaccsuit (TL8)",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/space-suit.svg",
     "folder": "Survival Gear",
     "system": {
       "category": "survival",
@@ -116,6 +124,7 @@
   {
     "name": "Vaccsuit (TL9)",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/space-suit.svg",
     "folder": "Survival Gear",
     "system": {
       "category": "survival",
@@ -132,6 +141,7 @@
   {
     "name": "Vaccsuit (TL10)",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/space-suit.svg",
     "folder": "Survival Gear",
     "system": {
       "category": "survival",
@@ -148,6 +158,7 @@
   {
     "name": "Vaccsuit (TL11)",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/space-suit.svg",
     "folder": "Survival Gear",
     "system": {
       "category": "survival",
@@ -164,6 +175,7 @@
   {
     "name": "Vaccsuit (TL12)",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/space-suit.svg",
     "folder": "Survival Gear",
     "system": {
       "category": "survival",
@@ -180,6 +192,7 @@
   {
     "name": "Vaccsuit (TL13)",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/space-suit.svg",
     "folder": "Survival Gear",
     "system": {
       "category": "survival",
@@ -196,6 +209,7 @@
   {
     "name": "Cold Weather Gear",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/fur-shirt.svg",
     "folder": "Survival Gear",
     "system": {
       "category": "survival",
@@ -210,6 +224,7 @@
   {
     "name": "Cold Weather Gear (TL10)",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/thermometer-cold.svg",
     "folder": "Survival Gear",
     "system": {
       "category": "survival",
@@ -224,6 +239,7 @@
   {
     "name": "Survival Bubble",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/glass-ball.svg",
     "folder": "Survival Gear",
     "system": {
       "category": "survival",
@@ -238,6 +254,7 @@
   {
     "name": "Vacctape",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/bandage-roll.svg",
     "folder": "Survival Gear",
     "system": {
       "category": "survival",

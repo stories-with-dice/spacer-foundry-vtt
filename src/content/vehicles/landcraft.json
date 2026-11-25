@@ -213,6 +213,7 @@
       {
         "name": "Medium Turret",
         "type": "shipWeapon",
+        "img": "modules/game-icons-net/blackbackground/anti-aircraft-gun.svg",
         "system": {
           "mount": "vehicle",
           "forVehicle": true,

@@ -4,10 +4,11 @@
  * optionally run a test script in the page, take a screenshot, and report console errors.
  *
  * Usage:
- *   node tools/foundry-run.mjs --v 13 [--world spacer-test] [--script test/foundry/smoke.js] [--shot out.png] [--relaunch] [--switch-world]
+ *   node tools/foundry-run.mjs --v 13 [--world spacer-test] [--script test/foundry/smoke.js] [--shot out.png] [--relaunch] [--close] [--switch-world]
  *
  * Both servers link to this repo's packs/ folder, and LevelDB lets only one process open a pack:
- * run one server at a time, and pass --relaunch after `npm run build`.
+ * run one server at a time. To rebuild the packs: `--close` (shuts the world down and exits), then
+ * `npm run build`, then run again (the tool launches the world). --relaunch restarts the world.
  * When another world is open, the tool stops (exit 2) unless --switch-world is given: that option
  * shuts the open world down, so use it only when the user allowed closing it.
  *
@@ -44,7 +45,7 @@ try {
   // Launch the world from the setup screen when no world is active, or switch worlds.
   const active = await page.evaluate(async () => (await (await fetch("/api/status")).json()).world ?? null).catch(() => null);
   // --relaunch restarts the world, for example to reopen packs after a rebuild.
-  if (active !== world || args.includes("--relaunch")) {
+  if (active !== world || args.includes("--relaunch") || (args.includes("--close") && active)) {
     if (active && active !== world && !args.includes("--switch-world")) {
       // Never close someone's open game by default.
       console.log(`RUN FAILED: world "${active}" is open on port ${port}. Close it yourself, or pass --switch-world if the user allowed it.`);
@@ -52,15 +53,21 @@ try {
       process.exit(2);
     }
     if (active) {
-      // Without an administrator password, the server accepts "worldShutdown" from a Gamemaster session.
+      // Log in as Gamemaster and call game.shutDown(), the in-game "Return to Setup" (v13 posts
+      // { shutdown: true } and v14 { action: "worldShutdown" }; both accept a GM session).
       await joinAsGM(page);
-      await page.waitForURL(/\/game/, { timeout: 60000 }).catch(() => {});
-      await page.evaluate(async () => fetch("/setup", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ action: "worldShutdown" }) }));
-      await page.waitForTimeout(4000);
+      await page.waitForFunction(() => window.game?.ready === true, null, { timeout: 120000 });
+      await page.evaluate(() => game.shutDown()).catch(() => {});
+      for (let i = 0; i < 30; i++) {
+        await page.waitForTimeout(1000);
+        const w = await page.evaluate(async () => (await (await fetch("/api/status")).json()).world ?? null).catch(() => "?");
+        if (!w) break;
+      }
       const res = await page.evaluate(async () => (await (await fetch("/api/status")).json()).world ?? "none");
       console.log(`shut down ${active}; active world now: ${res}`);
       await page.waitForTimeout(4000);
     }
+    if (args.includes("--close")) { await browser.close(); process.exit(0); }
     await page.goto(`${base}/setup`, { waitUntil: "domcontentloaded" });
     const res = await page.evaluate(async w => {
       const r = await fetch("/setup", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ action: "launchWorld", world: w }) });

@@ -2,6 +2,7 @@
   {
     "name": "Telekinesis: Move 1g",
     "type": "psionic",
+    "img": "modules/game-icons-net/blackbackground/feather.svg",
     "folder": "Telekinesis",
     "system": {
       "discipline": "telekinesis",
@@ -18,6 +19,7 @@
   {
     "name": "Telekinesis: Move 10g",
     "type": "psionic",
+    "img": "modules/game-icons-net/blackbackground/coins.svg",
     "folder": "Telekinesis",
     "system": {
       "discipline": "telekinesis",
@@ -34,6 +36,7 @@
   {
     "name": "Telekinesis: Move 100g; Push/Pull",
     "type": "psionic",
+    "img": "modules/game-icons-net/blackbackground/push.svg",
     "folder": "Telekinesis",
     "system": {
       "discipline": "telekinesis",
@@ -50,6 +53,7 @@
   {
     "name": "Telekinesis: Move 1kg; Telekinetic Force",
     "type": "psionic",
+    "img": "modules/game-icons-net/blackbackground/mighty-force.svg",
     "folder": "Telekinesis",
     "system": {
       "discipline": "telekinesis",
@@ -66,6 +70,7 @@
   {
     "name": "Telekinesis: Move 10kg",
     "type": "psionic",
+    "img": "modules/game-icons-net/blackbackground/weight.svg",
     "folder": "Telekinesis",
     "system": {
       "discipline": "telekinesis",
@@ -82,6 +87,7 @@
   {
     "name": "Telekinesis: Move 100kg; Levitate Self",
     "type": "psionic",
+    "img": "modules/game-icons-net/blackbackground/lift.svg",
     "folder": "Telekinesis",
     "system": {
       "discipline": "telekinesis",

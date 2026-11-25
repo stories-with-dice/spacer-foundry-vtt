@@ -2,6 +2,7 @@
   {
     "name": "Admin",
     "type": "skill",
+    "img": "modules/game-icons-net/blackbackground/stamper.svg",
     "folder": "Basic Skills",
     "system": {
       "skill": "Admin",
@@ -16,6 +17,7 @@
   {
     "name": "Astrogation",
     "type": "skill",
+    "img": "modules/game-icons-net/blackbackground/galaxy.svg",
     "folder": "Basic Skills",
     "system": {
       "skill": "Astrogation",
@@ -30,6 +32,7 @@
   {
     "name": "Athlete",
     "type": "skill",
+    "img": "modules/game-icons-net/blackbackground/run.svg",
     "folder": "Basic Skills",
     "system": {
       "skill": "Athlete",
@@ -44,6 +47,7 @@
   {
     "name": "Broker",
     "type": "skill",
+    "img": "modules/game-icons-net/blackbackground/receive-money.svg",
     "folder": "Basic Skills",
     "system": {
       "skill": "Broker",
@@ -58,6 +62,7 @@
   {
     "name": "Comms",
     "type": "skill",
+    "img": "modules/game-icons-net/blackbackground/radar-dish.svg",
     "folder": "Basic Skills",
     "system": {
       "skill": "Comms",
@@ -72,6 +77,7 @@
   {
     "name": "Computers",
     "type": "skill",
+    "img": "modules/game-icons-net/blackbackground/pc.svg",
     "folder": "Basic Skills",
     "system": {
       "skill": "Computers",
@@ -86,6 +92,7 @@
   {
     "name": "Carouse",
     "type": "skill",
+    "img": "modules/game-icons-net/blackbackground/beer-stein.svg",
     "folder": "Basic Skills",
     "system": {
       "skill": "Carouse",
@@ -100,6 +107,7 @@
   {
     "name": "Crafting",
     "type": "skill",
+    "img": "modules/game-icons-net/blackbackground/hammer-nails.svg",
     "folder": "Basic Skills",
     "system": {
       "skill": "Crafting",
@@ -114,6 +122,7 @@
   {
     "name": "Deception",
     "type": "skill",
+    "img": "modules/game-icons-net/blackbackground/double-face-mask.svg",
     "folder": "Basic Skills",
     "system": {
       "skill": "Deception",
@@ -128,6 +137,7 @@
   {
     "name": "Diplomacy",
     "type": "skill",
+    "img": "modules/game-icons-net/blackbackground/peace-dove.svg",
     "folder": "Basic Skills",
     "system": {
       "skill": "Diplomacy",
@@ -142,6 +152,7 @@
   {
     "name": "Drive",
     "type": "skill",
+    "img": "modules/game-icons-net/blackbackground/steering-wheel.svg",
     "folder": "Specialized Skills",
     "system": {
       "skill": "Drive",
@@ -163,6 +174,7 @@
   {
     "name": "Electronics",
     "type": "skill",
+    "img": "modules/game-icons-net/blackbackground/circuitry.svg",
     "folder": "Basic Skills",
     "system": {
       "skill": "Electronics",
@@ -177,6 +189,7 @@
   {
     "name": "Engineering",
     "type": "skill",
+    "img": "modules/game-icons-net/blackbackground/gears.svg",
     "folder": "Basic Skills",
     "system": {
       "skill": "Engineering",
@@ -191,6 +204,7 @@
   {
     "name": "Gambling",
     "type": "skill",
+    "img": "modules/game-icons-net/blackbackground/rolling-dices.svg",
     "folder": "Basic Skills",
     "system": {
       "skill": "Gambling",
@@ -205,6 +219,7 @@
   {
     "name": "Jack-of-All-Trades",
     "type": "skill",
+    "img": "modules/game-icons-net/blackbackground/swiss-army-knife.svg",
     "folder": "Basic Skills",
     "system": {
       "skill": "Jack-of-All-Trades",
@@ -219,6 +234,7 @@
   {
     "name": "Leadership",
     "type": "skill",
+    "img": "modules/game-icons-net/blackbackground/public-speaker.svg",
     "folder": "Basic Skills",
     "system": {
       "skill": "Leadership",
@@ -233,6 +249,7 @@
   {
     "name": "Legal",
     "type": "skill",
+    "img": "modules/game-icons-net/blackbackground/scales.svg",
     "folder": "Basic Skills",
     "system": {
       "skill": "Legal",
@@ -247,6 +264,7 @@
   {
     "name": "Mechanic",
     "type": "skill",
+    "img": "modules/game-icons-net/blackbackground/spanner.svg",
     "folder": "Basic Skills",
     "system": {
       "skill": "Mechanic",
@@ -261,6 +279,7 @@
   {
     "name": "Medic",
     "type": "skill",
+    "img": "modules/game-icons-net/blackbackground/medical-pack.svg",
     "folder": "Basic Skills",
     "system": {
       "skill": "Medic",
@@ -275,6 +294,7 @@
   {
     "name": "Melee Combat",
     "type": "skill",
+    "img": "modules/game-icons-net/blackbackground/crossed-swords.svg",
     "folder": "Specialized Skills",
     "system": {
       "skill": "Melee Combat",
@@ -293,6 +313,7 @@
   {
     "name": "Navigation",
     "type": "skill",
+    "img": "modules/game-icons-net/blackbackground/treasure-map.svg",
     "folder": "Basic Skills",
     "system": {
       "skill": "Navigation",
@@ -307,6 +328,7 @@
   {
     "name": "Persuade",
     "type": "skill",
+    "img": "modules/game-icons-net/blackbackground/talk.svg",
     "folder": "Basic Skills",
     "system": {
       "skill": "Persuade",
@@ -321,6 +343,7 @@
   {
     "name": "Pilot",
     "type": "skill",
+    "img": "modules/game-icons-net/blackbackground/spaceship.svg",
     "folder": "Specialized Skills",
     "system": {
       "skill": "Pilot",
@@ -338,6 +361,7 @@
   {
     "name": "Profession",
     "type": "skill",
+    "img": "modules/game-icons-net/blackbackground/briefcase.svg",
     "folder": "Basic Skills",
     "system": {
       "skill": "Profession",
@@ -352,6 +376,7 @@
   {
     "name": "Ranged Combat",
     "type": "skill",
+    "img": "modules/game-icons-net/blackbackground/crosshair.svg",
     "folder": "Specialized Skills",
     "system": {
       "skill": "Ranged Combat",
@@ -371,6 +396,7 @@
   {
     "name": "Recon",
     "type": "skill",
+    "img": "modules/game-icons-net/blackbackground/periscope.svg",
     "folder": "Basic Skills",
     "system": {
       "skill": "Recon",
@@ -385,6 +411,7 @@
   {
     "name": "Stealth",
     "type": "skill",
+    "img": "modules/game-icons-net/blackbackground/ninja-mask.svg",
     "folder": "Basic Skills",
     "system": {
       "skill": "Stealth",
@@ -399,6 +426,7 @@
   {
     "name": "Steward",
     "type": "skill",
+    "img": "modules/game-icons-net/blackbackground/hot-meal.svg",
     "folder": "Basic Skills",
     "system": {
       "skill": "Steward",
@@ -413,6 +441,7 @@
   {
     "name": "Streetwise",
     "type": "skill",
+    "img": "modules/game-icons-net/blackbackground/hood.svg",
     "folder": "Basic Skills",
     "system": {
       "skill": "Streetwise",
@@ -427,6 +456,7 @@
   {
     "name": "Tactics",
     "type": "skill",
+    "img": "modules/game-icons-net/blackbackground/chess-knight.svg",
     "folder": "Specialized Skills",
     "system": {
       "skill": "Tactics",
@@ -446,6 +476,7 @@
   {
     "name": "Vaccsuit",
     "type": "skill",
+    "img": "modules/game-icons-net/blackbackground/astronaut-helmet.svg",
     "folder": "Basic Skills",
     "system": {
       "skill": "Vaccsuit",

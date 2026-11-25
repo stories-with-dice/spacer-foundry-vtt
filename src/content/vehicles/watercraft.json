@@ -208,6 +208,7 @@
       {
         "name": "Heavy Gun",
         "type": "shipWeapon",
+        "img": "modules/game-icons-net/blackbackground/field-gun.svg",
         "system": {
           "mount": "vehicle",
           "forVehicle": true,
@@ -226,6 +227,7 @@
       {
         "name": "Heavy Gun",
         "type": "shipWeapon",
+        "img": "modules/game-icons-net/blackbackground/field-gun.svg",
         "system": {
           "mount": "vehicle",
           "forVehicle": true,
@@ -244,6 +246,7 @@
       {
         "name": "Heavy Gun",
         "type": "shipWeapon",
+        "img": "modules/game-icons-net/blackbackground/field-gun.svg",
         "system": {
           "mount": "vehicle",
           "forVehicle": true,

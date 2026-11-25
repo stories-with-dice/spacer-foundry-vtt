@@ -2,6 +2,7 @@
   {
     "name": "Thrown Item",
     "type": "weapon",
+    "img": "modules/game-icons-net/blackbackground/throwing-ball.svg",
     "folder": "Archaic Weapons",
     "system": {
       "category": "archaic",
@@ -25,6 +26,7 @@
   {
     "name": "Sling",
     "type": "weapon",
+    "img": "modules/game-icons-net/blackbackground/sling.svg",
     "folder": "Archaic Weapons",
     "system": {
       "category": "archaic",
@@ -48,6 +50,7 @@
   {
     "name": "Blowgun",
     "type": "weapon",
+    "img": "modules/game-icons-net/blackbackground/dart.svg",
     "folder": "Archaic Weapons",
     "system": {
       "category": "archaic",
@@ -71,6 +74,7 @@
   {
     "name": "Bow",
     "type": "weapon",
+    "img": "modules/game-icons-net/blackbackground/bow-arrow.svg",
     "folder": "Archaic Weapons",
     "system": {
       "category": "archaic",
@@ -96,6 +100,7 @@
   {
     "name": "Crossbow",
     "type": "weapon",
+    "img": "modules/game-icons-net/blackbackground/crossbow.svg",
     "folder": "Archaic Weapons",
     "system": {
       "category": "archaic",
@@ -120,6 +125,7 @@
   {
     "name": "Flintlock Rifle",
     "type": "weapon",
+    "img": "modules/game-icons-net/blackbackground/musket.svg",
     "folder": "Archaic Weapons",
     "system": {
       "category": "archaic",
@@ -144,6 +150,7 @@
   {
     "name": "Flintlock Pistol",
     "type": "weapon",
+    "img": "modules/game-icons-net/blackbackground/blunderbuss.svg",
     "folder": "Archaic Weapons",
     "system": {
       "category": "archaic",
@@ -168,6 +175,7 @@
   {
     "name": "Wheellock Rifle",
     "type": "weapon",
+    "img": "modules/game-icons-net/blackbackground/musket.svg",
     "folder": "Archaic Weapons",
     "system": {
       "category": "archaic",
@@ -192,6 +200,7 @@
   {
     "name": "Wheellock Pistol",
     "type": "weapon",
+    "img": "modules/game-icons-net/blackbackground/crossed-pistols.svg",
     "folder": "Archaic Weapons",
     "system": {
       "category": "archaic",

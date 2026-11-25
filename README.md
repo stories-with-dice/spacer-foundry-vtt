@@ -11,6 +11,10 @@ text of the book, every rollable table, and all the items, vehicles, and sample 
 
 ## Install
 
+The system requires the **Game-icons.net** module (`game-icons-net`); Foundry offers to install it
+together with the system. Item icons are from [game-icons.net](https://game-icons.net)
+(CC BY 3.0, Lorc, Delapouite, and contributors).
+
 Copy or link this folder into your Foundry `Data/systems/spacer` folder, then run
 `npm install && npm run build` to compile the compendium packs. `npm run link` links the repo
 into the local v13 and v14 data folders.
@@ -20,6 +24,7 @@ into the local v13 and v14 data folders.
 - Program code: MIT, see `LICENSE`.
 - Game content (`src/content/`, `packs/`): CC BY-SA 4.0, adapted from the book. See
   `LICENSE-CONTENT.md`. No book artwork is included.
+- Item icons: game-icons.net, CC BY 3.0, through the required `game-icons-net` module.
 
 This project is not affiliated with Arcane Sword Press.
 

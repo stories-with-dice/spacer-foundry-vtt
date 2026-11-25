@@ -6,22 +6,21 @@
  * gives every document a stable id derived from its pack, type, and name, writes Foundry JSON
  * to build/<pack>/, and compiles it into LevelDB at packs/<pack>/ with the Foundry CLI.
  *
- * Usage: node tools/build-packs.mjs [--json-only]
+ * Usage: node tools/build-packs.mjs [--json-only] [--force]
+ * It refuses to replace packs/ while a Foundry process holds them open (see packHolders).
  */
 import { createHash } from "node:crypto";
+import { execSync } from "node:child_process";
 import { readFileSync, writeFileSync, readdirSync, mkdirSync, rmSync, existsSync, statSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { ITEM_ICONS } from "../module/config.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const SYSTEM = JSON.parse(readFileSync(join(ROOT, "system.json"), "utf8"));
 
 const DEFAULT_IMG = {
-  Item: {
-    skill: "icons/svg/book.svg", weapon: "icons/svg/sword.svg", armor: "icons/svg/shield.svg",
-    gear: "icons/svg/item-bag.svg", psionic: "icons/svg/aura.svg", drug: "icons/svg/pill.svg",
-    shipWeapon: "icons/svg/target.svg"
-  },
+  Item: ITEM_ICONS,
   Actor: {
     character: "icons/svg/mystery-man.svg", npc: "icons/svg/mystery-man.svg", creature: "icons/svg/pawprint.svg",
     vehicle: "icons/svg/wingfoot.svg", ship: "icons/svg/thrust.svg"
@@ -173,6 +172,14 @@ async function main() {
     console.log(`${name}: ${docs.length} documents`);
   }
   if (jsonOnly) return;
+  // A running Foundry world keeps the LevelDB packs open. Replacing them under it leaves the
+  // server with dead handles, and it cannot reopen the packs until it restarts.
+  const holders = packHolders();
+  if (holders.length && !process.argv.includes("--force")) {
+    console.error(`packs/ is open in Foundry (pid ${holders.join(", ")}). Close the world that uses the spacer system ` +
+      "(Return to Setup), then build again. build/ has the JSON; --force replaces the packs anyway.");
+    process.exit(1);
+  }
   const { compilePack } = await import("@foundryvtt/foundryvtt-cli");
   for (const name of Object.keys(packs)) {
     const dest = join(ROOT, "packs", name);
@@ -180,6 +187,17 @@ async function main() {
     await compilePack(join(buildDir, name), dest, { log: false });
   }
   console.log("Compiled packs into packs/");
+}
+
+/** Process ids that hold a LevelDB lock in packs/ (macOS and Linux, via lsof). */
+function packHolders() {
+  try {
+    const locks = readdirSync(join(ROOT, "packs")).map(d => join(ROOT, "packs", d, "LOCK")).filter(existsSync);
+    if (!locks.length) return [];
+    return [...new Set(execSync(`lsof -t ${locks.map(l => JSON.stringify(l)).join(" ")}`, { encoding: "utf8" }).split("\n").filter(Boolean))];
+  } catch {
+    return [];
+  }
 }
 
 if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {

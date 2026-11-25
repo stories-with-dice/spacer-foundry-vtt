@@ -277,6 +277,18 @@
   "primaryTokenAttribute": "characteristics.end",
   "secondaryTokenAttribute": "characteristics.dex",
   "initiative": "2d6",
+  "relationships": {
+    "requires": [
+      {
+        "id": "game-icons-net",
+        "type": "module",
+        "manifest": "https://raw.githubusercontent.com/datdamnzotz/icons/master/module.json",
+        "compatibility": {
+          "minimum": "0.0.45"
+        }
+      }
+    ]
+  },
   "url": "",
   "manifest": "",
   "download": ""

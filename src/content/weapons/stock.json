@@ -2,6 +2,7 @@
   {
     "name": "Carbine",
     "type": "weapon",
+    "img": "modules/game-icons-net/blackbackground/winchester-rifle.svg",
     "folder": "Stock Weapons",
     "system": {
       "category": "stock",
@@ -22,6 +23,7 @@
   {
     "name": "Shotgun",
     "type": "weapon",
+    "img": "modules/game-icons-net/blackbackground/sawed-off-shotgun.svg",
     "folder": "Stock Weapons",
     "system": {
       "category": "stock",
@@ -44,6 +46,7 @@
   {
     "name": "Rifle",
     "type": "weapon",
+    "img": "modules/game-icons-net/blackbackground/lee-enfield.svg",
     "folder": "Stock Weapons",
     "system": {
       "category": "stock",
@@ -66,6 +69,7 @@
   {
     "name": "Auto Rifle",
     "type": "weapon",
+    "img": "modules/game-icons-net/blackbackground/ak47.svg",
     "folder": "Stock Weapons",
     "system": {
       "category": "stock",
@@ -88,6 +92,7 @@
   {
     "name": "SMG",
     "type": "weapon",
+    "img": "modules/game-icons-net/blackbackground/uzi.svg",
     "folder": "Stock Weapons",
     "system": {
       "category": "stock",
@@ -110,6 +115,7 @@
   {
     "name": "Gauss Rifle",
     "type": "weapon",
+    "img": "modules/game-icons-net/blackbackground/p90.svg",
     "folder": "Stock Weapons",
     "system": {
       "category": "stock",

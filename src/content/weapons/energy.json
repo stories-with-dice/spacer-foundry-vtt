@@ -2,6 +2,7 @@
   {
     "name": "Laser Pistol",
     "type": "weapon",
+    "img": "modules/game-icons-net/blackbackground/ray-gun.svg",
     "folder": "Energy Weapons",
     "system": {
       "category": "energy",
@@ -24,6 +25,7 @@
   {
     "name": "Laser Carbine",
     "type": "weapon",
+    "img": "modules/game-icons-net/blackbackground/bolter-gun.svg",
     "folder": "Energy Weapons",
     "system": {
       "category": "energy",
@@ -47,6 +49,7 @@
   {
     "name": "Laser Rifle",
     "type": "weapon",
+    "img": "modules/game-icons-net/blackbackground/laser-blast.svg",
     "folder": "Energy Weapons",
     "system": {
       "category": "energy",
@@ -70,6 +73,7 @@
   {
     "name": "EM Disruptor",
     "type": "weapon",
+    "img": "modules/game-icons-net/blackbackground/magnet-blast.svg",
     "folder": "Energy Weapons",
     "system": {
       "category": "energy",
@@ -94,6 +98,7 @@
   {
     "name": "Taser",
     "type": "weapon",
+    "img": "modules/game-icons-net/blackbackground/lightning-arc.svg",
     "folder": "Energy Weapons",
     "system": {
       "category": "energy",

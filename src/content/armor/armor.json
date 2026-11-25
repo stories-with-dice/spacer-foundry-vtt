@@ -2,6 +2,7 @@
   {
     "name": "Jack",
     "type": "armor",
+    "img": "modules/game-icons-net/blackbackground/leather-vest.svg",
     "folder": "Armour",
     "system": {
       "difficulty": 9,
@@ -17,6 +18,7 @@
   {
     "name": "Mesh",
     "type": "armor",
+    "img": "modules/game-icons-net/blackbackground/mail-shirt.svg",
     "folder": "Armour",
     "system": {
       "difficulty": 10,
@@ -32,6 +34,7 @@
   {
     "name": "Cloth",
     "type": "armor",
+    "img": "modules/game-icons-net/blackbackground/kevlar-vest.svg",
     "folder": "Armour",
     "system": {
       "difficulty": 11,
@@ -47,6 +50,7 @@
   {
     "name": "Combat Armour",
     "type": "armor",
+    "img": "modules/game-icons-net/blackbackground/chest-armor.svg",
     "folder": "Armour",
     "system": {
       "difficulty": 12,
@@ -62,6 +66,7 @@
   {
     "name": "Ablat",
     "type": "armor",
+    "img": "modules/game-icons-net/blackbackground/layered-armor.svg",
     "folder": "Armour",
     "system": {
       "difficulty": 9,
@@ -79,6 +84,7 @@
   {
     "name": "Reflec",
     "type": "armor",
+    "img": "modules/game-icons-net/blackbackground/shield-reflect.svg",
     "folder": "Armour",
     "system": {
       "difficulty": 9,
@@ -96,6 +102,7 @@
   {
     "name": "Battle Dress",
     "type": "armor",
+    "img": "modules/game-icons-net/blackbackground/samus-helmet.svg",
     "folder": "Armour",
     "system": {
       "difficulty": 14,

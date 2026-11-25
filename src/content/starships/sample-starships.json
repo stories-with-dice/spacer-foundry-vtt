@@ -51,6 +51,7 @@
       {
         "name": "Double Turret",
         "type": "shipWeapon",
+        "img": "modules/game-icons-net/blackbackground/laser-turret.svg",
         "system": {
           "mount": "turret",
           "forVehicle": false,
@@ -170,6 +171,7 @@
       {
         "name": "Double Turret",
         "type": "shipWeapon",
+        "img": "modules/game-icons-net/blackbackground/laser-turret.svg",
         "system": {
           "mount": "turret",
           "forVehicle": false,
@@ -289,6 +291,7 @@
       {
         "name": "Triple Turret",
         "type": "shipWeapon",
+        "img": "modules/game-icons-net/blackbackground/tesla-turret.svg",
         "system": {
           "mount": "turret",
           "forVehicle": false,
@@ -307,6 +310,7 @@
       {
         "name": "Triple Turret",
         "type": "shipWeapon",
+        "img": "modules/game-icons-net/blackbackground/tesla-turret.svg",
         "system": {
           "mount": "turret",
           "forVehicle": false,
@@ -325,6 +329,7 @@
       {
         "name": "Missile Rack",
         "type": "shipWeapon",
+        "img": "modules/game-icons-net/blackbackground/missile-pod.svg",
         "system": {
           "mount": "missileRack",
           "forVehicle": false,
@@ -347,6 +352,7 @@
       {
         "name": "Missile Rack",
         "type": "shipWeapon",
+        "img": "modules/game-icons-net/blackbackground/missile-pod.svg",
         "system": {
           "mount": "missileRack",
           "forVehicle": false,

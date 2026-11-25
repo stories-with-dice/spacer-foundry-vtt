@@ -2,6 +2,7 @@
   {
     "name": "Short Arms Ammo (1 round)",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/bullets.svg",
     "folder": "Ammunition",
     "system": {
       "category": "general",
@@ -16,6 +17,7 @@
   {
     "name": "Stock Arms Ammo (1 round)",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/heavy-bullets.svg",
     "folder": "Ammunition",
     "system": {
       "category": "general",
@@ -30,6 +32,7 @@
   {
     "name": "Energy Pack",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/battery-pack.svg",
     "folder": "Ammunition",
     "system": {
       "category": "general",
@@ -48,6 +51,7 @@
   {
     "name": "Small Energy Pack",
     "type": "gear",
+    "img": "modules/game-icons-net/blackbackground/battery-pack-alt.svg",
     "folder": "Ammunition",
     "system": {
       "category": "general",
