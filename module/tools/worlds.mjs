@@ -43,13 +43,17 @@ export async function generateSubsector({ name = "", density = "typical", sizeMo
   const folder = await ensureFolder(s.name, "JournalEntry", root);
   const docs = await JournalEntry.createDocuments(s.worlds.map(w => worldEntry({ ...w, subsector: s.name }, folder.id)));
   const links = Object.fromEntries(docs.map(d => [d.name, d.uuid]));
-  const summary = { ...s, worlds: s.worlds.map(w => ({ name: w.name, hex: w.hex, uwp: w.uwp, line: w.line, zone: w.zone, capital: !!w.capital })) };
+  const summary = { ...s, worlds: s.worlds.map(w => ({ name: w.name, hex: w.hex, uwp: w.uwp, line: w.line, zone: w.zone, capital: !!w.capital, bases: w.bases, tradeCodes: w.tradeCodes, gasGiants: w.system?.gasGiants ?? 0 })) };
   const overview = await JournalEntry.create({
     name: `${s.name} (overview)`, folder: folder.id, sort: -1,
     pages: [textPage("Subsector map", subsectorPageHtml(s, links))],
     flags: { spacer: { subsector: summary } }
   });
-  if (chat) await postToolsCard(subsectorCard(s, { uuid: overview.uuid }), { kind: "subsector" });
+  if (chat) {
+    const card = subsectorCard(s, { uuid: overview.uuid });
+    card.buttons = [...(card.buttons ?? []), { action: "tools-subsector-scene", uuid: overview.uuid, label: game.i18n.localize("SPACER.Tools.Scene.Create"), icon: "fa-solid fa-map-location-dot" }];
+    await postToolsCard(card, { kind: "subsector" });
+  }
   return { subsector: s, folder, journals: docs, overview };
 }
 

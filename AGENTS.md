@@ -23,7 +23,8 @@ of the rules as possible and make solo play easy.
   (`LICENSE-CONTENT.md`). Never add book artwork or any image from the PDF. Item images come from
   game-icons.net (CC BY 3.0) through the required `game-icons-net` module:
   `modules/game-icons-net/blackbackground/<name>.svg` (check the picture, not only the file name:
-  some names are misleading). Other images: Foundry core icons (`icons/svg/*.svg`). Never use the
+  some names are misleading). Map markers on the dark subsector scenes use the `whitetransparent`
+  variant so the zone tint colours them. Other images: Foundry core icons (`icons/svg/*.svg`). Never use the
   word "Traveller" in names or UI labels.
 - **Book source text:** `sources/pages/pNNN.txt` (reading order) and `sources/pages/pNNN.layout.txt`
   (columns kept; best for tables), one file per PDF page (`p016` = book page 16). Git ignores

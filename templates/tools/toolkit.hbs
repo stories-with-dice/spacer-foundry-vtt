@@ -103,6 +103,11 @@
       <input type="text" name="subsectorName" value="{{s.subsectorName}}" placeholder="{{localize "SPACER.Tools.RandomName"}}">
       <button type="button" data-action="subsector" class="stk-main"><i class="fa-solid fa-map" inert></i> {{localize "SPACER.Tools.Subsector"}}</button>
     </div>
+    {{#if isGM}}
+    <div class="stk-buttons">
+      <button type="button" data-action="subsectorScene" data-tooltip="SPACER.Tools.Scene.ToolkitHint"><i class="fa-solid fa-map-location-dot" inert></i> {{localize "SPACER.Tools.Scene.Toolkit"}}</button>
+    </div>
+    {{/if}}
   </details>
 
   <details data-section="trade" {{#if s.open.trade}}open{{/if}}>

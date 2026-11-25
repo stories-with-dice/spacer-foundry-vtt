@@ -3,7 +3,7 @@
  * and the campaign clock. Opened by game.spacer.tools.open() and the sidebar button.
  */
 import { formValues, localizer, setting, signed, templatePath } from "../../shared/foundry.mjs";
-import { CURRENT_WORLD_SETTING, selectedActor, setCurrentWorld, worldJournals } from "../context.mjs";
+import { CURRENT_WORLD_SETTING, currentWorld, selectedActor, setCurrentWorld, worldJournals } from "../context.mjs";
 import { clockView, advanceClock, setClock } from "../clock.mjs";
 import { generatePatron } from "../campaign.mjs";
 import { generateNpc, randomNpc, rumours, demeanour } from "../npcs.mjs";
@@ -11,6 +11,7 @@ import { starportEncounter, settlementEncounter, spaceEncounter, shipReaction } 
 import { weather, lastWeather, travel, planetsideEncounter, survival, rations } from "../planetside.mjs";
 import { generateAnimal } from "../animals.mjs";
 import { generateWorld, generateSubsector } from "../worlds.mjs";
+import { createSubsectorScene, subsectorJournals } from "../scene/scene.mjs";
 import { freight, passengers } from "../trade.mjs";
 import { oracle, randomEvent } from "../oracle.mjs";
 import { TradeCalculator } from "./trade.mjs";
@@ -57,6 +58,7 @@ export class Toolkit extends HandlebarsApplicationMixin(ApplicationV2) {
       animal: () => generateAnimal({ terrain: Toolkit.state.animalTerrain }),
       world: Toolkit.#world,
       subsector: Toolkit.#subsector,
+      subsectorScene: Toolkit.#subsectorScene,
       trade: () => new TradeCalculator().render(true),
       freight: () => freight(),
       passengers: () => passengers(),
@@ -149,6 +151,16 @@ export class Toolkit extends HandlebarsApplicationMixin(ApplicationV2) {
     const { overview } = await generateSubsector({ name: s.subsectorName.trim(), density: s.density, sizeMode: s.sizeMode });
     overview?.sheet?.render(true);
     this.render();
+  }
+
+  /** Scene of the current world's subsector, else of the newest generated subsector. */
+  static async #subsectorScene() {
+    const name = currentWorld()?.subsector;
+    const all = subsectorJournals();
+    const overview = (name && all.filter(j => j.flags.spacer.subsector.name === name).at(-1)) || all.at(-1);
+    if (!overview) return ui.notifications.warn(L("Scene.NoSubsector"));
+    try { await createSubsectorScene(overview); }
+    catch (err) { ui.notifications.error(err.message); }
   }
 
   static #openWorld() {

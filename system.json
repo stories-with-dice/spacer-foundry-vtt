@@ -42,6 +42,11 @@
       "lang": "en",
       "name": "English",
       "path": "lang/en/tools.json"
+    },
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en/tools-scene.json"
     }
   ],
   "documentTypes": {

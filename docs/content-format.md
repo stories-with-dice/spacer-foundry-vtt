@@ -58,6 +58,20 @@ Pages are HTML. Keep tables as `<table>` with `<thead>`. Cross-references may us
 `@UUID[Compendium.spacer.tables.RollTable.<id>]{Name}` only if you compute the id with
 `stableId("tables", "RollTable", name)` from `tools/build-packs.mjs`; plain text is fine otherwise.
 
+### World Codes anchors
+
+`src/content/rules/part2-25a-world-codes.json` ("25a World Codes") defines every world code, one
+page per kind. Each value has a heading with the id `<kind>-<code>`, the code as the world profile
+shows it: `starport-B`, `size-A`, `atmosphere-6`, `hydrographics-A`, `population-7`,
+`government-4`, `law-3`, `tech-9` (hex digits as in the UWP, up to G), `base-N` (N, M, S, P, and H
+for a highport), `trade-Ri`, `zone-A` (G, A, R), `temperature-Frozen`. Foundry uses a heading's
+id as its anchor, so `@UUID[Compendium.spacer.rules.JournalEntry.<id>.JournalEntryPage.<id>#government-4]{4}`
+opens the page at that heading. Generated world pages link their codes this way.
+
+The browser cannot compute `stableId`, so `node tools/gen-world-code-links.mjs` writes the entry
+and page ids and the anchors to `module/tools/rules/world-code-links.mjs`. Run it after you change
+the World Codes file (rename a page, add a value); `npm test` fails while the file is out of date.
+
 ## Macro (pack: macros)
 
 ```json

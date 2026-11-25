@@ -40,8 +40,40 @@ try {
   if (journal.folder?.name !== "Spacer: Worlds") fail("world journal not in Spacer: Worlds");
   const flag = journal.flags.spacer?.world;
   if (!flag || flag.uwp !== world.uwp || !/^[ABCDEX][0-9A-G]{6}-[0-9A-G]$/.test(flag.uwp)) fail(`bad world flag ${flag?.uwp}`);
-  if (!journal.pages.contents[0].text.content.includes(world.uwp)) fail("world page has no UWP");
+  // The UWP characters are @UUID links to the World Codes journal; their labels spell the UWP.
+  if (!journal.pages.contents[0].text.content.replace(/@UUID\[[^\]]+\]\{([^}]*)\}/g, "$1").includes(world.uwp)) fail("world page has no UWP");
   out.world = flag.line;
+
+  // World code links: the rendered page shows enriched links; a click opens the World Codes
+  // journal (rules compendium) at the linked page and heading.
+  await journal.sheet.render(true);
+  let codeLinks = [];
+  for (let i = 0; i < 30 && !codeLinks.length; i++) {
+    await wait(100);
+    codeLinks = [...(journal.sheet.element?.querySelectorAll(".spacer-world a.content-link[data-hash]") ?? [])];
+  }
+  if (codeLinks.length < 12) fail(`world page shows ${codeLinks.length} world code links, expected 12+`);
+  if (journal.sheet.element.querySelector(".spacer-world a.content-link.broken")) fail("world page has a broken link");
+  const govLink = codeLinks.find(a => a.dataset.hash?.startsWith("government-"));
+  if (!govLink) fail("no government link on the world page");
+  govLink.click();
+  let codesSheet = null;
+  for (let i = 0; i < 40 && !codesSheet?.rendered; i++) {
+    await wait(100);
+    codesSheet = [...foundry.applications.instances.values()].find(a => a.document?.name === "25a World Codes");
+  }
+  if (!codesSheet?.rendered) fail("World Codes journal did not open from the link");
+  await wait(500);
+  const target = codesSheet.element.querySelector(`[id="${govLink.dataset.hash}"]`);
+  if (!target) fail(`World Codes sheet has no heading ${govLink.dataset.hash}`);
+  const pageName = codesSheet.document.pages.get(codesSheet.pageId)?.name;
+  if (pageName !== "Government") fail(`World Codes opened on page ${pageName}, expected Government`);
+  const scroller = codesSheet.element.querySelector(".journal-entry-pages");
+  const offset = target.getBoundingClientRect().top - (scroller ?? codesSheet.element).getBoundingClientRect().top;
+  out.worldCodeLink = { links: codeLinks.length, hash: govLink.dataset.hash, page: pageName, offset: Math.round(offset) };
+  if (world.government > 3 && (offset < -5 || offset > 200)) fail(`World Codes did not scroll to ${govLink.dataset.hash} (offset ${offset})`);
+  await codesSheet.close();
+  await journal.sheet.close();
   await T.setCurrentWorld(journal.id);
   await wait(200);
 

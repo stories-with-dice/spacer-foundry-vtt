@@ -1,0 +1,18 @@
+{
+  "SPACER": {
+    "Tools": {
+      "Scene": {
+        "Create": "Create scene",
+        "CreateHint": "Create a hex map scene of this subsector (replaces an older one)",
+        "Toolkit": "Subsector scene",
+        "ToolkitHint": "Create a scene of the subsector of the current world, or of the newest subsector",
+        "Folder": "Spacer: Subsectors",
+        "Name": "Subsector: {name}",
+        "Created": "Scene \"{name}\" created: {worlds} worlds, {routes} courier routes.",
+        "NoSubsector": "No generated subsector found. Generate a subsector first.",
+        "NotGM": "Only the GM can create subsector scenes.",
+        "NoUpload": "The background picture could not be uploaded; the scene has no background."
+      }
+    }
+  }
+}

@@ -10,6 +10,7 @@ import { npcChatActions } from "./npcs.mjs";
 import { campaignChatActions } from "./campaign.mjs";
 import { animalChatActions } from "./animals.mjs";
 import { worldChatActions } from "./worlds.mjs";
+import { registerSubsectorScenes } from "./scene/register.mjs";
 
 const L = localizer("SPACER.Tools");
 
@@ -89,4 +90,5 @@ export function registerTools() {
       format: api.formatClock
     }
   };
+  registerSubsectorScenes();
 }

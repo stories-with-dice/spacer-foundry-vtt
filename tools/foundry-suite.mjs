@@ -15,7 +15,7 @@ import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
-const SUITE = ["smoke", "content", "play", "chargen", "craft", "tools"];
+const SUITE = ["smoke", "content", "play", "chargen", "craft", "tools", "scene"];
 const PORTS = { 13: 30000, 14: 30001 };
 const vi = process.argv.indexOf("--v");
 const versions = vi > 0 ? [process.argv[vi + 1]] : ["13", "14"];

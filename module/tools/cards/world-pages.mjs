@@ -6,13 +6,20 @@ import { toHex } from "../../config.mjs";
 import { lawBans } from "../rules/world.mjs";
 import { esc, signed } from "./common.mjs";
 import { worldRows } from "./worlds.mjs";
+import { basesLinks, codeLink, tradeLinks, uwpLinks, worldLineParts } from "./world-links.mjs";
+
+/** The world line with linked codes (cards/world-links.mjs), wrapped in `.sw-codes`. */
+function linkedLine(w) {
+  const p = worldLineParts(w);
+  return [esc(p.name), esc(p.hex), `<span class="sw-codes">${p.uwp}</span>`, p.bases && `<span class="sw-codes">${p.bases}</span>`, p.trade, p.zone].filter(Boolean).join(" ");
+}
 
 /** Journal page HTML for a world (stored in the page). */
 export function worldPageHtml(w) {
   const rows = worldRows(w).map(r => `<tr><th>${esc(r.label)}</th><td>${esc(r.value)}${r.note ? `<br><small>${esc(r.note)}</small>` : ""}</td></tr>`).join("");
   const bans = lawBans(w.law);
   const banRows = ["weapons", "armour", "other"].map(k => `<tr><th>${k[0].toUpperCase()}${k.slice(1)}</th><td>${bans[k].length ? esc(bans[k].join("; ")) : "None"}</td></tr>`).join("");
-  const bases = w.baseRolls.map(b => `<li>${esc(b.label)} ${b.target}+: 2D ${b.roll} — ${b.present ? "<strong>present</strong>" : "absent"}</li>`).join("");
+  const bases = w.baseRolls.map(b => `<li>${codeLink("base", b.code, b.label)} ${b.target}+: 2D ${b.roll} — ${b.present ? "<strong>present</strong>" : "absent"}</li>`).join("");
   const tech = Object.entries(w.techDMs).filter(([, v]) => v).map(([k, v]) => `${k} ${signed(v)}`).join(", ") || "none";
   const popNames = { capital: "within 1 parsec of the capital", route: "near a main route", dense: "dense subsector", capitalInSubsector: "capital in the subsector" };
   const popDMs = w.popDMs ? `<p><small>Population DMs (p.92): ${esc(Object.entries(w.popDMs).map(([k, v]) => `${popNames[k] ?? k} ${signed(v)}`).join(", ") || "none")}.</small></p>` : "";
@@ -24,7 +31,7 @@ export function worldPageHtml(w) {
       if (o.text) t += `: ${esc(o.text)}`;
       if (o.moons) t += ` Moons: ${o.moons.length ? o.moons.map(toHex).join(", ") : "none"}.`;
       if (o.observation) t += `: ${esc(o.observation.type)}. ${esc(o.observation.text)}${o.observation.anomaly ? ` ${esc(o.observation.anomaly.type)}${o.observation.anomaly.detail ? ` (${esc(o.observation.anomaly.detail)})` : ""}.` : ""}`;
-      if (o.world) t += ` <em>${esc(o.world.name)} ${esc(o.world.uwp)}</em> ${esc(o.world.tradeCodes.join(" "))}; ${esc(o.distance.text)}; ${esc(o.world.temperature.type)}${o.world.distance && o.distance.tempDM ? "; needs shielded settlements" : ""}.`;
+      if (o.world) t += ` <em>${esc(o.world.name)}</em> <span class="sw-codes">${uwpLinks(o.world)}</span> ${tradeLinks(o.world.tradeCodes)}; ${esc(o.distance.text)}; ${codeLink("temperature", o.world.temperature.type)}${o.world.distance && o.distance.tempDM ? "; needs shielded settlements" : ""}.`;
       return `<li>${t}</li>`;
     }).join("");
     system = `<h2>Star system</h2>
@@ -37,7 +44,7 @@ export function worldPageHtml(w) {
 <ul class="sw-objects">${objects || "<li>No other objects.</li>"}</ul>`;
   }
   return `<div class="spacer spacer-world">
-<p class="sw-uwp">${esc(w.line)}</p>
+<p class="sw-uwp">${linkedLine(w)}</p>
 ${w.capital ? "<p class=\"sw-capital\">Subsector capital</p>" : ""}
 <h2>World profile</h2>
 <table class="sw-table"><tbody>${rows}</tbody></table>
@@ -68,7 +75,7 @@ export function subsectorPageHtml(s, links = {}) {
     grid += "</tr>";
   }
   const list = [...s.worlds].sort((a, b) => a.hex.localeCompare(b.hex)).map(w =>
-    `<tr><td>${esc(w.hex)}</td><td>${links[w.name] ? `@UUID[${links[w.name]}]{${esc(w.name)}}` : esc(w.name)}${w.capital ? " (capital)" : ""}</td><td><code>${esc(w.uwp)}</code></td><td>${esc(w.bases.join(""))}</td><td>${esc(w.tradeCodes.join(" "))}</td><td>${esc(w.zone)}</td><td>${esc(w.system?.code ?? "")}</td></tr>`).join("");
+    `<tr><td>${esc(w.hex)}</td><td>${links[w.name] ? `@UUID[${links[w.name]}]{${esc(w.name)}}` : esc(w.name)}${w.capital ? " (capital)" : ""}</td><td><span class="sw-codes">${uwpLinks(w)}</span></td><td><span class="sw-codes">${basesLinks(w.bases, " ")}</span></td><td>${tradeLinks(w.tradeCodes)}</td><td>${w.zone ? codeLink("zone", w.zone) : ""}</td><td>${esc(w.system?.code ?? "")}</td></tr>`).join("");
   return `<div class="spacer spacer-subsector">
 <p>${s.worlds.length} inhabited systems in ${s.cols} x ${s.rows} hexes; density ${esc(s.density)}. Capital: ${esc(s.capital ?? "none")}.</p>
 <p><small>World presence: 1D + density DM per hex; 4+ inhabited, 1-3 empty, 0 or less an uninhabited red dwarf system (p.88).</small></p>

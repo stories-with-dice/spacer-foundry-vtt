@@ -7,6 +7,7 @@ export {
   dice, selectedActor, worldJournals, worldOf, currentWorld, setCurrentWorld, worldContext, ensureFolder
 } from "./context.mjs";
 export { generateWorld, generateSubsector, createWorldJournal } from "./worlds.mjs";
+export { createSubsectorScene, subsectorJournals } from "./scene/scene.mjs";
 export { generatePatron, createPatronActor } from "./campaign.mjs";
 export { generateNpc, randomNpc, rumours, demeanour, createNpcActor } from "./npcs.mjs";
 export { starportEncounter, settlementEncounter, spaceEncounter, shipReaction } from "./encounters.mjs";

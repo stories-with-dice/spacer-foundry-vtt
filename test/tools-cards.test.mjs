@@ -76,7 +76,8 @@ test("cards: world and subsector journal HTML", () => {
   const d = makeDice(randomDie(seeded(8)));
   const w = world.generateStarSystem(d, { name: "Ka<b>", hex: "0402" });
   const html = pages.worldPageHtml(w);
-  assert.ok(html.includes(w.uwp));
+  // The UWP characters are content links (cards/world-links.mjs); their labels spell the UWP.
+  assert.ok(html.replace(/@UUID\[[^\]]+\]\{([^}]*)\}/g, "$1").includes(w.uwp));
   assert.ok(html.includes("Ka&lt;b&gt;"));
   assert.ok(html.startsWith('<div class="spacer spacer-world">'));
   const s = subsector.generateSubsector(d, { name: "Test Subsector" });

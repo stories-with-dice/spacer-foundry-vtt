@@ -101,6 +101,10 @@
 .spacer .sw-table td { padding: 0.25rem 0.4rem; border-bottom: 1px solid var(--sp-line, rgba(28,36,48,0.18)); }
 .spacer .sw-table small { color: var(--sp-muted, #5b6676); }
 .spacer .sw-objects li { margin: 0.2rem 0; }
+/* World code links (cards/world-links.mjs): in a UWP each character is a link, so drop the icon and the box. */
+.spacer .sw-codes { font-family: var(--sp-mono, monospace); white-space: nowrap; }
+.spacer .sw-codes a.content-link { background: none; border: none; padding: 0; margin: 0; color: inherit; text-decoration: underline dotted; text-underline-offset: 0.2em; }
+.spacer .sw-codes a.content-link > i { display: none; }
 .spacer .ss-list th { width: auto; }
 .spacer .ss-grid { border-collapse: collapse; table-layout: fixed; width: 100%; font-size: 0.8em; margin: 0.4rem 0 1rem; }
 .spacer .ss-grid td { border: 1px solid var(--sp-line, rgba(28,36,48,0.18)); height: 3.6em; vertical-align: top; padding: 0.15rem; overflow: hidden; }
