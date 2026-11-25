@@ -37,7 +37,7 @@ export const SPACE_SHIPS = {
   24: { text: "Communication satellite" },
   25: { text: "Courier post/depot station" },
   26: { text: "Scavenger ship" },
-  31: { text: "Spacer on an odd-job" },
+  31: { text: "Traveller on an odd-job" },
   32: { text: "Mercenary company" },
   33: { text: "Refugees" },
   34: { text: "Belter company ship" },

@@ -4,7 +4,10 @@
  * optionally run a test script in the page, take a screenshot, and report console errors.
  *
  * Usage:
- *   node tools/foundry-run.mjs --v 13 [--world spacer-test] [--script test/foundry/smoke.js] [--shot out.png] [--keep]
+ *   node tools/foundry-run.mjs --v 13 [--world spacer-test] [--script test/foundry/smoke.js] [--shot out.png] [--relaunch]
+ *
+ * Both servers link to this repo's packs/ folder, and LevelDB lets only one process open a pack:
+ * run one server at a time, and pass --relaunch after `npm run build`.
  *
  * The server must be running: `node tools/foundry-server.mjs start --v 13`.
  * A --script file holds the body of an async function evaluated in the page (it can use `game`,
@@ -23,7 +26,8 @@ const script = opt("script");
 const shot = opt("shot");
 const base = `http://localhost:${port}`;
 
-const browser = await chromium.launch();
+// Foundry v14 needs Chromium 146+, newer than Playwright's bundled build, so use installed Chrome.
+const browser = await chromium.launch({ channel: "chrome" });
 const page = await browser.newPage({ viewport: { width: 1600, height: 1000 } });
 const errors = [];
 page.on("pageerror", err => errors.push(`pageerror: ${err.message}`));
@@ -36,11 +40,17 @@ try {
   await page.goto(`${base}/`, { waitUntil: "domcontentloaded" });
   // Launch the world from the setup screen when no world is active, or switch worlds.
   const active = await page.evaluate(async () => (await (await fetch("/api/status")).json()).world ?? null).catch(() => null);
-  if (active !== world) {
+  // --relaunch restarts the world, for example to reopen packs after a rebuild.
+  if (active !== world || args.includes("--relaunch")) {
     if (active) {
-      await page.goto(`${base}/setup`, { waitUntil: "domcontentloaded" }).catch(() => {});
-      await page.evaluate(async () => fetch("/setup", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ action: "shutdown" }) })).catch(() => {});
-      await page.waitForTimeout(3000);
+      // Without an administrator password, the server accepts "worldShutdown" from a Gamemaster session.
+      await joinAsGM(page);
+      await page.waitForURL(/\/game/, { timeout: 60000 }).catch(() => {});
+      await page.evaluate(async () => fetch("/setup", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ action: "worldShutdown" }) }));
+      await page.waitForTimeout(4000);
+      const res = await page.evaluate(async () => (await (await fetch("/api/status")).json()).world ?? "none");
+      console.log(`shut down ${active}; active world now: ${res}`);
+      await page.waitForTimeout(4000);
     }
     await page.goto(`${base}/setup`, { waitUntil: "domcontentloaded" });
     const res = await page.evaluate(async w => {
@@ -50,18 +60,7 @@ try {
     console.log(`launchWorld: ${res}`);
     await page.waitForTimeout(4000);
   }
-  await page.goto(`${base}/join`, { waitUntil: "domcontentloaded" });
-  await page.waitForSelector('select[name="userid"]', { timeout: 60000 });
-  // A user who still has an open session (the previous run's browser) is disabled until the
-  // server notices the disconnect; reload the join page until the Gamemaster is free.
-  let gm;
-  for (let i = 0; i < 30 && !gm; i++) {
-    gm = await page.$$eval('select[name="userid"] option', opts => opts.find(o => /gamemaster/i.test(o.textContent) && !o.disabled)?.value);
-    if (!gm) { await page.waitForTimeout(2000); await page.reload({ waitUntil: "domcontentloaded" }); await page.waitForSelector('select[name="userid"]'); }
-  }
-  if (!gm) throw new Error("Gamemaster user stays busy on the join screen");
-  await page.selectOption('select[name="userid"]', gm);
-  await page.click('button[name="join"]');
+  await joinAsGM(page);
   await page.waitForFunction(() => window.game?.ready === true, null, { timeout: 120000 });
   await page.waitForTimeout(1500);
   // Errors from the setup and join screens are not ours; count only what the world logs.
@@ -95,4 +94,21 @@ try {
   await page.screenshot({ path: shot ?? `test-results/fail-v${version}.png` }).catch(() => {});
   await browser.close();
   process.exit(1);
+}
+
+/** Open the join screen and log in as the Gamemaster (waits while that user is still busy). */
+async function joinAsGM(page) {
+  await page.goto(`${base}/join`, { waitUntil: "domcontentloaded" });
+  // v14 hides the native <select> behind a custom widget, so wait for it to exist, not to be visible.
+  await page.waitForSelector('select[name="userid" i]', { state: "attached", timeout: 60000 });
+  // A user who still has an open session (the previous run's browser) is disabled until the
+  // server notices the disconnect; reload the join page until the Gamemaster is free.
+  let gm;
+  for (let i = 0; i < 30 && !gm; i++) {
+    gm = await page.$$eval('select[name="userid" i] option', opts => opts.find(o => /gamemaster/i.test(o.textContent) && !o.disabled)?.value);
+    if (!gm) { await page.waitForTimeout(2000); await page.reload({ waitUntil: "domcontentloaded" }); await page.waitForSelector('select[name="userid" i]', { state: "attached" }); }
+  }
+  if (!gm) throw new Error("Gamemaster user stays busy on the join screen");
+  await page.selectOption('select[name="userid" i]', gm, { force: true });
+  await page.click('button[name="join"]');
 }

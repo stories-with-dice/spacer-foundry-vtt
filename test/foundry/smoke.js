@@ -12,4 +12,6 @@ for (const type of ["skill", "weapon", "armor", "gear", "psionic", "drug", "ship
   await i.delete();
 }
 out.packs = game.packs.filter(p => p.metadata.packageName === "spacer").map(p => `${p.metadata.name}:${p.index.size}`);
+const empty = game.packs.filter(p => p.metadata.packageName === "spacer" && !p.index.size).map(p => p.metadata.name);
+if (out.packs.length !== 12 || empty.length) throw new Error(`packs not loaded: ${out.packs.length} found, empty: ${empty.join(", ")}`);
 return out;

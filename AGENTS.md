@@ -73,13 +73,20 @@ The `module/data/*` models belong to core. The craft area may change `prepareDer
 
 1. `npm test` runs `node --test` (pure rules logic).
 2. `npm run build` compiles content into `packs/`. Run it after content changes.
-3. Foundry v13 smoke test (the server on port 30000 is normally running with world `spacer-test`):
-   `node tools/foundry-server.mjs start --v 13` then
-   `node tools/foundry-run.mjs --v 13 --script test/foundry/<your>.js --shot test-results/<name>.png`.
-   The script file is the body of an async function run in the page. It fails on any page error or
-   deprecation warning. Other agents use the same world at the same time: name your test documents
-   with your area prefix and delete them at the end. Reloading the page picks up code changes.
-   Do not stop the server, and never touch port 30001 (another session uses it).
+3. Browser tests on a local server. v13: `~/bin/FoundryVTT-Node-13.351`, port 30000. v14:
+   `~/bin/FoundryVTT-Node-14.370`, port 30001. Both data folders link `systems/spacer` to this repo
+   and have the world `spacer-test`.
+   - Start: `node tools/foundry-server.mjs start --v 13` (or `--v 14`).
+   - Run: `node tools/foundry-run.mjs --v 13 --script test/foundry/<area>.js --shot test-results/<name>.png`.
+     The script is the body of an async function run in the page. The run fails on any page error
+     or deprecation warning. The tool switches the server to `spacer-test` if another world is open.
+   - **One server at a time.** Both servers share `packs/`, and LevelDB lets one process open a pack.
+     The world that opened the packs first keeps them; the other world sees empty compendiums
+     (`test/foundry/smoke.js` fails on that).
+   - After `npm run build`, pass `--relaunch` once so the world reopens the new packs.
+   - Name test documents with your area prefix and delete them at the end.
+   - Headless Chromium from Playwright is too old for v14, so the tool uses the installed Google
+     Chrome (`channel: "chrome"`).
 4. Look at your screenshots with the Read tool to check layout.
 
 ## Git

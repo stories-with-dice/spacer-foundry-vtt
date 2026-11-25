@@ -29,7 +29,7 @@ export const NPC_TABLE = {
   31: "Smuggler", 32: "Retired Spacer", 33: "Rogue", 34: "Courier", 35: "Farmer", 36: "Labourer",
   41: "Reporter", 42: "Cleric", 43: "Financier", 44: "Creative Professional", 45: "Blue-Collar Professional", 46: "Broker",
   51: "Academic", 52: "Shopkeeper", 53: "Engineer", 54: "White-Collar Professional", 55: "Speculating Merchant", 56: "Off-Duty Military Officer",
-  61: "Bureaucrat", 62: "Dilettante", 63: "Emigre", 64: "Wanderer", 65: "White-Collar Criminal", 66: "Medical Professional",
+  61: "Bureaucrat", 62: "Dilettante", 63: "Emigre", 64: "Traveller", 65: "White-Collar Criminal", 66: "Medical Professional",
   71: "Noble", 72: "Administrator", 73: "Police", 74: "Business Person", 75: "Celebrity", 76: "Merchant Prince",
   81: "Oligarch", 82: "Corporate Agent", 83: "Protester", 84: "Resistance Member", 85: "Politician", 86: "Mercenary",
   91: "Military Officer", 92: "Security Officer", 93: "State Agent", 94: "“Enemy of the State”", 95: "Defector", 96: "Refugee"
