@@ -11,13 +11,19 @@ text of the book, every rollable table, and all the items, vehicles, and sample 
 
 ## Install
 
-The system requires the **Game-icons.net** module (`game-icons-net`); Foundry offers to install it
-together with the system. Item icons are from [game-icons.net](https://game-icons.net)
-(CC BY 3.0, Lorc, Delapouite, and contributors).
+In Foundry VTT (v13 or v14): Setup → Game Systems → **Install System**, and paste this manifest URL:
 
-Copy or link this folder into your Foundry `Data/systems/spacer` folder, then run
-`npm install && npm run build` to compile the compendium packs. `npm run link` links the repo
-into the local v13 and v14 data folders.
+```
+https://github.com/stories-with-dice/spacer-foundry-vtt/releases/latest/download/system.json
+```
+
+Foundry also installs the required **Game-icons.net** module (`game-icons-net`), which holds the item
+icons ([game-icons.net](https://game-icons.net), CC BY 3.0, Lorc, Delapouite, and contributors).
+The release zip has everything else, compendiums included: there is nothing to build or run.
+
+To work on the code instead, clone the repo into `Data/systems/spacer` and run
+`npm install && npm run build` to compile the compendium packs (`npm run link` links the repo into
+the local v13 and v14 data folders).
 
 ## Licenses
 
@@ -35,4 +41,6 @@ This project is not affiliated with Arcane Sword Press.
 - `node tools/foundry-server.mjs start --v 13` and
   `node tools/foundry-run.mjs --v 13 --script test/foundry/smoke.js` run the browser tests.
   Run one server at a time: both link to the same `packs/` folder.
-- Code layout and rules for contributors: `AGENTS.md`.
+- Code layout and rules for contributors: `AGENTS.md`; how the parts connect: `docs/architecture.md`.
+- Releases: push a tag `vX.Y.Z` (or run the "Release" workflow in the Actions tab). The workflow
+  lints, tests, builds the packs, and publishes `system.json` and `spacer.zip`.

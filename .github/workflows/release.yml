@@ -1,0 +1,163 @@
+# Build a Foundry VTT release of the Spacer system.
+#
+# Two ways to start it:
+# - Push a tag:  git tag v0.2.0 && git push origin v0.2.0
+# - Actions tab -> "Release" -> Run workflow, with a version such as 0.2.0.
+#   This builds from the chosen branch and REPLACES an existing release (and tag)
+#   with the same version.
+#
+# The workflow runs lint and the node tests, compiles the compendium packs from src/content/, and
+# publishes a release with two files:
+# - system.json  with version, manifest, and download set for this release
+# - spacer.zip   the complete system folder Foundry installs, compendium packs included
+#
+# Manifest URL for Foundry (always points to the newest release):
+#   https://github.com/<owner>/<repo>/releases/latest/download/system.json
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version without the v, for example 0.2.0. An existing release with this version is replaced."
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      REPO: ${{ github.repository }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Work out the version
+        id: version
+        env:
+          INPUT_VERSION: ${{ inputs.version }}
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            version="${INPUT_VERSION#v}"
+          else
+            version="${GITHUB_REF_NAME#v}"
+          fi
+          if ! printf '%s' "$version" | grep -Eq '^[0-9]+\.[0-9]+\.[0-9]+([-.][0-9A-Za-z.]+)?$'; then
+            echo "::error::Version '$version' is not like 1.2.3"
+            exit 1
+          fi
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          echo "tag=v$version" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install, lint, and test
+        env:
+          # The browser tests run locally; CI needs no browser download.
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: "1"
+        run: |
+          npm ci
+          npm run lint
+          npm test
+
+      - name: Set version, manifest, and download in system.json
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+          TAG: ${{ steps.version.outputs.tag }}
+        run: |
+          base="https://github.com/$REPO"
+          jq --arg v "$VERSION" \
+             --arg url "$base" \
+             --arg manifest "$base/releases/latest/download/system.json" \
+             --arg download "$base/releases/download/$TAG/spacer.zip" \
+             '.version = $v | .url = $url | .manifest = $manifest | .download = $download' \
+             system.json > system.json.tmp
+          mv system.json.tmp system.json
+          jq '{id, version, manifest, download, compatibility, relationships}' system.json
+
+      - name: Build the compendium packs
+        # After the version stamp, so the packs record the released system version.
+        run: npm run build
+
+      - name: Build the zip
+        run: |
+          # LevelDB LOCK files are empty runtime files; leave them out.
+          find packs -name LOCK -delete
+          mkdir -p dist
+          zip -r dist/spacer.zip \
+            system.json module templates styles lang packs \
+            README.md LICENSE LICENSE-CONTENT.md
+          cp system.json dist/system.json
+          unzip -l dist/spacer.zip | tail -3
+          # Every pack folder listed in system.json must be in the zip.
+          for p in $(jq -r '.packs[].path' system.json); do
+            unzip -l dist/spacer.zip | grep -q " $p/CURRENT" || { echo "::error::$p missing from the zip"; exit 1; }
+          done
+
+      - name: Remove an existing release with the same version (manual runs)
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          TAG: ${{ steps.version.outputs.tag }}
+        run: |
+          if gh release view "$TAG" --repo "$REPO" > /dev/null 2>&1; then
+            echo "Replacing release $TAG"
+            gh release delete "$TAG" --repo "$REPO" --yes --cleanup-tag
+          elif git ls-remote --exit-code --tags origin "refs/tags/$TAG" > /dev/null; then
+            echo "Removing tag $TAG without a release"
+            git push origin ":refs/tags/$TAG"
+          fi
+
+      - name: Remove an existing release for the pushed tag (tag pushes)
+        if: github.event_name == 'push'
+        env:
+          TAG: ${{ steps.version.outputs.tag }}
+        run: |
+          if gh release view "$TAG" --repo "$REPO" > /dev/null 2>&1; then
+            gh release delete "$TAG" --repo "$REPO" --yes
+          fi
+
+      - name: Create the release
+        env:
+          TAG: ${{ steps.version.outputs.tag }}
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          manifest="https://github.com/$REPO/releases/latest/download/system.json"
+          cat > notes.md <<EOF
+          ## Install in Foundry VTT
+
+          Setup → Game Systems → **Install System** → paste this **Manifest URL**:
+
+          \`\`\`
+          $manifest
+          \`\`\`
+
+          This URL always points to the newest release, so Foundry can update the system.
+          To install exactly version $VERSION, use:
+
+          \`\`\`
+          https://github.com/$REPO/releases/download/$TAG/system.json
+          \`\`\`
+
+          Works with Foundry VTT v13 and v14. Foundry also installs the required
+          **Game-icons.net** module (item icons). Everything else, including all compendiums, is in
+          the zip: no commands to run.
+          EOF
+          gh release create "$TAG" dist/system.json dist/spacer.zip \
+            --repo "$REPO" \
+            --target "$GITHUB_SHA" \
+            --title "$TAG" \
+            --notes-file notes.md \
+            --latest
+          echo "### Manifest URL" >> "$GITHUB_STEP_SUMMARY"
+          echo "\`$manifest\`" >> "$GITHUB_STEP_SUMMARY"
