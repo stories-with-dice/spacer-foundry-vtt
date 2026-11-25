@@ -179,12 +179,12 @@
         "interior": {
           "value": 4,
           "max": 4,
-          "armored": false
+          "armored": true
         },
         "drive": {
           "value": 3,
           "max": 3,
-          "armored": false
+          "armored": true
         },
         "handling": {
           "value": 4,
@@ -194,7 +194,7 @@
         "hull": {
           "value": 4,
           "max": 4,
-          "armored": false
+          "armored": true
         },
         "weapon": {
           "value": 3,
@@ -202,7 +202,7 @@
           "armored": false
         }
       },
-      "description": "<p>A large watercraft designed for military operations, such as patrols, recon, and escort missions. Has three deck-mounted heavy weapons. Operated by a crew of 10.</p><p>Distance of operation: 2,500km. Weight 800T, TL 8, speed band 3, cost 5Mcr.</p><p>Damage locations (book): Interior 4, Speed 3, Hull 4, Weapon 3, Armour 3. The book gives no Handling value; Handling is set to the Hull value.</p><p>The three deck-mounted heavy weapons are the Heavy Gun of p.49.</p><ul><li>Marine: This vehicle is designed for water use only. Those operating vehicles with this trait benefit from using the Marine Skill.</li><li>Military: This vehicle is only available at military-owned locations and is available for military personnel to use.</li></ul><p>Cargo: For every one occupant slot, 50kg of cargo can be carried instead. Weapons can be added to a vehicle after purchase, but civilian vehicles are unarmed by default. Cruising speed: vehicles with speed band 3+ have a cruising speed equal to one speed band less than top speed (p.46).</p><p>Source: p.48.</p>"
+      "description": "<p>A large watercraft designed for military operations, such as patrols, recon, and escort missions. Has three deck-mounted heavy weapons. Operated by a crew of 10.</p><p>Distance of operation: 2,500km. Weight 800T, TL 8, speed band 3, cost 5Mcr.</p><p>Damage locations (book): Interior 4, Speed 3, Hull 4, Weapon 3, Armour 3. The book gives no Handling value; Handling is set to the Hull value.</p><p>The three deck-mounted heavy weapons are the Heavy Gun of p.49.</p><ul><li>Marine: This vehicle is designed for water use only. Those operating vehicles with this trait benefit from using the Marine Skill.</li><li>Military: This vehicle is only available at military-owned locations and is available for military personnel to use.</li></ul><p>Cargo: For every one occupant slot, 50kg of cargo can be carried instead. Weapons can be added to a vehicle after purchase, but civilian vehicles are unarmed by default. Cruising speed: vehicles with speed band 3+ have a cruising speed equal to one speed band less than top speed (p.46).</p><p>Armour 3: one armour point on each of Hull, Interior, Drive (each reduces a hit there by 1). BOOK: p.49 assigns one armour point per location but does not say which; this pack armours the hull first, then the interior and the drive.</p><p>Source: p.48.</p>"
     },
     "items": [
       {

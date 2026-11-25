@@ -11,10 +11,9 @@ export const TRADE_CODES = {
   Va: "Vacuum", Wa: "Water World"
 };
 
-/**
- * Normalize a trade code. The book uses "Te" for High Tech on p.95 and "Ht" on p.64-65,
- * "Ga" and "Ge" for Garden, and "Ww" next to "Wa" (read as Water World).
- */
+/** Normalize a trade code: "ag" -> "Ag", "Te" -> "Ht". Called by `parseCodes` and the DM parser. */
+// BOOK: the book uses "Te" for High Tech on p.95 and "Ht" on p.64-65, "Ga" and "Ge" for Garden
+// World, and "Ww" next to "Wa"; we use Ht, Ge, and Wa (Water World).
 export function normalizeCode(code) {
   const c = String(code ?? "").trim();
   if (!c) return "";
@@ -22,7 +21,7 @@ export function normalizeCode(code) {
   return { Te: "Ht", Ga: "Ge", Ww: "Wa" }[k] ?? k;
 }
 
-/** Parse "Ag Ni Ri" or ["AG", "ni"] into normalized codes. */
+/** Parse "Ag Ni Ri" or ["AG", "ni"] into unique normalized codes. Called by the trade rules and the trade calculator. */
 export function parseCodes(input) {
   const arr = Array.isArray(input) ? input : String(input ?? "").split(/[\s,;]+/);
   return [...new Set(arr.map(normalizeCode).filter(Boolean))];
@@ -40,11 +39,9 @@ const g = (code, name, availability, price, amount, purchase, resale, example) =
   purchaseDM: dms(purchase), resaleDM: dms(resale), example
 });
 
-/**
- * Trade Goods table (p.64). Cybernetics (32) has no availability in the book; it is read as
- * "All". The Ic resale DM of Foodstuffs and Ag resale of Radioactives are split across lines in
- * the book and are read as Ic +1 and Ag -3.
- */
+/** Trade Goods table (p.64): code, name, availability, base price, tons, purchase and resale DMs. */
+// BOOK: Cybernetics (32) has no availability; we read it as "All". The Ic resale DM of Foodstuffs
+// and the Ag resale DM of Radioactives are split across lines; we read them as Ic +1 and Ag -3.
 export const TRADE_GOODS = [
   g(11, "Electronics", "All", 2000, "2Dx10", "In +2, Ht +3, Ri +1", "Ni +2, Po +1", "Commercial or industrial use circuitry, transistors, cabling, power supplies, computers TL 10 or less"),
   g(12, "Industrial supplies", "All", 1000, "2Dx10", "Na +2, In +5", "Ni +3, Ag +2", "Parts and equipment for industrial use"),
@@ -90,9 +87,10 @@ export const TRADE_GOODS = [
   g(76, "Exotic items", "Ag, Ni", 200000, "1D", "As +3, De +2, Ic +2, Ag +5", "Ri +6", "Alien relics, ancient artifacts, protected animal or alien life")
 ];
 
+/** The trade good with a D66 code, or undefined. */
 export const goodByCode = code => TRADE_GOODS.find(x => x.code === Number(code));
 
-/** Tons available: "2Dx10" -> 2D x 10. */
+/** Roll the tons available of a good: "2Dx10" -> 2D x 10. Called by `goodsAvailable`. */
 export function rollAmount(dice, amount) {
   const [d, mult] = amount.split("x");
   return dice.roll(d) * Number(mult || 1);
@@ -107,18 +105,17 @@ export const PRICE_TABLE = [
   [12, 12, { purchase: 50, sale: 180 }], [13, 13, { purchase: 40, sale: 200 }], [14, 14, { purchase: 30, sale: 250 }],
   [15, null, { purchase: 20, sale: 300 }]
 ];
+/** The price row (purchase and sale percent) for a modified 2D total (p.63). */
 export const priceFor = total => band(PRICE_TABLE, total);
 
-/**
- * Trade DM of a good on a world: the sum of every DM whose trade code the world has.
- * The book does not say whether to add or pick one; we add them.
- */
+/** Trade DM of a good on a world: the sum of every DM whose trade code the world has (p.64). */
+// BOOK: the book does not say whether to add the DMs of several matching codes or pick one; we add them.
 export function tradeDM(good, codes, which = "purchase") {
   const table = which === "purchase" ? good.purchaseDM : good.resaleDM;
   return parseCodes(codes).reduce((t, c) => t + (table[c] ?? 0), 0);
 }
 
-/** Is a good available on a world with these codes (p.63)? */
+/** Is a good available on a world with these codes (p.63)? Called by `goodsAvailable`. */
 export function isAvailable(good, codes) {
   if (good.availability === "All") return true;
   const set = new Set(parseCodes(codes));
@@ -142,23 +139,33 @@ export function supplierDM({ starport = "C", extraLeads = 0 } = {}) {
   return (SUPPLIER_STARPORT_DM[starport] ?? 0) - Math.max(0, extraLeads);
 }
 
-/** Can the trade terminal be used (p.63)? */
+/** Can the trade terminal be used (p.63): starport A-C and TL 8+? Called by the trade calculator. */
 export function terminalAllowed(world) {
   return ["A", "B", "C"].includes(world?.starport) && (world?.tl ?? 0) >= 8;
 }
 
 /**
- * Goods on offer from one supplier (p.63): the common goods 11-16, other goods available to the
- * world's trade codes (the "All" rows count) limited to the population code, and
- * one random d66 good (illicit suppliers add +1 to the tens die).
+ * Number of goods a location offers beyond the common rows 11-16 (p.63): the location offers
+ * as many different goods as its population code, and six of them are the rows 11-16.
+ * Book example: population 9 Industrial = 11-16 plus 3 Industrial goods.
+ * BOOK: the book does not cover population 0-5; we keep the rows 11-16 and add no other goods.
+ */
+export const extraGoodsCount = pop => Math.max(0, (Number(pop) || 0) - 6);
+
+/**
+ * Goods on offer from one supplier (p.63): the common goods 11-16, `extraGoodsCount(pop)` other
+ * goods picked at random among those available to the world's trade codes (the "All" rows
+ * count), and one random d66 good (illicit suppliers add +1 to the tens die).
+ * Called by the trade calculator (module/tools/trade-app.mjs). Returns
+ * `{ common, local, extra, list }`; each entry of `list` has the rolled `tons`.
  */
 export function goodsAvailable(dice, { codes = [], pop = 6, illicit = false } = {}) {
   const common = TRADE_GOODS.filter(x => x.code <= 16);
   const coded = TRADE_GOODS.filter(x => x.code > 16 && isAvailable(x, codes));
-  // "if the planet's population number allows it": at most `pop` coded goods.
   const local = [];
   const pool = [...coded];
-  while (pool.length && local.length < Math.max(0, pop)) {
+  const wanted = extraGoodsCount(pop);
+  while (pool.length && local.length < wanted) {
     const i = dice.die(pool.length) - 1;
     local.push(pool.splice(i, 1)[0]);
   }
@@ -185,7 +192,7 @@ export function rollPrice(dice, { good, codes = [], mode = "purchase", brokerDM 
   return { mode, natural, total, goodDM, percent, perTon, tons, cost: perTon * tons };
 }
 
-/** Steps between two table rows (for negotiation, p.65). */
+/** Steps between two price table rows (for negotiation, p.65). Called by `negotiate`. */
 export function priceSteps(fromTotal, toTotal) {
   const clampRow = t => Math.max(0, Math.min(15, t));
   return clampRow(toTotal) - clampRow(fromTotal);
@@ -227,7 +234,7 @@ export function rollFreight(dice, { destinationPop = 5 } = {}) {
   return { lots, totalTons: lots.reduce((t, l) => t + l.tons, 0), totalPay: lots.reduce((t, l) => t + l.pay, 0) };
 }
 
-/** Passengers table (p.62) by originating world population. "x" = none. */
+/** Passengers table (p.62): [high, middle, low] dice by originating world population. "x" = none. */
 export const PASSENGER_TABLE = {
   0: ["x", "x", "x"],
   1: ["D3-1", "1D-3", "2D-6"],
@@ -241,6 +248,7 @@ export const PASSENGER_TABLE = {
   9: ["2D-3", "3D", "5D"],
   10: ["3D", "4D", "6D"]
 };
+/** Passage fares (p.62) in credits. */
 export const PASSAGE = { high: 10000, middle: 8000, low: 1000 };
 
 /** Destination factors (p.62): amber -3, red -6, population 0-4 -3, population 8+ +3. */

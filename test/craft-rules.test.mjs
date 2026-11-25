@@ -253,3 +253,4 @@ test("construction matches the 100T Scout (p.69, p.74-77)", () => {
   assert.equal(C.hullFor(150).months, 36);
   assert.equal(C.engineeringSpec("power", "Y").cost, 184_000_000);
 });
+

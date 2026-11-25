@@ -1,13 +1,13 @@
 /**
  * Survival (book p.106-107): shelter, food and water, hunting, foraging, scavenging, crafting,
  * and know direction. Pure: the Foundry side rolls the task with rollTask.
- *
- * The book uses a "Survival" rank, but the skill list (p.28-29) has no Survival skill. The tasks
- * use the skill name "Survival"; rollTask treats a missing skill as untrained (-3).
  */
+// BOOK: the survival tasks use a "Survival" rank, but the skill list (p.28-29) has no Survival
+// skill. We use the skill name "Survival"; rollTask treats a missing skill as untrained (-3).
 import { TERRAIN } from "./planetside.mjs";
 import { characteristicDM } from "../../config.mjs";
 
+/** The skill name the survival tasks roll with. */
 export const SURVIVAL_SKILL = "Survival";
 
 /** Activities (p.106-107). `characteristics` are the two options; the better one is used. */

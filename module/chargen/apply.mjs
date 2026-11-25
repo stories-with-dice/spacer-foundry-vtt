@@ -1,6 +1,7 @@
 /** Write a finished lifepath to a character actor. Foundry layer: uses compendiums and documents. */
 import { actorData, summary, historyHTML } from "./rules/engine.mjs";
 import { SKILL_ALIASES } from "./rules/careers.mjs";
+import { postCard } from "../shared/foundry.mjs";
 
 const norm = s => String(s ?? "").trim().toLowerCase();
 
@@ -32,6 +33,7 @@ async function skillIndex() {
   return map;
 }
 
+/** Skill item data for one skill entry `{ skill, specialty, rank }`, from the compendium `source` when found. */
 function skillItemData(entry, source) {
   const name = entry.specialty ? `${entry.skill} (${entry.specialty})` : entry.skill;
   const data = source ? game.items.fromCompendium(source) : { type: "skill", system: {} };
@@ -45,7 +47,8 @@ function skillItemData(entry, source) {
 /**
  * Apply the state to the actor: characteristics, age, terms, careers, credits, pension, debt,
  * PSI, history, skills (from spacer.skills when found), and benefit items. Replaces skills and
- * items from an earlier run of the wizard.
+ * items from an earlier run of the wizard. Called by the wizard (Save) and the browser test.
+ * Reads the state (see rules/state.mjs); writes the actor and its embedded items. Returns the actor.
  */
 export async function applyToActor(actor, state) {
   const d = actorData(state);
@@ -73,15 +76,18 @@ export async function applyToActor(actor, state) {
   return actor;
 }
 
-/** Post a summary chat card. */
+/**
+ * Post the summary chat card (templates/chargen/chat-card.hbs) of a finished state for the actor.
+ * Called by the wizard after Save. Returns the ChatMessage.
+ */
 export async function postSummary(actor, state) {
   const s = summary(state);
-  const content = await foundry.applications.handlebars.renderTemplate("systems/spacer/templates/chargen/chat-card.hbs", {
+  const data = {
     name: actor.name, img: actor.img, ...s,
     careers: s.careers.map(c => ({ ...c, label: `${c.name} ${c.terms}${c.rankTitle ? `, ${c.rankTitle}` : ""}${c.commissioned ? " (officer)" : ""}` })),
     pensionText: s.pension.mode ? `${s.pension.mode === "yearly" ? s.pension.yearly : s.pension.monthly}cr ${s.pension.mode}` : ""
-  });
-  return ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), content, flags: { spacer: { chargen: true } } });
+  };
+  return postCard({ area: "chargen", template: "chat-card", data, actor, flags: { chargen: true } });
 }
 
 export { historyHTML };

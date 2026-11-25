@@ -3,7 +3,7 @@ if (!game.spacer?.chargen?.open) throw new Error("game.spacer.chargen.open missi
 const out = {};
 await ui.actors.render({ force: true });
 await new Promise(r => setTimeout(r, 300));
-out.directoryButton = !!document.querySelector("#actors .spacer-create-spacer");
+out.directoryButton = !!document.querySelector(`#actors [data-spacer-button="chargen-create"]`);
 if (!out.directoryButton) throw new Error("Create Spacer button missing in the Actors directory");
 
 for (const a of game.actors.filter(a => a.name === "chargen-test")) await a.delete();

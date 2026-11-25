@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import {
   Lifepath, seededDice, validate, summary, actorData, planMuster, historyHTML, skillText, upp
 } from "../module/chargen/rules/engine.mjs";
+import { lowestSkills } from "../module/chargen/rules/skills.mjs";
 import {
   parseSkill, CAREERS, SKILL_TABLES, MATERIAL, MONETARY, agingChecks, pensionFor, rankMusterRolls,
   commissionMusterDMs, civilianSkills, tableRows
@@ -173,7 +174,7 @@ test("major and minor injury add survival and reenlistment DMs", () => {
   assert.equal(civ.reenlistDM, -2);
   assert.deepEqual([s.chars.str, s.chars.dex, s.chars.end], [8, 7, 8]);
   const r = seen.find(p => p.id === "reenlist");
-  assert.deepEqual(r.mods, [{ label: "Event DM", value: -2 }]);
+  assert.deepEqual(r.mods, [{ label: "Injury DM", value: -2 }]);
   const survival2 = seen.filter(p => p.id === "survival")[1];
   assert.ok(survival2.mods.some(m => m.label === "Injury DM" && m.value === -1));
 });
@@ -406,6 +407,74 @@ test("Legal Trouble fine goes into debt when the character cannot pay", () => {
   // Term 4: 6 + 3 = 9 Legal Trouble: SOC 7 total 4 -> fine 2D(1+1) x 5000 = 10000.
   assert.equal(l.s.debt, 10000);
   assert.ok(l.texts.some(t => /^Fined 10000cr/.test(t)));
+});
+
+test("Warzone discharge bans the career: the player cannot choose it again", () => {
+  // Term 1 Army: event 5 Warzone, DEX check 4 (3-7): Injury 1D+1 = 6 (Minor), +1 skill, discharged.
+  const { s, seen } = drive(ev({
+    career: ["army", "civilian"], enlist: [[6, 6], [6, 6]], event: [[5]], "event-check": [[2, 2]], injury: [[5]],
+    continue: ["stop"]
+  }));
+  assert.equal(s.careers[0].ended, "discharged");
+  assert.deepEqual(s.bans.careers, ["army"]);
+  const second = seen.filter(p => p.id === "career")[1];
+  assert.ok(!second.options.some(o => o.value === "army"), "army is not offered again");
+  assert.ok(second.options.some(o => o.value === "navy"));
+  assert.equal(s.careers[1].key, "civilian");
+  assert.deepEqual(validate(s), []);
+});
+
+test("lowestSkills: effective rank, specialties of a rank 0 base, never the base itself", () => {
+  const s = { skills: { "Melee Combat": 0, "Melee Combat (Blade)": 2, "Pilot": 0, "Pilot (Starship)": 1, "Admin": 1 } };
+  assert.deepEqual(lowestSkills(s).map(e => `${e.key} ${e.rank}`),
+    ["Melee Combat (Bludgeon) 0", "Melee Combat (Hand-to-Hand) 0", "Pilot (Aircraft) 0"]);
+  // Every specialty raised: the lowest is the lowest specialty or plain skill.
+  const t = { skills: { "Pilot": 0, "Pilot (Starship)": 2, "Pilot (Aircraft)": 1, "Admin": 3 } };
+  assert.deepEqual(lowestSkills(t), [{ key: "Pilot (Aircraft)", rank: 1 }]);
+  assert.deepEqual(lowestSkills({ skills: { Admin: 5 } }), []);
+});
+
+test("Extracurricular Training success raises exactly one lowest ranked skill or specialty", () => {
+  // Army: Ranged Combat 0 (enlistment), Vaccsuit 0 and Heavy Weapons 0 (basic training). Term 1: event 3
+  // Up for Promotion. Term 2: Personal table 1 (+1 END), event 6 + 1 = 7 Extracurricular Training, EDU check 12.
+  const { s, seen } = drive(ev({
+    career: ["army"], enlist: [[6, 6]], "basic-service": ["0"], "basic-education": ["0"],
+    table: ["personal"], skill: [[1]], event: [[3], [6]], "event-check": [[6, 6]],
+    "improve-skill": ["Ranged Combat (Energy)"], continue: ["continue", "stop"], reenlist: [[6, 6]]
+  }));
+  const p = seen.find(q => q.id === "improve-skill");
+  assert.ok(p, "the player chooses the skill");
+  assert.ok(p.options.every(o => / 0$/.test(o.label)), "only rank 0 options");
+  assert.ok(!p.options.some(o => o.value === "Ranged Combat"), "the base of a specialised skill is not offered");
+  assert.ok(p.options.some(o => o.value === "Ranged Combat (Short)"));
+  assert.equal(s.skills["Ranged Combat (Energy)"], 1);
+  assert.equal(s.skills["Ranged Combat"], 0);
+  assert.deepEqual(Object.keys(s.skills).filter(k => k.startsWith("Ranged Combat (")), ["Ranged Combat (Energy)"]);
+  assert.deepEqual(validate(s), []);
+});
+
+test("an event reenlistment DM applies to the next reenlistment roll only", () => {
+  // Term 1 Army: Voluntold, "no" (-2). Term 2: event 2 + 1 = 3, Up for Promotion (no reenlistment DM).
+  const { seen } = drive(ev({
+    career: ["army"], enlist: [[6, 6]], event: [[2], [2]], voluntold: ["no"],
+    continue: ["continue", "continue", "stop"], reenlist: [[6, 6], [6, 6]]
+  }));
+  const rolls = seen.filter(p => p.id === "reenlist");
+  assert.equal(rolls.length, 2);
+  assert.deepEqual(rolls[0].mods, [{ label: "Event DM", value: -2 }]);
+  assert.deepEqual(rolls[1].mods, []);
+});
+
+test("the Major Injury reenlistment DM stays for the rest of the career", () => {
+  const { s, seen } = drive(base({
+    characteristics: twelve(9, 9, 9, 7, 7, 7),
+    career: ["civilian"], survival: [[1, 1]], injury: [[5]],
+    continue: ["continue", "continue", "stop"], reenlist: [[6, 6], [6, 6]]
+  }));
+  const rolls = seen.filter(p => p.id === "reenlist");
+  assert.equal(rolls.length, 2);
+  for (const r of rolls) assert.deepEqual(r.mods, [{ label: "Injury DM", value: -2 }]);
+  assert.equal(s.careers[0].terms, 3);
 });
 
 test("undo returns to the previous step and keeps earlier dice", () => {

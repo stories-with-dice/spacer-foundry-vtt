@@ -58,9 +58,10 @@ export function npcGovernmentDM(gov) {
 }
 
 /**
- * Roll on the NPC table. `world` ({pop, gov}) gives the DMs. Population 0 uses the Population 1-2
- * DM (the book lists no row for 0).
+ * Roll on the NPC table (p.56). `world` ({pop, gov}) gives the DMs on the tens die. Called by
+ * `generateNpc` and the planetside NPC encounter. Returns `{ code, type, quality, dm }`.
  */
+// BOOK: the population DMs start at population 1-2; we give population 0 the 1-2 DM.
 export function rollNpcType(dice, world = null) {
   const dm = world ? npcPopulationDM(world.pop ?? 7) + npcGovernmentDM(world.gov ?? 4) : 0;
   const code = dice.d66(dm, { minTens: 0, maxTens: 9 });

@@ -1,6 +1,9 @@
 /** Task rolls (book p.14) and skill lookup (p.28). Re-exported by api.mjs. */
 import { CHARACTERISTICS, TASK_TARGET, UNTRAINED_DM, bookDice } from "../config.mjs";
-import { L, postCard, render, signed, setting, formValues, chance2D } from "./util.mjs";
+import { localizer, postCard, renderAreaTemplate, signed, setting, formValues } from "../shared/foundry.mjs";
+import { taskOutcome, chance2D } from "./rules/task.mjs";
+
+const L = localizer("SPACER");
 
 const norm = s => String(s ?? "").trim().toLowerCase();
 
@@ -27,13 +30,15 @@ export function skillRank(actor, skill, specialty = "") {
   return UNTRAINED_DM;
 }
 
-/** True when the actor has a skill item for exactly this specialty. */
+/** True when the actor has a skill item for exactly this specialty. Called by prepareAttack (Low-Tech check). */
 export function hasSpecialty(actor, skill, specialty) {
   return !!actor?.items?.some(i => i.type === "skill" && norm(i.system.skill || i.name) === norm(skill) && norm(i.system.specialty) === norm(specialty));
 }
 
 /**
- * Roll a 2D task (book p.14) and post a chat card.
+ * Roll a 2D task (book p.14) and post a chat card (templates/play/chat/task.hbs). With the
+ * absoluteResults setting, snake eyes always fails and boxcars always succeeds (rules/task.mjs).
+ * Called by the sheets, the task dialog, every play feature, and the craft and tools areas.
  * @param {object} o
  * @param {Actor} [o.actor]
  * @param {string} [o.characteristic]  "str" | "dex" | ... | "psi" | ""
@@ -71,13 +76,13 @@ export async function rollTask({ actor, characteristic = "", skill = "", special
   const roll = await new Roll(parts.join(" + "), data).evaluate();
   const natural = roll.dice[0]?.total ?? roll.total;
   const faces = roll.dice[0]?.results?.filter(r => r.active).map(r => r.result) ?? [];
-  const boxcars = faces.length === 2 && faces.every(f => f === 6);
-  const snakeEyes = faces.length === 2 && faces.every(f => f === 1);
-  const effect = roll.total - target;
-  const result = { roll, total: roll.total, natural, effect, success: effect >= 0, boxcars, snakeEyes };
+  const absolute = setting("absoluteResults", true);
+  const { effect, success, boxcars, snakeEyes } = taskOutcome({ faces, total: roll.total, target, absolute });
+  const result = { roll, total: roll.total, natural, effect, success, boxcars, snakeEyes };
   if (chat) {
     const title = label || [skill && (specialty ? `${skill} (${specialty})` : skill), characteristic.toUpperCase()].filter(Boolean).join(" / ") || L("Roll.Task");
     result.message = await postCard({
+      area: "play",
       actor,
       template: "chat/task",
       rolls: [roll],
@@ -88,7 +93,7 @@ export async function rollTask({ actor, characteristic = "", skill = "", special
         rollHTML: await roll.render(),
         success: result.success,
         effect: signed(effect),
-        absolute: setting("absoluteResults", true) ? (boxcars ? "success" : snakeEyes ? "failure" : "") : ""
+        absolute: absolute ? (boxcars ? "success" : snakeEyes ? "failure" : "") : ""
       },
       flags: { task: { target, effect, success: result.success, characteristic, skill, specialty } }
     });
@@ -96,12 +101,15 @@ export async function rollTask({ actor, characteristic = "", skill = "", special
   return result;
 }
 
-/** Roll book dice ("2D+3", "D3", "D66") and return the Roll. */
+/**
+ * Roll book dice ("2D+3", "D3", "D66") with Foundry's Roll and return the evaluated Roll.
+ * Called by the craft area, fall(), and macros.
+ */
 export async function rollBookDice(formula, data = {}) {
   return new Roll(bookDice(formula), data).evaluate();
 }
 
-/** Skill choices for a select: value "Skill|Specialty", label "Skill (Specialty) N". */
+/** Skill choices for the task dialog select: value "Skill|Specialty", label "Skill (Specialty) N". */
 export function skillChoices(actor) {
   const skills = actor?.items?.filter(i => i.type === "skill") ?? [];
   return skills
@@ -109,7 +117,7 @@ export function skillChoices(actor) {
     .sort((a, b) => a.label.localeCompare(b.label));
 }
 
-/** Characteristic choices for a select. */
+/** Characteristic choices for the task dialog select: "" plus each characteristic with its DM, and PSI when the actor has it. */
 export function characteristicChoices(actor, { psi = true } = {}) {
   const out = [{ value: "", label: "—" }];
   for (const k of CHARACTERISTICS) {
@@ -138,7 +146,7 @@ export async function taskDialog(actor, defaults = {}) {
     const [s, sp] = skill.split("|");
     choices.unshift({ value: skill, label: `${sp ? `${s} (${sp})` : s} — ${L("Roll.Untrained")} (-3)` });
   }
-  const content = await render("dialogs/task", {
+  const content = await renderAreaTemplate("play", "dialogs/task", {
     characteristic: defaults.characteristic ?? "",
     characteristics: characteristicChoices(actor),
     skill, skills: choices,
@@ -161,7 +169,7 @@ export async function taskDialog(actor, defaults = {}) {
         const [s, sp] = String(v.skill || "").split("|");
         let dm = (v.characteristic ? actor?.system?.dm?.[v.characteristic] ?? 0 : 0) + (s ? skillRank(actor, s, sp) : 0) + (Number(v.dm) || 0) + (v.fatigue ? -2 : 0);
         const out = form.querySelector("[data-preview]");
-        if (out) out.textContent = L("Roll.Preview", { dm: signed(dm), target: v.target, chance: chance2D(dm, Number(v.target) || 8) });
+        if (out) out.textContent = L("Roll.Preview", { dm: signed(dm), target: v.target, chance: chance2D(dm, Number(v.target) || 8, { absolute: setting("absoluteResults", true) }) });
       };
       form.addEventListener("change", update);
       form.addEventListener("input", update);

@@ -5,12 +5,19 @@
  * 30 days (p.22), so a year here is 12 months of 30 days (360 days).
  */
 
+/** One second (the clock unit). */
 export const SECOND = 1;
+/** Seconds in a minute. */
 export const MINUTE = 60;
+/** Seconds in an hour. */
 export const HOUR = 3600;
+/** Seconds in a day. */
 export const DAY = 86400;
+/** Seconds in a week. */
 export const WEEK = 7 * DAY;
+/** Seconds in a universal month of 30 days (p.22). */
 export const MONTH = 30 * DAY;
+/** Seconds in a year of 12 universal months. */
 export const YEAR = 12 * MONTH;
 
 /** The Activity Time intervals of p.15 plus week and month. `dice` marks the rolled 1D days step. */

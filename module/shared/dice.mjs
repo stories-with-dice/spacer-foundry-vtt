@@ -15,9 +15,13 @@ export function uniform() {
   return typeof f === "function" ? f() : Math.random();
 }
 
-/** A die function backed by a random source in [0, 1). */
+/**
+ * A die function backed by a random source in [0, 1). It maps u to a face the same way Foundry's
+ * DiceTerm#mapRandomFace does, ceil((1 - u) * sides), so a fixed CONFIG.Dice.randomUniform gives the
+ * same faces for our dice and for Foundry Roll dice (u = 0 -> highest face, u near 1 -> 1).
+ */
 export function randomDie(rng = uniform) {
-  return sides => 1 + Math.min(sides - 1, Math.floor(rng() * sides));
+  return sides => Math.max(1, Math.min(sides, Math.ceil((1 - rng()) * sides)));
 }
 
 /** One random 1D (1-6) from the default source. */

@@ -1,18 +1,25 @@
 /**
  * Trade calculator (book p.62-65): reads trade codes from world journals (flags.spacer.world) or
  * typed codes, finds suppliers, lists the goods on offer, rolls purchase and sale prices, and
- * negotiates. Freight, passengers, and mail use the same worlds.
+ * negotiates. Freight, passengers, and mail use the same worlds. Opened by
+ * game.spacer.tools.trade() and the Toolkit.
  */
-import { CHARACTERISTICS, characteristicDM } from "../config.mjs";
-import { rollTask, skillRank } from "../play/api.mjs";
-import * as trade from "./rules/trade.mjs";
-import { signed } from "../shared/dice.mjs";
-import { cr } from "./cards.mjs";
-import { postCard } from "./chat.mjs";
-import { dice, selectedActor, worldJournals, worldOf, currentWorld, freight, passengers, mail } from "./api.mjs";
+import { CHARACTERISTICS, characteristicDM } from "../../config.mjs";
+import { rollTask } from "../../play/api.mjs";
+import { formValues, localizer, signed, templatePath } from "../../shared/foundry.mjs";
+import * as trade from "../rules/trade.mjs";
+import { cr } from "../cards/common.mjs";
+import { goodsCard, priceCard, negotiationCard } from "../cards/trade.mjs";
+import { dice, postToolsCard, rankOf, selectedActor, socDMOf, worldJournals, worldOf, currentWorld } from "../context.mjs";
+import { freight, passengers, mail } from "../trade.mjs";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
+const L = localizer("SPACER.Tools");
 
+/** Fields whose change re-renders the window (the world summaries depend on them). */
+const WORLD_FIELDS = ["origin", "destination", "originCodes", "destinationCodes", "originPop", "destinationPop", "destinationZone", "originStarport", "originTl"];
+
+/** The Trade Calculator window (ApplicationV2, id "spacer-trade"). */
 export class TradeCalculator extends HandlebarsApplicationMixin(ApplicationV2) {
   static DEFAULT_OPTIONS = {
     id: "spacer-trade",
@@ -32,22 +39,22 @@ export class TradeCalculator extends HandlebarsApplicationMixin(ApplicationV2) {
     }
   };
 
-  static PARTS = { main: { template: "systems/spacer/templates/tools/trade.hbs", scrollable: [".st-body"] } };
+  static PARTS = { main: { template: templatePath("tools", "trade"), scrollable: [".st-body"] } };
 
   /** Form state kept between renders. */
   state = null;
   goods = [];
   last = null;
 
-  #initState() {
-    const actor = selectedActor();
+  async #initState() {
+    const actor = await selectedActor();
     const cur = currentWorld();
     const curId = cur ? worldJournals().find(j => worldOf(j) === cur || j.flags.spacer.world.name === cur.name)?.id ?? "" : "";
     this.state = {
       origin: curId, originCodes: "", originPop: 6, originStarport: "C", originTl: 8,
       destination: "", destinationCodes: "", destinationPop: 6, destinationZone: "",
-      broker: actor ? Math.max(0, skillRank(actor, "Broker")) : 0,
-      socDM: actor ? characteristicDM(actor.system.characteristics?.soc?.value ?? 7) : 0,
+      broker: rankOf(actor, "Broker"),
+      socDM: socDMOf(actor),
       sellerBroker: 2, hired: 0, supplier: "legitimate", extraLeads: 0, tons: 10, target: 7, subsidised: false
     };
   }
@@ -58,12 +65,13 @@ export class TradeCalculator extends HandlebarsApplicationMixin(ApplicationV2) {
     const id = s[which];
     const w = id ? worldOf(game.journal.get(id)) : null;
     if (w) return { name: w.name, codes: w.tradeCodes ?? [], pop: w.population, starport: w.starport, tl: w.tl, zone: w.zone ?? "" };
-    if (which === "origin") return { name: game.i18n.localize("SPACER.Tools.Trade.Manual"), codes: trade.parseCodes(s.originCodes), pop: Number(s.originPop) || 0, starport: s.originStarport, tl: Number(s.originTl) || 0, zone: "" };
-    return { name: game.i18n.localize("SPACER.Tools.Trade.Manual"), codes: trade.parseCodes(s.destinationCodes), pop: Number(s.destinationPop) || 0, starport: "C", tl: 8, zone: s.destinationZone };
+    if (which === "origin") return { name: L("Trade.Manual"), codes: trade.parseCodes(s.originCodes), pop: Number(s.originPop) || 0, starport: s.originStarport, tl: Number(s.originTl) || 0, zone: "" };
+    return { name: L("Trade.Manual"), codes: trade.parseCodes(s.destinationCodes), pop: Number(s.destinationPop) || 0, starport: "C", tl: 8, zone: s.destinationZone };
   }
 
+  /** Template data: the form state, the two worlds, the goods with their DMs, and the last price. */
   async _prepareContext() {
-    if (!this.state) this.#initState();
+    if (!this.state) await this.#initState();
     const s = this.state;
     const worlds = Object.fromEntries(worldJournals().map(j => [j.id, `${j.name} ${j.flags.spacer.world.uwp ?? ""} ${(j.flags.spacer.world.tradeCodes ?? []).join(" ")}`]));
     const origin = this.world("origin");
@@ -75,7 +83,7 @@ export class TradeCalculator extends HandlebarsApplicationMixin(ApplicationV2) {
     }));
     return {
       s,
-      worlds: { "": game.i18n.localize("SPACER.Tools.Trade.Manual"), ...worlds },
+      worlds: { "": L("Trade.Manual"), ...worlds },
       starports: { A: "A", B: "B", C: "C", D: "D", E: "E", X: "X" },
       zones: { "": "Green", A: "Amber", R: "Red" },
       suppliers: Object.fromEntries(Object.entries(trade.SUPPLIERS).map(([k, v]) => [k, v.label])),
@@ -87,19 +95,19 @@ export class TradeCalculator extends HandlebarsApplicationMixin(ApplicationV2) {
       terminalOk: trade.terminalAllowed(origin),
       goods,
       last: this.last,
-      actorName: selectedActor()?.name ?? game.i18n.localize("SPACER.Tools.NoActor")
+      actorName: (await selectedActor())?.name ?? L("NoActor")
     };
   }
 
+  /** Keep the form state on change (shared `formValues`); world fields re-render the window. */
   _onRender(context, options) {
     super._onRender(context, options);
-    this.element.querySelectorAll("[data-field]").forEach(el => {
+    for (const el of this.element.querySelectorAll("[name]")) {
       el.addEventListener("change", () => {
-        const k = el.dataset.field;
-        this.state[k] = el.type === "checkbox" ? el.checked : el.type === "number" ? Number(el.value) : el.value;
-        if (["origin", "destination", "originCodes", "destinationCodes", "originPop", "destinationPop", "destinationZone", "originStarport", "originTl"].includes(k)) this.render();
+        Object.assign(this.state, formValues(this.element));
+        if (WORLD_FIELDS.includes(el.name)) this.render();
       });
-    });
+    }
   }
 
   static async #findSupplier() {
@@ -107,10 +115,10 @@ export class TradeCalculator extends HandlebarsApplicationMixin(ApplicationV2) {
     const sup = trade.SUPPLIERS[s.supplier];
     const origin = this.world("origin");
     if (s.supplier === "terminal" && !trade.terminalAllowed(origin)) {
-      ui.notifications.warn(game.i18n.localize("SPACER.Tools.Trade.TerminalNo"));
+      ui.notifications.warn(L("Trade.TerminalNo"));
       return;
     }
-    const actor = selectedActor();
+    const actor = await selectedActor();
     const scores = {};
     for (const k of CHARACTERISTICS) scores[k] = actor?.system?.characteristics?.[k]?.value ?? 7;
     const characteristic = sup.characteristics.reduce((best, k) => (characteristicDM(scores[k]) > characteristicDM(scores[best]) ? k : best), sup.characteristics[0]);
@@ -123,12 +131,7 @@ export class TradeCalculator extends HandlebarsApplicationMixin(ApplicationV2) {
     const origin = this.world("origin");
     const r = trade.goodsAvailable(dice(), { codes: origin.codes, pop: origin.pop, illicit: this.state.supplier === "illicit" });
     this.goods = r.list;
-    await postCard({
-      title: game.i18n.localize("SPACER.Tools.Trade.Goods"), subtitle: `${origin.name} · ${origin.codes.join(" ") || "no trade codes"} (p.63-64)`,
-      icon: "fa-solid fa-boxes-stacked",
-      sections: [{ list: r.list.map(g => `${g.code} ${g.name}: ${g.tons} tons at ${cr(g.price)} base`) }],
-      footer: `Extra stock from the d66 roll: ${r.extra.code} ${r.extra.name}`
-    }, { kind: "goods" });
+    await postToolsCard(goodsCard(r, origin, L("Trade.Goods")), { kind: "goods" });
     this.render();
   }
 
@@ -141,32 +144,17 @@ export class TradeCalculator extends HandlebarsApplicationMixin(ApplicationV2) {
     const fee = trade.brokerFee(Number(s.hired) || 0, r.cost);
     this.last = { mode, code: good.code, name: good.name, world: w.name, ...r, fee, costText: cr(r.cost), perTonText: cr(r.perTon), feeText: cr(fee), row: Math.max(0, Math.min(15, r.total)) };
     this.state.target = this.last.row;
-    return { good, w, r, fee };
-  }
-
-  async #postPrice() {
-    const l = this.last;
-    await postCard({
-      title: l.mode === "purchase" ? "Purchase price" : "Sale price",
-      subtitle: `${l.code} ${l.name} · ${l.world} (p.63)`,
-      icon: "fa-solid fa-coins",
-      headline: `${l.percent}% · ${l.perTonText} per ton · ${l.tons} tons = ${l.costText}`,
-      sections: [{ rows: [
-        { label: "Roll", value: `2D ${l.natural} + Broker ${this.state.broker} ${signed(l.goodDM)} trade DM${l.mode === "purchase" ? ` - seller ${this.state.sellerBroker}` : ""}${Number(this.state.hired) ? ` + hired ${this.state.hired}` : ""} = ${l.total}` },
-        ...(l.fee ? [{ label: "Hired broker fee", value: l.feeText }] : [])
-      ] }]
-    }, { kind: "price" });
   }
 
   static async #buy(event, target) {
     this.#price("purchase", target.dataset.code);
-    await this.#postPrice();
+    await postToolsCard(priceCard(this.last, this.state), { kind: "price" });
     this.render();
   }
 
   static async #sell(event, target) {
     this.#price("sale", target.dataset.code);
-    await this.#postPrice();
+    await postToolsCard(priceCard(this.last, this.state), { kind: "price" });
     this.render();
   }
 
@@ -176,15 +164,8 @@ export class TradeCalculator extends HandlebarsApplicationMixin(ApplicationV2) {
     const s = this.state;
     const good = trade.goodByCode(l.code);
     const r = trade.negotiate(dice(), { good, mode: l.mode, currentRow: l.row, targetRow: Number(s.target), brokerDM: s.broker, socDM: s.socDM, tons: l.tons });
-    await postCard({
-      title: "Price negotiation", subtitle: `${l.code} ${l.name} (p.65)`, icon: "fa-solid fa-handshake-angle",
-      headline: r.success ? `Deal at ${r.percent}%: ${cr(r.perTon)} per ton, ${cr(r.cost)}` : `No deal; the price stays at ${r.percent}%`,
-      sections: [{ rows: [
-        { label: "Trader's opinion", value: `${r.opinion.label} (${signed(r.opinion.dm)})` },
-        { label: "Roll", value: `2D ${r.natural} + Broker ${s.broker} ${signed(r.opinion.dm)} opinion ${signed(r.stepDM)} steps = ${r.total}`, note: "8+" }
-      ] }]
-    }, { kind: "negotiate" });
-    if (r.success) { this.last = { ...l, row: Number(s.target), percent: r.percent, perTon: r.perTon, cost: r.cost, perTonText: cr(r.perTon), costText: cr(r.cost) }; }
+    await postToolsCard(negotiationCard(r, l, s.broker), { kind: "negotiate" });
+    if (r.success) this.last = { ...l, row: Number(s.target), percent: r.percent, perTon: r.perTon, cost: r.cost, perTonText: cr(r.perTon), costText: cr(r.cost) };
     this.render();
   }
 

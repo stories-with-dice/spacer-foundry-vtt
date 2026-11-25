@@ -49,7 +49,7 @@
             <th>{{label}}</th>
             <td><input type="number" name="system.locations.{{key}}.max" value="{{max}}" min="0"></td>
             <td class="pips">{{#each pips}}<span class="pip {{#if filled}}filled{{/if}}"></span>{{/each}} {{value}}/{{max}}</td>
-            <td><input type="checkbox" name="system.locations.{{key}}.armored" {{checked armored}}></td>
+            <td><input type="checkbox" name="system.locations.{{key}}.armored" {{checked armored}}>{{#if autoArmor}} <i class="fa-solid fa-shield-halved auto-armor" data-tooltip="{{localize "SPACER.Craft.Vehicle.armorAuto"}}"></i>{{/if}}</td>
             <td class="track">
               <button type="button" class="icon" data-action="stepLocation" data-location="{{key}}" data-delta="1"><i class="fa-solid fa-minus"></i></button>
               <button type="button" class="icon" data-action="stepLocation" data-location="{{key}}" data-delta="-1"><i class="fa-solid fa-plus"></i></button>

@@ -301,13 +301,21 @@
         "noGunner": "no gunner",
         "applyHit": "Apply hit",
         "fuelLeak": "Fuel leak: {n}T lost.",
-        "transfer": "Excess damage from {from} hits the hull."
+        "transfer": "Excess damage from {from} hits the hull.",
+        "missileLaunched": "{n} missile(s) launched: {damage} damage.",
+        "missileAuto": "Missiles are homing: they hit unless the target's pilot evades (Pilot 8+, plus unused thrust) or its sensors jam them (p.84-85). No Gunner roll.",
+        "resolveMissiles": "Resolve impact",
+        "missileEvadeRoll": "{name}: evade missiles",
+        "missileImpact": "Missile impact",
+        "missileEvaded": "{name} evades the missiles.",
+        "missileJammed": "The missiles are jammed and detonate early.",
+        "missileHit": "The missiles hit {name} for {damage} damage."
       },
       "Combat": {
         "title": "Space Combat",
         "range": "Range",
         "round": "Round",
-        "addShip": "Add ship\u2026",
+        "addShip": "Add ship…",
         "addTargets": "Add targets",
         "addSelected": "Add selected",
         "initiative": "Initiative",
@@ -449,13 +457,14 @@
           "aircraft": "Aircraft",
           "gravcraft": "Gravcraft",
           "watercraft": "Watercraft"
-        }
+        },
+        "armorAuto": "Armoured by the armour rating (no location is ticked; p.49)"
       },
       "Warn": {
         "weaponOut": "{name} is disabled or destroyed.",
         "noAmmo": "{name} has no ammunition.",
         "noThrust": "The ship has no thrust.",
-        "noTarget": "Target a ship or vehicle token first.",
+        "noTarget": "Target a ship, vehicle, or person token first.",
         "notOwner": "You do not own the target.",
         "destroyed": "The system is destroyed and cannot be repaired.",
         "jump": {

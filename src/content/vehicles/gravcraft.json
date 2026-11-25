@@ -128,12 +128,12 @@
         "interior": {
           "value": 3,
           "max": 3,
-          "armored": false
+          "armored": true
         },
         "drive": {
           "value": 3,
           "max": 3,
-          "armored": false
+          "armored": true
         },
         "handling": {
           "value": 3,
@@ -143,7 +143,7 @@
         "hull": {
           "value": 3,
           "max": 3,
-          "armored": false
+          "armored": true
         },
         "weapon": {
           "value": 1,
@@ -151,7 +151,7 @@
           "armored": false
         }
       },
-      "description": "<p>A larger but enclosed and armoured air-raft similar to an ATV. 16 passengers.</p><p>Distance of operation: 3,000km. Weight 8T, TL 9, speed band 3, cost 1Mcr.</p><p>Damage locations (book): Interior 3, Speed 3, Hull 3, Weapon 1, Armour 3. The book gives no Handling value; Handling is set to the Hull value.</p><p>The stat line has Weapon 1, but the book does not say which weapon is mounted, so no weapon item is embedded.</p><p>Gravcraft are anti-gravity vehicles that hover up to 6 metres above a surface.</p><ul><li>Grav: This vehicle is operated using the Drive (Grav) Skill.</li><li>Military: This vehicle is only available at military-owned locations and is available for military personnel to use.</li></ul><p>Cargo: For every one occupant slot, 50kg of cargo can be carried instead. Weapons can be added to a vehicle after purchase, but civilian vehicles are unarmed by default. Cruising speed: vehicles with speed band 3+ have a cruising speed equal to one speed band less than top speed (p.46).</p><p>Source: p.47.</p>"
+      "description": "<p>A larger but enclosed and armoured air-raft similar to an ATV. 16 passengers.</p><p>Distance of operation: 3,000km. Weight 8T, TL 9, speed band 3, cost 1Mcr.</p><p>Damage locations (book): Interior 3, Speed 3, Hull 3, Weapon 1, Armour 3. The book gives no Handling value; Handling is set to the Hull value.</p><p>The stat line has Weapon 1, but the book does not say which weapon is mounted, so no weapon item is embedded.</p><p>Gravcraft are anti-gravity vehicles that hover up to 6 metres above a surface.</p><ul><li>Grav: This vehicle is operated using the Drive (Grav) Skill.</li><li>Military: This vehicle is only available at military-owned locations and is available for military personnel to use.</li></ul><p>Cargo: For every one occupant slot, 50kg of cargo can be carried instead. Weapons can be added to a vehicle after purchase, but civilian vehicles are unarmed by default. Cruising speed: vehicles with speed band 3+ have a cruising speed equal to one speed band less than top speed (p.46).</p><p>Armour 3: one armour point on each of Hull, Interior, Drive (each reduces a hit there by 1). BOOK: p.49 assigns one armour point per location but does not say which; this pack armours the hull first, then the interior and the drive.</p><p>Source: p.47.</p>"
     },
     "items": []
   },

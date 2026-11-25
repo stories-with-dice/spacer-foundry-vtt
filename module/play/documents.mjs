@@ -1,10 +1,13 @@
 /** Document classes for the Spacer system: convenience methods and automatic token status. */
-import { syncInjuryStatus } from "./damage.mjs";
+import { syncInjuryStatus } from "./status.mjs";
 import { taskDialog, rollTask } from "./task.mjs";
-import { attack, reloadWeapon } from "./attack.mjs";
+import { attack } from "./attack.mjs";
+import { reloadWeapon } from "./weapons.mjs";
 import { applyDamage } from "./damage.mjs";
-import { usePsionic, useDrug } from "./abilities.mjs";
+import { usePsionic } from "./psionics.mjs";
+import { useDrug } from "./drugs.mjs";
 
+/** The Actor document class of the system (CONFIG.Actor.documentClass, set by registerPlay). */
 export class SpacerActor extends Actor {
   /** Characters and NPCs: six characteristics, skills, END-first damage. */
   get isPerson() {
@@ -53,6 +56,7 @@ export class SpacerActor extends Actor {
   }
 }
 
+/** The Item document class of the system (CONFIG.Item.documentClass, set by registerPlay). */
 export class SpacerItem extends Item {
   /** @override A weapon added to an actor starts loaded. */
   async _preCreate(data, options, user) {

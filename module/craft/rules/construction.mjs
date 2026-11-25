@@ -2,7 +2,7 @@
  * Starship construction (book p.74-78). Pure functions, no Foundry globals.
  * All costs are in credits, masses in displacement tonnes.
  */
-import { DRIVE_LETTERS, letterIndex, drivePerformance, hullPoints, baseHardpoints, minimumFuel, recommendedFuel } from "./drives.mjs";
+import { DRIVE_LETTERS, letterIndex, drivePerformance, hullPoints, baseHardpoints, minimumFuel, recommendedFuel, SHIP_ARMOR_LOCATIONS, armorLayers as sumArmor } from "./drives.mjs";
 
 const MCR = 1_000_000;
 const KCR = 1_000;
@@ -120,8 +120,8 @@ export const MODIFICATIONS = {
   refinery: { cost: 2.5 * MCR, mass: 5 },
   armor: { cost: 100 * KCR }
 };
-/** Armour locations (book p.77). */
-export const ARMOR_LOCATIONS = ["hull", "mDrive", "jDrive", "power", "fuel", "internal"];
+/** Armour locations (book p.77). Same list as the ship data model and drives.mjs. */
+export const ARMOR_LOCATIONS = SHIP_ARMOR_LOCATIONS;
 
 /** Repair parts: 100,000cr per tonne, 10 uses (book p.77). */
 export const REPAIR_PARTS_COST = 100 * KCR;
@@ -145,7 +145,7 @@ export function computeDesign(design) {
   const d = { ...defaultDesign(), ...design, armor: { ...defaultDesign().armor, ...(design?.armor ?? {}) } };
   const hull = hullFor(d.tons);
   const warnings = [];
-  const armorLayers = Object.values(d.armor).reduce((a, b) => a + (Number(b) || 0), 0);
+  const armorLayers = sumArmor(d.armor);
 
   // 2) Engineering.
   const eng = {};

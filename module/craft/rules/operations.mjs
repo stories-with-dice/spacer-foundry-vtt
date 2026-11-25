@@ -149,10 +149,22 @@ export const PASSAGE = { low: 500, middle: 5000, high: 10000 };
 /** Skipping (book p.72): allowed missed payments = SOC DM; caught on 2D + DMs >= 12, boxcars always. */
 export const SKIP_STARPORT_DM = { A: 5, B: 4, C: 3, D: 2, E: 1, X: 0 };
 export const SKIP_DISTANCE_DM = [{ key: "5pc", dm: -1 }, { key: "10pc", dm: -2 }, { key: "15pc", dm: -3 }, { key: "20pc", dm: -4 }, { key: "2subsectors", dm: -5 }, { key: "1sector", dm: -6 }];
+/**
+ * Skipping (book p.72): is the crew caught? 2D + starport DM + distance DM >= 12; boxcars always.
+ * @param {number} natural  2D
+ * @param {string} starport A-E or X
+ * @param {number} [distanceDM]  from SKIP_DISTANCE_DM
+ * @returns {boolean}
+ */
 export function skippingCaught(natural, starport, distanceDM = 0) {
   if (natural >= 12) return true;
   return natural + (SKIP_STARPORT_DM[starport] ?? 0) + (Number(distanceDM) || 0) >= 12;
 }
+/**
+ * Missed payments allowed before the ship is repossessed: the owner's SOC DM (book p.72).
+ * @param {number} socDM
+ * @returns {number}
+ */
 export function allowedMissedPayments(socDM) {
   return Math.max(0, Number(socDM) || 0);
 }
@@ -174,6 +186,12 @@ export function contaminatedFuelResult(natural, total, target = 8) {
 
 /** Misjump (book p.72): 1D direction and 1D parsecs. */
 export const MISJUMP_DIRECTIONS = ["spinCoreward", "coreward", "coreTrailing", "trailingRimward", "rimward", "rimSpinward"];
+/**
+ * Misjump result (book p.72). Called by jump (craft/travel.mjs).
+ * @param {number} dirRoll   1D
+ * @param {number} distRoll  1D
+ * @returns {{direction: string, parsecs: number}}
+ */
 export function misjump(dirRoll, distRoll) {
   return { direction: MISJUMP_DIRECTIONS[Math.max(1, Math.min(6, dirRoll)) - 1], parsecs: Math.max(1, Math.min(6, distRoll)) };
 }

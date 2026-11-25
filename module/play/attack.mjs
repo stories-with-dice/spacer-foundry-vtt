@@ -1,26 +1,18 @@
-/** Personal attack workflow (book p.33, p.40-44, p.110-113). */
-import { UNARMORED_DIFFICULTY, bookDice } from "../config.mjs";
+/** Personal attack workflow (book p.33, p.40-44, p.49, p.110-113): reads documents, rolls, posts the card. */
+import { bookDice } from "../config.mjs";
+import { localizer, postCard, signed, setting, resolveActor, tokenOf, tokenDistance } from "../shared/foundry.mjs";
+import { rangeBandForDistance, normalizeRange, parseTraits, countDice, damageBonus } from "./rules/combat.mjs";
 import {
-  RANGE_BANDS, rangeBandForDistance, rangeDM, normalizeRange, defenceDM, parseTraits, countDice, pierceArmour,
-  attackModifiers, damageBonus
-} from "./rules/combat.mjs";
-import { L, render, postCard, signed, setting, formValues, chance2D, resolveActor, tokenOf, tokenDistance } from "./util.mjs";
+  computeAttack as computeAttackRule, defaultAttackOptions, targetDifficulty, damageToTarget, absoluteFailure, isPerson, isCraft
+} from "./rules/attack.mjs";
+import { canMelee } from "./rules/character.mjs";
 import { rollTask, skillRank, hasSpecialty } from "./task.mjs";
+import { isMelee, isEnergy } from "./weapons.mjs";
+import { attackDialog } from "./attack-dialog.mjs";
 
-const isPerson = a => a?.type === "character" || a?.type === "npc";
+const L = localizer("SPACER");
 
-/** True for melee weapons. Uses the category, then the skill name ("Melee Combat"). */
-export function isMelee(weapon) {
-  const s = weapon?.system ?? {};
-  if (s.category) return s.category === "melee";
-  return /melee/i.test(s.skill ?? "");
-}
-
-/** True for weapons that fire energy beams (Reflec deflects them, p.34). */
-export function isEnergy(weapon) {
-  const s = weapon?.system ?? {};
-  return s.category === "energy" || /energy/i.test(s.specialty ?? "");
-}
+export { targetDifficulty };
 
 /** Best melee skill rank of a defender (p.44 "Defending"), or 0 when they cannot defend. */
 function defendingRank(target) {
@@ -33,13 +25,6 @@ function defendingRank(target) {
   return Math.max(0, ...ranks);
 }
 
-/** Difficulty to hit a target before Piercing: armour total incl. evade, or creature size. */
-export function targetDifficulty(target) {
-  if (!target) return UNARMORED_DIFFICULTY;
-  if (target.type === "creature") return target.system.difficulty ?? UNARMORED_DIFFICULTY;
-  return target.system.armor?.total ?? UNARMORED_DIFFICULTY;
-}
-
 /** A creature's natural attack as a pseudo weapon (p.110). */
 function creatureWeapon(actor) {
   return {
@@ -49,8 +34,13 @@ function creatureWeapon(actor) {
 }
 
 /**
- * Gather every input of an attack. Pure lookups, no rolls.
- * @returns {object} context for the dialog and the roll
+ * Gather every input of an attack: weapon traits, range band (token distance on the canvas, else
+ * the given band, else the weapon's own band), skill rank, and the target's position, cover,
+ * difficulty, and melee defence. No rolls, no writes. Called by attack() and by tests.
+ * @param {Actor} actor
+ * @param {Item|null} weapon  null for a creature's natural attack
+ * @param {object} [o]  target (Actor), targetToken (Token), rangeBand
+ * @returns {object} the context for the dialog and computeAttack
  */
 export function prepareAttack(actor, weapon, { target = null, targetToken = null, rangeBand = null } = {}) {
   const creature = actor.type === "creature";
@@ -61,16 +51,14 @@ export function prepareAttack(actor, weapon, { target = null, targetToken = null
   const thrownWeapon = !!traits.thrown || s.category === "thrown";
   const range = normalizeRange(s.range) || (melee ? "short" : "medium");
 
-  // Range band: token distance on the canvas, else the given band, else the weapon's own band.
-  const attackerToken = tokenOf(actor);
-  const distance = tokenDistance(attackerToken, targetToken);
+  const distance = tokenDistance(tokenOf(actor), targetToken);
   const band = rangeBand ?? (distance !== null ? rangeBandForDistance(distance) : (melee ? (range === "close" ? "close" : "short") : range));
 
   const skill = creature ? 0 : (s.skill ? skillRank(actor, s.skill, s.specialty) : 0);
   const targetCombat = isPerson(target) ? target.system.combat : null;
-  const baseDifficulty = targetDifficulty(target);
   return {
     actor, weapon, target, creature, traits, melee, thrownWeapon, range, band, distance,
+    dm: actor.system.dm ?? {},
     canThrow: melee && !!traits.throw,
     ranged: !melee,
     skill,
@@ -78,7 +66,7 @@ export function prepareAttack(actor, weapon, { target = null, targetToken = null
     lowTech: !!traits.lowTech && !hasSpecialty(actor, "Ranged Combat", "Archaic"),
     position: targetCombat?.position ?? "standing",
     cover: targetCombat?.cover ?? "none",
-    baseDifficulty,
+    baseDifficulty: targetDifficulty(target),
     defending: melee && target ? defendingRank(target) : 0,
     overwatch: actor.system.combat?.overwatch ?? 0,
     fatigued: (actor.system.fatigue ?? 0) > 0,
@@ -87,38 +75,42 @@ export function prepareAttack(actor, weapon, { target = null, targetToken = null
   };
 }
 
-/** Compute modifiers, difficulty, and the range DM from the prepared context and the dialog choices. */
+/**
+ * Modifiers, difficulty, and range DM from the prepared context and the dialog values.
+ * Pure: see computeAttack in rules/attack.mjs. Kept here for the public API.
+ */
 export function computeAttack(ctx, v) {
-  const a = ctx.actor;
-  const thrown = ctx.thrownWeapon || (ctx.canThrow && v.throw);
-  const weaponRange = thrown && ctx.melee ? "short" : ctx.range;
-  const rdm = ctx.melee && !thrown
-    ? (RANGE_BANDS.indexOf(v.band) <= RANGE_BANDS.indexOf(ctx.range) ? 0 : null)   // melee cannot reach past its range (p.30)
-    : rangeDM(weaponRange, v.band);
-  const def = defenceDM({ position: v.position, cover: v.cover, arching: !!ctx.traits.arching });
-  const charDM = v.characteristic ? (a.system.dm?.[v.characteristic] ?? 0) : 0;
-  const strDM = a.system.dm?.str ?? 0;
-  const autoN = ctx.traits.auto || 0;
-  const { mods, total } = attackModifiers({
-    charDM, skill: ctx.creature ? 0 : ctx.skill, ranged: ctx.ranged || thrown, thrown, strDM,
-    aimed: v.aimed, range: rdm ?? 0, position: def.position, cover: def.cover,
-    overwatch: v.useOverwatch ? ctx.overwatch : 0,
-    oneHanded: !!ctx.traits.twoHanded && v.oneHanded, cramped: !!ctx.traits.large && v.cramped,
-    darkness: Number(v.darkness) || 0, higherGround: v.higherGround,
-    multiTarget: autoN && v.autoMode === "multi" ? autoN : 0,
-    defending: ctx.melee && !thrown ? ctx.defending : 0,
-    lowTech: ctx.lowTech, fatigued: v.fatigue, controlled: ctx.melee && !thrown && v.controlled,
-    speedBand: Number(v.speedBand) || 0,
-    extra: (Number(v.dm) || 0) + (ctx.heightened ? 1 : 0)
-  });
-  const difficulty = pierceArmour(ctx.baseDifficulty, ctx.traits.piercing || 0);
-  return { mods, total, difficulty, rangeDM: rdm, thrown, coverStep: def.coverStep, charDM, strDM, autoN };
+  return computeAttackRule(ctx, v);
 }
+
+/** The target token and actor of an attack: explicit target, else the first targeted token. */
+async function findTarget(target) {
+  let token = null;
+  if (!target) token = [...(game.user.targets ?? [])][0] ?? null;
+  else if (target.document?.documentName === "Token") token = target;
+  else if (target.documentName === "Token") token = target.object ?? null;
+  const actor = target ? await resolveActor(target) : token?.actor ?? null;
+  return { token, actor };
+}
+
+/** A warning when the actor cannot attack with this weapon now, else "". */
+function blockReason(actor, weapon) {
+  if (weapon?.system?.jammed) return L("Attack.Jammed", { weapon: weapon.name });
+  if (weapon?.system?.broken) return L("Attack.Broken", { weapon: weapon.name });
+  if (["unconscious", "dead"].includes(actor.system.injury?.label)) return L("Attack.CannotAct", { name: actor.name });
+  return "";
+}
+
+/** True when a person is too heavily loaded for this melee attack (p.41). */
+const meleeBlocked = (ctx, thrown) => ctx.melee && !thrown && isPerson(ctx.actor) && !canMelee(ctx.actor.system.encumbrance?.level);
 
 /**
  * Attack with a weapon (or a creature's natural attack).
  * Opens a dialog prefilled from the targeted token, rolls, spends ammo or a melee use, handles
  * absolute results, rolls damage on a hit, and posts a card with an "Apply damage" button.
+ * Writes: the weapon (`system.ammo`, `system.jammed`, `system.broken`) and the attacker
+ * (`system.combat.meleeUsed`, `system.combat.overwatch`, `system.combat.evading`, `system.fatigue`).
+ * Called by the actor sheets, SpacerActor#attack, SpacerItem#use, and macros.
  * @param {Actor} actor
  * @param {Item|null} weapon  null for a creature's natural attack
  * @param {object} [o]
@@ -130,99 +122,54 @@ export function computeAttack(ctx, v) {
  */
 export async function attack(actor, weapon, { target, rangeBand = null, dialog = true, options = {} } = {}) {
   if (!actor) return null;
-  if (weapon?.system?.jammed) { ui.notifications.warn(L("Attack.Jammed", { weapon: weapon.name })); return null; }
-  if (weapon?.system?.broken) { ui.notifications.warn(L("Attack.Broken", { weapon: weapon.name })); return null; }
-  if (actor.system.injury?.label === "unconscious" || actor.system.injury?.label === "dead") {
-    ui.notifications.warn(L("Attack.CannotAct", { name: actor.name })); return null;
-  }
+  const blocked = blockReason(actor, weapon);
+  if (blocked) { ui.notifications.warn(blocked); return null; }
 
-  // Target: explicit, else the first targeted token.
-  let targetToken = null;
-  if (!target) targetToken = [...(game.user.targets ?? [])][0] ?? null;
-  else if (target.document?.documentName === "Token") targetToken = target;          // Token placeable
-  else if (target.documentName === "Token") targetToken = target.object ?? null;      // TokenDocument
-  const targetActor = target ? await resolveActor(target) : targetToken?.actor ?? null;
-
+  const { token: targetToken, actor: targetActor } = await findTarget(target);
   const ctx = prepareAttack(actor, weapon, { target: targetActor, targetToken, rangeBand });
-  const defaults = {
-    characteristic: ctx.creature ? "" : (ctx.thrownWeapon ? "str" : "dex"),
-    band: ctx.band, aimed: true, position: ctx.position, cover: ctx.cover,
-    useOverwatch: ctx.overwatch > 0, oneHanded: false, cramped: false, darkness: 0, higherGround: false,
-    autoMode: "single", controlled: false, throw: false, fatigue: ctx.fatigued, speedBand: 0, dm: 0,
-    flat: false, overload: 0
-  };
-  let v = { ...defaults, ...options };
+  if (meleeBlocked(ctx, ctx.thrownWeapon) && !ctx.canThrow) return warnOverEncumbered(actor);
+  let v = { ...defaultAttackOptions(ctx), ...options };
   if (dialog) {
     v = await attackDialog(ctx, v);
     if (!v) return null;
   }
   const calc = computeAttack(ctx, v);
+  if (meleeBlocked(ctx, calc.thrown)) return warnOverEncumbered(actor);
   if (calc.rangeDM === null) { ui.notifications.warn(L("Attack.OutOfRange", { weapon: ctx.weapon.name, band: L(`Range.${v.band}`) })); return null; }
 
-  // Ammo: an Auto N weapon always fires N rounds (p.33).
   const s = ctx.weapon.system;
   const updates = {};
-  const actorUpdate = {};
   const notes = [];
   const usesAmmo = !ctx.melee && weapon && s.rounds > 0;
   let ammoLeft = 0;
   if (usesAmmo) {
+    // An Auto N weapon always fires N rounds (p.33).
     const need = calc.autoN || 1;
     if (s.ammo < need) { ui.notifications.warn(L("Attack.NoAmmo", { weapon: weapon.name })); return null; }
     ammoLeft = s.ammo - need;
     updates["system.ammo"] = ammoLeft;
   }
+  const actorUpdate = attackerUpdate(ctx, v, calc, notes);
 
-  // Melee uses END (p.42); a controlled attack (-2) does not count (p.44).
-  if (ctx.melee && !calc.thrown && isPerson(actor) && !v.controlled) {
-    const remaining = actor.system.meleeRemaining;
-    actorUpdate["system.combat.meleeUsed"] = actor.system.combat.meleeUsed + 1;
-    if (remaining <= 0) {
-      actorUpdate["system.fatigue"] = Math.max(1, actor.system.fatigue);
-      notes.push(L("Attack.MeleeOverEnd"));
-    }
-  }
-  if (isPerson(actor) && v.useOverwatch && actor.system.combat.overwatch > 0) actorUpdate["system.combat.overwatch"] = 0;
-  if (isPerson(actor) && actor.system.combat.evading) { actorUpdate["system.combat.evading"] = false; notes.push(L("Attack.EvadeEnds")); }
-
-  // Attack roll.
+  // Attack roll: rollTask applies the absolute results (snake eyes fails, boxcars hits).
   const r = await rollTask({ actor, dm: calc.total, target: calc.difficulty, chat: false });
   const absolute = setting("absoluteResults", true);
-  const hit = r.total >= calc.difficulty;
-  const effect = r.total - calc.difficulty;
+  const hit = r.success;
+  const effect = r.effect;
 
-  // Absolute failure (p.42): guns jam (not Reliable), blades break.
+  // Absolute failure (p.42): guns jam (not Reliable), blades break, also a thrown blade.
   if (absolute && r.snakeEyes && weapon) {
-    if (ctx.melee && !calc.thrown) { updates["system.broken"] = true; notes.push(L("Attack.BladeBroken")); }
-    else if (!ctx.traits.reliable && !ctx.thrownWeapon) {
-      updates["system.jammed"] = true;
-      notes.push(L(ctx.traits.unreliable ? "Attack.JamUnreliable" : "Attack.JamNote"));
-    }
+    const broke = absoluteFailure({ melee: ctx.melee, thrownWeapon: ctx.thrownWeapon, reliable: !!ctx.traits.reliable });
+    if (broke === "broken") { updates["system.broken"] = true; notes.push(L("Attack.BladeBroken")); }
+    if (broke === "jammed") { updates["system.jammed"] = true; notes.push(L(ctx.traits.unreliable ? "Attack.JamUnreliable" : "Attack.JamNote")); }
   }
 
-  // Damage on a hit (p.43). Boxcars = full damage.
-  let damageRoll = null;
-  let damage = 0;
-  let dmgTerms = [];
   const stun = !!ctx.traits.stun;
-  const full = absolute && r.boxcars;
-  if (hit && !stun) {
-    const bonus = damageBonus({
-      effect, melee: ctx.melee && !calc.thrown && !ctx.creature, thrown: calc.thrown, strDM: calc.strDM,
-      autoSingle: calc.autoN && v.autoMode !== "multi" ? calc.autoN : 0,
-      overload: ctx.traits.overload ? Math.max(0, Number(v.overload) || 0) : 0
-    });
-    dmgTerms = bonus.terms.map(t => ({ label: L(`Damage.Term.${t.key}`), signed: signed(t.value) }));
-    if (ctx.creature && v.flat) {
-      damage = (ctx.flatDamage ?? 0) + bonus.total;
-    } else {
-      const base = bookDice(s.damage);
-      const formula = bonus.total ? `${base} + ${bonus.total}` : base;
-      damageRoll = await new Roll(formula).evaluate(full ? { maximize: true } : {});
-      damage = Math.max(0, damageRoll.total);
-    }
-    if (full) notes.push(L("Attack.FullDamage"));
-  }
+  const dmg = hit && !stun ? await rollDamage(ctx, v, calc, effect, absolute && r.boxcars) : { damage: 0, roll: null, terms: [] };
+  if (dmg.full) notes.push(L("Attack.FullDamage"));
+  const craft = isCraft(targetActor);
+  const damage = damageToTarget(dmg.damage, targetActor);
+  if (craft && hit && !stun) notes.push(L("Attack.CraftDamage", { rolled: dmg.damage }));
   if (calc.thrown && ctx.canThrow) notes.push(L("Attack.Thrown"));
 
   if (Object.keys(updates).length && weapon?.update) await weapon.update(updates);
@@ -230,11 +177,11 @@ export async function attack(actor, weapon, { target, rangeBand = null, dialog =
 
   const dice = countDice(s.damage);
   const energy = isEnergy(ctx.weapon);
-  const rolls = [r.roll, ...(damageRoll ? [damageRoll] : [])];
   const message = await postCard({
+    area: "play",
     actor,
     template: "chat/attack",
-    rolls,
+    rolls: [r.roll, ...(dmg.roll ? [dmg.roll] : [])],
     data: {
       actorName: actor.name, weaponName: ctx.weapon.name, img: ctx.weapon.img,
       targetName: targetActor?.name ?? "",
@@ -244,88 +191,52 @@ export async function attack(actor, weapon, { target, rangeBand = null, dialog =
       rollHTML: await r.roll.render(),
       hit, effect: signed(effect),
       absolute: absolute ? (r.boxcars ? "success" : r.snakeEyes ? "failure" : "") : "",
-      damage, damageHTML: damageRoll ? await damageRoll.render() : "", dmgTerms,
+      damage, damageHTML: dmg.roll ? await dmg.roll.render() : "", dmgTerms: dmg.terms,
       stun: hit && stun,
       flat: ctx.creature && v.flat && hit,
       notes,
       targetUuid: targetActor?.uuid ?? "",
-      energy, dice,
+      energy: energy && !craft, dice,
       ammo: usesAmmo ? `${ammoLeft}/${s.rounds}` : ""
     },
-    flags: { attack: { hit, effect, damage, energy, dice, target: targetActor?.uuid ?? null, weapon: weapon?.uuid ?? null, stun: hit && stun } }
+    flags: { attack: { hit, effect, damage, energy, dice, craft, target: targetActor?.uuid ?? null, weapon: weapon?.uuid ?? null, stun: hit && stun } }
   });
-  return { hit, effect, total: r.total, difficulty: calc.difficulty, damage, attackRoll: r.roll, damageRoll, boxcars: r.boxcars, snakeEyes: r.snakeEyes, mods: calc.mods, message };
+  return { hit, effect, total: r.total, difficulty: calc.difficulty, damage, attackRoll: r.roll, damageRoll: dmg.roll, boxcars: r.boxcars, snakeEyes: r.snakeEyes, mods: calc.mods, message };
 }
 
-/** The attack dialog with a live preview of the total DM and the chance to hit. */
-async function attackDialog(ctx, v) {
-  const opt = (keys, prefix, sel) => keys.map(k => ({ value: k, label: L(`${prefix}.${k}`), selected: k === sel }));
-  const content = await render("dialogs/attack", {
-    ctx, v,
-    targetName: ctx.target?.name ?? L("Attack.NoTarget"),
-    characteristics: ["", "str", "dex", "end", "int"].map(k => ({ value: k, label: k ? `${L(`Char.${k}`)} (${signed(ctx.actor.system.dm?.[k] ?? 0)})` : "—", selected: k === v.characteristic })),
-    bands: RANGE_BANDS.map(k => ({ value: k, label: L(`Range.${k}`), selected: k === v.band })),
-    positions: opt(["standing", "kneeling", "prone", "wall"], "Position", v.position),
-    covers: opt(["none", "partial", "half", "most", "absolute"], "Cover", v.cover),
-    darkness: [{ value: 0, label: L("Attack.Light.normal") }, { value: -2, label: L("Attack.Light.low") }, { value: -4, label: L("Attack.Light.dark") }],
-    distance: ctx.distance !== null ? Math.round(ctx.distance) : null,
-    skillText: ctx.creature ? "" : `${ctx.skillLabel || "—"} ${signed(ctx.skill)}`,
-    isPerson: isPerson(ctx.actor)
+function warnOverEncumbered(actor) {
+  ui.notifications.warn(L("Attack.OverEncumbered", { name: actor.name }));
+  return null;
+}
+
+/** Attacker updates: a melee use of END (p.42; a controlled attack does not count, p.44), overwatch spent, Evade ends. */
+function attackerUpdate(ctx, v, calc, notes) {
+  const actor = ctx.actor;
+  const out = {};
+  if (!isPerson(actor)) return out;
+  if (ctx.melee && !calc.thrown && !v.controlled) {
+    out["system.combat.meleeUsed"] = actor.system.combat.meleeUsed + 1;
+    if (actor.system.meleeRemaining <= 0) {
+      out["system.fatigue"] = Math.max(1, actor.system.fatigue);
+      notes.push(L("Attack.MeleeOverEnd"));
+    }
+  }
+  if (v.useOverwatch && actor.system.combat.overwatch > 0) out["system.combat.overwatch"] = 0;
+  if (actor.system.combat.evading) { out["system.combat.evading"] = false; notes.push(L("Attack.EvadeEnds")); }
+  return out;
+}
+
+/** Damage of a hit (p.43): the weapon dice plus effect, STR DM, Auto, Overload; maximized on boxcars. */
+async function rollDamage(ctx, v, calc, effect, full) {
+  const bonus = damageBonus({
+    effect, melee: ctx.melee && !calc.thrown && !ctx.creature, thrown: calc.thrown, strDM: calc.strDM,
+    autoSingle: calc.autoN && v.autoMode !== "multi" ? calc.autoN : 0,
+    overload: ctx.traits.overload ? Math.max(0, Number(v.overload) || 0) : 0
   });
-  const DialogV2 = foundry.applications.api.DialogV2;
-  const values = await DialogV2.wait({
-    window: { title: L("Attack.Title", { weapon: ctx.weapon.name }), icon: "fa-solid fa-crosshairs" },
-    classes: ["spacer", "spacer-dialog", "spacer-attack-dialog"],
-    position: { width: 460 },
-    content,
-    buttons: [
-      { action: "attack", label: "SPACER.Attack.Roll", icon: "fa-solid fa-crosshairs", default: true, callback: (_e, b) => formValues(b.form) },
-      { action: "cancel", label: "Cancel", icon: "fa-solid fa-xmark" }
-    ],
-    render: (_e, dialog) => {
-      const form = dialog.element.querySelector("form") ?? dialog.element;
-      const update = () => {
-        const cur = { ...v, ...formValues(form) };
-        const calc = computeAttack(ctx, cur);
-        const out = form.querySelector("[data-preview]");
-        if (!out) return;
-        if (calc.rangeDM === null) { out.textContent = L("Attack.OutOfRange", { weapon: ctx.weapon.name, band: L(`Range.${cur.band}`) }); out.classList.add("bad"); return; }
-        out.classList.remove("bad");
-        out.textContent = L("Attack.Preview", { dm: signed(calc.total), target: calc.difficulty, chance: chance2D(calc.total, calc.difficulty) });
-        const list = form.querySelector("[data-mods]");
-        if (list) list.textContent = calc.mods.map(m => `${L(`Attack.Mod.${m.key}`)} ${signed(m.value)}`).join(" · ");
-      };
-      form.addEventListener("change", update);
-      form.addEventListener("input", update);
-      update();
-    },
-    rejectClose: false
-  });
-  if (!values || typeof values !== "object") return null;
-  return { ...v, ...values };
-}
-
-/** Reload a weapon to full (p.44): takes a round and grants Evade. */
-export async function reloadWeapon(actor, weapon) {
-  if (!weapon || weapon.system.rounds <= 0) return null;
-  await weapon.update({ "system.ammo": weapon.system.rounds });
-  if (isPerson(actor)) await actor.update({ "system.combat.evading": true });
-  const traits = parseTraits(weapon.system.traits);
-  await postCard({ actor, template: "chat/note", data: { title: L("Weapon.Reloaded", { weapon: weapon.name }), text: L(traits.slowReload ? "Weapon.SlowReload" : "Weapon.ReloadNote") } });
-  return weapon.system.ammo;
-}
-
-/** Clear a jam (p.42): a Ranged Combat roll with the weapon's skill instead of an attack. */
-export async function unjamWeapon(actor, weapon) {
-  if (!weapon?.system.jammed) return null;
-  const r = await rollTask({ actor, characteristic: "dex", skill: weapon.system.skill, specialty: weapon.system.specialty, label: L("Weapon.Unjam", { weapon: weapon.name }) });
-  if (r.success) await weapon.update({ "system.jammed": false });
-  return r;
-}
-
-/** A stunned target's END check (p.33): 8+ or helpless for 1 + effect 10-minute intervals. */
-export async function resistStun(actor) {
-  const r = await rollTask({ actor, characteristic: "end", label: L("Attack.StunCheck", { name: actor.name }) });
-  if (!r.success) await postCard({ actor, template: "chat/note", data: { title: L("Attack.Stunned", { name: actor.name }), text: L("Attack.StunnedFor", { n: 1 + Math.abs(r.effect) }) } });
-  return r;
+  const terms = bonus.terms.map(t => ({ label: L(`Damage.Term.${t.key}`), signed: signed(t.value) }));
+  if (ctx.creature && v.flat) return { damage: (ctx.flatDamage ?? 0) + bonus.total, roll: null, terms, full };
+  const base = bookDice(ctx.weapon.system.damage);
+  const formula = bonus.total ? `${base} + ${bonus.total}` : base;
+  const roll = await new Roll(formula).evaluate(full ? { maximize: true } : {});
+  return { damage: Math.max(0, roll.total), roll, terms, full };
 }

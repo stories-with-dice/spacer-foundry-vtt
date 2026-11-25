@@ -2,6 +2,17 @@
  * Pure character rules: encumbrance, healing, PSI, drugs, falling, training.
  * No Foundry globals: tested with node:test.
  */
+import { randomDie } from "../../shared/dice.mjs";
+
+/** Encumbrance levels that forbid sprinting and melee attacks (p.41). */
+export const HEAVY_LEVELS = ["overEncumbered", "overloaded"];
+
+/**
+ * True when a person at this encumbrance level can make melee attacks (p.41: an over-encumbered
+ * character "cannot sprint or make melee attacks"). Called by attack() in module/play/attack.mjs.
+ * @param {string} level  `system.encumbrance.level`
+ */
+export const canMelee = level => !HEAVY_LEVELS.includes(level);
 
 /**
  * Encumbrance level (p.41): carry up to 2x STR kg freely, 3x encumbered, 4x over-encumbered.
@@ -13,7 +24,7 @@ export function encumbrance(carriedKg, str) {
   const kg = Math.max(0, Number(carriedKg) || 0);
   const level = kg <= s * 2 ? "minimal" : kg <= s * 3 ? "encumbered" : kg <= s * 4 ? "overEncumbered" : "overloaded";
   const moveMult = { minimal: 1, encumbered: 0.5, overEncumbered: 0.25, overloaded: 0 }[level];
-  const heavy = level === "overEncumbered" || level === "overloaded";
+  const heavy = !canMelee(level);
   return {
     level, minimal: s * 2, encumbered: s * 3, overEncumbered: s * 4, moveMult,
     enduranceMult: level === "encumbered" ? 0.5 : heavy ? 0 : 1,
@@ -40,6 +51,34 @@ export function naturalHealing(chars, days = 1, { medical = false } = {}) {
     after[k] = Math.max(v, chars[k].value);
   }
   return { after, healed, blocked: false };
+}
+
+/**
+ * Result of a successful first aid (p.106, p.37). Called by firstAid in module/play/healing.mjs.
+ * - END and STR or DEX at 0: first aid cannot help, the patient needs surgery (p.106).
+ * - END at 0: first aid restores 1 END (p.106); with a Medical Kit it restores D3 END (p.37).
+ * - END above 0: no change.
+ * BOOK: p.106 says first aid recovers 1 END; the Medical Kit (p.37) "recovers D3 END if END was 0".
+ * We use D3 when the healer carries a Medical Kit, else 1.
+ * @param {{str: {value: number}, dex: {value: number}, end: {value: number, max: number}}} chars
+ * @param {object} [o]
+ * @param {boolean} [o.kit=false]        the healer uses a Medical Kit
+ * @param {(sides: number) => number} [o.die]
+ * @returns {{surgery: boolean, before: number, after: number, gained: number, roll: number|null}}
+ */
+export function firstAidResult(chars, { kit = false, die = randomDie() } = {}) {
+  const before = chars.end.value;
+  const same = { before, after: before, gained: 0, roll: null };
+  if (needsSurgery(chars)) return { surgery: true, ...same };
+  if (before > 0) return { surgery: false, ...same };
+  const roll = kit ? die(3) : null;
+  const after = Math.min(Math.max(1, chars.end.max ?? 1), roll ?? 1);
+  return { surgery: false, before, after, gained: after - before, roll };
+}
+
+/** True when END and STR or DEX are at 0: only surgery lets the patient heal (p.106). */
+export function needsSurgery(chars) {
+  return chars.end.value <= 0 && (chars.str.value <= 0 || chars.dex.value <= 0);
 }
 
 /**

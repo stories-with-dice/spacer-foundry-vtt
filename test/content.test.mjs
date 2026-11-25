@@ -135,5 +135,5 @@ test("content uses only Foundry core icons (no book art)", () => {
 });
 
 test("every pack has content", () => {
-  for (const [pack, docs] of Object.entries(packs)) assert.ok(docsOf(pack).length > 0, `${pack} is empty`);
+  for (const pack of Object.keys(packs)) assert.ok(docsOf(pack).length > 0, `${pack} is empty`);
 });

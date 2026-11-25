@@ -62,7 +62,9 @@ export const SPACE_SHIPS = {
   65: { text: "Naval ship" },
   66: { text: "Naval fleet" }
 };
+/** Station types of the space encounter table (p.81), 1D. */
 export const STATIONS = ["Courier depot", "Refinery platform", "Military checkpoint", "Research station", "Communication relay", "Isolated starport"];
+/** Outlaw spacer types (p.81), 1D. */
 export const OUTLAWS = ["Pirates", "Pirates", "Pirates", "Smugglers", "Smugglers", "Organized crime affiliates"];
 
 /** Space Environment table (p.81), D66. `collision` marks a collision chance; `pilot` its target. */
@@ -104,6 +106,7 @@ export const SPACE_ENVIRONMENT = {
   65: { text: "Research satellite" },
   66: { text: "Other", other: true }
 };
+/** "Other" results of the space environment table (p.81), 1D. */
 export const SPACE_OTHER = ["Wormhole", "Spacetime anomaly", "Psychic wave", "Massive craft/station/structure", "Cryptic radio chatter", "Ancient structure"];
 
 /** Ship Encounter Reaction table (p.82), 2D for each column. */
@@ -114,6 +117,7 @@ export const SHIP_REACTION = [
   [9, 11, { hail: "Interested", behaviour: "Assertive", scan: "No issues", flags: 0, condition: "In good condition, no damage" }],
   [12, null, { hail: "Helpful", behaviour: "Evasive", scan: "No issue, and no record of any delinquency", flags: 0, condition: "Appears new or recently upgraded" }]
 ];
+/** Ship scan flags (p.82). */
 export const SHIP_FLAGS = [
   "Unregistered or false registration; escort to closest starport for a reward",
   "Ship is registered to someone else",

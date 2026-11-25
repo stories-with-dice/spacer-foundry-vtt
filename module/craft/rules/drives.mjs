@@ -59,6 +59,20 @@ export function hullColumn(tonnage, armorLayers = 0) {
   return Math.min(HULL_COLUMNS.length - 1, i + extra);
 }
 
+/** Locations that can carry starship armour layers (book p.77). */
+export const SHIP_ARMOR_LOCATIONS = ["hull", "mDrive", "jDrive", "power", "fuel", "internal"];
+
+/**
+ * Total armour layers of a ship: the sum of the layers on every location (book p.77).
+ * Reads a `{ hull, mDrive, ... }` object (ShipData `system.armor`). Called by deriveShip and by
+ * applyShipDamage, so both step drives with the same hull column.
+ * @param {Record<string, number>} [armor]
+ * @returns {number}
+ */
+export function armorLayers(armor = {}) {
+  return SHIP_ARMOR_LOCATIONS.reduce((sum, k) => sum + Math.max(0, Number(armor?.[k]) || 0), 0);
+}
+
 /** Performance of a letter in a hull, or null when the letter cannot be installed there. */
 export function drivePerformance(letter, tonnage, armorLayers = 0) {
   const row = RATING_TABLE[String(letter ?? "").toUpperCase()];

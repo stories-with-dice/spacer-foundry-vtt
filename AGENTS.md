@@ -33,8 +33,8 @@ change in another area, write it down in your final report instead.
 
 | Area | Owns | Exposes |
 |---|---|---|
-| core (lead) | `system.json`, `module/spacer.mjs`, `module/config.mjs`, `module/data/*`, `tools/*`, `AGENTS.md`, `docs/content-format.md`, licenses | data models, constants |
-| play | `module/play/**`, `templates/play/**`, `styles/spacer.css`, `lang/en/core.json`, `test/play*.test.mjs` | `module/play/api.mjs` (`rollTask`, `skillRank`, `rollBookDice`, plus `applyDamage` etc.), `game.spacer.play` |
+| core (lead) | `system.json`, `module/spacer.mjs`, `module/config.mjs`, `module/data/*`, `module/shared/*`, `tools/*`, `test/content.test.mjs`, `test/helpers/*`, `AGENTS.md`, `docs/*`, licenses | data models, constants, shared helpers |
+| play | `module/play/**`, `templates/play/**`, `styles/spacer.css`, `lang/en/core.json`, `test/play*.test.mjs` | `module/play/api.mjs` (`rollTask`, `skillRank`, `rollBookDice`, `applyDamage`, ...), `game.spacer.play` |
 | craft | `module/craft/**`, `templates/craft/**`, `styles/craft.css`, `lang/en/craft.json`, `test/craft*.test.mjs` | `game.spacer.craft` |
 | chargen | `module/chargen/**`, `templates/chargen/**`, `styles/chargen.css`, `lang/en/chargen.json`, `test/chargen*.test.mjs` | `game.spacer.chargen.open(actor)` |
 | tools | `module/tools/**`, `templates/tools/**`, `styles/tools.css`, `lang/en/tools.json`, `test/tools*.test.mjs`, `src/content/macros/**` | `game.spacer.tools.*` |
@@ -60,8 +60,9 @@ The `module/data/*` models belong to core. The craft area may change `prepareDer
 - Task rolls: `rollTask({ actor, characteristic, skill, specialty, dm, target, label })` returns
   `{ roll, total, effect, success, boxcars, snakeEyes }` and posts a chat card.
 - Book dice: `bookDice("2D+3")` in `config.mjs` converts to a Foundry formula.
-- Chat card buttons: use `data-action` attributes and handle them in a `renderChatMessageHTML`
-  hook registered by your area. Prefix your actions with your area (`play-damage`, `craft-hit`, ...).
+- Chat card buttons: put `data-action="<area>-<name>"` on the button and register the handler
+  with `registerChatActions` (module/shared/chat-actions.mjs). Do not add a
+  `renderChatMessageHTML` hook for buttons.
 - i18n: keys under `SPACER.` in core, `SPACER.Craft.` in craft, `SPACER.Chargen.` in chargen,
   `SPACER.Tools.` in tools. Foundry deep-merges the four files. A key is a string or a group,
   never both.

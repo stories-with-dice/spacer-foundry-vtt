@@ -8,8 +8,11 @@
  * keeps the book label and maps it to the p.28-29 name.
  */
 
+/** Characteristic keys in UPP order (p.16). */
 export const CHARS = ["str", "dex", "end", "int", "edu", "soc"];
+/** Physical characteristics: injuries and aging lower these (p.18, p.20). */
 export const PHYSICAL = ["str", "dex", "end"];
+/** Short labels of the characteristics, for the log and the wizard. */
 export const CHAR_LABEL = { str: "STR", dex: "DEX", end: "END", int: "INT", edu: "EDU", soc: "SOC", psi: "PSI" };
 
 /** Specialised skills and their specialties (p.28-29). */
@@ -124,6 +127,8 @@ export const CAREERS = {
     ranks: null
   }
 };
+
+/** Career keys in the order of the Service table (p.17). */
 export const CAREER_KEYS = ["navy", "marines", "army", "scouts", "merchants", "civilian"];
 /** The skill drafted characters gain: "Gun Combat 0" (p.18), which is Ranged Combat. */
 export const DRAFT_SKILL = "Ranged Combat";
@@ -175,6 +180,8 @@ export const SKILL_TABLES = {
     all: col(["Admin", "Leadership", "Diplomacy", "Profession", "Melee (any)", "Tactics (any)"])
   }
 };
+
+/** Skill table keys in the order the wizard offers them (p.19). */
 export const TABLE_KEYS = ["personal", "service", "education", "advanced", "officer"];
 
 /** The row list of a skill table for a career. */
@@ -205,7 +212,11 @@ export const INJURY = {
   6: { name: "Minor Injury", text: "-1 to a physical characteristic of your choice. Future survival checks in this career -1 DM.", minusChoice: true, survivalDM: -1 }
 };
 
-/** Rank benefits (p.20): extra mustering rolls by rank, and +1 DM rolls for commissioned officers. */
+/**
+ * Rank benefits (p.20): extra mustering out rolls for a rank (0-6). Called by planMuster().
+ * BOOK: the p.22 example gives a rank 0 Private "a bonus mustering out" roll, but the Rank Benefit
+ * table (p.20) gives rank 0 nothing ("x"); we follow the table: rank 0 = no bonus roll.
+ */
 export function rankMusterRolls(rank) {
   if (rank >= 6) return 4;
   if (rank >= 5) return 3;
@@ -213,6 +224,7 @@ export function rankMusterRolls(rank) {
   if (rank >= 1) return 1;
   return 0;
 }
+/** Rank benefits (p.20): number of +1 DM mustering out rolls for a commissioned officer. Called by planMuster(). */
 export function commissionMusterDMs(rank, commissioned) {
   if (!commissioned) return 0;
   if (rank >= 6) return 3;
@@ -223,6 +235,8 @@ export function commissionMusterDMs(rank, commissioned) {
 
 /**
  * Aging table (p.20). Applies when the character is 34 or older after a term (term 4+).
+ * BOOK: p.16 starts aging at term 5 ("age 34 or higher when starting this career term"); we follow
+ * p.20 and this table, which start at term 4, age 34.
  * Each entry: characteristic, loss, unmodified 2D target to avoid it.
  */
 export function agingChecks(age) {
@@ -249,6 +263,7 @@ const B = {
   none: { kind: "none", name: "x" },
   c: (char, amount) => ({ kind: "char", char, amount, name: `+${amount} ${CHAR_LABEL[char]}` })
 };
+/** Material Benefits rows 1-7 per career (p.21). */
 export const MATERIAL = {
   navy: [B.low, B.c("int", 1), B.c("edu", 2), B.blade, B.sss, B.high, B.c("soc", 2)],
   marines: [B.low, B.c("int", 2), B.c("edu", 1), B.blade, B.sss, B.high, B.c("soc", 2)],
@@ -267,7 +282,7 @@ export const MONETARY = {
   merchants: [1000, 5000, 10000, 20000, 20000, 40000, 40000],
   civilian: [1000, 5000, 10000, 10000, 10000, 50000, 100000]
 };
-/** At most three Monetary rolls per career (p.20). */
+/** At most three Monetary rolls per career (p.20). See the BOOK note in musterOut() (muster.mjs). */
 export const MONETARY_CAP = 3;
 
 /** Items the material benefits give (p.21). `lookup` lists compendium names to try, in order. */
@@ -296,11 +311,13 @@ export const MILITARY_EVENTS = {
   6: "Honor Duel", 7: "Extracurricular Training", 8: "Peacekeeper", 9: "Court Martial", 10: "Shell-Shocked",
   11: "War Hero", 12: "Career Soldier", 13: "Unique"
 };
+/** Non-Military Life Event names (p.26-27). */
 export const CIVIL_EVENTS = {
   1: "Severe Illness", 2: "Inheritance", 3: "Management", 4: "Romantic Interest", 5: "On Strike", 6: "Secret",
   7: "Made Redundant", 8: "Heated Rivalry", 9: "Legal Trouble", 10: "Tragedy", 11: "Local Hero",
   12: "Married to the Job", 13: "Unique"
 };
+/** Unique Event names (p.25, p.27). */
 export const UNIQUE_EVENTS = {
   1: "Life Among Sophonts", 2: "Psionic Encounter", 3: "Influential Contact", 4: "Artefact",
   5: "Social Isolation", 6: "Forced Retirement"
@@ -333,4 +350,5 @@ export function charDM(score) {
 }
 
 const HEX = "0123456789ABCDEFGHJKLMNPQRSTUVWXYZ";
+/** A score as one extended-hex UPP digit (p.16): 10 -> "A". Used by upp() and summary(). */
 export function hex(n) { return HEX[Math.max(0, Math.floor(n))] ?? "?"; }

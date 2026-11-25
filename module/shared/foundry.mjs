@@ -128,13 +128,14 @@ export function formValues(form) {
  * Add a button to a sidebar directory header (Actors, Journal, ...). Safe to call on every render:
  * it does nothing when the button is already there. `html` is the app element (HTMLElement in v13+).
  */
-export function addDirectoryButton(html, { id, label, icon, onClick }) {
+export function addDirectoryButton(html, { id, label, icon, onClick, classes = [] }) {
   const root = html instanceof HTMLElement ? html : html?.[0];
   if (!root || root.querySelector(`[data-spacer-button="${id}"]`)) return;
   const header = root.querySelector(".directory-header .header-actions") ?? root.querySelector(".directory-header") ?? root;
   const button = document.createElement("button");
   button.type = "button";
   button.dataset.spacerButton = id;
+  button.classList.add(...classes);
   button.innerHTML = `<i class="${icon}"></i> ${label}`;
   button.addEventListener("click", ev => { ev.preventDefault(); onClick(ev); });
   header.append(button);

@@ -102,6 +102,9 @@ export const GEARS = {
 /**
  * Overland travel (p.97-98). Walking: terrain km/h minus the weather penalty. Vehicles: speed band
  * minus the gear, terrain, and weather penalties; roads lower the Drive DM by 1 (paved 2).
+ * Terrain does not change the difficulty, except that a terrain penalty of -3 or worse makes
+ * Speed Band 1 count as Top Gear (p.98: "a penalty of -3 out of 4"). Called by `travel()` in
+ * module/tools/planetside.mjs. Returns the speed and the Drive DM, or `{ impossible: true }`.
  */
 export function overlandTravel({ terrain = "open", weather = null, mode = "walk", hours = 6, speedBand = 4, vehicleType = "land", gear = "high", road = "" } = {}) {
   const t = TERRAIN[terrain] ?? TERRAIN.open;
@@ -110,13 +113,17 @@ export function overlandTravel({ terrain = "open", weather = null, mode = "walk"
     const kmh = Math.max(0, base + (weather?.walkPenalty ?? 0));
     return { mode, terrain: t.label, kmh, hours, km: kmh * hours };
   }
-  const g = GEARS[gear] ?? GEARS.high;
   const terrainPenalty = t.vehicle[vehicleType];
   if (terrainPenalty === null || terrainPenalty === undefined) return { mode, terrain: t.label, impossible: true, text: `${vehicleType} vehicles cannot cross ${t.label}.` };
-  const effective = Math.max(0, speedBand + g.band + terrainPenalty + (weather?.speedPenalty ?? 0));
+  const chosen = GEARS[gear] ?? GEARS.high;
+  const effective = Math.max(0, speedBand + chosen.band + terrainPenalty + (weather?.speedPenalty ?? 0));
+  // BOOK: "-3 out of 4" is the example of a Speed Band 4 vehicle; we apply the rule to every
+  // terrain penalty of -3 or worse, whatever the vehicle's band.
+  const hazard = terrainPenalty <= -3 && effective === 1;
+  const g = hazard ? GEARS.top : chosen;
   const roadDM = road === "paved" ? 2 : road === "road" ? 1 : 0;
   return {
-    mode, terrain: t.label, gear: g.label, speedBand: effective, stopped: effective === 0,
+    mode, terrain: t.label, gear: chosen.label, difficultyGear: g.label, hazard, speedBand: effective, stopped: effective === 0,
     driveDM: g.dm + roadDM + (weather?.vehicleDM ?? 0), failure: g.failure,
     crashDamage: `${effective}D per passenger`
   };
@@ -137,6 +144,7 @@ export const PLANET_LOCATIONS = {
   vacuum: { label: "Vacuum", frequency: "3 days", dm: -3, table: "D16" }
 };
 
+/** Planetside encounter type table (p.100), 2D + terrain DM. */
 export const PLANET_TYPES = [
   [null, 2, { type: "npc", label: "NPC Encounter", distance: "Close (5m or less)" }],
   [3, 5, { type: "environment", label: "Environment", distance: "Short (5m-10m)" }],
@@ -163,17 +171,25 @@ export const LOCATIONS = {
   65: "Settlement, 1D x 10,000 population", 66: "Settlement, 1D x 100,000 population, with a starport"
 };
 const LOCATION_PEOPLE = { 61: ["1D", 1], 62: ["1D", 10], 63: ["1D", 100], 64: ["1D", 1000], 65: ["1D", 10000], 66: ["1D", 100000] };
+/** Outpost types (p.101), 1D. */
 export const OUTPOSTS = ["Military", "Scout/ranger", "Communications", "Communications", "Courier", "Science"];
 
 /** Habitat Condition (p.101), 2D in each column + encounter DM. */
+// BOOK: the Occupied column stops at "Abandoned and", "Abandoned but", "Occupied but", and
+// "Occupied and"; we complete each one with the Condition word of the same row.
 export const HABITAT_OCCUPIED = [[null, 1, "Abandoned and destroyed"], [2, 3, "Abandoned"], [4, 4, "Abandoned but makeshift"], [5, 9, "In use"], [10, 10, "Occupied but under construction"], [11, 12, "Occupied"], [13, null, "Occupied and fortified"]];
+/** Habitat condition column (p.101), 2D + terrain DM. */
 export const HABITAT_CONDITION = [[null, 1, "Destroyed/collapsed"], [2, 3, "Falling apart/overgrown"], [4, 4, "Makeshift"], [5, 9, "Showing age/weathered"], [10, 10, "Under construction/being repaired"], [11, 12, "Well-maintained"], [13, null, "Fortified"]];
 
 /**
  * Roll a location encounter (p.101). `dm` is the terrain encounter DM. The population DM shifts
- * the tens die; the book does not give its values on p.100, so the Settlement Encounter
- * population DMs (p.102) are used.
+ * the tens die. Called by `planetsideEncounter`. Returns `{ code, text, popDM, ... }` with the
+ * sub-rolls (people, condition, in use, labour site, habitat).
  */
+// BOOK: p.100 says the population changes the location roll but gives no values; we use the
+// Settlement Encounter population DMs (p.102).
+// BOOK: labour sites (41-46) "do not need to roll on the Habitat Condition table", although that
+// table says "41-62"; we roll the habitat for 51-62 only.
 export function rollLocation(dice, { dm = 0, table = "D66", pop = null } = {}) {
   const popDM = pop === null ? 0 : settlementPopDM(pop);
   let code;
@@ -248,7 +264,11 @@ export function rollEnvironment(dice, { atmosphere = 6 } = {}) {
   return out;
 }
 
-/** Planetside NPC encounter (p.100): 2D, the column is picked with a D3 (the book does not say how). */
+/**
+ * Planetside NPC encounter (p.100): 2D on the animal, human, or mixed column. Called by
+ * `planetsideEncounter`. Returns `{ column, roll, text, count?, npcType?, reaction?, multiplier? }`.
+ */
+// BOOK: the book does not say how to pick the column; we roll a D3 (1 animal, 2 human, 3 mixed).
 export function rollPlanetNpc(dice, { column = null, world = null, socDM = 0 } = {}) {
   const col = column ?? ["animal", "human", "mixed"][dice.d3() - 1];
   const r = dice.twoD();

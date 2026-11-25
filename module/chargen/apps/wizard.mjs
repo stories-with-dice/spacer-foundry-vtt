@@ -1,21 +1,22 @@
-/** The lifepath character creation wizard (ApplicationV2). */
-import { Lifepath, summary, rollText } from "./rules/engine.mjs";
-import { applyToActor, postSummary } from "./apply.mjs";
+/** The lifepath character creation wizard (ApplicationV2). Drives the pure engine in rules/engine.mjs. */
+import { Lifepath, summary, rollText } from "../rules/engine.mjs";
+import { applyToActor, postSummary } from "../apply.mjs";
+import { randomDie } from "../../shared/dice.mjs";
+import { localizer, signed, templatePath } from "../../shared/foundry.mjs";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
-const L = key => game.i18n.localize(`SPACER.Chargen.${key}`);
+const L = localizer("SPACER.Chargen");
 
-/** Foundry dice for the engine: uniform integers. */
-function foundryDice(sides) {
-  const u = typeof CONFIG.Dice?.randomUniform === "function" ? CONFIG.Dice.randomUniform() : Math.random();
-  return Math.min(sides, 1 + Math.floor(u * sides));
-}
-
+/**
+ * The wizard window. `options.actor` is the character to write to; `options.dice` replaces the
+ * random die (Foundry's CONFIG.Dice.randomUniform through randomDie) for tests.
+ * Opened by openChargen(); the actor sheet and the Actors directory button call that.
+ */
 export class ChargenWizard extends HandlebarsApplicationMixin(ApplicationV2) {
   constructor({ actor, dice, ...options } = {}) {
     super(options);
     this.actor = actor;
-    this.lifepath = new Lifepath({ dice: dice ?? foundryDice });
+    this.lifepath = new Lifepath({ dice: dice ?? randomDie() });
   }
 
   static DEFAULT_OPTIONS = {
@@ -35,11 +36,11 @@ export class ChargenWizard extends HandlebarsApplicationMixin(ApplicationV2) {
   };
 
   static PARTS = {
-    main: { template: "systems/spacer/templates/chargen/wizard.hbs", scrollable: [".chargen-log"] }
+    main: { template: templatePath("chargen", "wizard"), scrollable: [".chargen-log"] }
   };
 
   get title() {
-    return `${game.i18n.localize("SPACER.Chargen.Title")}: ${this.actor?.name ?? ""}`;
+    return `${L("Title")}: ${this.actor?.name ?? ""}`;
   }
 
   async _prepareContext(options) {
@@ -51,7 +52,7 @@ export class ChargenWizard extends HandlebarsApplicationMixin(ApplicationV2) {
       label: lastRollEntry.text,
       ...lastRollEntry.roll,
       faces: lastRollEntry.roll.faces.map(f => ({ value: f })),
-      mods: lastRollEntry.roll.mods.map(m => ({ label: m.label, value: `${m.value >= 0 ? "+" : ""}${m.value}` })),
+      mods: lastRollEntry.roll.mods.map(m => ({ label: m.label, value: signed(m.value) })),
       hasTarget: lastRollEntry.roll.target !== null,
       resultClass: lastRollEntry.roll.success === null ? "" : lastRollEntry.roll.success ? "success" : "failure"
     } : null;
@@ -71,7 +72,7 @@ export class ChargenWizard extends HandlebarsApplicationMixin(ApplicationV2) {
         isRoll: p.type === "roll",
         isDone: p.type === "done",
         isDead: p.type === "dead",
-        mods: (p.mods ?? []).map(m => ({ label: m.label, value: `${m.value >= 0 ? "+" : ""}${m.value}` })),
+        mods: (p.mods ?? []).map(m => ({ label: m.label, value: signed(m.value) })),
         hasTarget: p.target !== null && p.target !== undefined,
         options: (p.options ?? []).map(o => ({ ...o, isAuto: o.value === p.auto }))
       },
@@ -124,7 +125,7 @@ export class ChargenWizard extends HandlebarsApplicationMixin(ApplicationV2) {
     await applyToActor(this.actor, this.lifepath.state);
     await postSummary(this.actor, this.lifepath.state);
     this._saved = true;
-    ui.notifications.info(game.i18n.format("SPACER.Chargen.Saved", { name: this.actor.name }));
+    ui.notifications.info(L("Saved", { name: this.actor.name }));
     await this.render();
     return this.actor;
   }
@@ -137,7 +138,10 @@ export class ChargenWizard extends HandlebarsApplicationMixin(ApplicationV2) {
   static async #onSave() { return this.save(); }
 }
 
-/** Open the wizard for a character actor. */
+/**
+ * Open the wizard for a character actor. Returns the app, or null (with a warning) for other actor
+ * types. Exposed as game.spacer.chargen.open; the actor sheet and createSpacer() call it.
+ */
 export function openChargen(actor, options = {}) {
   if (!actor || actor.documentName !== "Actor") throw new Error("openChargen needs an Actor");
   if (actor.type !== "character") {

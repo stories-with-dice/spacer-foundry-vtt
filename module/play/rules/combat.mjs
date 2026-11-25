@@ -56,6 +56,19 @@ export function rangeDM(weaponRange, band) {
   return RANGE_TABLE[row][col];
 }
 
+/**
+ * Range DM of a melee weapon used in hand-to-hand combat (p.43). A melee weapon cannot reach past
+ * its own range band (p.30); inside it, it uses its row of the weapon range table, so a Close or
+ * Short weapon gets +1 at Close. Called by computeAttack in rules/attack.mjs.
+ * @returns {number|null} null when the target is out of reach.
+ */
+export function meleeRangeDM(weaponRange, band) {
+  const range = normalizeRange(weaponRange) || "short";
+  const col = RANGE_BANDS.indexOf(band);
+  if (col < 0 || col > RANGE_BANDS.indexOf(range)) return null;
+  return rangeDM(range, band);
+}
+
 /** Defender positioning DM to the attacker (p.42). */
 export const POSITION_DM = { standing: 0, kneeling: -1, prone: -2, wall: -1 };
 /** Cover steps (p.42), each step is -1DM to the attacker. */
@@ -173,85 +186,6 @@ export function damageBonus({ effect = 0, melee = false, thrown = false, strDM =
   add("auto", autoSingle);
   add("overload", overload);
   return { terms, total: terms.reduce((s, t) => s + t.value, 0) };
-}
-
-/** Default 1D roller for damage distribution. */
-const d6 = () => 1 + Math.floor(Math.random() * 6);
-
-/**
- * Apply damage to a person's physical characteristics (p.43).
- * - END is hit first. When END reaches 0, the rest of this hit is split equally between DEX and STR
- *   (an odd point goes to a random one of the two).
- * - Later hits, while END is already 0, go to STR (1D odd) or DEX (1D even).
- * - Damage that would take STR or DEX below 0 spills into the other one.
- * @param {{str: number, dex: number, end: number}} chars  current values
- * @param {number} amount
- * @param {() => number} [roll1d]  returns 1-6
- * @returns {{after: {str: number, dex: number, end: number}, loss: {str: number, dex: number, end: number}, randomTo: string|null, wasted: number}}
- */
-export function distributeDamage(chars, amount, roll1d = d6) {
-  const after = { str: Math.max(0, chars.str), dex: Math.max(0, chars.dex), end: Math.max(0, chars.end) };
-  let left = Math.max(0, Math.floor(Number(amount) || 0));
-  let randomTo = null;
-
-  const hit = (key, n) => {
-    const take = Math.min(after[key], n);
-    after[key] -= take;
-    return n - take;
-  };
-  /** Put n points on `first`, spilling the rest on the other of STR/DEX. Returns what is left. */
-  const spill = (first, n) => hit(first === "str" ? "dex" : "str", hit(first, n));
-
-  if (left > 0 && after.end > 0) {
-    left = hit("end", left);
-    if (left > 0) {
-      const half = Math.floor(left / 2);
-      let toStr = half, toDex = half;
-      if (left % 2) { if (roll1d() % 2) toStr += 1; else toDex += 1; }
-      left = spill("str", toStr) + spill("dex", toDex);
-    }
-  } else if (left > 0) {
-    randomTo = roll1d() % 2 ? "str" : "dex";
-    left = spill(randomTo, left);
-  }
-
-  const loss = { str: Math.max(0, chars.str) - after.str, dex: Math.max(0, chars.dex) - after.dex, end: Math.max(0, chars.end) - after.end };
-  return { after, loss, randomTo, wasted: left };
-}
-
-/** Injury state from physical characteristics (p.43). */
-export function injuryState({ str, dex, end }) {
-  const zeros = [str, dex, end].filter(v => v <= 0).length;
-  if (zeros >= 3) return "dead";
-  if (zeros >= 2) return "unconscious";
-  if (end <= 0) return "wounded";
-  return "healthy";
-}
-
-/** Creature injury state from hits (p.110): pinned at 1/2 taken, unconscious at 3/4, dead at all. */
-export function creatureState(value, max) {
-  if (value <= 0) return "dead";
-  const taken = max - value;
-  if (taken >= max * 0.75) return "unconscious";
-  if (taken >= max * 0.5) return "pinned";
-  return "healthy";
-}
-
-/**
- * How the target's armour reacts to a hit (p.34).
- * - Absorbing (Ablat): negates the first hit of 2D-6D damage, then is destroyed.
- * - Reflective (Reflec): deflects an energy weapon hit, then is downgraded to Jack.
- * @param {{traits?: string[], damaged?: boolean}|null} armour  equipped armour
- * @param {{energy?: boolean, dice?: number}} hit
- * @returns {{negated: boolean, damageArmour: boolean, trait: string|null}}
- */
-export function armourReaction(armour, { energy = false, dice = 0 } = {}) {
-  const none = { negated: false, damageArmour: false, trait: null };
-  if (!armour || armour.damaged) return none;
-  const traits = (armour.traits ?? []).map(t => String(t).toLowerCase());
-  if (traits.includes("absorbing") && dice >= 2 && dice <= 6) return { negated: true, damageArmour: true, trait: "Absorbing" };
-  if (traits.includes("reflective") && energy) return { negated: true, damageArmour: true, trait: "Reflective" };
-  return none;
 }
 
 /**

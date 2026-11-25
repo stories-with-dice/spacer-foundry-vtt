@@ -2,8 +2,9 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import {
   rangeBandForDistance, rangeDM, normalizeRange, defenceDM, parseTraits, countDice, hasDamage, pierceArmour,
-  attackModifiers, damageBonus, distributeDamage, injuryState, creatureState, armourReaction, moraleThreshold
+  attackModifiers, damageBonus, moraleThreshold
 } from "../module/play/rules/combat.mjs";
+import { distributeDamage, injuryState, creatureState, armourReaction } from "../module/play/rules/injury.mjs";
 import {
   encumbrance, naturalHealing, healPoints, psiCap, recoverPsi, psiRangeCost, parsePsiCost, parseTarget,
   drugEffect, fallDamage, trainingFor

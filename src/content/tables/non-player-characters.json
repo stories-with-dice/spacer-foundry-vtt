@@ -46,7 +46,7 @@
     "name": "NPC Table",
     "folder": "Non-player Characters",
     "formula": "1d6*10+1d6",
-    "description": "<p>p.56. Roll D66 and apply any applicable DM to the tens place (for example, +1DM gives a range of 21-76). Population DM: Pop 1-2 -3; Pop 3-4 -2; Pop 5-6 -1; Pop 7-8 +0; Pop 9+ +1. Government DM: Gov 0 -2; Gov 1, 3, 5 -1; Gov 2, 4, 8 +0; Gov 6, 7, 9 +1; Gov A, B, C +2; Gov D, E, F +3. Sections (quality of life): 01-06 Unsettled; 11-16 Frontier; 21-26 Scraping by; 31-36 Developing; 41-46 Established; 51-56 Prosperous; 61-66 Peak; 71-76 Decline; 81-86 Dystopian; 91-96 Oppressive. In Foundry, add DM x10 to the roll formula (e.g. 1d6*10+1d6+10 for +1DM).</p>",
+    "description": "<p>The Toolkit's NPC generator applies the population and government DMs to the tens die for you. p.56. Roll D66 and apply any applicable DM to the tens place (for example, +1DM gives a range of 21-76). Population DM: Pop 1-2 -3; Pop 3-4 -2; Pop 5-6 -1; Pop 7-8 +0; Pop 9+ +1. Government DM: Gov 0 -2; Gov 1, 3, 5 -1; Gov 2, 4, 8 +0; Gov 6, 7, 9 +1; Gov A, B, C +2; Gov D, E, F +3. Sections (quality of life): 01-06 Unsettled; 11-16 Frontier; 21-26 Scraping by; 31-36 Developing; 41-46 Established; 51-56 Prosperous; 61-66 Peak; 71-76 Decline; 81-86 Dystopian; 91-96 Oppressive. In Foundry, add DM x10 to the roll formula (e.g. 1d6*10+1d6+10 for +1DM).</p>",
     "results": [
       {
         "range": [

@@ -19,6 +19,7 @@ export function starportGovernmentDM(gov) {
   return 3;
 }
 
+/** Starport feel by tens digit of the starport encounter roll (p.61). */
 export const STARPORT_RANGES = ["Abandoned or neglected", "Seedy", "Rundown", "Out of date", "Below average", "Average", "Above average", "Elite", "Prohibitive", "Oppressive"];
 
 /**
@@ -149,6 +150,7 @@ export function settlementLawDM(law) {
   return 4;
 }
 
+/** Settlement condition by tens digit of the settlement encounter roll (p.103). */
 export const SETTLEMENT_RANGES = ["Abandoned or neglected", "Seedy", "Rundown", "Out of date", "Maintained", "Burgeoning", "Esteemed", "Decline", "Dystopian", "Oppressive"];
 
 /** Settlement Encounter Table (p.103). "Random NPC" without a range rolls the full table. */

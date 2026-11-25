@@ -2,7 +2,7 @@
   <div class="stk-context">
     <label class="stk-world">
       <i class="fa-solid fa-earth-americas" inert></i>
-      <select data-field="currentWorld" {{#unless isGM}}disabled{{/unless}}>{{selectOptions worlds selected=currentWorld}}</select>
+      <select name="currentWorld" {{#unless isGM}}disabled{{/unless}}>{{selectOptions worlds selected=currentWorld}}</select>
       {{#if currentWorld}}<button type="button" class="stk-icon" data-action="openWorld" data-tooltip="SPACER.Tools.OpenWorld"><i class="fa-solid fa-book-open" inert></i></button>{{/if}}
     </label>
     <span class="stk-actor"><i class="fa-solid fa-user" inert></i> {{actorName}}</span>
@@ -27,7 +27,7 @@
   <details data-section="campaign" {{#if s.open.campaign}}open{{/if}}>
     <summary><i class="fa-solid fa-handshake" inert></i> {{localize "SPACER.Tools.Section.Campaign"}} <small>p.50-59</small></summary>
     <div class="stk-line">
-      <select data-field="patronLocation">{{selectOptions patronLocations selected=s.patronLocation}}</select>
+      <select name="patronLocation">{{selectOptions patronLocations selected=s.patronLocation}}</select>
       <button type="button" data-action="patron" class="stk-main"><i class="fa-solid fa-briefcase" inert></i> {{localize "SPACER.Tools.Patron"}}</button>
     </div>
     <div class="stk-buttons">
@@ -43,34 +43,34 @@
     <div class="stk-buttons">
       <button type="button" data-action="starport"><i class="fa-solid fa-plane-arrival" inert></i> {{localize "SPACER.Tools.StarportEnc"}}</button>
       <button type="button" data-action="settlement"><i class="fa-solid fa-city" inert></i> {{localize "SPACER.Tools.Settlement"}}</button>
-      <label class="stk-check"><input type="checkbox" data-field="legal" {{checked s.legal}}> {{localize "SPACER.Tools.LegalCheck"}}</label>
+      <label class="stk-check"><input type="checkbox" name="legal" {{checked s.legal}}> {{localize "SPACER.Tools.LegalCheck"}}</label>
     </div>
     <div class="stk-line">
-      <select data-field="spaceLocation">{{selectOptions spaceLocations selected=s.spaceLocation}}</select>
+      <select name="spaceLocation">{{selectOptions spaceLocations selected=s.spaceLocation}}</select>
       <button type="button" data-action="space" class="stk-main"><i class="fa-solid fa-satellite" inert></i> {{localize "SPACER.Tools.Space"}}</button>
     </div>
     <div class="stk-buttons">
-      <label class="stk-check"><input type="checkbox" data-field="jump" {{checked s.jump}}> {{localize "SPACER.Tools.Jump"}}</label>
-      <label class="stk-check"><input type="checkbox" data-field="force" {{checked s.force}}> {{localize "SPACER.Tools.Force"}}</label>
+      <label class="stk-check"><input type="checkbox" name="jump" {{checked s.jump}}> {{localize "SPACER.Tools.Jump"}}</label>
+      <label class="stk-check"><input type="checkbox" name="force" {{checked s.force}}> {{localize "SPACER.Tools.Force"}}</label>
     </div>
     <div class="stk-buttons">
       <button type="button" data-action="hail"><i class="fa-solid fa-tower-broadcast" inert></i> {{localize "SPACER.Tools.Hail"}}</button>
       <button type="button" data-action="scan"><i class="fa-solid fa-satellite-dish" inert></i> {{localize "SPACER.Tools.Scan"}}</button>
-      <label class="stk-check"><input type="checkbox" data-field="military" {{checked s.military}}> {{localize "SPACER.Tools.Military"}}</label>
+      <label class="stk-check"><input type="checkbox" name="military" {{checked s.military}}> {{localize "SPACER.Tools.Military"}}</label>
     </div>
   </details>
 
   <details data-section="planetside" {{#if s.open.planetside}}open{{/if}}>
     <summary><i class="fa-solid fa-mountain-sun" inert></i> {{localize "SPACER.Tools.Section.Planetside"}} <small>p.96-107</small></summary>
     <div class="stk-line">
-      <label>{{localize "SPACER.Tools.Terrain"}} <select data-field="terrain">{{selectOptions terrains selected=s.terrain}}</select></label>
-      <label>{{localize "SPACER.Tools.Zone"}} <select data-field="zone">{{selectOptions zones selected=s.zone}}</select></label>
+      <label>{{localize "SPACER.Tools.Terrain"}} <select name="terrain">{{selectOptions terrains selected=s.terrain}}</select></label>
+      <label>{{localize "SPACER.Tools.Zone"}} <select name="zone">{{selectOptions zones selected=s.zone}}</select></label>
     </div>
     {{#if weather}}<p class="stk-note"><i class="fa-solid fa-cloud" inert></i> {{weather}}</p>{{/if}}
     <div class="stk-buttons">
       <button type="button" data-action="weather"><i class="fa-solid fa-cloud-bolt" inert></i> {{localize "SPACER.Tools.Weather"}}</button>
       <button type="button" data-action="planetside"><i class="fa-solid fa-binoculars" inert></i> {{localize "SPACER.Tools.Planetside"}}</button>
-      <select data-field="travelMode">{{selectOptions travelModes selected=s.travelMode}}</select>
+      <select name="travelMode">{{selectOptions travelModes selected=s.travelMode}}</select>
       <button type="button" data-action="travel"><i class="fa-solid fa-route" inert></i> {{localize "SPACER.Tools.Travel"}}</button>
     </div>
     <h4>{{localize "SPACER.Tools.Survival"}} <small>({{actorName}})</small></h4>
@@ -78,13 +78,13 @@
       {{#each activities}}<button type="button" data-action="survival" data-activity="{{key}}">{{label}}</button>{{/each}}
       <button type="button" data-action="rations"><i class="fa-solid fa-utensils" inert></i> {{localize "SPACER.Tools.Rations"}}</button>
     </div>
-    <label class="stk-check"><input type="checkbox" data-field="advance" {{checked s.advance}}> {{localize "SPACER.Tools.AdvanceClock"}}</label>
+    <label class="stk-check"><input type="checkbox" name="advance" {{checked s.advance}}> {{localize "SPACER.Tools.AdvanceClock"}}</label>
   </details>
 
   <details data-section="animals" {{#if s.open.animals}}open{{/if}}>
     <summary><i class="fa-solid fa-paw" inert></i> {{localize "SPACER.Tools.Section.Animals"}} <small>p.110-113</small></summary>
     <div class="stk-line">
-      <select data-field="animalTerrain">{{selectOptions animalTerrains selected=s.animalTerrain}}</select>
+      <select name="animalTerrain">{{selectOptions animalTerrains selected=s.animalTerrain}}</select>
       <button type="button" data-action="animal" class="stk-main"><i class="fa-solid fa-paw" inert></i> {{localize "SPACER.Tools.Animal"}}</button>
     </div>
   </details>
@@ -92,15 +92,15 @@
   <details data-section="worlds" {{#if s.open.worlds}}open{{/if}}>
     <summary><i class="fa-solid fa-earth-americas" inert></i> {{localize "SPACER.Tools.Section.Worlds"}} <small>p.88-95</small></summary>
     <div class="stk-line">
-      <label>{{localize "SPACER.Tools.Density"}} <select data-field="density">{{selectOptions densities selected=s.density}}</select></label>
-      <label>{{localize "SPACER.Tools.SizeRoll"}} <select data-field="sizeMode">{{selectOptions sizeModes selected=s.sizeMode}}</select></label>
+      <label>{{localize "SPACER.Tools.Density"}} <select name="density">{{selectOptions densities selected=s.density}}</select></label>
+      <label>{{localize "SPACER.Tools.SizeRoll"}} <select name="sizeMode">{{selectOptions sizeModes selected=s.sizeMode}}</select></label>
     </div>
     <div class="stk-line">
-      <input type="text" data-field="worldName" value="{{s.worldName}}" placeholder="{{localize "SPACER.Tools.RandomName"}}">
+      <input type="text" name="worldName" value="{{s.worldName}}" placeholder="{{localize "SPACER.Tools.RandomName"}}">
       <button type="button" data-action="world" class="stk-main"><i class="fa-solid fa-earth-americas" inert></i> {{localize "SPACER.Tools.World"}}</button>
     </div>
     <div class="stk-line">
-      <input type="text" data-field="subsectorName" value="{{s.subsectorName}}" placeholder="{{localize "SPACER.Tools.RandomName"}}">
+      <input type="text" name="subsectorName" value="{{s.subsectorName}}" placeholder="{{localize "SPACER.Tools.RandomName"}}">
       <button type="button" data-action="subsector" class="stk-main"><i class="fa-solid fa-map" inert></i> {{localize "SPACER.Tools.Subsector"}}</button>
     </div>
   </details>
@@ -116,9 +116,9 @@
 
   <details data-section="oracle" {{#if s.open.oracle}}open{{/if}}>
     <summary><i class="fa-solid fa-eye" inert></i> {{localize "SPACER.Tools.Section.Oracle"}}</summary>
-    <input type="text" data-field="question" value="{{s.question}}" placeholder="{{localize "SPACER.Tools.Question"}}">
+    <input type="text" name="question" value="{{s.question}}" placeholder="{{localize "SPACER.Tools.Question"}}">
     <div class="stk-line">
-      <select data-field="likelihood">{{selectOptions likelihoods selected=s.likelihood}}</select>
+      <select name="likelihood">{{selectOptions likelihoods selected=s.likelihood}}</select>
       <button type="button" data-action="oracle" class="stk-main"><i class="fa-solid fa-circle-question" inert></i> {{localize "SPACER.Tools.Ask"}}</button>
       <button type="button" data-action="event"><i class="fa-solid fa-bolt" inert></i> {{localize "SPACER.Tools.Event"}}</button>
     </div>

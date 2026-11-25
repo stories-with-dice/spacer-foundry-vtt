@@ -1,11 +1,16 @@
 /** Entry point of the "play" area. Called from the init hook in module/spacer.mjs. */
+import { SYSTEM_ID, templatePath, preloadTemplates, setting } from "../shared/foundry.mjs";
+import { registerChatActions } from "../shared/chat-actions.mjs";
 import * as api from "./api.mjs";
 import { SpacerActor, SpacerItem } from "./documents.mjs";
 import { SpacerCharacterSheet, SpacerNpcSheet, SpacerCreatureSheet } from "./sheets/actor-sheets.mjs";
 import { SpacerItemSheet } from "./sheets/item-sheet.mjs";
-import { templatePath, L, pickActors, resolveActor, SYSTEM } from "./util.mjs";
+import { PLAY_CHAT_ACTIONS } from "./chat.mjs";
 import * as combatRules from "./rules/combat.mjs";
+import * as attackRules from "./rules/attack.mjs";
+import * as injuryRules from "./rules/injury.mjs";
 import * as characterRules from "./rules/character.mjs";
+import * as taskRules from "./rules/task.mjs";
 
 /** Templates loaded at init so partials are ready. */
 const TEMPLATES = [
@@ -22,6 +27,10 @@ const STATUS_EFFECTS = [
   { id: "pinned", name: "SPACER.Injury.pinned", img: "icons/svg/net.svg" }
 ];
 
+/**
+ * Register the play area: document classes, sheets, settings, templates, status effects, chat
+ * buttons, combat hooks, and `game.spacer.play`. Called once from the init hook.
+ */
 export function registerPlay() {
   CONFIG.Actor.documentClass = SpacerActor;
   CONFIG.Item.documentClass = SpacerItem;
@@ -29,33 +38,36 @@ export function registerPlay() {
   for (const s of STATUS_EFFECTS) if (!CONFIG.statusEffects.some(e => e.id === s.id)) CONFIG.statusEffects.push(s);
 
   const { Actors, Items } = foundry.documents.collections;
-  Actors.registerSheet(SYSTEM, SpacerCharacterSheet, { types: ["character"], makeDefault: true, label: "SPACER.Sheet.Character" });
-  Actors.registerSheet(SYSTEM, SpacerNpcSheet, { types: ["npc"], makeDefault: true, label: "SPACER.Sheet.Npc" });
-  Actors.registerSheet(SYSTEM, SpacerCreatureSheet, { types: ["creature"], makeDefault: true, label: "SPACER.Sheet.Creature" });
-  Items.registerSheet(SYSTEM, SpacerItemSheet, {
+  Actors.registerSheet(SYSTEM_ID, SpacerCharacterSheet, { types: ["character"], makeDefault: true, label: "SPACER.Sheet.Character" });
+  Actors.registerSheet(SYSTEM_ID, SpacerNpcSheet, { types: ["npc"], makeDefault: true, label: "SPACER.Sheet.Npc" });
+  Actors.registerSheet(SYSTEM_ID, SpacerCreatureSheet, { types: ["creature"], makeDefault: true, label: "SPACER.Sheet.Creature" });
+  Items.registerSheet(SYSTEM_ID, SpacerItemSheet, {
     types: ["skill", "weapon", "armor", "gear", "psionic", "drug", "shipWeapon"], makeDefault: true, label: "SPACER.Sheet.Item"
   });
 
   registerSettings();
-  foundry.applications.handlebars.loadTemplates(Object.fromEntries(TEMPLATES.map(t => [`spacer.play.${t.replaceAll("/", ".")}`, templatePath(t)])));
+  preloadTemplates(Object.fromEntries(TEMPLATES.map(t => [`spacer.play.${t.replaceAll("/", ".")}`, templatePath("play", t)])));
+  registerChatActions(PLAY_CHAT_ACTIONS);
 
-  Hooks.on("renderChatMessageHTML", onRenderChatMessage);
   Hooks.on("combatStart", combat => resetAll(combat));
   Hooks.on("deleteCombat", (combat, _o, userId) => { if (userId === game.user.id) resetAll(combat); });
   Hooks.on("updateCombat", (combat, changed) => {
-    if (!("round" in changed) || !game.user.isActiveGM || !game.settings.get(SYSTEM, "autoMorale")) return;
+    if (!("round" in changed) || !game.user.isActiveGM || !setting("autoMorale", true)) return;
     api.combatMorale(combat);
   });
 
-  game.spacer.play = { ...api, rules: { ...combatRules, ...characterRules } };
+  game.spacer.play = {
+    ...api,
+    rules: { ...combatRules, ...attackRules, ...injuryRules, ...characterRules, ...taskRules }
+  };
 }
 
 function registerSettings() {
-  game.settings.register(SYSTEM, "absoluteResults", {
+  game.settings.register(SYSTEM_ID, "absoluteResults", {
     name: "SPACER.Settings.AbsoluteResults", hint: "SPACER.Settings.AbsoluteResultsHint",
     scope: "world", config: true, type: Boolean, default: true
   });
-  game.settings.register(SYSTEM, "autoMorale", {
+  game.settings.register(SYSTEM_ID, "autoMorale", {
     name: "SPACER.Settings.AutoMorale", hint: "SPACER.Settings.AutoMoraleHint",
     scope: "world", config: true, type: Boolean, default: true
   });
@@ -64,39 +76,4 @@ function registerSettings() {
 /** Reset sprint, melee, overwatch, and evade on every combatant (start and end of an encounter). */
 async function resetAll(combat) {
   for (const c of combat.combatants) if (c.actor?.isOwner) await api.resetCombatCounters(c.actor);
-}
-
-/** Wire the play buttons on chat cards. */
-function onRenderChatMessage(message, html) {
-  const flags = message.flags?.[SYSTEM] ?? {};
-  for (const btn of html.querySelectorAll("[data-action^='play-']")) {
-    btn.addEventListener("click", async event => {
-      event.preventDefault();
-      btn.disabled = true;
-      try {
-        await onChatAction(btn.dataset.action, btn.dataset, flags);
-      } finally {
-        btn.disabled = false;
-      }
-    });
-  }
-}
-
-async function onChatAction(action, data, flags) {
-  const atk = flags.attack ?? {};
-  if (action === "play-damage") {
-    const amount = Number(data.amount ?? atk.damage ?? 0);
-    const actors = await pickActors(atk.target ? [atk.target] : []);
-    if (!actors.length) return ui.notifications.warn(L("Chat.NoTarget"));
-    for (const a of actors) {
-      if (!a.isOwner) { ui.notifications.warn(L("Chat.NotOwner", { name: a.name })); continue; }
-      await api.applyDamage(a, amount, { energy: !!atk.energy, dice: atk.dice ?? 0, source: data.source ?? "" });
-    }
-  } else if (action === "play-stun") {
-    const actors = await pickActors(atk.target ? [atk.target] : []);
-    for (const a of actors) await api.resistStun(a);
-  } else if (action === "play-sheet") {
-    const a = await resolveActor(data.uuid);
-    a?.sheet.render(true);
-  }
 }

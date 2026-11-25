@@ -1,5 +1,6 @@
 /** Starship construction wizard (book p.74-78): steps 1-9, live summary, builds a ship actor. */
-import { L, credits } from "../api.mjs";
+import { L, credits } from "../common.mjs";
+import { templatePath } from "../../shared/foundry.mjs";
 import * as C from "../rules/construction.mjs";
 import { annualMaintenance, lifeSupportCost, mandatoryPositions, crewSalaries } from "../rules/operations.mjs";
 
@@ -27,7 +28,7 @@ export class ConstructionWizard extends HandlebarsApplicationMixin(ApplicationV2
   };
 
   static PARTS = {
-    form: { template: "systems/spacer/templates/craft/construction.hbs", scrollable: [".steps"] }
+    form: { template: templatePath("craft", "construction"), scrollable: [".steps"] }
   };
 
   /** Design with weapons and secondary craft expanded from the count inputs. */
@@ -142,9 +143,10 @@ export class ConstructionWizard extends HandlebarsApplicationMixin(ApplicationV2
           lifeSupport: lifeSupportCost(r.staterooms), fuelCost: 0, bank: 0
         },
         crew: roles.map(role => ({ role, actor: "" })),
+        armor: { ...d.armor },
         description: `<p>${L("Build.summary", { cost: credits(r.total), months: r.months, down: credits(r.downPayment) })}</p>`
       },
-      flags: { spacer: { craft: { armor: d.armor, design: d } } },
+      flags: { spacer: { craft: { design: d } } },
       items
     };
     return Actor.create(data);

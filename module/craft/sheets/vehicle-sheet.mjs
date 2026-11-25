@@ -1,10 +1,11 @@
 /** Vehicle actor sheet (book p.46-49). */
 import * as api from "../api.mjs";
+import { L } from "../common.mjs";
+import { pickActors, templatePath } from "../../shared/foundry.mjs";
 import { SPEED_BAND_KMH, cargoForOccupants } from "../rules/vehicles.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
-const L = api.L;
 const LOCATIONS = ["interior", "drive", "handling", "hull", "weapon"];
 
 export class VehicleSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
@@ -31,7 +32,7 @@ export class VehicleSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
   };
 
   static PARTS = {
-    main: { template: "systems/spacer/templates/craft/vehicle-sheet.hbs", scrollable: [".scroll"] }
+    main: { template: templatePath("craft", "vehicle-sheet"), scrollable: [".scroll"] }
   };
 
   async _prepareContext(options) {
@@ -43,11 +44,13 @@ export class VehicleSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       const l = v.locations[key];
       return {
         key, label: L(`Loc.${key}`), value: l.value, max: l.max, armored: l.armored,
+        // Armour from the rating when no location is flagged (rules armoredLocations, p.49).
+        autoArmor: !l.armored && v.armoredLocations.includes(key),
         pips: Array.from({ length: l.max }, (_, i) => ({ filled: i >= l.value })), out: l.max > 0 && l.value <= 0
       };
     });
     const weapons = actor.items.filter(i => i.type === "shipWeapon").map(i => ({
-      id: i.id, name: i.name, img: i.img, damage: i.system.damage, destroyed: i.system.destroyed, disabled: !!i.flags?.spacer?.craft?.disabled
+      id: i.id, name: i.name, img: i.img, damage: i.system.damage, destroyed: i.system.destroyed, disabled: i.system.disabled
     }));
     const occupants = v.crew.map((uuid, index) => {
       const a = fromUuidSync(uuid);
@@ -92,8 +95,9 @@ export class VehicleSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
     return actor;
   }
 
-  #target(types = ["vehicle", "ship"]) {
-    return [...game.user.targets].map(t => t.actor).find(a => types.includes(a?.type)) ?? null;
+  /** The first targeted (else controlled) actor of these types that is not this vehicle. */
+  async #target(types = ["vehicle", "ship", "character", "npc", "creature"]) {
+    return (await pickActors()).find(a => a !== this.actor && types.includes(a.type)) ?? null;
   }
 
   static async #onHit() {
@@ -112,7 +116,7 @@ export class VehicleSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
 
   static async #onFire(event, target) {
     const id = target.closest("[data-item-id]").dataset.itemId;
-    await api.fireWeapon(this.actor, id, { target: this.#target() });
+    await api.fireWeapon(this.actor, id, { target: await this.#target() });
   }
 
   static #onEditItem(event, target) {
@@ -144,19 +148,19 @@ export class VehicleSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
   }
 
   static async #onRam() {
-    const t = this.#target(["vehicle"]);
+    const t = await this.#target(["vehicle"]);
     if (!t) return ui.notifications.warn(L("Warn.noTarget"));
     await api.ram(this.actor, t);
   }
 
   static async #onHitAndRun() {
-    const t = this.#target(["character", "npc", "creature"]);
+    const t = await this.#target(["character", "npc", "creature"]);
     if (!t) return ui.notifications.warn(L("Warn.noTarget"));
     await api.hitAndRun(this.actor, t);
   }
 
   static async #onOffensiveDriving() {
-    const t = this.#target(["vehicle"]);
+    const t = await this.#target(["vehicle"]);
     if (!t) return ui.notifications.warn(L("Warn.noTarget"));
     await api.offensiveDriving(this.actor, t);
   }

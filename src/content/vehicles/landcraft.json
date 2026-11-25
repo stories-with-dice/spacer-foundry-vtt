@@ -78,12 +78,12 @@
         "interior": {
           "value": 6,
           "max": 6,
-          "armored": false
+          "armored": true
         },
         "drive": {
           "value": 4,
           "max": 4,
-          "armored": false
+          "armored": true
         },
         "handling": {
           "value": 8,
@@ -93,7 +93,7 @@
         "hull": {
           "value": 8,
           "max": 8,
-          "armored": false
+          "armored": true
         },
         "weapon": {
           "value": 0,
@@ -101,7 +101,7 @@
           "armored": false
         }
       },
-      "description": "<p>A wheeled vehicle used for transporting characters in hazardous locations such as warzones. ATVs can carry up to 16 passengers and 2T of cargo.</p><p>Distance of operation: 5,000km. Weight 10T, TL 6, speed band 4, cost 80,000cr.</p><p>Damage locations (book): Interior 6, Speed 4, Hull 8, Armour 3. The book gives no Handling value; Handling is set to the Hull value.</p><ul><li>Land: This vehicle requires solid ground to be used.</li><li>Military: This vehicle is only available at military-owned locations and is available for military personnel to use.</li><li>Wheeled: wheeled vehicle (the book does not define this trait).</li></ul><p>Cargo: For every one occupant slot, 50kg of cargo can be carried instead. Weapons can be added to a vehicle after purchase, but civilian vehicles are unarmed by default. Cruising speed: vehicles with speed band 3+ have a cruising speed equal to one speed band less than top speed (p.46).</p><p>Source: p.47.</p>"
+      "description": "<p>A wheeled vehicle used for transporting characters in hazardous locations such as warzones. ATVs can carry up to 16 passengers and 2T of cargo.</p><p>Distance of operation: 5,000km. Weight 10T, TL 6, speed band 4, cost 80,000cr.</p><p>Damage locations (book): Interior 6, Speed 4, Hull 8, Armour 3. The book gives no Handling value; Handling is set to the Hull value.</p><ul><li>Land: This vehicle requires solid ground to be used.</li><li>Military: This vehicle is only available at military-owned locations and is available for military personnel to use.</li><li>Wheeled: wheeled vehicle (the book does not define this trait).</li></ul><p>Cargo: For every one occupant slot, 50kg of cargo can be carried instead. Weapons can be added to a vehicle after purchase, but civilian vehicles are unarmed by default. Cruising speed: vehicles with speed band 3+ have a cruising speed equal to one speed band less than top speed (p.46).</p><p>Armour 3: one armour point on each of Hull, Interior, Drive (each reduces a hit there by 1). BOOK: p.49 assigns one armour point per location but does not say which; this pack armours the hull first, then the interior and the drive.</p><p>Source: p.47.</p>"
     },
     "items": []
   },
@@ -131,12 +131,12 @@
         "interior": {
           "value": 6,
           "max": 6,
-          "armored": false
+          "armored": true
         },
         "drive": {
           "value": 3,
           "max": 3,
-          "armored": false
+          "armored": true
         },
         "handling": {
           "value": 8,
@@ -146,7 +146,7 @@
         "hull": {
           "value": 8,
           "max": 8,
-          "armored": false
+          "armored": true
         },
         "weapon": {
           "value": 0,
@@ -154,7 +154,7 @@
           "armored": false
         }
       },
-      "description": "<p>Same as the Wheeled ATV but has the Tracked trait.</p><p>Distance of operation: 5,000km. Weight 10T, TL 6, speed band 3, cost 40,000cr.</p><p>Damage locations (book): Interior 6, Speed 3, Hull 8, Armour 3. The book gives no Handling value; Handling is set to the Hull value.</p><p>Occupants and cargo copied from the Wheeled ATV (\"Same as the Wheeled ATV\").</p><ul><li>Land: This vehicle requires solid ground to be used.</li><li>Military: This vehicle is only available at military-owned locations and is available for military personnel to use.</li><li>Tracked: tracked vehicle (the book does not define this trait).</li></ul><p>Cargo: For every one occupant slot, 50kg of cargo can be carried instead. Weapons can be added to a vehicle after purchase, but civilian vehicles are unarmed by default. Cruising speed: vehicles with speed band 3+ have a cruising speed equal to one speed band less than top speed (p.46).</p><p>Source: p.47.</p>"
+      "description": "<p>Same as the Wheeled ATV but has the Tracked trait.</p><p>Distance of operation: 5,000km. Weight 10T, TL 6, speed band 3, cost 40,000cr.</p><p>Damage locations (book): Interior 6, Speed 3, Hull 8, Armour 3. The book gives no Handling value; Handling is set to the Hull value.</p><p>Occupants and cargo copied from the Wheeled ATV (\"Same as the Wheeled ATV\").</p><ul><li>Land: This vehicle requires solid ground to be used.</li><li>Military: This vehicle is only available at military-owned locations and is available for military personnel to use.</li><li>Tracked: tracked vehicle (the book does not define this trait).</li></ul><p>Cargo: For every one occupant slot, 50kg of cargo can be carried instead. Weapons can be added to a vehicle after purchase, but civilian vehicles are unarmed by default. Cruising speed: vehicles with speed band 3+ have a cruising speed equal to one speed band less than top speed (p.46).</p><p>Armour 3: one armour point on each of Hull, Interior, Drive (each reduces a hit there by 1). BOOK: p.49 assigns one armour point per location but does not say which; this pack armours the hull first, then the interior and the drive.</p><p>Source: p.47.</p>"
     },
     "items": []
   },
@@ -184,12 +184,12 @@
         "interior": {
           "value": 6,
           "max": 6,
-          "armored": false
+          "armored": true
         },
         "drive": {
           "value": 3,
           "max": 3,
-          "armored": false
+          "armored": true
         },
         "handling": {
           "value": 8,
@@ -199,7 +199,7 @@
         "hull": {
           "value": 8,
           "max": 8,
-          "armored": false
+          "armored": true
         },
         "weapon": {
           "value": 1,
@@ -207,7 +207,7 @@
           "armored": false
         }
       },
-      "description": "<p>Similar to the ATV but has a mounted turret that deals D3 damage.</p><p>Distance of operation: 5,000km. Weight 10T, TL 6, speed band 3, cost 100,000cr.</p><p>Damage locations (book): Interior 6, Speed 3, Hull 8, Weapon 1, Armour 3. The book gives no Handling value; Handling is set to the Hull value.</p><p>Occupants and cargo copied from the ATV (\"Similar to the ATV\"). The D3 turret is the Medium Turret of p.49.</p><ul><li>Land: This vehicle requires solid ground to be used.</li><li>Military: This vehicle is only available at military-owned locations and is available for military personnel to use.</li><li>Tracked: tracked vehicle (the book does not define this trait).</li></ul><p>Cargo: For every one occupant slot, 50kg of cargo can be carried instead. Weapons can be added to a vehicle after purchase, but civilian vehicles are unarmed by default. Cruising speed: vehicles with speed band 3+ have a cruising speed equal to one speed band less than top speed (p.46).</p><p>Source: p.47.</p>"
+      "description": "<p>Similar to the ATV but has a mounted turret that deals D3 damage.</p><p>Distance of operation: 5,000km. Weight 10T, TL 6, speed band 3, cost 100,000cr.</p><p>Damage locations (book): Interior 6, Speed 3, Hull 8, Weapon 1, Armour 3. The book gives no Handling value; Handling is set to the Hull value.</p><p>Occupants and cargo copied from the ATV (\"Similar to the ATV\"). The D3 turret is the Medium Turret of p.49.</p><ul><li>Land: This vehicle requires solid ground to be used.</li><li>Military: This vehicle is only available at military-owned locations and is available for military personnel to use.</li><li>Tracked: tracked vehicle (the book does not define this trait).</li></ul><p>Cargo: For every one occupant slot, 50kg of cargo can be carried instead. Weapons can be added to a vehicle after purchase, but civilian vehicles are unarmed by default. Cruising speed: vehicles with speed band 3+ have a cruising speed equal to one speed band less than top speed (p.46).</p><p>Armour 3: one armour point on each of Hull, Interior, Drive (each reduces a hit there by 1). BOOK: p.49 assigns one armour point per location but does not say which; this pack armours the hull first, then the interior and the drive.</p><p>Source: p.47.</p>"
     },
     "items": [
       {

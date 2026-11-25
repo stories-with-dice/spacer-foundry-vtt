@@ -52,6 +52,8 @@ try {
   if (sub.folder.folder?.name !== "Spacer: Worlds") fail("subsector folder not under Spacer: Worlds");
   if (sub.journals.length !== sub.subsector.worlds.length) fail("one journal per world expected");
   if (!sub.journals.every(j => j.flags.spacer.world?.subsector === "ToolsTest Subsector")) fail("subsector flag missing");
+  if (!sub.journals.every(j => j.flags.spacer.world?.popDMs?.capitalInSubsector === 2 && j.flags.spacer.world.popDMs.dense === 1)) fail("subsector population DMs missing (p.92)");
+  if (sub.journals.filter(j => j.flags.spacer.world.capital).length !== 1) fail("subsector needs exactly one capital");
   out.subsector = { worlds: sub.journals.length, capital: sub.subsector.capital };
 
   // Patron, NPCs, animal.
@@ -118,6 +120,21 @@ try {
   await wait(300);
   fromCard.sheet?.close();
 
+  // World card button: "Open journal" (tools-open) through the shared chat actions.
+  const worldStart = Date.now();
+  await T.generateWorld({ name: "ToolsTest Button", hex: "0101", create: false });
+  await wait(500);
+  const wmsg = game.messages.contents.filter(m => m.flags?.spacer?.tools?.kind === "world" && m.timestamp >= worldStart && m.author?.id === game.user.id).at(-1);
+  const wbtn = wmsg && document.querySelector(`#chat [data-message-id="${wmsg.id}"] [data-action="tools-create-world"]`);
+  if (!wbtn) fail("world card button not rendered");
+  wbtn.click();
+  let wj = null;
+  for (let i = 0; i < 20 && !wj; i++) { await wait(100); wj = game.journal.find(j => j.name === "ToolsTest Button"); }
+  if (!wj?.flags.spacer?.world) fail("world card button created no journal");
+  created.journals.push(wj.id);
+  await wait(300);
+  wj.sheet?.close();
+
   // Toolkit buttons.
   app.render({ force: true });
   await wait(300);
@@ -139,6 +156,10 @@ try {
   await wait(200);
   tc.element.querySelector('[data-action="rollGoods"]').click();
   await wait(500);
+  const originPop = journal.flags.spacer.world.population;
+  const expectedGoods = 6 + Math.max(0, originPop - 6);
+  if (tc.goods.length < expectedGoods || tc.goods.length > expectedGoods + 1) fail(`goods on offer ${tc.goods.length}, expected ${expectedGoods} (+1 extra) for population ${originPop} (p.63)`);
+  out.goods = tc.goods.length;
   const buy = tc.element.querySelector('[data-action="buy"]');
   if (!buy) fail("no goods listed");
   buy.click();

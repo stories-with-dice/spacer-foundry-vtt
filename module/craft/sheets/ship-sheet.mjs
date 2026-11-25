@@ -1,5 +1,7 @@
 /** Starship actor sheet (book p.68-87). */
 import * as api from "../api.mjs";
+import { L, credits } from "../common.mjs";
+import { pickActors, templatePath } from "../../shared/foundry.mjs";
 import { CREW_POSITIONS, CREW_BY_KEY } from "../rules/operations.mjs";
 import { SPACE_RANGES } from "../rules/space-combat.mjs";
 import { INTERPLANETARY } from "../rules/travel.mjs";
@@ -8,9 +10,10 @@ import { skillRank } from "../../play/api.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
-const L = api.L;
 
 const SYSTEMS = ["jDrive", "mDrive", "power"];
+/** Actors a ship weapon can target (book p.49, p.84). */
+const TARGET_TYPES = ["ship", "vehicle", "character", "npc", "creature"];
 
 export class ShipSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
   static DEFAULT_OPTIONS = {
@@ -45,13 +48,13 @@ export class ShipSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
   };
 
   static PARTS = {
-    header: { template: "systems/spacer/templates/craft/ship-header.hbs" },
+    header: { template: templatePath("craft", "ship-header") },
     tabs: { template: "templates/generic/tab-navigation.hbs" },
-    ship: { template: "systems/spacer/templates/craft/ship-stats.hbs", scrollable: [""] },
-    crew: { template: "systems/spacer/templates/craft/ship-crew.hbs", scrollable: [""] },
-    finances: { template: "systems/spacer/templates/craft/ship-finances.hbs", scrollable: [""] },
-    travel: { template: "systems/spacer/templates/craft/ship-travel.hbs", scrollable: [""] },
-    notes: { template: "systems/spacer/templates/craft/ship-notes.hbs", scrollable: [""] }
+    ship: { template: templatePath("craft", "ship-stats"), scrollable: [""] },
+    crew: { template: templatePath("craft", "ship-crew"), scrollable: [""] },
+    finances: { template: templatePath("craft", "ship-finances"), scrollable: [""] },
+    travel: { template: templatePath("craft", "ship-travel"), scrollable: [""] },
+    notes: { template: templatePath("craft", "ship-notes"), scrollable: [""] }
   };
 
   static TABS = {
@@ -82,7 +85,7 @@ export class ShipSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
     const weapons = actor.items.filter(i => i.type === "shipWeapon").map(i => ({
       id: i.id, name: i.name, img: i.img, damage: i.system.damage, mount: i.system.mount,
       ammo: i.system.ammo.max > 0 ? `${i.system.ammo.value}/${i.system.ammo.max}` : "",
-      disabled: !!i.flags?.spacer?.craft?.disabled, destroyed: i.system.destroyed,
+      disabled: i.system.disabled, destroyed: i.system.destroyed,
       gunner: fromUuidSync(i.system.gunner)?.name ?? ""
     }));
     const crew = s.crew.map((c, index) => {
@@ -107,14 +110,14 @@ export class ShipSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       actor, system: s, source: s._source, editable: this.isEditable, enriched,
       letters: Object.fromEntries(DRIVE_LETTERS.map(l => [l, l])),
       systems, weapons, crew, hullPips, internalPips, fuelPips,
-      roleOptions: CREW_POSITIONS.map(p => ({ key: p.key, label: L(`Crew.${p.key}`), salary: api.credits(p.salary), skill: p.skill, rank: p.rank, filled: filledRoles.has(p.key) })),
+      roleOptions: CREW_POSITIONS.map(p => ({ key: p.key, label: L(`Crew.${p.key}`), salary: credits(p.salary), skill: p.skill, rank: p.rank, filled: filledRoles.has(p.key) })),
       rangeOptions: SPACE_RANGES.map(r => ({ key: r.key, label: `${L(`Range.${r.key}`)} (${r.dm >= 0 ? "+" : ""}${r.dm})` })),
       locationOptions: (s.smallCraft ? ["cockpit", "weapon", "drive", "hull"] : ["hull", "mDrive", "jDrive", "power", "fuel", "weapon", "internal"]).map(k => ({ key: k, label: L(`Loc.${k}`) })),
       rowOptions: INTERPLANETARY.map(r => ({ key: r.key, label: `${L(`Travel.row.${r.key}`)} (${r.km.toLocaleString("en-US")} km)` })),
       sizeOptions: [...Array.from({ length: 11 }, (_, i) => ({ key: String(i), label: `${L("Travel.size")} ${i < 10 ? i : "A"}` })), { key: "gasGiant", label: L("Travel.row.gasGiant") }],
       fire: this.fireOptions, travel: this.travelOptions,
-      book: Object.fromEntries(Object.entries(book).map(([k, v]) => [k, api.credits(v)])),
-      fmt: { cost: api.credits(s.cost), bank: api.credits(f.bank), monthTotal: api.credits(monthTotal), maintenance: api.credits(f.maintenance), mortgagePaid: actor.flags?.spacer?.craft?.mortgagePaid ?? 0 },
+      book: Object.fromEntries(Object.entries(book).map(([k, v]) => [k, credits(v)])),
+      fmt: { cost: credits(s.cost), bank: credits(f.bank), monthTotal: credits(monthTotal), maintenance: credits(f.maintenance), mortgagePaid: f.mortgagePaid },
       status: s.isDestroyed ? "destroyed" : s.critical ? "critical" : "ok"
     });
   }
@@ -178,7 +181,7 @@ export class ShipSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
 
   static async #onFire(event, target) {
     const id = target.closest("[data-item-id]").dataset.itemId;
-    const tgt = [...game.user.targets].map(t => t.actor).find(a => ["ship", "vehicle"].includes(a?.type));
+    const tgt = (await pickActors()).find(a => a !== this.actor && TARGET_TYPES.includes(a.type));
     await api.fireWeapon(this.actor, id, { range: this.fireOptions.range, location: this.fireOptions.location, dm: this.fireOptions.dm, target: tgt });
   }
 
@@ -188,7 +191,7 @@ export class ShipSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
     const s = this.actor.system;
     if (key === "hull") return this.actor.update({ "system.hull.value": Math.clamp(s.hull.value - delta, 0, s.hull.max) });
     if (key === "internal") return this.actor.update({ "system.internalHits": Math.clamp(s.internalHits + delta, 0, s.internal.max) });
-    if (key === "fuel") return this.actor.setFlag("spacer", "craft.fuelHits", Math.clamp(s.fuelState.hits + delta, 0, s.fuelState.hitsMax));
+    if (key === "fuel") return this.actor.update({ "system.fuelHits": Math.clamp(s.fuelState.hits + delta, 0, s.fuelState.hitsMax) });
     if (key === "cockpit") return this.actor.update({ "system.cockpitHits": Math.clamp(s.cockpitHits + delta, 0, 2) });
     const dmg = Math.max(0, s[key].damage + delta);
     const update = { [`system.${key}.damage`]: dmg };
@@ -217,9 +220,8 @@ export class ShipSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
   static async #onToggleWeapon(event, target) {
     const item = this.actor.items.get(target.closest("[data-item-id]").dataset.itemId);
     if (!item) return;
-    const disabled = !!item.flags?.spacer?.craft?.disabled;
-    if (item.system.destroyed) return item.update({ "system.destroyed": false, "flags.spacer.craft.disabled": false });
-    return item.update({ "flags.spacer.craft.disabled": !disabled });
+    if (item.system.destroyed) return item.update({ "system.destroyed": false, "system.disabled": false });
+    return item.update({ "system.disabled": !item.system.disabled });
   }
 
   static async #onReloadWeapon(event, target) {

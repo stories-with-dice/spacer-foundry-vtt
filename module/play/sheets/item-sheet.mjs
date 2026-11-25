@@ -1,10 +1,13 @@
 /** One item sheet for all seven item types; the body template shows the fields of each type. */
 import { RANGE_BANDS } from "../rules/combat.mjs";
-import { L, templatePath } from "../util.mjs";
+import { localizer, templatePath } from "../../shared/foundry.mjs";
+
+const L = localizer("SPACER");
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ItemSheetV2 } = foundry.applications.sheets;
 
+/** The item sheet of every play item type (skill, weapon, armor, gear, psionic, drug, shipWeapon). Registered by registerPlay. */
 export class SpacerItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
   static DEFAULT_OPTIONS = {
     classes: ["spacer", "spacer-sheet", "item"],
@@ -17,8 +20,8 @@ export class SpacerItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
   };
 
   static PARTS = {
-    header: { template: templatePath("item/header") },
-    body: { template: templatePath("item/body"), scrollable: [""] }
+    header: { template: templatePath("play", "item/header") },
+    body: { template: templatePath("play", "item/body"), scrollable: [""] }
   };
 
   /** @override */

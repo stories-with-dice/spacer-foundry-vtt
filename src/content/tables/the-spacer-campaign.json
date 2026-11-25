@@ -1790,7 +1790,7 @@
     "name": "Colony: Who Runs It",
     "folder": "The Spacer Campaign",
     "formula": "2d6",
-    "description": "<p>p.55. Colonies. Roll 2D for who runs the colony.</p>",
+    "description": "<p>p.55. Colonies. Roll 2D for who runs the colony. BOOK: the book lists the overlapping rows 8-10 and 10-11; this table uses 8-9 and 10-11, as the Toolkit does.</p>",
     "results": [
       {
         "range": [
@@ -1816,13 +1816,13 @@
       {
         "range": [
           8,
-          10
+          9
         ],
         "text": "Government"
       },
       {
         "range": [
-          11,
+          10,
           11
         ],
         "text": "Political/Philosophical Ideology"
@@ -1840,7 +1840,7 @@
     "name": "Colony: Age",
     "folder": "The Spacer Campaign",
     "formula": "2d6",
-    "description": "<p>p.55. Colonies. Roll 2D for the age of the colony.</p>",
+    "description": "<p>p.55. Colonies. Roll 2D for the age of the colony. BOOK: the book lists the overlapping rows 8-10 and 10-11; this table uses 8-9 and 10-11, as the Toolkit does.</p>",
     "results": [
       {
         "range": [
@@ -1866,13 +1866,13 @@
       {
         "range": [
           8,
-          10
+          9
         ],
         "text": "D3 decades"
       },
       {
         "range": [
-          11,
+          10,
           11
         ],
         "text": "1D+3 decades"
@@ -1890,7 +1890,7 @@
     "name": "Colony: Population",
     "folder": "The Spacer Campaign",
     "formula": "2d6",
-    "description": "<p>p.55. Colonies. Roll 2D for the population of the colony.</p>",
+    "description": "<p>p.55. Colonies. Roll 2D for the population of the colony. BOOK: the book lists the overlapping rows 8-10 and 10-11; this table uses 8-9 and 10-11, as the Toolkit does.</p>",
     "results": [
       {
         "range": [
@@ -1916,13 +1916,13 @@
       {
         "range": [
           8,
-          10
+          9
         ],
         "text": "1D x 1,000"
       },
       {
         "range": [
-          11,
+          10,
           11
         ],
         "text": "1D x 5,000"

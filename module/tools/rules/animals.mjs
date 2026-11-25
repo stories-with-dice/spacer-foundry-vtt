@@ -4,10 +4,9 @@
  */
 import { band, clamp } from "../../shared/dice.mjs";
 
-/**
- * Terrain DM to the Animal Creation table (p.110). Exotic and Subterranean alternate +/- on each
- * trait roll; the positive DM is used for the size roll.
- */
+/** Terrain DM to the Animal Creation table (p.110). */
+// BOOK: Exotic and Subterranean give "+/-" DMs; we alternate + and - on the trait rolls and use
+// the positive DM for the size roll.
 export const ANIMAL_TERRAIN = {
   open: { label: "Open Country", dm: 0 },
   shrubland: { label: "Shrubland", dm: 1 },
@@ -72,6 +71,7 @@ export const CHARACTERISTICS = {
   ]
 };
 
+/** Behaviour characteristic descriptions (p.111-112). */
 export const DESCRIPTIONS = {
   "Carrion-Eater": "Primarily consumes dead animal flesh, usually after other animals have finished feeding.",
   Chaser: "Pursues prey, usually in packs.",
@@ -98,6 +98,7 @@ export const TRAITS = {
   scavenger: ["Heightened Sense", "Amphibious", "Camouflaged", "Alarm", "Flyer", "Pheromone", "Fast", "Dark Sight", "Diseased", "Incandescent"]
 };
 
+/** Alien animal trait rules (p.113). */
 export const TRAIT_TEXT = {
   Alarm: "Releases a sound, scent, or visual signal that attracts 2D more of the same type.",
   Amphibious: "Lives both in liquid and on land for long durations.",

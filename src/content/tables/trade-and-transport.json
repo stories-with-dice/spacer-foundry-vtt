@@ -243,7 +243,7 @@
   "name": "Trade Goods (Speculative Trade)",
   "folder": "Trade & Transport",
   "formula": "1d6*10+1d6",
-  "description": "<p>p.64. Roll D66. Illicit suppliers add +1DM to the D66 trade table (applied to the tens die, giving results 21-76). All locations offer results 11-16 plus goods matching their trade codes, up to the population code; each seller also has one more good rolled on D66. Trade codes: Ag Agricultural, As Asteroid, De Desert World, Ge Garden World, Ic Ice-Capped, In Industrial, Na Non-Agricultural, Ni Non-Industrial, Po Poor, Ri Rich, Ht High Tech, Va Vacuum, Wa Water World (p.65).</p>",
+  "description": "<p>The Toolkit's trade calculator applies the illicit supplier DM to the tens die for you. To roll this table by hand, add 10 to the result for an illicit supplier. p.63-64. Roll D66. Illicit suppliers add +1DM to the D66 trade table (applied to the tens die, giving results 21-76). A location offers a number of different goods equal to its population code: results 11-16 (six goods) plus population - 6 goods that match its trade codes (example, p.63: population 9 Industrial = 11-16 plus 3 Industrial goods); each seller also has one more good rolled on D66. BOOK: the book does not cover worlds below population 6; they still offer 11-16. Trade codes: Ag Agricultural, As Asteroid, De Desert World, Ge Garden World, Ic Ice-Capped, In Industrial, Na Non-Agricultural, Ni Non-Industrial, Po Poor, Ri Rich, Ht High Tech, Va Vacuum, Wa Water World (p.65).</p>",
   "results": [
    {
     "range": [

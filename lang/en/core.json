@@ -298,7 +298,7 @@
       },
       "Aimed": "Aimed (else from the hip, -2)",
       "UseOverwatch": "Overwatch (+{n})",
-      "Throw": "Throw it (short range, STR DM)",
+      "Throw": "Throw it (short range, DEX + STR DM)",
       "Controlled": "Controlled (-2, no END use)",
       "AutoMode": "Auto {n}",
       "AutoSingle": "One target (+{n} damage)",
@@ -326,6 +326,8 @@
       "StunCheck": "{name} resists stun (END 8+)",
       "Stunned": "{name} is stunned",
       "StunnedFor": "Helpless for {n} × 10 minutes.",
+      "OverEncumbered": "{name} is over-encumbered and cannot make melee attacks (p.41).",
+      "CraftDamage": "Personal weapon against a vehicle: {rolled} rolled, 1 damage (p.49).",
       "Mod": {
         "characteristic": "Characteristic",
         "skill": "Skill",
@@ -383,7 +385,9 @@
       "FirstAidHint": "Medic roll (EDU + Medic 8+). Select a healer token first, else the character treats themself.",
       "FirstAidOn": "First aid on {name}",
       "FirstAidDone": "First aid: can heal naturally again",
-      "FirstAidGiven": "First aid given"
+      "FirstAidGiven": "First aid given",
+      "Surgery": "{name} has END and STR or DEX at 0: first aid cannot help. Surgery is needed (p.106).",
+      "KitRoll": "Medical Kit: D3 = {n} END"
     },
     "Psi": {
       "Use": "Use",

@@ -6,9 +6,11 @@
 import * as api from "../api.mjs";
 import * as SC from "../rules/space-combat.mjs";
 import { skillRank } from "../../play/api.mjs";
+import { setting, templatePath } from "../../shared/foundry.mjs";
+import { L, esc, card, dice } from "../common.mjs";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
-const L = api.L;
+/** World setting that holds the helper's state: round, ships, and range bands. */
 export const COMBAT_SETTING = "craftCombat";
 
 const pairKey = (a, b) => [a, b].sort().join("|");
@@ -20,9 +22,7 @@ export class SpaceCombatApp extends HandlebarsApplicationMixin(ApplicationV2) {
   constructor(options = {}) {
     super(options);
     SpaceCombatApp.instance = this;
-    let saved = null;
-    try { saved = game.settings.get("spacer", COMBAT_SETTING); } catch { saved = null; }
-    this.combat = foundry.utils.mergeObject(emptyState(), saved ?? {}, { inplace: false });
+    this.combat = foundry.utils.mergeObject(emptyState(), setting(COMBAT_SETTING, {}) ?? {}, { inplace: false });
   }
 
   static DEFAULT_OPTIONS = {
@@ -45,7 +45,7 @@ export class SpaceCombatApp extends HandlebarsApplicationMixin(ApplicationV2) {
     }
   };
 
-  static PARTS = { main: { template: "systems/spacer/templates/craft/space-combat.hbs", scrollable: [".scroll"] } };
+  static PARTS = { main: { template: templatePath("craft", "space-combat"), scrollable: [".scroll"] } };
 
   async _onClose(options) {
     await super._onClose(options);
@@ -92,7 +92,7 @@ export class SpaceCombatApp extends HandlebarsApplicationMixin(ApplicationV2) {
     const res = SC.shiftRange(this.range(moverUuid, otherUuid), delta);
     this.combat.ranges[pairKey(moverUuid, otherUuid)] = res.index;
     await this.save();
-    if (res.dogfight) await ChatMessage.create({ content: `<div class="spacer craft-card"><p>${L("Combat.dogfightStart", { a: actor.name, b: fromUuidSync(otherUuid)?.name ?? "?" })}</p></div>` });
+    if (res.dogfight) await card({ actor, title: L("Combat.title"), body: `<p>${esc(L("Combat.dogfightStart", { a: actor.name, b: fromUuidSync(otherUuid)?.name ?? "?" }))}</p>` });
     this.render();
     return true;
   }
@@ -104,13 +104,13 @@ export class SpaceCombatApp extends HandlebarsApplicationMixin(ApplicationV2) {
       if (!ship) continue;
       const pilot = api.crewFor(ship, "pilot");
       const rank = pilot ? skillRank(pilot, "Pilot", "Starship") : -3;
-      const d6 = (await new Roll("1d6").evaluate()).total;
+      const d6 = dice().roll("1D");
       entry.initiative = SC.initiative(d6, ship.system.effective.thrust, rank);
     }
     this.combat.ships.sort((a, b) => (b.initiative ?? 0) - (a.initiative ?? 0));
     await this.save();
-    const lines = this.combat.ships.map(e => `<li>${foundry.utils.escapeHTML(fromUuidSync(e.uuid)?.name ?? "?")}: ${e.initiative}</li>`).join("");
-    await ChatMessage.create({ content: `<div class="spacer craft-card"><h3>${L("Combat.initiative")}</h3><ul>${lines}</ul></div>` });
+    const lines = this.combat.ships.map(e => `<li>${esc(fromUuidSync(e.uuid)?.name ?? "?")}: ${e.initiative}</li>`).join("");
+    await card({ title: L("Combat.initiative"), body: `<ul>${lines}</ul>` });
     this.render();
   }
 
@@ -121,7 +121,7 @@ export class SpaceCombatApp extends HandlebarsApplicationMixin(ApplicationV2) {
     for (const e of this.combat.ships) e.thrustUsed = 0;
     this.combat.round += 1;
     await this.save();
-    if (ended.length) await ChatMessage.create({ content: `<div class="spacer craft-card"><p>${L("Combat.dogfightEnd")}</p></div>` });
+    if (ended.length) await card({ title: L("Combat.title"), body: `<p>${L("Combat.dogfightEnd")}</p>` });
     this.render();
   }
 
@@ -142,7 +142,7 @@ export class SpaceCombatApp extends HandlebarsApplicationMixin(ApplicationV2) {
         const band = SC.SPACE_RANGES[idx];
         return { uuid: o.uuid, name: fromUuidSync(o.uuid)?.name ?? "?", index: idx, label: L(`Range.${band.key}`), dm: band.dm, dogfight: idx === 0 };
       });
-      const weapons = a.items.filter(i => i.type === "shipWeapon").map(i => ({ id: i.id, name: i.name, out: i.system.destroyed || !!i.flags?.spacer?.craft?.disabled }));
+      const weapons = a.items.filter(i => i.type === "shipWeapon").map(i => ({ id: i.id, name: i.name, out: i.system.destroyed || i.system.disabled }));
       return {
         uuid: e.uuid, name: a.name, img: a.img, initiative: e.initiative ?? "-",
         thrust: s.effective.thrust, thrustLeft: Math.max(0, s.effective.thrust - e.thrustUsed),

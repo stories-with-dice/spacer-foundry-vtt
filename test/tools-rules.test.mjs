@@ -1,8 +1,9 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { makeDice, scriptedDie, randomDie, parseBookDice, band } from "../module/shared/dice.mjs";
+import { makeDice, scriptedDie, seededDie, randomDie, parseBookDice, band } from "../module/shared/dice.mjs";
 import * as time from "../module/tools/rules/time.mjs";
 import * as world from "../module/tools/rules/world.mjs";
+import * as subsector from "../module/tools/rules/subsector.mjs";
 import * as npc from "../module/tools/rules/npc.mjs";
 import * as patron from "../module/tools/rules/patron.mjs";
 import * as starport from "../module/tools/rules/starport.mjs";
@@ -112,12 +113,12 @@ test("world: star system code and subsector presence (p.88)", () => {
   const w = world.generateStarSystem(d, { hex: "0305" });
   assert.match(w.system.code, /^0305-[MKGFA][0-9A-Z]{3}$/);
   assert.equal(w.system.count, w.system.objects.length + 1);
-  const s = world.generateSubsector(makeDice(randomDie(seeded(3))), { name: "Testing" });
+  const s = subsector.generateSubsector(makeDice(randomDie(seeded(3))), { name: "Testing" });
   assert.equal(s.hexes.length, 80);
   assert.equal(s.worlds.length, s.hexes.filter(h => h.kind === "inhabited").length);
   for (const h of s.hexes) assert.equal(h.kind, h.roll >= 4 ? "inhabited" : h.roll >= 1 ? "empty" : "uninhabited");
   assert.ok(s.worlds.some(w2 => w2.capital));
-  assert.equal(world.hexDistance({ col: 1, row: 1 }, { col: 1, row: 4 }), 3);
+  assert.equal(subsector.hexDistance({ col: 1, row: 1 }, { col: 1, row: 4 }), 3);
 });
 
 test("npc: NPC table DMs, random NPC table, information (p.56-59)", () => {
@@ -211,7 +212,7 @@ test("trade: tables, DMs, prices, negotiation (p.62-65)", () => {
   assert.ok(trade.isAvailable(trade.goodByCode(26), ["Wa"]));
   assert.ok(!trade.isAvailable(trade.goodByCode(26), ["In"]));
   const g = trade.goodsAvailable(makeDice(randomDie(seeded(4))), { codes: ["In", "Ri"], pop: 3 });
-  assert.equal(g.local.length, 3);
+  assert.equal(g.local.length, 0);
   assert.ok(g.list.slice(0, 6).every((x, i) => x.code === 11 + i));
   const f = trade.rollFreight(scripted([1, 2, 3]), { destinationPop: 3 });
   assert.equal(f.totalTons, 30);
@@ -315,4 +316,85 @@ test("solo oracle (not from the book)", () => {
   assert.ok(ev.answer);
   const d = makeDice(randomDie(seeded(21)));
   for (let i = 0; i < 200; i++) assert.ok(oracle.randomEvent(d).detail);
+});
+
+test("fix: goods on offer equal the population code (p.63)", () => {
+  // Book example: population 9 Industrial = 11-16 plus 3 Industrial goods, plus one D66 good.
+  // Faces: three picks from the pool (1 each), then the D66 extra good (1, 1 = 11, already listed),
+  // then the tons of the 9 goods (amount dice vary, so a seeded die rolls them).
+  const picks = scriptedDie([1, 1, 1, 1, 1]);
+  let n = 0;
+  const tons = randomDie(seeded(5));
+  const d = makeDice(sides => (n++ < 5 ? picks(sides) : tons(sides)));
+  const g = trade.goodsAvailable(d, { codes: ["In"], pop: 9 });
+  assert.equal(g.local.length, 3);
+  assert.ok(g.local.every(x => trade.isAvailable(x, ["In"])));
+  assert.equal(g.list.length, 9);
+  assert.equal(trade.extraGoodsCount(9), 3);
+  assert.equal(trade.extraGoodsCount(6), 0);
+  // BOOK: below population 6 the location still offers 11-16.
+  assert.equal(trade.extraGoodsCount(2), 0);
+  const low = trade.goodsAvailable(makeDice(randomDie(seeded(6))), { codes: ["Ag"], pop: 2 });
+  assert.deepEqual(low.common.map(x => x.code), [11, 12, 13, 14, 15, 16]);
+  assert.equal(low.local.length, 0);
+});
+
+test("fix: colony rows 8-9 and 10-11 (p.55, p.102)", () => {
+  // 2D 9 = Government, 2D 10 = the 10-11 row on every column.
+  const c = patron.rollColony(scripted([4, 5, 5, 5, 2, 5, 5, 2]));
+  assert.equal(c.runner, "Government");
+  assert.equal(c.age, "5 decades");
+  assert.equal(c.population, 10000);
+  assert.equal(band(patron.COLONY_RUNNER, 10), "Political/Philosophical Ideology");
+  assert.equal(band(patron.COLONY_POP, 9), 1000);
+});
+
+test("fix: size table uses the p.90 diameters", () => {
+  assert.equal(world.SIZE[11].diameter, "17,600km");
+  assert.equal(world.SIZE[12].diameter, "19,200km");
+});
+
+test("fix: a terrain penalty of -3 makes Speed Band 1 count as Top Gear (p.98)", () => {
+  // Speed Band 5, High Gear (-1), forest (-3): band 1, so Top Gear DM -2 and its failure result.
+  const hazard = planet.overlandTravel({ terrain: "forest", mode: "vehicle", speedBand: 5, gear: "high" });
+  assert.equal(hazard.speedBand, 1);
+  assert.equal(hazard.hazard, true);
+  assert.equal(hazard.driveDM, -2);
+  assert.equal(hazard.failure, planet.GEARS.top.failure);
+  assert.equal(hazard.gear, "High Gear");
+  // Same band 1 in shrubland (-1): no hazard, High Gear DM +0.
+  const easy = planet.overlandTravel({ terrain: "shrubland", mode: "vehicle", speedBand: 3, gear: "high" });
+  assert.equal(easy.speedBand, 1);
+  assert.equal(easy.hazard, false);
+  assert.equal(easy.driveDM, 0);
+  // Band 2 in forest: the rule applies only at Speed Band 1.
+  assert.equal(planet.overlandTravel({ terrain: "forest", mode: "vehicle", speedBand: 6, gear: "high" }).driveDM, 0);
+});
+
+test("fix: patron search target and SOC DM on the terms only (p.50, p.54)", () => {
+  assert.equal(patron.FIND_PATRON_TARGET, 8);
+  // Same dice with and without SOC DM: the demeanour is the same, the terms roll moves by the DM.
+  const a = patron.generatePatron(makeDice(seededDie(5)), { socDM: 0 });
+  const b = patron.generatePatron(makeDice(seededDie(5)), { socDM: 2 });
+  assert.deepEqual(a.patron.demeanour, b.patron.demeanour);
+  assert.equal(b.job.terms.roll - a.job.terms.roll, 2);
+});
+
+test("fix: subsector population DMs from the capital and routes (p.92)", () => {
+  assert.deepEqual(subsector.subsectorPopDMs({ col: 2, row: 2 }, { capital: { col: 2, row: 3 }, routeWorlds: [] }), { capital: 1, capitalInSubsector: 2 });
+  assert.deepEqual(subsector.subsectorPopDMs({ col: 5, row: 5 }, { capital: { col: 1, row: 1 }, routeWorlds: [{ col: 5, row: 6 }] }), { route: 1, capitalInSubsector: 2 });
+  assert.deepEqual(subsector.subsectorPopDMs({ col: 5, row: 5 }, { capital: { col: 1, row: 1 }, primaryCapital: false }), {});
+  for (const seed of [3, 9, 21]) {
+    const s = subsector.generateSubsector(makeDice(randomDie(seeded(seed))), { density: "dense" });
+    const cap = s.worlds.find(w => w.capital);
+    assert.equal(s.worlds.filter(w => w.capital).length, 1);
+    assert.equal(s.capital, cap.name);
+    for (const w of s.worlds) {
+      assert.equal(w.popDMs.capitalInSubsector, 2);
+      assert.equal(w.popDMs.dense, 1);
+      assert.equal(w.popDMs.capital === 1, subsector.hexDistance(w, cap) <= 1, `${w.hex} capital DM`);
+      // A world with the route DM is within 1 parsec of a population 6+ world.
+      if (w.popDMs.route) assert.ok(s.worlds.some(o => o !== w && o.population >= 6 && subsector.hexDistance(w, o) <= 1), `${w.hex} route DM`);
+    }
+  }
 });
